@@ -1,69 +1,80 @@
-\fancyhead[LE,RO]{\thepage}
-\fancyhead[LO]{\textsf{CÁC NGUYÊN TẮC GIẢI QUYẾT VẤN ĐỀ}}
-\fancyhead[RE]{\textsf{CHƯƠNG 1 \ CÁC HÀM SỐ VÀ MÔ HÌNH}}
+\thispagestyle{empty}
 
 \noindent
-\begin{minipage}[t]{0.26\textwidth}
+\begin{minipage}[t]{0.27\textwidth}
     \vspace{0pt}
     % Ghi chú lề 1
     \begin{tcolorbox}[
         colback=stewartpurple!8!white,
         colframe=stewartpurple!8!white,
         arc=1mm,
-        left=1mm, right=1mm, top=1mm, bottom=1mm,
+        left=1mm, right=1.5mm, top=1mm, bottom=1mm,
         boxrule=0pt
     ]
-        {\color{stewartpurple}\scriptsize\textbf{\textsf{PS}}}\hspace{1.5mm}\footnotesize\textsf{Vẽ một hình vẽ.}
+        \hangindent=7.5mm\hangafter=1
+        \mbox{\colorbox{stewartpurple}{\rule[-0.2ex]{0pt}{1.8ex}\color{white}\scriptsize\textbf{\textsf{\,PS\,}}}}%\hspace{1.5mm}\footnotesize\textsf{Vẽ một hình vẽ.}
     \end{tcolorbox}
     
-    \vspace{1.8cm}
+    \vspace{2.8cm}
     
     % Ghi chú lề 2 & 3
     \begin{tcolorbox}[
         colback=stewartpurple!8!white,
         colframe=stewartpurple!8!white,
         arc=1mm,
-        left=1mm, right=1mm, top=1mm, bottom=1mm,
+        left=1mm, right=1.5mm, top=1mm, bottom=1mm,
         boxrule=0pt
     ]
-        {\color{stewartpurple}\scriptsize\textbf{\textsf{PS}}}\hspace{1.5mm}\footnotesize\textsf{Liên hệ cái đã cho với cái chưa biết.}
+        \hangindent=7.5mm\hangafter=1
+        \mbox{\colorbox{stewartpurple}{\rule[-0.2ex]{0pt}{1.8ex}\color{white}\scriptsize\textbf{\textsf{\,PS\,}}}}%\hspace{1.5mm}\footnotesize\textsf{Liên hệ cái đã cho với cái chưa biết.}
     \end{tcolorbox}
-    \vspace{-2mm}
+    \vspace{1.5mm}
     \begin{tcolorbox}[
         colback=stewartpurple!8!white,
         colframe=stewartpurple!8!white,
         arc=1mm,
-        left=1mm, right=1mm, top=1mm, bottom=1mm,
+        left=1mm, right=1.5mm, top=1mm, bottom=1mm,
         boxrule=0pt
     ]
-        {\color{stewartpurple}\scriptsize\textbf{\textsf{PS}}}\hspace{1.5mm}\footnotesize\textsf{Đưa thêm yếu tố phụ.}
+        \hangindent=7.5mm\hangafter=1
+        \mbox{\colorbox{stewartpurple}{\rule[-0.2ex]{0pt}{1.8ex}\color{white}\scriptsize\textbf{\textsf{\,PS\,}}}}%\hspace{1.5mm}\footnotesize\textsf{Đưa thêm yếu tố phụ.}
     \end{tcolorbox}
 
-    \vspace{4.76cm}
+    \vspace{6.8cm}
 
     % Ghi chú lề 4
     \begin{tcolorbox}[
         colback=stewartpurple!8!white,
         colframe=stewartpurple!8!white,
         arc=1mm,
-        left=1mm, right=1mm, top=1mm, bottom=1mm,
+        left=1mm, right=1.5mm, top=1mm, bottom=1mm,
         boxrule=0pt
     ]
-        {\color{stewartpurple}\scriptsize\textbf{\textsf{PS}}}\hspace{1.5mm}\footnotesize\textsf{Liên hệ với điều quen thuộc.}
+        \hangindent=7.5mm\hangafter=1
+        \mbox{\colorbox{stewartpurple}{\rule[-0.2ex]{0pt}{1.8ex}\color{white}\scriptsize\textbf{\textsf{\,PS\,}}}}%\hspace{1.5mm}\footnotesize\textsf{Liên hệ với điều quen thuộc.}
     \end{tcolorbox}
+
+    \vspace{7.6cm}
+    \noindent{\Large\textbf{\textsf{72}}}
 \end{minipage}%
 \hfill
-\begin{minipage}[t]{0.71\textwidth}
+\begin{minipage}[t]{0.70\textwidth}
     \vspace{0pt}
     Vẽ một hình vẽ sẽ rất hữu ích và chúng ta thực hiện điều đó trong Hình 1.
 
-    \begin{center}
-        \includegraphics[width=0.7\textwidth]{images/p0107_fig1.png}
-    \end{center}
-    \vspace{-2mm}
-    \noindent\textbf{\textsf{HÌNH 1}}
+    \vspace{2mm}
+    \noindent
+    \begin{minipage}[b]{0.28\linewidth}
+        \textbf{\textsf{HÌNH 1}}
+        \vspace{2mm}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[b]{0.70\linewidth}
+        \raggedleft
+        \includegraphics[height=2.3cm,keepaspectratio]{images/p0107_fig1.png}
+    \end{minipage}
+    \vspace{2mm}
 
-    \medskip
     Để liên hệ các đại lượng đã cho với ẩn số, ta đưa vào thêm hai biến số $a$ và $b$, lần lượt là độ dài của hai cạnh góc vuông của tam giác. Điều này cho phép ta biểu diễn điều kiện đã cho, đó là tam giác vuông, bằng định lý Pytago:
     \[
     h^2 = a^2 + b^2
@@ -73,11 +84,11 @@
     25 = \tfrac{1}{2}ab \qquad\qquad P = a + b + h
     \]
     Vì $P$ đã cho, lưu ý rằng lúc này ta có hệ ba phương trình với ba ẩn số $a$, $b$, và $h$:
-    \begin{align*}
-        \tikz[baseline=-0.6ex]\node[draw=stewartred,semithick,inner sep=1.5pt,rounded corners=0.5pt]{\footnotesize\textsf{\textbf{\color{stewartred}1}}}; \qquad\qquad\qquad\qquad\qquad\qquad h^2 &= a^2 + b^2 \\[1mm]
-        \tikz[baseline=-0.6ex]\node[draw=stewartred,semithick,inner sep=1.5pt,rounded corners=0.5pt]{\footnotesize\textsf{\textbf{\color{stewartred}2}}}; \qquad\qquad\qquad\qquad\qquad\quad\ \, 25 &= \tfrac{1}{2}ab \\[1mm]
-        \tikz[baseline=-0.6ex]\node[draw=stewartred,semithick,inner sep=1.5pt,rounded corners=0.5pt]{\footnotesize\textsf{\textbf{\color{stewartred}3}}}; \qquad\qquad\qquad\qquad\qquad\quad\ \, P &= a + b + h
-    \end{align*}
+    \begin{alignat*}{2}
+        &\tikz[baseline=-0.6ex]\node[draw=stewartred,semithick,inner sep=1.5pt,rounded corners=0.5pt]{\footnotesize\textsf{\textbf{\color{stewartred}1}}};\qquad\qquad\qquad\quad & h^2 &= a^2 + b^2 \\[1.5mm]
+        &\tikz[baseline=-0.6ex]\node[draw=stewartred,semithick,inner sep=1.5pt,rounded corners=0.5pt]{\footnotesize\textsf{\textbf{\color{stewartred}2}}};\qquad\qquad\qquad\quad & 25 &= \tfrac{1}{2}ab \\[1.5mm]
+        &\tikz[baseline=-0.6ex]\node[draw=stewartred,semithick,inner sep=1.5pt,rounded corners=0.5pt]{\footnotesize\textsf{\textbf{\color{stewartred}3}}};\qquad\qquad\qquad\quad & P &= a + b + h
+    \end{alignat*}
 
     Mặc dù ta có đủ số lượng phương trình, nhưng chúng không dễ để giải theo cách thông thường. Nhưng nếu ta vận dụng chiến lược giải quyết vấn đề là cố gắng nhận dạng một điều gì đó quen thuộc, ta có thể giải hệ phương trình này bằng một phương pháp dễ dàng hơn. Hãy quan sát vế phải của các Phương trình 1, 2 và 3. Những biểu thức này có gợi nhớ cho bạn điều gì quen thuộc không? Hãy chú ý rằng chúng chứa các thành phần của một hằng đẳng thức quen thuộc:
     \[
@@ -91,10 +102,9 @@
     \[
     (a + b)^2 = (P - h)^2 = P^2 - 2Ph + h^2
     \]
-    Do đó:
     \begin{align*}
-        h^2 + 100 &= P^2 - 2Ph + h^2 \\
-        2Ph &= P^2 - 100 \\
+        \text{\makebox[0pt][l]{\hspace{-3.2cm}Do đó}} h^2 + 100 &= P^2 - 2Ph + h^2 \\[1mm]
+        2Ph &= P^2 - 100 \\[1.5mm]
         h &= \frac{P^2 - 100}{2P}
     \end{align*}
     Đây chính là biểu thức cần tìm của $h$ theo hàm số của $P$.\hfill{\color{stewartcyan}$\blacksquare$}
