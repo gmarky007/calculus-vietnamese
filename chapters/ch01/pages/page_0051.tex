@@ -6,27 +6,32 @@
 \begin{minipage}[t]{0.26\textwidth}
     \vspace{0pt}
     \includegraphics[width=\linewidth]{images/p0051_fig1.png}
-    \vspace{-4pt}
+    \vspace{-3pt}
     \captionof{figure}{\raggedright \textbf{\textsf{HÌNH 19}}\newline Một hàm số chẵn}
     \label{fig:p16_fig19}
 
-    \vspace{1.48cm}
+    \vspace{1.2cm}
     \includegraphics[width=\linewidth]{images/p0051_fig2.png}
-    \vspace{-4pt}
+    \vspace{-3pt}
     \captionof{figure}{\raggedright \textbf{\textsf{HÌNH 20}}\newline Một hàm số lẻ}
     \label{fig:p16_fig20}
 
-    \vspace{5.08cm}
+    \vspace{4.8cm}
     \textbf{\textsf{HÌNH 21}}
 \end{minipage}%
 \hfill
 \begin{minipage}[t]{0.71\textwidth}
     \vspace{0pt}
+    \setlength{\abovedisplayskip}{3pt}
+    \setlength{\belowdisplayskip}{3pt}
+    \setlength{\abovedisplayshortskip}{1pt}
+    \setlength{\belowdisplayshortskip}{2pt}
+
     Nhìn vào Hình 18, bạn có thể thấy tại sao một hàm số như trong Ví dụ 10 lại được gọi là một \textbf{hàm bậc thang} (\textit{step function}).
 
-    \vspace{0.33cm}
-    \noindent{\color{stewartcyan}\rule{6pt}{6pt}}\hspace{6pt}\textbf{\large\textsf{Hàm số chẵn và hàm số lẻ}}
-    \vspace{0.16cm}
+    \vspace{0.25cm}
+    \noindent{\color{stewartcyan}\rule{5.5pt}{5.5pt}}\hspace{5pt}\textbf{\large\textsf{Hàm số chẵn và hàm số lẻ}}
+    \vspace{0.12cm}
 
     \noindent Nếu một hàm số $f$ thỏa mãn $f(-x) = f(x)$ với mọi số $x$ thuộc tập xác định của nó, thì $f$ được gọi là một \textbf{hàm số chẵn}. Chẳng hạn, hàm số $f(x) = x^2$ là hàm chẵn vì
     \[
@@ -40,48 +45,45 @@
     \]
     Đồ thị của một hàm số lẻ đối xứng qua gốc tọa độ (xem Hình 20). Nếu chúng ta đã có đồ thị của $f$ với $x \geqslant 0$, ta có thể thu được toàn bộ đồ thị bằng cách quay phần đồ thị này một góc $180^\circ$ quanh gốc tọa độ.
 
-    \vspace{0.25cm}
+    \vspace{0.22cm}
     \noindent\textbf{\textsf{\color{stewartcyan}VÍ DỤ 11}}\quad Xác định xem mỗi hàm số sau đây là hàm chẵn, lẻ hay không chẵn cũng không lẻ.
-    \begin{enumerate}[label=(\alph*), itemjoin=\qquad]
-        \item $f(x) = x^5 + x$
-        \item $g(x) = 1 - x^4$
-        \item $h(x) = 2x - x^2$
-    \end{enumerate}
+    
+    \vspace{0.08cm}
+    \noindent (a) $f(x) = x^5 + x$ \qquad (b) $g(x) = 1 - x^4$ \qquad (c) $h(x) = 2x - x^2$
 
-    \vspace{0.16cm}
+    \vspace{0.12cm}
     \noindent\textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}
     
-    \noindent (a)
-    \begin{align*}
+    \noindent (a) $\begin{aligned}[t]
         f(-x) &= (-x)^5 + (-x) = (-1)^5 x^5 + (-x) \\
               &= -x^5 - x = -(x^5 + x) \\
               &= -f(x)
-    \end{align*}
-    Do đó $f$ là một hàm số lẻ.
+    \end{aligned}$
+    
+    \vspace{2pt}
+    \noindent Do đó $f$ là một hàm số lẻ.
 
     \vspace{0.08cm}
-    \noindent (b)
-    \[
-    g(-x) = 1 - (-x)^4 = 1 - x^4 = g(x)
-    \]
-    Vậy $g$ là hàm số chẵn.
+    \noindent (b) $g(-x) = 1 - (-x)^4 = 1 - x^4 = g(x)$
+    
+    \vspace{2pt}
+    \noindent Vậy $g$ là hàm số chẵn.
 
     \vspace{0.08cm}
-    \noindent (c)
-    \[
-    h(-x) = 2(-x) - (-x)^2 = -2x - x^2
-    \]
-    Vì $h(-x) \neq h(x)$ và $h(-x) \neq -h(x)$, ta kết luận rằng hàm số $h$ không chẵn cũng không lẻ. \hfill{\color{stewartcyan}$\blacksquare$}
+    \noindent (c) $h(-x) = 2(-x) - (-x)^2 = -2x - x^2$
+    
+    \vspace{2pt}
+    \noindent Vì $h(-x) \neq h(x)$ và $h(-x) \neq -h(x)$, ta kết luận rằng hàm số $h$ không chẵn cũng không lẻ. \hfill{\color{stewartcyan}$\blacksquare$}
 
-    \vspace{0.25cm}
+    \vspace{0.18cm}
     Đồ thị của các hàm số trong Ví dụ 11 được minh họa ở Hình 21. Lưu ý rằng đồ thị của $h$ không đối xứng qua trục $y$ cũng như không đối xứng qua gốc tọa độ.
 
-    \vspace{0.16cm}
+    \vspace{0.1cm}
     \noindent\includegraphics[width=\linewidth]{images/p0051_fig3.png}
 
-    \vspace{0.33cm}
-    \noindent{\color{stewartcyan}\rule{6pt}{6pt}}\hspace{6pt}\textbf{\large\textsf{Hàm số đồng biến và hàm số nghịch biến}}
-    \vspace{0.16cm}
+    \vspace{0.25cm}
+    \noindent{\color{stewartcyan}\rule{5.5pt}{5.5pt}}\hspace{5pt}\textbf{\large\textsf{Hàm số đồng biến và hàm số nghịch biến}}
+    \vspace{0.12cm}
 
     \noindent Đồ thị trong Hình 22 đi lên từ $A$ đến $B$, đi xuống từ $B$ đến $C$, và đi lên trở lại từ $C$ đến $D$. Hàm số $f$ được gọi là \textbf{đồng biến} trên khoảng $[a, b]$, \textbf{nghịch biến} trên $[b, c]$, và đồng biến trở lại trên $[c, d]$. Lưu ý rằng nếu $x_1$ và $x_2$ là hai số bất kỳ nằm giữa...
 \end{minipage}
