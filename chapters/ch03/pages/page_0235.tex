@@ -1,0 +1,144 @@
+\documentclass[10pt,a4paper,leqno]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage[leqno]{amsmath}
+\usepackage{amssymb,amsfonts}
+\usepackage{geometry}
+\geometry{
+    a4paper,
+    top=18mm,
+    bottom=20mm,
+    left=15mm,
+    right=15mm,
+    headheight=14pt,
+    headsep=12pt,
+    footskip=12mm
+}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{calc}
+
+% Định nghĩa hệ màu chuẩn sách Stewart Calculus
+\definecolor{stewartcyan}{RGB}{0, 130, 185}
+\definecolor{stewartred}{RGB}{204, 30, 30}
+\definecolor{stewartgreen}{RGB}{0, 135, 80}
+
+% Ép buộc đánh số phương trình bên trái
+\makeatletter
+\tagsleft@true
+\makeatother
+
+% Lệnh tạo nhãn số phương trình đóng khung đỏ chuẩn Stewart
+\newcommand{\eqnumbox}[1]{%
+    \fboxsep=2.2pt\fboxrule=0.7pt\textcolor{stewartred}{\fbox{\color{stewartred}\textbf{\textsf{#1}}}}%
+}
+
+% Khung định nghĩa viền đỏ (definitionbox)
+\newtcolorbox{definitionbox}[1][]{
+    enhanced,
+    colback=white,
+    colframe=stewartred,
+    arc=0mm,
+    boxrule=0.8pt,
+    left=8pt,
+    right=8pt,
+    top=7pt,
+    bottom=7pt,
+    #1
+}
+
+% Khung ghi chú lịch sử viền xanh lá lề trái
+\newtcolorbox{historybox}[1][]{
+    enhanced,
+    colback=white,
+    colframe=stewartgreen,
+    arc=0mm,
+    boxrule=0.6pt,
+    left=5pt,
+    right=5pt,
+    top=5pt,
+    bottom=5pt,
+    #1
+}
+
+% Cấu hình tiêu đề đầu trang và chân trang
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[L]{\textbf{\textsf{200}}\qquad \textbf{\textsf{CHƯƠNG 3}}\quad \textsf{Các quy tắc tính đạo hàm}}
+\fancyhead[R]{}
+
+\setlength{\parindent}{1.2em}
+\setlength{\parskip}{0pt}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.26\textwidth}
+    % Cột lề trái: Ghi chú lịch sử James Gregory dóng hàng chính xác với mục Nhận xét
+    \vspace*{11.9cm}
+    \begin{historybox}
+        {\fontsize{9pt}{11pt}\selectfont\textbf{\textsf{\color{stewartgreen}James Gregory}}\par}\vspace{3pt}
+        {\fontsize{7.5pt}{9.5pt}\selectfont
+        Người đầu tiên thiết lập Quy tắc chuỗi là nhà toán học người Scotland James Gregory (1638--1675), người cũng đã thiết kế chiếc kính thiên văn phản xạ thực tế đầu tiên. Gregory đã khám phá ra những ý tưởng cơ bản của vi tích phân vào khoảng cùng thời điểm với Newton. Ông trở thành Giáo sư Toán học đầu tiên tại Đại học St. Andrews và sau đó giữ vị trí tương tự tại Đại học Edinburgh. Nhưng chỉ một năm sau khi nhận chức vụ đó, ông qua đời ở tuổi 36.\par}
+    \end{historybox}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.71\textwidth}
+    % Cột chính: Nội dung lý thuyết về Quy tắc chuỗi
+    \noindent{\color{stewartcyan}\rule{1.2ex}{1.2ex}}\hspace{0.5em}\textbf{\textsf{\Large Quy tắc chuỗi}}\par\vspace{0.6em}
+
+    \noindent
+    Hóa ra đạo hàm của hàm hợp $f \circ g$ chính là tích các đạo hàm của $f$ và $g$. Thực tế này là một trong những quy tắc quan trọng nhất của các quy tắc tính đạo hàm và được gọi là \emph{Quy tắc chuỗi}. Điều này có vẻ hợp lý nếu chúng ta diễn giải đạo hàm như là tốc độ thay đổi. Coi $du/dx$ là tốc độ thay đổi của $u$ theo $x$, $dy/du$ là tốc độ thay đổi của $y$ theo $u$, và $dy/dx$ là tốc độ thay đổi của $y$ theo $x$. Nếu $u$ thay đổi nhanh gấp đôi $x$ và $y$ thay đổi nhanh gấp ba lần $u$, thì có vẻ hợp lý rằng $y$ sẽ thay đổi nhanh gấp sáu lần $x$, và do đó chúng ta kỳ vọng rằng $dy/dx$ là tích của $dy/du$ và $du/dx$.
+
+    \vspace{0.6em}
+    \begin{definitionbox}
+        \noindent
+        \textbf{\textsf{\color{stewartred}Quy tắc chuỗi}}\quad Nếu $g$ khả vi tại $x$ và $f$ khả vi tại $g(x)$, thì hàm hợp $F = f \circ g$ xác định bởi $F(x) = f(g(x))$ khả vi tại $x$ và $F'$ được cho bởi tích
+        \begin{equation}
+            \tag*{\eqnumbox{1}}
+            F'(x) = f'(g(x)) \cdot g'(x)
+        \end{equation}
+        Theo ký hiệu Leibniz, nếu $y = f(u)$ và $u = g(x)$ đều là các hàm khả vi, thì
+        \begin{equation}
+            \tag*{\eqnumbox{2}}
+            \frac{dy}{dx} = \frac{dy}{du}\,\frac{du}{dx}
+        \end{equation}
+    \end{definitionbox}
+
+    \vspace{0.6em}
+    Công thức 2 rất dễ nhớ vì nếu ta coi $dy/du$ và $du/dx$ như các thương số, thì ta có thể triệt tiêu $du$; tuy nhiên, $du$ vẫn chưa được định nghĩa và không nên coi $du/dx$ là một thương số thực sự.
+
+    \vspace{1.2em}
+    \noindent
+    \textbf{\textsf{\color{stewartred}NHẬN XÉT VỀ PHÉP CHỨNG MINH QUY TẮC CHUỖI}}\quad Gọi $\Delta u$ là số gia của $u$ tương ứng với số gia $\Delta x$ của $x$, tức là
+    \[
+        \Delta u = g(x + \Delta x) - g(x)
+    \]
+    \noindent
+    Khi đó số gia tương ứng của $y$ là
+    \[
+        \Delta y = f(u + \Delta u) - f(u)
+    \]
+    \noindent
+    Thật tự nhiên khi ta viết:
+    \begin{align}
+        \frac{dy}{dx} &= \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} \notag\\[5pt]
+        &= \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta u}\,\frac{\Delta u}{\Delta x} \tag*{\eqnumbox{3}}\\[5pt]
+        &= \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta u} \cdot \lim_{\Delta x \to 0} \frac{\Delta u}{\Delta x} \notag\\[5pt]
+        &= \lim_{\Delta u \to 0} \frac{\Delta y}{\Delta u} \cdot \lim_{\Delta x \to 0} \frac{\Delta u}{\Delta x}
+        \qquad
+        \begin{tabular}[c]{@{}l@{}}
+            {\small\color{stewartcyan}(Lưu ý rằng $\Delta u \to 0$ khi $\Delta x \to 0$}\\[-1pt]
+            {\small\color{stewartcyan}vì $g$ liên tục.)}
+        \end{tabular} \notag\\[5pt]
+        &= \frac{dy}{du}\,\frac{du}{dx} \notag
+    \end{align}
+
+    Thiếu sót duy nhất trong lập luận này là ở (3), có thể xảy ra trường hợp $\Delta u = 0$ (ngay cả khi $\Delta x \neq 0$) và dĩ nhiên, chúng ta không thể chia cho 0. Dẫu vậy, lập luận này ít nhất cũng \emph{gợi ý} rằng Quy tắc chuỗi là đúng. Phép chứng minh đầy đủ cho Quy tắc chuỗi được trình bày ở phần cuối của mục này.\hfill{\color{stewartred}\rule{1.2ex}{1.2ex}}
+\end{minipage}
+
+\end{document}

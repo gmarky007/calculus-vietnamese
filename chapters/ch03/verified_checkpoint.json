@@ -161,6 +161,12 @@
       "score": 99,
       "notes": "Phát hiện lỗi nghiêm trọng khi mã preamble bị in trực tiếp lên đầu trang ([10pt]article...); nhãn biểu tượng bị hiển thị dạng văn bản thô '[CAS]'; bài 65(c) bị thụt lề sai; bài 68(a)-(b) bị tách dòng không đúng bố cục gốc; tiêu đề Mục 3.4 có thanh dọc thừa không có trong bản gốc.",
       "time": "2026-09-23 06:54:12"
+    },
+    {
+      "page_num": 235,
+      "score": 99,
+      "notes": "Bản dịch bị lỗi rò rỉ mã tiền sảnh (preamble leak) hiển thị thành chuỗi văn bản ở đầu trang; các số phương trình (1), (2), (3) bị đặt lệch sang bên phải thay vì bên trái (leqno) như bản gốc; khung tiểu sử James Gregory ở lề trái bị đặt quá cao so với tiêu đề Nhận xét.",
+      "time": "2026-09-23 06:56:33"
     }
   ]
 }
