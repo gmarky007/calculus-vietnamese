@@ -269,6 +269,12 @@
       "score": 99,
       "notes": "Trang gốc gồm 3 dải ngang (Top: 2 cột; Middle: Hình 16 trải rộng toàn trang full-width gồm 4 đồ thị a-b-c-d; Bottom: 2 cột). Bản dịch hiện tại ép toàn bộ vào 1 cặp minipage, chèn sai file ảnh (dùng fig3 cho subfigure b và gọi các file fig4, fig5, fig6 không tồn tại), làm Hình 16 bị co rúm ở lề trái và Hình 17 bị lặp lại.",
       "time": "2026-09-23 01:57:20"
+    },
+    {
+      "page_num": 87,
+      "score": 99,
+      "notes": "Bản dịch bị tràn trang nghiêm trọng khiến toàn bộ nội dung hai cột bài tập bị đẩy sang trang sau; sai chỉ số căn và số mũ ở Bài 1b, 2a; gọi file hình ảnh không đúng với danh mục cung cấp.",
+      "time": "2026-09-23 01:58:37"
     }
   ]
 }
