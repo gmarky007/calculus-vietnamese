@@ -71,6 +71,12 @@
       "score": 99,
       "notes": "Bản dịch hiện tại là văn bản từ chối tạo mã nguồn thay vì mã XeLaTeX hoàn chỉnh. Cần viết lại toàn bộ mã XeLaTeX tái lập chính xác cấu trúc 2 cột bất đối xứng, đồ thị Hình 8, bảng giá trị, ghi chú lề và biểu tượng cảnh báo.",
       "time": "2026-09-23 02:58:59"
+    },
+    {
+      "page_num": 124,
+      "score": 99,
+      "notes": "Bản dịch hiện tại gặp lỗi nghiêm trọng khi biên dịch: toàn bộ nội dung trang bị biến mất, mã nguồn preamble bị in thô lên đầu trang. Cần tái cấu trúc hoàn chỉnh mã XeLaTeX với bố cục 2 cột bất đối xứng, dóng hàng chuẩn Hình 10 ở lề trái, bảng giá trị và Hình 9 ở cột chính, cùng hộp Định nghĩa 4 theo chuẩn nhận diện sách Calculus Stewart.",
+      "time": "2026-09-23 03:00:32"
     }
   ]
 }

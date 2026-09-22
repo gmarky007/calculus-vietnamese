@@ -1,0 +1,142 @@
+\documentclass[10pt]{article}
+\usepackage[paperwidth=210mm, paperheight=297mm, left=18mm, right=18mm, top=20mm, bottom=20mm]{geometry}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{array}
+\usepackage{tikz}
+\usepackage{fancyhdr}
+\usepackage[most]{tcolorbox}
+
+% Bảng màu nhận diện giáo trình Stewart Calculus
+\definecolor{stewartcyan}{RGB}{0, 130, 195}
+\definecolor{stewartred}{RGB}{205, 32, 38}
+\definecolor{tableheader}{RGB}{225, 238, 248}
+\definecolor{stewartgray}{RGB}{100, 100, 100}
+
+% Thiết lập Header
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\textsf{\textbf{MỤC 2.2}}\hspace{1.5em}\textsf{Giới hạn của hàm số}\hspace{3em}\textbf{\textsf{89}}}
+\renewcommand{\headrulewidth}{0pt}
+
+% Biểu tượng cảnh báo ở lề (dấu gạch chéo đỏ)
+\newcommand{\cautionicon}{%
+  \begin{tikzpicture}[baseline=-0.5ex, scale=0.75]
+    \draw[stewartred, line width=1.3pt, fill=stewartred!10] (0,0) circle (6.2pt);
+    \draw[stewartred, line width=1.3pt] (-4.4pt,-4.4pt) -- (4.4pt,4.4pt);
+  \end{tikzpicture}%
+}
+
+% Hộp định nghĩa Stewart
+\newtcolorbox{definitionbox}[1][]{
+    enhanced,
+    colback=white,
+    colframe=stewartred,
+    arc=0mm,
+    boxrule=1.2pt,
+    left=9pt,
+    right=9pt,
+    top=8pt,
+    bottom=8pt,
+    #1
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.26\textwidth}
+    % Cột lề trái: chứa Hình 10 dóng ngang hàng với Định nghĩa 4 và phần diễn giải
+    \vspace*{16.2cm}
+    \raggedright
+    \includegraphics[width=\linewidth]{images/p0124_fig2.png}\\[4pt]
+    \textbf{\textsf{HÌNH 10}}\\[2pt]
+    $\displaystyle\lim_{x \to a} f(x) = \infty$
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.71\textwidth}
+    % Cột chính: Nội dung bài giảng, ví dụ, bảng số liệu và định nghĩa
+    \textbf{\textsf{\color{stewartcyan}VÍ DỤ 6}}\hspace{0.8em}Tìm $\displaystyle\lim_{x \to 0} \frac{1}{x^2}$ nếu giới hạn này tồn tại.
+
+    \vspace{0.3em}
+    \textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\hspace{0.8em}Khi $x$ tiến dần về $0$, $x^2$ cũng tiến dần về $0$, và $1/x^2$ trở nên rất lớn. (Xem bảng bên dưới.) Trên thực tế, từ đồ thị của hàm số $f(x) = 1/x^2$ được biểu diễn trong Hình 9, ta thấy rằng các giá trị của $f(x)$ có thể lớn tùy ý bằng cách chọn $x$ đủ gần $0$. Vì vậy, các giá trị của $f(x)$ không tiến đến một số hữu hạn nào cả, do đó $\lim_{x \to 0} (1/x^2)$ không tồn tại.
+
+    \vspace{0.4em}
+    \begin{center}
+    \begin{minipage}[b]{0.43\linewidth}
+        \centering
+        \renewcommand{\arraystretch}{1.18}
+        \begin{tabular}{|>{\centering\arraybackslash}p{1.3cm}|>{\raggedleft\arraybackslash}p{2.2cm}|}
+        \hline
+        \rowcolor{tableheader}
+        $x$ & \centering\arraybackslash $\dfrac{1}{x^2}$ \tabularnewline
+        \hline
+        $\pm 1$ & $1$ \hspace*{0.45cm} \tabularnewline
+        $\pm 0.5$ & $4$ \hspace*{0.45cm} \tabularnewline
+        $\pm 0.2$ & $25$ \hspace*{0.45cm} \tabularnewline
+        $\pm 0.1$ & $100$ \hspace*{0.45cm} \tabularnewline
+        $\pm 0.05$ & $400$ \hspace*{0.45cm} \tabularnewline
+        $\pm 0.01$ & $10{,}000$ \hspace*{0.45cm} \tabularnewline
+        $\pm 0.001$ & $1{,}000{,}000$ \hspace*{0.45cm} \tabularnewline
+        \hline
+        \end{tabular}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[b]{0.54\linewidth}
+        \centering
+        \includegraphics[width=0.96\linewidth]{images/p0124_fig1.png}\\[4pt]
+        \makebox[\linewidth]{\hfill\textbf{\textsf{HÌNH 9}}\hfill{\color{stewartcyan}\rule{1.1ex}{1.1ex}}}
+    \end{minipage}
+    \end{center}
+
+    \vspace{0.6em}
+    {\color{stewartcyan}\rule{1.1ex}{1.1ex}}\hspace{0.5em}\textbf{\textsf{\large Giới hạn vô cực; Tiệm cận đứng}}
+
+    \vspace{0.2em}
+    Để chỉ ra kiểu hành vi được thể hiện trong Ví dụ 6, chúng ta sử dụng ký hiệu
+    \[
+    \lim_{x \to 0} \frac{1}{x^2} = \infty
+    \]
+
+    \noindent\llap{\cautionicon\hspace{0.8em}}Điều này không có nghĩa là chúng ta coi $\infty$ như một con số. Nó cũng không mang nghĩa là giới hạn tồn tại. Ký hiệu này chỉ đơn giản diễn đạt cách thức đặc biệt mà giới hạn không tồn tại: $1/x^2$ có thể lớn bao nhiêu tùy ý muốn bằng cách lấy $x$ đủ gần $0$.
+
+    \vspace{0.2em}
+    Nói chung, chúng ta viết dưới dạng ký hiệu
+    \[
+    \lim_{x \to a} f(x) = \infty
+    \]
+    để chỉ ra rằng các giá trị của $f(x)$ có xu hướng ngày càng lớn hơn (hoặc ``tăng không bị chặn'') khi $x$ ngày càng tiến gần đến $a$.
+
+    \vspace{0.4em}
+    \begin{definitionbox}
+    \tikz[baseline=-0.6ex]{\node[fill=stewartred, text=white, inner sep=2.5pt, font=\small\bfseries\sffamily] {4};}\hspace{0.5em}\textbf{\textsf{\color{stewartred}Định nghĩa trực quan về giới hạn vô cực}}\hspace{0.8em}Giả sử $f$ là một hàm số xác định ở cả hai phía của $a$, có thể ngoại trừ tại chính điểm $a$. Khi đó
+    \[
+    \lim_{x \to a} f(x) = \infty
+    \]
+    có nghĩa là các giá trị của $f(x)$ có thể trở nên lớn tùy ý (lớn bao nhiêu tùy ý ta muốn) bằng cách chọn $x$ đủ gần $a$, nhưng không bằng $a$.
+    \end{definitionbox}
+
+    \vspace{0.4em}
+    Một ký hiệu khác cho $\displaystyle\lim_{x \to a} f(x) = \infty$ là
+    \[
+    f(x) \to \infty \quad \text{khi} \quad x \to a
+    \]
+    Một lần nữa, ký hiệu $\infty$ không phải là một con số, nhưng biểu thức $\displaystyle\lim_{x \to a} f(x) = \infty$ thường được đọc là
+    \begin{center}
+    \renewcommand{\arraystretch}{1.25}
+    \begin{tabular}{ll}
+     & ``giới hạn của $f(x)$, khi $x$ dần tiến đến $a$, là vô cực'' \\
+    hoặc & ``$f(x)$ trở nên vô hạn khi $x$ dần tiến đến $a$'' \\
+    hoặc & ``$f(x)$ tăng không bị chặn khi $x$ dần tiến đến $a$''
+    \end{tabular}
+    \end{center}
+
+    \vspace{0.2em}
+    Định nghĩa này được minh họa trực quan bằng đồ thị trong Hình 10.
+\end{minipage}
+
+\end{document}
