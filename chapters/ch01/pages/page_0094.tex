@@ -4,80 +4,91 @@
 \noindent
 \begin{minipage}[t]{0.26\textwidth}
     \vspace{0pt}
-    \small
-    \textbf{\textsf{Ký hiệu của Logarit}}\\
-    \textsf{Hầu hết các sách giáo trình giải tích và các ngành khoa học, cũng như trên máy tính cầm tay, đều sử dụng ký hiệu $\ln x$ cho logarit tự nhiên và $\log x$ cho ``logarit thập phân'' (common logarithm), $\log_{10} x$. Tuy nhiên, trong các tài liệu toán học và khoa học nâng cao hơn cũng như trong các ngôn ngữ lập trình máy tính, ký hiệu $\log x$ thường được dùng để chỉ logarit tự nhiên.}
+    \vspace*{16pt}
+    \footnotesize
+    \noindent\textbf{\textsf{Ký hiệu của logarit}}\\[4pt]
+    Hầu hết các sách giáo trình giải tích và các ngành khoa học, cũng như trên máy tính cầm tay, đều sử dụng ký hiệu $\ln x$ cho logarit tự nhiên và $\log x$ cho ``logarit thập phân'', $\log_{10} x$. Tuy nhiên, trong các tài liệu toán học và khoa học nâng cao hơn cũng như trong các ngôn ngữ lập trình máy tính, ký hiệu $\log x$ thường được dùng để chỉ logarit tự nhiên.
 \end{minipage}%
 \hfill
 \begin{minipage}[t]{0.71\textwidth}
     \vspace{0pt}
-    \noindent{\color{stewartcyan}\rule{2.5mm}{2.5mm}}\hspace{6pt}{\large\textbf{\textsf{Logarit tự nhiên}}}
+    \setlength{\abovedisplayskip}{5pt}
+    \setlength{\belowdisplayskip}{5pt}
+    \noindent{\raisebox{1pt}{\color{stewartcyan}\rule{2.3mm}{2.3mm}}}\hspace{6pt}{\large\textbf{\textsf{Logarit tự nhiên}}}
+    \vspace{8pt}
+
+    Trong tất cả các cơ số $b$ khả dĩ cho logarit, chúng ta sẽ thấy trong Chương~3 rằng sự lựa chọn cơ số thuận tiện nhất chính là số $e$, đã được định nghĩa trong Mục~1.4. Logarit với cơ số $e$ được gọi là \textbf{logarit tự nhiên} và có một ký hiệu đặc biệt:
+
     \vspace{6pt}
-
-    Trong tất cả các cơ số $b$ khả dĩ cho logarit, chúng ta sẽ thấy trong Chương~3 rằng sự lựa chọn cơ số thuận tiện nhất chính là số $e$, đã được định nghĩa trong Mục~1.4. Logarit với cơ số $e$ được gọi là \textbf{logarit tự nhiên} (\textit{natural logarithm}) và có một ký hiệu đặc biệt:
+    \noindent
+    \begin{tabular}{@{}m{0.21\linewidth}@{}m{0.58\linewidth}@{}m{0.21\linewidth}@{}}
+        ~ &
+        \fcolorbox{stewartred}{white}{%
+            \parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
+                \vspace{4pt}
+                \centering
+                $\log_e x = \ln x$
+                \vspace{4pt}
+            }%
+        } &
+        ~
+    \end{tabular}
 
     \vspace{6pt}
-    \begin{center}
-        \fcolorbox{stewartred}{white}{
-            \parbox{0.5\textwidth}{
-                \[
-                    \log_e x = \ln x
-                \]
-            }
-        }
-    \end{center}
-    \vspace{4pt}
-
     Nếu đặt $b = e$ và thay thế $\log_e$ bằng ``$\ln$'' trong (6) và (7), các tính chất định nghĩa hàm logarit tự nhiên trở thành
 
     \vspace{6pt}
     \noindent
-    \begin{minipage}[c]{0.12\textwidth}
-        \centering
-        \fcolorbox{stewartred}{white}{\color{stewartred}\bfseries\small 8}
-    \end{minipage}%
-    \begin{minipage}[c]{0.88\textwidth}
-        \fcolorbox{stewartred}{white}{
-            \parbox{\dimexpr\textwidth-2\fboxsep-2\fboxrule}{
-                \[
-                    \ln x = y \iff e^y = x
-                \]
-            }
-        }
-    \end{minipage}
+    \begin{tabular}{@{}m{0.21\linewidth}@{}m{0.58\linewidth}@{}m{0.21\linewidth}@{}}
+        \hspace*{4pt}\fcolorbox{stewartred}{white}{\makebox[12pt]{\color{stewartred}\bfseries\small 8}} &
+        \fcolorbox{stewartred}{white}{%
+            \parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
+                \vspace{4pt}
+                \centering
+                $\ln x = y \iff e^y = x$
+                \vspace{4pt}
+            }%
+        } &
+        ~
+    \end{tabular}
 
-    \vspace{10pt}
+    \vspace{8pt}
     \noindent
-    \begin{minipage}[c]{0.12\textwidth}
-        \centering
-        \fcolorbox{stewartred}{white}{\color{stewartred}\bfseries\small 9}
-    \end{minipage}%
-    \begin{minipage}[c]{0.88\textwidth}
-        \fcolorbox{stewartred}{white}{
-            \parbox{\dimexpr\textwidth-2\fboxsep-2\fboxrule}{
-                \[\begin{aligned}
-                    \ln(e^x) &= x \quad x \in \mathbb{R} \\[2pt]
-                    e^{\ln x} &= x \quad x > 0
-                \end{aligned}\]
-            }
-        }
-    \end{minipage}
+    \begin{tabular}{@{}m{0.21\linewidth}@{}m{0.58\linewidth}@{}m{0.21\linewidth}@{}}
+        \hspace*{4pt}\fcolorbox{stewartred}{white}{\makebox[12pt]{\color{stewartred}\bfseries\small 9}} &
+        \fcolorbox{stewartred}{white}{%
+            \parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
+                \vspace{4pt}
+                \centering
+                $\begin{aligned}
+                    \ln(e^x) &= x & \quad x \in \mathbb{R} \\[3pt]
+                    e^{\ln x} &= x & \quad x > 0
+                \end{aligned}$
+                \vspace{4pt}
+            }%
+        } &
+        ~
+    \end{tabular}
 
-    \vspace{10pt}
+    \vspace{8pt}
     Đặc biệt, nếu chúng ta lấy $x = 1$, ta thu được
 
-    \vspace{4pt}
-    \begin{center}
-        \fcolorbox{stewartred}{white}{
-            \parbox{0.5\textwidth}{
-                \[
-                    \ln e = 1
-                \]
-            }
-        }
-    \end{center}
-    \vspace{4pt}
+    \vspace{6pt}
+    \noindent
+    \begin{tabular}{@{}m{0.21\linewidth}@{}m{0.58\linewidth}@{}m{0.21\linewidth}@{}}
+        ~ &
+        \fcolorbox{stewartred}{white}{%
+            \parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
+                \vspace{4pt}
+                \centering
+                $\ln e = 1$
+                \vspace{4pt}
+            }%
+        } &
+        ~
+    \end{tabular}
 
+    \vspace{6pt}
     Kết hợp Tính chất~9 với Quy tắc~3 cho phép ta viết
     \[
         x^r = e^{\ln(x^r)} = e^{r \ln x} \qquad x > 0
@@ -86,31 +97,30 @@
 
     \vspace{6pt}
     \noindent
-    \begin{minipage}[c]{0.12\textwidth}
-        \centering
-        \fcolorbox{stewartred}{white}{\color{stewartred}\bfseries\small 10}
-    \end{minipage}%
-    \begin{minipage}[c]{0.88\textwidth}
-        \fcolorbox{stewartred}{white}{
-            \parbox{\dimexpr\textwidth-2\fboxsep-2\fboxrule}{
-                \[
-                    x^r = e^{r \ln x}
-                \]
-            }
-        }
-    \end{minipage}
+    \begin{tabular}{@{}m{0.21\linewidth}@{}m{0.58\linewidth}@{}m{0.21\linewidth}@{}}
+        \hspace*{4pt}\fcolorbox{stewartred}{white}{\makebox[12pt]{\color{stewartred}\bfseries\small 10}} &
+        \fcolorbox{stewartred}{white}{%
+            \parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
+                \vspace{4pt}
+                \centering
+                $x^r = e^{r \ln x}$
+                \vspace{4pt}
+            }%
+        } &
+        ~
+    \end{tabular}
 
-    \vspace{14pt}
+    \vspace{12pt}
     \noindent\textbf{\textsf{\color{stewartcyan}VÍ DỤ 7}}\quad Tìm $x$ nếu $\ln x = 5$.
 
     \vspace{4pt}
     \noindent\textbf{\textsf{\color{stewartcyan}LỜI GIẢI 1}}\quad Từ (8), ta thấy rằng
     \[
-        \ln x = 5 \quad \text{có nghĩa là} \quad e^5 = x
+        \ln x = 5 \qquad \text{nghĩa là} \qquad e^5 = x
     \]
     Do đó $x = e^5$.
 
-    (Nếu bạn gặp khó khăn khi làm quen với ký hiệu ``$\ln$'', hãy thay thế nó bằng $\log_e$. Khi đó phương trình trở thành $\log_e x = 5$; do đó, theo định nghĩa của logarit, $e^5 = x$.)
+    (Nếu bạn gặp khó khăn khi làm việc với ký hiệu ``$\ln$'', chỉ cần thay thế nó bằng $\log_e$. Khi đó phương trình trở thành $\log_e x = 5$; do đó, theo định nghĩa của logarit, $e^5 = x$.)
 
     \vspace{6pt}
     \noindent\textbf{\textsf{\color{stewartcyan}LỜI GIẢI 2}}\quad Bắt đầu với phương trình
@@ -121,5 +131,5 @@
     \[
         e^{\ln x} = e^5
     \]
-    Mặt khác, công thức triệt tiêu thứ hai trong (9) chỉ ra rằng $e^{\ln x} = x$. Do đó $x = e^5$.\hfill{\color{stewartcyan}$\blacksquare$}
+    Nhưng phương trình triệt tiêu thứ hai trong (9) cho biết rằng $e^{\ln x} = x$. Do đó $x = e^5$.\hfill{\color{stewartcyan}$\blacksquare$}
 \end{minipage}
