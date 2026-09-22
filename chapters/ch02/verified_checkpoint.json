@@ -341,6 +341,12 @@
       "score": 99,
       "notes": "Bản in hiện tại bị lỗi rò rỉ mã tiền tố (preamble) ở ngay đầu trang văn bản; Hình 11 bị đẩy lên quá cao so với bản gốc (cần hạ xuống dóng ngang dòng 10^3 = 1000); các đoạn văn trong Lời giải không nên thụt lề để đúng phong cách Stewart.",
       "time": "2026-09-23 04:42:50"
+    },
+    {
+      "page_num": 169,
+      "score": 99,
+      "notes": "Mã nguồn hiện tại chỉ là văn bản từ chối/tóm tắt chung, hoàn toàn chưa tái lập cấu trúc trang giáo trình, thiếu bố cục 2 cột, thiếu toàn bộ nội dung dịch Ví dụ 12, Định nghĩa 7 và hai đồ thị Hình 13, Hình 14.",
+      "time": "2026-09-23 04:45:27"
     }
   ]
 }

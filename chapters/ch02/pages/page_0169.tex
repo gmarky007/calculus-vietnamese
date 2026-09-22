@@ -1,0 +1,131 @@
+\documentclass[10pt]{article}
+\usepackage[paperwidth=612pt,paperheight=792pt,top=34pt,bottom=28pt,left=38pt,right=38pt]{geometry}
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX}
+\IfFontExistsTF{Times New Roman}{
+  \setmainfont{Times New Roman}
+}{
+  \setmainfont{TeX Gyre Termes}
+}
+\IfFontExistsTF{Arial}{
+  \setsansfont{Arial}
+}{
+  \setsansfont{TeX Gyre Heros}
+}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+
+\definecolor{stewartblue}{RGB}{0, 130, 155}
+\definecolor{stewartred}{RGB}{204, 34, 41}
+\definecolor{darkgray}{RGB}{80, 80, 80}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\begin{document}
+\pagestyle{empty}
+
+% Tiêu đề đầu trang
+\noindent
+{\small\sffamily\textbf{134}\qquad \textbf{CHƯƠNG 2}\quad Giới hạn và Đạo hàm}
+\vspace{1.6em}\par
+
+\noindent
+% Cột lề trái (x < 180pt)
+\begin{minipage}[t][585pt][t]{135pt}
+  \vspace*{95pt}
+  \centering
+  \includegraphics[width=\linewidth]{images/p0169_fig1.png}
+  
+  \vspace{4pt}
+  \raggedright
+  {\small\textbf{\textsf{HÌNH 13}}\\[2pt]
+  $y = (x - 2)^4(x + 1)^3(x - 1)$}\par
+  
+  \vfill
+  
+  \noindent{\small\textbf{\textsf{HÌNH 14}}\\[2pt]
+  $\lim_{x\to\infty} f(x) = L$}\par
+  \vspace*{16pt}
+\end{minipage}%
+\hspace{22pt}%
+% Cột nội dung chính (x >= 180pt)
+\begin{minipage}[t]{375pt}
+  \setlength{\abovedisplayskip}{5pt}
+  \setlength{\belowdisplayskip}{5pt}
+  Ví dụ tiếp theo cho thấy bằng cách sử dụng các giới hạn vô cực ở vô cực, cùng với các giao điểm với các trục tọa độ, chúng ta có thể phác thảo hình dáng sơ bộ của đồ thị một hàm đa thức mà không cần phải vẽ quá nhiều điểm.
+
+  \vspace{0.8em}
+  \noindent{\color{stewartblue}\bfseries\sffamily VÍ DỤ 12}\hspace{0.8em}Phác họa đồ thị của $y = (x - 2)^4(x + 1)^3(x - 1)$ bằng cách tìm các giao điểm của nó với các trục tọa độ và các giới hạn khi $x \to \infty$ và khi $x \to -\infty$.
+
+  \vspace{0.6em}
+  \noindent{\color{stewartblue}\bfseries\sffamily LỜI GIẢI}\hspace{0.8em}Giao điểm với trục $y$ là $f(0) = (-2)^4(1)^3(-1) = -16$ và các giao điểm với trục $x$ được tìm bằng cách cho $y = 0$: $x = 2, -1, 1$. Chú ý rằng vì $(x - 2)^4$ không bao giờ âm, hàm số không đổi dấu tại $2$; do đó đồ thị không cắt qua trục $x$ tại $2$. Đồ thị cắt qua trục $x$ tại $-1$ và $1$.
+
+  \vspace{0.5em}
+  Khi $x$ là số dương rất lớn, cả ba nhân tử đều lớn, vì vậy
+  \[
+  \lim_{x \to \infty} (x - 2)^4(x + 1)^3(x - 1) = \infty
+  \]
+  Khi $x$ là số âm có độ lớn rất lớn, nhân tử thứ nhất là số dương lớn, còn nhân tử thứ hai và thứ ba đều là các số âm có độ lớn rất lớn, do đó
+  \[
+  \lim_{x \to -\infty} (x - 2)^4(x + 1)^3(x - 1) = \infty
+  \]
+  Kết hợp các thông tin này, chúng ta có một phác thảo sơ bộ về đồ thị trong Hình 13.\hfill{\color{stewartblue}\rule{1.1ex}{1.1ex}}
+
+  \vspace{1.1em}
+  \noindent{\color{stewartblue}\rule[0pt]{1.1ex}{1.1ex}}\hspace{0.5em}{\large\textbf{\textsf{Định nghĩa chính xác}}}\par
+  \vspace{0.4em}
+  Định nghĩa 1 có thể được phát biểu một cách chính xác như sau.
+
+  \vspace{0.6em}
+  \begin{tcolorbox}[
+      colback=white,
+      colframe=stewartred,
+      boxrule=0.8pt,
+      sharp corners,
+      left=7pt,
+      right=7pt,
+      top=6pt,
+      bottom=6pt
+  ]
+  \setlength{\abovedisplayskip}{4pt}
+  \setlength{\belowdisplayskip}{4pt}
+  \noindent
+  \tcbox[
+      colback=stewartred,
+      colframe=stewartred,
+      coltext=white,
+      boxsep=1pt,
+      arc=1pt,
+      top=1.5pt,
+      bottom=1.5pt,
+      left=3.5pt,
+      right=3.5pt
+  ]{\small\bfseries\sffamily 7}\hspace{0.5em}{\bfseries\color{stewartred}Định nghĩa chính xác của Giới hạn tại Vô cực}\hspace{0.8em}Giả sử $f$ là hàm số xác định trên một khoảng $(a, \infty)$ nào đó. Khi đó
+  \[
+  \lim_{x \to \infty} f(x) = L
+  \]
+  có nghĩa là với mọi $\varepsilon > 0$ đều tồn tại một số $N$ tương ứng sao cho
+  \[
+  \text{nếu} \qquad x > N \qquad \text{thì} \qquad |f(x) - L| < \varepsilon
+  \]
+  \end{tcolorbox}
+
+  \vspace{0.6em}
+  Nói một cách khác, điều này khẳng định rằng các giá trị của $f(x)$ có thể được làm gần $L$ tùy ý (trong khoảng cách $\varepsilon$, với $\varepsilon$ là một số dương bất kỳ) bằng cách đòi hỏi $x$ phải đủ lớn (lớn hơn $N$, trong đó $N$ phụ thuộc vào $\varepsilon$). Về mặt hình học, điều đó có nghĩa là bằng cách giữ cho $x$ đủ lớn (lớn hơn một số $N$ nào đó), chúng ta có thể làm cho đồ thị của $f$ nằm giữa các đường nằm ngang đã cho $y = L - \varepsilon$ và $y = L + \varepsilon$ như trong Hình 14. Điều này phải luôn đúng bất kể ta chọn $\varepsilon$ nhỏ đến mức nào.
+
+  \vspace{0.5em}
+  \begin{center}
+    \includegraphics[width=0.96\linewidth]{images/p0169_fig2.png}
+  \end{center}
+\end{minipage}
+
+\vfill
+\noindent{\tiny\color{darkgray}Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\par
+\vspace{1pt}
+\noindent Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.}
+
+\end{document}
