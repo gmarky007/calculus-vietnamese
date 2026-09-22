@@ -1,0 +1,82 @@
+\fancyhead[L]{}
+\fancyhead[R]{}
+
+\vspace*{-1.5cm}
+{\fontsize{24}{28}\selectfont\textbf{\textsf{\textcolor{stewartpurple}{Các nguyên lý giải toán}}}}
+\vspace{0.66cm}
+
+\noindent
+\begin{minipage}[t]{0.26\textwidth}
+    \vspace{1.97cm}
+    \begin{tcolorbox}[
+        enhanced,
+        colback=stewartlightgray!30,
+        colframe=white,
+        arc=0mm,
+        left=2mm, right=2mm, top=1.5mm, bottom=1.5mm,
+        boxrule=0pt,
+        interior style={left color=stewartlightgray!60, right color=white}
+    ]
+        \textbf{\textsf{\textcolor{stewartpurple}{1\hspace{0.5em}HIỂU RÕ BÀI TOÁN}}}
+    \end{tcolorbox}
+
+    \vspace{5.99cm}
+    \begin{tcolorbox}[
+        enhanced,
+        colback=stewartlightgray!30,
+        colframe=white,
+        arc=0mm,
+        left=2mm, right=2mm, top=1.5mm, bottom=1.5mm,
+        boxrule=0pt,
+        interior style={left color=stewartlightgray!60, right color=white}
+    ]
+        \textbf{\textsf{\textcolor{stewartpurple}{2\hspace{0.5em}TÌM MỘT CHIẾN LƯỢC}}}
+    \end{tcolorbox}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.71\textwidth}
+    Không có quy tắc cứng nhắc và nhanh chóng nào có thể đảm bảo thành công trong việc giải các bài toán. Tuy nhiên, chúng ta hoàn toàn có thể vạch ra một số bước tổng quát trong tiến trình giải quyết vấn đề và đưa ra một số nguyên lý hữu ích cho lời giải của những dạng bài toán nhất định. Những bước và nguyên lý này chỉ là sự cụ thể hóa các suy luận thông thường. Chúng được phỏng theo cuốn sách nổi tiếng \emph{How To Solve It} (Giải một bài toán như thế nào) của George Polya.
+
+    \vspace{0.16cm}
+    Bước đầu tiên là đọc kỹ bài toán và đảm bảo rằng bạn đã hiểu rõ ràng. Hãy tự đặt cho mình những câu hỏi sau:
+    \begin{center}
+        \emph{Ẩn số là gì?}\\[0.15cm]
+        \emph{Các đại lượng đã cho là gì?}\\[0.15cm]
+        \emph{Các điều kiện đã cho là gì?}
+    \end{center}
+
+    Đối với nhiều bài toán, việc
+    \begin{center}
+        \emph{vẽ một hình minh họa}
+    \end{center}
+    và xác định các đại lượng đã cho cùng các đại lượng cần tìm trên hình vẽ là rất hữu ích.
+
+    Thông thường, ta cũng cần phải
+    \begin{center}
+        \emph{đưa vào các ký hiệu thích hợp}
+    \end{center}
+
+    Khi chọn ký hiệu cho các đại lượng chưa biết, chúng ta thường sử dụng các chữ cái như $a, b, c, m, n, x$ và $y$, nhưng trong một số trường hợp, việc dùng các chữ cái gợi nhớ lại có ích hơn; chẳng hạn như $V$ biểu thị cho thể tích (volume) hoặc $t$ biểu thị cho thời gian (time).
+
+    \vspace{0.25cm}
+    Hãy tìm mối liên hệ giữa các thông tin đã cho và ẩn số nhằm giúp bạn tính toán được ẩn số đó. Việc tự đặt câu hỏi một cách rõ ràng thường mang lại hiệu quả: ``Làm thế nào để liên hệ những điều đã cho với ẩn số?'' Nếu chưa thấy ngay mối liên hệ, những gợi ý dưới đây có thể giúp bạn xây dựng được một kế hoạch.
+
+    \vspace{0.2cm}
+    \textbf{\textsf{\textcolor{stewartblue}{Thử nhận biết điều quen thuộc}}}\hspace{0.5em} Liên hệ tình huống đã cho với những kiến thức đã biết trước đó. Hãy nhìn vào ẩn số và cố gắng nhớ lại một bài toán quen thuộc hơn có ẩn số tương tự.
+
+    \vspace{0.16cm}
+    \textbf{\textsf{\textcolor{stewartblue}{Tìm kiếm các quy luật}}}\hspace{0.5em} Một số bài toán được giải quyết bằng cách nhận ra sự xuất hiện của một quy luật nào đó. Quy luật này có thể mang tính hình học, bằng số hoặc bằng đại số. Nếu bạn nhận thấy tính quy củ hoặc sự lặp lại trong một bài toán, bạn có thể dự đoán quy luật tiếp theo là gì rồi sau đó chứng minh nó.
+
+    \vspace{0.16cm}
+    \textbf{\textsf{\textcolor{stewartblue}{Sử dụng phép tương tự}}}\hspace{0.5em} Hãy thử nghĩ về một bài toán tương tự—nghĩa là một bài toán giống như vậy, có liên quan—nhưng dễ hơn bài toán ban đầu. Nếu bạn có thể giải được bài toán tương tự, đơn giản hơn đó, nó có thể cung cấp những manh mối cần thiết để giải bài toán gốc khó hơn. Chẳng hạn, nếu một bài toán liên quan đến những con số rất lớn, trước tiên bạn có thể thử một bài toán tương tự với những con số nhỏ hơn. Hoặc nếu bài toán liên quan đến hình học không gian ba chiều, bạn có thể tìm một bài toán tương tự trong hình học phẳng hai chiều. Hoặc nếu bài toán bắt đầu từ một trường hợp tổng quát, trước hết bạn có thể thử với một trường hợp riêng biệt.
+
+    \vspace{0.16cm}
+    \textbf{\textsf{\textcolor{stewartblue}{Đưa vào yếu tố phụ}}}\hspace{0.5em} Đôi khi ta cần đưa vào một yếu tố mới—một phương tiện trợ giúp—để thiết lập mối liên hệ giữa cái đã cho và cái chưa biết. Ví dụ, trong bài toán mà hình vẽ có tác dụng trợ giúp, yếu tố phụ có thể là một đường kẻ mới được vẽ thêm vào hình. Trong một bài toán thuần túy đại số, nó có thể là một ẩn phụ mới có liên quan đến ẩn ban đầu.
+
+    \vspace{0.16cm}
+    \textbf{\textsf{\textcolor{stewartblue}{Chia trường hợp}}}\hspace{0.5em} Đôi khi chúng ta phải chia bài toán thành nhiều trường hợp và đưa ra lập luận riêng cho từng trường hợp đó. Chẳng hạn, ta thường xuyên phải sử dụng chiến lược này khi xử lý biểu thức chứa giá trị tuyệt đối.
+\end{minipage}
+
+\vfill
+\noindent
+\textbf{\textsf{70}}

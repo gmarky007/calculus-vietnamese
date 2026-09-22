@@ -1,0 +1,81 @@
+\fancyhead[L]{\textsf{\textbf{14}}\quad \textbf{\textsf{CHƯƠNG 1}}\quad \textsf{Hàm số và Mô hình}}
+\fancyhead[R]{}
+
+\noindent
+\begin{minipage}[t]{0.26\textwidth}
+    \vspace{1.97cm}
+    \raggedleft
+    \textbf{\textsf{HÌNH 14}}
+    
+    \vspace{5.58cm}
+    \centering
+    \includegraphics[width=\linewidth]{images/p0049_fig4.png}
+    
+    \vspace{1mm}
+    \raggedright
+    \textbf{\textsf{HÌNH 15}}
+    
+    \vspace{2.3cm}
+    \raggedright
+    \small
+    Để ôn tập kỹ hơn về giá trị tuyệt đối, hãy xem Phụ lục A.
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.71\textwidth}
+    Chẳng hạn, parabol $x = y^2 - 2$ trong Hình 14(a) không phải là đồ thị của một hàm số của $x$ vì như ta thấy, có những đường thẳng đứng cắt parabol tại hai điểm. Tuy nhiên, parabol này lại chứa đồ thị của \emph{hai} hàm số của $x$. Chú ý rằng phương trình $x = y^2 - 2$ dẫn đến $y^2 = x + 2$, do đó $y = \pm\sqrt{x + 2}$. Như vậy, nửa trên và nửa dưới của parabol lần lượt là đồ thị của các hàm số $f(x) = \sqrt{x + 2}$ [từ Ví dụ 6(a)] và $g(x) = -\sqrt{x + 2}$ [xem các Hình 14(b) và (c)].
+
+    \vspace{0.16cm}
+    \noindent
+    \begin{minipage}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/p0049_fig1.png}\\[3pt]
+        {\footnotesize (a) $x = y^2 - 2$}
+    \end{minipage}\hfill
+    \begin{minipage}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/p0049_fig2.png}\\[3pt]
+        {\footnotesize (b) $y = \sqrt{x+2}$}
+    \end{minipage}\hfill
+    \begin{minipage}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/p0049_fig3.png}\\[3pt]
+        {\footnotesize (c) $y = -\sqrt{x+2}$}
+    \end{minipage}
+
+    \vspace{0.25cm}
+    Ta nhận thấy rằng nếu hoán đổi vai trò của $x$ và $y$, thì phương trình $x = h(y) = y^2 - 2$ \emph{thực sự} xác định $x$ là một hàm số theo biến $y$ (với $y$ là biến độc lập và $x$ là biến phụ thuộc). Đồ thị của hàm số $h$ chính là parabol ở Hình 14(a).
+
+    \vspace{0.25cm}
+    \noindent
+    {\color{stewartcyan}\rule{1.2ex}{1.2ex}}\hspace{0.5em}\textbf{\textsf{\large Hàm số cho bởi nhiều công thức}}
+
+    \vspace{0.12cm}
+    Các hàm số trong bốn ví dụ sau đây được xác định bởi những công thức khác nhau trên các phần khác nhau của miền xác định. Những hàm số như vậy được gọi là \textbf{hàm số cho bởi nhiều công thức} (hay hàm từng khúc).
+
+    \vspace{0.2cm}
+    \noindent
+    \textbf{\textsf{\color{stewartcyan}VÍ DỤ 7}}\quad Cho hàm số $f$ xác định bởi
+    \[
+    f(x) = \begin{cases}
+    1 - x & \text{nếu } x \leqslant -1 \\
+    x^2 & \text{nếu } x > -1
+    \end{cases}
+    \]
+    Tính $f(-2)$, $f(-1)$, và $f(0)$, sau đó vẽ đồ thị hàm số.
+
+    \vspace{0.12cm}
+    \noindent
+    \textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\quad Hãy nhớ rằng một hàm số là một quy tắc. Đối với hàm số cụ thể này, quy tắc được áp dụng như sau: Trước hết, hãy quan sát giá trị của biến đầu vào $x$. Nếu $x \leqslant -1$, thì giá trị của $f(x)$ là $1 - x$. Mặt khác, nếu $x > -1$, thì giá trị của $f(x)$ là $x^2$. Cần lưu ý rằng mặc dù sử dụng hai công thức khác nhau, $f$ vẫn chỉ là \emph{một} hàm số duy nhất, chứ không phải hai.
+    \begin{align*}
+    \text{Vì } -2 \leqslant -1, &\text{ nên ta có } f(-2) = 1 - (-2) = 3.\\
+    \text{Vì } -1 \leqslant -1, &\text{ nên ta có } f(-1) = 1 - (-1) = 2.\\
+    \text{Vì } 0 > -1, &\text{ nên ta có } f(0) = 0^2 = 0.
+    \end{align*}
+    Làm thế nào để ta vẽ đồ thị của $f$? Ta nhận thấy rằng nếu $x \leqslant -1$, thì $f(x) = 1 - x$, do đó phần đồ thị của $f$ nằm bên trái đường thẳng đứng $x = -1$ phải trùng với đường thẳng $y = 1 - x$, đường này có hệ số góc bằng $-1$ và tung độ gốc bằng $1$. Nếu $x > -1$, thì $f(x) = x^2$, do đó phần đồ thị của $f$ nằm bên phải đường thẳng $x = -1$ phải trùng với đồ thị của $y = x^2$, vốn là một parabol. Điều này cho phép ta phác thảo đồ thị như trong Hình 15. Điểm chấm đặc biểu thị điểm $(-1, 2)$ thuộc đồ thị; điểm chấm tròn rỗng biểu thị điểm $(-1, 1)$ bị loại trừ khỏi đồ thị. \hfill{\color{stewartcyan}$\blacksquare$}
+
+    \vspace{0.25cm}
+    Ví dụ tiếp theo về hàm số cho bởi nhiều công thức là hàm giá trị tuyệt đối. Nhắc lại rằng \textbf{giá trị tuyệt đối} của một số $a$, ký hiệu là $|a|$, là khoảng cách từ điểm $a$ đến $0$ trên trục số thực. Khoảng cách luôn mang giá trị không âm, vì vậy ta có
+    \[
+    |a| \geqslant 0 \qquad \text{với mọi số } a
+    \]
+\end{minipage}

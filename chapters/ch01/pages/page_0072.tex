@@ -1,0 +1,69 @@
+\fancyhead[L]{\textbf{\textsf{MỤC 1.3}}\quad \textsf{Các hàm số mới từ các hàm số cũ}}
+\fancyhead[R]{\textbf{\textsf{37}}}
+
+\noindent
+\begin{minipage}[t]{0.26\textwidth}
+    % Cột lề: để trống trên trang này theo bố cục gốc
+    ~
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.71\textwidth}
+    Trước hết, chúng ta hãy xem xét \textbf{phép tịnh tiến} của đồ thị. Nếu $c$ là một số dương, thì đồ thị của $y = f(x) + c$ chính là đồ thị của $y = f(x)$ được dịch chuyển lên trên một khoảng bằng $c$ đơn vị (bởi vì mỗi tung độ $y$ đều tăng thêm cùng một lượng $c$). Tương tự, nếu $g(x) = f(x - c)$, trong đó $c > 0$, thì giá trị của $g$ tại $x$ bằng giá trị của $f$ tại $x - c$ ($c$ đơn vị về phía bên trái của $x$). Do đó, đồ thị của $y = f(x - c)$ chính là đồ thị của $y = f(x)$ được tịnh tiến sang phải $c$ đơn vị (xem Hình~1).
+
+    \vspace{0.25cm}
+
+    \begin{definitionbox}
+    \textbf{\textsf{\color{stewartred}Phép tịnh tiến theo phương đứng và phương ngang}}\quad Giả sử $c > 0$. Để nhận được đồ thị của
+    \vspace{0.12cm}
+    \begin{center}
+    \small
+    \begin{tabular}{@{}l@{\quad}l@{}}
+    $y = f(x) + c$, & tịnh tiến đồ thị của $y = f(x)$ lên trên một khoảng $c$ đơn vị \\
+    $y = f(x) - c$, & tịnh tiến đồ thị của $y = f(x)$ xuống dưới một khoảng $c$ đơn vị \\
+    $y = f(x - c)$, & tịnh tiến đồ thị của $y = f(x)$ sang phải một khoảng $c$ đơn vị \\
+    $y = f(x + c)$, & tịnh tiến đồ thị của $y = f(x)$ sang trái một khoảng $c$ đơn vị
+    \end{tabular}
+    \end{center}
+    \end{definitionbox}
+
+    \vspace{0.33cm}
+
+    \begin{center}
+    \begin{minipage}[t]{0.48\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/p0072_fig1.png}
+        \vspace{4pt}
+
+        {\small\textbf{\textsf{HÌNH 1}}\quad Phép tịnh tiến đồ thị của $f$}
+    \end{minipage}\hfill
+    \begin{minipage}[t]{0.48\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/p0072_fig2.png}
+        \vspace{4pt}
+
+        {\small\textbf{\textsf{HÌNH 2}}\quad Co giãn và đối xứng đồ thị của $f$}
+    \end{minipage}
+    \end{center}
+
+    \vspace{0.33cm}
+
+    Bây giờ chúng ta hãy xem xét các phép biến đổi \textbf{co giãn} và \textbf{đối xứng}. Nếu $c > 1$, thì đồ thị của $y = cf(x)$ là đồ thị của $y = f(x)$ được dãn theo phương đứng với hệ số $c$ (bởi vì mỗi tung độ $y$ đều được nhân với cùng số $c$). Đồ thị của $y = -f(x)$ là đồ thị của $y = f(x)$ lấy đối xứng qua trục $x$ vì điểm $(x, y)$ được thay bằng điểm $(x, -y)$. (Xem Hình~2 và bảng tóm tắt sau đây, trong đó cũng đưa ra kết quả của các phép biến đổi co, dãn và đối xứng khác.)
+
+    \vspace{0.25cm}
+
+    \begin{definitionbox}
+    \textbf{\textsf{\color{stewartred}Co giãn và đối xứng theo phương đứng và phương ngang}}\quad Giả sử $c > 1$. Để nhận được đồ thị của
+    \vspace{0.12cm}
+    \begin{center}
+    \small
+    \begin{tabular}{@{}l@{\quad}l@{}}
+    $y = cf(x)$, & dãn đồ thị của $y = f(x)$ theo phương đứng với hệ số $c$ \\
+    $y = (1/c)f(x)$, & co đồ thị của $y = f(x)$ theo phương đứng với hệ số $c$ \\
+    $y = f(cx)$, & co đồ thị của $y = f(x)$ theo phương ngang với hệ số $c$ \\
+    $y = f(x/c)$, & dãn đồ thị của $y = f(x)$ theo phương ngang với hệ số $c$ \\
+    $y = -f(x)$, & lấy đối xứng đồ thị của $y = f(x)$ qua trục $x$ \\
+    $y = f(-x)$, & lấy đối xứng đồ thị của $y = f(x)$ qua trục $y$
+    \end{tabular}
+    \end{center}
+    \end{definitionbox}
+\end{minipage}

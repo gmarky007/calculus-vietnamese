@@ -1,0 +1,441 @@
+import os
+import sys
+import subprocess
+
+if sys.platform == "win32":
+    sys.stdout.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8")
+
+BASE_DIR = r"C:\Users\TONY\.gemini\antigravity\scratch\calculus_vietnamese"
+IMAGES_DIR = os.path.join(BASE_DIR, "images").replace("\\", "/")
+TEX_FILE = os.path.join(BASE_DIR, "calculus_section_1.1.tex")
+PDF_FILE = os.path.join(BASE_DIR, "calculus_section_1.1.pdf")
+XELATEX_EXE = r"C:\Program Files\MiKTeX\miktex\bin\x64\xelatex.exe"
+
+tex_source = r"""\documentclass[10pt,a4paper]{article}
+\usepackage{fontspec}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{enumitem}
+
+% Fonts
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+
+% Page Geometry - Tỷ lệ lề và bố cục chuẩn giáo trình quốc tế
+\geometry{
+    a4paper,
+    top=2.2cm,
+    bottom=2.2cm,
+    left=2.5cm,
+    right=2.5cm,
+    headheight=14pt
+}
+
+% Colors
+\definecolor{stewartblue}{RGB}{0, 75, 140}
+\definecolor{stewartteal}{RGB}{0, 120, 130}
+\definecolor{boxbg}{RGB}{242, 248, 252}
+\definecolor{boxborder}{RGB}{70, 130, 180}
+\definecolor{notebg}{RGB}{255, 250, 235}
+\definecolor{noteborder}{RGB}{220, 150, 30}
+\definecolor{darkgray}{RGB}{60, 60, 60}
+
+% Header & Footer
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\sffamily\color{darkgray}\textbf{CHƯƠNG 1} \quad Hàm số và Mô hình}
+\fancyhead[R]{\small\sffamily\color{darkgray}\textbf{MỤC 1.1} \quad Bốn cách biểu diễn một hàm số}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.5pt}
+
+% Section style
+\titleformat{\section}
+  {\normalfont\LARGE\bfseries\sffamily\color{stewartblue}}
+  {\thesection}{1em}{}
+
+% Custom Environments
+\newtcolorbox{definitionbox}[1][]{
+    colback=boxbg,
+    colframe=boxborder,
+    fonttitle=\bfseries\sffamily\color{white},
+    coltitle=white,
+    title={\textbf{ĐỊNH NGHĨA}},
+    arc=2mm,
+    boxrule=1pt,
+    left=4mm, right=4mm, top=3mm, bottom=3mm,
+    #1
+}
+
+\newtcolorbox{notebox}[1][]{
+    colback=notebg,
+    colframe=noteborder,
+    fonttitle=\bfseries\sffamily\color{darkgray},
+    arc=1.5mm,
+    boxrule=0.8pt,
+    left=3mm, right=3mm, top=2.5mm, bottom=2.5mm,
+    #1
+}
+
+\newcommand{\exampleheader}[1]{%
+    \vspace{0.4cm}\noindent%
+    {\color{stewartblue}\Large\textbf{\textsf{$\blacksquare$ VÍ DỤ #1}}}%
+    \vspace{0.15cm}\par\noindent%
+}
+
+\newcommand{\solution}{\par\noindent\textbf{\textsf{Lời giải:}}\quad}
+\newcommand{\solutionend}{\hfill $\blacksquare$\vspace{0.3cm}}
+
+\begin{document}
+
+\section*{1.1 Bốn cách biểu diễn một hàm số}
+
+\subsection*{\color{stewartblue}■ Hàm số}
+
+Hàm số xuất hiện bất cứ khi nào một đại lượng này phụ thuộc vào một đại lượng khác. Hãy xem xét bốn tình huống sau:
+
+\begin{description}[leftmargin=1.8em, itemsep=0.3cm]
+    \item[\textbf{A.}] Diện tích $A$ của một hình tròn phụ thuộc vào bán kính $r$ của hình tròn đó. Mối liên hệ giữa $r$ và $A$ được xác định bởi công thức:
+    \[
+    A = \pi r^2
+    \]
+    Ứng với mỗi số dương $r$, ta luôn xác định được duy nhất một giá trị $A$ tương ứng, và ta nói rằng $A$ là một \textit{hàm số} của $r$.
+
+    \item[\textbf{B.}] Dân số thế giới $P$ phụ thuộc vào thời gian $t$. Bảng 1 cung cấp số liệu ước tính về dân số thế giới $P$ tại các mốc thời gian $t$ trong một số năm nhất định. Chẳng hạn:
+    \[
+    P \approx 2{,}560{,}000{,}000 \quad \text{khi } t = 1950
+    \]
+    Ứng với mỗi giá trị của thời gian $t$, luôn có một giá trị tương ứng của $P$, và ta nói rằng $P$ là một hàm số của $t$.
+
+    \item[\textbf{C.}] Cước phí bưu điện $C$ để gửi một phong bì phụ thuộc vào trọng lượng $w$ của nó. Dù không có một công thức toán học đơn giản nào biểu diễn trực tiếp mối quan hệ giữa $w$ và $C$, bưu điện vẫn có một bảng quy tắc rõ ràng để xác định giá trị của $C$ khi biết trước $w$.
+
+    \item[\textbf{D.}] Gia tốc thẳng đứng $a$ của mặt đất đo được bởi một địa chấn kế trong suốt một trận động đất là một hàm số theo thời gian trôi qua $t$. Hình 1 thể hiện đồ thị ghi lại hoạt động địa chấn trong trận động đất Northridge làm rung chuyển Los Angeles vào năm 1994. Với một giá trị thời gian $t$ cho trước, đồ thị cung cấp cho ta một giá trị gia tốc $a$ tương ứng.
+\end{description}
+
+\vspace{0.2cm}
+\begin{minipage}[t]{0.35\textwidth}
+    \centering
+    \textbf{\textsf{Bảng 1: Dân số thế giới}}\\[0.15cm]
+    \small
+    \begin{tabular}{cc}
+        \toprule
+        \textbf{Năm} & \textbf{Dân số (triệu người)} \\
+        \midrule
+        1900 & 1650 \\
+        1910 & 1750 \\
+        1920 & 1860 \\
+        1930 & 2070 \\
+        1940 & 2300 \\
+        1950 & 2560 \\
+        1960 & 3040 \\
+        1970 & 3710 \\
+        1980 & 4450 \\
+        1990 & 5280 \\
+        2000 & 6080 \\
+        2010 & 6870 \\
+        \bottomrule
+    \end{tabular}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.62\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{""" + IMAGES_DIR + r"""/figure_1.png}
+    \vspace{0.1cm}
+    \captionof*{figure}{\small\textbf{HÌNH 1} \quad Gia tốc thẳng đứng của mặt đất trong trận động đất Northridge. \textit{(Nguồn: Calif. Dept. of Mines and Geology)}}
+\end{minipage}
+
+\vspace{0.4cm}
+Mỗi ví dụ trên đều mô tả một quy tắc sao cho khi cho trước một số ($r$ trong Ví dụ A), một giá trị số khác ($A$) sẽ được xác định tương ứng. Trong mỗi trường hợp, ta nói rằng số thứ hai là một hàm số của số thứ nhất. Nếu dùng chữ cái $f$ để đại diện cho quy tắc liên hệ giữa $A$ và $r$ trong Ví dụ A, ta biểu diễn mối liên hệ này bằng \textbf{ký hiệu hàm số} là $A = f(r)$.
+
+\begin{definitionbox}
+Một \textbf{hàm số} $f$ là một quy tắc đặt tương ứng mỗi phần tử $x$ thuộc một tập hợp $D$ với duy nhất một phần tử, ký hiệu là $f(x)$, thuộc một tập hợp $E$.
+\end{definitionbox}
+
+Chúng ta thường khảo sát các hàm số mà các tập hợp $D$ và $E$ đều là tập hợp các số thực. Tập hợp $D$ được gọi là \textbf{tập xác định} (\textit{domain}) của hàm số. Số $f(x)$ được gọi là \textbf{giá trị của $f$ tại $x$} và được đọc là ``$f$ của $x$'' (hay ``$f$ tại $x$''). \textbf{Tập giá trị} (\textit{range}) của $f$ là tập hợp tất cả các giá trị có thể có của $f(x)$ khi $x$ biến thiên trên toàn bộ tập xác định:
+\[
+\text{Tập giá trị} = \{ f(x) \mid x \in D \}
+\]
+Một ký hiệu đại diện cho một số tùy ý thuộc \textit{tập xác định} của hàm số $f$ được gọi là một \textbf{biến độc lập} (\textit{independent variable}). Một ký hiệu đại diện cho một số thuộc \textit{tập giá trị} của $f$ được gọi là một \textbf{biến phụ thuộc} (\textit{dependent variable}). Chẳng hạn, trong Ví dụ A, $r$ là biến độc lập và $A$ là biến phụ thuộc.
+
+\vspace{0.3cm}
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=0.85\linewidth]{""" + IMAGES_DIR + r"""/figure_2.png}
+    \captionof*{figure}{\small\textbf{HÌNH 2} \quad Sơ đồ cỗ máy cho một hàm số $f$}
+    \vspace{0.2cm}
+    \small Sẽ rất trực quan nếu ta xem một hàm số như một \textbf{cỗ máy} (Hình 2). Nếu $x$ thuộc tập xác định của $f$, khi $x$ đi vào cỗ máy, nó được tiếp nhận như một \textbf{đầu vào} (\textit{input}) và cỗ máy sẽ tạo ra một \textbf{đầu ra} (\textit{output}) là $f(x)$.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=0.85\linewidth]{""" + IMAGES_DIR + r"""/figure_3.png}
+    \captionof*{figure}{\small\textbf{HÌNH 3} \quad Sơ đồ mũi tên cho hàm số $f$}
+    \vspace{0.2cm}
+    \small Một cách khác để hình dung về hàm số là sử dụng \textbf{sơ đồ mũi tên} (Hình 3). Mỗi mũi tên nối một phần tử $x \in D$ với duy nhất một phần tử $f(x) \in E$.
+\end{minipage}
+
+\vspace{0.4cm}
+Có lẽ phương pháp hữu ích nhất để trực quan hóa một hàm số là vẽ đồ thị của nó. Nếu $f$ là một hàm số với tập xác định $D$, thì \textbf{đồ thị} (\textit{graph}) của hàm số là tập hợp các cặp có thứ tự:
+\[
+\{ (x, f(x)) \mid x \in D \}
+\]
+Nói cách khác, đồ thị của $f$ bao gồm tất cả các điểm $(x, y)$ trên mặt phẳng tọa độ sao cho $y = f(x)$ và $x \in D$.
+
+\vspace{0.3cm}
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=0.9\linewidth]{""" + IMAGES_DIR + r"""/figure_4.png}
+    \captionof*{figure}{\small\textbf{HÌNH 4}}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=0.9\linewidth]{""" + IMAGES_DIR + r"""/figure_5.png}
+    \captionof*{figure}{\small\textbf{HÌNH 5}}
+\end{minipage}
+
+\vspace{0.2cm}
+Đồ thị của một hàm số $f$ đem lại cho ta bức tranh trực quan về hành vi của hàm số đó. Do tọa độ $y$ của bất kỳ điểm $(x, y)$ nào trên đồ thị đều là $y = f(x)$, ta có thể đọc giá trị của $f(x)$ từ đồ thị bằng chính độ cao của đồ thị nằm phía trên điểm $x$ (Hình 4). Đồ thị của $f$ cũng cho phép ta hình dung trực quan tập xác định của $f$ trên trục hoành ($x$) và tập giá trị trên trục tung ($y$) như minh họa trong Hình 5.
+
+\exampleheader{1}
+Đồ thị của một hàm số $f$ được cho trong Hình 6.
+\begin{enumerate}[label=(\alph*), itemsep=0.1cm]
+    \item Tìm các giá trị của $f(1)$ và $f(5)$.
+    \item Tập xác định và tập giá trị của $f$ là gì?
+\end{enumerate}
+
+\noindent
+\begin{minipage}[t]{0.35\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{""" + IMAGES_DIR + r"""/figure_6.png}
+    \captionof*{figure}{\small\textbf{HÌNH 6}}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.62\textwidth}
+    \solution
+    \textbf{(a)} Từ Hình 6, ta thấy điểm $(1, 3)$ nằm trên đồ thị của $f$, do đó giá trị của $f$ tại $1$ là:
+    \[
+    f(1) = 3
+    \]
+    Khi $x = 5$, đồ thị nằm bên dưới trục $x$ khoảng $0{,}7$ đơn vị, vì vậy ta ước lượng được:
+    \[
+    f(5) \approx -0{,}7
+    \]
+    
+    \textbf{(b)} Ta thấy $f(x)$ được xác định khi $0 \le x \le 7$, do đó tập xác định của $f$ là đoạn đóng $[0, 7]$. Lưu ý rằng $f$ nhận tất cả các giá trị từ $-2$ đến $4$, vì thế tập giá trị của $f$ là:
+    \[
+    \{ y \mid -2 \le y \le 4 \} = [-2, 4]
+    \]
+    \solutionend
+\end{minipage}
+
+\exampleheader{2}
+Vẽ đồ thị, đồng thời tìm tập xác định và tập giá trị của mỗi hàm số sau:
+\begin{enumerate}[label=(\alph*), itemsep=0.1cm]
+    \item $f(x) = 2x - 1$
+    \item $g(x) = x^2$
+\end{enumerate}
+
+\solution
+\textbf{(a)} Phương trình của đồ thị là $y = 2x - 1$, và ta nhận ra đây là phương trình đường thẳng có hệ số góc $m = 2$ và tung độ gốc $b = -1$ (dạng $y = mx + b$). Điều này cho phép chúng ta phác thảo đồ thị của $f$ như trong Hình 7. Biểu thức $2x - 1$ xác định với mọi số thực, do đó tập xác định của $f$ là $\mathbb{R}$. Đồ thị cũng cho thấy tập giá trị của hàm số là $\mathbb{R}$.
+
+\textbf{(b)} Vì $g(2) = 2^2 = 4$ và $g(-1) = (-1)^2 = 1$, ta có thể chấm các điểm $(2, 4)$ và $(-1, 1)$ cùng các điểm khác để nối thành đồ thị parabol (Hình 8). Tập xác định của $g$ là $\mathbb{R}$. Do $x^2 \ge 0$ với mọi $x$, tập giá trị của $g$ là $\{y \mid y \ge 0\} = [0, \infty)$.
+\solutionend
+
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=0.7\linewidth]{""" + IMAGES_DIR + r"""/figure_7.png}
+    \captionof*{figure}{\small\textbf{HÌNH 7}}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=0.7\linewidth]{""" + IMAGES_DIR + r"""/figure_8.png}
+    \captionof*{figure}{\small\textbf{HÌNH 8}}
+\end{minipage}
+
+\exampleheader{3}
+Nếu $f(x) = 2x^2 - 5x + 1$ và $h \ne 0$, hãy tính giá trị của biểu thức:
+\[
+\frac{f(a + h) - f(a)}{h}
+\]
+
+\begin{notebox}
+\textbf{GHI CHÚ BÊN LỀ:}\quad Biểu thức $\dfrac{f(a + h) - f(a)}{h}$ được gọi là \textbf{thương sai phân} (\textit{difference quotient}) và xuất hiện rất thường xuyên trong giải tích. Nó biểu thị tốc độ biến thiên trung bình của hàm số $f(x)$ giữa $x = a$ và $x = a + h$.
+\end{notebox}
+
+\solution
+Trước tiên, ta tính $f(a + h)$:
+\begin{align*}
+f(a + h) &= 2(a + h)^2 - 5(a + h) + 1 \\
+&= 2(a^2 + 2ah + h^2) - 5(a + h) + 1 \\
+&= 2a^2 + 4ah + 2h^2 - 5a - 5h + 1
+\end{align*}
+Sau đó, ta thế vào biểu thức đã cho và rút gọn:
+\begin{align*}
+\frac{f(a + h) - f(a)}{h} &= \frac{(2a^2 + 4ah + 2h^2 - 5a - 5h + 1) - (2a^2 - 5a + 1)}{h} \\
+&= \frac{4ah + 2h^2 - 5h}{h} = 4a + 2h - 5
+\end{align*}
+\solutionend
+
+\subsection*{\color{stewartblue}■ Các biểu diễn của hàm số}
+
+Chúng ta xem xét bốn phương pháp khác nhau để biểu diễn một hàm số:
+\begin{itemize}[itemsep=0.1cm]
+    \item \textbf{bằng lời} (mô tả bằng câu chữ)
+    \item \textbf{bằng số liệu} (bằng một bảng giá trị)
+    \item \textbf{bằng hình ảnh trực quan} (bằng đồ thị)
+    \item \textbf{bằng đại số} (bằng một công thức giải tích tường minh)
+\end{itemize}
+
+\begin{description}[leftmargin=1.8em, itemsep=0.3cm]
+    \item[\textbf{A.}] Biểu diễn diện tích hình tròn: $A(r) = \pi r^2$. Tập xác định: $(0, \infty)$, tập giá trị: $(0, \infty)$.
+    \item[\textbf{B.}] Dân số thế giới $P(t)$ với $t = 0$ ứng với năm 1900.
+\end{description}
+
+\vspace{0.2cm}
+\noindent
+\begin{minipage}[t]{0.35\textwidth}
+    \centering
+    \textbf{\textsf{Bảng 2: Dân số thế giới}}\\[0.15cm]
+    \small
+    \begin{tabular}{cc}
+        \toprule
+        \textbf{$t$ (năm từ 1900)} & \textbf{Dân số (triệu)} \\
+        \midrule
+        0 & 1650 \\
+        10 & 1750 \\
+        20 & 1860 \\
+        30 & 2070 \\
+        40 & 2300 \\
+        50 & 2560 \\
+        60 & 3040 \\
+        70 & 3710 \\
+        80 & 4450 \\
+        90 & 5280 \\
+        100 & 6080 \\
+        110 & 6870 \\
+        \bottomrule
+    \end{tabular}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.62\textwidth}
+    Nếu ta biểu diễn các cặp giá trị trong Bảng 2 lên hệ tọa độ, ta thu được biểu đồ phân tán (\textit{scatter plot}) như ở \textbf{Hình 9}.
+    
+    Sử dụng phương pháp giải tích ở Mục 1.4, ta thu được hàm số xấp xỉ cho dân số $P$:
+    \[
+    P(t) \approx f(t) = (1.43653 \times 10^9) \cdot (1.01395)^t
+    \]
+    \textbf{Hình 10} cho thấy hàm số này khớp rất tốt với dữ liệu thực tế. Hàm số $f$ được gọi là một \textbf{mô hình toán học} (\textit{mathematical model}).
+\end{minipage}
+
+\vspace{0.3cm}
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{""" + IMAGES_DIR + r"""/figure_9.png}
+    \captionof*{figure}{\small\textbf{HÌNH 9}}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{""" + IMAGES_DIR + r"""/figure_10.png}
+    \captionof*{figure}{\small\textbf{HÌNH 10}}
+\end{minipage}
+
+\vspace{0.3cm}
+\begin{description}[leftmargin=1.8em, itemsep=0.3cm]
+    \item[\textbf{C.}] Hàm chi phí bưu điện $C(w)$ cho phong bì nặng $w$ (Bảng 3).
+\end{description}
+
+\begin{center}
+    \textbf{\textsf{Bảng 3: Cước phí bưu điện Hoa Kỳ (2019)}}\\[0.15cm]
+    \begin{tabular}{cc}
+        \toprule
+        \textbf{Khối lượng $w$ (ounce)} & \textbf{Chi phí $C(w)$ (đô la)} \\
+        \midrule
+        $0 < w \le 1$ & $1.00$ \\
+        $1 < w \le 2$ & $1.15$ \\
+        $2 < w \le 3$ & $1.30$ \\
+        $3 < w \le 4$ & $1.45$ \\
+        $4 < w \le 5$ & $1.60$ \\
+        \bottomrule
+    \end{tabular}
+\end{center}
+
+\exampleheader{4}
+Khi bạn mở một vòi nước nóng được nối với bình nước nóng, nhiệt độ $T$ của nước chảy ra phụ thuộc vào thời gian vòi nước đã chảy. Hãy vẽ đồ thị phác thảo của nhiệt độ $T$ theo biến thời gian $t$ tính từ thời điểm bắt đầu mở vòi.
+
+\noindent
+\begin{minipage}[t]{0.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{""" + IMAGES_DIR + r"""/figure_11.png}
+    \captionof*{figure}{\small\textbf{HÌNH 11}}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.52\textwidth}
+    \solution
+    Nhiệt độ ban đầu của dòng nước chảy ra xấp xỉ bằng nhiệt độ phòng do lượng nước này vốn đọng lại trong đường ống từ trước. Khi nước từ bình nước nóng bắt đầu chảy tới vòi, nhiệt độ $T$ sẽ tăng lên rất nhanh. Ở giai đoạn kế tiếp, $T$ giữ ở mức ổn định ứng với nhiệt độ của nước đã được làm nóng trong bình. Khi lượng nước nóng trong bình cạn kiệt, $T$ giảm dần về bằng nhiệt độ của nguồn nước cấp vào. Phân tích này cho phép chúng ta vẽ phác thảo đồ thị của $T$ theo biến $t$ như minh họa trong \textbf{Hình 11}.
+    \solutionend
+\end{minipage}
+
+\exampleheader{5}
+Một thùng chứa hình hộp chữ nhật không có nắp đậy có thể tích bằng $10\text{ m}^3$. Chiều dài đáy gấp đôi chiều rộng đáy. Chi phí vật liệu làm đáy là $\$10/\text{m}^2$; chi phí vật liệu làm các mặt bên là $\$6/\text{m}^2$. Hãy biểu diễn tổng chi phí vật liệu dưới dạng một hàm số theo chiều rộng của đáy.
+
+\noindent
+\begin{minipage}[t]{0.4\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{""" + IMAGES_DIR + r"""/figure_12.png}
+    \captionof*{figure}{\small\textbf{HÌNH 12}}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.57\textwidth}
+    \solution
+    Ta vẽ hình minh họa như trong \textbf{Hình 12}: gọi $w$ và $2w$ lần lượt là chiều rộng và chiều dài của mặt đáy, và $h$ là chiều cao của thùng chứa.
+    
+    Diện tích của đáy là $(2w)w = 2w^2$, do đó chi phí làm đáy là $10(2w^2)$. Chi phí vật liệu làm bốn mặt bên là $6[2(wh) + 2(2wh)]$. Tổng chi phí vật liệu:
+    \[
+    C = 10(2w^2) + 6[2(wh) + 2(2wh)] = 20w^2 + 36wh
+    \]
+    Do thể tích là $10\text{ m}^3$:
+    \[
+    w(2w)h = 10 \implies h = \frac{10}{2w^2} = \frac{5}{w^2}
+    \]
+    Thay $h$ vào biểu thức $C$:
+    \[
+    C(w) = 20w^2 + 36w\left(\frac{5}{w^2}\right) = 20w^2 + \frac{180}{w} \quad (w > 0)
+    \]
+    \solutionend
+\end{minipage}
+
+\end{document}
+"""
+
+with open(TEX_FILE, "w", encoding="utf-8") as f:
+    f.write(tex_source)
+
+print(f"✓ Đã tạo file LaTeX nguồn tại: {TEX_FILE}")
+print("--> Đang biên dịch PDF bằng XeLaTeX...")
+
+res = subprocess.run([XELATEX_EXE, "-interaction=nonstopmode", os.path.basename(TEX_FILE)], cwd=BASE_DIR, capture_output=True)
+
+if res.returncode == 0:
+    print(f"🎉 BIÊN DỊCH THÀNH CÔNG! File PDF xịn đã sẵn sàng tại:\n{PDF_FILE}")
+else:
+    print(f"Lỗi biên dịch (Mã lỗi {res.returncode}):")
+    log_file = os.path.join(BASE_DIR, "calculus_section_1.1.log")
+    if os.path.exists(log_file):
+        with open(log_file, "r", encoding="utf-8", errors="replace") as f:
+            lines = f.readlines()
+        for line in lines[-40:]:
+            print(line, end="")

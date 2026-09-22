@@ -1,0 +1,63 @@
+\fancyhead[L]{\textsf{\fontsize{9pt}{11pt}\selectfont\textbf{40}\quad CHƯƠNG 1\quad Các hàm số và Mô hình}}
+\fancyhead[R]{}
+
+\noindent
+\begin{minipage}[t]{0.26\textwidth}
+    \vspace{6.97cm} % Căn chỉnh vị trí Hình 10 khớp với Ví dụ 5
+    \centering
+    \includegraphics[width=\linewidth]{images/p0075_fig1.png}
+    \vspace{-2mm}
+    \captionof*figure{\small (a) $y = x^2 - 1$}
+    \vspace{4mm}
+    
+    \includegraphics[width=\linewidth]{images/p0075_fig2.png}
+    \vspace{-2mm}
+    \captionof*figure{\small (b) $y = |x^2 - 1|$}
+    \vspace{2mm}
+    
+    \raggedright
+    \textbf{\textsf{HÌNH 10}}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.71\textwidth}
+    \noindent\textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\quad Nhận thấy rằng mỗi đường cong đều tương tự như một đồ thị hàm sin bị dịch chuyển và giãn. Khi quan sát đường cong màu xanh lam, ta thấy rằng tại vĩ độ của Philadelphia, thời gian có ánh sáng ban ngày kéo dài khoảng $14{,}8$ giờ vào ngày 21 tháng 6 và $9{,}2$ giờ vào ngày 21 tháng 12, vì vậy biên độ của đường cong (hệ số mà ta cần làm giãn đường cong sin theo phương thẳng đứng) là
+    \[
+    \frac{1}{2}(14{,}8 - 9{,}2) = 2{,}8.
+    \]
+    Ta cần làm giãn đường cong sin theo phương ngang theo hệ số nào nếu ta đo thời gian $t$ bằng ngày? Vì có khoảng 365 ngày trong một năm, nên chu kỳ của mô hình của chúng ta phải là 365. Nhưng chu kỳ của $y = \sin t$ là $2\pi$, do đó hệ số giãn theo phương ngang là $2\pi/365$.
+
+    Ta cũng nhận thấy rằng đường cong bắt đầu chu kỳ của nó vào ngày 21 tháng 3, ngày thứ 80 trong năm, do đó ta cần dịch chuyển đường cong sang phải 80 đơn vị. Ngoài ra, ta dịch chuyển nó lên trên 12 đơn vị. Vì vậy, ta mô hình hóa thời lượng ánh sáng ban ngày ở Philadelphia vào ngày thứ $t$ trong năm bằng hàm số
+    \[
+    L(t) = 12 + 2{,}8 \sin \left[ \frac{2\pi}{365}(t - 80) \right] \tag*{{\color{stewartcyan}$\blacksquare$}}
+    \]
+
+    Một phép biến đổi khác khá thú vị là lấy \emph{giá trị tuyệt đối} của một hàm số. Nếu $y = |f(x)|$, thì theo định nghĩa của giá trị tuyệt đối, $y = f(x)$ khi $f(x) \geqslant 0$ và $y = -f(x)$ khi $f(x) < 0$. Điều này cho ta biết cách thu được đồ thị của $y = |f(x)|$ từ đồ thị của $y = f(x)$: phần đồ thị nằm phía trên trục hoành được giữ nguyên, và phần đồ thị nằm phía dưới trục hoành được lấy đối xứng qua trục hoành.
+
+    \vspace{0.16cm}
+    \noindent\textbf{\textsf{\color{stewartcyan}VÍ DỤ 5}}\quad Vẽ đồ thị của hàm số $y = |x^2 - 1|$.
+
+    \vspace{0.08cm}
+    \noindent\textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\quad Trước tiên, ta vẽ parabol $y = x^2 - 1$ ở Hình 10(a) bằng cách tịnh tiến parabol $y = x^2$ xuống dưới 1 đơn vị. Ta thấy rằng đồ thị nằm phía dưới trục hoành khi $-1 < x < 1$, vì vậy ta lấy đối xứng phần đồ thị đó qua trục hoành để nhận được đồ thị của $y = |x^2 - 1|$ trong Hình 10(b).\hfill{\color{stewartcyan}$\blacksquare$}
+
+    \vspace{0.33cm}
+    \noindent{\color{stewartcyan}\rule{6pt}{6pt}}\quad\textbf{\textsf{\large Các phép toán trên hàm số}}
+
+    \vspace{0.16cm}
+    \noindent Hai hàm số $f$ và $g$ có thể được kết hợp để tạo thành các hàm số mới $f + g$, $f - g$, $fg$ và $f/g$ theo cách tương tự như cách chúng ta cộng, trừ, nhân và chia các số thực.
+
+    \vspace{0.16cm}
+    \begin{definitionbox}
+        \textbf{\textsf{\color{stewartred}Định nghĩa}}\quad Cho hai hàm số $f$ và $g$, các hàm số \textbf{tổng}, \textbf{hiệu}, \textbf{tích} và \textbf{thương} được xác định bởi
+        \begin{align*}
+            (f + g)(x) &= f(x) + g(x) & (f - g)(x) &= f(x) - g(x) \\[6pt]
+            (fg)(x) &= f(x)\,g(x) & \left(\frac{f}{g}\right)(x) &= \frac{f(x)}{g(x)}
+        \end{align*}
+    \end{definitionbox}
+
+    \vspace{0.16cm}
+    Nếu tập xác định của $f$ là $A$ và tập xác định của $g$ là $B$, thì tập xác định của $f + g$ (và tập xác định của $f - g$) là giao của hai tập hợp $A \cap B$ vì cả $f(x)$ và $g(x)$ đều phải xác định. Chẳng hạn, tập xác định của $f(x) = \sqrt{x}$ là $A = [0, \infty)$ và tập xác định của $g(x) = \sqrt{2 - x}$ là $B = (-\infty, 2]$, do đó tập xác định của $(f + g)(x) = \sqrt{x} + \sqrt{2 - x}$ là $A \cap B = [0, 2]$.
+
+    Tập xác định của $fg$ cũng là $A \cap B$. Vì không thể chia cho 0, nên tập xác định của $f/g$ là $\{x \in A \cap B \mid g(x) \neq 0\}$. Ví dụ, nếu $f(x) = x^2$ và $g(x) = x - 1$, thì tập xác định của hàm phân thức $(f/g)(x) = x^2/(x - 1)$ là $\{x \mid x \neq 1\}$, hay $(-\infty, 1) \cup (1, \infty)$.
+
+    Còn có một cách khác để kết hợp hai hàm số nhằm thu được một hàm số mới. Chẳng hạn, giả sử rằng $y = f(u) = \sqrt{u}$ và $u = g(x) = x^2 + 1$. Vì $y$ là một hàm số...
+\end{minipage}

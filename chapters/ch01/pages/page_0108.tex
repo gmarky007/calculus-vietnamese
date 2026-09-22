@@ -1,0 +1,100 @@
+\fancyhead[L]{}
+\fancyhead[R]{}
+
+\noindent
+\begin{minipage}[t]{0.26\textwidth}
+    \vspace{5.9cm}
+    \noindent
+    \colorbox{purple!80!black}{\textcolor{white}{\textbf{\textsf{PS}}}}%
+    \colorbox{purple!10}{\textbf{\textsf{\color{purple!80!black}Xét các trường hợp.}}}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.71\textwidth}
+    \noindent
+    \textbf{\textsf{\color{stewartcyan}VÍ DỤ 2}}\quad Giải bất phương trình $|x - 3| + |x + 2| < 11$.
+
+    \medskip\noindent
+    \textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\quad Nhắc lại định nghĩa của giá trị tuyệt đối:
+    \[
+    |x| = \begin{cases}
+    x & \text{nếu } x \ge 0 \\
+    -x & \text{nếu } x < 0
+    \end{cases}
+    \]
+    Từ đó suy ra
+    \begin{align*}
+    |x - 3| &= \begin{cases}
+    x - 3 & \text{nếu } x - 3 \ge 0 \\
+    -(x - 3) & \text{nếu } x - 3 < 0
+    \end{cases} \\[4pt]
+    &= \begin{cases}
+    x - 3 & \text{nếu } x \ge 3 \\
+    -x + 3 & \text{nếu } x < 3
+    \end{cases}
+    \end{align*}
+    Tương tự,
+    \begin{align*}
+    |x + 2| &= \begin{cases}
+    x + 2 & \text{nếu } x + 2 \ge 0 \\
+    -(x + 2) & \text{nếu } x + 2 < 0
+    \end{cases} \\[4pt]
+    &= \begin{cases}
+    x + 2 & \text{nếu } x \ge -2 \\
+    -x - 2 & \text{nếu } x < -2
+    \end{cases}
+    \end{align*}
+
+    Các biểu thức này cho thấy rằng chúng ta phải xét ba trường hợp:
+    \[
+    x < -2 \qquad\qquad -2 \le x < 3 \qquad\qquad x \ge 3
+    \]
+
+    \noindent
+    \textbf{\textsf{\color{stewartred}TRƯỜNG HỢP I}}\quad Nếu $x < -2$, ta có
+    \begin{align*}
+    |x - 3| + |x + 2| &< 11 \\
+    -x + 3 - x - 2 &< 11 \\
+    -2x &< 10 \\
+    x &> -5
+    \end{align*}
+
+    \noindent
+    \textbf{\textsf{\color{stewartred}TRƯỜNG HỢP II}}\quad Nếu $-2 \le x < 3$, bất phương trình đã cho trở thành
+    \begin{align*}
+    -x + 3 + x + 2 &< 11 \\
+    5 &< 11 \qquad \text{\color{stewartcyan}(luôn đúng)}
+    \end{align*}
+
+    \noindent
+    \textbf{\textsf{\color{stewartred}TRƯỜNG HỢP III}}\quad Nếu $x \ge 3$, bất phương trình trở thành
+    \begin{align*}
+    x - 3 + x + 2 &< 11 \\
+    2x &< 12 \\
+    x &< 6
+    \end{align*}
+
+    Kết hợp các trường hợp I, II và III, ta thấy rằng bất phương trình được thỏa mãn khi $-5 < x < 6$. Do đó tập nghiệm là khoảng $(-5, 6)$.\hfill{\color{stewartcyan}$\blacksquare$}
+
+    \bigskip
+    Trong ví dụ sau đây, trước hết chúng ta đoán câu trả lời bằng cách xét các trường hợp đặc biệt và nhận biết quy luật. Sau đó, chúng ta chứng minh dự đoán của mình bằng phương pháp quy nạp toán học.
+
+    \smallskip
+    Khi sử dụng Nguyên lý Quy nạp Toán học, chúng ta thực hiện theo ba bước:
+
+    \smallskip
+    \noindent
+    \textbf{\textsf{Bước 1}}\quad Chứng minh rằng $S_n$ đúng khi $n = 1$.
+
+    \smallskip
+    \noindent
+    \textbf{\textsf{Bước 2}}\quad Giả thiết $S_n$ đúng khi $n = k$ và suy ra rằng $S_n$ đúng khi $n = k + 1$.
+
+    \smallskip
+    \noindent
+    \textbf{\textsf{Bước 3}}\quad Kết luận rằng $S_n$ đúng với mọi $n$ theo Nguyên lý Quy nạp Toán học.
+\end{minipage}
+
+\vfill
+\begin{flushright}
+    \textbf{\textsf{73}}
+\end{flushright}

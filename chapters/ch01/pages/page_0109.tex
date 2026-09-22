@@ -1,0 +1,81 @@
+% Định nghĩa màu sắc nhận diện sách Stewart Calculus (nếu chưa được khai báo ở preamble)
+\providecolor{stewartcyan}{RGB}{0, 130, 195}
+\providecolor{stewartpurple}{RGB}{85, 37, 131}
+\providecolor{stewartlightblue}{RGB}{232, 238, 245}
+\providecolor{stewartred}{RGB}{204, 34, 41}
+
+\fancyhead[L]{}
+\fancyhead[R]{}
+\fancyfoot[L]{\textbf{\textsf{74}}}
+\fancyfoot[C]{}
+\fancyfoot[R]{}
+
+\noindent
+\begin{minipage}[t]{0.26\textwidth}
+    \vspace{0.2cm}
+    % Ghi chú bên lề 1
+    \noindent
+    \colorbox{stewartlightblue}{%
+        \parbox{\dimexpr\linewidth-2\fboxsep}{%
+            \raggedright
+            \colorbox{stewartpurple}{\textcolor{white}{\textbf{\textsf{\footnotesize PS}}}}%
+            \hspace{0.25em}%
+            \textsf{\footnotesize\textbf{Tương tự:} Thử với một bài toán tương tự, đơn giản hơn.}%
+        }%
+    }
+
+    \vspace{5.9cm}
+    % Ghi chú bên lề 2
+    \noindent
+    \colorbox{stewartlightblue}{%
+        \parbox{\dimexpr\linewidth-2\fboxsep}{%
+            \raggedright
+            \colorbox{stewartpurple}{\textcolor{white}{\textbf{\textsf{\footnotesize PS}}}}%
+            \hspace{0.25em}%
+            \textsf{\footnotesize Tìm kiếm một quy luật.}%
+        }%
+    }
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.71\textwidth}
+    \noindent
+    \textbf{\textsf{\color{stewartcyan}VÍ DỤ 3}}\quad Nếu $f_0(x) = x/(x + 1)$ và $f_{n+1} = f_0 \circ f_n$ với $n = 0, 1, 2, \dots$, hãy tìm một công thức cho $f_n(x)$.
+
+    \medskip
+    \noindent
+    \textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\quad Trước hết, ta tìm công thức của $f_n(x)$ cho các trường hợp riêng $n = 1, 2$ và $3$.
+    \[\begin{aligned}
+        f_1(x) &= (f_0 \circ f_0)(x) = f_0(f_0(x)) = f_0\left(\frac{x}{x + 1}\right) \\[6pt]
+               &= \frac{\dfrac{x}{x + 1}}{\dfrac{x}{x + 1} + 1} = \frac{\dfrac{x}{x + 1}}{\dfrac{2x + 1}{x + 1}} = \frac{x}{2x + 1} \\[10pt]
+        f_2(x) &= (f_0 \circ f_1)(x) = f_0(f_1(x)) = f_0\left(\frac{x}{2x + 1}\right) \\[6pt]
+               &= \frac{\dfrac{x}{2x + 1}}{\dfrac{x}{2x + 1} + 1} = \frac{\dfrac{x}{2x + 1}}{\dfrac{3x + 1}{2x + 1}} = \frac{x}{3x + 1} \\[10pt]
+        f_3(x) &= (f_0 \circ f_2)(x) = f_0(f_2(x)) = f_0\left(\frac{x}{3x + 1}\right) \\[6pt]
+               &= \frac{\dfrac{x}{3x + 1}}{\dfrac{x}{3x + 1} + 1} = \frac{\dfrac{x}{3x + 1}}{\dfrac{4x + 1}{3x + 1}} = \frac{x}{4x + 1}
+    \end{aligned}\]
+
+    \noindent
+    Ta nhận thấy một quy luật: hệ số của $x$ trong mẫu thức của $f_n(x)$ là $n + 1$ trong cả ba trường hợp ta vừa tính toán. Vì vậy, ta dự đoán rằng, một cách tổng quát,
+
+    \medskip
+    \noindent
+    \parbox{\linewidth}{%
+        \makebox[0pt][l]{\setlength{\fboxrule}{1pt}\fcolorbox{stewartred}{white}{\bfseries\sffamily\color{stewartred}\footnotesize 4}}%
+        \centering
+        $\displaystyle f_n(x) = \frac{x}{(n + 1)x + 1}$
+    }
+
+    \medskip
+    \noindent
+    Để chứng minh điều này, ta sử dụng Nguyên lý Quy nạp Toán học. Ta đã kiểm chứng rằng (4) đúng với $n = 1$. Giả sử rằng hệ thức này đúng với $n = k$, nghĩa là
+    \[
+        f_k(x) = \frac{x}{(k + 1)x + 1}
+    \]
+    Khi đó
+    \[\begin{aligned}
+        f_{k+1}(x) &= (f_0 \circ f_k)(x) = f_0(f_k(x)) = f_0\left(\frac{x}{(k + 1)x + 1}\right) \\[6pt]
+                   &= \frac{\dfrac{x}{(k + 1)x + 1}}{\dfrac{x}{(k + 1)x + 1} + 1} = \frac{\dfrac{x}{(k + 1)x + 1}}{\dfrac{(k + 2)x + 1}{(k + 1)x + 1}} = \frac{x}{(k + 2)x + 1}
+    \end{aligned}\]
+
+    \noindent
+    Biểu thức này cho thấy (4) đúng với $n = k + 1$. Do đó, theo nguyên lý quy nạp toán học, công thức đúng với mọi số nguyên dương $n$. \hfill{\color{stewartcyan}$\blacksquare$}
+\end{minipage}

@@ -1,0 +1,58 @@
+\fancyhead[L]{\textbf{\textsf{24}}\qquad \textbf{\textsf{\color{stewartgray}CHƯƠNG 1}}\quad \textsf{Hàm số và Mô hình}}
+\fancyhead[R]{}
+
+\noindent
+\begin{minipage}[t]{0.26\textwidth}
+    \vspace{4.26cm}
+    \footnotesize
+    \noindent
+    Máy tính hoặc máy tính bỏ túi có chức năng vẽ đồ thị tìm đường hồi quy bằng \textbf{phương pháp bình phương tối thiểu}, tức là làm cực tiểu hóa tổng bình phương các khoảng cách thẳng đứng giữa các điểm dữ liệu và đường thẳng. Chi tiết được giải thích trong Bài tập 14.7.61.
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.71\textwidth}
+    \noindent
+    Để ý thấy rằng các điểm dữ liệu dường như nằm gần một đường thẳng, vì vậy việc chọn một mô hình tuyến tính trong trường hợp này là rất tự nhiên. Nhưng có nhiều đường thẳng khả dĩ có thể xấp xỉ các điểm dữ liệu này, vậy ta nên sử dụng đường nào? Một phương án là đường thẳng đi qua điểm dữ liệu đầu tiên và điểm dữ liệu cuối cùng. Hệ số góc của đường thẳng này là
+    \[
+    \frac{404{,}2 - 338{,}7}{2016 - 1980} = \frac{65{,}5}{36} \approx 1{,}819
+    \]
+    Ta viết phương trình của nó là
+    \[
+    C - 338{,}7 = 1{,}819(t - 1980)
+    \]
+    hay
+    \vspace{0.08cm}
+
+    \noindent
+    \makebox[\linewidth]{\fcolorbox{stewartred}{white}{\small\bfseries 1}\hfill $C = 1{,}819t - 3262{,}92$\hfill\phantom{\fcolorbox{stewartred}{white}{\small\bfseries 1}}}
+
+    \vspace{0.16cm}
+    \noindent
+    Phương trình 1 cho ta một mô hình tuyến tính khả dĩ cho nồng độ carbon dioxide; nó được vẽ trên đồ thị ở Hình 5. Chú ý rằng mô hình của chúng ta cho các giá trị cao hơn phần lớn các mức $\text{CO}_2$ thực tế. Một mô hình tuyến tính tốt hơn thu được nhờ một quy trình trong thống kê gọi là \emph{hồi quy tuyến tính} (\textit{linear regression}). Nhiều máy tính vẽ đồ thị và ứng dụng phần mềm máy tính có thể xác định đường hồi quy cho một tập dữ liệu. Một máy tính như vậy cho hệ số góc và tung độ gốc của đường hồi quy đối với dữ liệu từ Bảng 1 là
+    \[
+    m = 1{,}78242 \qquad b = -3192{,}90
+    \]
+    Do đó, mô hình bình phương tối thiểu của chúng ta cho nồng độ $\text{CO}_2$ là
+    \vspace{0.08cm}
+
+    \noindent
+    \makebox[\linewidth]{\fcolorbox{stewartred}{white}{\small\bfseries 2}\hfill $C = 1{,}78242t - 3192{,}90$\hfill\phantom{\fcolorbox{stewartred}{white}{\small\bfseries 2}}}
+
+    \vspace{0.16cm}
+    \noindent
+    Trong Hình 6, chúng ta vẽ đường hồi quy cũng như các điểm dữ liệu. So sánh với Hình 5, ta thấy rằng đường hồi quy mang lại độ khớp tốt hơn.
+
+    \vspace{0.49cm}
+    \noindent
+    \includegraphics[width=\linewidth]{images/p0059_fig1.png}
+
+    \vspace{0.16cm}
+    \noindent
+    \begin{minipage}[t]{0.48\linewidth}
+        \textbf{\textsf{HÌNH 5}}\\
+        {\small Mô hình tuyến tính đi qua điểm dữ liệu đầu tiên và cuối cùng}
+    \end{minipage}\hfill
+    \begin{minipage}[t]{0.48\linewidth}
+        \textbf{\textsf{HÌNH 6}}\\
+        {\small Đường hồi quy}\hfill{\color{stewartcyan}$\blacksquare$}
+    \end{minipage}
+\end{minipage}

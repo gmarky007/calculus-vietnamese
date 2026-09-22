@@ -1,0 +1,88 @@
+\fancyhead[L]{\small\textsf{\textbf{MỤC 1.5}\quad Hàm số ngược và hàm số logarit}}
+\fancyhead[R]{\small\textsf{\textbf{57}}}
+
+\noindent
+\begin{minipage}[t]{0.26\textwidth}
+    \vspace{3.94cm}
+    \begin{flushleft}
+        \small
+        Trong Ví dụ 4, hãy chú ý cách $f^{-1}$ đảo ngược tác động của $f$. Hàm số $f$ là quy tắc “Lập phương, rồi cộng 2”; $f^{-1}$ là quy tắc “Trừ 2, rồi lấy căn bậc ba”.
+    \end{flushleft}
+
+    \vspace{5.9cm}
+    \centering
+    \includegraphics[width=\linewidth]{images/p0092_fig3.png}
+    \vspace{0.16cm}
+    
+    \raggedright{\textbf{\textsf{HÌNH 10}}}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.71\textwidth}
+    \noindent
+    \textbf{\textsf{\color{stewartcyan}VÍ DỤ 4}}\quad Tìm hàm số ngược của $f(x) = x^3 + 2$.
+
+    \vspace{0.16cm}
+    \noindent
+    \textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\quad Theo (5), trước hết ta viết
+    \[
+    y = x^3 + 2
+    \]
+    Sau đó ta giải phương trình này theo $x$:
+    \begin{align*}
+        x^3 &= y - 2 \\
+        x &= \sqrt[3]{y - 2}
+    \end{align*}
+    Cuối cùng, ta hoán đổi vị trí của $x$ và $y$:
+    \[
+    y = \sqrt[3]{x - 2}
+    \]
+    Vậy hàm số ngược là $f^{-1}(x) = \sqrt[3]{x - 2}$. \hfill {\color{stewartcyan}$\blacksquare$}
+
+    \vspace{0.25cm}
+    Nguyên lý hoán đổi vị trí giữa $x$ và $y$ để tìm hàm số ngược cũng cho ta phương pháp xác định đồ thị của $f^{-1}$ từ đồ thị của $f$. Vì $f(a) = b$ khi và chỉ khi $f^{-1}(b) = a$, nên điểm $(a, b)$ nằm trên đồ thị của $f$ khi và chỉ khi điểm $(b, a)$ nằm trên đồ thị của $f^{-1}$. Nhưng ta nhận được điểm $(b, a)$ từ $(a, b)$ bằng phép lấy đối xứng qua đường thẳng $y = x$ (xem Hình 8).
+
+    \vspace{0.33cm}
+    \noindent
+    \begin{minipage}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=0.9\linewidth]{images/p0092_fig1.png}
+        \vspace{0.16cm}
+        
+        \raggedright{\textbf{\textsf{HÌNH 8}}}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=0.9\linewidth]{images/p0092_fig2.png}
+        \vspace{0.16cm}
+        
+        \raggedright{\textbf{\textsf{HÌNH 9}}}
+    \end{minipage}
+
+    \vspace{0.33cm}
+    Do đó, như được minh họa trong Hình 9:
+
+    \vspace{0.16cm}
+    \begin{tcolorbox}[colframe=stewartred, colback=white, boxrule=0.8pt, arc=0mm, left=8pt, right=8pt, top=6pt, bottom=6pt]
+        Đồ thị của $f^{-1}$ nhận được bằng cách lấy đối xứng đồ thị của $f$ qua đường thẳng $y = x$.
+    \end{tcolorbox}
+
+    \vspace{0.33cm}
+    \noindent
+    \textbf{\textsf{\color{stewartcyan}VÍ DỤ 5}}\quad Phác thảo đồ thị của $f(x) = \sqrt{-1 - x}$ và hàm số ngược của nó trên cùng một hệ trục tọa độ.
+
+    \vspace{0.16cm}
+    \noindent
+    \textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\quad Trước hết ta phác thảo đường cong $y = \sqrt{-1 - x}$ (nửa trên của parabol $y^2 = -1 - x$, hay $x = -y^2 - 1$) và sau đó ta lấy đối xứng qua đường thẳng $y = x$ để nhận được đồ thị của $f^{-1}$ (xem Hình 10). Để kiểm tra lại đồ thị, hãy lưu ý rằng biểu thức của $f^{-1}$ là $f^{-1}(x) = -x^2 - 1$, $x \geqslant 0$. Do đó đồ thị của $f^{-1}$ là nửa bên phải của parabol $y = -x^2 - 1$ và điều này có vẻ hoàn toàn hợp lý từ Hình 10. \hfill {\color{stewartcyan}$\blacksquare$}
+
+    \vspace{0.49cm}
+    \noindent
+    {\color{stewartcyan}\rule{1.2ex}{1.2ex}}\hspace{0.5em}\textbf{\textsf{\large Các hàm số logarit}}
+
+    \vspace{0.16cm}
+    \noindent
+    Nếu $b > 0$ và $b \neq 1$, hàm số mũ $f(x) = b^x$ hoặc đồng biến hoặc nghịch biến, và do đó nó là hàm đơn ánh theo Kiểm định đường nằm ngang. Vì vậy nó có một hàm số ngược $f^{-1}$, được gọi là \textbf{hàm số logarit cơ số $\boldsymbol{b}$} và được ký hiệu là $\log_b$. Nếu ta sử dụng công thức xác định của hàm số ngược cho bởi (3),
+    \[
+    f^{-1}(x) = y \iff f(y) = x
+    \]
+\end{minipage}

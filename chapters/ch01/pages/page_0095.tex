@@ -1,0 +1,65 @@
+\fancyhead[LE]{\small\textbf{\textsf{60}}\quad\textsf{CHƯƠNG 1}\quad\textsf{Hàm số và Mô hình}}
+\fancyhead[RE]{}
+
+\noindent
+\begin{minipage}[t]{0.26\textwidth}
+    % Cột lề để trống theo bản gốc
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.71\textwidth}
+\noindent\textbf{\textsf{\color{stewartcyan}VÍ DỤ 8}}\quad Giải phương trình $e^{5-3x} = 10$.
+
+\vspace{0.16cm}
+\noindent\textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\quad Ta lấy lôgarit tự nhiên của cả hai vế phương trình và sử dụng (9):
+\begin{align*}
+\ln(e^{5-3x}) &= \ln 10\\[4pt]
+5 - 3x &= \ln 10\\[4pt]
+3x &= 5 - \ln 10\\[4pt]
+x &= \tfrac{1}{3}(5 - \ln 10)
+\end{align*}
+Sử dụng máy tính cầm tay, ta có thể tính xấp xỉ nghiệm: chính xác đến bốn chữ số thập phân, $x \approx 0{,}8991$.\hfill{\color{stewartcyan}$\blacksquare$}
+
+\vspace{0.33cm}
+Các quy tắc của lôgarit cho phép chúng ta khai triển lôgarit của tích và thương thành tổng và hiệu của các lôgarit. Các quy tắc này cũng cho phép ta kết hợp tổng và hiệu của các lôgarit thành một biểu thức lôgarit duy nhất. Những quá trình này được minh họa trong các Ví dụ 9 và 10.
+
+\vspace{0.29cm}
+\noindent\textbf{\textsf{\color{stewartcyan}VÍ DỤ 9}}\quad Sử dụng các quy tắc lôgarit để khai triển $\ln \dfrac{x^2\sqrt{x^2 + 2}}{3x + 1}$.
+
+\vspace{0.16cm}
+\noindent\textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\quad Sử dụng các Quy tắc 1, 2 và 3 của lôgarit, ta có
+\begin{align*}
+\ln \frac{x^2\sqrt{x^2 + 2}}{3x + 1} &= \ln x^2 + \ln\sqrt{x^2 + 2} - \ln(3x + 1)\\[4pt]
+&= 2\ln x + \tfrac{1}{2}\ln(x^2 + 2) - \ln(3x + 1)\tag*{\color{stewartcyan}$\blacksquare$}
+\end{align*}
+
+\vspace{0.16cm}
+\noindent\textbf{\textsf{\color{stewartcyan}VÍ DỤ 10}}\quad Biểu diễn $\ln a + \tfrac{1}{2}\ln b$ dưới dạng một lôgarit duy nhất.
+
+\vspace{0.16cm}
+\noindent\textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\quad Sử dụng các Quy tắc 3 và 1 của lôgarit, ta có
+\begin{align*}
+\ln a + \tfrac{1}{2}\ln b &= \ln a + \ln b^{1/2}\\[4pt]
+&= \ln a + \ln\sqrt{b}\\[4pt]
+&= \ln(a\sqrt{b})\tag*{\color{stewartcyan}$\blacksquare$}
+\end{align*}
+
+\vspace{0.16cm}
+Công thức sau đây cho thấy rằng các lôgarit với cơ số bất kỳ đều có thể được biểu diễn qua lôgarit tự nhiên.
+
+\vspace{0.29cm}
+\begin{tcolorbox}[colback=white, colframe=stewartred, arc=0mm, boxrule=1pt, left=10pt, right=10pt, top=8pt, bottom=8pt]
+\noindent\textbf{\textsf{\color{stewartred}\fbox{\rule[-1pt]{0pt}{9pt}\textbf{11}}\; Công thức đổi cơ số}}\quad Với mọi số dương $b$ ($b \ne 1$), ta có
+\[
+\log_b x = \frac{\ln x}{\ln b}
+\]
+\end{tcolorbox}
+
+\vspace{0.2cm}
+\noindent\textbf{\textsf{\color{stewartred}CHỨNG MINH}}\quad Đặt $y = \log_b x$. Khi đó, từ (6), ta có $b^y = x$. Lấy lôgarit tự nhiên cả hai vế của phương trình này, ta được $y\ln b = \ln x$. Do đó
+\[
+y = \frac{\ln x}{\ln b}\tag*{\color{stewartred}$\blacksquare$}
+\]
+
+\vspace{0.16cm}
+Công thức 11 giúp chúng ta sử dụng máy tính cầm tay để tính một lôgarit với cơ số bất kỳ (như được minh họa trong ví dụ tiếp theo). Tương tự, Công thức 11 cho phép chúng ta vẽ đồ thị của bất kỳ hàm số lôgarit nào trên máy tính bỏ túi có chức năng vẽ đồ thị hoặc máy vi tính (xem Bài tập 49 và 50).
+\end{minipage}

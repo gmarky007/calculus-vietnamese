@@ -1,0 +1,19 @@
+# LaTeX auxiliary files
+*.aux
+*.log
+*.out
+*.toc
+*.nav
+*.snm
+*.vrb
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+
+# Python
+__pycache__/
+*.pyc
+
+# Local system files
+Thumbs.db
+.DS_Store

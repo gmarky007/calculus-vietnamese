@@ -1,0 +1,83 @@
+\fancyhead[L]{}
+\fancyhead[R]{\sffamily\color{darkgray}\textbf{MỤC 1.1}\quad Bốn cách biểu diễn một hàm số\quad\textbf{\large 11}}
+
+\noindent
+\begin{minipage}[t]{0.26\textwidth}
+    \vspace{1.8cm}
+    {\small\textbf{\textsf{Bảng 2}}\quad \textsf{Dân số thế giới}}\\[0.15cm]
+    \small
+    \begin{tabular}{|c|c|}
+        \hline
+        \rowcolor{stewarttableheader}
+        \textbf{\shortstack{$t$ (năm tính\\từ 1900)}} & \textbf{\shortstack{Dân số\\(triệu người)}} \\
+        \hline
+        0 & 1650 \\
+        10 & 1750 \\
+        20 & 1860 \\
+        30 & 2070 \\
+        40 & 2300 \\
+        50 & 2560 \\
+        60 & 3040 \\
+        70 & 3710 \\
+        80 & 4450 \\
+        90 & 5280 \\
+        100 & 6080 \\
+        110 & 6870 \\
+        \hline
+    \end{tabular}
+
+    \vspace{3.44cm}
+    {\footnotesize Một hàm số được xác định bởi một bảng giá trị được gọi là một \textbf{hàm dạng bảng} (\textit{tabular function}).}
+
+    \vspace{0.29cm}
+    {\small\textbf{\textsf{Bảng 3}}}\\[0.15cm]
+    \small
+    \begin{tabular}{|c|c|}
+        \hline
+        \rowcolor{stewarttableheader}
+        \textbf{$w$ (ounce)} & \textbf{$C(w)$ (đô la)} \\
+        \hline
+        $0 < w \le 1$ & $1.00$ \\
+        $1 < w \le 2$ & $1.15$ \\
+        $2 < w \le 3$ & $1.30$ \\
+        $3 < w \le 4$ & $1.45$ \\
+        $4 < w \le 5$ & $1.60$ \\
+        $\vdots$ & $\vdots$ \\
+        \hline
+    \end{tabular}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.71\textwidth}
+    \textbf{A.}\quad Cách biểu diễn hữu ích nhất cho diện tích của một hình tròn theo bán kính có lẽ là công thức đại số $A = \pi r^2$ hoặc, theo ký hiệu hàm số, $A(r) = \pi r^2$. Ta cũng có thể lập một bảng giá trị hoặc phác họa đồ thị (một nhánh của parabol). Vì một hình tròn bắt buộc phải có bán kính dương, nên tập xác định là $\{r \mid r > 0\} = (0, \infty)$ và tập giá trị cũng là $(0, \infty)$.
+
+    \vspace{0.12cm}
+    \textbf{B.}\quad Ta xét một hàm số được mô tả bằng lời: $P(t)$ là dân số của thế giới tại thời điểm $t$. Hãy chọn mốc đo thời gian $t$ sao cho $t = 0$ ứng với năm 1900. Bảng 2 cung cấp một cách biểu diễn thuận tiện cho hàm số này. Nếu ta biểu diễn các cặp giá trị có thứ tự trong bảng lên hệ tọa độ, ta thu được đồ thị (gọi là \textit{biểu đồ phân tán} hay \textit{scatter plot}) như ở Hình 9. Đây cũng là một cách biểu diễn rất hữu ích; đồ thị giúp chúng ta nắm bắt trực quan toàn bộ dữ liệu cùng một lúc.
+
+    Thế còn việc biểu diễn bằng một công thức thì sao? Tất nhiên, ta không thể tìm ra một công thức tường minh hoàn hảo biểu diễn chính xác tuyệt đối dân số thế giới $P(t)$ tại mọi thời điểm $t$. Tuy nhiên, ta hoàn toàn có thể tìm được một biểu thức hàm số dùng để \textit{xấp xỉ} $P(t)$. Thực tế, sử dụng các phương pháp được giải thích ở Mục 1.4, ta thu được một hàm số xấp xỉ cho dân số $P$:
+    \[
+    P(t) \approx f(t) = (1.43653 \times 10^9) \cdot (1.01395)^t
+    \]
+    Hình 10 cho thấy hàm số này ``khớp'' (\textit{fit}) khá tốt với dữ liệu thực tế. Hàm số $f$ được gọi là một \textbf{mô hình toán học} (\textit{mathematical model}) mô tả sự tăng trưởng dân số. Nói cách khác, đây là một hàm số có công thức tường minh giúp mô phỏng lại xu hướng biến thiên của hàm số đã cho. Tuy nhiên, sau này ta sẽ thấy rằng các ý tưởng của giải tích vẫn có thể áp dụng trực tiếp lên một bảng giá trị mà không nhất thiết phải có một công thức tường minh.
+
+    \vspace{0.16cm}
+    \noindent
+    \begin{minipage}[t]{0.48\linewidth}
+        \centering
+        \includegraphics[width=0.95\linewidth]{images/figure_9_clean.png}\\[2pt]
+        {\small\textbf{\textsf{HÌNH 9}}}
+    \end{minipage}\hfill
+    \begin{minipage}[t]{0.48\linewidth}
+        \centering
+        \includegraphics[width=0.95\linewidth]{images/figure_10_clean.png}\\[2pt]
+        {\small\textbf{\textsf{HÌNH 10}}}
+    \end{minipage}
+
+    \vspace{0.25cm}
+    Hàm số $P$ là một ví dụ điển hình cho các loại hàm thường gặp khi chúng ta áp dụng giải tích vào thế giới thực. Ban đầu, ta xuất phát từ việc mô tả hàm số bằng lời. Kế tiếp, ta có thể lập bảng giá trị của hàm, chẳng hạn từ các số liệu đo đạc thực nghiệm khoa học. Mặc dù không có được sự hiểu biết toàn diện về mọi giá trị của hàm số, nhưng xuyên suốt cuốn sách này, bạn sẽ thấy rằng ta vẫn có thể thực hiện các phép toán của giải tích trên một hàm số như vậy.
+
+    \vspace{0.12cm}
+    \textbf{C.}\quad Một lần nữa, hàm số lại được mô tả bằng lời: Gọi $C(w)$ là chi phí gửi một phong bì lớn có khối lượng $w$. Quy định của Bưu điện Hoa Kỳ áp dụng từ năm 2019 như sau: Chi phí là $1$ đô la cho phong bì có khối lượng đến $1\text{ oz}$, cộng thêm $15\text{ cent}$ cho mỗi ounce (hoặc phần dư của ounce) tăng thêm cho đến tối đa $13\text{ oz}$. Một bảng giá trị là cách biểu diễn thuận tiện nhất cho hàm số này (xem Bảng 3), mặc dù ta cũng có thể phác họa đồ thị của nó (xem Ví dụ 10).
+
+    \vspace{0.12cm}
+    \textbf{D.}\quad Đồ thị thể hiện ở Hình 1 là cách biểu diễn tự nhiên nhất cho hàm gia tốc thẳng đứng $a(t)$. Đúng là ta có thể lập một bảng giá trị và thậm chí có thể tìm một công thức xấp xỉ. Nhưng tất cả những gì một nhà địa chất học cần...
+\end{minipage}
