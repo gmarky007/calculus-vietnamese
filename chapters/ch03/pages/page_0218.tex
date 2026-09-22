@@ -1,0 +1,146 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[top=1.8cm, bottom=1.8cm, left=1.8cm, right=1.8cm]{geometry}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{multicol}
+\usepackage{tikz}
+\usepackage{array}
+\usepackage{fontspec}
+
+\setlength{\columnsep}{22pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4.5pt plus 1pt minus 1pt}
+
+% Định nghĩa icon T (Technology) và Đồ thị (Graphing/CAS)
+\newcommand{\iconT}{%
+  \begin{tikzpicture}[baseline=(T.base)]
+    \node[draw=cyan!80!blue, fill=cyan!10, rounded corners=1pt, line width=0.6pt, inner sep=1.2pt, font=\bfseries\scriptsize\sffamily, text=cyan!80!blue] (T) {T};
+  \end{tikzpicture}%
+}
+
+\newcommand{\iconGraph}{%
+  \begin{tikzpicture}[baseline=-1pt, line width=0.55pt, draw=cyan!80!blue]
+    \draw[rounded corners=1pt] (0,-0.08) rectangle (0.36,0.28);
+    \draw (0,0.1) -- (0.36,0.1);
+    \draw (0.18,-0.08) -- (0.18,0.28);
+    \draw[line width=0.7pt, domain=0.04:0.32, samples=12] plot (\x, {0.1 + 0.11*sin(720*(\x-0.04))});
+  \end{tikzpicture}%
+}
+
+\newcommand{\ex}[1]{\textbf{#1.}\ }
+
+\begin{document}
+
+% Header trang
+\noindent\textbf{\textsf{SECTION 3.1}}\quad \textsf{Đạo hàm của hàm đa thức và hàm số mũ}\hfill \textbf{\textsf{183}}
+\vspace{8pt}
+
+\begin{multicols}{2}
+
+\ex{57} Định luật Boyle phát biểu rằng khi một khối khí bị nén ở nhiệt độ không đổi, áp suất $P$ của chất khí tỉ lệ nghịch với thể tích $V$ của nó.
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt, topsep=2pt, parsep=0pt, label={\alph*)}]
+  \item[(a)] Giả sử áp suất của một lượng không khí chiếm thể tích $0{,}106\text{ m}^3$ ở $25^\circ\text{C}$ là $50\text{ kPa}$. Hãy viết $V$ như một hàm theo $P$.
+  \item[(b)] Tính $dV/dP$ khi $P = 50\text{ kPa}$. Ý nghĩa của đạo hàm này là gì? Đơn vị của nó là gì?
+\end{itemize}
+
+\ex{58}\llap{\iconT\hspace{3pt}} Lốp xe ô tô cần được bơm đúng áp suất vì bơm quá căng hoặc quá non đều có thể làm mòn sớm mặt lốp. Dữ liệu trong bảng cho thấy tuổi thọ lốp $L$ (tính theo nghìn dặm) của một loại lốp nhất định tại các mức áp suất khác nhau $P$ (tính bằng $\text{lb/in}^2$).
+
+\begin{center}
+\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|*{8}{c|}}
+\hline
+$P$ & 26 & 28 & 31 & 35 & 38 & 42 & 45 \\ \hline
+$L$ & 50 & 66 & 78 & 81 & 74 & 70 & 59 \\ \hline
+\end{tabular}
+\end{center}
+
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt, topsep=2pt, parsep=0pt]
+  \item[(a)] Sử dụng máy tính cầm tay hoặc phần mềm máy tính để mô hình hóa tuổi thọ của lốp bằng một hàm bậc hai theo áp suất.
+  \item[(b)] Dùng mô hình này để ước tính $dL/dP$ khi $P = 30$ và khi $P = 40$. Ý nghĩa của đạo hàm là gì? Đơn vị của nó là gì? Dấu của các đạo hàm này mang ý nghĩa gì?
+\end{itemize}
+
+\ex{59} Tìm các điểm trên đường cong $y = x^3 + 3x^2 - 9x + 10$ mà tại đó tiếp tuyến nằm ngang.
+
+\ex{60} Với giá trị nào của $x$ thì đồ thị hàm số $f(x) = e^x - 2x$ có tiếp tuyến nằm ngang?
+
+\ex{61} Chứng minh rằng đường cong $y = 2e^x + 3x + 5x^3$ không có tiếp tuyến nào có hệ số góc bằng 2.
+
+\ex{62} Tìm phương trình của đường thẳng vừa tiếp xúc với đường cong $y = x^4 + 1$ vừa song song với đường thẳng $32x - y = 15$.
+
+\ex{63} Tìm phương trình của hai đường thẳng vừa tiếp xúc với đường cong $y = x^3 - 3x^2 + 3x - 3$ vừa song song với đường thẳng $3x - y = 15$.
+
+\ex{64}\llap{\iconGraph\hspace{3pt}} Tại điểm nào trên đường cong $y = 1 + 2e^x - 3x$ thì tiếp tuyến song song với đường thẳng $3x - y = 5$? Minh họa bằng cách vẽ đồ thị của đường cong và cả hai đường thẳng.
+
+\ex{65} Tìm phương trình pháp tuyến của đường cong $y = \sqrt{x}$ song song với đường thẳng $2x + y = 1$.
+
+\ex{66} Đường pháp tuyến của parabol $y = x^2 - 1$ tại điểm $(-1, 0)$ cắt parabol này lần thứ hai tại đâu? Minh họa bằng hình vẽ phác thảo.
+
+\ex{67} Vẽ hình minh họa để thấy rằng có hai tiếp tuyến của parabol $y = x^2$ đi qua điểm $(0, -4)$. Tìm tọa độ các tiếp điểm của hai tiếp tuyến này với parabol.
+
+\ex{68}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt, topsep=2pt, parsep=0pt]
+  \item[(a)] Tìm phương trình của cả hai đường thẳng đi qua điểm $(2, -3)$ và tiếp xúc với parabol $y = x^2 + x$.
+  \item[(b)] Chứng minh rằng không có tiếp tuyến nào của parabol đi qua điểm $(2, 7)$. Sau đó vẽ hình để giải thích lý do.
+\end{itemize}
+
+\ex{69} Dùng định nghĩa đạo hàm để chứng minh rằng nếu $f(x) = 1/x$, thì $f'(x) = -1/x^2$. (Điều này chứng minh Quy tắc Lũy thừa cho trường hợp $n = -1$.)
+
+\columnbreak
+
+\ex{70} Tìm đạo hàm cấp $n$ của mỗi hàm số bằng cách tính vài đạo hàm đầu tiên và quan sát quy luật xuất hiện.
+
+(a) $f(x) = x^n$ \qquad\qquad (b) $f(x) = 1/x$
+
+\ex{71} Tìm đa thức bậc hai $P$ sao cho $P(2) = 5$, $P'(2) = 3$, và $P''(2) = 2$.
+
+\ex{72} Phương trình $y'' + y' - 2y = x^2$ được gọi là một \textbf{phương trình vi phân} vì nó chứa hàm chưa biết $y$ và các đạo hàm $y'$, $y''$ của nó. Tìm các hằng số $A$, $B$ và $C$ sao cho hàm số $y = Ax^2 + Bx + C$ thỏa mãn phương trình này. (Phương trình vi phân sẽ được nghiên cứu chi tiết trong Chương 9.)
+
+\ex{73} Tìm một hàm bậc ba $y = ax^3 + bx^2 + cx + d$ có đồ thị tiếp xúc với các đường nằm ngang tại các điểm $(-2, 6)$ và $(2, 0)$.
+
+\ex{74} Tìm parabol có phương trình $y = ax^2 + bx + c$ có hệ số góc bằng 4 tại $x = 1$, hệ số góc bằng $-8$ tại $x = -1$, và đi qua điểm $(2, 15)$.
+
+\ex{75} Cho hàm số
+\[
+f(x) = \begin{cases}
+x^2 + 1 & \text{nếu } x < 1 \\
+x + 1 & \text{nếu } x \ge 1
+\end{cases}
+\]
+$f$ có khả vi tại 1 không? Phác thảo đồ thị của $f$ và $f'$.
+
+\ex{76} Hàm số $g$ sau đây khả vi tại những số nào?
+\[
+g(x) = \begin{cases}
+2x & \text{nếu } x \le 0 \\
+2x - x^2 & \text{nếu } 0 < x < 2 \\
+2 - x & \text{nếu } x \ge 2
+\end{cases}
+\]
+Hãy đưa ra công thức của $g'$ và phác thảo đồ thị của $g$ và $g'$.
+
+\ex{77}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt, topsep=2pt, parsep=0pt]
+  \item[(a)] Với những giá trị nào của $x$ thì hàm số $f(x) = |x^2 - 9|$ khả vi? Tìm công thức cho $f'$.
+  \item[(b)] Phác thảo đồ thị của $f$ và $f'$.
+\end{itemize}
+
+\ex{78} Hàm số $h(x) = |x - 1| + |x + 2|$ khả vi tại đâu? Hãy đưa ra công thức của $h'$ và phác thảo đồ thị của $h$ và $h'$.
+
+\ex{79} Tìm parabol có phương trình $y = ax^2 + bx$ có tiếp tuyến tại $(1, 1)$ mang phương trình $y = 3x - 2$.
+
+\ex{80} Giả sử đường cong $y = x^4 + ax^3 + bx^2 + cx + d$ có tiếp tuyến tại $x = 0$ với phương trình $y = 2x + 1$ và có tiếp tuyến tại $x = 1$ với phương trình $y = 2 - 3x$. Hãy tìm các giá trị của $a, b, c$ và $d$.
+
+\ex{81} Với những giá trị nào của $a$ và $b$ thì đường thẳng $2x + y = b$ tiếp xúc với parabol $y = ax^2$ khi $x = 2$?
+
+\ex{82} Tìm giá trị của $c$ sao cho đường thẳng $y = \frac{3}{2}x + 6$ tiếp xúc với đường cong $y = c\sqrt{x}$.
+
+\ex{83} Giá trị của $c$ là bao nhiêu để đường thẳng $y = 2x + 3$ tiếp xúc với parabol $y = cx^2$?
+
+\ex{84} Đồ thị của bất kỳ hàm bậc hai $f(x) = ax^2 + bx + c$ nào cũng là một parabol. Chứng minh rằng trung bình cộng của các hệ số góc của các tiếp tuyến với parabol tại hai mút của một khoảng bất kỳ $[p, q]$ bằng hệ số góc của tiếp tuyến tại trung điểm của khoảng đó.
+
+\end{multicols}
+
+\vfill
+\noindent{\scriptsize\color{black!60}Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203}
+
+\end{document}
