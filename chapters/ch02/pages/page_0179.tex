@@ -1,0 +1,118 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{geometry}
+\geometry{left=1.5cm, right=1.5cm, top=2.0cm, bottom=2.0cm}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{newtxtext,newtxmath}
+\usepackage{bm}
+
+% Định nghĩa hệ màu chuẩn sách Stewart Calculus
+\definecolor{stewartcyan}{RGB}{0, 130, 185}
+\definecolor{stewartred}{RGB}{204, 0, 0}
+\definecolor{stewartgray}{RGB}{100, 100, 100}
+
+% Khung định nghĩa theo quy tắc
+\newtcolorbox{definitionbox}{
+    enhanced,
+    colback=white,
+    colframe=stewartred,
+    arc=0mm,
+    boxrule=1pt,
+    left=8pt,
+    right=8pt,
+    top=7pt,
+    bottom=7pt
+}
+
+% Thẻ số định nghĩa và công thức dạng hình vuông đỏ viền đỏ
+\newcommand{\stewarttag}[1]{%
+  \tcbox[on line, colback=white, colframe=stewartred, arc=0mm, boxrule=1pt, top=1.5pt, bottom=1.5pt, left=3.5pt, right=3.5pt]{%
+    \fontsize{9}{10}\selectfont\textbf{\textsf{\color{stewartred}#1}}%
+  }%
+}
+
+% Thiết lập tiêu đề đầu trang
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\fontsize{9}{11}\selectfont\textbf{\textsf{144}}\qquad\textbf{\textsf{CHƯƠNG 2}}\quad\textsf{Giới hạn và Đạo hàm}}
+\renewcommand{\headrulewidth}{0pt}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.25\textwidth}
+\vspace{0pt}
+% Dóng hàng chính xác với công thức bên trong Định nghĩa 4 (y ~ 308pt - 320pt)
+\vspace{228pt}
+{\raggedright\fontsize{8.5}{11}\selectfont $f'(a)$ được đọc là “$f$ phẩy của $a$”.\par}
+
+% Dóng hàng chính xác với LỜI GIẢI (a) (y ~ 531pt - 574pt)
+\vspace{190pt}
+{\raggedright\fontsize{8.5}{11}\selectfont Các Định nghĩa 4 và 5 là tương đương nhau, do đó ta có thể sử dụng một trong hai để tính đạo hàm. Trong thực hành, Định nghĩa 4 thường dẫn đến các phép tính đơn giản hơn.\par}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.72\textwidth}
+\vspace{0pt}
+\noindent Do đó, vận tốc của quả bóng khi chạm đất là
+\[
+v\left(\sqrt{\frac{450}{4.9}}\right) = 9.8\sqrt{\frac{450}{4.9}} \approx 94\text{ m/s} \tag*{\color{stewartcyan}\blacksquare}
+\]
+
+\vspace{0.4em}
+\noindent{\color{stewartcyan}\rule{1.1ex}{1.1ex}}\hspace{0.5em}\textbf{\large Đạo hàm}
+\vspace{0.2em}
+
+Chúng ta đã thấy rằng cùng một dạng giới hạn xuất hiện trong việc tìm hệ số góc của tiếp tuyến (Phương trình 2) hoặc vận tốc của một vật (Định nghĩa 3). Trên thực tế, các giới hạn có dạng
+\[
+\lim_{h \to 0} \frac{f(a+h) - f(a)}{h}
+\]
+xuất hiện bất cứ khi nào chúng ta tính tốc độ thay đổi trong bất kỳ ngành khoa học hay kỹ thuật nào, chẳng hạn như tốc độ phản ứng trong hóa học hoặc chi phí cận biên trong kinh tế học. Vì dạng giới hạn này xuất hiện rất phổ biến, nên nó được đặt một tên gọi và ký hiệu riêng biệt.
+
+\vspace{0.4em}
+\begin{definitionbox}
+\noindent\stewarttag{4}\hspace{0.5em}\textbf{\textsf{\color{stewartred}Định nghĩa}}\hspace{0.7em}\textbf{Đạo hàm của hàm số } $\boldsymbol{f}$ \textbf{ tại số } $\boldsymbol{a}$\textbf{, ký hiệu là } $\boldsymbol{f'(a)}$\textbf{, là}
+\[
+f'(a) = \lim_{h \to 0} \frac{f(a+h) - f(a)}{h}
+\]
+nếu giới hạn này tồn tại.
+\end{definitionbox}
+
+\vspace{0.4em}
+Nếu ta đặt $x = a + h$, thì ta có $h = x - a$ và $h$ dần tới $0$ khi và chỉ khi $x$ dần tới $a$. Do đó, một cách tương đương để phát biểu định nghĩa của đạo hàm, như chúng ta đã thấy khi tìm tiếp tuyến (xem Định nghĩa 1), là
+
+\vspace{0.4em}
+\noindent
+\begin{minipage}{\linewidth}
+  \stewarttag{5}%
+  \hfill
+  \tcbox[on line, colback=white, colframe=stewartred, arc=0mm, boxrule=1pt, top=5pt, bottom=5pt, left=18pt, right=18pt]{%
+    $\displaystyle f'(a) = \lim_{x \to a} \frac{f(x) - f(a)}{x - a}$%
+  }%
+  \hfill
+  \phantom{\stewarttag{5}}%
+\end{minipage}
+
+\vspace{0.8em}
+\noindent\textbf{\textsf{\color{stewartcyan}VÍ DỤ 4}}\hspace{0.8em}Sử dụng Định nghĩa 4 để tìm đạo hàm của hàm số $f(x) = x^2 - 8x + 9$ tại các số (a) $2$ và (b) $a$.
+
+\vspace{0.5em}
+\noindent\textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}
+
+\vspace{0.2em}
+\noindent\textbf{(a)} Từ Định nghĩa 4, ta có
+\begin{align*}
+f'(2) &= \lim_{h \to 0} \frac{f(2+h) - f(2)}{h} \\[4pt]
+&= \lim_{h \to 0} \frac{(2+h)^2 - 8(2+h) + 9 - (-3)}{h} \\[4pt]
+&= \lim_{h \to 0} \frac{4 + 4h + h^2 - 16 - 8h + 9 + 3}{h} \\[4pt]
+&= \lim_{h \to 0} \frac{h^2 - 4h}{h} = \lim_{h \to 0} \frac{h(h - 4)}{h} = \lim_{h \to 0} (h - 4) = -4
+\end{align*}
+\end{minipage}
+
+\end{document}
