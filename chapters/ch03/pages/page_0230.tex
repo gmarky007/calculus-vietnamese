@@ -1,0 +1,126 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{mathptmx}
+\usepackage[top=20mm, bottom=20mm, left=18mm, right=18mm, headheight=14pt]{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{fancyhdr}
+
+% Định nghĩa màu sắc nhận diện thương hiệu Stewart Calculus
+\definecolor{stewartcyan}{RGB}{0, 130, 185}
+\definecolor{stewartred}{RGB}{204, 30, 30}
+\definecolor{stewartpurple}{RGB}{112, 48, 160}
+\definecolor{stewartlightpurple}{RGB}{237, 233, 246}
+
+% Thiết lập tiêu đề đầu trang
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\fontsize{8.5}{11}\selectfont\textsf{\textbf{MỤC 3.3}}\hspace{1.5em}\textrm{Đạo hàm của các hàm lượng giác}\hspace{2.5em}\textsf{\textbf{195}}}
+\renewcommand{\headrulewidth}{0pt}
+
+\setlength{\parindent}{14pt}
+\setlength{\parskip}{0pt}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.26\textwidth}
+  \vspace{0pt}
+  \centering
+  \includegraphics[width=\linewidth]{images/p0230_fig1.png}
+  
+  \vspace{3pt}
+  {\small\textsf{\textbf{HÌNH 5}}}
+  
+  \vspace{2.5cm}
+  \noindent
+  \begin{tikzpicture}
+    \node[fill=stewartlightpurple, inner sep=0pt, anchor=west] {
+      \colorbox{stewartpurple}{\rule[-2pt]{0pt}{9.5pt}\hspace{2.5pt}\textbf{\textsf{\footnotesize\color{white}PS}}\hspace{2.5pt}}%
+      \hspace{4pt}\textbf{\textsf{\scriptsize Tìm kiếm quy luật.}}\hspace{6pt}
+    };
+  \end{tikzpicture}
+  
+  \vspace{4.7cm}
+  \includegraphics[width=\linewidth]{images/p0230_fig2.png}
+  
+  \vspace{3pt}
+  {\small\textsf{\textbf{HÌNH 6}}}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.71\textwidth}
+  \vspace{0pt}
+  \noindent Vật dao động từ vị trí thấp nhất ($s = -4\text{ cm}$) đến vị trí cao nhất ($s = 4\text{ cm}$). Chu kỳ của dao động là $2\pi$, bằng chu kỳ của $\cos t$.
+  
+  \indent Tốc độ là $|v| = 4|\sin t|$, đạt giá trị lớn nhất khi $|\sin t| = 1$, tức là khi $\cos t = 0$. Do đó, vật chuyển động nhanh nhất khi nó đi qua vị trí cân bằng ($s = 0$). Tốc độ của nó bằng $0$ khi $\sin t = 0$, nghĩa là tại các vị trí cao nhất và thấp nhất.
+  
+  \indent Gia tốc $a = -4\cos t = 0$ khi $s = 0$. Nó có độ lớn cực đại tại các điểm cao nhất và thấp nhất. Xem các đồ thị ở Hình~5.\hfill{\color{stewartcyan}$\blacksquare$}
+
+  \vspace{1.1em}
+  \noindent
+  \textbf{\textsf{\color{stewartcyan}VÍ DỤ 4}} \quad Tìm đạo hàm cấp 27 của $\cos x$.
+
+  \vspace{0.4em}
+  \noindent
+  \textbf{\textsf{\color{stewartcyan}LỜI GIẢI}} \quad Một vài đạo hàm đầu tiên của hàm số $f(x) = \cos x$ như sau:
+  \begin{align*}
+    f'(x) &= -\sin x \\
+    f''(x) &= -\cos x \\
+    f'''(x) &= \sin x \\
+    f^{(4)}(x) &= \cos x \\
+    f^{(5)}(x) &= -\sin x
+  \end{align*}
+  Ta thấy rằng các đạo hàm liên tiếp lặp lại theo một chu kỳ có độ dài bằng 4 và đặc biệt là, $f^{(n)}(x) = \cos x$ mỗi khi $n$ là một bội số của 4. Do đó
+  \[
+    f^{(24)}(x) = \cos x
+  \]
+  và, lấy đạo hàm thêm ba lần nữa, ta có
+  \begin{equation*}
+    f^{(27)}(x) = \sin x \tag*{{\color{stewartcyan}$\blacksquare$}}
+  \end{equation*}
+
+  \vspace{0.8em}
+  \noindent
+  {\color{stewartcyan}\rule{1.1ex}{1.1ex}}\hspace{0.5em}\textbf{\textsf{Hai giới hạn lượng giác đặc biệt}}
+
+  \vspace{0.5em}
+  \noindent
+  Khi chứng minh công thức tính đạo hàm của hàm sin, chúng ta đã sử dụng hai giới hạn đặc biệt mà bây giờ chúng ta sẽ chứng minh.
+
+  \vspace{0.5em}
+  \noindent
+  \begin{minipage}{\linewidth}
+    \makebox[0pt][l]{%
+      \tikz[baseline=(box5.base)]{%
+        \node[draw=stewartred, line width=1pt, rounded corners=0.5pt, inner sep=3pt] (box5) {\bfseries\sffamily\color{stewartred}\small 5};
+      }%
+    }%
+    \centering
+    \tikz[baseline=(eq.base)]{%
+      \node[draw=stewartred, line width=1.1pt, inner xsep=22pt, inner ysep=7pt] (eq) {$\displaystyle \lim_{\theta \to 0} \frac{\sin \theta}{\theta} = 1$};
+    }%
+  \end{minipage}
+  \vspace{0.6em}
+
+  \noindent
+  \textbf{\textsf{\color{stewartred}CHỨNG MINH}} \quad Trước hết, giả sử rằng $\theta$ nằm giữa $0$ và $\pi/2$. Hình~6(a) biểu diễn một hình quạt tròn tâm $O$, góc ở tâm $\theta$, và bán kính bằng 1. Đoạn thẳng $BC$ được vẽ vuông góc với $OA$. Theo định nghĩa của số đo radian, ta có $\text{cung } AB = \theta$. Ta cũng có $|BC| = |OB|\sin\theta = \sin\theta$. Từ hình vẽ, ta thấy rằng
+  \[
+    |BC| < |AB| < \text{cung } AB
+  \]
+  \noindent
+  Do đó \hfill $\displaystyle \sin\theta < \theta \qquad \text{vì vậy} \qquad \frac{\sin\theta}{\theta} < 1$ \hfill\null
+
+  \vspace{0.5em}
+  \noindent
+  Gọi giao điểm của các tiếp tuyến tại $A$ và $B$ là $E$. Bạn có thể thấy từ Hình~6(b) rằng chu vi của một đường tròn nhỏ hơn chu vi của đa giác ngoại tiếp, và do đó $\text{cung } AB < |AE| + |EB|$. Như vậy
+  \begin{align*}
+    \theta = \text{cung } AB &< |AE| + |EB| \\
+    &< |AE| + |ED| = |AD| = |OA|\tan\theta \\
+    &= \tan\theta
+  \end{align*}
+\end{minipage}
+
+\end{document}
