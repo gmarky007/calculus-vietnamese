@@ -1,52 +1,69 @@
 \fancyhead[L]{\textbf{\textsf{32}}\quad \textbf{\textsf{CHƯƠNG 1}}\quad \textsf{Hàm số và Mô hình}}
 \fancyhead[R]{}
 
+\providecolor{stewartcyan}{RGB}{0, 119, 139}
+\providecolor{stewartcyanlight}{RGB}{235, 243, 248}
+
+\vspace*{-1.5mm}
 \noindent
-\begin{minipage}[t]{0.26\textwidth}
-    % Cột lề: Bảng 3 là bảng tổng hợp các họ hàm số cơ bản và đồ thị
-\end{minipage}%
-\hfill
-\begin{minipage}[t]{0.71\textwidth}
-    \centering
-    {\large \textbf{\textsf{Bảng 3}}\quad \textbf{\textsf{Các họ hàm số cơ bản và đồ thị của chúng}}}\\[2.5mm]
-    \renewcommand{\arraystretch}{1.4}
-    \noindent\begin{tabularx}{\linewidth}{|>{\raggedright\arraybackslash\cellcolor{stewartcyan!12}}p{0.25\linewidth}|>{\centering\arraybackslash}p{0.70\linewidth}|}
-        \hline
-        \textbf{\textsf{\color{stewartcyan}Hàm tuyến tính}} \newline \textit{\small (Linear Functions)} \newline $f(x) = mx + b$ & 
-        \vspace{1mm}
-        \includegraphics[width=0.46\linewidth]{images/p0067_fig1.png}\hfill
-        \includegraphics[width=0.46\linewidth]{images/p0067_fig2.png}
-        \vspace{1mm} \\
-        \hline
-        \textbf{\textsf{\color{stewartcyan}Hàm lũy thừa}} \newline \textit{\small (Power Functions)} \newline $f(x) = x^n$ & 
-        \vspace{1mm}
-        \includegraphics[width=0.48\linewidth]{images/p0067_fig3.png}\hfill
-        \includegraphics[width=0.48\linewidth]{images/p0067_fig4.png}
-        \vspace{1mm} \\
-        \hline
-        \textbf{\textsf{\color{stewartcyan}Hàm căn thức}} \newline \textit{\small (Root Functions)} \newline $f(x) = \sqrt[n]{x}$ & 
-        \vspace{1mm}
-        \includegraphics[width=0.48\linewidth]{images/p0067_fig5.png}\hfill
-        \includegraphics[width=0.48\linewidth]{images/p0067_fig6.png}
-        \vspace{1mm} \\
-        \hline
-        \textbf{\textsf{\color{stewartcyan}Hàm nghịch đảo}} \newline \textit{\small (Reciprocal Functions)} \newline $f(x) = \dfrac{1}{x^n}$ & 
-        \vspace{1mm}
-        \includegraphics[width=0.48\linewidth]{images/p0067_fig7.png}\hfill
-        \includegraphics[width=0.48\linewidth]{images/p0067_fig8.png}
-        \vspace{1mm} \\
-        \hline
-        \textbf{\textsf{\color{stewartcyan}Hàm mũ và hàm logarit}} \newline \textit{\small (Exponential and}\newline \textit{\small Logarithmic Functions)} \newline $f(x) = b^x$ \newline $f(x) = \log_b x$ & 
-        \vspace{1mm}
-        \includegraphics[width=0.62\linewidth]{images/p0067_fig9.png}\hfill
-        \includegraphics[width=0.34\linewidth]{images/p0067_fig10.png}
-        \vspace{1mm} \\
-        \hline
-        \textbf{\textsf{\color{stewartcyan}Hàm lượng giác}} \newline \textit{\small (Trigonometric Functions)} \newline $f(x) = \sin x$ \newline $f(x) = \cos x$ \newline $f(x) = \tan x$ & 
-        \vspace{1mm}
-        \includegraphics[width=0.63\linewidth]{images/p0067_fig11.png}\hfill
-        \includegraphics[width=0.33\linewidth]{images/p0067_fig12.png}
-        \vspace{1mm} \\
-        \hline
-    \end{tabularx}
-\end{minipage}
+{\centering
+    {\large \textbf{\textsf{Bảng 3}}\quad \textbf{\textsf{Các họ hàm số cơ bản và đồ thị của chúng}}}\\[2mm]
+    \begin{tikzpicture}
+        \node[anchor=south west, inner sep=0] (img) at (0,0) {%
+            \includegraphics[width=\textwidth, height=0.83\textheight, keepaspectratio]{images/p0067_fig1.png}%
+        };
+        \begin{scope}[x={(img.south east)}, y={(img.north west)}]
+            % Hàng 1: Hàm tuyến tính
+            \fill[stewartcyanlight] (0.003, 0.837) rectangle (0.154, 0.997);
+            \node[anchor=west, text width=0.136\textwidth, align=left, inner sep=0pt] at (0.012, 0.917) {%
+                {\fontsize{9}{11.5}\selectfont
+                \textbf{\textsf{\color{stewartcyan}Hàm tuyến tính}}\\[1.8mm]
+                $f(x) = mx + b$}%
+            };
+
+            % Hàng 2: Hàm lũy thừa
+            \fill[stewartcyanlight] (0.003, 0.671) rectangle (0.154, 0.831);
+            \node[anchor=west, text width=0.136\textwidth, align=left, inner sep=0pt] at (0.012, 0.751) {%
+                {\fontsize{9}{11.5}\selectfont
+                \textbf{\textsf{\color{stewartcyan}Hàm lũy thừa}}\\[1.8mm]
+                $f(x) = x^n$}%
+            };
+
+            % Hàng 3: Hàm căn thức
+            \fill[stewartcyanlight] (0.003, 0.505) rectangle (0.154, 0.665);
+            \node[anchor=west, text width=0.136\textwidth, align=left, inner sep=0pt] at (0.012, 0.585) {%
+                {\fontsize{9}{11.5}\selectfont
+                \textbf{\textsf{\color{stewartcyan}Hàm căn thức}}\\[1.8mm]
+                $f(x) = \sqrt[n]{x}$}%
+            };
+
+            % Hàng 4: Hàm nghịch đảo
+            \fill[stewartcyanlight] (0.003, 0.339) rectangle (0.154, 0.499);
+            \node[anchor=west, text width=0.136\textwidth, align=left, inner sep=0pt] at (0.012, 0.419) {%
+                {\fontsize{9}{11.5}\selectfont
+                \textbf{\textsf{\color{stewartcyan}Hàm nghịch đảo}}\\[1.8mm]
+                $f(x) = \dfrac{1}{x^n}$}%
+            };
+
+            % Hàng 5: Hàm mũ và hàm logarit
+            \fill[stewartcyanlight] (0.003, 0.172) rectangle (0.154, 0.333);
+            \node[anchor=west, text width=0.136\textwidth, align=left, inner sep=0pt] at (0.012, 0.253) {%
+                {\fontsize{8.5}{10.8}\selectfont
+                \textbf{\textsf{\color{stewartcyan}Hàm mũ và}}\\[0.4mm]
+                \textbf{\textsf{\color{stewartcyan}hàm logarit}}\\[1.4mm]
+                $f(x) = b^x$\\[0.8mm]
+                $f(x) = \log_b x$}%
+            };
+
+            % Hàng 6: Hàm lượng giác
+            \fill[stewartcyanlight] (0.003, 0.003) rectangle (0.154, 0.166);
+            \node[anchor=west, text width=0.136\textwidth, align=left, inner sep=0pt] at (0.012, 0.085) {%
+                {\fontsize{8.5}{10.8}\selectfont
+                \textbf{\textsf{\color{stewartcyan}Hàm lượng giác}}\\[1.4mm]
+                $f(x) = \sin x$\\[0.8mm]
+                $f(x) = \cos x$\\[0.8mm]
+                $f(x) = \tan x$}%
+            };
+        \end{scope}
+    \end{tikzpicture}\par
+}
