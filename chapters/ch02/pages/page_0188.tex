@@ -1,0 +1,135 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[paperwidth=8.5in, paperheight=11in, left=0.8in, right=0.8in, top=0.65in, bottom=0.65in, headheight=14pt]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage[skins,breakable]{tcolorbox}
+
+% Định nghĩa hệ màu chuẩn theo phong cách giáo trình James Stewart
+\definecolor{stewartcyan}{RGB}{0, 130, 185}
+\definecolor{stewartred}{RGB}{204, 34, 41}
+\definecolor{stewartgreenbg}{RGB}{236, 243, 238}
+
+% Nhãn số phương trình đóng khung đỏ đặc trưng của Stewart
+\newcommand{\eqntag}[1]{%
+  {\fboxrule=0.8pt\fboxsep=2.5pt\fcolorbox{stewartred}{white}{\bfseries\sffamily\color{stewartred}\footnotesize#1}}%
+}
+
+% Thiết lập tiêu đề đầu trang và chân trang
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead[R]{\small\textsf{\textbf{MỤC 2.8}}\quad \textsf{Đạo hàm dưới dạng một hàm số}\qquad \textsf{\textbf{153}}}
+\fancyfoot[C]{\tiny\textcolor{gray!70}{Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203}}
+
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+% 1. Khối tài liệu tham khảo tiếp nối ở đầu trang với dải nền xanh nhạt toàn chiều rộng
+\noindent
+\begin{tcolorbox}[
+    enhanced,
+    colback=stewartgreenbg,
+    colframe=stewartgreenbg,
+    arc=0pt,
+    outer arc=0pt,
+    boxrule=0pt,
+    left=0pt, right=0pt, top=7pt, bottom=7pt,
+    width=\textwidth
+]
+\noindent
+\hspace*{0.29\textwidth}%
+\begin{minipage}[t]{0.71\textwidth}
+  \footnotesize
+  \begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=1.5em, itemsep=3pt, parsep=0pt, topsep=0pt]
+    \setcounter{enumi}{1}
+    \item Howard Eves, \textit{An Introduction to the History of Mathematics}, ấn bản lần thứ 6 (New York: Saunders, 1990), tr.~391, 395.
+    \item Morris Kline, \textit{Mathematical Thought from Ancient to Modern Times} (New York: Oxford University Press, 1972), tr.~344, 346.
+    \item Uta Merzbach và Carl Boyer, \textit{A History of Mathematics}, ấn bản lần thứ 3 (Hoboken, NJ: Wiley, 2011), tr.~323, 356.
+  \end{enumerate}
+\end{minipage}
+\end{tcolorbox}
+
+\vspace{34pt}
+
+% 2. Khối tiêu đề Mục 2.8 với 5 đường kẻ ngang trang trí màu cyan ở lề trái dóng chuẩn hàng
+\noindent
+\begin{minipage}[c]{0.26\textwidth}
+  \raggedleft
+  {\color{stewartcyan}%
+  \rule{48pt}{0.85pt}\\[2.8pt]
+  \rule{48pt}{0.85pt}\\[2.8pt]
+  \rule{48pt}{0.85pt}\\[2.8pt]
+  \rule{48pt}{0.85pt}\\[2.8pt]
+  \rule{48pt}{0.85pt}}%
+\end{minipage}%
+\hfill
+\begin{minipage}[c]{0.71\textwidth}
+  {\fontsize{22}{26}\selectfont\bfseries\sffamily\color{stewartcyan}2.8}\hspace{0.8em}%
+  {\fontsize{18}{22}\selectfont\bfseries\sffamily Đạo hàm dưới dạng một hàm số}
+\end{minipage}
+
+\vspace{18pt}
+
+% 3. Nội dung lý thuyết và ví dụ trong cột chính
+\noindent
+\hspace*{0.29\textwidth}%
+\begin{minipage}[t]{0.71\textwidth}
+  % Tiêu đề tiểu mục
+  {\color{stewartcyan}\rule{1.1ex}{1.1ex}}\hspace{0.5em}\textbf{\textsf{\large Hàm đạo hàm}}
+  \par\vspace{0.7em}
+
+  Trong mục trước, chúng ta đã xét đạo hàm của một hàm số $f$ tại một số cố định $a$:
+  \par\vspace{0.8em}
+
+  % Công thức (1)
+  \noindent
+  \makebox[0pt][l]{\eqntag{1}}\hfill
+  $\displaystyle f'(a) = \lim_{h \to 0} \frac{f(a+h) - f(a)}{h}$
+  \hfill\null
+  \par\vspace{0.8em}
+
+  Ở đây chúng ta thay đổi quan điểm và cho số $a$ biến thiên. Nếu ta thay $a$ trong Phương trình~1 bằng một biến số $x$, ta nhận được
+  \par\vspace{0.8em}
+
+  % Công thức (2) đóng khung viền đỏ
+  \noindent
+  \makebox[0pt][l]{\eqntag{2}}\hfill
+  \setlength{\fboxrule}{0.8pt}\setlength{\fboxsep}{6.5pt}%
+  \fcolorbox{stewartred}{white}{%
+    \hspace{2.2em}$\displaystyle f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}$\hspace{2.2em}%
+  }\hfill\null
+  \par\vspace{1.1em}
+
+  Cho trước bất kỳ số $x$ nào mà giới hạn này tồn tại, ta gán cho $x$ số $f'(x)$. Do đó, ta có thể xem $f'$ là một hàm số mới, được gọi là \textbf{đạo hàm của $\boldsymbol{f}$} và được xác định bởi Phương trình~2. Ta biết rằng giá trị của $f'$ tại $x$, tức $f'(x)$, có thể được giải thích về mặt hình học là hệ số góc của tiếp tuyến với đồ thị của $f$ tại điểm $(x, f(x))$.
+  \par\vspace{0.8em}
+
+  Hàm số $f'$ được gọi là đạo hàm của $f$ bởi vì nó được “dẫn xuất” từ $f$ thông qua phép toán lấy giới hạn trong Phương trình~2. Tập xác định của $f'$ là tập hợp $\{x \mid f'(x)\text{ tồn tại}\}$ và có thể nhỏ hơn tập xác định của $f$.
+  \par\vspace{1.3em}
+
+  % Ví dụ 1
+  \textbf{\textsf{\color{stewartcyan}VÍ DỤ 1}}\hspace{1em}Đồ thị của một hàm số $f$ được cho trong Hình~1. Hãy dùng nó để phác thảo đồ thị của hàm đạo hàm $f'$.
+\end{minipage}
+
+\vspace{14pt}
+
+% 4. Khối Hình 1 và nhãn HÌNH 1 dóng đáy chính xác tuyệt đối
+\noindent
+\begin{minipage}[b]{0.26\textwidth}
+  \raggedleft
+  \textbf{\textsf{HÌNH 1}}\par
+  \vspace{12pt}%
+\end{minipage}%
+\hfill
+\begin{minipage}[b]{0.71\textwidth}
+  \centering
+  \includegraphics[width=0.88\linewidth]{images/p0188_fig1.png}
+\end{minipage}
+
+\end{document}
