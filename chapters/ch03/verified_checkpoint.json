@@ -89,6 +89,12 @@
       "score": 99,
       "notes": "Bản dịch hiện tại bị lỗi in đè văn bản khai báo gói lệnh lên đầu trang và ghi chú lề trái bị lệch vị trí (nằm quá cao so với khung Quy tắc thương). Cần cấu trúc lại để ghi chú dóng hàng chuẩn xác 1:1 với khung đỏ.",
       "time": "2026-09-23 06:29:52"
+    },
+    {
+      "page_num": 223,
+      "score": 99,
+      "notes": "Bản dịch bị lỗi hiển thị rò rỉ mã nguồn gói lệnh (preamble) ngay đầu trang; vị trí Hình 4 bị đẩy quá cao so với bản gốc; nhãn HÌNH 3 và HÌNH 4 bị căn giữa và dùng màu đen thay vì màu xanh Stewart cyan và căn lề trái; chữ ghi chú lề chưa dùng font sans-serif.",
+      "time": "2026-09-23 06:31:48"
     }
   ]
 }
