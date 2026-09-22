@@ -1,0 +1,102 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{array}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage[vietnamese]{babel}
+\usepackage{newtxtext,newtxmath}
+
+\geometry{
+    letterpaper,
+    left=15mm,
+    right=15mm,
+    top=20mm,
+    bottom=20mm,
+    headheight=14pt,
+    headsep=15pt,
+    footskip=15pt
+}
+
+% Màu chuẩn Stewart Calculus
+\definecolor{stewartcyan}{RGB}{0, 130, 185}
+\definecolor{tableheadcolor}{RGB}{208, 226, 242}
+
+% Thiết lập tiêu đề đầu trang dóng chính xác theo cột nội dung chính
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[R]{\parbox{0.74\textwidth}{\small\textsf{\textbf{MỤC 2.1}}\hspace{1.5em}\textsf{Các bài toán tiếp tuyến và vận tốc}\hfill\textbf{\textsf{79}}}}
+\fancyfoot{}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\begin{document}
+
+% KHỐI 1: Hình 3 và đoạn mở đầu
+\noindent
+\begin{minipage}[b]{0.22\textwidth}
+    \noindent\textbf{\textsf{HÌNH 3}}\par
+    \vspace{2pt}
+\end{minipage}\hfill
+\begin{minipage}[b]{0.74\textwidth}
+    Hình~3 minh họa quá trình giới hạn xảy ra trong Ví dụ~1. Khi $Q$ tiến đến $P$ dọc theo parabol, các cát tuyến tương ứng quay quanh $P$ và tiến dần đến tiếp tuyến~$\ell$.
+
+    \vspace{0.4em}
+    \includegraphics[width=\linewidth]{images/p0114_fig1.png}
+\end{minipage}
+
+% KHỐI 2: Đoạn văn chuyển tiếp
+\vspace{0.9em}
+\noindent
+\begin{minipage}[t]{0.22\textwidth}
+    \mbox{}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.74\textwidth}
+    Nhiều hàm số xuất hiện trong các ngành khoa học không được mô tả bởi các phương trình tường minh; chúng được xác định bởi dữ liệu thực nghiệm. Ví dụ tiếp theo chỉ ra cách ước lượng hệ số góc của tiếp tuyến với đồ thị của một hàm số như vậy.
+\end{minipage}
+
+% KHỐI 3: Bảng số liệu lề trái dóng hàng ngang với Ví dụ 2 và Lời giải
+\vspace{0.9em}
+\noindent
+\begin{minipage}[t]{0.22\textwidth}
+    \vspace{0pt}
+    \centering
+    \renewcommand{\arraystretch}{1.22}
+    \begin{tabular}{|c|c|}
+    \hline
+    \rowcolor{tableheadcolor}
+    \makebox[2.4em]{$t$} & \makebox[3.4em]{$Q$} \\
+    \hline
+    $0$ & $10$ \\
+    $0{,}02$ & $8{,}187$ \\
+    $0{,}04$ & $6{,}703$ \\
+    $0{,}06$ & $5{,}488$ \\
+    $0{,}08$ & $4{,}493$ \\
+    $0{,}1$ & $3{,}676$ \\
+    \hline
+    \end{tabular}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.74\textwidth}
+    \vspace{0pt}
+    \noindent\textbf{\textsf{\color{stewartcyan}VÍ DỤ 2}}\hspace{0.8em}Một laser xung hoạt động bằng cách tích điện trên một tụ điện và phóng điện đột ngột khi kích hoạt laser. Dữ liệu trong bảng mô tả lượng điện tích $Q$ còn lại trên tụ điện (tính bằng coulomb) tại thời điểm $t$ (tính bằng giây sau khi kích hoạt laser). Hãy sử dụng dữ liệu này để vẽ đồ thị của hàm số và ước lượng hệ số góc của tiếp tuyến tại điểm có $t = 0{,}04$. (\textit{Lưu ý:} Hệ số góc của tiếp tuyến biểu diễn cường độ dòng điện chạy từ tụ điện sang laser [đo bằng ampe].)\par
+
+    \vspace{0.8em}
+    \noindent\textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\hspace{0.8em}Trong Hình~4, chúng ta vẽ các điểm dữ liệu đã cho và sử dụng các điểm này để phác thảo một đường cong xấp xỉ đồ thị của hàm số.
+\end{minipage}
+
+% KHỐI 4: Hình 4 và nhãn HÌNH 4 ở lề trái
+\vspace{0.8em}
+\noindent
+\begin{minipage}[b]{0.22\textwidth}
+    \noindent\textbf{\textsf{HÌNH 4}}\par
+    \vspace{4pt}
+\end{minipage}\hfill
+\begin{minipage}[b]{0.74\textwidth}
+    \includegraphics[width=0.60\linewidth]{images/p0114_fig2.png}
+\end{minipage}
+
+\end{document}
