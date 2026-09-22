@@ -1,0 +1,87 @@
+\documentclass[10pt]{article}
+\usepackage{fontspec}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{marginnote}
+\usepackage[paperwidth=8.5in,paperheight=11in,left=2.45in,right=0.75in,top=0.85in,bottom=0.75in,marginparwidth=1.75in,marginparsep=0.3in,reversemarginpar]{geometry}
+
+\setmainfont{TeX Gyre Termes}
+\setsansfont{TeX Gyre Heros}
+
+\definecolor{stewartblue}{RGB}{0, 120, 180}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\fontsize{9pt}{11pt}\selectfont\textsf{\textbf{MỤC 2.7}}\quad \textsf{Đạo hàm và tốc độ thay đổi}}
+\fancyhead[R]{\fontsize{10pt}{12pt}\selectfont\textsf{\textbf{147}}}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\setlength{\parindent}{14pt}
+\setlength{\parskip}{0pt}
+
+\begin{document}
+
+\noindent
+\marginnote{%
+  \centering
+  \includegraphics[width=\marginparwidth]{images/p0182_fig1.png}\\[4pt]
+  \raggedright
+  {\small\textbf{HÌNH 9}}\\[2pt]
+  {\footnotesize Các giá trị $y$ thay đổi nhanh tại $P$ và chậm tại $Q$.}
+}[-4pt]%
+Mối liên hệ với cách giải thích thứ nhất là nếu ta vẽ đường cong $y = f(x)$, thì tốc độ thay đổi tức thời là hệ số góc của tiếp tuyến với đường cong này tại điểm có hoành độ $x = a$. Điều này có nghĩa là khi đạo hàm lớn (và do đó đường cong rất dốc, như tại điểm $P$ trong Hình~9), các giá trị $y$ thay đổi nhanh chóng. Khi đạo hàm nhỏ, đường cong tương đối bằng phẳng (như tại điểm $Q$) và các giá trị $y$ thay đổi chậm.
+
+Đặc biệt, nếu $s = f(t)$ là hàm vị trí của một chất điểm chuyển động dọc theo một đường thẳng, thì $f'(a)$ là tốc độ thay đổi của độ dịch chuyển $s$ theo thời gian $t$. Nói cách khác, $f'(a)$ là \emph{vận tốc của chất điểm tại thời điểm} $t = a$. \textbf{Tốc độ} của chất điểm là giá trị tuyệt đối của vận tốc, nghĩa là $|f'(a)|$.
+
+Trong ví dụ tiếp theo, chúng ta thảo luận về ý nghĩa của đạo hàm của một hàm số được xác định bằng lời văn.
+
+\vspace{0.6em}
+\noindent\textbf{\textcolor{stewartblue}{VÍ DỤ 7}}\quad Một nhà sản xuất làm ra các cuộn vải có chiều rộng cố định. Chi phí để sản xuất $x$ yard vải này là $C = f(x)$ đô la.
+\begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=1.5em, itemsep=1pt, topsep=3pt, parsep=0pt]
+  \item Ý nghĩa của đạo hàm $f'(x)$ là gì? Đơn vị của nó là gì?
+  \item Về mặt thực tế, điều đó có ý nghĩa gì khi nói rằng $f'(1000) = 9$?
+  \item Bạn nghĩ giá trị nào lớn hơn, $f'(50)$ hay $f'(500)$? Còn $f'(5000)$ thì sao?
+\end{enumerate}
+
+\vspace{0.4em}
+\noindent\textbf{\textcolor{stewartblue}{LỜI GIẢI}}
+
+\noindent\textbf{(a)}~Đạo hàm $f'(x)$ là tốc độ thay đổi tức thời của $C$ theo $x$; nghĩa là, $f'(x)$ là tốc độ thay đổi của chi phí sản xuất theo số yard vải được sản xuất. (Các nhà kinh tế gọi tốc độ thay đổi này là \emph{chi phí cận biên}. Ý tưởng này được thảo luận chi tiết hơn trong các Mục~3.7 và~4.7.)
+
+Vì
+\[
+  f'(x) = \lim_{\Delta x \to 0} \frac{\Delta C}{\Delta x}
+\]
+nên đơn vị của $f'(x)$ giống với đơn vị của thương sai phân $\Delta C/\Delta x$. Vì $\Delta C$ được đo bằng đô la và $\Delta x$ bằng yard, nên suy ra đơn vị của $f'(x)$ là đô la trên mỗi yard.
+
+\smallskip
+\noindent\textbf{(b)}~Khẳng định $f'(1000) = 9$ có nghĩa là, sau khi đã sản xuất 1000 yard vải, tốc độ tăng chi phí sản xuất là $\$9/\text{yard}$. (Khi $x = 1000$, $C$ tăng nhanh gấp 9 lần so với $x$.)
+
+\marginnote{%
+  \raggedright\footnotesize
+  Ở đây chúng ta giả sử rằng hàm chi phí có tính chất tốt; nói cách khác, $C(x)$ không dao động nhanh ở gần $x = 1000$.%
+}[2pt]%
+Vì $\Delta x = 1$ là nhỏ so với $x = 1000$, ta có thể dùng xấp xỉ
+\[
+  f'(1000) \approx \frac{\Delta C}{\Delta x} = \frac{\Delta C}{1} = \Delta C
+\]
+và nói rằng chi phí để sản xuất yard vải thứ 1000 (hoặc thứ 1001) là khoảng $\$9$.
+
+\smallskip
+\noindent\textbf{(c)}~Tốc độ tăng chi phí sản xuất (trên mỗi yard) có lẽ thấp hơn khi $x = 500$ so với khi $x = 50$ (chi phí làm ra yard vải thứ 500 ít hơn chi phí làm ra yard vải thứ 50) do hiệu quả kinh tế theo quy mô. (Nhà sản xuất sử dụng hiệu quả hơn các chi phí cố định của việc sản xuất.) Vì vậy
+\[
+  f'(50) > f'(500)
+\]
+Nhưng khi sản xuất mở rộng, việc vận hành ở quy mô lớn phát sinh có thể trở nên kém hiệu quả và có thể có chi phí làm thêm giờ. Do đó, tốc độ tăng chi phí cuối cùng có thể bắt đầu tăng lên. Vì vậy có thể xảy ra trường hợp
+\begin{equation*}
+  f'(5000) > f'(500) \tag*{$\textcolor{stewartblue}{\rule{1.1ex}{1.1ex}}$}
+\end{equation*}
+
+\vspace{0.6em}
+\noindent Trong ví dụ sau, chúng ta ước tính tốc độ thay đổi của nợ công quốc gia theo thời gian. Ở đây hàm số không được xác định bằng một công thức mà bằng một bảng giá trị.
+
+\end{document}
