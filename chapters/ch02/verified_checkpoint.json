@@ -323,6 +323,12 @@
       "score": 98,
       "notes": "Thẩm định hoàn tất",
       "time": "2026-09-23 04:34:08"
+    },
+    {
+      "page_num": 166,
+      "score": 99,
+      "notes": "Lỗi nghiêm trọng: Phần khai báo gói (preamble) bị in thô trực tiếp lên đầu trang tài liệu làm đẩy toàn bộ cột nội dung chính xuống ~60pt, phá vỡ dóng hàng ngang giữa Hình 8, ghi chú lề và Hình 9 với phần văn bản tương ứng. Biểu thức nhân liên hợp ở Ví dụ 5 bị thừa dấu chấm nhân không có trong bản gốc.",
+      "time": "2026-09-23 04:37:36"
     }
   ]
 }
