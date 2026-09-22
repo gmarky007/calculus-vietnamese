@@ -1,0 +1,169 @@
+\documentclass[10pt]{article}
+\usepackage[paperwidth=210mm, paperheight=280mm, left=18mm, right=18mm, top=16mm, bottom=18mm]{geometry}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{fontspec}
+\setmainfont{TeX Gyre Termes}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{microtype}
+
+% Màu sắc nhận diện chuẩn giáo trình Stewart
+\definecolor{stewartblue}{RGB}{0, 115, 175}
+\definecolor{stewartline}{RGB}{70, 160, 215}
+\definecolor{stewarttitle}{RGB}{15, 45, 85}
+
+% Biểu tượng đồ thị máy tính/màn hình nhỏ trước các bài toán CAS
+\newcommand{\graphicon}{%
+  \begin{tikzpicture}[x=1ex, y=1ex, baseline=-0.25ex]
+    \draw[fill=cyan!12, draw=cyan!80!black, line width=0.55pt, rounded corners=0.6pt] (0,0) rectangle (1.4, 1.25);
+    \draw[red!80!black, line width=0.55pt] (0.2, 0.35) sin (0.7, 0.95) cos (1.2, 0.3);
+  \end{tikzpicture}\hspace{1.5pt}%
+}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\begin{document}
+
+% Header trang
+{\small
+\textbf{140}\qquad \textbf{CHƯƠNG 2}\quad Giới hạn và Đạo hàm
+}
+\vspace{5mm}
+
+% Phần bài tập: 2 cột đối xứng
+\noindent
+\begin{minipage}[t]{0.485\textwidth}
+\small
+\noindent
+\graphicon \textbf{71.}\hspace{1.5mm}Sử dụng đồ thị để tìm một số $N$ sao cho
+\begin{equation*}
+\text{nếu}\quad x > N \quad \text{thì}\quad \left| \frac{3x^2+1}{2x^2+x+1} - 1{,}5 \right| < 0{,}05
+\end{equation*}
+
+\vspace{2.8mm}
+\noindent
+\graphicon \textbf{72.}\hspace{1.5mm}Đối với giới hạn
+\begin{equation*}
+\lim_{x \to \infty} \frac{1-3x}{\sqrt{x^2+1}} = -3
+\end{equation*}
+hãy minh họa Định nghĩa 7 bằng cách tìm các giá trị của $N$ tương ứng với $\varepsilon = 0{,}1$ và $\varepsilon = 0{,}05$.
+
+\vspace{2.8mm}
+\noindent
+\graphicon \textbf{73.}\hspace{1.5mm}Đối với giới hạn
+\begin{equation*}
+\lim_{x \to -\infty} \frac{1-3x}{\sqrt{x^2+1}} = 3
+\end{equation*}
+hãy minh họa Định nghĩa 8 bằng cách tìm các giá trị của $N$ tương ứng với $\varepsilon = 0{,}1$ và $\varepsilon = 0{,}05$.
+
+\vspace{2.8mm}
+\noindent
+\graphicon \textbf{74.}\hspace{1.5mm}Đối với giới hạn
+\begin{equation*}
+\lim_{x \to \infty} \sqrt{x}\ln x = \infty
+\end{equation*}
+hãy minh họa Định nghĩa 9 bằng cách tìm một giá trị của $N$ tương ứng với $M = 100$.
+
+\vspace{2.8mm}
+\noindent
+\textbf{75.}\hspace{1.5mm}\textbf{(a)} Ta phải chọn $x$ lớn đến mức nào để $1/x^2 < 0{,}0001$?
+
+\vspace{1mm}
+\noindent
+\textbf{(b)} Lấy $r = 2$ trong Định lý 5, ta có khẳng định
+\begin{equation*}
+\lim_{x \to \infty} \frac{1}{x^2} = 0
+\end{equation*}
+Hãy chứng minh trực tiếp điều này bằng cách sử dụng Định nghĩa 7.
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.485\textwidth}
+\small
+\noindent
+\textbf{76.}\hspace{1.5mm}\textbf{(a)} Ta phải chọn $x$ lớn đến mức nào để $1/\sqrt{x} < 0{,}0001$?
+
+\vspace{1mm}
+\noindent
+\textbf{(b)} Lấy $r = \frac{1}{2}$ trong Định lý 5, ta có khẳng định
+\begin{equation*}
+\lim_{x \to \infty} \frac{1}{\sqrt{x}} = 0
+\end{equation*}
+Hãy chứng minh trực tiếp điều này bằng cách sử dụng Định nghĩa 7.
+
+\vspace{2.8mm}
+\noindent
+\textbf{77.}\hspace{1.5mm}Sử dụng Định nghĩa 8 để chứng minh rằng $\lim\limits_{x \to -\infty} \dfrac{1}{x} = 0$.
+
+\vspace{2.8mm}
+\noindent
+\textbf{78.}\hspace{1.5mm}Chứng minh, bằng cách sử dụng Định nghĩa 9, rằng $\lim\limits_{x \to \infty} x^3 = \infty$.
+
+\vspace{2.8mm}
+\noindent
+\textbf{79.}\hspace{1.5mm}Sử dụng Định nghĩa 9 để chứng minh rằng $\lim\limits_{x \to \infty} e^x = \infty$.
+
+\vspace{2.8mm}
+\noindent
+\textbf{80.}\hspace{1.5mm}Hãy thiết lập một định nghĩa chính xác cho
+\begin{equation*}
+\lim_{x \to -\infty} f(x) = -\infty
+\end{equation*}
+Sau đó sử dụng định nghĩa của bạn để chứng minh rằng
+\begin{equation*}
+\lim_{x \to -\infty} (1+x^3) = -\infty
+\end{equation*}
+
+\vspace{2.5mm}
+\noindent
+\textbf{81.}\hspace{1.5mm}\textbf{(a)} Chứng minh rằng
+\begin{equation*}
+\lim_{x \to \infty} f(x) = \lim_{t \to 0^+} f(1/t)
+\end{equation*}
+và $\lim\limits_{x \to -\infty} f(x) = \lim\limits_{t \to 0^-} f(1/t)$, giả sử rằng các giới hạn này tồn tại.
+
+\vspace{1mm}
+\noindent
+\textbf{(b)} Sử dụng phần (a) và Bài tập 65 để tìm
+\begin{equation*}
+\lim_{x \to 0^+} x \sin \frac{1}{x}
+\end{equation*}
+\end{minipage}
+
+\vspace{9mm}
+
+% Tiêu đề Mục 2.7
+\noindent
+\begin{minipage}[b]{45mm}
+  \begin{tikzpicture}[baseline=-0.3ex]
+    \draw[line width=1.4pt, color=stewartline] (0, 0.32) -- (2.4, 0.32);
+    \draw[line width=1.4pt, color=stewartline] (0, 0.12) -- (2.4, 0.12);
+    \draw[line width=1.4pt, color=stewartline] (0, -0.08) -- (2.4, -0.08);
+  \end{tikzpicture}\hfill
+  {\fontsize{24}{28}\selectfont\bfseries\color{stewartblue} 2.7}\hspace{2.5mm}%
+  {\color{stewartline}\vrule width 1.2pt height 22pt depth 4pt}
+\end{minipage}%
+\hspace{4mm}%
+\begin{minipage}[b]{124mm}
+  {\fontsize{18}{22}\selectfont\bfseries\color{stewarttitle} Đạo hàm và Tốc độ Thay đổi}
+\end{minipage}
+
+\vspace{4.5mm}
+
+% Nội dung Mục 2.7 (thụt lề trái, chỉ chiếm cột bên phải)
+\noindent
+\hspace{49mm}%
+\begin{minipage}[t]{125mm}
+\normalsize\setlength{\parskip}{3.5mm}
+Bây giờ khi đã định nghĩa giới hạn và học các kỹ thuật tính toán chúng, chúng ta xem lại các bài toán tìm tiếp tuyến và vận tốc từ Mục 2.1. Loại giới hạn đặc biệt xuất hiện trong cả hai bài toán này được gọi là một \emph{đạo hàm} và chúng ta sẽ thấy rằng nó có thể được hiểu như một tốc độ thay đổi trong bất kỳ ngành khoa học tự nhiên, khoa học xã hội hay kỹ thuật nào.
+
+\noindent
+{\color{stewartblue}\rule{2.2mm}{2.2mm}}\hspace{2mm}\textbf{Tiếp tuyến}\quad Nếu một đường cong $C$ có phương trình $y = f(x)$ và chúng ta muốn tìm tiếp tuyến của $C$ tại điểm $P(a, f(a))$, thì chúng ta xét (như đã làm trong Mục 2.1) một điểm lân cận $Q(x, f(x))$, với $x \neq a$, và tính hệ số góc của cát tuyến $PQ$:
+\begin{equation*}
+  m_{PQ} = \frac{f(x) - f(a)}{x - a}
+\end{equation*}
+\end{minipage}
+
+\vfill
+\end{document}
