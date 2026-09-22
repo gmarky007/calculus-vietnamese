@@ -395,6 +395,12 @@
       "score": 99,
       "notes": "Mã nguồn hiện tại là văn bản từ chối của mô hình cũ chứ không phải bản dịch XeLaTeX của trang sách. Cần biên dịch lại toàn bộ trang bằng bố cục hai cột bất đối xứng (paracol), chèn chuẩn xác 3 hình ảnh từ thư viện images/, tạo khung định nghĩa đỏ cho Công thức 2 và dịch thuật ngữ giải tích chuẩn mực sư phạm.",
       "time": "2026-09-23 05:02:29"
+    },
+    {
+      "page_num": 178,
+      "score": 99,
+      "notes": "Trang dịch bị lỗi hiển thị văn bản mã nguồn preamble ở đầu trang; thiếu in đậm thuật ngữ 'vận tốc tức thời' trong hộp Định nghĩa 3; ghi chú lề trái chưa dóng ngang hàng chính xác với phần LỜI GIẢI; dịch nhầm 'Section 2.1' thành 'Ví dụ 2.1.3'.",
+      "time": "2026-09-23 05:05:47"
     }
   ]
 }
