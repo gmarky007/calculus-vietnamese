@@ -203,6 +203,12 @@
       "score": 99,
       "notes": "Cột lề bị lặp hình và lỗi cú pháp '\\captionof*figure' tạo ra chuỗi ký tự lạ; 'Combinations of Functions' là tiêu đề chạy (run-in heading) trong bản gốc nhưng đang bị tách dòng lớn; đoạn văn cuối trang bị bỏ dở nửa chừng ('Vì y là một hàm số...'). Đã sửa triệt để.",
       "time": "2026-09-23 01:42:49"
+    },
+    {
+      "page_num": 76,
+      "score": 99,
+      "notes": "Môi trường tasks ở Ví dụ 7 bị lỗi hiển thị thành danh sách dọc đánh số 1, 2, 3, 4 làm chiếm quá nhiều diện tích dọc; phần 'LỜI GIẢI' và mục (a) bị tách dòng không khớp bản gốc (gốc viết cùng dòng 'SOLUTION (a)'); ghi chú lề 'Nếu 0 <= a <= b...' bị lệch lên quá cao so với dòng tương ứng ở câu (b).",
+      "time": "2026-09-23 01:43:37"
     }
   ]
 }

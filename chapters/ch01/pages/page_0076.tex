@@ -5,17 +5,17 @@
 \begin{minipage}[t]{0.26\textwidth}
     \vspace{0pt}
     \includegraphics[width=\textwidth]{images/p0076_fig1.png}
-    \vspace{-2mm}
+    \vspace{-1mm}
     \begin{flushleft}
         \small
-        \textbf{\textsf{HÌNH 11}}\\
-        Máy $f \circ g$ được hợp thành từ máy $g$ (trước) và sau đó là máy $f$.
+        \textbf{\textsf{HÌNH 11}}\\[1pt]
+        Máy $f \circ g$ được cấu tạo từ máy $g$ (trước) và sau đó là máy $f$.
     \end{flushleft}
 
-    \vspace{165pt}
+    \vspace{255pt}
     \begin{flushleft}
         \small
-        {\color{stewartcyan}Nếu $0 \leqslant a \leqslant b$ thì $a^2 \leqslant b^2$.}
+        {\color{stewartcyan}\textit{Nếu $0 \leqslant a \leqslant b$ thì $a^2 \leqslant b^2$.}}
     \end{flushleft}
 \end{minipage}%
 \hfill
@@ -39,7 +39,7 @@
     \vspace{1mm}
     Tập xác định của $f \circ g$ là tập hợp tất cả các $x$ thuộc tập xác định của $g$ sao cho $g(x)$ thuộc tập xác định của $f$. Nói cách khác, $(f \circ g)(x)$ xác định bất cứ khi nào cả $g(x)$ và $f(g(x))$ đều xác định. Hình 11 cho thấy cách hình dung $f \circ g$ theo các cỗ máy.
 
-    \vspace{2mm}
+    \vspace{2.5mm}
     \noindent
     \textbf{\textsf{\color{stewartcyan}VÍ DỤ 6}}\hspace{0.8em}Nếu $f(x) = x^2$ và $g(x) = x - 3$, hãy tìm các hàm hợp $f \circ g$ và $g \circ f$.
 
@@ -55,30 +55,35 @@
     \noindent
     \tikz[baseline=-2.5pt]{\draw[stewartred, line width=1.3pt] (0,0) circle (4.5pt); \draw[stewartred, line width=1.3pt] (-3.2pt,3.2pt) -- (3.2pt,-3.2pt);}\hspace{0.4em}\textbf{\textsf{\color{stewartred}GHI CHÚ}}\hspace{0.8em}Bạn có thể thấy từ Ví dụ 6 rằng, nhìn chung, $f \circ g \neq g \circ f$. Hãy nhớ rằng, {\color{stewartred}ký hiệu $f \circ g$ có nghĩa là hàm $g$ được áp dụng trước và sau đó hàm $f$ được áp dụng sau}. Trong Ví dụ 6, $f \circ g$ là hàm số \textit{trước tiên} trừ đi 3 và \textit{sau đó} bình phương; $g \circ f$ là hàm số \textit{trước tiên} bình phương và \textit{sau đó} trừ đi 3.
 
-    \vspace{3mm}
+    \vspace{2.5mm}
     \noindent
     \textbf{\textsf{\color{stewartcyan}VÍ DỤ 7}}\hspace{0.8em}Nếu $f(x) = \sqrt{x}$ và $g(x) = \sqrt{2 - x}$, hãy tìm mỗi hàm số sau và tập xác định của nó.
-    \begin{tasks}[label=\textsf{(\alph*)}, label-width=18pt, item-indent=0pt, column-sep=0pt](4)
-        \task $f \circ g$
-        \task $g \circ f$
-        \task $f \circ f$
-        \task $g \circ g$
-    \end{tasks}
+
+    \vspace{1.5mm}
+    \noindent
+    \textbf{(a)}~$f \circ g$\hspace{4em}\textbf{(b)}~$g \circ f$\hspace{4em}\textbf{(c)}~$f \circ f$\hspace{4em}\textbf{(d)}~$g \circ g$
+
+    \vspace{2mm}
+    \noindent
+    \textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\hspace{0.8em}\textbf{(a)}\hspace{0.5em}$(f \circ g)(x) = f(g(x)) = f(\sqrt{2 - x}) = \sqrt{\sqrt{2 - x}} = \sqrt[4]{2 - x}$
 
     \vspace{1mm}
     \noindent
-    \textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}
-    \begin{itemize}[label={}, leftmargin=0pt, itemsep=4pt]
-        \item[(a)] \hspace{1.5em} $(f \circ g)(x) = f(g(x)) = f(\sqrt{2 - x}) = \sqrt{\sqrt{2 - x}} = \sqrt[4]{2 - x}$
+    Tập xác định của $f \circ g$ là $\{x \mid 2 - x \geqslant 0\} = \{x \mid x \leqslant 2\} = (-\infty, 2]$.
 
-        Tập xác định của $f \circ g$ là $\{x \mid 2 - x \geqslant 0\} = \{x \mid x \leqslant 2\} = (-\infty, 2]$.
+    \vspace{2mm}
+    \noindent
+    \textbf{(b)}\hspace{0.5em}$(g \circ f)(x) = g(f(x)) = g(\sqrt{x}) = \sqrt{2 - \sqrt{x}}$
 
-        \item[(b)] \hspace{1.5em} $(g \circ f)(x) = g(f(x)) = g(\sqrt{x}) = \sqrt{2 - \sqrt{x}}$
+    \vspace{1mm}
+    \noindent
+    Để $\sqrt{x}$ xác định thì ta phải có $x \geqslant 0$. Để $\sqrt{2 - \sqrt{x}}$ xác định thì ta phải có $2 - \sqrt{x} \geqslant 0$, tức là $\sqrt{x} \leqslant 2$, hay $x \leqslant 4$. Do đó ta có $0 \leqslant x \leqslant 4$, vì vậy tập xác định của $g \circ f$ là đoạn $[0, 4]$.
 
-        Để $\sqrt{x}$ xác định thì ta phải có $x \geqslant 0$. Để $\sqrt{2 - \sqrt{x}}$ xác định thì ta phải có $2 - \sqrt{x} \geqslant 0$, tức là $\sqrt{x} \leqslant 2$, hay $x \leqslant 4$. Do đó ta có $0 \leqslant x \leqslant 4$, vì vậy tập xác định của $g \circ f$ là đoạn $[0, 4]$.
+    \vspace{2mm}
+    \noindent
+    \textbf{(c)}\hspace{0.5em}$(f \circ f)(x) = f(f(x)) = f(\sqrt{x}) = \sqrt{\sqrt{x}} = \sqrt[4]{x}$
 
-        \item[(c)] \hspace{1.5em} $(f \circ f)(x) = f(f(x)) = f(\sqrt{x}) = \sqrt{\sqrt{x}} = \sqrt[4]{x}$
-
-        Tập xác định của $f \circ f$ là $[0, \infty)$.
-    \end{itemize}
+    \vspace{1mm}
+    \noindent
+    Tập xác định của $f \circ f$ là $[0, \infty)$.
 \end{minipage}
