@@ -557,6 +557,12 @@
       "score": 99,
       "notes": "Bản dịch gặp lỗi biên dịch nghiêm trọng: toàn bộ phần khai báo preamble bị rò rỉ và in ra thành văn bản thô ở đầu trang, đồng thời toàn bộ nội dung bài tập và 5 hình vẽ bị tràn hoặc mất hoàn toàn trên trang 1. Cần căn chỉnh lại toàn bộ mã nguồn, cấu hình lề và kích thước hình vẽ để trang hiển thị chuẩn xác 100% trên một trang duy nhất.",
       "time": "2026-09-23 05:57:30"
+    },
+    {
+      "page_num": 205,
+      "score": 99,
+      "notes": "Bản dịch bị lỗi nghiêm trọng khi in lộ toàn bộ mã lệnh khai báo gói preamble ra đầu trang nội dung. Cần xóa chuỗi rác này, chuẩn hóa thụt lề đầu dòng các bài tập, định dạng lại giới hạn nội dòng (inline limits) ở bài 55, 56 và cân bằng độ cao hai cột để đạt độ tương đồng 99%.",
+      "time": "2026-09-23 05:59:13"
     }
   ]
 }
