@@ -1,0 +1,156 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\geometry{
+    letterpaper,
+    left=1.5cm,
+    right=1.5cm,
+    top=1.8cm,
+    bottom=2.0cm,
+    headheight=14pt,
+    headsep=18pt
+}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{colortbl}
+\usepackage{array}
+\usepackage{tikz}
+\usepackage{fancyhdr}
+\usepackage[most]{tcolorbox}
+\usepackage{newtxtext,newtxmath}
+
+% Định nghĩa màu sắc nhận diện chuẩn giáo trình Stewart Calculus
+\definecolor{stewartred}{RGB}{204, 37, 41}
+\definecolor{stewartcyan}{RGB}{0, 136, 170}
+\definecolor{tableheader}{RGB}{232, 240, 248}
+\definecolor{tableborder}{RGB}{160, 175, 195}
+
+% Thiết lập khung định nghĩa chuẩn Stewart
+\newtcolorbox{definitionbox}[1][]{
+    enhanced,
+    colback=white,
+    colframe=stewartred,
+    arc=0mm,
+    boxrule=1pt,
+    left=10pt,
+    right=10pt,
+    top=6pt,
+    bottom=6pt,
+    sharp corners,
+    #1
+}
+
+% Thiết lập đầu trang
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\fontsize{9pt}{11pt}\selectfont\textbf{180}\qquad\textsf{\textbf{CHƯƠNG 3}}\quad Các quy tắc tính đạo hàm}
+\fancyhead[R]{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.27\textwidth}
+    \setlength{\tabcolsep}{3.5pt}
+    \renewcommand{\arraystretch}{1.25}
+    \centering
+    \fontsize{8.5pt}{11pt}\selectfont
+    \begin{tabular}{|c|c|c|}
+        \hline
+        \rowcolor{tableheader}
+        \rule{0pt}{14pt}$h$ & $\dfrac{2^h - 1}{h}$ & $\dfrac{3^h - 1}{h}$ \\[6pt]
+        \hline
+        0{,}1     & 0{,}71773 & 1{,}16123 \\
+        0{,}01    & 0{,}69556 & 1{,}10467 \\
+        0{,}001   & 0{,}69339 & 1{,}09922 \\
+        0{,}0001  & 0{,}69317 & 1{,}09867 \\
+        0{,}00001 & 0{,}69315 & 1{,}09862 \\
+        \hline
+    \end{tabular}
+
+    \vspace{4.6cm}
+    \raggedright
+    \fontsize{8.5pt}{11.5pt}\selectfont
+    Trong Bài tập 1 chúng ta sẽ thấy rằng $e$ nằm giữa $2{,}7$ và $2{,}8$. Sau này chúng ta sẽ có thể chứng minh được rằng, chính xác đến năm chữ số thập phân,
+    \[
+        e \approx 2{,}71828
+    \]
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.69\textwidth}
+    \fontsize{9.5pt}{13.2pt}\selectfont
+    \setlength{\parindent}{1.5em}
+    \setlength{\parskip}{0pt}
+
+    \noindent
+    Bằng chứng số học cho sự tồn tại của $f'(0)$ được cho trong bảng bên trái đối với các trường hợp $b = 2$ và $b = 3$. (Các giá trị được nêu chính xác đến bốn chữ số thập phân.) Người ta có thể chứng minh được rằng các giới hạn này tồn tại và
+    \begin{align*}
+        \text{với } b = 2, \quad f'(0) &= \lim_{h \to 0} \frac{2^h - 1}{h} \approx 0{,}693 \\[4pt]
+        \text{với } b = 3, \quad f'(0) &= \lim_{h \to 0} \frac{3^h - 1}{h} \approx 1{,}099
+    \end{align*}
+
+    \noindent
+    Do đó, từ Phương trình 4 ta có
+    \vspace{2pt}
+
+    \noindent
+    \makebox[0pt][l]{\tikz[baseline=(char.base)]{\node[draw=stewartred,semithick,inner sep=2pt,text=stewartred,font=\sffamily\bfseries\small](char){5};}}%
+    \hfill
+    $\dfrac{d}{dx}(2^x) \approx (0{,}693)2^x$
+    \qquad\qquad\quad
+    $\dfrac{d}{dx}(3^x) \approx (1{,}099)3^x$
+    \hfill\null
+    \vspace{6pt}
+
+    Trong tất cả các lựa chọn khả dĩ cho cơ số $b$ ở Phương trình 4, công thức tính đạo hàm đơn giản nhất xảy ra khi $f'(0) = 1$. Dựa vào các ước lượng của $f'(0)$ đối với $b = 2$ và $b = 3$, có vẻ hợp lý khi tồn tại một số $b$ nằm giữa 2 và 3 sao cho $f'(0) = 1$. Theo quy ước truyền thống, giá trị này được ký hiệu bởi chữ cái $e$. (Trên thực tế, đó là cách chúng ta đã giới thiệu $e$ trong Mục 1.4.) Do đó, chúng ta có định nghĩa sau đây.
+    \vspace{6pt}
+
+    \begin{definitionbox}
+        {\bfseries\textsf{\color{stewartred}Định nghĩa số $\boldsymbol{e}$}}\par
+        \vspace{4pt}
+        \noindent $e$ là số sao cho \qquad $\displaystyle\lim_{h \to 0} \frac{e^h - 1}{h} = 1$
+    \end{definitionbox}
+    \vspace{6pt}
+
+    Về mặt hình học, điều này có nghĩa là trong tất cả các hàm số mũ khả dĩ $y = b^x$, hàm số $f(x) = e^x$ là hàm số có tiếp tuyến tại $(0, 1)$ với hệ số góc $f'(0)$ chính xác bằng 1. (Xem Hình 6 và 7.)
+    \vspace{6pt}
+
+    \noindent
+    \begin{minipage}[b]{0.48\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/p0215_fig1.png}
+        \vspace{3pt}
+        \par{\bfseries\textsf{HÌNH 6}}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[b]{0.48\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/p0215_fig2.png}
+        \vspace{3pt}
+        \par{\bfseries\textsf{HÌNH 7}}
+    \end{minipage}
+    \vspace{8pt}
+
+    Nếu chúng ta đặt $b = e$ và do đó, $f'(0) = 1$ vào Phương trình 4, nó trở thành công thức tính đạo hàm quan trọng sau đây.
+    \vspace{6pt}
+
+    \begin{definitionbox}
+        {\bfseries\textsf{\color{stewartred}Đạo hàm của hàm số mũ tự nhiên}}\par
+        \vspace{2pt}
+        \centering
+        $\displaystyle\frac{d}{dx}(e^x) = e^x$
+        \vspace{2pt}
+    \end{definitionbox}
+\end{minipage}
+
+\vfill
+\noindent
+\begin{minipage}{\textwidth}
+    \fontsize{6.5pt}{8pt}\selectfont\color{gray!80!black}
+    Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203
+\end{minipage}
+
+\end{document}
