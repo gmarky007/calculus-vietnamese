@@ -323,6 +323,12 @@
       "score": 99,
       "notes": "Tiêu đề đầu trang (header) chưa hiển thị do thiết lập LE trên trang đơn; Khung định lý 11 cần bo góc nhẹ (arc=1.5mm) và viền thanh nét hơn theo chuẩn giáo trình Stewart; Nhãn số 11 trong khung cần chuyển sang font sans-serif đậm đồng bộ.",
       "time": "2026-09-23 02:07:47"
+    },
+    {
+      "page_num": 96,
+      "score": 99,
+      "notes": "Bản dịch hiện tại bị lỗi gán sai và lặp ảnh nghiêm trọng: Hình 14 (ảnh dải ngang gồm 3 đồ thị) bị ép méo vào cột lề trái 0.26\\textwidth, Hình 15 và 16 bị đưa nhầm lên Lời giải Ví dụ 12, và Hình 13 bị lặp lại ở cuối trang. Cần tái cấu trúc trang thành bố cục 3 tầng (Tier) chuẩn: tầng trên 2 cột, tầng giữa trải rộng Hình 14 toàn trang, và tầng dưới đưa Hình 15 & 16 về đúng vị trí trong cột nội dung chính.",
+      "time": "2026-09-23 02:09:13"
     }
   ]
 }
