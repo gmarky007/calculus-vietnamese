@@ -3,10 +3,10 @@
 
 \noindent
 \begin{minipage}[t]{0.26\textwidth}
-    \vspace{5.9cm}
+    \vspace{7.7cm}
     \noindent
-    \colorbox{purple!80!black}{\textcolor{white}{\textbf{\textsf{PS}}}}%
-    \colorbox{purple!10}{\textbf{\textsf{\color{purple!80!black}Xét các trường hợp.}}}
+    \colorbox{purple!80!black}{\textbf{\textsf{\textcolor{white}{\strut PS}}}}%
+    \colorbox{purple!12}{\textbf{\textsf{\color{purple!80!black}\footnotesize\strut\ Xét các trường hợp.\ }}}
 \end{minipage}%
 \hfill
 \begin{minipage}[t]{0.71\textwidth}
@@ -17,36 +17,45 @@
     \textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\quad Nhắc lại định nghĩa của giá trị tuyệt đối:
     \[
     |x| = \begin{cases}
-    x & \text{nếu } x \ge 0 \\
+    x & \text{nếu } x \geqslant 0 \\
     -x & \text{nếu } x < 0
     \end{cases}
     \]
-    Từ đó suy ra
-    \begin{align*}
+
+    \noindent
+    \rlap{Từ đó suy ra}%
+    \hspace*{\fill}%
+    $\begin{aligned}[t]
     |x - 3| &= \begin{cases}
-    x - 3 & \text{nếu } x - 3 \ge 0 \\
+    x - 3 & \text{nếu } x - 3 \geqslant 0 \\[2pt]
     -(x - 3) & \text{nếu } x - 3 < 0
     \end{cases} \\[4pt]
     &= \begin{cases}
-    x - 3 & \text{nếu } x \ge 3 \\
+    x - 3 & \text{nếu } x \geqslant 3 \\[2pt]
     -x + 3 & \text{nếu } x < 3
     \end{cases}
-    \end{align*}
-    Tương tự,
-    \begin{align*}
+    \end{aligned}$%
+    \hspace*{\fill}\null
+
+    \medskip\noindent
+    \rlap{Tương tự,}%
+    \hspace*{\fill}%
+    $\begin{aligned}[t]
     |x + 2| &= \begin{cases}
-    x + 2 & \text{nếu } x + 2 \ge 0 \\
+    x + 2 & \text{nếu } x + 2 \geqslant 0 \\[2pt]
     -(x + 2) & \text{nếu } x + 2 < 0
     \end{cases} \\[4pt]
     &= \begin{cases}
-    x + 2 & \text{nếu } x \ge -2 \\
+    x + 2 & \text{nếu } x \geqslant -2 \\[2pt]
     -x - 2 & \text{nếu } x < -2
     \end{cases}
-    \end{align*}
+    \end{aligned}$%
+    \hspace*{\fill}\null
 
+    \bigskip\noindent
     Các biểu thức này cho thấy rằng chúng ta phải xét ba trường hợp:
     \[
-    x < -2 \qquad\qquad -2 \le x < 3 \qquad\qquad x \ge 3
+    x < -2 \qquad\qquad -2 \leqslant x < 3 \qquad\qquad x \geqslant 3
     \]
 
     \noindent
@@ -59,20 +68,21 @@
     \end{align*}
 
     \noindent
-    \textbf{\textsf{\color{stewartred}TRƯỜNG HỢP II}}\quad Nếu $-2 \le x < 3$, bất phương trình đã cho trở thành
+    \textbf{\textsf{\color{stewartred}TRƯỜNG HỢP II}}\quad Nếu $-2 \leqslant x < 3$, bất phương trình đã cho trở thành
     \begin{align*}
     -x + 3 + x + 2 &< 11 \\
-    5 &< 11 \qquad \text{\color{stewartcyan}(luôn đúng)}
+    5 &< 11 \qquad\quad \text{\color{stewartcyan}(luôn đúng)}
     \end{align*}
 
     \noindent
-    \textbf{\textsf{\color{stewartred}TRƯỜNG HỢP III}}\quad Nếu $x \ge 3$, bất phương trình trở thành
+    \textbf{\textsf{\color{stewartred}TRƯỜNG HỢP III}}\quad Nếu $x \geqslant 3$, bất phương trình trở thành
     \begin{align*}
     x - 3 + x + 2 &< 11 \\
     2x &< 12 \\
     x &< 6
     \end{align*}
 
+    \noindent
     Kết hợp các trường hợp I, II và III, ta thấy rằng bất phương trình được thỏa mãn khi $-5 < x < 6$. Do đó tập nghiệm là khoảng $(-5, 6)$.\hfill{\color{stewartcyan}$\blacksquare$}
 
     \bigskip
@@ -87,7 +97,7 @@
 
     \smallskip
     \noindent
-    \textbf{\textsf{Bước 2}}\quad Giả thiết $S_n$ đúng khi $n = k$ và suy ra rằng $S_n$ đúng khi $n = k + 1$.
+    \textbf{\textsf{Bước 2}}\quad Giả sử rằng $S_n$ đúng khi $n = k$ và suy ra rằng $S_n$ đúng khi $n = k + 1$.
 
     \smallskip
     \noindent
