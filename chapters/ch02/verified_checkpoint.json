@@ -491,6 +491,12 @@
       "score": 99,
       "notes": "Bản dịch hiện tại chứa văn bản thông báo từ chối thay vì nội dung giáo trình. Cần khôi phục định dạng bố cục 2 cột, lề ghi chú PS, các khối công thức đạo hàm/giới hạn và phần Lưu ý theo đúng chuẩn trang gốc.",
       "time": "2026-09-23 05:30:20"
+    },
+    {
+      "page_num": 194,
+      "score": 99,
+      "notes": "Mã nguồn hiện tại chỉ là văn bản từ chối của mô hình, hoàn toàn chưa có mã LaTeX tái hiện trang sách. Cần thiết lập lại toàn bộ bố cục 2 cột bất đối xứng với lề trái cho Hình 6 và chú thích Hình 7, nội dung chính chứa các đoạn văn, công thức toán và cụm đồ thị Hình 8, 9 cùng ký hiệu Leibniz chuẩn xác.",
+      "time": "2026-09-23 05:32:46"
     }
   ]
 }
