@@ -533,6 +533,12 @@
       "score": 99,
       "notes": "Bản dịch XeLaTeX gặp sự cố hiển thị khiến toàn bộ nội dung hai cột biến mất và lộ mã thô trên đầu trang. Cần tái cấu trúc toàn diện mã nguồn để đảm bảo biên dịch hoàn hảo, khớp chuẩn 1:1 bố cục hai cột, bảng màu Stewart (đỏ/cyan), vị trí hình ảnh và ký hiệu toán học.",
       "time": "2026-09-23 05:47:25"
+    },
+    {
+      "page_num": 201,
+      "score": 99,
+      "notes": "Bản dịch hiện tại bị lỗi nghiêm trọng: dòng khai báo gói lệnh bị in tràn thành văn bản ở đầu trang, đồng thời toàn bộ phần nội dung 'Kiểm tra khái niệm' (các câu hỏi 1-11) bị đẩy tràn sang trang 2 do giãn cách quá lớn và sai lề. Cần thu gọn khoảng cách, căn chỉnh lề chính xác để toàn bộ nội dung hiển thị vừa vặn trên đúng 1 trang theo nguyên bản.",
+      "time": "2026-09-23 05:49:52"
     }
   ]
 }
