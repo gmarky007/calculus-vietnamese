@@ -1,0 +1,143 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{vietnam}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{geometry}
+\geometry{
+    letterpaper,
+    left=0.75in,
+    right=0.75in,
+    top=0.7in,
+    bottom=0.7in,
+    headheight=14pt,
+    headsep=12pt
+}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{mathptmx}
+\usepackage{microtype}
+
+\definecolor{stewartcyan}{RGB}{0, 158, 206}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[L]{}
+\fancyhead[R]{\textsf{\fontsize{8.5pt}{10pt}\selectfont \textbf{MỤC 3.3}\hspace{1.5em}Đạo hàm của các hàm lượng giác\hspace{2em}\textbf{191}}}
+\fancyfoot{}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\abovedisplayskip}{5pt}
+\setlength{\belowdisplayskip}{5pt}
+
+\begin{document}
+
+% =========================================================================
+% NỬA TRÊN TRANG: KẾT THÚC BÀI TẬP MỤC 3.2 (BỐ CỤC 2 CỘT ĐỀU NHAU)
+% =========================================================================
+\noindent
+\begin{minipage}[t]{0.485\textwidth}
+    \fontsize{8.5pt}{11pt}\selectfont
+    đang tăng với tốc độ khoảng \$2250 mỗi năm (cao hơn một chút so với mức trung bình toàn quốc là khoảng \$1810 mỗi năm). Hãy sử dụng Quy tắc tích và các số liệu này để ước tính tốc độ tăng của tổng thu nhập cá nhân ở Boulder vào năm 2015. Giải thích ý nghĩa của từng số hạng trong Quy tắc tích.
+
+    \vspace{0.7em}
+    \textbf{60.} Một nhà sản xuất sản xuất các cuộn vải có khổ rộng cố định. Số lượng $q$ của loại vải này (tính bằng thước Anh) bán được là một hàm của giá bán $p$ (tính bằng đô la trên mỗi thước Anh), do đó ta có thể viết $q = f(p)$. Khi đó tổng doanh thu thu được ứng với giá bán $p$ là $R(p) = pf(p)$.
+    \begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=*, itemsep=2pt, topsep=2pt, parsep=0pt]
+        \item Ý nghĩa của khẳng định $f(20) = 10{,}000$ và $f'(20) = -350$ là gì?
+        \item Giả sử các giá trị ở phần (a), hãy tìm $R'(20)$ và giải thích ý nghĩa câu trả lời của bạn.
+    \end{enumerate}
+
+    \vspace{0.7em}
+    \textbf{61.} Phương trình Michaelis-Menten đối với enzyme chymotrypsin là
+    \[
+    v = \frac{0{,}14[\text{S}]}{0{,}015 + [\text{S}]}
+    \]
+    trong đó $v$ là tốc độ của phản ứng enzyme và $[\text{S}]$ là nồng độ của cơ chất S. Hãy tính $dv/d[\text{S}]$ và giải thích ý nghĩa của nó.
+
+    \vspace{0.7em}
+    \textbf{62.} \textit{Sinh khối} $B(t)$ của một quần thể cá là tổng khối lượng của các cá thể trong quần thể tại thời điểm $t$. Nó là tích của số lượng cá thể $N(t)$ trong quần thể và khối lượng trung bình $M(t)$ của một con cá tại thời điểm $t$. Trong trường hợp cá bảy màu, sự sinh sản diễn ra liên tục. Giả sử tại thời điểm $t = 4$ tuần, quần thể có 820 con cá bảy màu và đang tăng với tốc độ 50 con mỗi tuần, trong khi khối lượng trung bình là 1{,}2~g và đang tăng với tốc độ 0{,}14~g/tuần. Sinh khối đang tăng với tốc độ nào khi $t = 4$?
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.485\textwidth}
+    \fontsize{8.5pt}{11pt}\selectfont
+    \textbf{63.} \textbf{Quy tắc tích mở rộng}\enspace Quy tắc tích có thể được mở rộng cho tích của ba hàm số.
+    \begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=*, itemsep=1.5pt, topsep=1.5pt, parsep=0pt]
+        \item Sử dụng Quy tắc tích hai lần để chứng minh rằng nếu $f, g$ và $h$ khả vi, thì $(fgh)' = f'gh + fg'h + fgh'$.
+        \item Cho $f = g = h$ trong phần (a), hãy chỉ ra rằng
+        \[
+        \frac{d}{dx} [f(x)]^3 = 3[f(x)]^2 f'(x)
+        \]
+        \item Sử dụng phần (b) để tính đạo hàm của $y = e^{3x}$.
+    \end{enumerate}
+
+    \vspace{0.7em}
+    \textbf{64.}
+    \begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=*, itemsep=1.5pt, topsep=1.5pt, parsep=0pt]
+        \item Nếu $F(x) = f(x)g(x)$, trong đó $f$ và $g$ có đạo hàm mọi cấp, hãy chứng minh rằng $F'' = f''g + 2f'g' + fg''$.
+        \item Tìm các công thức tương tự cho $F'''$ và $F^{(4)}$.
+        \item Dự đoán công thức cho $F^{(n)}$.
+    \end{enumerate}
+
+    \vspace{0.7em}
+    \textbf{65.} Tìm biểu thức cho năm đạo hàm đầu tiên của $f(x) = x^2 e^x$. Bạn có thấy quy luật nào trong các biểu thức này không? Hãy dự đoán một công thức cho $f^{(n)}(x)$ và chứng minh nó bằng phương pháp quy nạp toán học.
+
+    \vspace{0.7em}
+    \textbf{66.} \textbf{Quy tắc nghịch đảo}\enspace Nếu $g$ khả vi, \textit{Quy tắc nghịch đảo} phát biểu rằng
+    \[
+    \frac{d}{dx}\left[\frac{1}{g(x)}\right] = -\frac{g'(x)}{[g(x)]^2}
+    \]
+    \begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=*, itemsep=1.5pt, topsep=1.5pt, parsep=0pt]
+        \item Sử dụng Quy tắc thương để chứng minh Quy tắc nghịch đảo.
+        \item Sử dụng Quy tắc nghịch đảo để tính đạo hàm của hàm số trong Bài tập 14.
+        \item Sử dụng Quy tắc nghịch đảo để kiểm tra rằng Quy tắc lũy thừa vẫn đúng đối với các số nguyên âm, nghĩa là
+        \[
+        \frac{d}{dx}(x^{-n}) = -n x^{-n-1}
+        \]
+        với mọi số nguyên dương $n$.
+    \end{enumerate}
+\end{minipage}
+
+% =========================================================================
+% NỬA DƯỚI TRANG: MỤC 3.3 (BỐ CỤC CHUẨN LỀ TRÁI VÀ NỘI DUNG CHÍNH)
+% =========================================================================
+\vspace{2.5em}
+
+\noindent
+\begin{minipage}[t]{0.26\textwidth}
+    \vspace{0pt}%
+    \begin{tikzpicture}[baseline=0pt]
+        \draw[stewartcyan, line width=1.1pt] (0, 15pt) -- (\linewidth, 15pt);
+        \draw[stewartcyan, line width=1.1pt] (0, 10pt) -- (\linewidth, 10pt);
+        \draw[stewartcyan, line width=1.1pt] (0, 5pt)  -- (\linewidth, 5pt);
+        \draw[stewartcyan, line width=1.1pt] (0, 0pt)  -- (\linewidth, 0pt);
+    \end{tikzpicture}
+
+    \vspace{1.8em}
+    \fontsize{8pt}{10.5pt}\selectfont\color{black!85}
+    Phần ôn tập về các hàm lượng giác được trình bày ở Phụ lục~D.
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.70\textwidth}
+    \vspace{0pt}%
+    {\fontsize{24pt}{24pt}\selectfont\bfseries\color{stewartcyan} 3.3}%
+    \hspace{0.5em}%
+    {\fontsize{16pt}{18pt}\selectfont\bfseries Đạo hàm của các hàm lượng giác}
+
+    \vspace{1.2em}
+    \fontsize{9.5pt}{12.5pt}\selectfont
+    Trước khi bắt đầu mục này, bạn có thể cần xem lại các hàm lượng giác. Đặc biệt, điều quan trọng cần nhớ là khi chúng ta nói về hàm số $f$ xác định với mọi số thực $x$ bởi
+    \[
+    f(x) = \sin x
+    \]
+    thì $\sin x$ được hiểu là sin của góc có số đo bằng \textit{radian} là $x$. Quy ước tương tự cũng áp dụng cho các hàm lượng giác khác là $\cos$, $\tan$, $\csc$, $\sec$, và $\cot$. Hãy nhớ lại từ Mục 2.5 rằng tất cả các hàm lượng giác đều liên tục tại mọi điểm thuộc tập xác định của chúng.
+
+    \vspace{1.2em}
+    \noindent{\color{stewartcyan}\raisebox{0.1ex}{\rule{1.1ex}{1.1ex}}}\hspace{0.5em}{\fontsize{11pt}{13pt}\selectfont\bfseries Đạo hàm của các hàm lượng giác}
+
+    \vspace{0.6em}
+    Nếu chúng ta vẽ phác đồ thị của hàm số $f(x) = \sin x$ và sử dụng cách hiểu $f'(x)$ là hệ số góc của tiếp tuyến với đường cong hình sin để vẽ phác đồ thị của $f'$ (xem
+\end{minipage}
+
+\end{document}
