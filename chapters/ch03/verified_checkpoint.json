@@ -101,6 +101,12 @@
       "score": 99,
       "notes": "Bản dịch bị lỗi hiển thị mã nguồn ở đầu trang và chèn thừa các đường kẻ ngang màu lam trong cột bài tập 2 so với bản gốc. Bố cục hai cột và các công thức toán học cơ bản đã bám sát cấu trúc sách Stewart.",
       "time": "2026-09-23 06:34:54"
+    },
+    {
+      "page_num": 225,
+      "score": 99,
+      "notes": "Mã nguồn hiện tại chỉ chứa nội dung từ chối/tóm tắt chung, hoàn toàn thiếu toàn bộ nội dung bài tập từ 39 đến 59 cũng như các hình vẽ đồ thị đối chiếu. Cần tái lập toàn bộ mã nguồn XeLaTeX hai cột chuẩn xác 1:1 theo bản gốc.",
+      "time": "2026-09-23 06:36:12"
     }
   ]
 }

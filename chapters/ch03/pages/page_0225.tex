@@ -1,0 +1,122 @@
+\documentclass[10pt]{article}
+\usepackage[letterpaper, top=1.8cm, bottom=1.8cm, left=2.0cm, right=1.6cm, headsep=0.35cm]{geometry}
+\usepackage{fontspec}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{tikz}
+\usepackage{fancyhdr}
+
+% Cấu hình font
+\setmainfont{TeX Gyre Termes}
+
+% Icon màn hình đồ thị CAS ở lề
+\newcommand{\graphicon}{%
+  \begin{tikzpicture}[baseline=-0.3ex, scale=0.7]
+    \draw[rounded corners=1pt, fill=cyan!12, draw=cyan!80!blue, line width=0.55pt] (0,0) rectangle (0.42, 0.32);
+    \draw[cyan!80!blue, line width=0.5pt] (0.1,-0.06) -- (0.32,-0.06);
+    \draw[cyan!80!blue, line width=0.5pt] (0.21,0) -- (0.21,-0.06);
+    \draw[draw=cyan!90!black, line width=0.5pt] plot[smooth, tension=0.7] coordinates {(0.06,0.08) (0.2,0.24) (0.36,0.1)};
+  \end{tikzpicture}%
+}
+
+% Header & Footer
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textbf{190}\qquad\textbf{CHƯƠNG 3}\quad Các quy tắc đạo hàm}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\fontsize{7}{8}\selectfont Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203}
+
+\setlength{\columnsep}{20pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5.5pt}
+
+\begin{document}
+\fontsize{9.2pt}{11.5pt}\selectfont
+
+\begin{multicols}{2}
+
+\noindent\textbf{39.} (a) Đường cong $y = 1/(1 + x^2)$ được gọi là \textbf{đường phù thủy của Maria Agnesi}. Tìm phương trình tiếp tuyến của đường cong này tại điểm $\left(-1, \frac{1}{2}\right)$.\\[2pt]
+\llap{\graphicon\enspace}(b) Minh họa phần (a) bằng cách vẽ đồ thị của đường cong và tiếp tuyến trên cùng một màn hình.
+
+\noindent\textbf{40.} (a) Đường cong $y = x/(1 + x^2)$ được gọi là \textbf{đường serpentine}. Tìm phương trình tiếp tuyến của đường cong này tại điểm $(3;\ 0{,}3)$.\\[2pt]
+\llap{\graphicon\enspace}(b) Minh họa phần (a) bằng cách vẽ đồ thị của đường cong và tiếp tuyến trên cùng một màn hình.
+
+\noindent\llap{\graphicon\enspace}\textbf{41.} (a) Nếu $f(x) = (x^3 - x)e^x$, hãy tìm $f'(x)$.\\[2pt]
+(b) Kiểm tra xem câu trả lời của bạn ở phần (a) có hợp lý hay không bằng cách so sánh đồ thị của $f$ và $f'$.
+
+\noindent\llap{\graphicon\enspace}\textbf{42.} (a) Nếu $f(x) = (x^2 - 1)/(x^2 + 1)$, hãy tìm $f'(x)$ và $f''(x)$.\\[2pt]
+(b) Kiểm tra xem các câu trả lời của bạn ở phần (a) có hợp lý hay không bằng cách so sánh đồ thị của $f$, $f'$, và $f''$.
+
+\noindent\textbf{43.} Nếu $f(x) = x^2/(1 + x)$, hãy tìm $f''(1)$.
+
+\noindent\textbf{44.} Nếu $g(x) = x/e^x$, hãy tìm $g^{(n)}(x)$.
+
+\noindent\textbf{45.} Giả sử rằng $f(5) = 1$, $f'(5) = 6$, $g(5) = -3$, và $g'(5) = 2$. Hãy tìm các giá trị sau:\\[2pt]
+\hspace*{0.5em}(a) $(fg)'(5)$ \hfill (b) $(f/g)'(5)$ \hfill (c) $(g/f)'(5)$\hspace*{0.5em}
+
+\noindent\textbf{46.} Giả sử rằng $f(4) = 2$, $g(4) = 5$, $f'(4) = 6$, và $g'(4) = -3$. Hãy tìm $h'(4)$.\\[2pt]
+\hspace*{0.5em}(a) $h(x) = 3f(x) + 8g(x)$ \hfill (b) $h(x) = f(x)g(x)$\\[3pt]
+\hspace*{0.5em}(c) $h(x) = \dfrac{f(x)}{g(x)}$ \hfill (d) $h(x) = \dfrac{g(x)}{f(x) + g(x)}$
+
+\noindent\textbf{47.} Nếu $f(x) = e^x g(x)$, trong đó $g(0) = 2$ và $g'(0) = 5$, hãy tìm $f'(0)$.
+
+\noindent\textbf{48.} Nếu $h(2) = 4$ và $h'(2) = -3$, hãy tìm
+\[
+\left. \frac{d}{dx} \left( \frac{h(x)}{x} \right) \right|_{x=2}
+\]
+
+\noindent\textbf{49.} Nếu $g(x) = xf(x)$, trong đó $f(3) = 4$ và $f'(3) = -2$, hãy tìm phương trình tiếp tuyến của đồ thị hàm số $g$ tại điểm có $x = 3$.
+
+\noindent\textbf{50.} Nếu $f(2) = 10$ và $f'(x) = x^2 f(x)$ với mọi $x$, hãy tìm $f''(2)$.
+
+\noindent\textbf{51.} Nếu $f$ và $g$ là các hàm số có đồ thị như hình vẽ bên dưới, đặt $u(x) = f(x)g(x)$ và $v(x) = f(x)/g(x)$.\\[2pt]
+\hspace*{2em}(a) Tìm $u'(1)$. \hfill (b) Tìm $v'(4)$.\hspace*{2em}
+\begin{center}
+  \vspace{-2pt}
+  \includegraphics[width=0.62\linewidth]{images/p0225_fig2.png}
+  \vspace{-4pt}
+\end{center}
+
+\columnbreak
+
+\noindent\textbf{52.} Đặt $P(x) = F(x)G(x)$ và $Q(x) = F(x)/G(x)$, trong đó $F$ và $G$ là các hàm số có đồ thị như hình vẽ bên dưới.\\[2pt]
+\hspace*{2em}(a) Tìm $P'(2)$. \hfill (b) Tìm $Q'(7)$.\hspace*{2em}
+\begin{center}
+  \vspace{-2pt}
+  \includegraphics[width=0.62\linewidth]{images/p0225_fig1.png}
+  \vspace{-4pt}
+\end{center}
+
+\noindent\textbf{53.} Nếu $g$ là một hàm khả vi, hãy tìm biểu thức cho đạo hàm của mỗi hàm số sau.\\[2pt]
+\hspace*{1.5em}(a) $y = xg(x)$ \hfill (b) $y = \dfrac{x}{g(x)}$\hspace*{1.5em}\\[4pt]
+\hspace*{1.5em}(c) $y = \dfrac{g(x)}{x}$
+
+\noindent\textbf{54.} Nếu $f$ là một hàm khả vi, hãy tìm biểu thức cho đạo hàm của mỗi hàm số sau.\\[2pt]
+\hspace*{1.5em}(a) $y = x^2 f(x)$ \hfill (b) $y = \dfrac{f(x)}{x^2}$\hspace*{1.5em}\\[4pt]
+\hspace*{1.5em}(c) $y = \dfrac{x^2}{f(x)}$ \hfill (d) $y = \dfrac{1 + xf(x)}{\sqrt{x}}$\hspace*{1.5em}
+
+\noindent\textbf{55.} Có bao nhiêu tiếp tuyến của đường cong $y = x/(x + 1)$ đi qua điểm $(1, 2)$? Các tiếp tuyến này tiếp xúc với đường cong tại những điểm nào?
+
+\noindent\textbf{56.} Tìm phương trình của các tiếp tuyến của đường cong
+\[
+y = \frac{x - 1}{x + 1}
+\]
+song song với đường thẳng $x - 2y = 2$.
+
+\noindent\textbf{57.} Tìm $R'(0)$, biết
+\[
+R(x) = \frac{x - 3x^3 + 5x^5}{1 + 3x^3 + 6x^6 + 9x^9}
+\]
+\textit{Gợi ý:} Thay vì tìm $R'(x)$ trước, hãy gọi $f(x)$ là tử thức và $g(x)$ là mẫu thức của $R(x)$, rồi tính $R'(0)$ từ $f(0)$, $f'(0)$, $g(0)$ và $g'(0)$.
+
+\noindent\textbf{58.} Sử dụng phương pháp của Bài tập 57 để tính $Q'(0)$, biết
+\[
+Q(x) = \frac{1 + x + x^2 + xe^x}{1 - x + x^2 - xe^x}
+\]
+
+\noindent\textbf{59.} Trong bài tập này, chúng ta ước tính tốc độ gia tăng của tổng thu nhập cá nhân tại thành phố Boulder, Colorado. Vào năm 2015, dân số của thành phố này là 107.350 người và đang tăng với tốc độ khoảng 1.960 người mỗi năm. Thu nhập bình quân hàng năm là \$60.220 trên mỗi người, và mức trung bình này
+
+\end{multicols}
+
+\end{document}
