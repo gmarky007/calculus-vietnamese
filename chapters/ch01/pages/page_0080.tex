@@ -2,16 +2,20 @@
 \fancyhead[LO]{\textsf{MỤC 1.4}\quad \textsf{Hàm số mũ}}
 \fancyhead[RE]{\textsf{CHƯƠNG 1}\quad \textsf{Hàm số và Mô hình}}
 
-\begin{multicols*}{2}
-\small
+\noindent
+\begin{minipage}[t]{0.485\textwidth}
+\fontsize{8.5pt}{11pt}\selectfont
+\setlength{\abovedisplayskip}{3pt}
+\setlength{\belowdisplayskip}{3pt}
 \noindent
 \textbf{62.} Một máy bay đang bay với tốc độ $350\text{ mi/h}$ ở độ cao một dặm và bay ngang qua ngay phía trên một trạm radar tại thời điểm $t = 0$.
-\begin{enumerate}[label=(\alph*),leftmargin=*,itemsep=1pt]
+\begin{enumerate}[label=(\alph*),leftmargin=*,itemsep=0pt,topsep=1pt,parsep=0pt]
     \item Biểu diễn khoảng cách theo phương ngang $d$ (tính bằng dặm) mà máy bay đã bay như một hàm theo $t$.
     \item Biểu diễn khoảng cách $s$ giữa máy bay và trạm radar như một hàm theo $d$.
     \item Dùng phép hợp hàm để biểu diễn $s$ như một hàm theo $t$.
 \end{enumerate}
 
+\vspace{0.4em}
 \noindent
 \textbf{63. Hàm Heaviside}\; \textit{Hàm Heaviside} $H$ được định nghĩa bởi
 \[
@@ -21,80 +25,97 @@ H(t) = \begin{cases}
 \end{cases}
 \]
 Hàm này được sử dụng trong việc nghiên cứu các mạch điện để biểu diễn sự tăng vọt đột ngột của dòng điện, hoặc điện áp, khi bật công tắc tức thời.
-\begin{enumerate}[label=(\alph*),leftmargin=*,itemsep=1pt]
+\begin{enumerate}[label=(\alph*),leftmargin=*,itemsep=0pt,topsep=1pt,parsep=0pt]
     \item Phác thảo đồ thị của hàm Heaviside.
     \item Phác thảo đồ thị của điện áp $V(t)$ trong một mạch điện nếu bật công tắc tại thời điểm $t = 0$ và điện áp $120\text{ V}$ được đặt vào tức thời. Viết công thức cho $V(t)$ theo $H(t)$.
     \item Phác thảo đồ thị của điện áp $V(t)$ trong một mạch điện nếu bật công tắc tại thời điểm $t = 5\text{ giây}$ và điện áp $240\text{ V}$ được đặt vào tức thời. Viết công thức cho $V(t)$ theo $H(t)$. (Lưu ý rằng việc bắt đầu tại $t = 5$ tương ứng với một phép tịnh tiến.)
 \end{enumerate}
 
+\vspace{0.4em}
 \noindent
 \textbf{64. Hàm dốc}\; Hàm Heaviside được định nghĩa trong Bài tập~63 cũng có thể được dùng để định nghĩa \textit{hàm dốc} $y = ctH(t)$, biểu diễn sự tăng dần của điện áp hoặc dòng điện trong mạch.
-\begin{enumerate}[label=(\alph*),leftmargin=*,itemsep=1pt]
+\begin{enumerate}[label=(\alph*),leftmargin=*,itemsep=0pt,topsep=1pt,parsep=0pt]
     \item Phác thảo đồ thị của hàm dốc $y = tH(t)$.
     \item Phác thảo đồ thị của điện áp $V(t)$ trong một mạch điện nếu bật công tắc tại thời điểm $t = 0$ và điện áp tăng dần đều lên $120\text{ V}$ trong khoảng thời gian $60\text{ giây}$. Viết công thức cho $V(t)$ theo $H(t)$ với $t \leqslant 60$.
+\end{enumerate}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.485\textwidth}
+\fontsize{8.5pt}{11pt}\selectfont
+\setlength{\abovedisplayskip}{3pt}
+\setlength{\belowdisplayskip}{3pt}
+\begin{enumerate}[label=(\alph*),leftmargin=*,itemsep=0pt,topsep=0pt,parsep=0pt,start=3]
     \item Phác thảo đồ thị của điện áp $V(t)$ trong một mạch điện nếu bật công tắc tại thời điểm $t = 7\text{ giây}$ và điện áp tăng dần đều lên $100\text{ V}$ trong khoảng thời gian $25\text{ giây}$. Viết công thức cho $V(t)$ theo $H(t)$ với $t \leqslant 32$.
 \end{enumerate}
 
+\vspace{0.4em}
 \noindent
 \textbf{65.} Cho $f$ và $g$ là các hàm tuyến tính có phương trình $f(x) = m_1x + b_1$ và $g(x) = m_2x + b_2$. Hàm $f \circ g$ có phải là một hàm tuyến tính không? Nếu có, hệ số góc của đồ thị của nó là bao nhiêu?
 
+\vspace{0.4em}
 \noindent
 \textbf{66.} Nếu bạn đầu tư $x$ đô la với lãi suất $4\%$ gộp hàng năm, thì giá trị khoản đầu tư sau một năm là $A(x) = 1{,}04x$. Tìm $A \circ A$, $A \circ A \circ A$, và $A \circ A \circ A \circ A$. Các hàm hợp này đại diện cho điều gì? Tìm công thức cho hàm hợp gồm $n$ lần hàm $A$.
 
+\vspace{0.4em}
 \noindent
-\textbf{67.} 
-\begin{enumerate}[label=(\alph*),leftmargin=*,itemsep=1pt]
+\textbf{67.}\hspace{0.4em}\begin{minipage}[t]{\dimexpr\linewidth-2.4em\relax}
+\begin{enumerate}[label=(\alph*),leftmargin=*,itemsep=0pt,topsep=0pt,parsep=0pt]
     \item Nếu $g(x) = 2x + 1$ và $h(x) = 4x^2 + 4x + 7$, hãy tìm hàm $f$ sao cho $f \circ g = h$. (Hãy suy nghĩ xem những phép toán nào bạn cần thực hiện trên công thức của $g$ để thu được công thức cho $h$.)
     \item Nếu $f(x) = 3x + 5$ và $h(x) = 3x^2 + 3x + 2$, hãy tìm hàm $g$ sao cho $f \circ g = h$.
 \end{enumerate}
+\end{minipage}
 
+\vspace{0.4em}
 \noindent
 \textbf{68.} Nếu $f(x) = x + 4$ và $h(x) = 4x - 1$, hãy tìm hàm $g$ sao cho $g \circ f = h$.
 
+\vspace{0.4em}
 \noindent
 \textbf{69.} Giả sử $g$ là một hàm chẵn và đặt $h = f \circ g$. Hàm $h$ có luôn là hàm chẵn không?
 
+\vspace{0.4em}
 \noindent
 \textbf{70.} Giả sử $g$ là một hàm lẻ và đặt $h = f \circ g$. Hàm $h$ có luôn là hàm lẻ không? Điều gì xảy ra nếu $f$ lẻ? Điều gì xảy ra nếu $f$ chẵn?
 
+\vspace{0.4em}
 \noindent
 \textbf{71.} Cho $f(x)$ là một hàm số xác định trên $\mathbb{R}$.
-\begin{enumerate}[label=(\alph*),leftmargin=*,itemsep=1pt]
+\begin{enumerate}[label=(\alph*),leftmargin=*,itemsep=0pt,topsep=1pt,parsep=0pt]
     \item Chứng minh rằng $E(x) = f(x) + f(-x)$ là một hàm chẵn.
     \item Chứng minh rằng $O(x) = f(x) - f(-x)$ là một hàm lẻ.
     \item Chứng minh rằng mọi hàm số $f(x)$ đều có thể viết dưới dạng tổng của một hàm chẵn và một hàm lẻ.
     \item Biểu diễn hàm số $f(x) = 2^x + (x - 3)^2$ dưới dạng tổng của một hàm chẵn và một hàm lẻ.
 \end{enumerate}
-\end{multicols*}
+\end{minipage}
 
-\vspace{0.66em}
+\vspace{1.2em}
 \noindent
 \begin{tikzpicture}[baseline=(current bounding box.center)]
     \foreach \y in {0, 2.5, 5, 7.5, 10} {
-        \draw[stewartcyan, thin] (0,\y pt) -- (3.2,\y pt);
+        \draw[stewartcyan, thin] (0,\y pt) -- (1.3cm,\y pt);
     }
-\end{tikzpicture}\hspace{0.8em}%
-{\fontsize{24}{28}\selectfont\bfseries\color{stewartcyan} 1.4}\hspace{0.6em}%
-{\color{stewartcyan}\vrule width 1.5pt height 22pt depth 4pt}\hspace{0.8em}%
+\end{tikzpicture}\hspace{1.2em}%
+{\fontsize{24}{28}\selectfont\bfseries\color{stewartcyan} 1.4}\hspace{1.2em}%
 {\fontsize{18}{22}\selectfont\bfseries\textsf{Hàm số mũ}}
-\vspace{0.66em}
 
+\vspace{1.0em}
 \noindent
 \begin{minipage}[t]{0.26\textwidth}
     \vspace{0pt}
-    \small\itshape\color{darkgray}
+    \fontsize{8.5pt}{11.5pt}\selectfont\color{darkgray}
     Trong Phụ lục G, chúng tôi trình bày một cách tiếp cận khác đối với hàm số mũ và hàm logarit bằng phép tính tích phân.
 \end{minipage}%
 \hfill
 \begin{minipage}[t]{0.71\textwidth}
     \vspace{0pt}
+    \fontsize{9.5pt}{13.5pt}\selectfont
     Hàm số $f(x) = 2^x$ được gọi là một \textit{hàm số mũ} (\textit{exponential function}) vì biến số, $x$, là số mũ. Không nên nhầm lẫn hàm này với hàm lũy thừa $g(x) = x^2$, trong đó biến số đóng vai trò là cơ số.
 
-    \vspace{0.82em}
+    \vspace{0.8em}
     \noindent
-    \textsf{\textbf{\color{stewartcyan}$\blacksquare$\; Hàm số mũ và Đồ thị của chúng}}
+    \textbf{\color{stewartcyan}$\blacksquare$\; Hàm số mũ và Đồ thị của chúng}
 
-    \vspace{0.41em}
+    \vspace{0.4em}
     \noindent
     Nói chung, một \textbf{hàm số mũ} là một hàm có dạng
     \[
@@ -102,6 +123,8 @@ Hàm này được sử dụng trong việc nghiên cứu các mạch điện đ
     \]
     trong đó $b$ là một hằng số dương. Hãy nhắc lại điều này có ý nghĩa gì.
 
+    \vspace{0.4em}
+    \noindent
     Nếu $x = n$, một số nguyên dương, thì
     \[
     b^n = \underbrace{b \cdot b \cdot \dots \cdot b}_{\text{\color{stewartcyan}$n$ thừa số}}

@@ -227,6 +227,12 @@
       "score": 99,
       "notes": "Bản dịch bị lỗi nghiêm trọng khi toàn bộ nội dung hai cột bị tràn trang và đẩy sang trang tiếp theo, khiến trang hiện tại hoàn toàn trắng tinh. Ngoài ra, bài 34 bị sai đề ($g(x) = 1/x - 2$ thay vì $x/(x-2)$), bài 55(a) ghi nhầm $f(g(3))$ thay vì $f(g(1))$, và tiêu đề trang chẵn cần gom toàn bộ về lề trái.",
       "time": "2026-09-23 01:47:55"
+    },
+    {
+      "page_num": 80,
+      "score": 99,
+      "notes": "Mã nguồn hiện tại dùng multicols* không cân bằng khiến các bài tập 62-71 bị dồn hết vào một cột duy nhất, làm toàn bộ phần Mục 1.4 (tiêu đề, phụ lục G, định nghĩa hàm số mũ) bị đẩy sang trang sau. Cần thay bằng hệ 2 minipage song song cho phần bài tập và cấu trúc lề/nội dung chuẩn ở nửa dưới để hiển thị trọn vẹn trên cùng một trang như bản gốc.",
+      "time": "2026-09-23 01:48:48"
     }
   ]
 }
