@@ -1,15 +1,11 @@
 \fancyhead[L]{\textbf{\textsf{30}}\quad \textsc{CHƯƠNG 1}\quad Các hàm số và Mô hình}
 \fancyhead[R]{}
+
 \noindent
 \begin{minipage}[t]{0.26\textwidth}
-    \vspace*{110pt}
-    \begin{flushleft}
-        \footnotesize
-        Các Trang Tham khảo nằm ở phần đầu và phần cuối của cuốn sách.
-    \end{flushleft}
-    
-    \vspace{70pt}
-    \noindent\textbf{\textsf{HÌNH 19}}
+    \vspace*{118pt}
+    \raggedright\footnotesize
+    Các Trang Tham khảo nằm ở phần đầu và phần cuối của cuốn sách.
 \end{minipage}%
 \hfill
 \begin{minipage}[t]{0.71\textwidth}
@@ -19,38 +15,38 @@
     \]
     trong đó $m_0$ là khối lượng nghỉ của hạt và $c = 3{,}0 \times 10^5\text{ km/s}$ là tốc độ ánh sáng trong chân không.
 
-    \vspace{0.66em}
+    \vspace{0.6em}
     Các hàm số không phải là hàm đại số được gọi là \textbf{hàm siêu việt} (\textit{transcendental}); chúng bao gồm các hàm lượng giác, hàm mũ và hàm logarit.
 
-    \vspace{1.23em}
+    \vspace{1.0em}
     \noindent{\color{stewartcyan}\rule{1.2ex}{1.2ex}}\hspace{0.5em}\textbf{\textsf{\large Các hàm lượng giác}}
 
-    \vspace{0.49em}
+    \vspace{0.4em}
     Lượng giác và các hàm lượng giác được ôn tập lại ở Trang Tham khảo 2 và trong Phụ lục D. Trong giải tích, quy ước luôn sử dụng \textit{đơn vị radian} (trừ khi có chỉ dẫn khác). Ví dụ, khi chúng ta xét hàm số $f(x) = \sin x$, ta ngầm hiểu rằng $\sin x$ là sin của góc có số đo bằng $x$ radian. Như vậy, đồ thị của các hàm sin và cosin được biểu diễn như trong Hình 19.
+\end{minipage}
 
-    \vspace{0.98em}
-    \noindent
-    \begin{minipage}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/p0065_fig1.png}\\[4pt]
-        {\footnotesize (a) $f(x) = \sin x$}
-    \end{minipage}\hfill
-    \begin{minipage}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/p0065_fig2.png}\\[4pt]
-        {\footnotesize (b) $g(x) = \cos x$}
-    \end{minipage}
+\vspace{1.2em}
+\noindent
+\includegraphics[width=\textwidth]{images/p0065_fig1.png}
 
-    \vspace{1.23em}
+\vspace{0.8em}
+\noindent
+\begin{minipage}[t]{0.26\textwidth}
+    \raggedright
+    \textbf{\textsf{HÌNH 19}}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.71\textwidth}
     Lưu ý rằng đối với cả hai hàm sin và cosin, tập xác định là $(-\infty, \infty)$ và tập giá trị là đoạn đóng $[-1, 1]$. Do đó, với mọi giá trị của $x$, ta có
     
-    \vspace{0.41em}
+    \vspace{0.3em}
     \begin{center}
-        \begin{tcolorbox}[colframe=stewartred, colback=white, boxrule=0.8pt, arc=0mm, width=0.82\textwidth, top=5pt, bottom=5pt, halign=center]
+        \vspace{-0.3em}
+        \begin{tcolorbox}[colframe=stewartred, colback=white, boxrule=0.8pt, arc=0mm, width=0.82\textwidth, top=4pt, bottom=4pt, halign=center]
             $-1 \leqslant \sin x \leqslant 1 \qquad\qquad -1 \leqslant \cos x \leqslant 1$
         \end{tcolorbox}
+        \vspace{-0.3em}
     \end{center}
-    \vspace{0.25em}
 
     \noindent hoặc biểu diễn theo giá trị tuyệt đối,
     \[
@@ -59,13 +55,14 @@
 
     Một tính chất quan trọng của các hàm sin và cosin là chúng là các hàm tuần hoàn với chu kỳ $2\pi$. Điều này có nghĩa là, với mọi giá trị của $x$,
     
-    \vspace{0.41em}
+    \vspace{0.3em}
     \begin{center}
-        \begin{tcolorbox}[colframe=stewartred, colback=white, boxrule=0.8pt, arc=0mm, width=0.92\textwidth, top=5pt, bottom=5pt, halign=center]
+        \vspace{-0.3em}
+        \begin{tcolorbox}[colframe=stewartred, colback=white, boxrule=0.8pt, arc=0mm, width=0.92\textwidth, top=4pt, bottom=4pt, halign=center]
             $\sin(x + 2\pi) = \sin x \qquad\qquad \cos(x + 2\pi) = \cos x$
         \end{tcolorbox}
+        \vspace{-0.3em}
     \end{center}
-    \vspace{0.25em}
 
     Bản chất tuần hoàn của các hàm số này làm cho chúng rất phù hợp để mô hình hóa các hiện tượng có chu kỳ lặp lại như thủy triều, sự dao động của con lắc lò xo và sóng âm. Chẳng hạn, trong Ví dụ 1.3.4, chúng ta sẽ thấy một mô hình hợp lý cho số giờ có ánh sáng ban ngày ở Philadelphia sau $t$ ngày tính từ ngày 1 tháng 1 được xác định bởi hàm số
     \[

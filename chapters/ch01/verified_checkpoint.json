@@ -137,6 +137,12 @@
       "score": 99,
       "notes": "Hình 18 ở cột lề trái bị đặt quá cao (ngang hàng với đoạn định luật nghịch đảo bình phương thay vì dóng đúng ngang hàng với mục 'Hàm hữu tỉ' và công thức của chính nó). Cần tăng khoảng cách đầu cột lề lên 11.2cm để dóng chuẩn tọa độ y.",
       "time": "2026-09-23 01:22:16"
+    },
+    {
+      "page_num": 65,
+      "score": 99,
+      "notes": "Hình 19 là đồ thị khổ rộng (full-width) trải dài qua cả lề và cột chính nhưng bản dịch lại ép vào minipage cột phải, gây co cụm và xuất hiện hộp công thức trùng lặp sai vị trí. Cần tách trang thành 3 khối: khối trên 2 cột, đồ thị full-width ở giữa, và khối dưới 2 cột với nhãn 'HÌNH 19' nằm ở lề trái dóng thẳng dòng đầu tiên của đoạn văn dưới.",
+      "time": "2026-09-23 01:24:01"
     }
   ]
 }
