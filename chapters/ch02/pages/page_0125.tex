@@ -1,0 +1,121 @@
+\documentclass[10pt]{article}
+\usepackage[paperwidth=8.5in, paperheight=11in, left=0.65in, right=0.65in, top=0.55in, bottom=0.4in]{geometry}
+\usepackage{fontspec}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+\usepackage{paracol}
+
+\definecolor{stewartred}{RGB}{196, 40, 27}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\begin{document}
+
+% Header
+\noindent{\fontsize{9pt}{11pt}\selectfont\textbf{90}\hspace{2.5em}\textbf{CHƯƠNG 2}\hspace{1.2em}\textcolor{stewartred}{\rule[0.5pt]{3.5pt}{3.5pt}}\hspace{1.2em}Giới hạn và Đạo hàm}
+\vspace{1.5em}
+
+% Setup 2-column asymmetric layout (Column 0: margin ~1.85in, Column 1: main body ~5.0in)
+\setcolumnwidth{1.85in, 5.0in}
+\setlength{\columnsep}{0.35in}
+
+\begin{paracol}{2}
+% --- CỘT LỀ TRÁI ---
+{\footnotesize\color{black!90}
+Khi ta nói một số là “âm rất lớn”, ta muốn nói rằng nó là số âm nhưng độ lớn (giá trị tuyệt đối) của nó lớn.\par}
+
+\vspace{2.0cm}
+
+\noindent
+\includegraphics[width=\linewidth]{images/p0125_fig1.png}
+\vspace{1.5mm}
+
+\noindent{\small\textbf{\textsf{HÌNH 11}}}\\[1pt]
+{\small $\lim\limits_{x \to a} f(x) = -\infty$}
+
+\switchcolumn
+% --- CỘT NỘI DUNG CHÍNH ---
+\noindent Một loại giới hạn tương tự, đối với các hàm số trở nên âm rất lớn khi $x$ tiến gần tới $a$, được nêu trong Định nghĩa 5 và được minh họa trong Hình 11.
+
+\vspace{0.7em}
+
+\begin{tcolorbox}[
+    enhanced,
+    colback=white,
+    colframe=stewartred,
+    arc=0mm,
+    boxrule=0.8pt,
+    left=8pt, right=8pt, top=6pt, bottom=6pt
+]
+\noindent\fboxrule=0.8pt\fboxsep=2.5pt\fcolorbox{stewartred}{white}{\bfseries\color{stewartred}5}\hspace{0.5em}{\bfseries\color{stewartred} Định nghĩa}\hspace{0.8em}Cho $f$ là một hàm số xác định trên cả hai phía của $a$, có thể ngoại trừ tại chính $a$. Khi đó
+\[
+    \lim_{x \to a} f(x) = -\infty
+\]
+có nghĩa là các giá trị của $f(x)$ có thể trở nên âm lớn tùy ý bằng cách lấy $x$ đủ gần $a$, nhưng không bằng $a$.
+\end{tcolorbox}
+
+\vspace{0.7em}
+
+\noindent Ký hiệu $\lim_{x \to a} f(x) = -\infty$ có thể đọc là “giới hạn của $f(x)$, khi $x$ tiến tới $a$, bằng âm vô cùng” hoặc “$f(x)$ giảm không giới hạn khi $x$ tiến tới $a$”. Chẳng hạn, ta có
+\[
+    \lim_{x \to 0} \left( -\frac{1}{x^2} \right) = -\infty
+\]
+
+\noindent Các định nghĩa tương tự có thể được đưa ra cho các giới hạn vô cực một phía
+\[
+    \lim_{x \to a^-} f(x) = \infty \qquad\qquad \lim_{x \to a^+} f(x) = \infty
+\]
+\[
+    \lim_{x \to a^-} f(x) = -\infty \qquad\qquad \lim_{x \to a^+} f(x) = -\infty
+\]
+\noindent lưu ý rằng $x \to a^-$ có nghĩa là chúng ta chỉ xét các giá trị của $x$ nhỏ hơn $a$, và tương tự $x \to a^+$ có nghĩa là chúng ta chỉ xét $x > a$. Các minh họa cho bốn trường hợp này được thể hiện trong Hình 12.
+
+\end{paracol}
+
+\vspace{0.6em}
+
+% Hình 12 trải rộng toàn trang (bao gồm cả lề và cột chính)
+\noindent
+\includegraphics[width=\textwidth]{images/p0125_fig2.png}
+
+\vspace{0.6em}
+
+\begin{paracol}{2}
+% --- CỘT LỀ TRÁI (Trống) ---
+\switchcolumn
+% --- CỘT NỘI DUNG CHÍNH ---
+\begin{tcolorbox}[
+    enhanced,
+    colback=white,
+    colframe=stewartred,
+    arc=0mm,
+    boxrule=0.8pt,
+    left=8pt, right=8pt, top=6pt, bottom=6pt
+]
+\noindent\fboxrule=0.8pt\fboxsep=2.5pt\fcolorbox{stewartred}{white}{\bfseries\color{stewartred}6}\hspace{0.5em}{\bfseries\color{stewartred} Định nghĩa}\hspace{0.8em}Đường thẳng đứng $x = a$ được gọi là một \textbf{tiệm cận đứng} của đường cong $y = f(x)$ nếu có ít nhất một trong các khẳng định sau là đúng:
+\[
+    \lim_{x \to a} f(x) = \infty \qquad\qquad \lim_{x \to a^-} f(x) = \infty \qquad\qquad \lim_{x \to a^+} f(x) = \infty
+\]
+\[
+    \lim_{x \to a} f(x) = -\infty \qquad\qquad \lim_{x \to a^-} f(x) = -\infty \qquad\qquad \lim_{x \to a^+} f(x) = -\infty
+\]
+\end{tcolorbox}
+
+\vspace{0.8em}
+
+\noindent Chẳng hạn, trục $y$ là một tiệm cận đứng của đường cong $y = 1/x^2$ vì $\lim_{x \to 0} (1/x^2) = \infty$. Trong Hình 12, đường thẳng $x = a$ là tiệm cận đứng trong mỗi trường hợp trong bốn trường hợp được thể hiện. Nhìn chung, hiểu biết về tiệm cận đứng rất hữu ích trong việc phác họa đồ thị.
+\end{paracol}
+
+\vfill
+\begin{center}
+{\fontsize{5.5pt}{7pt}\selectfont\color{black!60}
+Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\\
+Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s).\\
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.\par}
+\end{center}
+
+\end{document}
