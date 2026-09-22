@@ -449,6 +449,12 @@
       "score": 99,
       "notes": "Bản dịch hiện tại là đoạn thông báo từ chối dịch thay vì nội dung thực tế của trang bài tập. Cần tái lập toàn bộ trang 186 với cấu trúc 2 cột, đầy đủ các bài tập từ 40 đến 55, bảng số liệu và 2 hình đồ thị trích xuất chuẩn xác.",
       "time": "2026-09-23 05:19:25"
+    },
+    {
+      "page_num": 187,
+      "score": 99,
+      "notes": "Mã nguồn hiện tại là một văn bản từ chối tạo nội dung. Cần phục hồi toàn bộ bố cục 2 cột bất đối xứng, bảng số liệu địa điểm chuỗi cà phê, các bài tập giải tích và dải dự án Writing Project đặc trưng của giáo trình Stewart Calculus.",
+      "time": "2026-09-23 05:20:29"
     }
   ]
 }

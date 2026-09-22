@@ -1,0 +1,188 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{fontspec}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{geometry}
+\geometry{
+  paperwidth=210mm,
+  paperheight=280mm,
+  left=16mm,
+  right=16mm,
+  top=18mm,
+  bottom=16mm
+}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{enumitem}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+
+% Màu sắc chuẩn nhận diện sách Stewart Calculus
+\definecolor{stewartblue}{RGB}{0, 114, 188}
+\definecolor{projectgreen}{RGB}{0, 133, 90}
+\definecolor{projectbg}{RGB}{236, 245, 240}
+\definecolor{tblheader}{RGB}{226, 235, 246}
+\definecolor{tblborder}{RGB}{160, 180, 205}
+\definecolor{copyrightgray}{RGB}{115, 115, 115}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\pagestyle{empty}
+
+\begin{document}
+
+% --- TIÊU ĐỀ TRANG (HEADER) ---
+{\small\bfseries 152}\qquad{\small\bfseries CHƯƠNG 2}\quad {\small Giới hạn và Đạo hàm}
+
+\vspace{1.2em}
+
+% --- BỐ CỤC 2 CỘT BẤT ĐỐI XỨNG ---
+\begin{minipage}[t]{0.30\linewidth}
+  \fontsize{9}{12.2}\selectfont
+  \textbf{56.} Số địa điểm $N$ của một chuỗi quán cà phê nổi tiếng được cho trong bảng dưới đây. (Số lượng địa điểm tính đến ngày 1 tháng 10 hàng năm.)
+
+  \vspace{0.8em}
+  \begin{center}
+    \renewcommand{\arraystretch}{1.12}
+    \setlength{\arrayrulewidth}{0.5pt}
+    \arrayrulecolor{tblborder}
+    \begin{tabular}{|>{\centering\arraybackslash}p{1.25cm}|>{\centering\arraybackslash}p{1.55cm}|}
+      \hline
+      \rowcolor{tblheader} Năm & $N$ \\
+      \hline
+      2008 & 16.680 \\
+      2010 & 16.858 \\
+      2012 & 18.066 \\
+      2014 & 21.366 \\
+      2016 & 25.085 \\
+      \hline
+    \end{tabular}
+  \end{center}
+  \vspace{0.4em}
+
+  \begin{enumerate}[label=(\alph*), leftmargin=1.4em, itemsep=4pt, topsep=1pt]
+    \item Tìm tốc độ tăng trưởng trung bình
+    \begin{enumerate}[label=(\roman*), leftmargin=1.4em, itemsep=2pt, topsep=2pt]
+      \item từ năm 2008 đến 2010
+      \item từ năm 2010 đến 2012
+    \end{enumerate}
+    Trong mỗi trường hợp, hãy kèm theo đơn vị. Bạn có thể rút ra kết luận gì?
+    \item Ước tính tốc độ tăng trưởng tức thời vào năm 2010 bằng cách lấy trung bình cộng của hai tốc độ thay đổi trung bình. Đơn vị của nó là gì?
+    \item Ước tính tốc độ tăng trưởng tức thời vào năm 2010 bằng cách đo hệ số góc của tiếp tuyến.
+  \end{enumerate}
+
+  \vspace{1.2em}
+  {\color{stewartblue}\textbf{57--58}}\quad Hãy xác định xem $f'(0)$ có tồn tại hay không.
+
+  \vspace{0.8em}
+  \textbf{57.} $f(x) = \begin{cases} x \sin \dfrac{1}{x} & \text{nếu } x \neq 0 \\[6pt] 0 & \text{nếu } x = 0 \end{cases}$
+
+  \vspace{1.1em}
+  \textbf{58.} $f(x) = \begin{cases} x^2 \sin \dfrac{1}{x} & \text{nếu } x \neq 0 \\[6pt] 0 & \text{nếu } x = 0 \end{cases}$
+
+  \vspace{1.4em}
+  {\color{stewartblue}\rule{\linewidth}{0.8pt}}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.66\linewidth}
+  \fontsize{9}{12.2}\selectfont
+  % Icon CAS / Máy tính cầm tay
+  \noindent\raisebox{-2pt}{\begin{tikzpicture}[scale=0.85]
+    \draw[draw=stewartblue, fill=white, rounded corners=1pt, line width=0.6pt] (0,0) rectangle (0.34, 0.44);
+    \draw[fill=stewartblue!20, rounded corners=0.5pt] (0.04, 0.19) rectangle (0.30, 0.40);
+    \draw[stewartblue, domain=0.06:0.28, samples=20, smooth, line width=0.4pt] plot (\x, {0.295 + 0.055*sin((\x-0.06)*800)});
+    \fill[stewartblue] (0.08, 0.08) circle (0.6pt);
+    \fill[stewartblue] (0.17, 0.08) circle (0.6pt);
+    \fill[stewartblue] (0.26, 0.08) circle (0.6pt);
+  \end{tikzpicture}}\hspace{0.4em}% 
+  \textbf{59.} (a) Vẽ đồ thị hàm số $f(x) = \sin x - \frac{1}{1000} \sin(1000x)$ trong khung nhìn $[-2\pi, 2\pi]$ theo $[-4, 4]$. Độ dốc của đồ thị dường như bằng bao nhiêu tại gốc tọa độ?
+  
+  \vspace{3pt}
+  (b) Phóng to vào khung nhìn $[-0{,}4; 0{,}4]$ theo $[-0{,}25; 0{,}25]$ và ước tính giá trị của $f'(0)$. Kết quả này có khớp với câu trả lời của bạn ở phần (a) không?
+  
+  \vspace{3pt}
+  (c) Bây giờ hãy phóng to vào khung nhìn $[-0{,}008; 0{,}008]$ theo $[-0{,}005; 0{,}005]$. Bạn có muốn điều chỉnh lại ước tính của mình cho $f'(0)$ không?
+
+  \vspace{1em}
+  \textbf{60. Tỉ số sai phân đối xứng}\quad Trong Ví dụ 8, chúng ta đã ước lượng tốc độ thay đổi tức thời bằng cách lấy trung bình cộng của hai tốc độ thay đổi trung bình. Một phương pháp thay thế là sử dụng một tỉ số thay đổi trung bình duy nhất trên một khoảng có \textit{tâm} tại giá trị mong muốn. Ta định nghĩa \textit{tỉ số sai phân đối xứng} của một hàm số $f$ tại $x = a$ trên khoảng $[a - d, a + d]$ là
+  \[
+  \frac{f(a + d) - f(a - d)}{(a + d) - (a - d)} = \frac{f(a + d) - f(a - d)}{2d}
+  \]
+  
+  \begin{enumerate}[label=(\alph*), leftmargin=1.4em, itemsep=4pt, topsep=2pt]
+    \item Tính tỉ số sai phân đối xứng cho hàm số $D$ trong Ví dụ 8 trên khoảng $[2004, 2012]$ và kiểm tra xem kết quả của bạn có khớp với ước tính cho $D'(2008)$ được tính trong ví dụ đó hay không.
+    \item Chứng minh rằng tỉ số sai phân đối xứng của một hàm số $f$ tại $x = a$ tương đương với việc lấy trung bình cộng của các tốc độ thay đổi trung bình của $f$ trên các khoảng $[a - d, a]$ và $[a, a + d]$.
+    \item Sử dụng tỉ số sai phân đối xứng để ước tính $f'(1)$ đối với $f(x) = x^3 - 2x^2 + 2$ với $d = 0{,}4$. Vẽ đồ thị của $f$ cùng với các cát tuyến tương ứng với các tốc độ thay đổi trung bình trên các khoảng $[1 - d, 1]$, $[1, 1 + d]$, và $[1 - d, 1 + d]$. Cát tuyến nào trong số này có vẻ có hệ số góc gần nhất với hệ số góc của tiếp tuyến tại $x = 1$?
+  \end{enumerate}
+\end{minipage}
+
+\vspace{2.2em}
+
+% --- DỰ ÁN VIẾT (WRITING PROJECT) BANNER ---
+\noindent
+\begin{tikzpicture}[remember picture]
+  \node[inner sep=0pt, outer sep=0pt] (title) at (0,0) [right] {%
+    \hspace{1.3cm}%
+    {\sffamily\bfseries\color{projectgreen}\fontsize{11}{13}\selectfont DỰ ÁN VIẾT}%
+    \hspace{0.6em}{\color{projectgreen!60}\vrule width 1pt height 12pt depth 2pt}\hspace{0.6em}%
+    {\sffamily\bfseries\fontsize{11}{13}\selectfont CÁC PHƯƠNG PHÁP TÌM TIẾP TUYẾN THỜI KỲ ĐẦU}%
+  };
+  % 5 đường kẻ sọc bên trái
+  \foreach \i in {-4,-2,0,2,4} {
+    \draw[projectgreen, line width=0.55pt] (0, \i pt) -- (1.15cm, \i pt);
+  }
+  % 5 đường kẻ sọc bên phải
+  \path (title.east);
+  \pgfgetlastxy{\rx}{\ry}
+  \foreach \i in {-4,-2,0,2,4} {
+    \draw[projectgreen, line width=0.55pt] (\rx + 0.25cm, \i pt) -- (\linewidth, \i pt);
+  }
+\end{tikzpicture}
+
+\vspace{0.3em}
+
+% --- NỘI DUNG DỰ ÁN VIẾT TRONG KHUNG NỀN XANH MINT ---
+\noindent
+\begin{tcolorbox}[
+  enhanced,
+  colback=projectbg,
+  colframe=projectbg,
+  boxrule=0pt,
+  arc=0pt,
+  left=0pt,
+  right=12pt,
+  top=12pt,
+  bottom=14pt,
+  width=\linewidth
+]
+  \noindent
+  \begin{minipage}[t]{0.30\linewidth}
+    % Cột lề trái để trống theo chuẩn nhận diện bản gốc
+    \hfill
+  \end{minipage}%
+  \hfill
+  \begin{minipage}[t]{0.66\linewidth}
+    \fontsize{9.3}{13.4}\selectfont
+    Người đầu tiên phát biểu một cách rõ ràng các ý tưởng về giới hạn và đạo hàm là Sir Isaac Newton vào những năm 1660. Nhưng Newton đã thừa nhận rằng: “Nếu tôi nhìn được xa hơn, đó là nhờ đứng trên vai của những người khổng lồ.” Hai trong số những người khổng lồ đó là Pierre Fermat (1601--1665) và người thầy của Newton tại Cambridge, Isaac Barrow (1630--1677). Newton đã rất am hiểu các phương pháp mà họ từng sử dụng để tìm tiếp tuyến, và các phương pháp của họ đã đóng một vai trò quan trọng trong việc hình thành phép tính vi tích phân của Newton sau này.
+
+    \vspace{0.75em}
+    Hãy tìm hiểu về các phương pháp này bằng cách nghiên cứu trên Internet hoặc đọc một trong các tài liệu tham khảo được liệt kê ở đây. Hãy viết một bài luận so sánh phương pháp của Fermat hoặc Barrow với các phương pháp hiện đại. Cụ thể, hãy sử dụng phương pháp ở Mục 2.7 để tìm phương trình tiếp tuyến của đường cong $y = x^3 + 2x$ tại điểm $(1, 3)$ và trình bày cách Fermat hoặc Barrow đã giải quyết cùng bài toán đó như thế nào. Mặc dù bạn đã sử dụng đạo hàm còn họ thì không, hãy chỉ ra những nét tương đồng giữa các phương pháp.
+
+    \vspace{0.85em}
+    \hangindent=1.4em\hangafter=1
+    \textbf{1.} C. H. Edwards, \textit{The Historical Development of the Calculus} (New York: Springer-Verlag, 1979), tr. 124, 132.
+  \end{minipage}
+\end{tcolorbox}
+
+\vfill
+
+% --- FOOTER BẢN QUYỀN CHÂN TRANG ---
+\begin{center}
+  {\color{copyrightgray}\fontsize{6.5}{8}\selectfont
+  Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\\
+  Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.}
+\end{center}
+
+\end{document}
