@@ -215,6 +215,12 @@
       "score": 99,
       "notes": "Bản dịch bị lỗi rò rỉ mã gói lệnh (preamble leak) hiển thị thành văn bản thô ở đầu trang; dóng hàng hai dòng điều kiện ở phần đầu chưa gộp khối như bản gốc; vị trí hình Hình 10 và 'Nhưng' trong Ví dụ 5 cần được căn chỉnh thẳng hàng với công thức.",
       "time": "2026-09-23 03:53:43"
+    },
+    {
+      "page_num": 148,
+      "score": 99,
+      "notes": "Lỗi biên dịch làm rò rỉ mã preamble thành văn bản ở đầu trang; toàn bộ Bài tập 1–9 bị đẩy sang trang 2 do khối minipage quá lớn (để lại trang 1 bị trống nửa dưới). Đã cấu hình lại lề trang, kiểm soát chặt chẽ chiều cao hình ảnh và khoảng cách dòng để khớp 100% trên một trang duy nhất.",
+      "time": "2026-09-23 03:56:06"
     }
   ]
 }
