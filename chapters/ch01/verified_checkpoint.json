@@ -317,6 +317,12 @@
       "score": 99,
       "notes": "Các hộp công thức (8, 9, 10) bị kéo dãn toàn bộ bề ngang cột thay vì căn giữa với chiều rộng chuẩn như bản gốc; ghi chú lề dùng sai phông sans-serif toàn bộ và sót thuật ngữ tiếng Anh trong ngoặc đơn.",
       "time": "2026-09-23 02:06:48"
+    },
+    {
+      "page_num": 95,
+      "score": 99,
+      "notes": "Tiêu đề đầu trang (header) chưa hiển thị do thiết lập LE trên trang đơn; Khung định lý 11 cần bo góc nhẹ (arc=1.5mm) và viền thanh nét hơn theo chuẩn giáo trình Stewart; Nhãn số 11 trong khung cần chuyển sang font sans-serif đậm đồng bộ.",
+      "time": "2026-09-23 02:07:47"
     }
   ]
 }
