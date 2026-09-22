@@ -1,0 +1,169 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\geometry{
+  paperwidth=210mm,
+  paperheight=280mm,
+  left=15mm,
+  right=15mm,
+  top=15mm,
+  bottom=18mm
+}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{array}
+
+\definecolor{stewartblue}{RGB}{0, 114, 188}
+
+\setlength{\columnsep}{18pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\pagestyle{empty}
+
+\begin{document}
+\fontsize{9pt}{11.8pt}\selectfont
+
+% Tiêu đề trang
+\noindent
+\begin{minipage}{\textwidth}
+\raggedleft
+{\small\textbf{MỤC 2.7}\quad Đạo hàm và Tốc độ Thay đổi\qquad\textbf{151}}
+\end{minipage}
+
+\vspace{8pt}
+
+\begin{multicols*}{2}
+
+\textbf{40.}\enskip Phác thảo đồ thị của một hàm số $g$ thỏa mãn $g(0) = g(2) = g(4) = 0$, $g'(1) = g'(3) = 0$, $g'(0) = g'(4) = 1$, $g'(2) = -1$, $\lim_{x\to\infty} g(x) = \infty$, và $\lim_{x\to -\infty} g(x) = -\infty$.
+
+\vspace{7pt}
+
+\textbf{41.}\enskip Phác thảo đồ thị của một hàm số $g$ liên tục trên tập xác định $(-5, 5)$ của nó và thỏa mãn $g(0) = 1$, $g'(0) = 1$, $g'(-2) = 0$, $\lim_{x\to -5^+} g(x) = \infty$, và $\lim_{x\to 5^-} g(x) = 3$.
+
+\vspace{7pt}
+
+\textbf{42.}\enskip Phác thảo đồ thị của một hàm số $f$ có miền xác định là $(-2, 2)$, $f'(0) = -2$, $\lim_{x\to 2^-} f(x) = \infty$, $f$ liên tục tại mọi điểm thuộc miền xác định ngoại trừ $\pm 1$, và $f$ là hàm lẻ.
+
+\vspace{7pt}
+
+{\color{stewartblue}\textbf{43–48}}\enskip Mỗi giới hạn sau biểu diễn đạo hàm của một hàm số $f$ nào đó tại một số $a$. Hãy xác định hàm $f$ và số $a$ trong từng trường hợp.
+
+\vspace{5pt}
+
+\noindent
+\begin{tabular}{@{}p{0.48\columnwidth}@{\hspace{0.04\columnwidth}}p{0.48\columnwidth}@{}}
+\textbf{43.} $\displaystyle \lim_{h\to 0} \frac{\sqrt{9+h} - 3}{h}$ & \textbf{44.} $\displaystyle \lim_{h\to 0} \frac{e^{-2+h} - e^{-2}}{h}$ \\[12pt]
+\textbf{45.} $\displaystyle \lim_{x\to 2} \frac{x^6 - 64}{x - 2}$ & \textbf{46.} $\displaystyle \lim_{x\to 1/4} \frac{\dfrac{1}{x} - 4}{x - \dfrac{1}{4}}$ \\[15pt]
+\textbf{47.} $\displaystyle \lim_{h\to 0} \frac{\tan\left(\dfrac{\pi}{4}+h\right) - 1}{h}$ & \textbf{48.} $\displaystyle \lim_{\theta\to \pi/6} \frac{\sin\theta - \dfrac{1}{2}}{\theta - \dfrac{\pi}{6}}$
+\end{tabular}
+
+\vspace{10pt}
+
+\textbf{49.}\enskip Chi phí (tính bằng đô la) để sản xuất $x$ đơn vị của một loại hàng hóa là $C(x) = 5000 + 10x + 0{,}05x^2$.
+\begin{enumerate}[label=(\alph*),leftmargin=1.4em,itemsep=1pt,topsep=2pt]
+  \item Tìm tốc độ thay đổi trung bình của $C$ theo $x$ khi mức sản xuất thay đổi
+  \begin{enumerate}[label=(\roman*),leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+    \item từ $x = 100$ đến $x = 105$
+    \item từ $x = 100$ đến $x = 101$
+  \end{enumerate}
+  \item Tìm tốc độ thay đổi tức thời của $C$ theo $x$ khi $x = 100$. (Đại lượng này được gọi là \textit{chi phí cận biên}. Ý nghĩa của nó sẽ được giải thích trong Mục 3.7.)
+\end{enumerate}
+
+\vspace{5pt}
+
+\textbf{50.}\enskip Gọi $H(t)$ là chi phí hàng ngày (tính bằng đô la) để sưởi ấm một tòa nhà văn phòng khi nhiệt độ ngoài trời là $t$ độ Fahrenheit.
+\begin{enumerate}[label=(\alph*),leftmargin=1.4em,itemsep=1pt,topsep=2pt]
+  \item Ý nghĩa của $H'(58)$ là gì? Đơn vị của nó là gì?
+  \item Bạn dự đoán $H'(58)$ mang dấu dương hay âm? Hãy giải thích.
+\end{enumerate}
+
+\vspace{5pt}
+
+\textbf{51.}\enskip Chi phí để khai thác $x$ ounce vàng từ một mỏ vàng mới là $C = f(x)$ đô la.
+\begin{enumerate}[label=(\alph*),leftmargin=1.4em,itemsep=1pt,topsep=2pt]
+  \item Ý nghĩa của đạo hàm $f'(x)$ là gì? Đơn vị của nó là gì?
+  \item Đẳng thức $f'(800) = 17$ có ý nghĩa gì?
+  \item Bạn nghĩ giá trị của $f'(x)$ sẽ tăng hay giảm trong ngắn hạn? Còn trong dài hạn thì sao? Hãy giải thích.
+\end{enumerate}
+
+\vspace{5pt}
+
+\textbf{52.}\enskip Lượng cà phê xay thượng hạng (tính bằng pound) mà một công ty cà phê bán được ở mức giá $p$ đô la mỗi pound là $Q = f(p)$.
+\begin{enumerate}[label=(\alph*),leftmargin=1.4em,itemsep=1pt,topsep=2pt]
+  \item Ý nghĩa của đạo hàm $f'(8)$ là gì? Đơn vị của nó là gì?
+  \item $f'(8)$ mang dấu dương hay âm? Hãy giải thích.
+\end{enumerate}
+
+\vfill\null
+\columnbreak
+
+\textbf{53.}\enskip Lượng oxy có thể hòa tan trong nước phụ thuộc vào nhiệt độ của nước. (Do đó ô nhiễm nhiệt ảnh hưởng đến hàm lượng oxy trong nước.) Đồ thị cho thấy độ tan của oxy $S$ thay đổi như thế nào theo nhiệt độ nước $T$.
+\begin{enumerate}[label=(\alph*),leftmargin=1.4em,itemsep=1pt,topsep=2pt]
+  \item Ý nghĩa của đạo hàm $S'(T)$ là gì? Đơn vị của nó là gì?
+  \item Ước lượng giá trị của $S'(16)$ và giải thích ý nghĩa của nó.
+\end{enumerate}
+
+\begin{center}
+\vspace{-2pt}
+\includegraphics[width=0.72\columnwidth]{images/p0186_fig1.png}
+\end{center}
+\vspace{-3pt}
+{\fontsize{7}{8.5}\selectfont\textit{Nguồn:} C. Kupchella et al., \textit{Environmental Science: Living Within the System of Nature}, 2d ed. (Boston: Allyn and Bacon, 1989).\par}
+
+\vspace{8pt}
+
+\textbf{54.}\enskip Đồ thị biểu diễn ảnh hưởng của nhiệt độ $T$ đến tốc độ bơi duy trì tối đa $S$ của cá hồi Coho.
+\begin{enumerate}[label=(\alph*),leftmargin=1.4em,itemsep=1pt,topsep=2pt]
+  \item Ý nghĩa của đạo hàm $S'(T)$ là gì? Đơn vị của nó là gì?
+  \item Ước lượng các giá trị của $S'(15)$ và $S'(25)$ rồi giải thích ý nghĩa của chúng.
+\end{enumerate}
+
+\begin{center}
+\vspace{-2pt}
+\includegraphics[width=0.72\columnwidth]{images/p0186_fig2.png}
+\end{center}
+
+\vspace{6pt}
+
+\textbf{55.}\enskip Các nhà nghiên cứu đã đo nồng độ cồn trong máu trung bình $C(t)$ của tám người đàn ông bắt đầu từ một giờ sau khi uống 30 mL ethanol (tương đương với hai đồ uống có cồn).
+
+\begin{center}
+\vspace{-2pt}
+\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|l|c|c|c|c|c|}
+\hline
+$t$ (giờ) & 1{,}0 & 1{,}5 & 2{,}0 & 2{,}5 & 3{,}0 \\ \hline
+$C(t)$ (g/dL) & 0{,}033 & 0{,}024 & 0{,}018 & 0{,}012 & 0{,}007 \\ \hline
+\end{tabular}
+\end{center}
+
+\vspace{-2pt}
+
+\begin{enumerate}[label=(\alph*),leftmargin=1.4em,itemsep=1pt,topsep=2pt]
+  \item Tìm tốc độ thay đổi trung bình của $C$ theo $t$ trên từng khoảng thời gian:
+  \vspace{1pt}
+  
+  \noindent
+  \begin{tabular}{@{}p{0.48\columnwidth}p{0.48\columnwidth}@{}}
+  (i) $[1{,}0;\, 2{,}0]$ & (ii) $[1{,}5;\, 2{,}0]$ \\
+  (iii) $[2{,}0;\, 2{,}5]$ & (iv) $[2{,}0;\, 3{,}0]$
+  \end{tabular}
+  
+  \vspace{1pt}
+  Trong mỗi trường hợp, hãy kèm theo đơn vị đo.
+  \item Ước lượng tốc độ thay đổi tức thời tại $t = 2$ và giải thích kết quả của bạn. Đơn vị là gì?
+\end{enumerate}
+
+\vspace{3pt}
+
+{\fontsize{7}{8.5}\selectfont\textit{Nguồn:} Phỏng theo P. Wilkinson et al., “Pharmacokinetics of Ethanol after Oral Administration in the Fasting State,” \textit{Journal of Pharmacokinetics and Biopharmaceutics} 5 (1977): 207--24.\par}
+
+\end{multicols*}
+
+\end{document}
