@@ -1,0 +1,96 @@
+\documentclass[10pt]{article}
+\usepackage[paperwidth=216mm, paperheight=280mm, left=16mm, right=16mm, top=16mm, bottom=14mm]{geometry}
+\usepackage{fontspec}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{paracol}
+\usepackage{tikz}
+
+% Màu sắc nhận diện giáo trình Stewart
+\definecolor{stewartblue}{RGB}{0, 130, 185}
+
+% Biểu tượng cảnh báo cạm bẫy toán học
+\newcommand{\warningicon}{%
+  \begin{tikzpicture}[baseline=-0.6ex, scale=0.85]
+    \draw[red!85!black, thick, rounded corners=1.2pt] (-0.22,-0.22) rectangle (0.22,0.22);
+    \draw[red!85!black, thick] (-0.16,-0.16) -- (0.16,0.16);
+  \end{tikzpicture}%
+}
+
+\pagestyle{empty}
+
+\begin{document}
+
+% Tiêu đề đầu trang
+\noindent\textbf{88}\qquad\textsf{\textbf{CHƯƠNG 2}}\quad \textsf{Giới hạn và Đạo hàm}
+\vspace{14pt}
+
+% Cấu hình bố cục 2 cột bất đối xứng (Cột lề trái ~46mm, Cột nội dung chính ~126mm)
+\setcolumnwidth{46mm, 126mm}
+\setlength{\columnsep}{12mm}
+
+\begin{paracol}{2}
+
+% ================= HÀNG 1: Tiêu đề mục & Ví dụ 5 ================
+\switchcolumn[1]
+\noindent{\color{stewartblue}\rule[0.5pt]{6.5pt}{6.5pt}}\hspace{7pt}{\large\bfseries Khi nào một giới hạn không tồn tại?}\par\vspace{6pt}
+\noindent Chúng ta đã thấy rằng một giới hạn không tồn tại tại một số $a$ nếu các giới hạn bên trái và bên phải không bằng nhau (như trong Ví dụ 4). Hai ví dụ tiếp theo minh họa thêm những trường hợp mà một giới hạn có thể không tồn tại.\par\vspace{12pt}
+
+\noindent{\bfseries\color{stewartblue}VÍ DỤ 5}\hspace{1.5em}Khảo sát $\lim\limits_{x \to 0} \sin \dfrac{\pi}{x}$.\par\vspace{6pt}
+
+% ================= HÀNG 2: Ghi chú lề & Lời giải ================
+\switchcolumn*
+\switchcolumn[0]
+{\small
+\noindent\textsf{\textbf{Giới hạn và Công nghệ}}\par\vspace{4pt}
+\noindent\textsf{Một số ứng dụng phần mềm, bao gồm các hệ thống đại số máy tính (CAS), có thể tính toán giới hạn. Để tránh các loại cạm bẫy được minh họa trong các Ví dụ 1, 3 và 5, các ứng dụng như vậy không tìm giới hạn bằng thực nghiệm số. Thay vào đó, chúng sử dụng các kỹ thuật tinh vi hơn như tính chuỗi vô hạn. Bạn được khuyến khích sử dụng một trong các tài nguyên này để tính giới hạn trong các ví dụ của mục này và kiểm tra kết quả cho các bài tập trong chương.}
+}
+
+\switchcolumn[1]
+\noindent{\bfseries\color{stewartblue}LỜI GIẢI}\hspace{1.5em}Chú ý rằng hàm số $f(x) = \sin(\pi/x)$ không xác định tại $0$. Tính giá trị của hàm số tại một số giá trị nhỏ của $x$, ta được:
+\begin{alignat*}{2}
+f(1) &= \sin \pi = 0 &\qquad\qquad\qquad f\left(\tfrac{1}{2}\right) &= \sin 2\pi = 0\\[4pt]
+f\left(\tfrac{1}{3}\right) &= \sin 3\pi = 0 &\qquad\qquad\qquad f\left(\tfrac{1}{4}\right) &= \sin 4\pi = 0\\[4pt]
+f(0{,}1) &= \sin 10\pi = 0 &\qquad\qquad\qquad f(0{,}01) &= \sin 100\pi = 0
+\end{alignat*}
+
+\noindent Tương tự, $f(0{,}001) = f(0{,}0001) = 0$. Dựa trên thông tin này, chúng ta có thể
+\makebox[0pt][r]{\warningicon\hspace{8pt}}bị cám dỗ suy đoán rằng giới hạn bằng $0$, nhưng lần này \textcolor{red!85!black}{suy đoán của chúng ta đã sai}. Chú ý rằng mặc dù $f(1/n) = \sin n\pi = 0$ với mọi số nguyên $n$, nhưng cũng đúng là $f(x) = 1$ đối với vô số giá trị của $x$ (chẳng hạn như $2/5$ hoặc $2/101$) tiến dần về $0$. Bạn có thể thấy điều này từ đồ thị của hàm số $f$ được thể hiện trong Hình~8.
+
+% ================= HÀNG 3: Đồ thị Hình 8 và phân tích ================
+\switchcolumn*
+\switchcolumn[0]
+\vspace*{3.2cm}
+\noindent{\sffamily\bfseries HÌNH 8}
+
+\switchcolumn[1]
+\begin{center}
+  \includegraphics[width=0.88\linewidth]{images/p0123_fig1.png}
+\end{center}
+\vspace{-4pt}
+
+\noindent Các đường nét đứt gần trục $y$ chỉ ra rằng các giá trị của $\sin(\pi/x)$ dao động giữa $1$ và $-1$ vô hạn lần khi $x$ tiến dần về $0$.
+
+\medskip
+\noindent Vì các giá trị của $f(x)$ không tiến tới một số cố định khi $x$ tiến dần về $0$, nên
+\begin{equation*}
+  \lim_{x \to 0} \sin \frac{\pi}{x} \quad \text{không tồn tại}
+  \tag*{\color{stewartblue}\rule{6pt}{6pt}}
+\end{equation*}
+
+\bigskip
+\noindent\makebox[0pt][r]{\warningicon\hspace{8pt}}Các Ví dụ 3 và 5 minh họa một số \textcolor{red!85!black}{cạm bẫy trong việc suy đoán giá trị của giới hạn}. Rất dễ đoán sai giá trị nếu chúng ta sử dụng các giá trị không thích hợp của $x$, nhưng lại khó để biết khi nào nên dừng việc tính toán các giá trị. Và, như thảo luận sau Ví dụ 1 đã chỉ ra, đôi khi máy tính bỏ túi và máy vi tính cho ra các kết quả sai. Tuy nhiên, trong mục tiếp theo, chúng ta sẽ phát triển các phương pháp chuẩn xác để tính toán giới hạn.
+
+\medskip
+\noindent Một trường hợp khác mà giới hạn tại một số $a$ có thể không tồn tại là khi các giá trị của hàm số tăng lớn tùy ý (về giá trị tuyệt đối) khi $x$ tiến dần về $a$.
+
+\end{paracol}
+
+\vfill
+\begin{center}
+  \tiny\color{gray!80!black}
+  Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203
+\end{center}
+
+\end{document}

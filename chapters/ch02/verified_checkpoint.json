@@ -65,6 +65,12 @@
       "score": 99,
       "notes": "Bản in hiện tại bị lỗi biên dịch nghiêm trọng: mã gói preamble bị rò rỉ dưới dạng văn bản thô ở đầu trang và toàn bộ phần thân trang bị đẩy tràn trang. Cần tái cấu trúc toàn diện với lề chuẩn giáo trình Stewart, dóng hàng chính xác nhãn HÌNH 6 và HÌNH 7 bên lề trái tương ứng với các đồ thị.",
       "time": "2026-09-23 02:57:25"
+    },
+    {
+      "page_num": 123,
+      "score": 99,
+      "notes": "Bản dịch hiện tại là văn bản từ chối tạo mã nguồn thay vì mã XeLaTeX hoàn chỉnh. Cần viết lại toàn bộ mã XeLaTeX tái lập chính xác cấu trúc 2 cột bất đối xứng, đồ thị Hình 8, bảng giá trị, ghi chú lề và biểu tượng cảnh báo.",
+      "time": "2026-09-23 02:58:59"
     }
   ]
 }
