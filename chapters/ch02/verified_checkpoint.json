@@ -149,6 +149,12 @@
       "score": 99,
       "notes": "Mã nguồn hiện tại chỉ là văn bản tóm tắt và từ chối cung cấp nội dung, hoàn toàn thiếu bố cục hai cột bất đối xứng, hình ảnh bóc tách, các hộp định lý và ký hiệu toán học chuẩn xác theo sách gốc của Stewart. Cần tái tạo lại toàn bộ trang bằng XeLaTeX.",
       "time": "2026-09-23 03:30:08"
+    },
+    {
+      "page_num": 137,
+      "score": 99,
+      "notes": "Bố cục tổng thể bám sát bản gốc, tuy nhiên mã nguồn bị lỗi rò rỉ văn bản gói lệnh lên đầu trang và cú pháp tô màu thanh dọc tiêu đề bài tập bị sai gây in thừa chữ.",
+      "time": "2026-09-23 03:31:37"
     }
   ]
 }
