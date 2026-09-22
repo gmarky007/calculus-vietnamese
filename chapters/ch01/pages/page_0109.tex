@@ -12,34 +12,34 @@
 
 \noindent
 \begin{minipage}[t]{0.26\textwidth}
-    \vspace{0.2cm}
-    % Ghi chú bên lề 1
+    \vspace*{1.15cm}
+    % Ghi chú bên lề 1 (dóng hàng chính xác với LỜI GIẢI)
     \noindent
     \colorbox{stewartlightblue}{%
         \parbox{\dimexpr\linewidth-2\fboxsep}{%
             \raggedright
-            \colorbox{stewartpurple}{\textcolor{white}{\textbf{\textsf{\footnotesize PS}}}}%
-            \hspace{0.25em}%
-            \textsf{\footnotesize\textbf{Tương tự:} Thử với một bài toán tương tự, đơn giản hơn.}%
+            \colorbox{stewartpurple}{\textcolor{white}{\bfseries\sffamily\scriptsize PS}}%
+            \hspace{0.2em}%
+            \textsf{\footnotesize\textbf{Tương tự:} Thử bài toán tương tự, đơn giản hơn.}%
         }%
     }
 
-    \vspace{5.9cm}
-    % Ghi chú bên lề 2
+    \vspace{8.2cm}
+    % Ghi chú bên lề 2 (dóng hàng chính xác với bước f3)
     \noindent
     \colorbox{stewartlightblue}{%
         \parbox{\dimexpr\linewidth-2\fboxsep}{%
             \raggedright
-            \colorbox{stewartpurple}{\textcolor{white}{\textbf{\textsf{\footnotesize PS}}}}%
-            \hspace{0.25em}%
-            \textsf{\footnotesize Tìm kiếm một quy luật.}%
+            \colorbox{stewartpurple}{\textcolor{white}{\bfseries\sffamily\scriptsize PS}}%
+            \hspace{0.2em}%
+            \textsf{\footnotesize Tìm một quy luật.}%
         }%
     }
 \end{minipage}%
 \hfill
 \begin{minipage}[t]{0.71\textwidth}
     \noindent
-    \textbf{\textsf{\color{stewartcyan}VÍ DỤ 3}}\quad Nếu $f_0(x) = x/(x + 1)$ và $f_{n+1} = f_0 \circ f_n$ với $n = 0, 1, 2, \dots$, hãy tìm một công thức cho $f_n(x)$.
+    \textbf{\textsf{\color{stewartcyan}VÍ DỤ 3}}\quad Nếu $f_0(x) = x/(x + 1)$ và $f_{n+1} = f_0 \circ f_n$ với $n = 0, 1, 2, \dots$, hãy tìm công thức cho $f_n(x)$.
 
     \medskip
     \noindent
@@ -58,10 +58,16 @@
 
     \medskip
     \noindent
-    \parbox{\linewidth}{%
-        \makebox[0pt][l]{\setlength{\fboxrule}{1pt}\fcolorbox{stewartred}{white}{\bfseries\sffamily\color{stewartred}\footnotesize 4}}%
-        \centering
-        $\displaystyle f_n(x) = \frac{x}{(n + 1)x + 1}$
+    \makebox[\linewidth]{%
+        \makebox[0pt][l]{%
+            \setlength{\fboxrule}{0.8pt}%
+            \setlength{\fboxsep}{2.5pt}%
+            \fcolorbox{stewartred}{white}{\makebox[1.3ex]{\bfseries\sffamily\color{stewartred}\footnotesize 4}}%
+        }%
+        \hfill
+        $\displaystyle f_n(x) = \frac{x}{(n + 1)x + 1}$%
+        \hfill
+        \null
     }
 
     \medskip
@@ -70,12 +76,14 @@
     \[
         f_k(x) = \frac{x}{(k + 1)x + 1}
     \]
-    Khi đó
-    \[\begin{aligned}
+    \noindent
+    Khi đó\qquad
+    $\begin{aligned}[t]
         f_{k+1}(x) &= (f_0 \circ f_k)(x) = f_0(f_k(x)) = f_0\left(\frac{x}{(k + 1)x + 1}\right) \\[6pt]
                    &= \frac{\dfrac{x}{(k + 1)x + 1}}{\dfrac{x}{(k + 1)x + 1} + 1} = \frac{\dfrac{x}{(k + 1)x + 1}}{\dfrac{(k + 2)x + 1}{(k + 1)x + 1}} = \frac{x}{(k + 2)x + 1}
-    \end{aligned}\]
+    \end{aligned}$
 
+    \medskip
     \noindent
-    Biểu thức này cho thấy (4) đúng với $n = k + 1$. Do đó, theo nguyên lý quy nạp toán học, công thức đúng với mọi số nguyên dương $n$. \hfill{\color{stewartcyan}$\blacksquare$}
+    Biểu thức này cho thấy (4) đúng với $n = k + 1$. Do đó, theo nguyên lý quy nạp toán học, kết quả đúng với mọi số nguyên dương $n$.\hfill\textcolor{stewartcyan}{\rule{1.2ex}{1.2ex}}
 \end{minipage}

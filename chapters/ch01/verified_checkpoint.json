@@ -401,6 +401,12 @@
       "score": 99,
       "notes": "Nhãn lề 'PS Xét các trường hợp' bị dóng sai độ cao y (đang ngang hàng với 'Tương tự,' trong khi bản gốc dóng ngang hàng với dòng 'Các biểu thức này cho thấy rằng chúng ta phải xét ba trường hợp:'). 'Từ đó suy ra' và 'Tương tự,' trong bản gốc nằm cùng dòng với công thức định nghĩa từng khúc chứ không tách dòng riêng, gây đẩy toàn bộ nội dung phía dưới sát đáy trang. Ngoài ra cần chuẩn hóa ký hiệu bất đẳng thức sang \\leqslant và \\geqslant.",
       "time": "2026-09-23 02:26:28"
+    },
+    {
+      "page_num": 109,
+      "score": 99,
+      "notes": "Nhãn số công thức màu đỏ [4] bị đè/dính sát vào công thức fn(x); Ghi chú lề 1 đặt quá cao (ngang hàng Ví dụ 3 thay vì Lời giải); Ghi chú lề 2 nằm ngang f2 thay vì f3; Từ 'Khi đó' bị đẩy thành dòng riêng thay vì cùng dòng với fk+1 như bản gốc; Ký hiệu kết thúc lời giải bị rớt xuống dòng thứ 3 đơn độc.",
+      "time": "2026-09-23 02:27:51"
     }
   ]
 }
