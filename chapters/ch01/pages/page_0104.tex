@@ -1,3 +1,12 @@
+\providecommand{\graphcalcicon}{%
+\begin{tikzpicture}[scale=0.18, baseline=-0.6ex]
+    \draw[stewartcyan, thick] (0,0) rectangle (1.4,1.4);
+    \draw[stewartcyan, thin] (0,0.7) -- (1.4,0.7);
+    \draw[stewartcyan, thin] (0.7,0) -- (0.7,1.4);
+    \draw[stewartcyan, thick] (0.15,0.2) to[out=10, in=230] (0.7,0.7) to[out=50, in=190] (1.25,1.2);
+\end{tikzpicture}%
+}
+
 \fancyhead[L]{}
 \fancyhead[R]{\textsf{\textbf{\color{stewartcyan}CHƯƠNG 1}}\quad Ôn tập\quad \textbf{69}}
 
@@ -17,8 +26,7 @@
 
     \item Sử dụng các quy tắc của logarit để khai triển mỗi biểu thức sau.
     \begin{enumerate}[label=(\alph*), leftmargin=*]
-        \item $\ln\bigl(x\sqrt{x + 1}\bigr)$
-        \item $\log_2 \sqrt{\dfrac{x^2 + 1}{x - 1}}$
+        \item $\ln\bigl(x\sqrt{x + 1}\bigr)$ \hspace{1.5cm} \textnormal{(b)}~$\log_2 \sqrt{\dfrac{x^2 + 1}{x - 1}}$
     \end{enumerate}
 
     \item Biểu diễn dưới dạng một logarit duy nhất.
@@ -28,26 +36,20 @@
     \end{enumerate}
 \end{enumerate}
 
+\vspace{0.1cm}
 \noindent
 \textbf{\textsf{\color{stewartcyan}29--30}}\quad Tìm giá trị chính xác của mỗi biểu thức.
 
 \begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=*, start=29]
-    \item 
-    \begin{enumerate}[label=(\alph*), itemjoin=\hspace{1.2cm}, leftmargin=*]
-        \item $e^{2\ln 5}$
-        \item $\log_6 4 + \log_6 54$
-        \item $\tan\bigl(\arcsin \frac{4}{5}\bigr)$
-    \end{enumerate}
-
-    \item 
-    \begin{enumerate}[label=(\alph*), itemjoin=\hspace{1.2cm}, leftmargin=*]
-        \item $\ln\dfrac{1}{e^3}$
-        \item $\sin(\tan^{-1} 1)$
-        \item $10^{-3\log 4}$
-    \end{enumerate}
+    \item \makebox[0.26\linewidth][l]{(a) $e^{2\ln 5}$}% 
+          \makebox[0.44\linewidth][l]{(b) $\log_6 4 + \log_6 54$}% 
+          (c) $\tan\bigl(\arcsin \frac{4}{5}\bigr)$
+    \item \makebox[0.26\linewidth][l]{(a) $\ln\dfrac{1}{e^3}$}% 
+          \makebox[0.44\linewidth][l]{(b) $\sin(\tan^{-1} 1)$}% 
+          (c) $10^{-3\log 4}$
 \end{enumerate}
 
-\vspace{0.16cm}
+\vspace{0.25cm}
 \noindent{\color{stewartcyan}\rule{\linewidth}{0.8pt}}
 
 \end{minipage}%
@@ -59,27 +61,23 @@
 
 \vspace{0.12cm}
 \noindent
-\begin{minipage}[t]{0.48\textwidth}
-\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=*, start=31]
-    \item $e^{2x} = 3$
-    \vspace{0.12cm}
-    \item $e^{e^x} = 10$
-    \vspace{0.12cm}
-    \item $\tan^{-1}(3x^2) = \dfrac{\pi}{4}$
+\begin{minipage}[t]{0.46\textwidth}
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=*, itemsep=0.15cm]
+    \item[\textbf{31.}] $e^{2x} = 3$
+    \item[\textbf{33.}] $e^{e^x} = 10$
+    \item[\textbf{35.}] $\tan^{-1}(3x^2) = \dfrac{\pi}{4}$
 \end{enumerate}
 \end{minipage}%
 \hfill
-\begin{minipage}[t]{0.48\textwidth}
-\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=*, start=32]
-    \item $\ln x^2 = 5$
-    \vspace{0.12cm}
-    \item $\cos^{-1} x = 2$
-    \vspace{0.12cm}
-    \item $\ln x - 1 = \ln(5 + x) - 4$
+\begin{minipage}[t]{0.52\textwidth}
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=*, itemsep=0.15cm]
+    \item[\textbf{32.}] $\ln x^2 = 5$
+    \item[\textbf{34.}] $\cos^{-1} x = 2$
+    \item[\textbf{36.}] $\ln x - 1 = \ln(5 + x) - 4$
 \end{enumerate}
 \end{minipage}
 
-\vspace{0.16cm}
+\vspace{0.2cm}
 \noindent{\color{stewartcyan}\rule{\linewidth}{0.8pt}}
 \vspace{0.08cm}
 
@@ -97,15 +95,8 @@
     P(t) = \frac{100\,000}{100 + 900e^{-t}}
     \]
     trong đó $t$ được tính bằng năm.
-
-    \begin{tikzpicture}[scale=0.22, baseline=-1mm]
-        \draw[stewartcyan, thick] (0,0) rectangle (1.4,1.4);
-        \draw[stewartcyan, thin] (0,0.7) -- (1.4,0.7);
-        \draw[stewartcyan, thin] (0.7,0) -- (0.7,1.4);
-        \draw[stewartcyan, thick] (0.15,0.2) to[out=10, in=230] (0.7,0.7) to[out=50, in=190] (1.25,1.2);
-    \end{tikzpicture}
     \begin{enumerate}[label=(\alph*), leftmargin=*]
-        \item Vẽ đồ thị của hàm số này và ước lượng cần bao nhiêu thời gian để quần thể đạt đến $900$ cá thể.
+        \item[{\llap{\graphcalcicon\hspace{0.4em}}(a)}] Vẽ đồ thị của hàm số này và ước lượng cần bao nhiêu thời gian để quần thể đạt đến $900$ cá thể.
         \item Tìm hàm ngược của hàm số này và giải thích ý nghĩa của nó.
         \item Sử dụng hàm ngược để tìm thời gian cần thiết để quần thể đạt đến $900$ cá thể. So sánh với kết quả ở câu (a).
     \end{enumerate}

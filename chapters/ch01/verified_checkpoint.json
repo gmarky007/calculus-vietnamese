@@ -371,6 +371,12 @@
       "score": 99,
       "notes": "Toàn bộ phần nội dung bị tràn và đẩy sang trang 2 khiến trang hiển thị bị trống hoàn toàn; ngoài ra ảnh fig2 và fig3 bị hoán đổi giữa Bài tập 2 và Bài tập 10. Đã viết lại toàn bộ mã nguồn với cấu trúc compact, thay multicols lồng bằng tabular và dóng hàng chuẩn 1:1 theo bản gốc.",
       "time": "2026-09-23 02:18:31"
+    },
+    {
+      "page_num": 104,
+      "score": 99,
+      "notes": "Lỗi đánh số nghiêm trọng ở bài 31-36 (bản cũ bị lặp số 32, 33 và mất 35, 36). Bài 27, 29, 30 bị rớt dòng từng ý (a), (b), (c) khiến cột trái dài bất thường và đẩy đường kẻ cyan xuống quá thấp. Biểu tượng đồ thị ở bài 38 bị đặt trên một dòng riêng biệt thay vì nằm ở lề trước ý (a).",
+      "time": "2026-09-23 02:19:40"
     }
   ]
 }
