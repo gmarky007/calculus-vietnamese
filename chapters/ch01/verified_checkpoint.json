@@ -101,6 +101,12 @@
       "score": 99,
       "notes": "Toàn bộ nội dung trang bị đẩy sang trang sau do tổng chiều cao của hai minipage vượt quá chiều cao trang (textheight), khiến trang hiện tại hoàn toàn trắng tinh chỉ có tiêu đề đầu trang. Cần tinh chỉnh lại khoảng cách vspace, cấu hình danh sách enumerate và kích thước đồ thị/bảng để toàn bộ nội dung nằm gọn hoàn hảo trên trang 58.",
       "time": "2026-09-23 01:12:32"
+    },
+    {
+      "page_num": 59,
+      "score": 99,
+      "notes": "Trang bị thiếu đồ thị Hình 5 (chỉ hiển thị một hình trên cả trang); hai hình phải đặt cạnh nhau dạng 2 cột mini (Hình 5 bên trái, Hình 6 bên phải). Ghi chú lề trái bị đặt hơi cao so với vị trí tương ứng ở bản gốc.",
+      "time": "2026-09-23 01:13:00"
     }
   ]
 }
