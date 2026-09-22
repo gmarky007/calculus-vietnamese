@@ -485,6 +485,12 @@
       "score": 99,
       "notes": "Bản dịch bị lỗi nghiêm trọng khi in trực tiếp mã preamble lên đầu trang do lỗi escape ký tự gạch chéo ngược. Vị trí hình 5 bị đẩy xuống quá sâu so với các phương trình tương ứng ở cột chính.",
       "time": "2026-09-23 05:29:08"
+    },
+    {
+      "page_num": 193,
+      "score": 99,
+      "notes": "Bản dịch hiện tại chứa văn bản thông báo từ chối thay vì nội dung giáo trình. Cần khôi phục định dạng bố cục 2 cột, lề ghi chú PS, các khối công thức đạo hàm/giới hạn và phần Lưu ý theo đúng chuẩn trang gốc.",
+      "time": "2026-09-23 05:30:20"
     }
   ]
 }
