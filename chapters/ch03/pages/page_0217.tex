@@ -1,0 +1,170 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage{fontspec}
+\usepackage{amsmath,amssymb}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage[top=1.8cm, bottom=1.8cm, left=1.6cm, right=1.6cm, headheight=14pt]{geometry}
+
+\definecolor{stewartcyan}{RGB}{0, 150, 214}
+\definecolor{stewartdark}{RGB}{30, 30, 30}
+
+\newcommand{\casicon}{%
+  \tikz[baseline=-0.6ex]{%
+    \fill[stewartcyan!15, rounded corners=0.5pt] (0,0) rectangle (0.36cm,0.27cm);
+    \draw[stewartcyan, line width=0.6pt, rounded corners=0.5pt] (0,0) rectangle (0.36cm,0.27cm);
+    \draw[stewartcyan, line width=0.35pt] (0.04cm,0.135cm) -- (0.32cm,0.135cm);
+    \draw[stewartcyan, line width=0.35pt] (0.18cm,0.03cm) -- (0.18cm,0.24cm);
+    \draw[stewartcyan, line width=0.7pt, smooth] plot coordinates {(0.05cm,0.06cm) (0.12cm,0.21cm) (0.23cm,0.06cm) (0.31cm,0.20cm)};
+  }%
+}
+
+\newcommand{\colrule}{\vspace{0.45em}{\color{stewartcyan}\hrule height 0.5pt}\vspace{0.45em}}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\fontsize{9}{11}\selectfont\textbf{182}\qquad \textbf{\textsf{CHƯƠNG 3}}\quad \textsf{Quy tắc tính đạo hàm}}
+\renewcommand{\headrulewidth}{0pt}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.485\textwidth}
+% ==================== CỘT TRÁI ====================
+\begin{tabular}{@{}p{0.50\linewidth}@{\hspace{0.02\linewidth}}p{0.48\linewidth}@{}}
+\textbf{17.} $g(x) = \dfrac{1}{\sqrt{x}} + \sqrt[4]{x}$ & \textbf{18.} $W(t) = \sqrt{t} - 2e^t$ \\[2.1ex]
+\textbf{19.} $f(x) = x^3(x + 3)$ & \textbf{20.} $F(t) = (2t - 3)^2$ \\[2.1ex]
+\textbf{21.} $y = 3e^x + \dfrac{4}{\sqrt[3]{x}}$ & \textbf{22.} $S(R) = 4\pi R^2$ \\[2.1ex]
+\textbf{23.} $f(x) = \dfrac{3x^2 + x^3}{x}$ & \textbf{24.} $y = \dfrac{\sqrt{x} + x}{x^2}$ \\[2.1ex]
+\textbf{25.} $G(r) = \dfrac{3r^{3/2} + r^{5/2}}{r}$ & \textbf{26.} $G(t) = \sqrt{5t} + \dfrac{\sqrt{7}}{t}$ \\[2.1ex]
+\textbf{27.} $j(x) = x^{2{,}4} + e^{2{,}4}$ & \textbf{28.} $k(r) = e^r + r^e$ \\[2.1ex]
+\textbf{29.} $F(z) = \dfrac{A + Bz + Cz^2}{z^2}$ & \textbf{30.} $G(q) = (1 + q^{-1})^2$ \\[2.1ex]
+\textbf{31.} $D(t) = \dfrac{1 + 16t^2}{(4t)^3}$ & \textbf{32.} $f(v) = \dfrac{\sqrt[3]{v} - 2ve^v}{v}$ \\[2.1ex]
+\textbf{33.} $P(w) = \dfrac{2w^2 - w + 4}{\sqrt{w}}$ & \textbf{34.} $y = e^{x+1} + 1$
+\end{tabular}
+
+\colrule
+
+\textbf{\color{stewartcyan}35--36}\quad Tìm $dy/dx$ và $dy/dt$.
+
+\vspace{0.35em}
+\begin{tabular}{@{}p{0.50\linewidth}@{\hspace{0.02\linewidth}}p{0.48\linewidth}@{}}
+\textbf{35.} $y = tx^2 + t^3x$ & \textbf{36.} $y = \dfrac{t}{x^2} + \dfrac{x}{t}$
+\end{tabular}
+
+\colrule
+
+\textbf{\color{stewartcyan}37--40}\quad Tìm phương trình tiếp tuyến của đường cong tại điểm đã cho.
+
+\vspace{0.35em}
+\begin{tabular}{@{}p{0.52\linewidth}@{\hspace{0.02\linewidth}}p{0.46\linewidth}@{}}
+\textbf{37.} $y = 2x^3 - x^2 + 2,\quad (1, 3)$ & \textbf{38.} $y = 2e^x + x,\quad (0, 2)$ \\[2.1ex]
+\textbf{39.} $y = x + \dfrac{2}{x},\quad (2, 3)$ & \textbf{40.} $y = \sqrt[4]{x} - x,\quad (1, 0)$
+\end{tabular}
+
+\colrule
+
+\textbf{\color{stewartcyan}41--42}\quad Tìm phương trình tiếp tuyến và pháp tuyến của đường cong tại điểm đã cho.
+
+\vspace{0.35em}
+\begin{tabular}{@{}p{0.52\linewidth}@{\hspace{0.02\linewidth}}p{0.46\linewidth}@{}}
+\textbf{41.} $y = x^4 + 2e^x,\quad (0, 2)$ & \textbf{42.} $y = x^{3/2},\quad (1, 1)$
+\end{tabular}
+
+\colrule
+
+\casicon\ \textbf{\color{stewartcyan}43--44}\quad Tìm phương trình tiếp tuyến của đường cong tại điểm đã cho. Minh họa bằng cách vẽ đồ thị của đường cong và tiếp tuyến trên cùng một màn hình.
+
+\vspace{0.35em}
+\begin{tabular}{@{}p{0.52\linewidth}@{\hspace{0.02\linewidth}}p{0.46\linewidth}@{}}
+\textbf{43.} $y = 3x^2 - x^3,\quad (1, 2)$ & \textbf{44.} $y = x - \sqrt{x},\quad (1, 0)$
+\end{tabular}
+
+\colrule
+
+\casicon\ \textbf{\color{stewartcyan}45--46}\quad Tìm $f'(x)$. So sánh đồ thị của $f$ và $f'$ rồi sử dụng chúng để giải thích tại sao câu trả lời của bạn là hợp lý.
+
+\vspace{0.35em}
+\textbf{45.} $f(x) = x^4 - 2x^3 + x^2$ \\[0.5ex]
+\textbf{46.} $f(x) = x^5 - 2x^3 + x - 1$
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.485\textwidth}
+% ==================== CỘT PHẢI ====================
+\casicon\ \textbf{47.}
+\begin{enumerate}[label=(\alph*), leftmargin=1.5em, itemsep=1pt, topsep=1pt]
+  \item Vẽ đồ thị hàm số
+  \[
+  f(x) = x^4 - 3x^3 - 6x^2 + 7x + 30
+  \]
+  trong khung nhìn $[-3, 5] \times [-10, 50]$.
+  \item Dùng đồ thị ở phần (a) để ước tính hệ số góc, phác thảo thô bằng tay đồ thị của $f'$. (Xem Ví dụ 2.8.1.)
+  \item Tính $f'(x)$ và sử dụng biểu thức này để vẽ đồ thị của $f'$. So sánh với hình phác thảo ở phần (b).
+\end{enumerate}
+
+\vspace{0.35em}
+\casicon\ \textbf{48.}
+\begin{enumerate}[label=(\alph*), leftmargin=1.5em, itemsep=1pt, topsep=1pt]
+  \item Vẽ đồ thị hàm số $g(x) = e^x - 3x^2$ trong khung nhìn $[-1, 4] \times [-8, 8]$.
+  \item Dùng đồ thị ở phần (a) để ước tính hệ số góc, phác thảo thô bằng tay đồ thị của $g'$. (Xem Ví dụ 2.8.1.)
+  \item Tính $g'(x)$ và sử dụng biểu thức này để vẽ đồ thị của $g'$. So sánh với hình phác thảo ở phần (b).
+\end{enumerate}
+
+\colrule
+
+\textbf{\color{stewartcyan}49--50}\quad Tìm đạo hàm cấp một và cấp hai của hàm số.
+
+\vspace{0.35em}
+\begin{tabular}{@{}p{0.52\linewidth}@{\hspace{0.02\linewidth}}p{0.46\linewidth}@{}}
+\textbf{49.} $f(x) = 0{,}001x^5 - 0{,}02x^3$ & \textbf{50.} $G(r) = \sqrt{r} + \sqrt[3]{r}$
+\end{tabular}
+
+\colrule
+
+\casicon\ \textbf{\color{stewartcyan}51--52}\quad Tìm đạo hàm cấp một và cấp hai của hàm số. Kiểm tra lại câu trả lời bằng cách so sánh đồ thị của $f$, $f'$ và $f''$.
+
+\vspace{0.35em}
+\begin{tabular}{@{}p{0.52\linewidth}@{\hspace{0.02\linewidth}}p{0.46\linewidth}@{}}
+\textbf{51.} $f(x) = 2x - 5x^{3/4}$ & \textbf{52.} $f(x) = e^x - x^3$
+\end{tabular}
+
+\vspace{0.6em}
+\textbf{53.} Phương trình chuyển động của một chất điểm là $s = t^3 - 3t$, trong đó $s$ tính bằng mét và $t$ tính bằng giây. Tìm
+\begin{enumerate}[label=(\alph*), leftmargin=1.5em, itemsep=1pt, topsep=2pt]
+  \item vận tốc và gia tốc dưới dạng hàm số theo $t$,
+  \item gia tốc sau $2\text{ s}$, và
+  \item gia tốc khi vận tốc bằng $0$.
+\end{enumerate}
+
+\vspace{0.35em}
+\textbf{54.} Phương trình chuyển động của một chất điểm là $s = t^4 - 2t^3 + t^2 - t$, trong đó $s$ tính bằng mét và $t$ tính bằng giây.
+\begin{enumerate}[label=(\alph*), leftmargin=1.5em, itemsep=1pt, topsep=2pt]
+  \item Tìm vận tốc và gia tốc dưới dạng hàm số theo $t$.
+  \item Tìm gia tốc sau $1\text{ s}$.
+  \item[\casicon\ (c)] Vẽ đồ thị các hàm vị trí, vận tốc và gia tốc trên cùng một màn hình.
+\end{enumerate}
+
+\vspace{0.35em}
+\textbf{55.} Các nhà sinh học đã đề xuất một đa thức bậc ba để mô hình hóa chiều dài $L$ của loài cá đá Alaska theo độ tuổi $A$:
+\[
+L = 0{,}0155A^3 - 0{,}372A^2 + 3{,}95A + 1{,}21
+\]
+trong đó $L$ được tính bằng inch và $A$ tính bằng năm. Hãy tính
+\[
+\left.\frac{dL}{dA}\right|_{A=12}
+\]
+và giải thích ý nghĩa kết quả tìm được.
+
+\vspace{0.35em}
+\textbf{56.} Số lượng loài cây $S$ trong một diện tích $A$ nhất định thuộc một khu bảo tồn rừng đã được mô hình hóa bởi hàm lũy thừa
+\[
+S(A) = 0{,}882A^{0{,}842}
+\]
+trong đó $A$ tính bằng mét vuông. Tìm $S'(100)$ và giải thích ý nghĩa kết quả tìm được.
+\end{minipage}
+
+\end{document}

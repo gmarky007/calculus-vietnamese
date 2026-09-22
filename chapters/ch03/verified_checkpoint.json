@@ -53,6 +53,12 @@
       "score": 99,
       "notes": "Bản dịch bám sát cấu trúc hai cột của bản gốc; cần xử lý lỗi tràn văn bản ở đầu trang, chuẩn hóa nhãn hàm số câu 3 và thu gọn khoảng cách các công thức giới hạn.",
       "time": "2026-09-23 06:19:27"
+    },
+    {
+      "page_num": 217,
+      "score": 99,
+      "notes": "Bản dịch đã chuyển ngữ đầy đủ và giữ khung bố cục hai cột tương đối tốt; tuy nhiên bản in mẫu bị tràn mã tiền tố ở đầu trang và thừa các đường kẻ phân cách không có trong bản gốc.",
+      "time": "2026-09-23 06:20:52"
     }
   ]
 }
