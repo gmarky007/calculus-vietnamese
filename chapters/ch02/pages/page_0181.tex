@@ -1,0 +1,146 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T5]{fontenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{newtxtext,newtxmath}
+\usepackage{geometry}
+\geometry{
+  paperwidth=8.5in,
+  paperheight=11in,
+  top=0.75in,
+  bottom=0.75in,
+  left=0.75in,
+  right=0.75in,
+  headheight=14pt,
+  headsep=12pt,
+  footskip=20pt
+}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage[skins,breakable]{tcolorbox}
+\usepackage{fancyhdr}
+
+% Định nghĩa màu sắc thương hiệu đặc trưng của James Stewart Calculus
+\definecolor{stewartcyan}{RGB}{0, 130, 185}
+\definecolor{stewartred}{RGB}{204, 34, 41}
+
+% Thiết lập Header & Footer giống bản gốc
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\fontsize{9pt}{11pt}\selectfont\textbf{\textsf{146}}\hspace{3em}\textbf{\textsf{CHƯƠNG 2}}\hspace{1.5em}\textsf{Giới hạn và Đạo hàm}}
+\fancyhead[R]{}
+\renewcommand{\headrulewidth}{0pt}
+
+\fancyfoot[C]{%
+  \fontsize{6pt}{7pt}\selectfont\color{gray!80!black}%
+  \begin{tabular}{c}
+    Bản quyền © 2021 Cengage Learning. Mọi quyền được bảo lưu. Không được sao chép, quét hoặc nhân bản toàn bộ hay một phần. WCN 02-200-203\\
+    Biên tập đã xác định rằng mọi nội dung bị lược bỏ không ảnh hưởng đáng kể đến trải nghiệm học tập tổng thể. Cengage Learning bảo lưu quyền loại bỏ nội dung bổ sung vào bất kỳ lúc nào nếu có yêu cầu hạn chế về bản quyền sau này.
+  \end{tabular}%
+}
+\renewcommand{\footrulewidth}{0pt}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.26\textwidth}
+  % Cột lề: Hình 7
+  \vspace{0pt}
+  \centering
+  \includegraphics[width=\linewidth]{images/p0181_fig1.png}
+  
+  \vspace{4pt}
+  \raggedright
+  \textbf{\textsf{\small HÌNH 7}}
+
+  % Dóng hàng chính xác cho nhãn HÌNH 8 ngang với phần đáy Figure 8 bên cột chính
+  \vspace{9.2cm}
+  \textbf{\textsf{\small HÌNH 8}}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.70\textwidth}
+  \vspace{0pt}
+  \noindent\textbf{\textsf{\color{stewartcyan}VÍ DỤ 6}}\hspace{0.8em}Tìm phương trình tiếp tuyến của parabol $y = x^2 - 8x + 9$ tại điểm $(3, -6)$.
+
+  \vspace{0.4em}
+  \noindent\textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\hspace{0.8em}Từ Ví dụ 4(b), ta biết rằng đạo hàm của $f(x) = x^2 - 8x + 9$ tại số $a$ là $f'(a) = 2a - 8$. Do đó, hệ số góc của tiếp tuyến tại $(3, -6)$ là $f'(3) = 2(3) - 8 = -2$. Vì vậy, phương trình của tiếp tuyến, được thể hiện trong Hình 7, là
+  \begin{equation*}
+    y - (-6) = (-2)(x - 3) \qquad\text{hay}\qquad y = -2x \tag*{\color{stewartcyan}\blacksquare}
+  \end{equation*}
+
+  \vspace{0.6em}
+  \noindent{\color{stewartcyan}\rule{1.1ex}{1.1ex}}\hspace{0.5em}\textbf{\textsf{\large Tốc độ thay đổi}}
+
+  \vspace{0.3em}
+  \noindent Giả sử $y$ là một đại lượng phụ thuộc vào một đại lượng khác $x$. Khi đó $y$ là một hàm số của $x$ và ta viết $y = f(x)$. Nếu $x$ thay đổi từ $x_1$ sang $x_2$, thì độ biến thiên của $x$ (còn gọi là \textbf{số gia} của $x$) là
+  \[
+    \Delta x = x_2 - x_1
+  \]
+  và độ biến thiên tương ứng của $y$ là
+  \[
+    \Delta y = f(x_2) - f(x_1)
+  \]
+  Tỉ số sai phân
+  \[
+    \frac{\Delta y}{\Delta x} = \frac{f(x_2) - f(x_1)}{x_2 - x_1}
+  \]
+  được gọi là \textbf{tốc độ thay đổi trung bình của $y$ theo $x$} trên đoạn $[x_1, x_2]$ và có thể được hiểu là hệ số góc của cát tuyến $PQ$ trong Hình 8.
+
+  \begin{center}
+    \vspace{0.1em}
+    \includegraphics[width=0.82\linewidth]{images/p0181_fig2.png}
+    \vspace{0.1em}
+  \end{center}
+
+  \noindent Tương tự như đối với vận tốc, chúng ta xét tốc độ thay đổi trung bình trên các khoảng ngày càng nhỏ hơn bằng cách cho $x_2$ tiến dần đến $x_1$ và do đó cho $\Delta x$ tiến dần đến $0$. Giới hạn của các tốc độ thay đổi trung bình này được gọi là \textbf{tốc độ thay đổi (tức thời) của $y$ theo $x$} tại $x = x_1$, và (như trong trường hợp vận tốc) được hiểu là hệ số góc của tiếp tuyến với đường cong $y = f(x)$ tại $P(x_1, f(x_1))$:
+
+  \vspace{0.3em}
+  \begin{tcolorbox}[
+    colback=white,
+    colframe=stewartred,
+    boxrule=0.8pt,
+    sharp corners,
+    boxsep=0pt,
+    left=8pt,
+    right=8pt,
+    top=6pt,
+    bottom=6pt
+  ]
+    \noindent
+    \parbox{0.06\linewidth}{%
+      \tikz\node[draw=stewartred, line width=0.8pt, inner sep=2pt, font=\bfseries\sffamily\color{stewartred}] {6};%
+    }%
+    \parbox{0.92\linewidth}{%
+      \centering
+      $\displaystyle \text{tốc độ thay đổi tức thời} = \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} = \lim_{x_2 \to x_1} \frac{f(x_2) - f(x_1)}{x_2 - x_1}$
+    }
+  \end{tcolorbox}
+
+  \vspace{0.4em}
+  \noindent Chúng ta nhận thấy giới hạn này chính là đạo hàm $f'(x_1)$.
+
+  \vspace{0.2em}
+  \noindent Chúng ta biết rằng một ý nghĩa của đạo hàm $f'(a)$ là hệ số góc của tiếp tuyến với đường cong $y = f(x)$ khi $x = a$. Bây giờ chúng ta có ý nghĩa thứ hai:
+
+  \vspace{0.3em}
+  \begin{tcolorbox}[
+    colback=white,
+    colframe=stewartred,
+    boxrule=0.8pt,
+    sharp corners,
+    boxsep=0pt,
+    left=10pt,
+    right=10pt,
+    top=8pt,
+    bottom=8pt
+  ]
+    Đạo hàm $f'(a)$ là \textbf{tốc độ thay đổi tức thời của $y = f(x)$ theo $x$ khi $x = a$}.
+  \end{tcolorbox}
+\end{minipage}
+
+\end{document}
