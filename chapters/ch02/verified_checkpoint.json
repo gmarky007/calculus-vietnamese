@@ -335,6 +335,12 @@
       "score": 99,
       "notes": "Mã nguồn hiện tại là một đoạn phản hồi từ chối của AI thay vì bản dịch LaTeX của trang giáo trình. Cần biên soạn lại toàn bộ trang bằng XeLaTeX với cấu trúc 2 cột bất đối xứng, đồ thị TikZ Hình 10, bảng giá trị và các ghi chú lề chuẩn xác 1:1.",
       "time": "2026-09-23 04:41:08"
+    },
+    {
+      "page_num": 168,
+      "score": 99,
+      "notes": "Bản in hiện tại bị lỗi rò rỉ mã tiền tố (preamble) ở ngay đầu trang văn bản; Hình 11 bị đẩy lên quá cao so với bản gốc (cần hạ xuống dóng ngang dòng 10^3 = 1000); các đoạn văn trong Lời giải không nên thụt lề để đúng phong cách Stewart.",
+      "time": "2026-09-23 04:42:50"
     }
   ]
 }
