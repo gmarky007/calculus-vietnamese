@@ -263,6 +263,12 @@
       "score": 99,
       "notes": "Hình 12 bị đặt sai vị trí (quá cao ở lề trái) do dùng vspace cố định trong minipage trái, lệch hoàn toàn so với Hình 13 và Hình 14 ở đáy trang. Cần tái cấu trúc trang thành hai khối: khối trên gồm lề trống và nội dung chính, khối dưới gồm cả 3 Hình 12, 13, 14 đặt thẳng hàng trên cùng một hàng ngang ở đáy trang trải dài toàn bộ trang theo đúng bản gốc.",
       "time": "2026-09-23 01:55:45"
+    },
+    {
+      "page_num": 86,
+      "score": 99,
+      "notes": "Trang gốc gồm 3 dải ngang (Top: 2 cột; Middle: Hình 16 trải rộng toàn trang full-width gồm 4 đồ thị a-b-c-d; Bottom: 2 cột). Bản dịch hiện tại ép toàn bộ vào 1 cặp minipage, chèn sai file ảnh (dùng fig3 cho subfigure b và gọi các file fig4, fig5, fig6 không tồn tại), làm Hình 16 bị co rúm ở lề trái và Hình 17 bị lặp lại.",
+      "time": "2026-09-23 01:57:20"
     }
   ]
 }
