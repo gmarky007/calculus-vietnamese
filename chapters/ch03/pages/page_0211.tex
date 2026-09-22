@@ -1,0 +1,113 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{tabularx}
+\usepackage{fancyhdr}
+\usepackage{newtxtext,newtxmath}
+
+\geometry{
+    paperwidth=8.5in,
+    paperheight=11in,
+    top=0.6in,
+    bottom=0.7in,
+    left=0.5in,
+    right=0.65in,
+    headheight=14pt,
+    headsep=12pt
+}
+
+\definecolor{stewartcyan}{RGB}{0, 130, 185}
+\definecolor{stewartred}{RGB}{215, 38, 46}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textbf{176}\hspace{2.5em}\textbf{\textsf{CHƯƠNG 3}}\hspace{1.2em}\textsf{Các quy tắc tính đạo hàm}}
+\renewcommand{\headrulewidth}{0pt}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4.5pt plus 1pt minus 1pt}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.23\textwidth}
+    \vspace*{16.7cm}
+    \centering
+    \includegraphics[width=\linewidth]{images/p0211_fig1.png}
+    \vspace{4pt}
+    \raggedright\small
+    \textbf{\textsf{HÌNH 3}}\\[1pt]
+    $y = \sqrt[3]{x^2}$
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.73\textwidth}
+    \noindent\textbf{\textsf{\color{stewartcyan}VÍ DỤ 1}}\hfill
+    \begin{tabularx}{0.84\linewidth}[t]{@{}l@{\hspace{18pt}}X@{}}
+    \textbf{(a)} Nếu $f(x) = x^6$, thì $f'(x) = 6x^5$. & \textbf{(b)} Nếu $y = x^{1000}$, thì $y' = 1000x^{999}$.\\[6pt]
+    \textbf{(c)} Nếu $y = t^4$, thì $\dfrac{dy}{dt} = 4t^3$. & \textbf{(d)} $\dfrac{d}{dr}(r^3) = 3r^2$\hfill\textcolor{stewartcyan}{\rule{1.1ex}{1.1ex}}
+    \end{tabularx}
+
+    \vspace{4pt}
+    Còn đối với các hàm lũy thừa có số mũ nguyên âm thì sao? Trong Bài tập 69, bạn được yêu cầu kiểm chứng từ định nghĩa của đạo hàm rằng
+    \[
+    \frac{d}{dx}\left(\frac{1}{x}\right) = -\frac{1}{x^2}
+    \]
+    Ta có thể viết lại phương trình này dưới dạng
+    \[
+    \frac{d}{dx}(x^{-1}) = (-1)x^{-2}
+    \]
+    và do đó Quy tắc lũy thừa đúng khi $n = -1$. Trên thực tế, trong mục tiếp theo [Bài tập 3.2.66(c)], chúng ta sẽ chỉ ra rằng quy tắc này đúng với mọi số nguyên âm.
+
+    Nếu số mũ là một phân số thì sao? Trong Ví dụ 2.8.3, chúng ta đã tìm ra rằng
+    \[
+    \frac{d}{dx}\sqrt{x} = \frac{1}{2\sqrt{x}}
+    \]
+    \noindent có thể được viết thành\hfill $\displaystyle\frac{d}{dx}\left(x^{1/2}\right) = \frac{1}{2}x^{-1/2}$\hfill\mbox{}
+
+    \vspace{2pt}
+    Điều này cho thấy Quy tắc lũy thừa vẫn đúng ngay cả khi số mũ là $\frac{1}{2}$. Trên thực tế, trong Mục 3.6 chúng ta sẽ chứng minh rằng nó đúng với mọi số thực $n$.
+
+    \begin{tcolorbox}[
+        colback=white,
+        colframe=stewartred,
+        arc=0mm,
+        boxrule=0.8pt,
+        left=8pt,
+        right=8pt,
+        top=6pt,
+        bottom=6pt
+    ]
+    \noindent\textbf{\textsf{\color{stewartred}Quy tắc lũy thừa (Dạng tổng quát)}}\quad Nếu $n$ là một số thực bất kỳ, thì
+    \[
+    \frac{d}{dx}(x^n) = nx^{n-1}
+    \]
+    \end{tcolorbox}
+
+    \noindent\textbf{\textsf{\color{stewartcyan}VÍ DỤ 2}}\quad Tính đạo hàm:
+    \vspace{2pt}
+
+    \noindent
+    \begin{tabularx}{\linewidth}{@{}p{0.48\linewidth}@{\hspace{0.04\linewidth}}p{0.48\linewidth}@{}}
+    \textbf{(a)}\enspace $f(x) = \dfrac{1}{x^2}$ & \textbf{(b)}\enspace $y = \sqrt[3]{x^2}$
+    \end{tabularx}
+
+    \vspace{3pt}
+    \noindent\textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\quad Trong mỗi trường hợp, ta viết lại hàm số dưới dạng lũy thừa của $x$.
+
+    \textbf{(a)} Vì $f(x) = x^{-2}$, ta áp dụng Quy tắc lũy thừa với $n = -2$:
+    \[
+    f'(x) = \frac{d}{dx}(x^{-2}) = -2x^{-2-1} = -2x^{-3} = -\frac{2}{x^3}
+    \]
+
+    \noindent\textbf{(b)}\hfill $\displaystyle\frac{dy}{dx} = \frac{d}{dx}\left(\sqrt[3]{x^2}\right) = \frac{d}{dx}\left(x^{2/3}\right) = \frac{2}{3}x^{(2/3)-1} = \frac{2}{3}x^{-1/3}$\hfill\textcolor{stewartcyan}{\rule{1.1ex}{1.1ex}}
+
+    \vspace{3pt}
+    Hình 3 biểu diễn hàm số $y$ trong Ví dụ 2(b) và đạo hàm $y'$ của nó. Chú ý rằng $y$ không có đạo hàm tại $0$ ($y'$ không xác định tại đó). Cũng quan sát thấy rằng hàm số $y$ đồng biến khi $y'$ mang dấu dương và nghịch biến khi $y'$ mang dấu âm. Trong Chương 4, chúng ta sẽ chứng minh rằng, nhìn chung, \textit{một hàm số đồng biến khi đạo hàm của nó mang dấu dương và nghịch biến khi đạo hàm của nó mang dấu âm}.
+\end{minipage}
+
+\end{document}
