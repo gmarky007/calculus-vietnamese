@@ -3,22 +3,22 @@
 
 \noindent
 \begin{minipage}[t]{0.26\textwidth}
-    \vspace{2.05cm}
+    \vspace{2.2cm}
     \includegraphics[width=\linewidth]{images/figure_11_clean.png}\\[2pt]
     {\small\textbf{\textsf{HÌNH 11}}}
 
-    \vspace{2.87cm}
+    \vspace{1.1cm}
     \includegraphics[width=\linewidth]{images/figure_12_clean.png}\\[2pt]
     {\small\textbf{\textsf{HÌNH 12}}}
 
-    \vspace{1.64cm}
+    \vspace{1.6cm}
     \begin{tcolorbox}[colback=stewartpurplebg, colframe=stewartpurplebg, arc=1mm, boxrule=0pt, left=2.5mm, right=2.5mm, top=2.5mm, bottom=2.5mm]
-        {\color{stewartpurpletext}\textbf{\textsf{PS}}}\quad {\footnotesize Khi thiết lập các hàm số ứng dụng thực tế như trong Ví dụ 5, việc xem lại các nguyên tắc giải quyết vấn đề ở cuối chương này là rất hữu ích, đặc biệt là \textit{Bước 1: Hiểu bài toán}.}
+        \colorbox{stewartpurpletext}{\textcolor{white}{\sffamily\bfseries\scriptsize PS}}\; {\footnotesize Khi thiết lập các hàm số ứng dụng như trong Ví dụ 5, việc xem lại các nguyên tắc giải quyết vấn đề ở cuối chương này là rất hữu ích, đặc biệt là \textit{Bước 1: Hiểu bài toán}.}
     \end{tcolorbox}
 \end{minipage}%
 \hfill
 \begin{minipage}[t]{0.71\textwidth}
-    ...biết -- chẳng hạn như biên độ và chu kỳ dao động -- đều có thể quan sát một cách trực quan từ đồ thị. (Điều này cũng hoàn toàn đúng với các dạng sóng trên điện tâm đồ của bệnh nhân tim mạch hoặc máy phát hiện nói dối.)
+    ...biết---chẳng hạn như biên độ và chu kỳ dao động---đều có thể quan sát một cách trực quan từ đồ thị. (Điều này cũng hoàn toàn đúng với các dạng sóng trên điện tâm đồ của bệnh nhân tim mạch hoặc máy phát hiện nói dối.)
 
     Trong ví dụ tiếp theo, chúng ta sẽ phác họa đồ thị của một hàm số được mô tả bằng lời.
 
@@ -41,19 +41,23 @@
     \[
     C = 10(2w^2) + 6[2(wh) + 2(2wh)] = 20w^2 + 36wh
     \]
-    Để biểu diễn chi phí $C$ chỉ theo một biến duy nhất là $w$, ta cần khử biến $h$. Ta thực hiện điều này bằng cách sử dụng giả thiết thể tích của khối hộp là $10\text{ m}^3$:
+    Để biểu diễn chi phí $C$ chỉ theo một biến duy nhất là $w$, ta cần khử biến $h$. Ta thực hiện điều này bằng cách sử dụng giả thiết thể tích của khối hộp là $10\text{ m}^3$. Do đó
     \[
-    w(2w)h = 10 \implies h = \frac{10}{2w^2} = \frac{5}{w^2}
+    w(2w)h = 10
+    \]
+    cho ta
+    \[
+    h = \frac{10}{2w^2} = \frac{5}{w^2}
     \]
     Thay biểu thức của $h$ vào biểu thức của $C$, ta được:
     \[
     C = 20w^2 + 36w\left(\frac{5}{w^2}\right) = 20w^2 + \frac{180}{w}
     \]
-    Như vậy, phương trình:
-    \begin{equation*}
-    C(w) = 20w^2 + \frac{180}{w} \quad (w > 0) \qquad {\color{stewartcyan}\blacksquare}
-    \end{equation*}
-    biểu diễn chi phí $C$ dưới dạng một hàm số của chiều rộng $w$.
+    Như vậy, phương trình
+    \[
+    C(w) = 20w^2 + \frac{180}{w} \qquad w > 0
+    \]
+    biểu diễn chi phí $C$ dưới dạng một hàm số của chiều rộng $w$. \hfill {\color{stewartcyan}$\blacksquare$}
 
     \vspace{0.2cm}
     Trong ví dụ tiếp theo, chúng ta sẽ tìm tập xác định của một hàm số được xác định bởi biểu thức đại số. Nếu một hàm số được cho bởi một công thức mà tập xác định không được nêu rõ ràng, chúng ta sẽ áp dụng quy ước...

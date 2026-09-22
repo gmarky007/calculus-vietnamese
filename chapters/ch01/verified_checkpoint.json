@@ -29,6 +29,12 @@
       "score": 99,
       "notes": "Trong bản gốc, Hình 9 và Hình 10 là cặp hình dàn ngang toàn trang (Hình 9 nằm ở lề trái, Hình 10 nằm ở cột nội dung chính bên phải). Mã hiện tại đang nhét toàn bộ trang vào 2 minipage dọc từ trên xuống dưới và ép cả 2 hình vào minipage bên phải, làm méo mó bố cục và tạo khoảng trống vô lý ở cột trái.",
       "time": "2026-09-23 01:03:31"
+    },
+    {
+      "page_num": 47,
+      "score": 99,
+      "notes": "Cần căn chỉnh lại vị trí thẳng hàng của Hình 12 với Ví dụ 5, tách các phương trình trong Ví dụ 5 cho chuẩn xác với bản gốc (không dùng suy ra inline gộp), chuyển ký hiệu kết thúc lời giải (ô vuông xanh) xuống cuối dòng văn bản thay vì đặt trong công thức, và định dạng biểu tượng PS đúng chuẩn khối màu tím chữ trắng.",
+      "time": "2026-09-23 01:04:04"
     }
   ]
 }
