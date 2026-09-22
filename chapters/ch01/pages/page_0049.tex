@@ -3,71 +3,42 @@
 
 \noindent
 \begin{minipage}[t]{0.26\textwidth}
-    \vspace*{4.9cm}
-    \raggedleft
-    \textbf{\textsf{HÌNH 14}}
+    \vspace*{3.9cm}
+    \begin{flushright}
+        \textbf{\textsf{HÌNH 14}}
+    \end{flushright}
     
-    \vspace{5.8cm}
-    \centering
-    \begin{tikzpicture}[scale=0.82, baseline=(current bounding box.center)]
-        % Hệ trục tọa độ
-        \draw[-{Stealth[length=4pt]}, line width=0.5pt] (-1.9,0) -- (1.9,0) node[below left, font=\scriptsize] {$x$};
-        \draw[-{Stealth[length=4pt]}, line width=0.5pt] (0,-0.3) -- (0,2.8) node[below left, font=\scriptsize] {$y$};
-        \node[below right, font=\scriptsize] at (0,0) {$0$};
-        % Vạch chia
-        \draw[line width=0.4pt] (-1,0.06) -- (-1,-0.06) node[below, font=\scriptsize] {$-1$};
-        \draw[line width=0.4pt] (1,0.06) -- (1,-0.06) node[below, font=\scriptsize] {$1$};
-        \draw[line width=0.4pt] (0.06,1) -- (-0.06,1) node[left, font=\scriptsize] {$1$};
-        % Nhánh 1: y = 1 - x khi x <= -1
-        \draw[line width=1pt, stewartcyan, domain=-1.6:-1, samples=20] plot (\x, {1 - \x});
-        \fill[stewartcyan] (-1,2) circle (1.8pt);
-        % Nhánh 2: y = x^2 khi x > -1
-        \draw[line width=1pt, stewartcyan, domain=-0.98:1.38, samples=50] plot (\x, {\x*\x});
-        \draw[line width=1pt, stewartcyan, fill=white] (-1,1) circle (1.8pt);
-    \end{tikzpicture}
+    \vspace*{4.8cm}
+    \begin{center}
+        \includegraphics[width=0.88\linewidth]{images/p0049_fig15_clean.png}\\[2pt]
+        {\small\textbf{\textsf{HÌNH 15}}}
+    \end{center}
     
-    \vspace{2mm}
-    \raggedright
-    \textbf{\textsf{HÌNH 15}}
-    
-    \vspace{2.2cm}
-    \raggedright
+    \vspace*{1.2cm}
     \small
-    Để ôn tập kỹ hơn về giá trị tuyệt đối, hãy xem Phụ lục A.
+    \noindent\textit{Để ôn tập kỹ hơn về giá trị tuyệt đối, hãy xem Phụ lục A.}
 \end{minipage}%
 \hfill
 \begin{minipage}[t]{0.71\textwidth}
     Chẳng hạn, parabol $x = y^2 - 2$ trong Hình 14(a) không phải là đồ thị của một hàm số của $x$ vì như ta thấy, có những đường thẳng đứng cắt parabol tại hai điểm. Tuy nhiên, parabol này lại chứa đồ thị của \emph{hai} hàm số của $x$. Chú ý rằng phương trình $x = y^2 - 2$ dẫn đến $y^2 = x + 2$, do đó $y = \pm\sqrt{x + 2}$. Như vậy, nửa trên và nửa dưới của parabol lần lượt là đồ thị của các hàm số $f(x) = \sqrt{x + 2}$ [từ Ví dụ 6(a)] và $g(x) = -\sqrt{x + 2}$ [xem các Hình 14(b) và (c)].
 
-    \vspace{0.16cm}
+    \vspace{0.3cm}
     \noindent
-    \begin{minipage}[b]{0.32\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{images/p0049_fig1.png}\\[3pt]
-        {\footnotesize (a) $x = y^2 - 2$}
-    \end{minipage}\hfill
-    \begin{minipage}[b]{0.32\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{images/p0049_fig2.png}\\[3pt]
-        {\footnotesize (b) $y = \sqrt{x+2}$}
-    \end{minipage}\hfill
-    \begin{minipage}[b]{0.32\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{images/p0049_fig3.png}\\[3pt]
-        {\footnotesize (c) $y = -\sqrt{x+2}$}
-    \end{minipage}
+    \centering
+    \includegraphics[width=\linewidth]{images/p0049_fig14_composite.png}
 
-    \vspace{0.25cm}
+    \vspace{0.3cm}
+    \raggedright
     Ta nhận thấy rằng nếu hoán đổi vai trò của $x$ và $y$, thì phương trình $x = h(y) = y^2 - 2$ \emph{thực sự} xác định $x$ là một hàm số theo biến $y$ (với $y$ là biến độc lập và $x$ là biến phụ thuộc). Đồ thị của hàm số $h$ chính là parabol ở Hình 14(a).
 
-    \vspace{0.25cm}
+    \vspace{0.3cm}
     \noindent
     {\color{stewartcyan}\rule{1.2ex}{1.2ex}}\hspace{0.5em}\textbf{\textsf{\large Hàm số cho bởi nhiều công thức}}
 
-    \vspace{0.12cm}
+    \vspace{0.15cm}
     Các hàm số trong bốn ví dụ sau đây được xác định bởi những công thức khác nhau trên các phần khác nhau của miền xác định. Những hàm số như vậy được gọi là \textbf{hàm số cho bởi nhiều công thức} (hay hàm từng khúc).
 
-    \vspace{0.2cm}
+    \vspace{0.25cm}
     \noindent
     \textbf{\textsf{\color{stewartcyan}VÍ DỤ 7}}\quad Cho hàm số $f$ xác định bởi
     \[
@@ -78,7 +49,7 @@
     \]
     Tính $f(-2)$, $f(-1)$, và $f(0)$, sau đó vẽ đồ thị hàm số.
 
-    \vspace{0.12cm}
+    \vspace{0.15cm}
     \noindent
     \textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\quad Hãy nhớ rằng một hàm số là một quy tắc. Đối với hàm số cụ thể này, quy tắc được áp dụng như sau: Trước hết, hãy quan sát giá trị của biến đầu vào $x$. Nếu $x \leqslant -1$, thì giá trị của $f(x)$ là $1 - x$. Mặt khác, nếu $x > -1$, thì giá trị của $f(x)$ là $x^2$. Cần lưu ý rằng mặc dù sử dụng hai công thức khác nhau, $f$ vẫn chỉ là \emph{một} hàm số duy nhất, chứ không phải hai.
     \begin{align*}
