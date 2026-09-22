@@ -1,0 +1,169 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage[many]{tcolorbox}
+\usepackage{microtype}
+
+\geometry{
+    left=15mm,
+    right=15mm,
+    top=20mm,
+    bottom=20mm,
+    headheight=14pt,
+    headsep=15pt
+}
+
+\definecolor{stewartred}{RGB}{204, 34, 41}
+\definecolor{stewartcyan}{RGB}{0, 136, 180}
+\definecolor{stewartgreen}{RGB}{0, 135, 80}
+\definecolor{stewartblue}{RGB}{0, 115, 175}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[R]{\textsf{\textbf{MỤC 2.3}}\quad \textsf{Tính các giới hạn bằng các quy tắc giới hạn}\qquad\textsf{\textbf{95}}}
+
+\newtcolorbox{definitionbox}{
+    colframe=stewartred,
+    colback=white,
+    boxrule=0.8pt,
+    sharp corners,
+    left=9pt,
+    right=9pt,
+    top=8pt,
+    bottom=8pt,
+    before skip=0pt,
+    after skip=0pt
+}
+
+\begin{document}
+
+\noindent
+\hspace*{0.28\textwidth}%
+\begin{minipage}[t]{0.72\textwidth}
+\begin{definitionbox}
+\noindent\textbf{\textsf{\color{stewartred}Các quy tắc giới hạn}}\quad Giả sử $c$ là một hằng số và các giới hạn
+\[
+\lim_{x \to a} f(x) \qquad \text{và} \qquad \lim_{x \to a} g(x)
+\]
+tồn tại. Khi đó
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=1.8em, itemsep=4pt, topsep=3pt, parsep=0pt, partopsep=0pt]
+\item $\displaystyle \lim_{x \to a} [f(x) + g(x)] = \lim_{x \to a} f(x) + \lim_{x \to a} g(x)$
+\item $\displaystyle \lim_{x \to a} [f(x) - g(x)] = \lim_{x \to a} f(x) - \lim_{x \to a} g(x)$
+\item $\displaystyle \lim_{x \to a} [c f(x)] = c \lim_{x \to a} f(x)$
+\item $\displaystyle \lim_{x \to a} [f(x) g(x)] = \lim_{x \to a} f(x) \cdot \lim_{x \to a} g(x)$
+\item $\displaystyle \lim_{x \to a} \frac{f(x)}{g(x)} = \frac{\displaystyle\lim_{x \to a} f(x)}{\displaystyle\lim_{x \to a} g(x)} \qquad \text{nếu } \lim_{x \to a} g(x) \neq 0$
+\end{enumerate}
+\end{definitionbox}
+\end{minipage}
+
+\vspace{10pt}
+\noindent
+\hspace*{0.28\textwidth}%
+\begin{minipage}[t]{0.72\textwidth}
+Năm quy tắc này có thể được phát biểu bằng lời như sau:
+\end{minipage}
+
+\vspace{6pt}
+\noindent
+\begin{minipage}[t]{0.24\textwidth}
+\raggedleft
+\textcolor{stewartgreen}{\small\textsf{\textbf{Quy tắc tổng}}}\strut
+\end{minipage}%
+\hspace{0.04\textwidth}%
+\begin{minipage}[t]{0.72\textwidth}
+\textbf{1.}\quad Giới hạn của một tổng bằng tổng các giới hạn.\strut
+\end{minipage}
+
+\vspace{4pt}
+\noindent
+\begin{minipage}[t]{0.24\textwidth}
+\raggedleft
+\textcolor{stewartgreen}{\small\textsf{\textbf{Quy tắc hiệu}}}\strut
+\end{minipage}%
+\hspace{0.04\textwidth}%
+\begin{minipage}[t]{0.72\textwidth}
+\textbf{2.}\quad Giới hạn của một hiệu bằng hiệu các giới hạn.\strut
+\end{minipage}
+
+\vspace{4pt}
+\noindent
+\begin{minipage}[t]{0.24\textwidth}
+\raggedleft
+\textcolor{stewartgreen}{\small\textsf{\textbf{Quy tắc nhân hằng số}}}\strut
+\end{minipage}%
+\hspace{0.04\textwidth}%
+\begin{minipage}[t]{0.72\textwidth}
+\textbf{3.}\quad Giới hạn của một hằng số nhân với một hàm số bằng hằng số đó nhân với giới hạn của hàm số.\strut
+\end{minipage}
+
+\vspace{4pt}
+\noindent
+\begin{minipage}[t]{0.24\textwidth}
+\raggedleft
+\textcolor{stewartgreen}{\small\textsf{\textbf{Quy tắc tích}}}\strut
+\end{minipage}%
+\hspace{0.04\textwidth}%
+\begin{minipage}[t]{0.72\textwidth}
+\textbf{4.}\quad Giới hạn của một tích bằng tích các giới hạn.\strut
+\end{minipage}
+
+\vspace{4pt}
+\noindent
+\begin{minipage}[t]{0.24\textwidth}
+\raggedleft
+\textcolor{stewartgreen}{\small\textsf{\textbf{Quy tắc thương}}}\strut
+\end{minipage}%
+\hspace{0.04\textwidth}%
+\begin{minipage}[t]{0.72\textwidth}
+\textbf{5.}\quad Giới hạn của một thương bằng thương các giới hạn (với điều kiện giới hạn của mẫu số khác $0$).\strut
+\end{minipage}
+
+\vspace{10pt}
+\noindent
+\hspace*{0.28\textwidth}%
+\begin{minipage}[t]{0.72\textwidth}
+Thật dễ để tin rằng các tính chất này là đúng. Chẳng hạn, nếu $f(x)$ gần với $L$ và $g(x)$ gần với $M$, thì hoàn toàn hợp lý khi kết luận rằng $f(x) + g(x)$ gần với $L + M$. Điều này cho chúng ta một cơ sở trực giác để tin rằng Quy tắc 1 là đúng. Trong Mục 2.4, chúng ta sẽ đưa ra định nghĩa chính xác về giới hạn và dùng nó để chứng minh quy tắc này. Các chứng minh cho các quy tắc còn lại được trình bày trong Phụ lục F.
+\end{minipage}
+
+\vspace{14pt}
+\noindent
+\begin{minipage}[t]{0.24\textwidth}
+\vspace{0pt}
+\centering
+\includegraphics[width=\linewidth]{images/p0130_fig1.png}\par
+\vspace{4pt}
+{\small\textsf{\textbf{HÌNH 1}}}
+\end{minipage}%
+\hspace{0.04\textwidth}%
+\begin{minipage}[t]{0.72\textwidth}
+\vspace{0pt}
+\noindent\textbf{\textsf{\color{stewartcyan}VÍ DỤ 1}}\quad Sử dụng các Quy tắc giới hạn và đồ thị của $f$ và $g$ trong Hình 1 để tính các giới hạn sau, nếu chúng tồn tại.
+\vspace{6pt}
+
+\noindent
+\textbf{(a)}\enskip $\displaystyle \lim_{x \to -2} [f(x) + 5g(x)]$ \hfill
+\textbf{(b)}\enskip $\displaystyle \lim_{x \to 1} [f(x)g(x)]$ \hfill
+\textbf{(c)}\enskip $\displaystyle \lim_{x \to 2} \frac{f(x)}{g(x)}$
+\vspace{8pt}
+
+\noindent\textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\quad
+\textbf{(a)}\enskip Từ đồ thị của $f$ và $g$, ta thấy rằng
+\[
+\lim_{x \to -2} f(x) = 1 \qquad \text{và} \qquad \lim_{x \to -2} g(x) = -1
+\]
+Do đó ta có
+\begin{align*}
+\lim_{x \to -2} [f(x) + 5g(x)] &= \lim_{x \to -2} f(x) + \lim_{x \to -2} [5g(x)] && \text{\textcolor{stewartcyan}{(theo Quy tắc giới hạn 1)}} \\
+&= \lim_{x \to -2} f(x) + 5\lim_{x \to -2} g(x) && \text{\textcolor{stewartcyan}{(theo Quy tắc giới hạn 3)}} \\
+&= 1 + 5(-1) = -4
+\end{align*}
+\end{minipage}
+
+\end{document}
