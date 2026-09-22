@@ -1,0 +1,188 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage[a4paper, top=1.8cm, bottom=1.8cm, left=1.8cm, right=1.8cm]{geometry}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathrsfs}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{microtype}
+
+% Màu sắc chuẩn nhận diện Stewart Calculus
+\definecolor{stewartcyan}{RGB}{0, 130, 185}
+\definecolor{stewartred}{RGB}{185, 30, 50}
+\definecolor{stewartdark}{RGB}{40, 40, 40}
+
+% Ký hiệu hàm phần nguyên ngoặc kép kín chuẩn
+\DeclareRobustCommand{\llbracket}{[\kern-1.5pt[}
+\DeclareRobustCommand{\rrbracket}{]\kern-1.5pt]}
+
+% Biểu tượng máy tính vẽ đồ thị chuẩn Stewart
+\newcommand{\graphingcalcicon}{%
+  \begin{tikzpicture}[baseline=-0.5ex, scale=0.68]
+    \draw[thick, stewartcyan, rounded corners=0.8pt] (0,0) rectangle (0.42, 0.42);
+    \draw[stewartcyan!70, line width=0.45pt] (0.06, 0.21) -- (0.36, 0.21);
+    \draw[stewartcyan!70, line width=0.45pt] (0.21, 0.06) -- (0.21, 0.36);
+    \draw[stewartcyan, line width=0.8pt] (0.08, 0.09) to[out=38, in=222] (0.34, 0.33);
+  \end{tikzpicture}%
+}
+
+% Cấu hình header & footer
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[L]{\textbf{\textsf{\large 126}}\qquad\textbf{\textsf{CHƯƠNG 2}}\quad\textsf{Giới hạn và Đạo hàm}}
+\fancyfoot[C]{\fontsize{6.5pt}{8pt}\selectfont\color{black!55}Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part.\\ Bản dịch tiếng Việt giáo trình \textit{Calculus: Early Transcendentals (9th Edition)} -- James Stewart.}
+
+% Tinh chỉnh khoảng cách toán học gọn gàng theo sách xuất bản
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\abovedisplayskip}{4pt}
+\setlength{\belowdisplayskip}{4pt}
+\setlength{\abovedisplayshortskip}{2pt}
+\setlength{\belowdisplayshortskip}{2pt}
+
+\begin{document}
+
+\noindent
+% CỘT TRÁI: Bài 51 đến 65
+\begin{minipage}[t]{0.485\textwidth}
+\textbf{51.} Hàm số nào sau đây có điểm gián đoạn bỏ được tại $a$? Nếu điểm gián đoạn là bỏ được, hãy tìm một hàm số $g$ trùng với $f$ với mọi $x \neq a$ và liên tục tại $a$.
+\begin{enumerate}[label=\textnormal{(\alph*)}, itemsep=1.5pt, topsep=2.5pt, leftmargin=1.8em]
+    \item $f(x) = \dfrac{x^4 - 1}{x - 1}, \quad a = 1$
+    \item $f(x) = \dfrac{x^3 - x^2 - 2x}{x - 2}, \quad a = 2$
+    \item $f(x) = \llbracket \sin x \rrbracket, \quad a = \pi$
+\end{enumerate}
+
+\vspace{0.65em}
+\textbf{52.} Giả sử hàm số $f$ liên tục trên $[0, 1]$ ngoại trừ tại $0{,}25$ và $f(0) = 1$, $f(1) = 3$. Cho $N = 2$. Hãy phác thảo hai đồ thị có thể có của $f$, một đồ thị cho thấy $f$ có thể không thỏa mãn kết luận của Định lý Giá trị Trung gian và một đồ thị cho thấy $f$ vẫn có thể thỏa mãn kết luận của Định lý Giá trị Trung gian (ngay cả khi nó không thỏa mãn giả thiết).
+
+\vspace{0.65em}
+\textbf{53.} Nếu $f(x) = x^2 + 10 \sin x$, hãy chứng minh rằng tồn tại một số $c$ sao cho $f(c) = 1000$.
+
+\vspace{0.65em}
+\textbf{54.} Giả sử $f$ liên tục trên $[1, 5]$ và các nghiệm duy nhất của phương trình $f(x) = 6$ là $x = 1$ và $x = 4$. Nếu $f(2) = 8$, hãy giải thích tại sao $f(3) > 6$.
+
+\vspace{0.75em}
+\textbf{\color{stewartcyan}55--58}\; Sử dụng Định lý Giá trị Trung gian để chứng minh rằng phương trình đã cho có nghiệm trong khoảng được chỉ định.
+
+\vspace{0.35em}
+\textbf{55.} $-x^3 + 4x + 1 = 0, \quad (-1, 0)$
+
+\vspace{0.3em}
+\textbf{56.} $\ln x = x - \sqrt{x}, \quad (2, 3)$
+
+\vspace{0.3em}
+\textbf{57.} $e^x = 3 - 2x, \quad (0, 1)$ \hfill \textbf{58.} $\sin x = x^2 - x, \quad (1, 2)$
+
+\vspace{0.75em}
+\noindent\textbf{\color{stewartcyan}59--60}\hspace{0.5em}%
+\begin{minipage}[t]{0.78\linewidth}
+\begin{enumerate}[label=\textnormal{(\alph*)}, itemsep=1.5pt, topsep=0pt, leftmargin=*, parsep=0pt]
+    \item Chứng minh rằng phương trình có ít nhất một nghiệm thực.
+    \item Sử dụng máy tính cầm tay để tìm một khoảng có độ dài $0{,}01$ chứa một nghiệm.
+\end{enumerate}
+\end{minipage}
+
+\vspace{0.35em}
+\textbf{59.} $\cos x = x^3$ \hfill \textbf{60.} $\ln x = 3 - 2x$
+
+\vspace{0.75em}
+\noindent\graphingcalcicon\;\textbf{\color{stewartcyan}61--62}\hspace{0.4em}%
+\begin{minipage}[t]{0.74\linewidth}
+\begin{enumerate}[label=\textnormal{(\alph*)}, itemsep=1.5pt, topsep=0pt, leftmargin=*, parsep=0pt]
+    \item Chứng minh rằng phương trình có ít nhất một nghiệm thực.
+    \item Tìm nghiệm chính xác đến ba chữ số thập phân bằng phương pháp đồ thị.
+\end{enumerate}
+\end{minipage}
+
+\vspace{0.35em}
+\textbf{61.} $100e^{-x/100} = 0{,}01x^2$ \hfill \textbf{62.} $\arctan x = 1 - x$
+
+\vspace{0.75em}
+\textbf{\color{stewartcyan}63--64}\; Không vẽ đồ thị, hãy chứng minh rằng đồ thị của hàm số có ít nhất hai giao điểm với trục hoành trong khoảng được chỉ định.
+
+\vspace{0.35em}
+\textbf{63.} $y = \sin x^3, \quad (1, 2)$ \hfill \textbf{64.} $y = x^2 - 3 + 1/x, \quad (0, 2)$
+
+\vspace{0.75em}
+\textbf{65.} Chứng minh rằng $f$ liên tục tại $a$ khi và chỉ khi
+\[
+\lim_{h \to 0} f(a + h) = f(a)
+\]
+\end{minipage}%
+\hfill
+% CỘT PHẢI: Bài 66 đến 76
+\begin{minipage}[t]{0.485\textwidth}
+\textbf{66.} Để chứng minh hàm sin liên tục, ta cần chỉ ra rằng $\lim_{x \to a} \sin x = \sin a$ với mọi số thực $a$. Theo Bài tập~65, một khẳng định tương đương là
+\[
+\lim_{h \to 0} \sin(a + h) = \sin a
+\]
+Hãy sử dụng công thức (6) để chứng minh điều này đúng.
+
+\vspace{0.6em}
+\textbf{67.} Chứng minh rằng cosin là một hàm số liên tục.
+
+\vspace{0.6em}
+\noindent\textbf{68.}\hspace{0.5em}%
+\begin{minipage}[t]{0.88\linewidth}
+\textnormal{(a)} Chứng minh Định lý 4, phần 3.\\[2pt]
+\textnormal{(b)} Chứng minh Định lý 4, phần 5.
+\end{minipage}
+
+\vspace{0.6em}
+\textbf{69.} Sử dụng Định lý 8 để chứng minh các Quy tắc Giới hạn 6 và 7 trong Mục~2.3.
+
+\vspace{0.6em}
+\textbf{70.} Có tồn tại một số lớn hơn lập phương của chính nó đúng 1 đơn vị không?
+
+\vspace{0.6em}
+\textbf{71.} Hàm số $f$ liên tục tại những giá trị nào của $x$?
+\[
+f(x) = \begin{cases} 
+0 & \text{nếu } x \text{ hữu tỉ} \\[2pt] 
+1 & \text{nếu } x \text{ vô tỉ} 
+\end{cases}
+\]
+
+\vspace{0.5em}
+\textbf{72.} Hàm số $g$ liên tục tại những giá trị nào của $x$?
+\[
+g(x) = \begin{cases} 
+0 & \text{nếu } x \text{ hữu tỉ} \\[2pt] 
+x & \text{nếu } x \text{ vô tỉ} 
+\end{cases}
+\]
+
+\vspace{0.5em}
+\textbf{73.} Chứng minh rằng hàm số
+\[
+f(x) = \begin{cases} 
+x^4 \sin(1/x) & \text{nếu } x \neq 0 \\[2pt] 
+0 & \text{nếu } x = 0 
+\end{cases}
+\]
+liên tục trên $(-\infty, \infty)$.
+
+\vspace{0.6em}
+\textbf{74.} Nếu $a$ và $b$ là các số dương, hãy chứng minh rằng phương trình
+\[
+\frac{a}{x^3 + 2x^2 - 1} + \frac{b}{x^3 + x - 2} = 0
+\]
+có ít nhất một nghiệm trong khoảng $(-1, 1)$.
+
+\vspace{0.6em}
+\textbf{75.} Một nhà sư Tây Tạng rời tu viện lúc 7:00 sáng và đi theo con đường mòn quen thuộc lên đỉnh núi, đến nơi lúc 7:00 tối. Sáng hôm sau, ông bắt đầu lúc 7:00 sáng từ đỉnh núi và đi theo đúng con đường đó để trở về, tới tu viện lúc 7:00 tối. Hãy sử dụng Định lý Giá trị Trung gian để chứng minh rằng tồn tại một điểm trên đường đi mà nhà sư đi qua vào đúng cùng một thời điểm trong ngày ở cả hai ngày.
+
+\vspace{0.6em}
+\textbf{76. Giá trị tuyệt đối và tính liên tục}
+\begin{enumerate}[label=\textnormal{(\alph*)}, itemsep=2pt, topsep=2pt, leftmargin=1.8em]
+    \item Chứng minh rằng hàm giá trị tuyệt đối $F(x) = |x|$ liên tục tại mọi điểm.
+    \item Chứng minh rằng nếu $f$ là một hàm số liên tục trên một khoảng thì hàm $|f|$ cũng liên tục trên khoảng đó.
+    \item Mệnh đề đảo của khẳng định ở phần (b) có đúng không? Nói cách khác, nếu $|f|$ liên tục thì có nhất thiết suy ra $f$ liên tục hay không? Nếu đúng, hãy chứng minh; nếu sai, hãy đưa ra một phản ví dụ.
+\end{enumerate}
+\end{minipage}
+
+\end{document}

@@ -293,6 +293,12 @@
       "score": 99,
       "notes": "Bản dịch bị lỗi hiển thị rò rỉ mã phần tiền đề (preamble) lên đầu trang; xuất hiện một đường kẻ ngang xanh thừa giữa bài 45 và 46 (bản gốc không có); nhóm bài 25-26 bị ngắt dòng câu (a) xuống dưới nhãn; bài 40 dùng phân số đứng quá lớn thay vì dạng gọn arctan(1/x); các giá trị a ở bài 21-24 chưa được dóng thẳng cột.",
       "time": "2026-09-23 04:20:19"
+    },
+    {
+      "page_num": 161,
+      "score": 99,
+      "notes": "Bản dịch bị lỗi hiển thị toàn bộ tên gói lệnh (preamble) ngay dưới tiêu đề đầu trang; thêm 4 đường kẻ ngang màu xanh không có trong bản gốc; bài 59–60 và 61–62 ngắt dòng sai vị trí (a); bài 68 đặt (a) và (b) trên cùng một dòng thay vì tách dòng như bản gốc.",
+      "time": "2026-09-23 04:22:37"
     }
   ]
 }
