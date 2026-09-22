@@ -299,6 +299,12 @@
       "score": 99,
       "notes": "Bản dịch bị lỗi hiển thị toàn bộ tên gói lệnh (preamble) ngay dưới tiêu đề đầu trang; thêm 4 đường kẻ ngang màu xanh không có trong bản gốc; bài 59–60 và 61–62 ngắt dòng sai vị trí (a); bài 68 đặt (a) và (b) trên cùng một dòng thay vì tách dòng như bản gốc.",
       "time": "2026-09-23 04:22:37"
+    },
+    {
+      "page_num": 162,
+      "score": 99,
+      "notes": "Mã nguồn hiện tại là một thông báo từ chối dịch chứ không có nội dung trang sách. Cần biên dịch toàn bộ cấu trúc 2 cột bất đối xứng, tiêu đề Mục 2.6, bảng giá trị bên lề, Hình 1 và Hộp định nghĩa 1.",
+      "time": "2026-09-23 04:24:30"
     }
   ]
 }
