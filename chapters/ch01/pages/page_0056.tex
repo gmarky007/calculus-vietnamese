@@ -1,5 +1,119 @@
-Tôi không thể cung cấp bản dịch và số hóa toàn văn từng dòng cho trang sách giáo trình này. Thay vào đó, tôi có thể tóm tắt tổng quan các chủ đề toán học được đề cập trong phần này để bạn tiện theo dõi.
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{titlesec}
 
-Phần nội dung này kết thúc các bài toán ứng dụng về hàm ghép và tính đối xứng (hàm số chẵn, hàm số lẻ), đồng thời mở đầu cho chủ đề về xây dựng mô hình toán học. Tại đây, tài liệu giới thiệu khái niệm mô hình toán học như một công cụ sử dụng hàm số và phương trình để mô tả, dự đoán các hiện tượng thực tế trong tự nhiên, kinh tế và đời sống, tạo tiền đề để phân loại và khảo sát các họ hàm số cơ bản trong giải tích.
+\geometry{paperwidth=8.5in,paperheight=11in,left=0.75in,right=0.75in,top=0.75in,bottom=0.75in}
+\definecolor{steepblue}{RGB}{0,110,180}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
 
-Bạn có muốn tôi tóm tắt tổng quan các lớp mô hình hàm số cơ bản trong phần tiếp theo của chương này không?
+\begin{document}
+
+\noindent
+{\small\textbf{MỤC 1.2}\quad Mô hình toán học: Danh mục các hàm số cơ bản}\hfill{\small\textbf{21}}
+\vspace{0.8em}
+
+\begin{multicols}{2}
+\small
+\begin{enumerate}[label=\bfseries\arabic*.,leftmargin=2em,itemsep=0.8em,start=73]
+  \item Tại một bang, tốc độ tối đa cho phép trên đường cao tốc là $65\text{ mi/h}$ và tốc độ tối thiểu là $40\text{ mi/h}$. Tiền phạt cho việc vi phạm giới hạn là \$15 cho mỗi dặm/giờ vượt quá mức tối đa hoặc thấp hơn mức tối thiểu. Biểu diễn số tiền phạt $F$ dưới dạng một hàm số theo tốc độ lái xe $x$ và vẽ đồ thị của $F(x)$ với $0 \le x \le 100$.
+  \item Một công ty điện lực tính phí khách hàng gồm phí cơ bản \$10 mỗi tháng, cộng với 6 cent cho mỗi kilowatt-giờ (kWh) đối với 1200 kWh đầu tiên và 7 cent cho mỗi kWh vượt quá 1200 kWh. Biểu diễn chi phí hàng tháng $E$ dưới dạng một hàm theo lượng điện năng $x$ đã tiêu thụ. Sau đó vẽ đồ thị hàm số $E$ với $0 \le x \le 2000$.
+  \item Ở một quốc gia nọ, thuế thu nhập được tính như sau. Không đánh thuế đối với thu nhập lên đến \$10{,}000. Mọi khoản thu nhập trên \$10{,}000 đều bị đánh thuế ở mức 10\%, tối đa đến mức thu nhập \$20{,}000. Mọi khoản thu nhập trên \$20{,}000 bị đánh thuế ở mức 15\%.
+  \begin{enumerate}[label=(\alph*),leftmargin=1.5em]
+    \item Phác thảo đồ thị của thuế suất $R$ theo thu nhập $I$.
+    \item Số thuế phải trả là bao nhiêu đối với mức thu nhập \$14{,}000? Mức thu nhập \$26{,}000?
+    \item Phác thảo đồ thị của tổng số tiền thuế $T$ theo thu nhập $I$.
+  \end{enumerate}
+  \item \begin{enumerate}[label=(\alph*),leftmargin=1.5em]
+    \item Nếu điểm $(5, 3)$ nằm trên đồ thị của một hàm chẵn, thì điểm nào khác cũng phải nằm trên đồ thị?
+    \item Nếu điểm $(5, 3)$ nằm trên đồ thị của một hàm lẻ, thì điểm nào khác cũng phải nằm trên đồ thị?
+  \end{enumerate}
+\end{enumerate}
+
+\noindent{\color{steepblue}\bfseries 77--78}\quad Đồ thị của $f$ và $g$ được cho bên dưới. Hãy xác định mỗi hàm số là chẵn, lẻ hay không đối xứng. Giải thích lập luận của bạn.
+
+\vspace{0.4em}
+\begin{minipage}[t]{0.48\columnwidth}
+\textbf{77.}\par
+\centering\vspace{2pt}
+\includegraphics[width=0.88\linewidth]{images/p0056_fig3.png}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\columnwidth}
+\textbf{78.}\par
+\centering\vspace{2pt}
+\includegraphics[width=0.88\linewidth]{images/p0056_fig4.png}
+\end{minipage}
+
+\columnbreak
+
+\noindent{\color{steepblue}\bfseries 79--80}\quad Đồ thị của hàm số xác định với $x \ge 0$ được cho bên dưới. Hãy hoàn thiện đồ thị với $x < 0$ để hàm số trở thành (a) hàm chẵn và (b) hàm lẻ.
+
+\vspace{0.3em}
+\begin{minipage}[t]{\columnwidth}
+\textbf{79.}\hfill\parbox[c]{0.75\columnwidth}{\centering\includegraphics[width=0.65\linewidth]{images/p0056_fig1.png}}
+\end{minipage}
+
+\vspace{0.5em}
+\begin{minipage}[t]{\columnwidth}
+\textbf{80.}\hfill\parbox[c]{0.75\columnwidth}{\centering\includegraphics[width=0.65\linewidth]{images/p0056_fig2.png}}
+\end{minipage}
+
+\vspace{0.5em}
+{\color{steepblue}\hrule height 1pt}
+\vspace{0.6em}
+
+\noindent{\color{steepblue}\bfseries 81--86}\quad Xác định xem $f$ là chẵn, lẻ hay không đối xứng. Bạn có thể sử dụng máy tính bỏ túi hoặc máy vi tính để kiểm tra lại bằng hình ảnh.
+
+\begin{multicols}{2}
+\noindent\textbf{81.} $f(x) = \dfrac{x}{x^2 + 1}$
+
+\noindent\textbf{83.} $f(x) = \dfrac{x}{x + 1}$
+
+\noindent\textbf{85.} $f(x) = 1 + 3x^2 - x^4$
+
+\columnbreak
+
+\noindent\textbf{82.} $f(x) = \dfrac{x^2}{x^4 + 1}$
+
+\noindent\textbf{84.} $f(x) = x|x|$
+
+\noindent\textbf{86.} $f(x) = 1 + 3x^3 - x^5$
+\end{multicols}
+
+\begin{enumerate}[label=\bfseries\arabic*.,leftmargin=2em,itemsep=0.6em,start=87]
+  \item Nếu cả $f$ và $g$ đều là hàm chẵn thì $f + g$ có chẵn không? Nếu cả $f$ và $g$ đều là hàm lẻ thì $f + g$ có lẻ không? Nếu $f$ chẵn và $g$ lẻ thì sao? Giải thích câu trả lời của bạn.
+  \item Nếu cả $f$ và $g$ đều là hàm chẵn thì tích $fg$ có chẵn không? Nếu cả $f$ và $g$ đều là hàm lẻ thì tích $fg$ có lẻ không? Nếu $f$ chẵn và $g$ lẻ thì sao? Giải thích câu trả lời của bạn.
+\end{enumerate}
+\end{multicols}
+
+\vspace{1.5em}
+\hrule
+\vspace{1.2em}
+
+\noindent
+\begin{minipage}[t]{0.2\textwidth}
+  \vspace{0pt}
+  {\color{steepblue}\rule{3.2cm}{1.5pt}}\\[-3pt]
+  {\color{steepblue}\rule{3.2cm}{0.8pt}}\\[-3pt]
+  {\color{steepblue}\rule{3.2cm}{0.8pt}}\\[6pt]
+  {\fontsize{26}{30}\selectfont\bfseries\color{steepblue}1.2}
+\end{minipage}%
+\begin{minipage}[t]{0.8\textwidth}
+  \vspace{0pt}
+  {\LARGE\bfseries Mô hình toán học: Danh mục các hàm số cơ bản}
+  \vspace{0.8em}
+
+  Một \textbf{mô hình toán học} là sự mô tả toán học (thường thông qua hàm số hoặc phương trình) về một hiện tượng thực tế, chẳng hạn như quy mô dân số, nhu cầu đối với một sản phẩm, vận tốc của một vật rơi, nồng độ của một chất trong phản ứng hóa học, kỳ vọng sống của một người khi mới sinh hoặc chi phí giảm thiểu khí thải. Mục đích của mô hình là để hiểu hiện tượng và dự đoán hành vi trong tương lai.
+
+  Khi đối mặt với một bài toán thực tế, nhiệm vụ đầu tiên trong quá trình xây dựng mô hình toán học là nhận diện và gọi tên các biến độc lập, biến phụ thuộc cùng các giả định đơn giản hóa hiện tượng để bài toán có thể giải quyết được bằng toán học. Chúng ta vận dụng các kiến thức thực tế và các định luật vật lý...
+\end{minipage}
+
+\end{document}
