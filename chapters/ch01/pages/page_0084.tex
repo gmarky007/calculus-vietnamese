@@ -1,17 +1,39 @@
 \fancyhead[LO,LE]{}
-\fancyhead[RO,RE]{\textsf{\textbf{MỤC 1.4}}\quad \textsf{Hàm số mũ}\quad \textbf{49}}
+\fancyhead[RO,RE]{\small\textsf{\textbf{MỤC 1.4}}\quad \textsf{Hàm số mũ}\quad \textbf{49}}
 
 \noindent
-\begin{minipage}[t]{0.26\textwidth}
-    \vspace{0pt}
+\begin{minipage}[t]{0.27\textwidth}
+    \vspace{2.2em}
     \centering
-    {\small \textbf{\textsf{BẢNG 1}}\quad \textsf{Dân số thế giới}}
-    \vspace{4pt}
-    
-    \includegraphics[width=\linewidth]{images/p0084_fig1.png}
+    {\small \textbf{\textsf{BẢNG 1}}\quad \textsf{Dân số thế giới}}\\[5pt]
+    \renewcommand{\arraystretch}{1.12}
+    \setlength{\tabcolsep}{4pt}
+    {\footnotesize
+    \begin{tabular}{|c|c|}
+    \hline
+    \rowcolor[RGB]{218, 226, 236}
+    $t$ & Dân số $P$ \\
+    \rowcolor[RGB]{218, 226, 236}
+    \raisebox{1pt}{\scriptsize (năm kể từ 1900)} & \raisebox{1pt}{\scriptsize (triệu người)} \\
+    \hline
+    0   & 1650 \\
+    10  & 1750 \\
+    20  & 1860 \\
+    30  & 2070 \\
+    40  & 2300 \\
+    50  & 2560 \\
+    60  & 3040 \\
+    70  & 3710 \\
+    80  & 4450 \\
+    90  & 5280 \\
+    100 & 6080 \\
+    110 & 6870 \\
+    \hline
+    \end{tabular}
+    }
 \end{minipage}%
 \hfill
-\begin{minipage}[t]{0.71\textwidth}
+\begin{minipage}[t]{0.70\textwidth}
     \vspace{0pt}
     Từ quy luật này, có vẻ như trong trường hợp tổng quát, ta có
     \[
@@ -29,42 +51,50 @@
     trong đó $t = 0$ tương ứng với năm 1900. Hình~9 cho thấy đồ thị của hàm số mũ này cùng với các điểm dữ liệu ban đầu. Ta thấy rằng đường cong hàm mũ khớp với dữ liệu khá tốt. Giai đoạn tăng trưởng dân số tương đối chậm được giải thích bởi hai cuộc chiến tranh thế giới và cuộc Đại suy thoái vào những năm 1930.
 \end{minipage}
 
-\vspace{0.98em}
+\vspace{1.2em}
 \noindent
 \begin{minipage}[t]{0.48\textwidth}
-    \centering
-    \includegraphics[width=\linewidth]{images/p0084_fig2.png}
-    \vspace{4pt}
-    
+    \includegraphics[width=\linewidth]{images/p0084_fig1.png}\\[4pt]
     {\small \textbf{\textsf{HÌNH 8}}\quad \textsf{Biểu đồ phân tán cho sự tăng trưởng dân số thế giới}}
 \end{minipage}%
 \hfill
 \begin{minipage}[t]{0.48\textwidth}
-    \centering
-    \includegraphics[width=\linewidth]{images/p0084_fig3.png}
-    \vspace{4pt}
-    
+    \includegraphics[width=\linewidth]{images/p0084_fig2.png}\\[4pt]
     {\small \textbf{\textsf{HÌNH 9}}\quad \textsf{Mô hình hàm mũ cho sự tăng trưởng dân số thế giới}\hfill{\color{stewartcyan}$\blacksquare$}}
 \end{minipage}
 
-\vspace{1.23em}
+\vspace{1.2em}
 \noindent
-\begin{minipage}[t]{0.26\textwidth}
+\begin{minipage}[t]{0.27\textwidth}
     \vspace{0pt}
     \centering
-    {\small \textbf{\textsf{BẢNG 2}}}
-    \vspace{4pt}
-    
-    \includegraphics[width=\linewidth]{images/p0084_fig4.png}
+    {\small \textbf{\textsf{BẢNG 2}}}\\[4pt]
+    \renewcommand{\arraystretch}{1.15}
+    \setlength{\tabcolsep}{8pt}
+    {\footnotesize
+    \begin{tabular}{|c|c|}
+    \hline
+    \rowcolor[RGB]{218, 226, 236}
+    $t$ (ngày) & $V(t)$ \\
+    \hline
+    1  & 76{,}0 \\
+    4  & 53{,}0 \\
+    8  & 18{,}0 \\
+    11 & 9{,}4 \\
+    15 & 5{,}2 \\
+    22 & 3{,}6 \\
+    \hline
+    \end{tabular}
+    }
 \end{minipage}%
 \hfill
-\begin{minipage}[t]{0.71\textwidth}
+\begin{minipage}[t]{0.70\textwidth}
     \vspace{0pt}
-    \textbf{\textsf{\color{stewartcyan}VÍ DỤ 4}}\quad Vào năm 1995, một bài báo nghiên cứu đã được công bố trình bày chi tiết về tác dụng của chất ức chế protease ABT-538 đối với virus gây suy giảm miễn dịch ở người HIV-1.$^1$ Bảng 2 thể hiện các giá trị tải lượng virus trong huyết tương $V(t)$ của bệnh nhân 303, được đo bằng số lượng bản sao RNA trên mỗi mL, sau $t$ ngày kể từ khi bắt đầu điều trị bằng ABT-538. Biểu đồ phân tán tương ứng được thể hiện trong Hình~10 (ở trang tiếp theo).
+    \noindent\textbf{\textsf{\color{stewartcyan}VÍ DỤ 4}}\quad Vào năm 1995, một bài báo nghiên cứu đã được công bố trình bày chi tiết về tác dụng của chất ức chế protease ABT-538 đối với virus gây suy giảm miễn dịch ở người HIV-1.$^1$ Bảng 2 thể hiện các giá trị tải lượng virus trong huyết tương $V(t)$ của bệnh nhân 303, được đo bằng số lượng bản sao RNA trên mỗi mL, sau $t$ ngày kể từ khi bắt đầu điều trị bằng ABT-538. Biểu đồ phân tán tương ứng được thể hiện trong Hình~10 (ở trang tiếp theo).
     \par\vspace{0.41em}
     Sự suy giảm khá mạnh của tải lượng virus mà chúng ta thấy trong Hình~10 gợi nhớ đến đồ thị của hàm số mũ $y = b^x$ trong các Hình~3 và 4(a) đối với trường hợp cơ số $b$ nhỏ hơn 1. Vì vậy, chúng ta hãy mô hình hóa hàm số $V(t)$ bằng một hàm số mũ. Sử dụng máy tính cầm tay có chức năng đồ họa hoặc máy tính điện tử để khớp dữ liệu trong Bảng 2 với một hàm mũ
 
-    \vspace{2.05em}
-    \noindent\rule{0.45\textwidth}{0.4pt}\\[4pt]
+    \vspace{1.8em}
+    \noindent\rule{0.45\textwidth}{0.4pt}\\[3pt]
     {\footnotesize 1. D. Ho và cộng sự, “Rapid Turnover of Plasma Virions and CD4 Lymphocytes in HIV-1 Infection,” \textit{Nature} 373 (1995): 123--26.}
 \end{minipage}
