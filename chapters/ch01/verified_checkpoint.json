@@ -287,6 +287,12 @@
       "score": 99,
       "notes": "Cột lề trái bị đẩy lên quá cao do thiếu khoảng cách dóng hàng (Hình 1 và Hình 2 lệch hơn 200pt so với bản gốc; thiếu 5 đường kẻ trang trí cạnh tiêu đề mục 1.5). Tiêu đề 1.5 thiếu vạch đứng phân cách, bảng 1 & 2 bị tô màu nền tiêu đề không đúng bản gốc, và từ 'nhưng' trong phần công thức bị ngắt dòng đơn độc.",
       "time": "2026-09-23 02:00:49"
+    },
+    {
+      "page_num": 90,
+      "score": 99,
+      "notes": "HÌNH 3 bị đặt quá cao, HÌNH 5 bị lệch lên ngang hàng với Định nghĩa 2 (nguyên bản nằm dưới Định nghĩa 2). Đồ thị HÌNH 3 trong cột chính bị đẩy sát phải thay vì căn giữa. Hộp tập xác định/tập giá trị bị kéo dãn toàn bộ bề ngang thay vì thu gọn. Biểu tượng LƯU Ý gọi ảnh không tồn tại p0090_fig4.png.",
+      "time": "2026-09-23 02:02:06"
     }
   ]
 }
