@@ -1,0 +1,267 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{geometry}
+\geometry{top=1.6cm, bottom=1.5cm, left=1.8cm, right=1.8cm, headheight=14pt, headsep=10pt}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{parskip}
+\usepackage{iftex}
+\ifXeTeX
+  \usepackage{fontspec}
+\else
+  \usepackage[utf8]{inputenc}
+  \usepackage[T5,T1]{fontenc}
+\fi
+\usepackage[vietnamese]{babel}
+
+% Màu chuẩn sách giáo trình James Stewart Calculus
+\definecolor{stewartcyan}{RGB}{0, 130, 160}
+
+% Biểu tượng đồ họa CAS chuẩn lề
+\newcommand{\calcicon}{%
+  \tikz[baseline=-0.55ex, line width=0.5pt]{%
+    \draw[stewartcyan, rounded corners=0.8pt] (0,0) rectangle (2.1ex, 1.8ex);
+    \draw[stewartcyan, line width=0.4pt] (0.35ex, 0.35ex) -- (1.75ex, 0.35ex);
+    \draw[stewartcyan, line width=0.4pt] (0.35ex, 0.35ex) -- (0.35ex, 1.45ex);
+    \draw[stewartcyan, line width=0.55pt] (0.35ex, 0.45ex) .. controls (0.85ex, 0.6ex) and (1.25ex, 1.2ex) .. (1.75ex, 1.45ex);
+  }%
+}
+\newcommand{\casicon}{\llap{\calcicon\hspace{4pt}}}
+
+% Định dạng tiêu đề đầu trang theo chuẩn bản gốc
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textsf{\textbf{138}}\qquad\textbf{\textsf{CHƯƠNG 2}}\quad Giới hạn và Đạo hàm}
+\renewcommand{\headrulewidth}{0pt}
+
+% Tinh chỉnh khoảng cách công thức toán
+\setlength{\abovedisplayskip}{3pt}
+\setlength{\belowdisplayskip}{3pt}
+\setlength{\abovedisplayshortskip}{2pt}
+\setlength{\belowdisplayshortskip}{2pt}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.485\textwidth}
+\raggedright
+
+\noindent\casicon\textbf{11.} Dự đoán giá trị của giới hạn
+\[
+\lim_{x \to \infty} \frac{x^2}{2^x}
+\]
+bằng cách tính giá trị của hàm số $f(x) = x^2/2^x$ với $x = 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 50$ và $100$. Sau đó sử dụng đồ thị của $f$ để củng cố dự đoán của bạn.
+
+\vspace{0.6em}
+
+\noindent\casicon\textbf{12.} 
+\begin{enumerate}[label=(\alph*), leftmargin=1.5em, itemsep=1pt, topsep=1pt, parsep=0pt]
+    \item Sử dụng đồ thị của
+    \[
+    f(x) = \left( 1 - \frac{2}{x} \right)^x
+    \]
+    để ước lượng giá trị của $\lim_{x \to \infty} f(x)$ chính xác đến hai chữ số thập phân.
+    \item Sử dụng bảng giá trị của $f(x)$ để ước lượng giới hạn chính xác đến bốn chữ số thập phân.
+\end{enumerate}
+
+\vspace{0.6em}
+
+\noindent{\color{stewartcyan}\textbf{13--14}}\; \textbf{Tính giới hạn và giải thích từng bước bằng cách chỉ ra các tính chất thích hợp của giới hạn.}
+
+\vspace{0.4em}
+
+\noindent
+\parbox[t]{0.48\linewidth}{\textbf{13.} $\displaystyle \lim_{x \to \infty} \frac{2x^2 - 7}{5x^2 + x - 3}$}\hfill
+\parbox[t]{0.48\linewidth}{\textbf{14.} $\displaystyle \lim_{x \to \infty} \sqrt{\frac{9x^3 + 8x - 4}{3 - 5x + x^3}}$}
+
+\vspace{0.7em}
+
+\noindent{\color{stewartcyan}\textbf{15--42}}\; \textbf{Tìm giới hạn hoặc chứng minh rằng giới hạn không tồn tại.}
+
+\vspace{0.4em}
+
+\noindent
+\parbox[t]{0.48\linewidth}{\textbf{15.} $\displaystyle \lim_{x \to \infty} \frac{4x + 3}{5x - 1}$}\hfill
+\parbox[t]{0.48\linewidth}{\textbf{16.} $\displaystyle \lim_{x \to \infty} \frac{-2}{3x + 7}$}
+
+\vspace{0.5em}
+
+\noindent
+\parbox[t]{0.48\linewidth}{\textbf{17.} $\displaystyle \lim_{t \to -\infty} \frac{3t^2 + t}{t^3 - 4t + 1}$}\hfill
+\parbox[t]{0.48\linewidth}{\textbf{18.} $\displaystyle \lim_{t \to -\infty} \frac{6t^2 + t - 5}{9 - 2t^2}$}
+
+\vspace{0.5em}
+
+\noindent
+\parbox[t]{0.48\linewidth}{\textbf{19.} $\displaystyle \lim_{r \to \infty} \frac{r - r^3}{2 - r^2 + 3r^3}$}\hfill
+\parbox[t]{0.48\linewidth}{\textbf{20.} $\displaystyle \lim_{x \to \infty} \frac{3x^3 - 8x + 2}{4x^3 - 5x^2 - 2}$}
+
+\vspace{0.5em}
+
+\noindent
+\parbox[t]{0.48\linewidth}{\textbf{21.} $\displaystyle \lim_{x \to \infty} \frac{4 - \sqrt{x}}{2 + \sqrt{x}}$}\hfill
+\parbox[t]{0.48\linewidth}{\textbf{22.} $\displaystyle \lim_{u \to -\infty} \frac{(u^2 + 1)(2u^2 - 1)}{(u^2 + 2)^2}$}
+
+\vspace{0.5em}
+
+\noindent
+\parbox[t]{0.48\linewidth}{\textbf{23.} $\displaystyle \lim_{x \to \infty} \frac{\sqrt{x + 3x^2}}{4x - 1}$}\hfill
+\parbox[t]{0.48\linewidth}{\textbf{24.} $\displaystyle \lim_{t \to \infty} \frac{t + 3}{\sqrt{2t^2 - 1}}$}
+
+\vspace{0.5em}
+
+\noindent
+\parbox[t]{0.48\linewidth}{\textbf{25.} $\displaystyle \lim_{x \to \infty} \frac{\sqrt{1 + 4x^6}}{2 - x^3}$}\hfill
+\parbox[t]{0.48\linewidth}{\textbf{26.} $\displaystyle \lim_{x \to -\infty} \frac{\sqrt{1 + 4x^6}}{2 - x^3}$}
+
+\vspace{0.5em}
+
+\noindent
+\parbox[t]{0.48\linewidth}{\textbf{27.} $\displaystyle \lim_{x \to -\infty} \frac{2x^5 - x}{x^4 + 3}$}\hfill
+\parbox[t]{0.48\linewidth}{\textbf{28.} $\displaystyle \lim_{q \to \infty} \frac{q^3 + 6q - 4}{4q^2 - 3q + 3}$}
+
+\vspace{0.5em}
+
+\noindent
+\parbox[t]{0.47\linewidth}{\textbf{29.} $\displaystyle \lim_{t \to \infty} \left(\sqrt{25t^2 + 2} - 5t\right)$}\hfill
+\parbox[t]{0.51\linewidth}{\textbf{30.} $\displaystyle \lim_{x \to -\infty} \left(\sqrt{4x^2 + 3x} + 2x\right)$}
+
+\vspace{0.5em}
+
+\noindent
+\textbf{31.} $\displaystyle \lim_{x \to \infty} \left(\sqrt{x^2 + ax} - \sqrt{x^2 + bx}\right)$
+
+\vspace{0.5em}
+
+\noindent
+\textbf{32.} $\displaystyle \lim_{x \to \infty} \left(x - \sqrt{x}\right)$
+
+\vspace{0.5em}
+
+\noindent
+\parbox[t]{0.48\linewidth}{\textbf{33.} $\displaystyle \lim_{x \to -\infty} (x^2 + 2x^7)$}\hfill
+\parbox[t]{0.48\linewidth}{\textbf{34.} $\displaystyle \lim_{x \to \infty} (e^{-x} + 2\cos 3x)$}
+
+\vspace{0.5em}
+
+\noindent
+\parbox[t]{0.48\linewidth}{\textbf{35.} $\displaystyle \lim_{x \to \infty} (e^{-2x} \cos x)$}\hfill
+\parbox[t]{0.48\linewidth}{\textbf{36.} $\displaystyle \lim_{x \to \infty} \frac{\sin^2 x}{x^2 + 1}$}
+
+\vspace{0.8em}
+\noindent{\color{stewartcyan}\rule{\linewidth}{0.6pt}}
+
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.485\textwidth}
+\raggedright
+
+\noindent
+\parbox[t]{0.48\linewidth}{\textbf{37.} $\displaystyle \lim_{x \to \infty} \frac{1 - e^x}{1 + 2e^x}$}\hfill
+\parbox[t]{0.48\linewidth}{\textbf{38.} $\displaystyle \lim_{x \to \infty} \frac{e^{3x} - e^{-3x}}{e^{3x} + e^{-3x}}$}
+
+\vspace{0.5em}
+
+\noindent
+\parbox[t]{0.48\linewidth}{\textbf{39.} $\displaystyle \lim_{x \to (\pi/2)^+} e^{\sec x}$}\hfill
+\parbox[t]{0.48\linewidth}{\textbf{40.} $\displaystyle \lim_{x \to 0^+} \tan^{-1}(\ln x)$}
+
+\vspace{0.5em}
+
+\noindent
+\textbf{41.} $\displaystyle \lim_{x \to \infty} [\ln(1 + x^2) - \ln(1 + x)]$
+
+\vspace{0.5em}
+
+\noindent
+\textbf{42.} $\displaystyle \lim_{x \to \infty} [\ln(2 + x) - \ln(1 + x)]$
+
+\vspace{0.5em}
+\noindent{\color{stewartcyan}\rule{\linewidth}{0.6pt}}
+\vspace{0.4em}
+
+\noindent\textbf{43.} 
+\begin{enumerate}[label=(\alph*), leftmargin=1.5em, itemsep=1pt, topsep=1pt, parsep=0pt]
+    \item Cho hàm số $f(x) = \dfrac{x}{\ln x}$, hãy tìm mỗi giới hạn sau:
+    \\[2pt]
+    (i) $\displaystyle \lim_{x \to 0^+} f(x)$ \quad 
+    (ii) $\displaystyle \lim_{x \to 1^-} f(x)$ \quad 
+    (iii) $\displaystyle \lim_{x \to 1^+} f(x)$
+    \item Sử dụng bảng giá trị để ước lượng $\displaystyle \lim_{x \to \infty} f(x)$.
+    \item Sử dụng thông tin từ các phần (a) và (b) để phác thảo sơ bộ đồ thị của $f$.
+\end{enumerate}
+
+\vspace{0.4em}
+
+\noindent\textbf{44.} 
+\begin{enumerate}[label=(\alph*), leftmargin=1.5em, itemsep=1pt, topsep=1pt, parsep=0pt]
+    \item Cho hàm số $f(x) = \dfrac{2}{x} - \dfrac{1}{\ln x}$, hãy tìm mỗi giới hạn sau:
+    \\[2pt]
+    \begin{tabular}{@{}p{0.48\linewidth}@{\hspace{0.04\linewidth}}p{0.48\linewidth}@{}}
+    (i) $\displaystyle \lim_{x \to \infty} f(x)$ & (ii) $\displaystyle \lim_{x \to 0^+} f(x)$ \\[4pt]
+    (iii) $\displaystyle \lim_{x \to 1^-} f(x)$ & (iv) $\displaystyle \lim_{x \to 1^+} f(x)$
+    \end{tabular}
+    \item Sử dụng thông tin từ phần (a) để phác thảo sơ bộ đồ thị của $f$.
+\end{enumerate}
+
+\vspace{0.4em}
+
+\noindent\casicon\textbf{45.} 
+\begin{enumerate}[label=(\alph*), leftmargin=1.5em, itemsep=1pt, topsep=1pt, parsep=0pt]
+    \item Ước lượng giá trị của
+    \[
+    \lim_{x \to -\infty} \left(\sqrt{x^2 + x + 1} + x\right)
+    \]
+    bằng cách vẽ đồ thị hàm số $f(x) = \sqrt{x^2 + x + 1} + x$.
+    \item Sử dụng bảng giá trị của $f(x)$ để dự đoán giá trị của giới hạn.
+    \item Chứng minh rằng dự đoán của bạn là chính xác.
+\end{enumerate}
+
+\vspace{0.4em}
+
+\noindent\casicon\textbf{46.} 
+\begin{enumerate}[label=(\alph*), leftmargin=1.5em, itemsep=1pt, topsep=1pt, parsep=0pt]
+    \item Sử dụng đồ thị của
+    \[
+    f(x) = \sqrt{3x^2 + 8x + 6} - \sqrt{3x^2 + 3x + 1}
+    \]
+    để ước lượng giá trị của $\displaystyle \lim_{x \to \infty} f(x)$ chính xác đến một chữ số thập phân.
+    \item Sử dụng bảng giá trị của $f(x)$ để ước lượng giới hạn chính xác đến bốn chữ số thập phân.
+    \item Tìm giá trị chính xác của giới hạn.
+\end{enumerate}
+
+\vspace{0.5em}
+
+\noindent{\color{stewartcyan}\textbf{47--52}}\; \textbf{Tìm các tiệm cận ngang và tiệm cận đứng của mỗi đường cong. Bạn có thể sử dụng máy tính bỏ túi có đồ họa (hoặc máy vi tính) để kiểm tra lại lời giải bằng cách vẽ đồ thị đường cong và ước lượng các đường tiệm cận.}
+
+\vspace{0.4em}
+
+\noindent
+\parbox[t]{0.48\linewidth}{\textbf{47.} $\displaystyle y = \frac{5 + 4x}{x + 3}$}\hfill
+\parbox[t]{0.48\linewidth}{\textbf{48.} $\displaystyle y = \frac{2x^2 + 1}{3x^2 + 2x - 1}$}
+
+\vspace{0.5em}
+
+\noindent
+\parbox[t]{0.48\linewidth}{\textbf{49.} $\displaystyle y = \frac{2x^2 + x - 1}{x^2 + x - 2}$}\hfill
+\parbox[t]{0.48\linewidth}{\textbf{50.} $\displaystyle y = \frac{1 + x^4}{x^2 - x^4}$}
+
+\vspace{0.5em}
+
+\noindent
+\parbox[t]{0.48\linewidth}{\textbf{51.} $\displaystyle y = \frac{x^3 - x}{x^2 - 6x + 5}$}\hfill
+\parbox[t]{0.48\linewidth}{\textbf{52.} $\displaystyle y = \frac{2e^x}{e^x - 5}$}
+
+\vspace{0.8em}
+\noindent{\color{stewartcyan}\rule{\linewidth}{0.6pt}}
+
+\end{minipage}
+
+\vfill
+\begin{center}
+{\scriptsize\color{gray} Bản dịch tiếng Việt phục vụ mục đích giáo dục và nghiên cứu. Nguyên tác: \textit{Calculus: Early Transcendentals} (9th Edition) -- James Stewart.}
+\end{center}
+
+\end{document}
