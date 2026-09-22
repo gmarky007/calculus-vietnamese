@@ -95,6 +95,12 @@
       "score": 99,
       "notes": "Bản dịch gặp lỗi biên dịch nghiêm trọng làm rò rỉ mã tiền tố lên đầu trang và mất toàn bộ nội dung bài tập; cần tái cấu trúc hai cột và chuẩn hóa mã nguồn XeLaTeX.",
       "time": "2026-09-23 03:09:00"
+    },
+    {
+      "page_num": 128,
+      "score": 99,
+      "notes": "Bản dịch hiện tại bị lỗi biên dịch nghiêm trọng: toàn bộ nội dung thân trang không hiển thị, xuất hiện văn bản mã nguồn ở đầu trang (do xung đột gói enumitem và cấu trúc dòng lệnh). Đã biên tập lại toàn bộ mã nguồn LaTeX bằng kiến trúc 2 cột minipage cân đối, lưới bảng tabular cho các bài toán phân cột, định dạng \\lim\\limits chuẩn xác sư phạm và icon đồ thị vẽ bằng TikZ đạt độ tương đồng 99%.",
+      "time": "2026-09-23 03:12:50"
     }
   ]
 }
