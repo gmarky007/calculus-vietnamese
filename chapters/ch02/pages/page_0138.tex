@@ -1,0 +1,164 @@
+\documentclass[10pt]{article}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{geometry}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{array}
+\usepackage{iftex}
+\ifXeTeX
+  \usepackage{fontspec}
+\else
+  \usepackage[utf8]{inputenc}
+  \usepackage[T5]{fontenc}
+\fi
+\usepackage[vietnamese]{babel}
+\usepackage{newtxtext,newtxmath}
+
+\geometry{
+  paperwidth=8.5in,
+  paperheight=11in,
+  top=0.65in,
+  bottom=0.65in,
+  left=0.75in,
+  right=0.75in,
+  headheight=14pt,
+  headsep=12pt,
+  footskip=18pt
+}
+
+\definecolor{stewartcyan}{RGB}{0, 145, 215}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[R]{\textsf{\textbf{MỤC 2.3}}\quad \textsf{Tính các giới hạn bằng các quy tắc tính giới hạn}\qquad \textbf{103}}
+\fancyfoot[C]{\fontsize{6.5pt}{8pt}\selectfont\color{gray} Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203}
+
+\newcommand{\graphcalcicon}{%
+  \begin{tikzpicture}[baseline=-0.55ex, scale=0.75]
+    \draw[stewartcyan, line width=0.8pt, rounded corners=0.8pt] (0,0) rectangle (1.2em, 1.15em);
+    \draw[stewartcyan, line width=0.45pt] (0,0.575em) -- (1.2em,0.575em);
+    \draw[stewartcyan, line width=0.45pt] (0.6em,0) -- (0.6em,1.15em);
+    \draw[stewartcyan, line width=0.75pt, smooth] plot coordinates {(0.2em,0.25em) (0.6em,0.575em) (1.0em,0.92em)};
+  \end{tikzpicture}%
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.485\textwidth}
+\textbf{10.} \textbf{(a)} Có điều gì sai trong phương trình sau đây?
+\[
+\frac{x^2 + x - 6}{x - 2} = x + 3
+\]
+\textbf{(b)} Dựa vào phần (a), hãy giải thích tại sao phương trình
+\[
+\lim_{x \to 2} \frac{x^2 + x - 6}{x - 2} = \lim_{x \to 2} (x + 3)
+\]
+lại đúng.
+
+\vspace{6pt}
+{\color{stewartcyan}\textbf{11--34}}\enspace Tính giới hạn, nếu tồn tại.
+
+\vspace{4pt}
+\noindent
+\begin{tabular}{@{}p{0.48\linewidth}@{\hspace{0.04\linewidth}}p{0.48\linewidth}@{}}
+\textbf{11.} $\lim\limits_{x \to -2} (3x - 7)$ & \textbf{12.} $\lim\limits_{x \to 6} \left(8 - \dfrac{1}{2}x\right)$ \\[11pt]
+\textbf{13.} $\lim\limits_{t \to 4} \dfrac{t^2 - 2t - 8}{t - 4}$ & \textbf{14.} $\lim\limits_{x \to -3} \dfrac{x^2 + 3x}{x^2 - x - 12}$ \\[13pt]
+\textbf{15.} $\lim\limits_{x \to -2} \dfrac{x^2 + 5x + 4}{x - 2}$ & \textbf{16.} $\lim\limits_{x \to 4} \dfrac{x^2 + 3x}{x^2 - x - 12}$ \\[13pt]
+\textbf{17.} $\lim\limits_{x \to -2} \dfrac{x^2 - x - 6}{3x^2 + 5x - 2}$ & \textbf{18.} $\lim\limits_{x \to -5} \dfrac{2x^2 + 9x - 5}{x^2 - 25}$ \\[13pt]
+\textbf{19.} $\lim\limits_{t \to 3} \dfrac{t^3 - 27}{t^2 - 9}$ & \textbf{20.} $\lim\limits_{u \to -1} \dfrac{u + 1}{u^3 + 1}$ \\[13pt]
+\textbf{21.} $\lim\limits_{h \to 0} \dfrac{(h - 3)^2 - 9}{h}$ & \textbf{22.} $\lim\limits_{x \to 9} \dfrac{9 - x}{3 - \sqrt{x}}$ \\[13pt]
+\textbf{23.} $\lim\limits_{h \to 0} \dfrac{\sqrt{9 + h} - 3}{h}$ & \textbf{24.} $\lim\limits_{x \to 2} \dfrac{2 - x}{\sqrt{x + 2} - 2}$ \\[13pt]
+\textbf{25.} $\lim\limits_{x \to 3} \dfrac{\dfrac{1}{x} - \dfrac{1}{3}}{x - 3}$ & \textbf{26.} $\lim\limits_{h \to 0} \dfrac{(-2 + h)^{-1} + 2^{-1}}{h}$ \\[15pt]
+\textbf{27.} $\lim\limits_{t \to 0} \dfrac{\sqrt{1 + t} - \sqrt{1 - t}}{t}$ & \textbf{28.} $\lim\limits_{t \to 0} \left( \dfrac{1}{t} - \dfrac{1}{t^2 + t} \right)$ \\[13pt]
+\textbf{29.} $\lim\limits_{x \to 16} \dfrac{4 - \sqrt{x}}{16x - x^2}$ & \textbf{30.} $\lim\limits_{x \to 2} \dfrac{x^2 - 4x + 4}{x^4 - 3x^2 - 4}$ \\[13pt]
+\textbf{31.} $\lim\limits_{t \to 0} \left[ \dfrac{1}{t\sqrt{1 + t}} - \dfrac{1}{t} \right]$ & \textbf{32.} $\lim\limits_{x \to -4} \dfrac{\sqrt{x^2 + 9} - 5}{x + 4}$ \\[15pt]
+\textbf{33.} $\lim\limits_{h \to 0} \dfrac{(x + h)^3 - x^3}{h}$ & \textbf{34.} $\lim\limits_{h \to 0} \dfrac{\dfrac{1}{(x + h)^2} - \dfrac{1}{x^2}}{h}$
+\end{tabular}
+
+\vspace{8pt}
+\noindent{\color{stewartcyan}\rule{\linewidth}{0.6pt}}
+\vspace{6pt}
+
+\graphcalcicon\ \textbf{35.} \textbf{(a)} Ước lượng giá trị của
+\[
+\lim_{x \to 0} \frac{x}{\sqrt{1 + 3x} - 1}
+\]
+bằng cách vẽ đồ thị hàm số $f(x) = x/(\sqrt{1 + 3x} - 1)$.\\
+\textbf{(b)} Lập bảng các giá trị của $f(x)$ với các giá trị $x$ tiến gần đến $0$ và dự đoán giá trị của giới hạn.\\
+\textbf{(c)} Sử dụng các Quy tắc Giới hạn để chứng minh dự đoán của bạn là đúng.
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.485\textwidth}
+\graphcalcicon\ \textbf{36.} \textbf{(a)} Sử dụng đồ thị của
+\[
+f(x) = \frac{\sqrt{3 + x} - \sqrt{3}}{x}
+\]
+để ước lượng giá trị của $\lim\limits_{x \to 0} f(x)$ chính xác đến hai chữ số thập phân.\\
+\textbf{(b)} Lập bảng các giá trị của $f(x)$ để ước lượng giới hạn chính xác đến bốn chữ số thập phân.\\
+\textbf{(c)} Sử dụng các Quy tắc Giới hạn để tìm giá trị chính xác của giới hạn.
+
+\vspace{6pt}
+\graphcalcicon\ \textbf{37.} Sử dụng Định lý Kẹp để chỉ ra rằng
+\[
+\lim_{x \to 0} x^2 \cos 20\pi x = 0
+\]
+Minh họa bằng cách vẽ đồ thị các hàm số $f(x) = -x^2$, $g(x) = x^2 \cos 20\pi x$, và $h(x) = x^2$ trên cùng một màn hình.
+
+\vspace{6pt}
+\graphcalcicon\ \textbf{38.} Sử dụng Định lý Kẹp để chỉ ra rằng
+\[
+\lim_{x \to 0} \sqrt{x^3 + x^2} \sin \frac{\pi}{x} = 0
+\]
+Minh họa bằng cách vẽ đồ thị các hàm số $f$, $g$, và $h$ (theo ký hiệu của Định lý Kẹp) trên cùng một màn hình.
+
+\vspace{6pt}
+\textbf{39.} Nếu $4x - 9 \le f(x) \le x^2 - 4x + 7$ với mọi $x \ge 0$, hãy tìm $\lim\limits_{x \to 4} f(x)$.
+
+\vspace{6pt}
+\textbf{40.} Nếu $2x \le g(x) \le x^4 - x^2 + 2$ với mọi $x$, hãy tính $\lim\limits_{x \to 1} g(x)$.
+
+\vspace{6pt}
+\textbf{41.} Chứng minh rằng $\lim\limits_{x \to 0} x^4 \cos \dfrac{2}{x} = 0$.
+
+\vspace{6pt}
+\textbf{42.} Chứng minh rằng $\lim\limits_{x \to 0^+} \sqrt{x}\, e^{\sin(\pi/x)} = 0$.
+
+\vspace{6pt}
+{\color{stewartcyan}\textbf{43--48}}\enspace Tìm giới hạn, nếu tồn tại. Nếu giới hạn không tồn tại, hãy giải thích lý do.
+
+\vspace{4pt}
+\noindent
+\begin{tabular}{@{}p{0.48\linewidth}@{\hspace{0.04\linewidth}}p{0.48\linewidth}@{}}
+\textbf{43.} $\lim\limits_{x \to -4} (|x + 4| - 2x)$ & \textbf{44.} $\lim\limits_{x \to -4} \dfrac{|x + 4|}{2x + 8}$ \\[12pt]
+\textbf{45.} $\lim\limits_{x \to 0.5^-} \dfrac{2x - 1}{|2x^3 - x^2|}$ & \textbf{46.} $\lim\limits_{x \to -2} \dfrac{2 - |x|}{2 + x}$ \\[14pt]
+\textbf{47.} $\lim\limits_{x \to 0^-} \left( \dfrac{1}{x} - \dfrac{1}{|x|} \right)$ & \textbf{48.} $\lim\limits_{x \to 0^+} \left( \dfrac{1}{x} - \dfrac{1}{|x|} \right)$
+\end{tabular}
+
+\vspace{8pt}
+\noindent{\color{stewartcyan}\rule{\linewidth}{0.6pt}}
+\vspace{6pt}
+
+\textbf{49. Hàm Signum}\enspace Hàm signum (hay hàm dấu), ký hiệu bởi $\operatorname{sgn}$, được định nghĩa bởi
+\[
+\operatorname{sgn} x = \begin{cases}
+-1 & \text{nếu } x < 0 \\
+\phantom{-}0 & \text{nếu } x = 0 \\
+\phantom{-}1 & \text{nếu } x > 0
+\end{cases}
+\]
+\textbf{(a)} Vẽ phác thảo đồ thị của hàm số này.\\
+\textbf{(b)} Tìm mỗi giới hạn sau đây hoặc giải thích tại sao không tồn tại.\\[4pt]
+\noindent
+\begin{tabular}{@{}p{0.48\linewidth}@{\hspace{0.04\linewidth}}p{0.48\linewidth}@{}}
+\textbf{(i)} $\lim\limits_{x \to 0^+} \operatorname{sgn} x$ & \textbf{(ii)} $\lim\limits_{x \to 0^-} \operatorname{sgn} x$ \\[8pt]
+\textbf{(iii)} $\lim\limits_{x \to 0} \operatorname{sgn} x$ & \textbf{(iv)} $\lim\limits_{x \to 0} |\!\operatorname{sgn} x|$
+\end{tabular}
+\end{minipage}
+
+\end{document}
