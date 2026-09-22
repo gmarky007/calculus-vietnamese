@@ -1,0 +1,126 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{newtxtext,newtxmath}
+
+\geometry{
+    paperwidth=8.5in,
+    paperheight=11in,
+    top=1.8cm,
+    bottom=2cm,
+    left=2cm,
+    right=1.8cm,
+    headheight=14pt,
+    headsep=15pt
+}
+
+% Định nghĩa màu sắc theo chuẩn giáo trình James Stewart Calculus
+\definecolor{stewartcyan}{RGB}{0, 130, 195}
+\definecolor{stewartgreen}{RGB}{0, 130, 70}
+\definecolor{stewartred}{RGB}{205, 30, 30}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[R]{\small\textsf{\textbf{MỤC 2.2}}\quad\textsf{Giới hạn của một hàm số}\qquad\textsf{\textbf{91}}}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.27\textwidth}
+    % Cột lề trái: chứa 3 hình dóng hàng tương ứng với nội dung cột chính
+    \vspace*{1.9cm}
+
+    % HÌNH 13
+    \begin{center}
+        \includegraphics[width=\linewidth]{images/p0126_fig1.png}
+        \par\vspace{4pt}
+        {\footnotesize\textbf{\textsf{HÌNH 13}}}
+    \end{center}
+
+    \vspace{1.8cm}
+
+    % HÌNH 14
+    \begin{center}
+        \includegraphics[width=\linewidth]{images/p0126_fig2.png}
+        \par\vspace{4pt}
+        {\footnotesize\textbf{\textsf{HÌNH 14}}\quad $y = \tan x$}
+    \end{center}
+
+    \vspace{0.6cm}
+
+    % HÌNH 15
+    \begin{flushleft}
+        \includegraphics[width=\linewidth]{images/p0126_fig3.png}
+        \par\vspace{4pt}
+        {\footnotesize\textbf{\textsf{HÌNH 15}}\\[2pt]
+        Trục $y$ là một đường tiệm cận đứng của hàm lôgarit tự nhiên.}
+    \end{flushleft}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.69\textwidth}
+    % Cột nội dung chính
+    \textbf{\textsf{\color{stewartcyan}VÍ DỤ 7}}\quad Đường cong $y = \dfrac{2x}{x - 3}$ có tiệm cận đứng hay không?
+    \par\vspace{6pt}
+    \textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\quad Có một tiệm cận đứng tiềm năng tại nơi mẫu số bằng 0, tức là tại $x = 3$, vì vậy chúng ta khảo sát các giới hạn một phía tại đó.
+
+    \vspace{4pt}
+    Nếu $x$ gần 3 nhưng lớn hơn 3, thì mẫu số $x - 3$ là một số dương nhỏ và $2x$ gần với 6. Do đó thương số $2x/(x - 3)$ là một số \emph{dương} lớn. [Chẳng hạn, nếu $x = 3{,}01$ thì $2x/(x - 3) = 6{,}02/0{,}01 = 602$.] Do đó, theo trực giác, ta thấy rằng
+    \[
+    \lim_{x \to 3^+} \frac{2x}{x - 3} = \infty
+    \]
+
+    Tương tự, nếu $x$ gần 3 nhưng nhỏ hơn 3, thì $x - 3$ là một số âm nhỏ nhưng $2x$ vẫn là một số dương (gần với 6). Do đó $2x/(x - 3)$ là một số \emph{âm} có độ lớn rất lớn. Vì vậy
+    \[
+    \lim_{x \to 3^-} \frac{2x}{x - 3} = -\infty
+    \]
+
+    Đồ thị của đường cong $y = 2x/(x - 3)$ được cho trong Hình~13. Theo Định nghĩa~6, đường thẳng $x = 3$ là một đường tiệm cận đứng.
+    \hfill{\color{stewartcyan}$\blacksquare$}
+
+    \vspace{10pt}
+    \textbf{\textsf{\color{stewartgreen}CHÚ Ý}}\quad Cả hai giới hạn trong các Ví dụ~6 và 7 đều không tồn tại, nhưng trong Ví dụ~6 ta có thể viết $\lim_{x \to 0} (1/x^2) = \infty$ bởi vì $f(x) \to \infty$ khi $x$ tiến tới 0 từ cả bên trái hoặc bên phải. Trong Ví dụ~7, $f(x) \to \infty$ khi $x$ tiến tới 3 từ bên phải nhưng $f(x) \to -\infty$ khi $x$ tiến tới 3 từ bên trái, do đó ta chỉ đơn giản nói rằng $\lim_{x \to 3} f(x)$ không tồn tại.
+
+    \vspace{10pt}
+    \textbf{\textsf{\color{stewartcyan}VÍ DỤ 8}}\quad Tìm các đường tiệm cận đứng của $f(x) = \tan x$.
+    \par\vspace{6pt}
+    \textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\quad Vì
+    \[
+    \tan x = \frac{\sin x}{\cos x}
+    \]
+    có các tiệm cận đứng tiềm năng tại nơi $\cos x = 0$. Trên thực tế, vì $\cos x \to 0^+$ khi $x \to (\pi/2)^-$ và $\cos x \to 0^-$ khi $x \to (\pi/2)^+$, trong khi $\sin x$ dương (gần bằng 1) khi $x$ gần $\pi/2$, ta có
+    \[
+    \lim_{x \to (\pi/2)^-} \tan x = \infty \qquad \text{và} \qquad \lim_{x \to (\pi/2)^+} \tan x = -\infty
+    \]
+    Điều này cho thấy đường thẳng $x = \pi/2$ là một đường tiệm cận đứng. Lập luận tương tự chỉ ra rằng các đường thẳng $x = \pi/2 + n\pi$, trong đó $n$ là một số nguyên, đều là các đường tiệm cận đứng của $f(x) = \tan x$. Đồ thị trong Hình~14 khẳng định điều này.
+    \hfill{\color{stewartcyan}$\blacksquare$}
+
+    \vspace{10pt}
+    Một ví dụ khác về một hàm số có đồ thị có đường tiệm cận đứng là hàm lôgarit tự nhiên $y = \ln x$. Từ Hình~15 ta thấy rằng
+    \par\vspace{5pt}
+    \begin{center}
+        \tcbox[colframe=stewartred,colback=white,sharp corners,boxrule=0.7pt,left=22pt,right=22pt,top=5pt,bottom=5pt]{%
+            $\displaystyle \lim_{x \to 0^+} \ln x = -\infty$%
+        }
+    \end{center}
+    \par\vspace{5pt}
+    và do đó đường thẳng $x = 0$ (trục $y$) là một đường tiệm cận đứng. Trên thực tế, điều tương tự cũng đúng đối với $y = \log_b x$ với điều kiện $b > 1$. (Xem các Hình~1.5.11 và 1.5.12.)
+\end{minipage}
+
+\vfill
+\begin{flushleft}
+    \fontsize{6.5pt}{7.5pt}\selectfont\textcolor{gray!80}{%
+    Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\newline
+    Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.}
+\end{flushleft}
+
+\end{document}
