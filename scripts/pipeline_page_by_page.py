@@ -251,7 +251,32 @@ Chỉ trả về JSON thuần túy."""
         
     return cropped_files
 
-def generate_initial_page_if_missing(page_num, doc, pages_dir, images_dir, cropped_figs):
+def extract_layout_coordinate_map(doc, page_num):
+    page_idx = page_num - 1
+    page = doc.load_page(page_idx)
+    blocks = page.get_text("blocks")
+    
+    margin_blocks = []
+    main_blocks = []
+    for b in blocks:
+        txt = b[4].strip().replace("\n", " ")
+        if not txt or "Copyright" in txt or "Cengage" in txt:
+            continue
+        if b[0] < 180:
+            margin_blocks.append(f"  + y={b[1]:.1f}pt - {b[3]:.1f}pt: {txt[:70]}")
+        else:
+            main_blocks.append(f"  + y={b[1]:.1f}pt - {b[3]:.1f}pt: {txt[:70]}")
+            
+    margin_str = "\n".join(margin_blocks) if margin_blocks else "  (Trống)"
+    main_str = "\n".join(main_blocks) if main_blocks else "  (Trống)"
+    
+    return f"""BẢN ĐỒ TỌA ĐỘ VĂN BẢN TỪ BẢN GỐC (ĐƠN VỊ POINT, DÙNG ĐỂ DÓNG HÀNG CHÍNH XÁC):
+- Cột lề trái (x < 180pt):
+{margin_str}
+- Cột nội dung chính (x >= 180pt):
+{main_str}"""
+
+def generate_initial_page_if_missing(page_num, doc, pages_dir, images_dir, cropped_figs, layout_map):
     p_file = os.path.join(pages_dir, f"page_{page_num:04d}.tex")
     if os.path.exists(p_file):
         return True
@@ -265,6 +290,8 @@ def generate_initial_page_if_missing(page_num, doc, pages_dir, images_dir, cropp
     
     prompt = f"""Bạn là một chuyên gia số hóa và dịch thuật sách giáo trình toán học quốc tế sang tiếng Việt hàng đầu.
 Nhiệm vụ: DỊCH VÀ CHUYỂN ĐỔI trang {page_num} của sách "Calculus: Early Transcendentals (9th Edition)" của James Stewart sang mã nguồn LaTeX tiếng Việt, đạt độ tương đồng 99% về bố cục và hình thức so với bản gốc.
+
+{layout_map}
 
 DANH SÁCH FILE ẢNH ĐÃ BÓC TÁCH THEO TỌA ĐỘ CHUẨN XÁC CÓ SẴN TRONG THƯ MỤC images/:
 {figs_str}
@@ -281,7 +308,10 @@ QUY TẮC BẮT BUỘC:
   + "Definition" -> khung định nghĩa definitionbox
   + "Theorem" -> "ĐỊNH LÝ"
 
-2. BỐ CỤC 2 CỘT:
+2. DÓNG HÀNG THEO TỌA ĐỘ:
+- Dựa vào tọa độ y của các đoạn văn bản và hình vẽ trong Bản đồ tọa độ ở trên, tính toán khoảng cách \\vspace{{...}} để các hình vẽ, bảng biểu và ghi chú ở cột lề trái dóng thẳng hàng ngang chính xác với các đoạn văn bản tương ứng ở cột chính.
+
+3. BỐ CỤC 2 CỘT:
 \\fancyhead[L]{{...}} \\fancyhead[R]{{...}}
 \\noindent
 \\begin{{minipage}}[t]{{0.26\\textwidth}}
@@ -292,9 +322,7 @@ QUY TẮC BẮT BUỘC:
     % Cột chính: tiêu đề mục, nội dung lý thuyết, ví dụ, công thức, hình/bảng lớn
 \\end{{minipage}}
 
-(Trường hợp trang là toàn bộ Bài tập - Exercises, vẫn giữ bố cục 2 cột hoặc chia 2 cột bài tập trong cột chính).
-
-3. TOÁN HỌC & HÌNH ẢNH:
+4. TOÁN HỌC & HÌNH ẢNH:
 - Khung định nghĩa: dùng \\begin{{definitionbox}} ... \\end{{definitionbox}} (viền đỏ stewartred).
 - Kết thúc lời giải: đặt ô vuông cyan {{\\color{{stewartcyan}}\\blacksquare}} (trong math) hoặc {{\\color{{stewartcyan}}$\\blacksquare$}} (trong text).
 - Hãy chèn \\includegraphics[width=...]{{images/...}} đúng vị trí tương ứng trong bản gốc.
@@ -410,7 +438,7 @@ def create_side_by_side_comparison(page_num, orig_img_path, comp_img_path, comp_
     canvas.save(out_path, quality=92)
     return out_path
 
-def critique_and_refine(page_num, compare_img_path, pages_dir, cropped_figs):
+def critique_and_refine(page_num, compare_img_path, pages_dir, cropped_figs, layout_map):
     with open(compare_img_path, "rb") as f:
         b64 = base64.b64encode(f.read()).decode("utf-8")
         
@@ -423,6 +451,8 @@ def critique_and_refine(page_num, compare_img_path, pages_dir, cropped_figs):
     prompt = f"""Bạn là một chuyên gia cao cấp về xuất bản giáo trình và thẩm định bản in XeLaTeX quốc tế.
 Nhiệm vụ: So sánh trực quan đối chiếu chi tiết giữa Trang Gốc (bên trái) và Bản Dịch XeLaTeX (bên phải) của trang {page_num}.
 
+{layout_map}
+
 MÃ NGUỒN HIỆN TẠI CỦA TRANG:
 ```latex
 {current_tex}
@@ -431,7 +461,7 @@ DANH SÁCH FILE ẢNH ĐÃ BÓC TÁCH THEO TỌA ĐỘ CHUẨN XÁC CÓ SẴN TR
 {figs_str}
 
 TIÊU CHÍ ĐÁNH GIÁ NGHIÊM NGẶT (Đạt chuẩn 99%):
-1. BỐ CỤC: Bố cục 2 cột bất đối xứng có khớp không? Vị trí bảng, hình vẽ lề, ghi chú có cân xứng và đúng độ cao so với bản gốc không?
+1. BỐ CỤC: Bố cục 2 cột bất đối xứng có khớp không? Vị trí bảng, hình vẽ lề, ghi chú có cân xứng và dóng đúng độ cao tọa độ y so với bản gốc không?
 2. THỨ TỰ HÌNH: Nếu là cụm đồ thị (a, b, c), thứ tự và màu sắc có đúng 1:1 không? Có bị cắt cụt nhãn số/chữ không?
 3. TIẾNG VIỆT: Thuật ngữ toán học giải tích có chuẩn xác sư phạm không? Tuyệt đối không để sót tiếng Anh.
 4. ĐIỂM TƯƠNG ĐỒNG: Đánh giá độ tương đồng tổng thể từ 0% đến 100%.
@@ -497,8 +527,9 @@ def process_page_sequential(page_num, doc, ch):
     if cropped_figs:
         print(f"   ✓ Đã bóc tách {len(cropped_figs)} cụm hình theo tọa độ: {[f[0] for f in cropped_figs]}")
         
-    # 3. Ensure TeX page exists
-    generate_initial_page_if_missing(page_num, doc, pages_dir, images_dir, cropped_figs)
+    # 3. Extract text layout coordinate map and ensure TeX page exists
+    layout_map = extract_layout_coordinate_map(doc, page_num)
+    generate_initial_page_if_missing(page_num, doc, pages_dir, images_dir, cropped_figs, layout_map)
     
     # 4. Compile single page
     comp_img, err = compile_single_page(page_num, ch_dir, pages_dir, comp_dir)
@@ -513,7 +544,7 @@ def process_page_sequential(page_num, doc, ch):
     
     # 6. Critique & Refine loop
     print(f"5. Đang thẩm định chất lượng bằng {MODEL}...")
-    result = critique_and_refine(page_num, compare_img, pages_dir, cropped_figs)
+    result = critique_and_refine(page_num, compare_img, pages_dir, cropped_figs, layout_map)
     score = result.get("score", 98)
     status = result.get("status", "PASSED")
     notes = result.get("notes", "Đạt chuẩn tương đồng cao.")
