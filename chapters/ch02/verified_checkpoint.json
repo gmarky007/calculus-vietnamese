@@ -329,6 +329,12 @@
       "score": 99,
       "notes": "Lỗi nghiêm trọng: Phần khai báo gói (preamble) bị in thô trực tiếp lên đầu trang tài liệu làm đẩy toàn bộ cột nội dung chính xuống ~60pt, phá vỡ dóng hàng ngang giữa Hình 8, ghi chú lề và Hình 9 với phần văn bản tương ứng. Biểu thức nhân liên hợp ở Ví dụ 5 bị thừa dấu chấm nhân không có trong bản gốc.",
       "time": "2026-09-23 04:37:36"
+    },
+    {
+      "page_num": 167,
+      "score": 99,
+      "notes": "Mã nguồn hiện tại là một đoạn phản hồi từ chối của AI thay vì bản dịch LaTeX của trang giáo trình. Cần biên soạn lại toàn bộ trang bằng XeLaTeX với cấu trúc 2 cột bất đối xứng, đồ thị TikZ Hình 10, bảng giá trị và các ghi chú lề chuẩn xác 1:1.",
+      "time": "2026-09-23 04:41:08"
     }
   ]
 }
