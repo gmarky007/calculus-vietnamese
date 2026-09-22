@@ -245,6 +245,12 @@
       "score": 99,
       "notes": "Tiêu đề đầu trang nằm sai phía (LO thay vì RO). Hình 4 bị chia thành 3 minipage gọi nhầm file ảnh không tồn tại khiến đồ thị bị lỗi nghiêm trọng; cần dùng trực tiếp images/p0082_fig2.png. Các khoảng cách dọc ở cột lề trái bị lệch lớn khiến HÌNH 4, hộp StewartCalculus và ghi chú Mục 1.3 không dóng đúng hàng với nội dung tương ứng bên phải.",
       "time": "2026-09-23 01:51:24"
+    },
+    {
+      "page_num": 83,
+      "score": 99,
+      "notes": "Lỗi gán sai file hình ảnh nghiêm trọng: p0083_fig1.png đã là toàn bộ Hình 5 nhưng lại bị chia làm 3 ảnh chứa cả fig2 và fig3; Hình 6 và Hình 7 bên dưới gọi fig4 và fig5 không tồn tại. Nhãn HÌNH 5 cần được đưa sang cột lề trái đúng theo bản gốc Stewart.",
+      "time": "2026-09-23 01:52:53"
     }
   ]
 }
