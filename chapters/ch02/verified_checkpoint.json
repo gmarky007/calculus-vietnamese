@@ -59,6 +59,12 @@
       "score": 99,
       "notes": "Mã nguồn hiện tại là phản hồi từ chối của AI thay vì nội dung sách. Đã tái cấu trúc toàn diện mã XeLaTeX: thiết lập bố cục 2 cột bất đối xứng chuẩn giáo trình Stewart Calculus, dóng hình HÌNH 5 chính xác ở cột lề trái, tái tạo hai bảng giá trị của Ví dụ 3 và hộp Định nghĩa trực quan 2 về giới hạn một phía chuẩn sư phạm tiếng Việt.",
       "time": "2026-09-23 02:54:57"
+    },
+    {
+      "page_num": 122,
+      "score": 99,
+      "notes": "Bản in hiện tại bị lỗi biên dịch nghiêm trọng: mã gói preamble bị rò rỉ dưới dạng văn bản thô ở đầu trang và toàn bộ phần thân trang bị đẩy tràn trang. Cần tái cấu trúc toàn diện với lề chuẩn giáo trình Stewart, dóng hàng chính xác nhãn HÌNH 6 và HÌNH 7 bên lề trái tương ứng với các đồ thị.",
+      "time": "2026-09-23 02:57:25"
     }
   ]
 }
