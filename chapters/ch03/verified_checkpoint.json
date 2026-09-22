@@ -47,6 +47,12 @@
       "score": 99,
       "notes": "Bản dịch bị lỗi nghiêm trọng rò rỉ mã preamble in thành chuỗi văn bản thô ở đầu trang; ghi chú lề chưa dóng hàng chuẩn xác với hộp định nghĩa số e; kiểu dáng hộp định nghĩa và bảng số liệu cần tinh chỉnh để đạt độ tương đồng 99%.",
       "time": "2026-09-23 06:18:06"
+    },
+    {
+      "page_num": 216,
+      "score": 99,
+      "notes": "Bản dịch bám sát cấu trúc hai cột của bản gốc; cần xử lý lỗi tràn văn bản ở đầu trang, chuẩn hóa nhãn hàm số câu 3 và thu gọn khoảng cách các công thức giới hạn.",
+      "time": "2026-09-23 06:19:27"
     }
   ]
 }
