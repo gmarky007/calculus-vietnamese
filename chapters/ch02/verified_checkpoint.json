@@ -23,6 +23,12 @@
       "score": 99,
       "notes": "Bản dịch hiện tại bị lỗi hiển thị lộ mã preamble ở đầu trang, tiêu đề 'Bài toán vận tốc' bị ngắt dòng lớn thay vì nối dòng (run-in) như bản gốc, Hình 5 quá to làm lệch các mốc dóng hàng, và bảng bên lề thừa các đường kẻ ngang giữa các dòng.",
       "time": "2026-09-23 02:41:59"
+    },
+    {
+      "page_num": 116,
+      "score": 99,
+      "notes": "Trang dịch bị lỗi nghiêm trọng khi rò rỉ mã lệnh preamble lên đầu trang văn bản, lặp đúp dòng credit ảnh Tháp CN và để lộ nhãn tiếng Anh 'CN Tower in Toronto', đồng thời Cụm Hình 6 bị đặt quá cao tạo khoảng trống lớn ở góc dưới bên trái.",
+      "time": "2026-09-23 02:44:38"
     }
   ]
 }
