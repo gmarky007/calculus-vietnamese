@@ -1,0 +1,117 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage[top=16mm, bottom=16mm, left=16mm, right=16mm, headheight=14pt, headsep=12pt]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{newtxtext,newtxmath}
+\usepackage[scaled=0.92]{helvet}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+
+% Định nghĩa màu chuẩn giáo trình Stewart Calculus
+\definecolor{stewartcyan}{RGB}{0, 130, 185}
+\definecolor{stewartred}{RGB}{204, 34, 41}
+
+% Khung định nghĩa / quy tắc (viền đỏ)
+\newtcolorbox{definitionbox}[1][]{
+    enhanced,
+    colback=white,
+    colframe=stewartred,
+    arc=0mm,
+    boxrule=1pt,
+    left=10pt,
+    right=10pt,
+    top=7pt,
+    bottom=7pt,
+    #1
+}
+
+% Cấu hình tiêu đề đầu trang và chân trang chuẩn Stewart
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[L]{\hspace*{0.29\textwidth}\small\textsf{\textbf{MỤC 3.1}}\quad\textsf{Đạo hàm của đa thức và hàm số mũ}}
+\fancyhead[R]{\small\textsf{\textbf{177}}}
+\fancyfoot[C]{\fontsize{6}{7}\selectfont\color{gray}Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4.5pt}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.26\textwidth}
+    \vspace*{68pt} % Dóng hàng ngang chính xác với LỜI GIẢI VÍ DỤ 3
+    \noindent\includegraphics[width=\linewidth]{images/p0212_fig1.png}
+    \vspace{2pt}
+    
+    \noindent\textbf{\textsf{HÌNH 4}}\\\n    $y = x\sqrt{x}$
+
+    \vspace{46pt} % Dóng hàng ngang chính xác với khung Quy tắc nhân với hằng số
+    \noindent{\bfseries\textsf{\small Ý nghĩa hình học\\[2pt]của Quy tắc nhân\\[2pt]với hằng số}}
+    \vspace{6pt}
+    
+    \noindent\includegraphics[width=\linewidth]{images/p0212_fig2.png}
+    \vspace{3pt}
+    
+    \noindent\footnotesize Nhân với $c = 2$ làm giãn đồ thị theo phương thẳng đứng với hệ số 2. Tất cả các độ tăng theo phương đứng đều tăng gấp đôi nhưng khoảng chạy ngang giữ nguyên. Do đó các hệ số góc cũng tăng gấp đôi.
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.70\textwidth}
+    Quy tắc lũy thừa cho phép chúng ta tìm các tiếp tuyến mà không cần phải dùng đến định nghĩa của đạo hàm. Nó cũng cho phép chúng ta tìm các \textit{pháp tuyến}. \textbf{Pháp tuyến} đối với một đường cong $C$ tại điểm $P$ là đường thẳng đi qua $P$ và vuông góc với tiếp tuyến tại $P$. (Trong nghiên cứu quang học, Định luật phản xạ liên quan đến góc giữa tia sáng và pháp tuyến của thấu kính.)
+
+    \vspace{0.4em}
+    \noindent\textbf{\textsf{\color{stewartcyan}VÍ DỤ 3}}\hspace{0.8em}Tìm các phương trình của tiếp tuyến và pháp tuyến đối với đường cong $y = x\sqrt{x}$ tại điểm $(1, 1)$. Minh họa bằng cách vẽ đồ thị của đường cong cùng các đường thẳng này.
+
+    \vspace{0.3em}
+    \noindent\textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\hspace{0.8em}Đạo hàm của $f(x) = x\sqrt{x} = x \cdot x^{1/2} = x^{3/2}$ là
+    \[
+    f'(x) = \frac{3}{2}x^{(3/2)-1} = \frac{3}{2}x^{1/2} = \frac{3}{2}\sqrt{x}
+    \]
+    Do đó, hệ số góc của tiếp tuyến tại $(1, 1)$ là $f'(1) = \frac{3}{2}$. Vì vậy, một phương trình của tiếp tuyến là
+    \[
+    y - 1 = \frac{3}{2}(x - 1) \qquad \text{hay} \qquad y = \frac{3}{2}x - \frac{1}{2}
+    \]
+    Pháp tuyến vuông góc với tiếp tuyến, nên hệ số góc của nó là nghịch đảo đổi dấu của $\frac{3}{2}$, tức là $-\frac{2}{3}$. Do đó, phương trình của pháp tuyến là
+    \[
+    y - 1 = -\frac{2}{3}(x - 1) \qquad \text{hay} \qquad y = -\frac{2}{3}x + \frac{5}{3}
+    \]
+    Chúng ta vẽ đồ thị của đường cong cùng tiếp tuyến và pháp tuyến của nó trong Hình~4.\hfill{\color{stewartcyan}$\blacksquare$}
+
+    \vspace{1.0em}
+    \noindent{\color{stewartcyan}\rule{1.1ex}{1.1ex}}\hspace{0.5em}\textbf{\textsf{\large Các đạo hàm mới từ đạo hàm cũ}}
+
+    \vspace{0.3em}
+    Khi các hàm số mới được tạo thành từ các hàm số cũ bằng phép cộng, phép trừ, hoặc nhân với một hằng số, đạo hàm của chúng có thể được tính theo đạo hàm của các hàm số cũ. Cụ thể, công thức sau đây nói rằng \textit{đạo hàm của một hằng số nhân với một hàm số bằng hằng số đó nhân với đạo hàm của hàm số}.
+
+    \vspace{0.5em}
+    \begin{definitionbox}
+        \noindent\textbf{\textsf{\color{stewartred}Quy tắc nhân với hằng số}}\hspace{0.8em}Nếu $c$ là một hằng số và $f$ là hàm khả vi, thì
+        \[
+        \frac{d}{dx} [c f(x)] = c \frac{d}{dx} f(x)
+        \]
+    \end{definitionbox}
+
+    \vspace{0.4em}
+    \noindent\textbf{\textsf{\color{stewartred}CHỨNG MINH}}\hspace{0.8em}Đặt $g(x) = cf(x)$. Khi đó
+    \begin{align*}
+    g'(x) &= \lim_{h \to 0} \frac{g(x + h) - g(x)}{h} = \lim_{h \to 0} \frac{cf(x + h) - cf(x)}{h} \\[4pt]
+    &= \lim_{h \to 0} c \left[ \frac{f(x + h) - f(x)}{h} \right] \\[4pt]
+    &= c \lim_{h \to 0} \frac{f(x + h) - f(x)}{h} \quad \text{\small\color{stewartcyan}(theo Quy tắc giới hạn 3)} \\[4pt]
+    &= cf'(x) \tag*{\color{stewartred}\blacksquare}
+    \end{align*}
+
+    \vspace{0.4em}
+    \noindent\textbf{\textsf{\color{stewartcyan}VÍ DỤ 4}}
+
+    \vspace{0.2em}
+    \noindent\textsf{(a)}\hspace{0.8em}$\displaystyle\frac{d}{dx}(3x^4) = 3\frac{d}{dx}(x^4) = 3(4x^3) = 12x^3$
+
+    \vspace{0.4em}
+    \noindent\textsf{(b)}\hspace{0.8em}$\displaystyle\frac{d}{dx}(-x) = \frac{d}{dx}[(-1)x] = (-1)\frac{d}{dx}(x) = -1(1) = -1$\hfill{\color{stewartcyan}$\blacksquare$}
+\end{minipage}
+
+\end{document}
