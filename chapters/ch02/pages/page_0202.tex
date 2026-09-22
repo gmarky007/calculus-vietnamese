@@ -1,0 +1,129 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[letterpaper, top=1.8cm, bottom=2cm, left=1.8cm, right=1.8cm]{geometry}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+
+\definecolor{stewartcyan}{RGB}{0, 140, 190}
+\definecolor{headgray}{RGB}{110, 110, 110}
+
+\setlength{\columnsep}{24pt}
+\setlength{\parindent}{0pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[R]{{\small\sffamily\color{headgray}\textbf{CHƯƠNG 2}\quad Ôn tập}\qquad{\normalsize\sffamily\textbf{167}}}
+
+\begin{document}
+
+\begin{multicols}{2}
+
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=1.8em, itemsep=0.8ex, topsep=0pt]
+\setcounter{enumi}{11}
+  \item Nếu $y = f(x)$ và $x$ thay đổi từ $x_1$ đến $x_2$, hãy viết biểu thức cho các đại lượng sau:
+  \begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=1.8em, itemsep=0.3ex, topsep=0.3ex]
+    \item Tốc độ thay đổi trung bình của $y$ theo $x$ trên đoạn $[x_1, x_2]$
+    \item Tốc độ thay đổi tức thời của $y$ theo $x$ tại $x = x_1$
+  \end{enumerate}
+
+  \item Định nghĩa đạo hàm $f'(a)$. Nêu hai cách diễn giải ý nghĩa của số này.
+\end{enumerate}
+
+\vspace{1.5em}
+
+{\color{stewartcyan}\sffamily\bfseries\large CÂU HỎI ĐÚNG--SAI}
+
+\vspace{0.6em}
+
+{\small\textit{Xác định xem mỗi khẳng định sau là đúng hay sai. Nếu đúng, hãy giải thích lý do. Nếu sai, hãy giải thích lý do hoặc đưa ra một ví dụ phản bác khẳng định đó.}}
+
+\vspace{0.8em}
+
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=1.8em, itemsep=1.1ex, topsep=0pt]
+  \item $\displaystyle \lim_{x\to 4} \left( \frac{2x}{x-4} - \frac{8}{x-4} \right) = \lim_{x\to 4} \frac{2x}{x-4} - \lim_{x\to 4} \frac{8}{x-4}$
+
+  \item $\displaystyle \lim_{x\to 1} \frac{x^2+6x-7}{x^2+5x-6} = \frac{\lim_{x\to 1}(x^2+6x-7)}{\lim_{x\to 1}(x^2+5x-6)}$
+
+  \item $\displaystyle \lim_{x\to 1} \frac{x-3}{x^2+2x-4} = \frac{\lim_{x\to 1}(x-3)}{\lim_{x\to 1}(x^2+2x-4)}$
+
+  \item $\displaystyle \frac{x^2-9}{x-3} = x+3$
+
+  \item $\displaystyle \lim_{x\to 3} \frac{x^2-9}{x-3} = \lim_{x\to 3} (x+3)$
+
+  \item Nếu $\lim_{x\to 5} f(x) = 2$ và $\lim_{x\to 5} g(x) = 0$, thì $\lim_{x\to 5} [f(x)/g(x)]$ không tồn tại.
+
+  \item Nếu $\lim_{x\to 5} f(x) = 0$ và $\lim_{x\to 5} g(x) = 0$, thì $\lim_{x\to 5} [f(x)/g(x)]$ không tồn tại.
+
+  \item Nếu cả $\lim_{x\to a} f(x)$ lẫn $\lim_{x\to a} g(x)$ đều không tồn tại, thì $\lim_{x\to a} [f(x)+g(x)]$ không tồn tại.
+
+  \item Nếu $\lim_{x\to a} f(x)$ tồn tại nhưng $\lim_{x\to a} g(x)$ không tồn tại, thì $\lim_{x\to a} [f(x)+g(x)]$ không tồn tại.
+
+  \item Nếu $p$ là một đa thức, thì $\lim_{x\to b} p(x) = p(b)$.
+
+  \item Nếu $\lim_{x\to 0} f(x) = \infty$ và $\lim_{x\to 0} g(x) = \infty$, thì $\lim_{x\to 0} [f(x)-g(x)] = 0$.
+\end{enumerate}
+
+\vfill\null
+\columnbreak
+
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=1.8em, itemsep=0.8ex, topsep=0pt]
+\setcounter{enumi}{13}
+  \item Định nghĩa đạo hàm cấp hai của $f$. Nếu $f(t)$ là hàm vị trí của một chất điểm, ta có thể diễn giải đạo hàm cấp hai như thế nào?
+
+  \item 
+  \begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=1.8em, itemsep=0.3ex, topsep=0pt]
+    \item Hàm số $f$ khả vi tại $a$ có nghĩa là gì?
+    \item Mối liên hệ giữa tính khả vi và tính liên tục của một hàm số là gì?
+    \item Hãy phác thảo đồ thị của một hàm số liên tục nhưng không khả vi tại $a = 2$.
+  \end{enumerate}
+
+  \item Hãy mô tả một số trường hợp mà một hàm số không khả vi. Minh họa bằng các hình vẽ phác thảo.
+\end{enumerate}
+
+\vspace{1.5em}
+
+\noindent{\color{stewartcyan}\rule{\linewidth}{1.2pt}}
+
+\vspace{0.8em}
+
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=1.8em, itemsep=1.1ex, topsep=0pt]
+\setcounter{enumi}{11}
+  \item Một hàm số có thể có hai đường tiệm cận ngang khác nhau.
+
+  \item Nếu $f$ có tập xác định $[0, \infty)$ và không có tiệm cận ngang, thì $\lim_{x\to \infty} f(x) = \infty$ hoặc $\lim_{x\to \infty} f(x) = -\infty$.
+
+  \item Nếu đường thẳng $x = 1$ là một tiệm cận đứng của đồ thị $y = f(x)$, thì $f$ không xác định tại $1$.
+
+  \item Nếu $f(1) > 0$ và $f(3) < 0$, thì tồn tại một số $c$ nằm giữa $1$ và $3$ sao cho $f(c) = 0$.
+
+  \item Nếu $f$ liên tục tại $5$, $f(5) = 2$ và $f(4) = 3$, thì $\lim_{x\to 2} f(4x^2 - 11) = 2$.
+
+  \item Nếu $f$ liên tục trên $[-1, 1]$, $f(-1) = 4$ và $f(1) = 3$, thì tồn tại một số $r$ sao cho $|r| < 1$ và $f(r) = \pi$.
+
+  \item Cho $f$ là hàm số sao cho $\lim_{x\to 0} f(x) = 6$. Khi đó tồn tại một số dương $\delta$ sao cho nếu $0 < |x| < \delta$ thì $|f(x) - 6| < 1$.
+
+  \item Nếu $f(x) > 1$ với mọi $x$ và $\lim_{x\to 0} f(x)$ tồn tại, thì $\lim_{x\to 0} f(x) > 1$.
+
+  \item Nếu $f$ liên tục tại $a$, thì $f$ khả vi tại $a$.
+
+  \item Nếu $f'(r)$ tồn tại, thì $\lim_{x\to r} f(x) = f(r)$.
+
+  \item $\displaystyle \frac{d^2y}{dx^2} = \left( \frac{dy}{dx} \right)^2$
+
+  \item Phương trình $x^{10} - 10x^2 + 5 = 0$ có nghiệm trong khoảng $(0, 2)$.
+
+  \item Nếu $f$ liên tục tại $a$, thì $|f|$ cũng liên tục tại $a$.
+
+  \item Nếu $|f|$ liên tục tại $a$, thì $f$ cũng liên tục tại $a$.
+
+  \item Nếu $f$ khả vi tại $a$, thì $|f|$ cũng khả vi tại $a$.
+\end{enumerate}
+
+\end{multicols}
+
+\end{document}
