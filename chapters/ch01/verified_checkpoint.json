@@ -209,6 +209,12 @@
       "score": 99,
       "notes": "Môi trường tasks ở Ví dụ 7 bị lỗi hiển thị thành danh sách dọc đánh số 1, 2, 3, 4 làm chiếm quá nhiều diện tích dọc; phần 'LỜI GIẢI' và mục (a) bị tách dòng không khớp bản gốc (gốc viết cùng dòng 'SOLUTION (a)'); ghi chú lề 'Nếu 0 <= a <= b...' bị lệch lên quá cao so với dòng tương ứng ở câu (b).",
       "time": "2026-09-23 01:43:37"
+    },
+    {
+      "page_num": 77,
+      "score": 99,
+      "notes": "Dải sọc trang trí của thanh tiêu đề '1.3 BÀI TẬP' bị lỗi vẽ thành vạch cụt (2.5pt) và cỡ chữ quá to; thứ tự các câu con ở Bài 2 và Bài 3 bị đảo lộn theo cột do dùng multicols thay vì dàn theo hàng ngang như bản gốc; ký hiệu kết thúc chứng minh ở phần (d) bị đẩy dạt lề phải thay vì đặt ngay sau dấu chấm câu.",
+      "time": "2026-09-23 01:44:59"
     }
   ]
 }
