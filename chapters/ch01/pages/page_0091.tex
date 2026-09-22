@@ -7,12 +7,12 @@
     \centering
     \includegraphics[width=\textwidth]{images/p0091_fig1.png}
     
-    \vspace{0.16cm}
+    \vspace{0.15cm}
     \raggedright
     \textbf{\textsf{HÌNH 6}}\\
     {\small Hàm ngược đảo ngược đầu vào và đầu ra.}
 
-    \vspace{4.26cm}
+    \vspace{2.2cm}
     \raggedright
     \textbf{\textsf{HÌNH 7}}
 \end{minipage}%
@@ -26,71 +26,70 @@
     \noindent
     \textbf{\textsf{\color{stewartcyan}LỜI GIẢI}} Từ định nghĩa của $f^{-1}$, ta có
     \[\begin{aligned}
-        f^{-1}(7) &= 3 \qquad \text{vì} \qquad f(3) = 7 \\
-        f^{-1}(5) &= 1 \qquad \text{vì} \qquad f(1) = 5 \\
-        f^{-1}(-10) &= 8 \qquad \text{vì} \qquad f(8) = -10
+        f^{-1}(7) &= 3 & \qquad \text{vì} \qquad f(3) &= 7 \\
+        f^{-1}(5) &= 1 & \qquad \text{vì} \qquad f(1) &= 5 \\
+        f^{-1}(-10) &= 8 & \qquad \text{vì} \qquad f(8) &= -10
     \end{aligned}\]
-    Sơ đồ ở Hình 6 giải thích rõ cách thức $f^{-1}$ đảo ngược tác động của $f$ trong trường hợp này. \hfill {\color{stewartcyan}$\blacksquare$}
+    Sơ đồ ở Hình 6 giải thích rõ cách thức $f^{-1}$ đảo ngược tác động của $f$ trong trường hợp này. \hfill {\color{stewartcyan}\rule{1.1ex}{1.1ex}}
 
     \medskip
     Ký tự $x$ theo truyền thống thường được dùng làm biến độc lập, do đó khi ta tập trung vào $f^{-1}$ thay vì $f$, ta thường hoán đổi vai trò của $x$ và $y$ trong Định nghĩa 2 để viết
     
-    \vspace{0.16cm}
-    \noindent
+    \vspace{0.15cm}
     \begin{center}
-    \begin{tabular}{@{}m{0.08\textwidth}m{0.88\textwidth}@{}}
-        \centering\fcolorbox{stewartred}{white}{\textbf{\color{stewartred}3}} &
+    \begin{tabular}{@{}c@{\hspace{12pt}}c@{}}
+        \fcolorbox{stewartred}{white}{\textbf{\color{stewartred}3}} &
         \fcolorbox{stewartred}{white}{%
-            \parbox{0.85\linewidth}{%
-                \vspace{4pt}
-                \[
-                    f^{-1}(x) = y \iff f(y) = x
-                \]
-                \vspace{-6pt}
+            \parbox{0.62\linewidth}{%
+                \vspace{5pt}
+                \centering
+                $f^{-1}(x) = y \iff f(y) = x$
+                \vspace{5pt}
             }%
         }
     \end{tabular}
     \end{center}
 
-    \vspace{0.16cm}
+    \vspace{0.15cm}
     \noindent
-    Bằng cách thế cho $y$ trong Định nghĩa 2 và thế cho $x$ trong (3), ta nhận được các \textbf{phương trình triệt tiêu} sau:
+    Bằng cách thay cho $y$ trong Định nghĩa 2 và thay cho $x$ trong (3), ta nhận được các \textbf{phương trình triệt tiêu} sau:
 
-    \vspace{0.16cm}
-    \noindent
+    \vspace{0.15cm}
     \begin{center}
-    \begin{tabular}{@{}m{0.08\textwidth}m{0.88\textwidth}@{}}
-        \centering\fcolorbox{stewartred}{white}{\textbf{\color{stewartred}4}} &
+    \begin{tabular}{@{}c@{\hspace{12pt}}c@{}}
+        \fcolorbox{stewartred}{white}{\textbf{\color{stewartred}4}} &
         \fcolorbox{stewartred}{white}{%
-            \parbox{0.85\linewidth}{%
-                \vspace{2pt}
-                \[\begin{aligned}
+            \parbox{0.62\linewidth}{%
+                \vspace{5pt}
+                \centering
+                $\begin{aligned}
                     f^{-1}(f(x)) &= x \quad \text{với mọi } x \text{ thuộc } A \\
                     f(f^{-1}(x)) &= x \quad \text{với mọi } x \text{ thuộc } B
-                \end{aligned}\]
-                \vspace{-4pt}
+                \end{aligned}$
+                \vspace{5pt}
             }%
         }
     \end{tabular}
     \end{center}
 
-    \vspace{0.08cm}
+    \vspace{0.12cm}
     \noindent
     Phương trình triệt tiêu thứ nhất chỉ ra rằng nếu ta bắt đầu với $x$, áp dụng $f$, rồi tiếp tục áp dụng $f^{-1}$, ta sẽ quay trở lại giá trị xuất phát $x$ ban đầu (xem sơ đồ cỗ máy ở Hình 7). Như vậy $f^{-1}$ hoàn tác tác động của $f$. Phương trình thứ hai cho biết $f$ hoàn tác tác động của $f^{-1}$.
 
-    \vspace{0.16cm}
-    \noindent
-    \centering
-    \includegraphics[width=0.72\linewidth]{images/p0091_fig2.png}
-    \vspace{0.16cm}
+    \begin{center}
+        \vspace{0.05cm}
+        \includegraphics[width=0.68\linewidth]{images/p0091_fig2.png}
+        \vspace{0.05cm}
+    \end{center}
 
-    \raggedright
     \noindent
     Chẳng hạn, nếu $f(x) = x^3$, thì $f^{-1}(x) = x^{1/3}$ và khi đó các phương trình triệt tiêu trở thành
-    \[\begin{aligned}
-        f^{-1}(f(x)) &= (x^3)^{1/3} = x \\
-        f(f^{-1}(x)) &= (x^{1/3})^3 = x
-    \end{aligned}\]
+    \[
+        f^{-1}(f(x)) = (x^3)^{1/3} = x
+    \]
+    \[
+        f(f^{-1}(x)) = (x^{1/3})^3 = x
+    \]
     Các phương trình này chỉ đơn thuần nói rằng hàm lập phương và hàm căn bậc ba triệt tiêu lẫn nhau khi áp dụng liên tiếp.
 
     \smallskip
@@ -99,7 +98,7 @@
     \vspace{0.2cm}
     \noindent
     \fcolorbox{stewartred}{white}{%
-        \parbox{0.96\linewidth}{
+        \parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{
             \vspace{3pt}
             \noindent
             {\fcolorbox{stewartred}{white}{\textbf{\color{stewartred}5}}}\quad 
@@ -116,8 +115,8 @@
             \vspace{0.08cm}
             \noindent
             \textbf{\textsf{BƯỚC 3}}\quad Để biểu diễn $f^{-1}$ dưới dạng hàm theo $x$, hoán đổi vị trí của $x$ và $y$.\\
-            \hspace*{1.8cm}Phương trình thu được là $y = f^{-1}(x)$.
+            \phantom{\textbf{\textsf{BƯỚC 3}}\quad}Phương trình thu được là $y = f^{-1}(x)$.
             \vspace{3pt}
-        }
+        }%
     }
 \end{minipage}
