@@ -377,6 +377,12 @@
       "score": 99,
       "notes": "Lỗi đánh số nghiêm trọng ở bài 31-36 (bản cũ bị lặp số 32, 33 và mất 35, 36). Bài 27, 29, 30 bị rớt dòng từng ý (a), (b), (c) khiến cột trái dài bất thường và đẩy đường kẻ cyan xuống quá thấp. Biểu tượng đồ thị ở bài 38 bị đặt trên một dòng riêng biệt thay vì nằm ở lề trước ý (a).",
       "time": "2026-09-23 02:19:40"
+    },
+    {
+      "page_num": 105,
+      "score": 99,
+      "notes": "Trang dịch thiếu dải màu lề trái (sidebar màu xanh lam nhạt đặc trưng của trang chẵn trong giáo trình Stewart). Tiêu đề 'Các nguyên lý giải toán' bị đặt sai vị trí (nằm tràn sang lề trái thay vì căn thẳng hàng với cột văn bản chính). Huy hiệu 1 và 2 thiếu ô vuông màu tím chứa số và nền chuyển màu hòa vào lề.",
+      "time": "2026-09-23 02:21:30"
     }
   ]
 }
