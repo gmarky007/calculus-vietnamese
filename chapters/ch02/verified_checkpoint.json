@@ -113,6 +113,12 @@
       "score": 99,
       "notes": "Bản dịch hiện tại bị lỗi biên dịch nghiêm trọng: toàn bộ phần khai báo preamble bị in ra dạng văn bản thô trên trang, mất toàn bộ nội dung hộp quy tắc, văn bản và hình vẽ. Cần cấu trúc lại hoàn chỉnh mã nguồn để dựng đúng layout 2 cột bất đối xứng, dóng hàng chính xác 5 quy tắc ở lề trái với nội dung chính và đặt Hình 1 đúng cao độ của Ví dụ 1.",
       "time": "2026-09-23 03:17:00"
+    },
+    {
+      "page_num": 131,
+      "score": 99,
+      "notes": "Bản dịch gặp lỗi nghiêm trọng do rò rỉ mã gói lệnh ở đầu phần nội dung chính, các số thứ tự quy tắc trong khung chưa được tô màu đỏ đặc trưng của giáo trình Stewart, và dấu ngoặc vuông ở Quy tắc 7 bị kéo giãn quá cỡ.",
+      "time": "2026-09-23 03:21:02"
     }
   ]
 }

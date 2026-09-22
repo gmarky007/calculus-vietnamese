@@ -1,0 +1,134 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{geometry}
+\geometry{
+    letterpaper,
+    top=1.8cm,
+    bottom=2cm,
+    left=1.8cm,
+    right=1.8cm,
+    headheight=14pt,
+    footskip=28pt
+}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+\usepackage{fancyhdr}
+\usepackage{newtxtext,newtxmath}
+
+% Định nghĩa hệ màu chuẩn sách Stewart Calculus
+\definecolor{stewartred}{RGB}{185, 27, 36}
+\definecolor{stewartgreen}{RGB}{0, 130, 70}
+\definecolor{stewartcyan}{RGB}{0, 136, 170}
+
+% Cấu hình header & footer
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textsf{\textbf{\large 96}}\hspace{1.8cm}\textsf{\textbf{CHƯƠNG 2}}\hspace{0.5cm}\textsf{Giới hạn và Đạo hàm}}
+\fancyhead[R]{}
+\renewcommand{\headrulewidth}{0pt}
+
+\fancyfoot[C]{%
+    \footnotesize\color{gray}
+    \textcopyright\ 2021 Cengage Learning. Bản quyền được bảo lưu. Không được sao chép, scan hoặc tái bản toàn bộ hay một phần. WCN 02-200-203\\
+    Đánh giá biên tập đã xác định rằng mọi nội dung bị lược bỏ không ảnh hưởng đáng kể đến trải nghiệm học tập tổng thể. Cengage Learning bảo lưu quyền xóa nội dung bổ sung vào bất kỳ lúc nào nếu có yêu cầu hạn chế về quyền.
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.26\textwidth}
+    % Cột lề trái: căn phải các nhãn ghi chú quy tắc để dóng thẳng hàng với khung ở cột chính
+    \raggedleft\sffamily\bfseries\color{stewartgreen}
+    \vspace*{270pt}
+    Quy tắc lũy thừa\par
+    \vspace{60pt}
+    Quy tắc căn thức\par
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.71\textwidth}
+    % Cột nội dung chính
+    \textbf{(b)}\, Ta thấy rằng $\lim_{x \to 1} f(x) = 2$. Nhưng $\lim_{x \to 1} g(x)$ không tồn tại vì các giới hạn trái và phải khác nhau:
+    \[
+    \lim_{x \to 1^-} g(x) = -2 \qquad\qquad \lim_{x \to 1^+} g(x) = -1
+    \]
+    Do đó chúng ta không thể dùng Quy tắc 4 cho giới hạn cần tìm. Nhưng chúng ta có thể dùng Quy tắc 4 cho các giới hạn một phía:
+    \begin{align*}
+    \lim_{x \to 1^-} [f(x)g(x)] &= \lim_{x \to 1^-} f(x) \cdot \lim_{x \to 1^-} g(x) = 2 \cdot (-2) = -4\\[4pt]
+    \lim_{x \to 1^+} [f(x)g(x)] &= \lim_{x \to 1^+} f(x) \cdot \lim_{x \to 1^+} g(x) = 2 \cdot (-1) = -2
+    \end{align*}
+    Các giới hạn trái và phải không bằng nhau, vì vậy $\lim_{x \to 1} [f(x)g(x)]$ không tồn tại.
+
+    \textbf{(c)}\, Các đồ thị cho thấy rằng
+    \[
+    \lim_{x \to 2} f(x) \approx 1{,}4 \qquad\text{và}\qquad \lim_{x \to 2} g(x) = 0
+    \]
+    Bởi vì giới hạn của mẫu số bằng $0$, chúng ta không thể dùng Quy tắc 5. Giới hạn đã cho không tồn tại vì mẫu số tiến dần về $0$ trong khi tử số tiến dần về một số khác không.\hfill{\color{stewartcyan}\footnotesize$\blacksquare$}
+
+    \vspace{3pt}
+    Nếu chúng ta sử dụng liên tiếp Quy tắc tích với $g(x) = f(x)$, ta thu được quy tắc sau đây.
+
+    % Khung 6: Quy tắc lũy thừa
+    \begin{tcolorbox}[
+        sharp corners,
+        colback=white,
+        colframe=stewartred,
+        boxrule=0.75pt,
+        left=10pt, right=10pt, top=5pt, bottom=5pt,
+        before skip=6pt, after skip=7pt
+    ]
+    \textbf{\color{stewartred}6.}\ \, $\displaystyle \lim_{x \to a} [f(x)]^n = \left[ \lim_{x \to a} f(x) \right]^n$ \qquad\quad trong đó $n$ là một số nguyên dương
+    \end{tcolorbox}
+
+    Một tính chất tương tự, mà bạn được yêu cầu chứng minh trong Bài tập 2.5.69, nghiệm đúng đối với căn thức:
+
+    % Khung 7: Quy tắc căn thức
+    \begin{tcolorbox}[
+        sharp corners,
+        colback=white,
+        colframe=stewartred,
+        boxrule=0.75pt,
+        left=10pt, right=10pt, top=5pt, bottom=6pt,
+        before skip=6pt, after skip=7pt
+    ]
+    \textbf{\color{stewartred}7.}\ \, $\displaystyle \lim_{x \to a} \sqrt[n]{f(x)} = \sqrt[n]{\lim_{x \to a} f(x)}$ \qquad\quad trong đó $n$ là một số nguyên dương\\[5pt]
+    \hspace*{16pt}[\text{Nếu } $n$ \text{ chẵn, ta giả thiết rằng } $\displaystyle\lim_{x \to a} f(x) > 0$.]
+    \end{tcolorbox}
+
+    Khi áp dụng bảy quy tắc giới hạn này, chúng ta cần sử dụng hai giới hạn đặc biệt:
+
+    % Khung 8 & 9
+    \begin{tcolorbox}[
+        sharp corners,
+        colback=white,
+        colframe=stewartred,
+        boxrule=0.75pt,
+        left=10pt, right=10pt, top=6pt, bottom=6pt,
+        before skip=6pt, after skip=7pt
+    ]
+    \textbf{\color{stewartred}8.}\ \, $\displaystyle \lim_{x \to a} c = c$ \hspace{0.30\textwidth} \textbf{\color{stewartred}9.}\ \, $\displaystyle \lim_{x \to a} x = a$
+    \end{tcolorbox}
+
+    Các giới hạn này là hiển nhiên theo quan điểm trực quan (hãy diễn đạt chúng bằng lời hoặc vẽ đồ thị của $y = c$ và $y = x$), nhưng các phép chứng minh dựa trên định nghĩa chính xác được yêu cầu trong các Bài tập 2.4.23--24.
+
+    Bây giờ nếu đặt $f(x) = x$ trong Quy tắc 6 và sử dụng Quy tắc 9, ta nhận được một giới hạn đặc biệt hữu ích cho các hàm lũy thừa.
+
+    % Khung 10
+    \begin{tcolorbox}[
+        sharp corners,
+        colback=white,
+        colframe=stewartred,
+        boxrule=0.75pt,
+        left=10pt, right=10pt, top=5pt, bottom=5pt,
+        before skip=6pt, after skip=6pt
+    ]
+    \textbf{\color{stewartred}10.}\ \, $\displaystyle \lim_{x \to a} x^n = a^n$ \qquad\quad trong đó $n$ là một số nguyên dương
+    \end{tcolorbox}
+\end{minipage}
+
+\end{document}
