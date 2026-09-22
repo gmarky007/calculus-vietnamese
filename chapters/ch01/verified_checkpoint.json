@@ -23,6 +23,12 @@
       "score": 88,
       "notes": "1. Thiếu câu dịch quan trọng ở đoạn cuối: '(Chẳng hạn, trong Ví dụ 2, chúng ta đã bắt đầu với các công thức đại số rồi sau đó thu được đồ thị.)' tương ứng với '(In Example 2, for instance, we started with algebraic formulas and then obtained graphs.)'.\n2. Cột lề trái chưa căn chỉnh độ cao đồng bộ với cột phải: Hình 7 phải ngang hàng với VÍ DỤ 2, Hình 8 ngang với phần (b), và hộp ghi chú thương sai phân phải ngang hàng với VÍ DỤ 3.\n3. Danh sách 4 cách biểu diễn cần gióng thẳng hàng các phần giải thích trong ngoặc đơn.",
       "time": "2026-09-23 01:03:05"
+    },
+    {
+      "page_num": 46,
+      "score": 99,
+      "notes": "Trong bản gốc, Hình 9 và Hình 10 là cặp hình dàn ngang toàn trang (Hình 9 nằm ở lề trái, Hình 10 nằm ở cột nội dung chính bên phải). Mã hiện tại đang nhét toàn bộ trang vào 2 minipage dọc từ trên xuống dưới và ép cả 2 hình vào minipage bên phải, làm méo mó bố cục và tạo khoảng trống vô lý ở cột trái.",
+      "time": "2026-09-23 01:03:31"
     }
   ]
 }
