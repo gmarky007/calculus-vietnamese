@@ -509,6 +509,12 @@
       "score": 99,
       "notes": "Mã nguồn hiện tại chỉ là văn bản từ chối/tóm tắt đại cương, hoàn toàn thiếu cấu trúc dàn trang Stewart, công thức toán học, tiêu đề bài tập và hệ thống hình vẽ đồ thị. Cần tái thiết lập toàn bộ trang theo đúng bố cục bất đối xứng và 2 cột bài tập.",
       "time": "2026-09-23 05:35:58"
+    },
+    {
+      "page_num": 197,
+      "score": 99,
+      "notes": "Mã nguồn hiện tại là văn bản từ chối dịch tự động. Cần xây dựng lại toàn bộ mã nguồn XeLaTeX bao gồm cấu trúc hai cột, dịch thuật ngữ toán học chuẩn xác và vẽ lại toàn bộ 14 đồ thị giải tích bằng TikZ với độ chính xác cao.",
+      "time": "2026-09-23 05:39:50"
     }
   ]
 }
