@@ -1,0 +1,175 @@
+\documentclass[10pt]{article}
+\usepackage[paperwidth=8.5in, paperheight=11in, top=0.55in, bottom=0.65in, left=0.7in, right=0.7in]{geometry}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+
+\definecolor{stewartcyan}{RGB}{0, 130, 155}
+\definecolor{stewartgray}{RGB}{110, 110, 110}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textsf{\textbf{168}}\qquad \textbf{\textsf{CHƯƠNG 2}}\quad \textsf{Giới hạn và Đạo hàm}}
+\fancyhead[R]{}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{14pt}
+
+\fancyfoot[C]{%
+    \fontsize{6pt}{7.5pt}\selectfont\color{stewartgray}%
+    Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\\
+    Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.%
+}
+
+\newcommand{\graphicon}{\tikz[baseline=-0.5ex, scale=0.65]{
+    \draw[stewartcyan, thick] (0,0) rectangle (0.34, 0.28);
+    \draw[stewartcyan, very thick] plot[domain=0.04:0.30, samples=15] (\x, {0.14 + 0.09*sin(800*(\x-0.04))});
+}}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\begin{document}
+
+\noindent{\bfseries\sffamily\color{stewartcyan}\Large BÀI TẬP}\\[-3pt]
+{\color{stewartcyan}\rule{\textwidth}{1.2pt}}\vspace{2.5mm}
+
+\noindent
+\begin{minipage}[t]{0.485\textwidth}
+\textbf{1.} Cho đồ thị của hàm số $f$.\par
+\vspace{1mm}
+\begin{center}
+    \includegraphics[width=0.86\linewidth]{images/p0203_fig1.png}
+\end{center}
+\vspace{1mm}
+(a) Tìm mỗi giới hạn sau, hoặc giải thích vì sao giới hạn không tồn tại.
+\begin{center}
+\small
+\begin{tabular}{@{}lll@{}}
+    (i) $\lim\limits_{x\to 2^+} f(x)$ & (ii) $\lim\limits_{x\to -3^+} f(x)$ & (iii) $\lim\limits_{x\to -3} f(x)$ \\[1.2ex]
+    (iv) $\lim\limits_{x\to -2} f(x)$ & (v) $\lim\limits_{x\to 0} f(x)$ & (vi) $\lim\limits_{x\to 2^-} f(x)$ \\[1.2ex]
+    (vii) $\lim\limits_{x\to \infty} f(x)$ & (viii) $\lim\limits_{x\to -\infty} f(x)$ &
+\end{tabular}
+\end{center}
+\vspace{0.5mm}
+(b) Viết phương trình các đường tiệm cận ngang.\par
+\vspace{1mm}
+(c) Viết phương trình các đường tiệm cận đứng.\par
+\vspace{1mm}
+(d) Hàm số $f$ gián đoạn tại những điểm nào? Giải thích.\par
+\vspace{2.5mm}
+
+\textbf{2.} Phác thảo đồ thị của một hàm số $f$ thỏa mãn tất cả các điều kiện sau:\par
+\vspace{1mm}
+\hangindent=1.5em
+$\lim\limits_{x\to -\infty} f(x) = -2$, \quad $\lim\limits_{x\to \infty} f(x) = 0$, \quad $\lim\limits_{x\to -3} f(x) = \infty$,\par
+\hangindent=1.5em
+$\lim\limits_{x\to 3^-} f(x) = -\infty$, \quad $\lim\limits_{x\to 3^+} f(x) = 2$,\par
+$f$ liên tục bên phải tại $3$.\par
+\vspace{2.5mm}
+
+{\bfseries\sffamily\color{stewartcyan}3--20}\; Tìm giới hạn.\par
+\vspace{1.5mm}
+\begin{tabular}{@{}p{0.49\linewidth}@{\hspace{0.02\linewidth}}p{0.49\linewidth}@{}}
+\textbf{3.} $\lim\limits_{x\to 0} \cos(x^3 + 3x)$ & \textbf{4.} $\lim\limits_{x\to 3} \dfrac{x^2 - 9}{x^2 + 2x - 3}$ \\[2.2ex]
+\textbf{5.} $\lim\limits_{x\to -3} \dfrac{x^2 - 9}{x^2 + 2x - 3}$ & \textbf{6.} $\lim\limits_{x\to 1^+} \dfrac{x^2 - 9}{x^2 + 2x - 3}$ \\[2.2ex]
+\textbf{7.} $\lim\limits_{h\to 0} \dfrac{(h - 1)^3 + 1}{h}$ & \textbf{8.} $\lim\limits_{t\to 2} \dfrac{t^2 - 4}{t^3 - 8}$ \\[2.2ex]
+\textbf{9.} $\lim\limits_{r\to 9} \dfrac{\sqrt{r}}{(r - 9)^4}$ & \textbf{10.} $\lim\limits_{v\to 4^+} \dfrac{4 - v}{|4 - v|}$ \\[2.2ex]
+\textbf{11.} $\lim\limits_{r\to -1} \dfrac{r^2 - 3r - 4}{4r^2 + r - 3}$ & \textbf{12.} $\lim\limits_{t\to 5} \dfrac{3 - \sqrt{t + 4}}{t - 5}$ \\[2.2ex]
+\textbf{13.} $\lim\limits_{x\to \infty} \dfrac{\sqrt{x^2 - 9}}{2x - 6}$ & \textbf{14.} $\lim\limits_{x\to -\infty} \dfrac{\sqrt{x^2 - 9}}{2x - 6}$ \\[2.2ex]
+\textbf{15.} $\lim\limits_{x\to \pi^-} \ln(\sin x)$ & \textbf{16.} $\lim\limits_{x\to -\infty} \dfrac{1 - 2x^2 - x^4}{5 + x - 3x^4}$ \\[2.2ex]
+\multicolumn{2}{@{}l@{}}{\textbf{17.} $\lim\limits_{x\to \infty} \left(\sqrt{x^2 + 4x + 1} - x\right)$ \hfill \textbf{18.} $\lim\limits_{x\to \infty} e^{x - x^2}$}
+\end{tabular}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.485\textwidth}
+\begin{tabular}{@{}p{0.48\linewidth}@{\hspace{0.02\linewidth}}p{0.50\linewidth}@{}}
+\textbf{19.} $\lim\limits_{x\to 0^+} \tan^{-1}(1/x)$ & \textbf{20.} $\lim\limits_{x\to 1} \left(\dfrac{1}{x - 1} + \dfrac{1}{x^2 - 3x + 2}\right)$
+\end{tabular}
+\vspace{2mm}
+
+\graphicon\;{\bfseries\sffamily\color{stewartcyan}21--22}\; Sử dụng đồ thị để tìm các đường tiệm cận của đường cong. Sau đó chứng minh kết quả đã tìm được.\par
+\vspace{1.5mm}
+\begin{tabular}{@{}p{0.46\linewidth}@{\hspace{0.04\linewidth}}p{0.50\linewidth}@{}}
+\textbf{21.} $y = \dfrac{\cos^2 x}{x^2}$ & \textbf{22.} $y = \sqrt{x^2 + x + 1} - \sqrt{x^2 - x}$
+\end{tabular}\par
+\vspace{1.5mm}
+
+{\color{stewartcyan}\rule{\linewidth}{0.6pt}}\par
+\vspace{1.5mm}
+
+\textbf{23.} Nếu $2x - 1 \le f(x) \le x^2$ với mọi $0 < x < 3$, hãy tìm $\lim\limits_{x\to 1} f(x)$.\par
+\vspace{1.5mm}
+\textbf{24.} Chứng minh rằng $\lim\limits_{x\to 0} x^2 \cos(1/x^2) = 0$.\par
+\vspace{2mm}
+
+{\bfseries\sffamily\color{stewartcyan}25--28}\; Chứng minh khẳng định bằng cách sử dụng định nghĩa chính xác của giới hạn.\par
+\vspace{1.5mm}
+\begin{tabular}{@{}p{0.48\linewidth}@{\hspace{0.04\linewidth}}p{0.48\linewidth}@{}}
+\textbf{25.} $\lim\limits_{x\to 2} (14 - 5x) = 4$ & \textbf{26.} $\lim\limits_{x\to 0} \sqrt[3]{x} = 0$ \\[1.8ex]
+\textbf{27.} $\lim\limits_{x\to 2} (x^2 - 3x) = -2$ & \textbf{28.} $\lim\limits_{x\to 4^+} \dfrac{2}{\sqrt{x - 4}} = \infty$
+\end{tabular}\par
+\vspace{1.5mm}
+
+{\color{stewartcyan}\rule{\linewidth}{0.6pt}}\par
+\vspace{1.5mm}
+
+\textbf{29.} Cho
+\[
+\setlength{\abovedisplayskip}{2pt}
+\setlength{\belowdisplayskip}{2pt}
+f(x) = \begin{cases}
+\sqrt{-x} & \text{nếu } x < 0 \\
+3 - x & \text{nếu } 0 \le x < 3 \\
+(x - 3)^2 & \text{nếu } x > 3
+\end{cases}
+\]
+(a) Tính mỗi giới hạn sau, nếu tồn tại.
+\begin{center}
+\small
+\begin{tabular}{@{}lll@{}}
+    (i) $\lim\limits_{x\to 0^+} f(x)$ & (ii) $\lim\limits_{x\to 0^-} f(x)$ & (iii) $\lim\limits_{x\to 0} f(x)$ \\[1.2ex]
+    (iv) $\lim\limits_{x\to 3^-} f(x)$ & (v) $\lim\limits_{x\to 3^+} f(x)$ & (vi) $\lim\limits_{x\to 3} f(x)$
+\end{tabular}
+\end{center}
+(b) Hàm số $f$ gián đoạn tại đâu? \qquad (c) Phác thảo đồ thị của $f$.\par
+\vspace{2mm}
+
+\textbf{30.} Cho
+\[
+\setlength{\abovedisplayskip}{2pt}
+\setlength{\belowdisplayskip}{2pt}
+g(x) = \begin{cases}
+2x - x^2 & \text{nếu } 0 \le x \le 2 \\
+2 - x & \text{nếu } 2 < x \le 3 \\
+x - 4 & \text{nếu } 3 < x < 4 \\
+\pi & \text{nếu } x \ge 4
+\end{cases}
+\]
+(a) Với mỗi số $2, 3$ và $4$, hãy xác định xem $g$ liên tục bên trái, liên tục bên phải, hay liên tục tại điểm đó.\par
+\vspace{1mm}
+(b) Phác thảo đồ thị của $g$.\par
+\vspace{2mm}
+
+{\bfseries\sffamily\color{stewartcyan}31--32}\; Chứng tỏ rằng hàm số liên tục trên tập xác định của nó. Nêu rõ tập xác định.\par
+\vspace{1.5mm}
+\begin{tabular}{@{}p{0.48\linewidth}@{\hspace{0.04\linewidth}}p{0.48\linewidth}@{}}
+\textbf{31.} $h(x) = x e^{\sin x}$ & \textbf{32.} $g(x) = \dfrac{\sqrt{x^2 - 9}}{x^2 - 2}$
+\end{tabular}\par
+\vspace{1.5mm}
+
+{\color{stewartcyan}\rule{\linewidth}{0.6pt}}\par
+\vspace{1.5mm}
+
+{\bfseries\sffamily\color{stewartcyan}33--34}\; Sử dụng Định lý Giá trị Trung gian để chứng minh rằng phương trình có nghiệm trong khoảng đã cho.\par
+\vspace{1.5mm}
+\textbf{33.} $x^5 - x^3 + 3x - 5 = 0, \quad (1, 2)$\par
+\vspace{1.5mm}
+\textbf{34.} $\cos\sqrt{x} = e^x - 2, \quad (0, 1)$\par
+\vspace{1.5mm}
+{\color{stewartcyan}\rule{\linewidth}{0.6pt}}
+\end{minipage}
+
+\end{document}
