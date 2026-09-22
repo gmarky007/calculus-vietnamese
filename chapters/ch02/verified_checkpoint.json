@@ -383,6 +383,12 @@
       "score": 99,
       "notes": "Mã nguồn hiện tại chỉ là văn bản từ chối bản quyền, thiếu toàn bộ nội dung Bài tập 71-81 và phần mở đầu Mục 2.7. Cần biên dịch lại toàn bộ trang với bố cục 2 cột cho bài tập, căn chỉnh lề thụt bất đối xứng cho Mục 2.7, vector hóa biểu tượng đồ thị và dịch chuẩn thuật ngữ giải tích.",
       "time": "2026-09-23 04:57:36"
+    },
+    {
+      "page_num": 176,
+      "score": 99,
+      "notes": "Bản dịch bị lỗi hiển thị toàn bộ nội dung preamble lên đầu trang do lỗi escape ký tự. Ngoài ra, ghi chú lề (dạng điểm - hệ số góc) chưa dóng đúng cao độ ngang hàng với phương trình tương ứng, và chú thích Hình 2 chưa được giới hạn trong độ rộng cột lề trái.",
+      "time": "2026-09-23 05:00:27"
     }
   ]
 }

@@ -1,0 +1,117 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{geometry}
+\geometry{
+    paperwidth=8.5in,
+    paperheight=11in,
+    left=0.75in,
+    right=0.75in,
+    top=0.75in,
+    bottom=0.75in,
+    headheight=14pt,
+    headsep=16pt
+}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{mathptmx}
+
+% Định nghĩa hệ màu chuẩn sách Stewart Calculus
+\definecolor{stewartcyan}{RGB}{0, 130, 185}
+\definecolor{stewartred}{RGB}{205, 35, 40}
+
+% Thiết lập khung định nghĩa
+\newtcolorbox{definitionbox}{
+    colback=white,
+    colframe=stewartred,
+    arc=0mm,
+    boxrule=0.8pt,
+    left=7pt,
+    right=7pt,
+    top=6pt,
+    bottom=6pt
+}
+
+% Cấu hình tiêu đề đầu trang
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[R]{\textbf{\textsf{MỤC 2.7}}\quad \textsf{Đạo hàm và tốc độ thay đổi}\qquad \textbf{141}}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.26\textwidth}
+    \vspace{0pt}
+    \includegraphics[width=\linewidth]{images/p0176_fig1.png}
+    
+    \vspace{22pt}
+    \includegraphics[width=\linewidth]{images/p0176_fig2.png}
+    
+    \vspace{5pt}
+    \noindent\textbf{\textsf{HÌNH 1}}
+    
+    \vspace{42pt}
+    \noindent\raggedright\footnotesize
+    \textsf{Dạng điểm -- hệ số góc của đường thẳng đi qua điểm $(x_1, y_1)$ với hệ số góc $m$:}
+    \par\vspace{3pt}
+    \centering
+    $y - y_1 = m(x - x_1)$
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.71\textwidth}
+    \vspace{0pt}
+    Sau đó, ta cho $Q$ tiến lại gần $P$ dọc theo đường cong $C$ bằng cách cho $x$ tiến dần đến $a$. Nếu $m_{PQ}$ tiến tới một số $m$, thì ta định nghĩa \textit{tiếp tuyến} $\ell$ là đường thẳng đi qua $P$ có hệ số góc $m$. (Điều này tương đương với việc nói rằng tiếp tuyến là vị trí giới hạn của cát tuyến $PQ$ khi $Q$ tiến dần đến $P$. Xem Hình 1.)
+    
+    \vspace{8pt}
+    \begin{definitionbox}
+        \noindent\setlength{\fboxsep}{2pt}\setlength{\fboxrule}{0.8pt}%
+        \fbox{\color{stewartred}\textbf{1}}\enspace
+        \textbf{\textsf{\color{stewartred}Định nghĩa}}\quad
+        \textbf{Tiếp tuyến} của đường cong $y = f(x)$ tại điểm $P(a, f(a))$ là đường thẳng đi qua $P$ có hệ số góc
+        \[
+        m = \lim_{x \to a} \frac{f(x) - f(a)}{x - a}
+        \]
+        với điều kiện giới hạn này tồn tại.
+    \end{definitionbox}
+    
+    \vspace{9pt}
+    Trong ví dụ đầu tiên, chúng ta xác nhận lại dự đoán đã đưa ra ở Ví dụ 2.1.1.
+    
+    \vspace{9pt}
+    \noindent\textbf{\textsf{\color{stewartcyan}VÍ DỤ 1}}\enspace Tìm phương trình tiếp tuyến của parabol $y = x^2$ tại điểm $P(1, 1)$.
+    
+    \vspace{6pt}
+    \noindent\textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\enspace Ở đây ta có $a = 1$ và $f(x) = x^2$, do đó hệ số góc là
+    \begin{align*}
+        m &= \lim_{x \to 1} \frac{f(x) - f(1)}{x - 1} = \lim_{x \to 1} \frac{x^2 - 1}{x - 1} \\[4pt]
+        &= \lim_{x \to 1} \frac{(x - 1)(x + 1)}{x - 1} \\[4pt]
+        &= \lim_{x \to 1} (x + 1) = 1 + 1 = 2
+    \end{align*}
+    Sử dụng dạng điểm -- hệ số góc của phương trình đường thẳng, ta tìm được phương trình tiếp tuyến tại $(1, 1)$ là
+    \[
+    y - 1 = 2(x - 1) \qquad\text{hay}\qquad y = 2x - 1 \tag*{\color{stewartcyan}\blacksquare}
+    \]
+    
+    \vspace{7pt}
+    Đôi khi chúng ta gọi hệ số góc của tiếp tuyến với một đường cong tại một điểm là \textbf{hệ số góc của đường cong} tại điểm đó. Ý tưởng là nếu chúng ta phóng to đủ gần về phía điểm đó, đường cong trông gần như một đường thẳng. Hình 2 minh họa quá trình này đối với đường cong $y = x^2$ trong Ví dụ 1. Càng phóng to, parabol càng trông giống một đường thẳng. Nói cách khác, đường cong gần như không thể phân biệt được với tiếp tuyến của nó.
+\end{minipage}
+
+\par\vspace{14pt}
+\noindent
+\includegraphics[width=\linewidth]{images/p0176_fig3.png}
+\par\vspace{4pt}
+\noindent
+\begin{minipage}[t]{0.26\textwidth}
+    \raggedright\footnotesize
+    \textbf{\textsf{HÌNH 2}}\par\vspace{1pt}
+    \textsf{Phóng to về phía điểm $(1, 1)$ trên parabol $y = x^2$}
+\end{minipage}
+
+\end{document}
