@@ -95,6 +95,12 @@
       "score": 99,
       "notes": "Bố cục sơ đồ Hình 1 trong bản gốc là full-width (kéo dài toàn trang từ lề trái sang lề phải) chứ không nằm gọn trong cột chính; sơ đồ Hình 1 vẫn để ảnh gốc tiếng Anh; Hình 2 bị chèn trùng cả ảnh chụp lẫn bảng; cần vẽ lại sơ đồ và đồ thị bằng TikZ chuẩn vector.",
       "time": "2026-09-23 01:12:04"
+    },
+    {
+      "page_num": 58,
+      "score": 99,
+      "notes": "Toàn bộ nội dung trang bị đẩy sang trang sau do tổng chiều cao của hai minipage vượt quá chiều cao trang (textheight), khiến trang hiện tại hoàn toàn trắng tinh chỉ có tiêu đề đầu trang. Cần tinh chỉnh lại khoảng cách vspace, cấu hình danh sách enumerate và kích thước đồ thị/bảng để toàn bộ nội dung nằm gọn hoàn hảo trên trang 58.",
+      "time": "2026-09-23 01:12:32"
     }
   ]
 }
