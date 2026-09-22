@@ -1,0 +1,102 @@
+\documentclass[10pt]{article}
+\usepackage[T5]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{mathptmx}
+
+\geometry{
+  paper=a4paper,
+  top=20mm,
+  bottom=20mm,
+  left=18mm,
+  right=18mm,
+  headheight=14pt,
+  headsep=16pt
+}
+
+\definecolor{stewartcyan}{RGB}{0, 130, 185}
+\definecolor{stewartred}{RGB}{204, 30, 30}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[R]{\textsf{\textbf{MỤC 3.1}}\hspace{1.5em}\textsf{Đạo hàm của đa thức và hàm mũ}\hspace{3em}\textbf{\textsf{179}}}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.26\textwidth}
+  \vspace{0pt}
+  \centering
+  \includegraphics[width=\linewidth]{images/p0214_fig1.png}
+  
+  \vspace{8pt}
+  \raggedright
+  {\small\textbf{\textsf{HÌNH 5}}\\[3pt]
+  Đường cong $y = x^4 - 6x^2 + 4$ và các tiếp tuyến nằm ngang của nó}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.71\textwidth}
+  \vspace{0pt}
+  \noindent\textbf{\textsf{\color{stewartcyan}VÍ DỤ 6}}\hspace{0.8em}Tìm các điểm trên đường cong $y = x^4 - 6x^2 + 4$ mà tại đó tiếp tuyến nằm ngang.
+
+  \vspace{0.8em}
+  \noindent\textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\hspace{0.8em}Các tiếp tuyến nằm ngang xuất hiện tại những điểm mà đạo hàm bằng $0$. Ta có
+  \begin{align*}
+  \frac{dy}{dx} &= \frac{d}{dx}(x^4) - 6\,\frac{d}{dx}(x^2) + \frac{d}{dx}(4) \\[3pt]
+  &= 4x^3 - 12x + 0 = 4x(x^2 - 3)
+  \end{align*}
+  Do đó $dy/dx = 0$ nếu $x = 0$ hoặc $x^2 - 3 = 0$, tức là $x = \pm\sqrt{3}$. Vậy đường cong đã cho có các tiếp tuyến nằm ngang khi $x = 0$, $\sqrt{3}$ và $-\sqrt{3}$. Các điểm tương ứng là $(0, 4)$, $(\sqrt{3}, -5)$ và $(-\sqrt{3}, -5)$. (Xem Hình~5.)\hfill{\color{stewartcyan}$\blacksquare$}
+
+  \vspace{1.5em}
+  \noindent\textbf{\textsf{\color{stewartcyan}VÍ DỤ 7}}\hspace{0.8em}Phương trình chuyển động của một chất điểm là $s = 2t^3 - 5t^2 + 3t + 4$, trong đó $s$ được đo bằng centimét và $t$ tính bằng giây. Tìm gia tốc theo biến thời gian. Gia tốc sau $2$ giây là bao nhiêu?
+
+  \vspace{0.8em}
+  \noindent\textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\hspace{0.8em}Vận tốc và gia tốc lần lượt là
+  \begin{align*}
+  v(t) &= \frac{ds}{dt} = 6t^2 - 10t + 3 \\[4pt]
+  a(t) &= \frac{dv}{dt} = 12t - 10
+  \end{align*}
+  Gia tốc sau $2$ giây là $a(2) = 14\text{ cm/s}^2$.\hfill{\color{stewartcyan}$\blacksquare$}
+
+  \vspace{1.6em}
+  \noindent{\color{stewartcyan}\rule{1.1ex}{1.1ex}}\hspace{0.6em}\textbf{\textsf{\large Hàm số mũ}}
+
+  \vspace{0.7em}
+  \noindent Chúng ta hãy thử tính đạo hàm của hàm số mũ $f(x) = b^x$ bằng cách sử dụng định nghĩa của đạo hàm:
+  \begin{align*}
+  f'(x) &= \lim_{h \to 0} \frac{f(x + h) - f(x)}{h} = \lim_{h \to 0} \frac{b^{x+h} - b^x}{h} \\[6pt]
+  &= \lim_{h \to 0} \frac{b^x b^h - b^x}{h} = \lim_{h \to 0} \frac{b^x(b^h - 1)}{h}
+  \end{align*}
+  Thừa số $b^x$ không phụ thuộc vào $h$, vì vậy chúng ta có thể đưa nó ra phía trước dấu giới hạn:
+  \[
+  f'(x) = b^x \lim_{h \to 0} \frac{b^h - 1}{h}
+  \]
+  Lưu ý rằng giới hạn này chính là giá trị đạo hàm của $f$ tại $0$, nghĩa là
+  \[
+  \lim_{h \to 0} \frac{b^h - 1}{h} = f'(0)
+  \]
+  Do đó, chúng ta đã chỉ ra rằng nếu hàm số mũ $f(x) = b^x$ khả vi tại $0$, thì nó khả vi ở mọi nơi và
+
+  \vspace{0.5em}
+  \noindent\hbox to \linewidth{%
+    \setlength{\fboxsep}{2.5pt}\fboxrule=0.8pt\fcolorbox{stewartred}{white}{\small\bfseries\textsf{\color{stewartred}4}}%
+    \hss
+    $\displaystyle f'(x) = f'(0)\,b^x$%
+    \hss
+    \phantom{\setlength{\fboxsep}{2.5pt}\fboxrule=0.8pt\fcolorbox{stewartred}{white}{\small\bfseries\textsf{\color{stewartred}4}}}%
+  }
+
+  \vspace{0.8em}
+  \noindent Phương trình này nói rằng \textit{tốc độ thay đổi của một hàm số mũ bất kỳ tỉ lệ thuận với chính hàm số đó.} (Hệ số góc tỉ lệ thuận với chiều cao.)
+\end{minipage}
+
+\end{document}
