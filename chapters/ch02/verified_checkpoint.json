@@ -191,6 +191,12 @@
       "score": 99,
       "notes": "Mã nguồn hiện tại chỉ là văn bản từ chối, chưa có nội dung XeLaTeX dịch và tái tạo trang 143 (trang sách 108). Cần tái lập toàn bộ trang với bố cục 2 cột bất đối xứng, hình ảnh biên lề và công thức chuẩn xác.",
       "time": "2026-09-23 03:45:07"
+    },
+    {
+      "page_num": 144,
+      "score": 99,
+      "notes": "Lỗi nghiêm trọng: rò rỉ mã tiền tố ở đầu trang hiển thị dạng chuỗi thô; tiêu đề đầu trang (header) bị dồn sang phải thay vì dóng khớp với cột nội dung chính; dòng 'tức là,' bị rớt dòng làm mất căn lề chuẩn; hộp 'Cauchy và Giới hạn' chưa kéo dài đủ để dóng với Ví dụ 3.",
+      "time": "2026-09-23 03:47:06"
     }
   ]
 }
