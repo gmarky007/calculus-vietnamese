@@ -47,6 +47,12 @@
       "score": 99,
       "notes": "Nhãn 'HÌNH 14' ở lề trái đặt quá cao, không dóng hàng ngang với các hình 14(a)-(c). Hình 15 ở lề trái bị crop lỗi (mất hệ trục tọa độ và nhánh parabol, chỉ còn một mẩu đường thẳng). Đã vẽ lại Hình 15 bằng TikZ sắc nét 100% và căn chỉnh vị trí dọc các phần tử ở lề trái khớp chính xác bản gốc.",
       "time": "2026-09-23 01:05:04"
+    },
+    {
+      "page_num": 50,
+      "score": 99,
+      "notes": "Các tệp hình ảnh bị gán sai thứ tự nghiêm trọng do ảnh p0050_fig1.png là khung công thức đỏ bị crop thừa, dẫn đến Figure 16 hiển thị khung đỏ, Figure 17 hiển thị Hình 16, và Figure 18 hiển thị Hình 17; đồng thời mất hoàn toàn Hình 18 gốc. Vị trí dọc của các hình cũng cần căn chỉnh lại cho ngang hàng chuẩn xác với các Ví dụ tương ứng.",
+      "time": "2026-09-23 01:05:29"
     }
   ]
 }
