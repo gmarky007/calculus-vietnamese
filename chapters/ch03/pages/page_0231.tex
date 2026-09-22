@@ -1,0 +1,119 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{geometry}
+\geometry{
+    letterpaper,
+    top=1.8cm,
+    bottom=2.0cm,
+    left=1.8cm,
+    right=1.8cm,
+    headheight=14pt,
+    headsep=16pt,
+    footskip=1.2cm
+}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{lmodern}
+\usepackage[scaled=0.92]{helvet}
+
+% Bảng màu nhận diện giáo trình Stewart Calculus
+\definecolor{stewartcyan}{RGB}{0, 130, 155}
+\definecolor{stewartred}{RGB}{204, 30, 30}
+
+% Cài đặt Header và Footer chuẩn sách gốc
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textsf{\textbf{196}}\qquad \textbf{\textsf{CHƯƠNG 3}}\quad \textsf{Các quy tắc đạo hàm}}
+\fancyhead[R]{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{%
+    \tiny\color{gray}%
+    Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\\[-2pt]
+    Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.%
+}
+
+\setlength{\parindent}{1.5em}
+\setlength{\abovedisplayskip}{5pt}
+\setlength{\belowdisplayskip}{5pt}
+\setlength{\abovedisplayshortskip}{3pt}
+\setlength{\belowdisplayshortskip}{3pt}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.26\textwidth}
+    % Dóng hàng chính xác theo tọa độ y = 635.7pt - 680.4pt (dóng ngang với đẳng thức của Lời giải Ví dụ 5)
+    \vspace*{565pt}
+    \raggedright
+    {\small\textsf{\color{stewartcyan}Lưu ý rằng $\sin 7x \neq 7\sin x$.}}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.71\textwidth}
+    \noindent
+    (Trong Phụ lục F, bất đẳng thức $\theta \leqslant \tan \theta$ được chứng minh trực tiếp từ định nghĩa độ dài của một cung mà không cần dựa vào trực giác hình học như chúng ta đã làm ở đây.) Do đó, ta có
+    \[
+    \theta < \frac{\sin\theta}{\cos\theta}
+    \]
+    \noindent
+    \makebox[0pt][l]{nên}%
+    \hfill
+    $\displaystyle \cos\theta < \frac{\sin\theta}{\theta} < 1$%
+    \hfill\null
+
+    \vspace{6pt}
+    \noindent
+    Ta biết rằng $\lim_{\theta \to 0} 1 = 1$ và $\lim_{\theta \to 0}\cos\theta = 1$, nên theo Định lý kẹp, ta có
+    \[
+    \lim_{\theta \to 0^+} \frac{\sin\theta}{\theta} = 1 \qquad {\color{stewartcyan}(0 < \theta < \pi/2)}
+    \]
+    Nhưng hàm số $(\sin\theta)/\theta$ là một hàm chẵn, do đó các giới hạn bên phải và bên trái của nó phải bằng nhau. Vì vậy, ta có
+    \[
+    \lim_{\theta \to 0} \frac{\sin\theta}{\theta} = 1
+    \]
+    \noindent
+    như vậy chúng ta đã chứng minh được Công thức 5.\hfill{\color{stewartred}$\blacksquare$}
+
+    \vspace{8pt}
+    Giới hạn đặc biệt đầu tiên mà chúng ta xem xét liên quan đến hàm sin. Giới hạn đặc biệt tiếp theo sau đây liên quan đến cosin.
+
+    \vspace{8pt}
+    \noindent
+    \begin{minipage}{\linewidth}
+        \centering
+        \makebox[0pt][r]{%
+            \tcbox[colframe=stewartred, colback=white, boxrule=1pt, sharp corners, left=4pt, right=4pt, top=2pt, bottom=2pt]{%
+                \bfseries\color{stewartred}6%
+            }\hspace{3.0cm}%
+        }%
+        \tcbox[colframe=stewartred, colback=white, boxrule=1pt, sharp corners, left=24pt, right=24pt, top=6pt, bottom=6pt]{%
+            $\displaystyle \lim_{\theta \to 0} \frac{\cos\theta - 1}{\theta} = 0$%
+        }%
+    \end{minipage}
+
+    \vspace{10pt}
+    \noindent
+    \textbf{\textsf{\color{stewartred}CHỨNG MINH}}\quad Ta nhân cả tử số và mẫu số với $\cos\theta + 1$ để đưa hàm số về dạng mà ta có thể áp dụng các giới hạn đã biết.
+    \begin{align*}
+    \lim_{\theta \to 0} \frac{\cos\theta - 1}{\theta}
+    &= \lim_{\theta \to 0} \left( \frac{\cos\theta - 1}{\theta} \cdot \frac{\cos\theta + 1}{\cos\theta + 1} \right) = \lim_{\theta \to 0} \frac{\cos^2\theta - 1}{\theta(\cos\theta + 1)} \\[4pt]
+    &= \lim_{\theta \to 0} \frac{-\sin^2\theta}{\theta(\cos\theta + 1)} = -\lim_{\theta \to 0} \left( \frac{\sin\theta}{\theta} \cdot \frac{\sin\theta}{\cos\theta + 1} \right) \\[4pt]
+    &= -\lim_{\theta \to 0} \frac{\sin\theta}{\theta} \cdot \lim_{\theta \to 0} \frac{\sin\theta}{\cos\theta + 1} \\[4pt]
+    &= -1 \cdot \left( \frac{0}{1 + 1} \right) = 0 \qquad \text{\color{stewartcyan}(theo Công thức 5)} \tag*{{\color{stewartred}$\blacksquare$}}
+    \end{align*}
+
+    \vspace{10pt}
+    \noindent
+    \textbf{\textsf{\color{stewartcyan}VÍ DỤ 5}}\quad Tìm $\displaystyle\lim_{x \to 0} \frac{\sin 7x}{4x}$.
+
+    \vspace{6pt}
+    \noindent
+    \textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\quad Để áp dụng Công thức 5, trước tiên ta viết lại hàm số bằng cách nhân và chia cho 7:
+    \[
+    \frac{\sin 7x}{4x} = \frac{7}{4} \left( \frac{\sin 7x}{7x} \right)
+    \]
+\end{minipage}
+
+\end{document}
