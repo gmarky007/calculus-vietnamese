@@ -1,0 +1,97 @@
+\documentclass[10pt]{article}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{tcolorbox}
+\usepackage{mathpazo}
+\usepackage{helvet}
+
+\geometry{
+    paperwidth=210mm,
+    paperheight=297mm,
+    left=58mm,
+    right=20mm,
+    top=22mm,
+    bottom=22mm,
+    headheight=14pt,
+    headsep=15pt
+}
+
+% Hệ màu chuẩn Stewart Calculus
+\definecolor{stewartcyan}{RGB}{0, 130, 185}
+\definecolor{stewartred}{RGB}{204, 0, 0}
+
+% Hộp đóng khung kết quả viền đỏ chuẩn sách gốc
+\newtcolorbox{stewartbox}{
+    colback=white,
+    colframe=stewartred,
+    arc=0mm,
+    boxrule=0.8pt,
+    left=10pt,
+    right=10pt,
+    top=7pt,
+    bottom=7pt
+}
+
+% Tiêu đề đầu trang chuẩn dóng theo cột nội dung chính
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textsf{\textbf{MỤC 2.7}}\quad \textsf{Đạo hàm và Tốc độ Thay đổi}}
+\fancyhead[R]{\textsf{\textbf{145}}}
+\renewcommand{\headrulewidth}{0pt}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+
+\newcommand{\tombstone}{\hfill{\color{stewartcyan}\rule{1.2ex}{1.2ex}}}
+
+\begin{document}
+
+\noindent
+\textbf{(b)}\quad
+$\begin{aligned}[t]
+f'(a) &= \lim_{h \to 0} \frac{f(a + h) - f(a)}{h} \\[6pt]
+&= \lim_{h \to 0} \frac{[(a + h)^2 - 8(a + h) + 9] - [a^2 - 8a + 9]}{h} \\[6pt]
+&= \lim_{h \to 0} \frac{a^2 + 2ah + h^2 - 8a - 8h + 9 - a^2 + 8a - 9}{h} \\[6pt]
+&= \lim_{h \to 0} \frac{2ah + h^2 - 8h}{h} = \lim_{h \to 0} (2a + h - 8) = 2a - 8
+\end{aligned}$
+
+\vspace{8pt}
+Để kiểm tra lại kết quả của chúng ta trong phần (a), hãy để ý rằng nếu cho $a = 2$, thì $f'(2) = 2(2) - 8 = -4$.\tombstone
+
+\vspace{12pt}
+\noindent
+\textbf{\textsf{\color{stewartcyan}VÍ DỤ 5}}\quad Sử dụng Phương trình 5 để tìm đạo hàm của hàm số $f(x) = 1/\sqrt{x}$ tại số $a$ ($a > 0$).
+
+\vspace{4pt}
+\noindent
+\textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\quad Từ Phương trình 5 ta có
+\[
+\begin{aligned}
+f'(a) &= \lim_{x \to a} \frac{f(x) - f(a)}{x - a} \\[8pt]
+&= \lim_{x \to a} \frac{\dfrac{1}{\sqrt{x}} - \dfrac{1}{\sqrt{a}}}{x - a} = \lim_{x \to a} \frac{\dfrac{1}{\sqrt{x}} - \dfrac{1}{\sqrt{a}}}{x - a} \cdot \frac{\sqrt{x}\sqrt{a}}{\sqrt{x}\sqrt{a}} \\[9pt]
+&= \lim_{x \to a} \frac{\sqrt{a} - \sqrt{x}}{\sqrt{ax}(x - a)} = \lim_{x \to a} \frac{\sqrt{a} - \sqrt{x}}{\sqrt{ax}(x - a)} \cdot \frac{\sqrt{a} + \sqrt{x}}{\sqrt{a} + \sqrt{x}} \\[9pt]
+&= \lim_{x \to a} \frac{-(x - a)}{\sqrt{ax}(x - a)(\sqrt{a} + \sqrt{x})} = \lim_{x \to a} \frac{-1}{\sqrt{ax}(\sqrt{a} + \sqrt{x})} \\[9pt]
+&= \frac{-1}{\sqrt{a^2}(\sqrt{a} + \sqrt{a})} = \frac{-1}{a \cdot 2\sqrt{a}} = -\frac{1}{2a^{3/2}}
+\end{aligned}
+\]
+
+\vspace{2pt}
+Bạn có thể kiểm tra lại rằng việc sử dụng Định nghĩa 4 cũng mang lại kết quả tương tự.\tombstone
+
+\vspace{12pt}
+Chúng ta đã định nghĩa tiếp tuyến của đường cong $y = f(x)$ tại điểm $P(a, f(a))$ là đường thẳng đi qua $P$ và có hệ số góc $m$ được cho bởi Phương trình 1 hoặc 2. Vì theo Định nghĩa 4 (và Phương trình 5), giá trị này cũng chính là đạo hàm $f'(a)$, nên giờ đây chúng ta có thể khẳng định như sau:
+
+\vspace{6pt}
+\begin{stewartbox}
+Đường tiếp tuyến của $y = f(x)$ tại $(a, f(a))$ là đường thẳng đi qua $(a, f(a))$ có hệ số góc bằng $f'(a)$, tức đạo hàm của $f$ tại $a$.
+\end{stewartbox}
+
+\vspace{6pt}
+Nếu sử dụng dạng điểm -- hệ số góc của phương trình đường thẳng, ta có thể viết phương trình tiếp tuyến của đường cong $y = f(x)$ tại điểm $(a, f(a))$ như sau:
+\[
+y - f(a) = f'(a)(x - a)
+\]
+
+\end{document}

@@ -407,6 +407,12 @@
       "score": 99,
       "notes": "Bản in bị dính dòng chữ rác preamble ở đầu trang; thẻ số [4] và [5] bị ngắt dòng sai vị trí do thiếu tùy chọn 'on line' trong tcbox; ghi chú lề trái số 2 bị lệch cao so với Lời giải (a).",
       "time": "2026-09-23 05:07:49"
+    },
+    {
+      "page_num": 180,
+      "score": 99,
+      "notes": "Bản dịch hiện tại bị lỗi hiển thị nghiêm trọng do mã preamble bị in thẳng ra đầu trang thành chuỗi văn bản thô. Căn lề tiêu đề đầu trang và thụt đầu dòng mục (b) chưa chuẩn xác so với cấu trúc cột bất đối xứng của giáo trình Stewart.",
+      "time": "2026-09-23 05:09:28"
     }
   ]
 }
