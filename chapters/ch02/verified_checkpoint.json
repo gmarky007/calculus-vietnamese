@@ -227,6 +227,12 @@
       "score": 99,
       "notes": "Bản in bị lỗi nghiêm trọng: toàn bộ nội dung bài tập (từ bài 10 đến 44) không hiển thị trên trang 1 do bị tràn sang trang sau; phần thân trang in lỗi chuỗi khai báo gói lệnh; tiêu đề đầu trang bị đặt theo trang lẻ thay vì trang chẵn 114. Cần tái cấu trúc hoàn toàn với số trang 114 và dóng chuẩn bố cục 2 cột.",
       "time": "2026-09-23 03:58:21"
+    },
+    {
+      "page_num": 150,
+      "score": 99,
+      "notes": "Mã nguồn hiện tại chỉ là văn bản từ chối xử lý, hoàn toàn không có nội dung và định dạng của trang sách. Cần viết lại toàn bộ mã nguồn XeLaTeX tái lập chính xác cấu trúc 2 cột bất đối xứng, tiêu đề mục 2.5 kèm sọc đồ họa, hộp Định nghĩa 1 (màu đỏ), vị trí Hình 1 và Hình 2 ở lề trái, cùng toàn bộ nội dung dịch chuẩn xác.",
+      "time": "2026-09-23 03:59:29"
     }
   ]
 }
