@@ -1,0 +1,183 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[top=1.6cm, bottom=1.8cm, left=1.8cm, right=1.8cm]{geometry}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{fancyhdr}
+\usepackage[T5,T1]{fontenc}
+\usepackage[vietnamese]{babel}
+\usepackage{newtxtext,newtxmath}
+
+% Định nghĩa màu sắc theo phong cách sách Stewart Calculus
+\definecolor{stewartcyan}{RGB}{0, 130, 175}
+\definecolor{stewartblue}{RGB}{0, 110, 160}
+\definecolor{tableheader}{RGB}{225, 238, 246}
+\definecolor{stewartrule}{RGB}{0, 130, 175}
+
+% Thiết lập đầu trang và chân trang
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[L]{%
+  \fontsize{9pt}{11pt}\selectfont
+  \textbf{164}\qquad
+  \textbf{\textsf{CHƯƠNG 2}}\quad Giới hạn và Đạo hàm
+}
+
+% Định nghĩa biểu tượng màn hình đồ họa CAS (Graphing Calculator)
+\newcommand{\casicon}{%
+  \begingroup\normalfont
+  \begin{tikzpicture}[x=1ex, y=1ex, baseline=-0.2ex]
+    \draw[line width=0.6pt, stewartcyan, rounded corners=0.8pt] (0,0) rectangle (1.6, 1.35);
+    \draw[line width=0.55pt, stewartcyan] (0.2, 0.3) .. controls (0.55, 1.25) and (0.95, -0.05) .. (1.4, 1.05);
+  \end{tikzpicture}%
+  \endgroup
+}
+
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.485\textwidth}
+
+  % Bài 37
+  \textbf{37.}\enspace Bảng bên cho biết chiều cao theo thời gian của một cây thông điển hình được trồng để lấy gỗ tại một khu rừng do con người quản lý.
+  \par\vspace{2mm}
+  \begin{center}
+    \setlength{\tabcolsep}{3.5pt}
+    \renewcommand{\arraystretch}{1.2}
+    \footnotesize
+    \begin{tabular}{|>{\cellcolor{tableheader}}l|c|c|c|c|c|c|}
+      \hline
+      Tuổi cây (năm) & 14 & 21 & 28 & 35 & 42 & 49 \\ \hline
+      Chiều cao (feet) & 41 & 54 & 64 & 72 & 78 & 83 \\ \hline
+    \end{tabular}
+    \par\vspace{1mm}
+    {\scriptsize\textit{Nguồn: Arkansas Forestry Commission}}
+  \end{center}
+  \vspace{1mm}
+  Nếu $H(t)$ là chiều cao của cây sau $t$ năm, hãy lập bảng các giá trị ước lượng của $H'$ và phác thảo đồ thị của nó.
+
+  \vspace{3.5mm}
+  % Bài 38
+  \textbf{38.}\enspace Nhiệt độ nước ảnh hưởng đến tốc độ tăng trưởng của cá hồi suối. Bảng bên cho biết mức tăng khối lượng của cá hồi suối sau 24 ngày ở các mức nhiệt độ nước khác nhau.
+  \par\vspace{2mm}
+  \begin{center}
+    \setlength{\tabcolsep}{4.5pt}
+    \renewcommand{\arraystretch}{1.2}
+    \footnotesize
+    \begin{tabular}{|>{\cellcolor{tableheader}}l|c|c|c|c|c|}
+      \hline
+      Nhiệt độ ($^\circ\text{C}$) & 15.5 & 17.7 & 20.0 & 22.4 & 24.4 \\ \hline
+      Khối lượng tăng (g) & 37.2 & 31.0 & 19.8 & 9.7 & $-9.8$ \\ \hline
+    \end{tabular}
+  \end{center}
+  \vspace{1mm}
+  Nếu $W(x)$ là mức tăng khối lượng ở nhiệt độ $x$, hãy lập bảng các giá trị ước lượng của $W'$ và phác thảo đồ thị của nó. Đơn vị của $W'(x)$ là gì?
+  \par\vspace{1.5mm}
+  {\scriptsize\textit{Nguồn: Phỏng theo J. Chadwick Jr., “Temperature Effects on Growth and Stress Physiology of Brook Trout: Implications for Climate Change Impacts on an Iconic Cold-Water Fish.” Masters Theses. Paper 897. 2012. scholarworks.umass.edu/theses/897.}}
+
+  \vspace{3.5mm}
+  % Bài 39
+  \textbf{39.}\enspace Gọi $P$ là tỉ lệ phần trăm sản lượng điện của một thành phố được sản xuất bởi các tấm pin năng lượng mặt trời sau $t$ năm kể từ ngày 1 tháng 1 năm 2020.
+  \begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=*, topsep=2pt, itemsep=1pt, parsep=0pt]
+    \item $dP/dt$ biểu thị điều gì trong ngữ cảnh này?
+    \item Hãy giải thích ý nghĩa của phát biểu
+    \[
+      \left.\frac{dP}{dt}\right|_{t=2} = 3.5
+    \]
+  \end{enumerate}
+
+  \vspace{2mm}
+  % Bài 40
+  \textbf{40.}\enspace Giả sử $N$ là số người ở Hoa Kỳ di chuyển bằng ô tô sang một tiểu bang khác để đi nghỉ trong một năm khi giá xăng trung bình là $p$ đô la/gallon. Bạn dự đoán $dN/dp$ là số dương hay số âm? Hãy giải thích.
+
+  \vspace{3.5mm}
+  % Nhóm 41-44
+  \textbf{\textsf{\color{stewartcyan}41--44}}\enspace Đồ thị của hàm số $f$ được cho như hình vẽ. Hãy chỉ ra, kèm theo lý do, các giá trị mà tại đó $f$ \textit{không} khả vi.
+  \par\vspace{2.5mm}
+
+  % Bài 41 và Bài 42
+  \noindent
+  \begin{minipage}[t]{0.48\linewidth}
+    \textbf{41.}\par\vspace{1mm}
+    \centering
+    \includegraphics[width=\linewidth]{images/p0199_fig5.png}
+  \end{minipage}\hfill
+  \begin{minipage}[t]{0.48\linewidth}
+    \textbf{42.}\par\vspace{1mm}
+    \centering
+    \includegraphics[width=\linewidth]{images/p0199_fig6.png}
+  \end{minipage}
+
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.485\textwidth}
+
+  % Bài 43 và Bài 44
+  \noindent
+  \begin{minipage}[t]{0.48\linewidth}
+    \textbf{43.}\par\vspace{1mm}
+    \centering
+    \includegraphics[width=\linewidth]{images/p0199_fig1.png}
+  \end{minipage}\hfill
+  \begin{minipage}[t]{0.48\linewidth}
+    \textbf{44.}\par\vspace{1mm}
+    \centering
+    \includegraphics[width=\linewidth]{images/p0199_fig2.png}
+  \end{minipage}
+
+  \par\vspace{2.5mm}
+  {\color{stewartrule}\hrule height 0.6pt}
+  \vspace{2.5mm}
+
+  % Bài 45
+  \noindent\casicon\enspace\textbf{45.}\enspace Vẽ đồ thị của hàm số $f(x) = x + \sqrt{|x|}$. Phóng to liên tiếp nhiều lần, trước hết về phía điểm $(-1, 0)$ và sau đó về phía gốc tọa độ. Có gì khác biệt về hành vi của $f$ ở lân cận của hai điểm này? Bạn rút ra kết luận gì về tính khả vi của $f$?
+
+  \vspace{3mm}
+  % Bài 46
+  \noindent\casicon\enspace\textbf{46.}\enspace Phóng to về phía các điểm $(1, 0)$, $(0, 1)$ và $(-1, 0)$ trên đồ thị của hàm số $g(x) = (x^2 - 1)^{2/3}$. Bạn nhận thấy điều gì? Hãy giải thích những gì bạn quan sát được dưới góc độ tính khả vi của $g$.
+
+  \vspace{3mm}
+  % Nhóm 47-48
+  \noindent\textbf{\textsf{\color{stewartcyan}47--48}}\enspace Đồ thị của một hàm số $f$ và đạo hàm $f'$ của nó được cho như hình vẽ. Giá trị nào lớn hơn, $f'(-1)$ hay $f''(1)$?
+  \par\vspace{2mm}
+
+  % Bài 47
+  \textbf{47.}\par\vspace{1mm}
+  \centering
+  \includegraphics[width=0.62\linewidth]{images/p0199_fig3.png}
+  \par\vspace{3mm}
+
+  % Bài 48
+  \raggedright
+  \textbf{48.}\par\vspace{1mm}
+  \centering
+  \includegraphics[width=0.62\linewidth]{images/p0199_fig4.png}
+
+  \vspace{2.5mm}
+  {\color{stewartrule}\hrule height 0.6pt}
+  \vspace{2.5mm}
+
+  % Bài 49
+  \raggedright
+  \textbf{49.}\enspace Hình bên cho thấy các đồ thị của $f$, $f'$ và $f''$. Hãy nhận diện từng đường cong và giải thích sự lựa chọn của bạn.
+  \par\vspace{2mm}
+  \centering
+  \includegraphics[width=0.76\linewidth]{images/p0199_fig7.png}
+
+\end{minipage}
+
+\vfill
+\begin{center}
+  \fontsize{6.5pt}{7.5pt}\selectfont\color{black!70}
+  Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\\
+  Chỉ dành cho mục đích giáo dục và học tập cá nhân.
+\end{center}
+
+\end{document}
