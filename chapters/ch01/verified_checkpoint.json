@@ -335,6 +335,12 @@
       "score": 99,
       "notes": "Lỗi nghiêm trọng về gán nhầm ảnh: Hình 19 (tam giác vuông - p0097_fig3.png) bị co nhỏ thành biểu tượng 1.1em, trong khi đồ thị arcsin (p0097_fig4.png) bị đưa nhầm vào Hình 19 và nhân đôi ở Hình 20. Biểu tượng cảnh báo cấm ở lề bị thiếu, độ cao dóng hàng ở cột lề bị lệch lên quá cao so với bản gốc, và hai đồ thị Hình 17 - Hình 18 bị lệch trục hoành.",
       "time": "2026-09-23 02:10:41"
+    },
+    {
+      "page_num": 98,
+      "score": 99,
+      "notes": "Toàn bộ nội dung trang bị đẩy sang trang 2 do chiều cao của 2 minipage vượt quá textheight (khoảng cách vspace giữa các hình lề quá lớn 1.8cm, môi trường flushleft và display math trong tcolorbox làm nở chiều cao), khiến trang 1 hoàn toàn trắng trơn. Đã khắc phục triệt để bằng cách dùng \\enlargethispage{3cm}, chuẩn hóa khoảng cách giữa các hình lề, tối ưu độ đệm tcolorbox và dóng hàng chính xác theo bản gốc.",
+      "time": "2026-09-23 02:12:10"
     }
   ]
 }
