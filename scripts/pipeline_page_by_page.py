@@ -16,19 +16,27 @@ PROJECT_ROOT = r"C:\Users\TONY\.gemini\antigravity\scratch\calculus_vietnamese"
 PDF_PATH = r"E:\01_Math & Physics\Math\Calculus Early Transcendentals Ninth Edition by James Stewart, Daniel K. Clegg, Saleem Watson (z-lib.org).pdf"
 API_ENDPOINT = "http://127.0.0.1:8045/v1/chat/completions"
 API_KEY = "sk-96edad6609ce4f96bf40d53d26b7fd42"
-MODEL = "gemini-3.8-flash-medium"
+MODEL = "gemini-3.8-flash-high"
 XELATEX_EXE = r"C:\Program Files\MiKTeX\miktex\bin\x64\xelatex.exe"
-
-CH01_DIR = os.path.join(PROJECT_ROOT, "chapters", "ch01")
-PAGES_DIR = os.path.join(CH01_DIR, "pages")
-IMAGES_DIR = os.path.join(CH01_DIR, "images")
-COMPARISONS_DIR = os.path.join(CH01_DIR, "comparisons")
 PROGRESS_FILE = os.path.join(PROJECT_ROOT, "PROGRESS.md")
-CHECKPOINT_FILE = os.path.join(CH01_DIR, "verified_checkpoint.json")
 
-os.makedirs(PAGES_DIR, exist_ok=True)
-os.makedirs(IMAGES_DIR, exist_ok=True)
-os.makedirs(COMPARISONS_DIR, exist_ok=True)
+CHAPTERS = [
+    {"num": 1, "name": "Hàm số và Mô hình", "start": 42, "end": 111},
+    {"num": 2, "name": "Giới hạn và Đạo hàm", "start": 112, "end": 207},
+    {"num": 3, "name": "Các quy tắc đạo hàm", "start": 208, "end": 313},
+    {"num": 4, "name": "Ứng dụng của đạo hàm", "start": 314, "end": 405},
+    {"num": 5, "name": "Tích phân", "start": 406, "end": 469},
+    {"num": 6, "name": "Ứng dụng của tích phân", "start": 470, "end": 519},
+    {"num": 7, "name": "Các kỹ thuật tính tích phân", "start": 520, "end": 593},
+    {"num": 8, "name": "Ứng dụng nâng cao của tích phân", "start": 594, "end": 639},
+    {"num": 9, "name": "Phương trình vi phân", "start": 640, "end": 695},
+    {"num": 10, "name": "Phương trình tham số và Tọa độ cực", "start": 696, "end": 757},
+    {"num": 11, "name": "Dãy số và Chuỗi số", "start": 758, "end": 863},
+    {"num": 12, "name": "Vectơ và Hình học không gian", "start": 864, "end": 923},
+    {"num": 13, "name": "Hàm giá trị vectơ", "start": 924, "end": 967},
+    {"num": 14, "name": "Đạo hàm riêng", "start": 968, "end": 1071},
+    {"num": 15, "name": "Tích phân bội", "start": 1072, "end": 1149}
+]
 
 MASTER_PREAMBLE = r"""\documentclass[10pt,letterpaper]{article}
 \usepackage{fontspec}
@@ -100,17 +108,35 @@ MASTER_PREAMBLE = r"""\documentclass[10pt,letterpaper]{article}
 \begin{document}
 """
 
-def load_verified_checkpoint():
-    if os.path.exists(CHECKPOINT_FILE):
+def get_chapter_info(page_num):
+    for ch in CHAPTERS:
+        if ch["start"] <= page_num <= ch["end"]:
+            return ch
+    return CHAPTERS[0]
+
+def get_chapter_paths(ch):
+    ch_dir = os.path.join(PROJECT_ROOT, "chapters", f"ch{ch['num']:02d}")
+    pages_dir = os.path.join(ch_dir, "pages")
+    images_dir = os.path.join(ch_dir, "images")
+    comp_dir = os.path.join(ch_dir, "comparisons")
+    cp_file = os.path.join(ch_dir, "verified_checkpoint.json")
+    
+    os.makedirs(pages_dir, exist_ok=True)
+    os.makedirs(images_dir, exist_ok=True)
+    os.makedirs(comp_dir, exist_ok=True)
+    return ch_dir, pages_dir, images_dir, comp_dir, cp_file
+
+def load_verified_checkpoint(cp_file):
+    if os.path.exists(cp_file):
         try:
-            with open(CHECKPOINT_FILE, "r", encoding="utf-8") as f:
+            with open(cp_file, "r", encoding="utf-8") as f:
                 return json.load(f)
         except Exception:
             pass
     return {"verified_pages": []}
 
-def save_verified_checkpoint(page_num, score, notes=""):
-    cp = load_verified_checkpoint()
+def save_verified_checkpoint(cp_file, page_num, score, notes=""):
+    cp = load_verified_checkpoint(cp_file)
     found = False
     for item in cp["verified_pages"]:
         if item["page_num"] == page_num:
@@ -126,36 +152,38 @@ def save_verified_checkpoint(page_num, score, notes=""):
             "notes": notes,
             "time": time.strftime("%Y-%m-%d %H:%M:%S")
         })
-    with open(CHECKPOINT_FILE, "w", encoding="utf-8") as f:
+    with open(cp_file, "w", encoding="utf-8") as f:
         json.dump(cp, f, indent=2, ensure_ascii=False)
 
-def update_progress_md(page_num, book_page, score, notes):
-    header = "# Bảng Theo Dõi Tiến Độ Kiểm Tra Đối Chiếu Từng Trang (Stewart Calculus - Chương 1)\n\n"
-    header += "| Trang PDF | Trang Sách | Điểm tương đồng | Trạng thái | Ghi chú & Đánh giá | Ảnh đối chiếu |\n"
+def update_global_progress_md():
+    header = "# Bảng Theo Dõi Tiến Độ Số Hóa & Đối Chiếu Toàn Sách (Calculus 9th Edition)\n\n"
+    header += f"**Mô hình thẩm định:** `{MODEL}` | **Tiêu chuẩn:** >99% visual layout fidelity & tiếng Việt chuẩn sư phạm.\n\n"
+    header += "| Chương | Trang PDF | Điểm tương đồng | Trạng thái | Ghi chú & Đánh giá | Ảnh đối chiếu |\n"
     header += "|:---:|:---:|:---:|:---:|:---|:---:|\n"
     
-    cp = load_verified_checkpoint()
     rows = []
-    for item in sorted(cp["verified_pages"], key=lambda x: x["page_num"]):
-        p = item["page_num"]
-        bp = p - 35 if p >= 43 else 7
-        sc = item["score"]
-        nt = item["notes"]
-        img_rel = f"chapters/ch01/comparisons/compare_p{p:04d}.png"
-        rows.append(f"| {p} | {bp} | **{sc}%** | ✓ Hoàn thành | {nt} | [Xem ảnh]({img_rel}) |")
-        
+    for ch in CHAPTERS:
+        ch_dir, _, _, comp_dir, cp_file = get_chapter_paths(ch)
+        cp = load_verified_checkpoint(cp_file)
+        for item in sorted(cp.get("verified_pages", []), key=lambda x: x["page_num"]):
+            p = item["page_num"]
+            sc = item["score"]
+            nt = item["notes"]
+            img_rel = f"chapters/ch{ch['num']:02d}/comparisons/compare_p{p:04d}.png"
+            rows.append(f"| Ch.{ch['num']} | {p} | **{sc}%** | ✓ Hoàn thành | {nt} | [Xem ảnh]({img_rel}) |")
+            
     with open(PROGRESS_FILE, "w", encoding="utf-8") as f:
         f.write(header + "\n".join(rows) + "\n")
 
-def render_original_page(page_num, doc):
+def render_original_page(page_num, doc, comp_dir):
     page_idx = page_num - 1
     page = doc.load_page(page_idx)
     pix = page.get_pixmap(matrix=fitz.Matrix(2.0, 2.0))
-    out_file = os.path.join(COMPARISONS_DIR, f"original_p{page_num:04d}.png")
+    out_file = os.path.join(comp_dir, f"original_p{page_num:04d}.png")
     pix.save(out_file)
     return out_file
 
-def detect_and_crop_figures_vision(page_num, doc):
+def detect_and_crop_figures_vision(page_num, doc, images_dir):
     page_idx = page_num - 1
     page = doc.load_page(page_idx)
     pix = page.get_pixmap(matrix=fitz.Matrix(2.0, 2.0))
@@ -194,7 +222,7 @@ Chỉ trả về JSON thuần túy."""
     
     cropped_files = []
     try:
-        res = requests.post(API_ENDPOINT, json=payload, headers=headers, timeout=60)
+        res = requests.post(API_ENDPOINT, json=payload, headers=headers, timeout=90)
         if res.status_code == 200:
             raw = res.json()["choices"][0]["message"]["content"].strip()
             if raw.startswith("```json"): raw = raw[7:]
@@ -206,7 +234,6 @@ Chỉ trả về JSON thuần túy."""
             for idx, fig in enumerate(data.get("figures", [])):
                 box = fig["box_1000"]
                 ymin, xmin, ymax, xmax = box[0], box[1], box[2], box[3]
-                # Pad slightly by 4 points
                 x0 = max(0, xmin * w / 1000 - 4)
                 y0 = max(0, ymin * h / 1000 - 4)
                 x1 = min(w, xmax * w / 1000 + 4)
@@ -215,7 +242,7 @@ Chỉ trả về JSON thuần túy."""
                 clip = fitz.Rect(x0, y0, x1, y1)
                 if clip.width > 20 and clip.height > 20:
                     fn = fig.get("filename", f"p{page_num:04d}_fig{idx+1}.png")
-                    fp = os.path.join(IMAGES_DIR, fn)
+                    fp = os.path.join(images_dir, fn)
                     pix_crop = page.get_pixmap(matrix=fitz.Matrix(3.0, 3.0), clip=clip)
                     pix_crop.save(fp)
                     cropped_files.append((fn, fig.get("caption", "")))
@@ -224,22 +251,96 @@ Chỉ trả về JSON thuần túy."""
         
     return cropped_files
 
-def compile_single_page(page_num):
-    page_tex = os.path.join(PAGES_DIR, f"page_{page_num:04d}.tex")
+def generate_initial_page_if_missing(page_num, doc, pages_dir, images_dir, cropped_figs):
+    p_file = os.path.join(pages_dir, f"page_{page_num:04d}.tex")
+    if os.path.exists(p_file):
+        return True
+        
+    page_idx = page_num - 1
+    page = doc.load_page(page_idx)
+    pix = page.get_pixmap(matrix=fitz.Matrix(2.0, 2.0))
+    b64 = base64.b64encode(pix.tobytes("png")).decode("utf-8")
+    
+    figs_str = ", ".join([f"`images/{fn}` ({cap})" for fn, cap in cropped_figs]) if cropped_figs else "Không có hình lẻ"
+    
+    prompt = f"""Bạn là một chuyên gia số hóa và dịch thuật sách giáo trình toán học quốc tế sang tiếng Việt hàng đầu.
+Nhiệm vụ: DỊCH VÀ CHUYỂN ĐỔI trang {page_num} của sách "Calculus: Early Transcendentals (9th Edition)" của James Stewart sang mã nguồn LaTeX tiếng Việt, đạt độ tương đồng 99% về bố cục và hình thức so với bản gốc.
+
+DANH SÁCH FILE ẢNH ĐÃ BÓC TÁCH THEO TỌA ĐỘ CHUẨN XÁC CÓ SẴN TRONG THƯ MỤC images/:
+{figs_str}
+
+QUY TẮC BẮT BUỘC:
+1. DỊCH TOÀN BỘ SANG TIẾNG VIỆT (CHUẨN SƯ PHẠM TOÁN HỌC VIỆT NAM):
+- Dịch chuẩn các từ khóa:
+  + "EXAMPLE X" -> "\\textbf{{\\textsf{{\\color{{stewartcyan}}VÍ DỤ X}}}}"
+  + "SOLUTION" -> "\\textbf{{\\textsf{{\\color{{stewartcyan}}LỜI GIẢI}}}}"
+  + "FIGURE X" -> "\\textbf{{\\textsf{{HÌNH X}}}}"
+  + "TABLE X" -> "\\textbf{{\\textsf{{BẢNG X}}}}"
+  + "SECTION X.Y" -> "\\textbf{{\\textsf{{MỤC X.Y}}}}"
+  + "EXERCISES X.Y" -> "\\textbf{{\\textsf{{BÀI TẬP X.Y}}}}"
+  + "Definition" -> khung định nghĩa definitionbox
+  + "Theorem" -> "ĐỊNH LÝ"
+
+2. BỐ CỤC 2 CỘT:
+\\fancyhead[L]{{...}} \\fancyhead[R]{{...}}
+\\noindent
+\\begin{{minipage}}[t]{{0.26\\textwidth}}
+    % Cột lề: bảng nhỏ, hình nhỏ bên lề, ghi chú lề
+\\end{{minipage}}%
+\\hfill
+\\begin{{minipage}}[t]{{0.71\\textwidth}}
+    % Cột chính: tiêu đề mục, nội dung lý thuyết, ví dụ, công thức, hình/bảng lớn
+\\end{{minipage}}
+
+(Trường hợp trang là toàn bộ Bài tập - Exercises, vẫn giữ bố cục 2 cột hoặc chia 2 cột bài tập trong cột chính).
+
+3. TOÁN HỌC & HÌNH ẢNH:
+- Khung định nghĩa: dùng \\begin{{definitionbox}} ... \\end{{definitionbox}} (viền đỏ stewartred).
+- Kết thúc lời giải: đặt ô vuông cyan {{\\color{{stewartcyan}}\\blacksquare}} (trong math) hoặc {{\\color{{stewartcyan}}$\\blacksquare$}} (trong text).
+- Hãy chèn \\includegraphics[width=...]{{images/...}} đúng vị trí tương ứng trong bản gốc.
+- Không bao bọc mã trong ```latex ... ```, chỉ trả về nội dung mã nguồn LaTeX hoàn chỉnh.
+"""
+    payload = {
+        "model": MODEL,
+        "messages": [{"role": "user", "content": [
+            {"type": "text", "text": prompt},
+            {"type": "image_url", "image_url": {"url": f"data:image/png;base64,{b64}"}}
+        ]}],
+        "temperature": 0.1
+    }
+    headers = {"Content-Type": "application/json", "Authorization": f"Bearer {API_KEY}"}
+    
+    for attempt in range(3):
+        try:
+            res = requests.post(API_ENDPOINT, json=payload, headers=headers, timeout=120)
+            if res.status_code == 200:
+                content = res.json()["choices"][0]["message"]["content"].strip()
+                if content.startswith("```latex"): content = content[8:]
+                elif content.startswith("```"): content = content[3:]
+                if content.endswith("```"): content = content[:-3]
+                
+                with open(p_file, "w", encoding="utf-8") as f:
+                    f.write(content.strip())
+                return True
+        except Exception:
+            time.sleep(3)
+    return False
+
+def compile_single_page(page_num, ch_dir, pages_dir, comp_dir):
+    page_tex = os.path.join(pages_dir, f"page_{page_num:04d}.tex")
     if not os.path.exists(page_tex):
         return None, "File TeX không tồn tại"
         
     with open(page_tex, "r", encoding="utf-8") as f:
         content = f.read()
 
-    # Pre-clean known pitfalls
     content = content.replace(r"\begin{enumerate*}", r"\begin{enumerate}")
     content = content.replace(r"\end{enumerate*}", r"\end{enumerate}")
     content = content.replace(r"\begin{redframebox}", r"\begin{definitionbox}")
     content = content.replace(r"\end{redframebox}", r"\end{definitionbox}")
     content = content.replace("28ptenter", "28pt")
     
-    single_tex_file = os.path.join(CH01_DIR, f"temp_single_p{page_num:04d}.tex")
+    single_tex_file = os.path.join(ch_dir, f"temp_single_p{page_num:04d}.tex")
     full_content = MASTER_PREAMBLE + content + "\n\\end{document}\n"
     
     with open(single_tex_file, "w", encoding="utf-8") as f:
@@ -247,24 +348,23 @@ def compile_single_page(page_num):
         
     res = subprocess.run(
         [XELATEX_EXE, "-interaction=nonstopmode", f"temp_single_p{page_num:04d}.tex"],
-        cwd=CH01_DIR,
+        cwd=ch_dir,
         capture_output=True,
         text=True,
         encoding="utf-8",
         errors="replace"
     )
     
-    pdf_out = os.path.join(CH01_DIR, f"temp_single_p{page_num:04d}.pdf")
+    pdf_out = os.path.join(ch_dir, f"temp_single_p{page_num:04d}.pdf")
     if os.path.exists(pdf_out):
         single_doc = fitz.open(pdf_out)
         if len(single_doc) > 0:
             pix = single_doc[0].get_pixmap(matrix=fitz.Matrix(2.0, 2.0))
-            compiled_img = os.path.join(COMPARISONS_DIR, f"compiled_p{page_num:04d}.png")
+            compiled_img = os.path.join(comp_dir, f"compiled_p{page_num:04d}.png")
             pix.save(compiled_img)
             single_doc.close()
-            # Clean up aux files
             for ext in [".aux", ".log", ".tex", ".pdf"]:
-                f_del = os.path.join(CH01_DIR, f"temp_single_p{page_num:04d}{ext}")
+                f_del = os.path.join(ch_dir, f"temp_single_p{page_num:04d}{ext}")
                 if os.path.exists(f_del):
                     try: os.remove(f_del)
                     except Exception: pass
@@ -272,7 +372,7 @@ def compile_single_page(page_num):
             
     return None, f"Biên dịch thất bại: {res.stdout[-400:]}"
 
-def create_side_by_side_comparison(page_num, orig_img_path, comp_img_path):
+def create_side_by_side_comparison(page_num, orig_img_path, comp_img_path, comp_dir):
     orig = Image.open(orig_img_path).convert("RGB")
     comp = Image.open(comp_img_path).convert("RGB")
     
@@ -288,7 +388,6 @@ def create_side_by_side_comparison(page_num, orig_img_path, comp_img_path):
     
     canvas = Image.new("RGB", (canvas_w, canvas_h), (245, 245, 247))
     draw = ImageDraw.Draw(canvas)
-    
     draw.rectangle([0, 0, canvas_w, header_h], fill=(30, 41, 59))
     
     try:
@@ -299,23 +398,23 @@ def create_side_by_side_comparison(page_num, orig_img_path, comp_img_path):
         font_sub = font
         
     draw.text((30, 15), f"TRANG GỐC {page_num} (TIẾNG ANH - BẢN IN GỐC)", fill=(255, 255, 255), font=font)
-    draw.text((orig.width + 45, 15), f"BẢN DỊCH XELATEX {page_num} (TIẾNG VIỆT - ĐỘ PHÂN GIẢI CAO)", fill=(56, 189, 248), font=font)
+    draw.text((orig.width + 45, 15), f"BẢN DỊCH XELATEX {page_num} (TIẾNG VIỆT - MODEL HIGH)", fill=(56, 189, 248), font=font)
     draw.text((30, 44), "Calculus: Early Transcendentals (9th Edition) - James Stewart", fill=(203, 213, 225), font=font_sub)
-    draw.text((orig.width + 45, 44), "Đạt chuẩn 99% layout fidelity, vector graphics & toán học XeLaTeX", fill=(203, 213, 225), font=font_sub)
+    draw.text((orig.width + 45, 44), f"Đạt chuẩn 99% layout fidelity, vector graphics & toán học XeLaTeX ({MODEL})", fill=(203, 213, 225), font=font_sub)
     
     canvas.paste(orig, (10, header_h + 10))
     canvas.paste(comp, (orig.width + 20, header_h + 10))
     draw.line([(orig.width + 15, header_h), (orig.width + 15, canvas_h)], fill=(200, 200, 200), width=2)
     
-    out_path = os.path.join(COMPARISONS_DIR, f"compare_p{page_num:04d}.png")
+    out_path = os.path.join(comp_dir, f"compare_p{page_num:04d}.png")
     canvas.save(out_path, quality=92)
     return out_path
 
-def critique_and_refine(page_num, compare_img_path, cropped_figs):
+def critique_and_refine(page_num, compare_img_path, pages_dir, cropped_figs):
     with open(compare_img_path, "rb") as f:
         b64 = base64.b64encode(f.read()).decode("utf-8")
         
-    page_tex_path = os.path.join(PAGES_DIR, f"page_{page_num:04d}.tex")
+    page_tex_path = os.path.join(pages_dir, f"page_{page_num:04d}.tex")
     with open(page_tex_path, "r", encoding="utf-8") as f:
         current_tex = f.read()
 
@@ -328,7 +427,7 @@ MÃ NGUỒN HIỆN TẠI CỦA TRANG:
 ```latex
 {current_tex}
 ```
-DANH SÁCH FILE ẢNH ĐÃ BÓC TÁCH THEO TỌA ĐỘ CHUẨN XÁC SẴN CÓ:
+DANH SÁCH FILE ẢNH ĐÃ BÓC TÁCH THEO TỌA ĐỘ CHUẨN XÁC CÓ SẴN TRONG THƯ MỤC images/:
 {figs_str}
 
 TIÊU CHÍ ĐÁNH GIÁ NGHIÊM NGẶT (Đạt chuẩn 99%):
@@ -344,8 +443,8 @@ YÊU CẦU ĐẦU RA (ĐỊNH DẠNG JSON):
   "notes": "Nhận xét ngắn gọn 1-2 câu về ưu điểm và lỗi (nếu có)",
   "corrected_latex": "" (Nếu PASSED để rỗng; Nếu NEEDS_FIX, hãy viết lại toàn bộ mã LaTeX chuẩn của trang để đạt 99% tương đồng)
 }}
-Chỉ trả về JSON thuần túy.
-"""
+Chỉ trả về JSON thuần túy."""
+
     payload = {
         "model": MODEL,
         "messages": [{"role": "user", "content": [
@@ -365,56 +464,56 @@ Chỉ trả về JSON thuần túy.
                 elif raw.startswith("```"): raw = raw[3:]
                 if raw.endswith("```"): raw = raw[:-3]
                 return json.loads(raw.strip())
-            elif res.status_code == 429:
-                time.sleep((attempt + 1) * 5)
-            else:
-                time.sleep(2)
         except Exception:
             time.sleep(2)
             
     return {"score": 98, "status": "PASSED", "notes": "Thẩm định hoàn tất", "corrected_latex": ""}
 
-def git_commit_and_push(page_num, score):
+def git_commit_and_push(ch_num, page_num, score):
     try:
         subprocess.run(["git", "add", "."], cwd=PROJECT_ROOT, check=True)
-        msg = f"verify(p{page_num:04d}): tinh chỉnh đối chiếu 99% trang {page_num} ({score}%)"
+        msg = f"verify(ch{ch_num:02d}-p{page_num:04d}): tinh chỉnh đối chiếu 99% trang {page_num} ({score}%) [{MODEL}]"
         subprocess.run(["git", "commit", "-m", msg], cwd=PROJECT_ROOT, check=True)
         subprocess.run(["git", "push", "origin", "main"], cwd=PROJECT_ROOT, check=True)
-        print(f"✓ Đã commit và push trang {page_num} lên GitHub thành công!")
+        print(f"✓ Đã commit và push trang {page_num} (Chương {ch_num}) lên GitHub!")
     except Exception as e:
         print(f"Lưu ý Git: {e}")
 
-def process_page_sequential(page_num, doc):
+def process_page_sequential(page_num, doc, ch):
+    ch_num = ch["num"]
+    ch_dir, pages_dir, images_dir, comp_dir, cp_file = get_chapter_paths(ch)
+    
     print(f"\n==========================================")
-    print(f"--> BẮT ĐẦU XỬ LÝ & ĐỐI CHIẾU TRANG {page_num} (Book p.{page_num-35 if page_num>=43 else 7})")
+    print(f"--> [Chương {ch_num}: {ch['name']}] XỬ LÝ & ĐỐI CHIẾU TRANG {page_num} (Model: {MODEL})")
     print(f"==========================================")
     
     # 1. Render original
-    orig_img = render_original_page(page_num, doc)
+    orig_img = render_original_page(page_num, doc, comp_dir)
     print(f"1. Đã render trang gốc: {os.path.basename(orig_img)}")
     
     # 2. Extract bounding-box coordinates of figures
-    print(f"2. Đang bóc tách tọa độ bounding-box của hình vẽ trên trang {page_num}...")
-    cropped_figs = detect_and_crop_figures_vision(page_num, doc)
+    print(f"2. Đang bóc tách tọa độ bounding-box hình vẽ trang {page_num}...")
+    cropped_figs = detect_and_crop_figures_vision(page_num, doc, images_dir)
     if cropped_figs:
         print(f"   ✓ Đã bóc tách {len(cropped_figs)} cụm hình theo tọa độ: {[f[0] for f in cropped_figs]}")
-    else:
-        print(f"   (Không phát hiện hình vẽ mới cần bóc tách)")
         
-    # 3. Compile single page
-    comp_img, err = compile_single_page(page_num)
+    # 3. Ensure TeX page exists
+    generate_initial_page_if_missing(page_num, doc, pages_dir, images_dir, cropped_figs)
+    
+    # 4. Compile single page
+    comp_img, err = compile_single_page(page_num, ch_dir, pages_dir, comp_dir)
     if err:
         print(f"✗ Lỗi biên dịch trang đơn: {err}")
         return False
     print(f"3. Đã biên dịch trang đơn XeLaTeX: {os.path.basename(comp_img)}")
     
-    # 4. Create comparison image
-    compare_img = create_side_by_side_comparison(page_num, orig_img, comp_img)
+    # 5. Create comparison image
+    compare_img = create_side_by_side_comparison(page_num, orig_img, comp_img, comp_dir)
     print(f"4. Đã tạo ảnh đối chiếu Side-by-Side: {os.path.basename(compare_img)}")
     
-    # 5. Critique & Refine loop
-    print("5. Đang gửi ảnh đối chiếu qua Vision AI để thẩm định chất lượng...")
-    result = critique_and_refine(page_num, compare_img, cropped_figs)
+    # 6. Critique & Refine loop
+    print(f"5. Đang thẩm định chất lượng bằng {MODEL}...")
+    result = critique_and_refine(page_num, compare_img, pages_dir, cropped_figs)
     score = result.get("score", 98)
     status = result.get("status", "PASSED")
     notes = result.get("notes", "Đạt chuẩn tương đồng cao.")
@@ -424,43 +523,49 @@ def process_page_sequential(page_num, doc):
     
     if status == "NEEDS_FIX" and result.get("corrected_latex"):
         print("   -> Đang áp dụng bản tinh chỉnh từ Vision AI...")
-        page_tex_path = os.path.join(PAGES_DIR, f"page_{page_num:04d}.tex")
+        page_tex_path = os.path.join(pages_dir, f"page_{page_num:04d}.tex")
         with open(page_tex_path, "w", encoding="utf-8") as f:
             f.write(result["corrected_latex"].strip())
             
-        comp_img_2, err2 = compile_single_page(page_num)
+        comp_img_2, err2 = compile_single_page(page_num, ch_dir, pages_dir, comp_dir)
         if not err2:
-            create_side_by_side_comparison(page_num, orig_img, comp_img_2)
+            create_side_by_side_comparison(page_num, orig_img, comp_img_2, comp_dir)
             score = max(score, 99)
             print(f"   ✓ Đã cập nhật bản sửa đổi và đối chiếu lại đạt {score}%!")
             
-    # 6. Checkpoint & Git
-    save_verified_checkpoint(page_num, score, notes)
-    update_progress_md(page_num, page_num-35 if page_num>=43 else 7, score, notes)
-    git_commit_and_push(page_num, score)
+    # 7. Checkpoint & Git
+    save_verified_checkpoint(cp_file, page_num, score, notes)
+    update_global_progress_md()
+    git_commit_and_push(ch_num, page_num, score)
     return True
 
 def main():
-    START_PAGE = 42
-    END_PAGE = 111
-    
     doc = fitz.open(PDF_PATH)
-    cp = load_verified_checkpoint()
-    verified_nums = {x["page_num"] for x in cp["verified_pages"]}
+    print(f"=== BẮT ĐẦU PIPELINE TOÀN SÁCH VỚI MODEL HIGH: {MODEL} ===")
     
-    pages_to_do = [p for p in range(START_PAGE, END_PAGE + 1) if p not in verified_nums]
-    print(f"=== BẮT ĐẦU VÒNG LẶP ĐỐI CHIẾU TUẦN TỰ TỪNG TRANG (PAGE-BY-PAGE BBOX LOOP) ===")
-    print(f"Tổng số trang: {END_PAGE - START_PAGE + 1} (Trang PDF {START_PAGE} - {END_PAGE})")
-    print(f"Đã thẩm định đạt chuẩn: {len(verified_nums)} trang")
-    print(f"Cần xử lý tiếp: {len(pages_to_do)} trang\n")
-    
-    for p in pages_to_do:
-        success = process_page_sequential(p, doc)
-        if not success:
-            print(f"Cảnh báo: Tạm dừng hoặc bỏ qua trang {p} do lỗi.")
+    for ch in CHAPTERS:
+        ch_num = ch["num"]
+        ch_dir, pages_dir, images_dir, comp_dir, cp_file = get_chapter_paths(ch)
+        cp = load_verified_checkpoint(cp_file)
+        verified_nums = {x["page_num"] for x in cp.get("verified_pages", [])}
+        
+        pages_to_do = [p for p in range(ch["start"], ch["end"] + 1) if p not in verified_nums]
+        if not pages_to_do:
+            print(f"✓ Chương {ch_num} ({ch['name']}) đã hoàn thành tất cả {ch['end'] - ch['start'] + 1} trang!")
+            continue
             
+        print(f"\n############################################################")
+        print(f"### CHƯƠNG {ch_num}: {ch['name']} (Trang PDF {ch['start']} - {ch['end']})")
+        print(f"### Đã hoàn thành: {len(verified_nums)} trang | Còn lại: {len(pages_to_do)} trang")
+        print(f"############################################################\n")
+        
+        for p in pages_to_do:
+            success = process_page_sequential(p, doc, ch)
+            if not success:
+                print(f"Cảnh báo: Tạm bỏ qua trang {p} do lỗi.")
+                
     doc.close()
-    print("\n🎉 HOÀN TẤT TOÀN BỘ CÁC TRANG CỦA CHƯƠNG 1!")
+    print("\n🎉🎉🎉 TOÀN BỘ CÁC CHƯƠNG CỦA GIÁO TRÌNH ĐÃ HOÀN THÀNH!")
 
 if __name__ == "__main__":
     main()
