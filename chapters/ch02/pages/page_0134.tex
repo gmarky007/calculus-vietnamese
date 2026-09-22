@@ -1,0 +1,69 @@
+\documentclass[10pt]{article}
+\usepackage[paperwidth=8.5in,paperheight=11in,top=0.8in,bottom=0.8in,left=0.8in,right=0.8in,headheight=14pt,footskip=0.4in]{geometry}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+
+% Định nghĩa màu sắc chuẩn sách Calculus của James Stewart
+\definecolor{stewartcyan}{RGB}{0, 130, 195}
+
+% Cấu hình Header và Footer dóng chính xác theo cột nội dung chính
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\parbox{0.71\textwidth}{\sffamily\footnotesize\textbf{MỤC 2.3}\quad Tính giới hạn bằng các quy tắc giới hạn\hfill\textbf{\normalsize 99}}}
+\renewcommand{\headrulewidth}{0pt}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.26\textwidth}
+    % Cột lề trái: Để trống theo đúng nguyên bản gốc
+    \vspace{0pt}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.71\textwidth}
+    \vspace{0pt}
+    
+    % VÍ DỤ 5
+    \noindent\textbf{\textsf{\color{stewartcyan}VÍ DỤ 5}}\quad Tính $\lim\limits_{h \to 0} \dfrac{(3 + h)^2 - 9}{h}$.
+
+    \vspace{0.3em}
+    \noindent\textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\quad Nếu ta đặt
+    \[
+    F(h) = \frac{(3 + h)^2 - 9}{h}
+    \]
+    thì, tương tự như trong Ví dụ 3, ta không thể tính $\lim\limits_{h \to 0} F(h)$ bằng cách cho $h = 0$ vì $F(0)$ không xác định. Nhưng nếu ta rút gọn $F(h)$ về mặt đại số, ta nhận thấy rằng
+    \begin{align*}
+    F(h) &= \frac{(9 + 6h + h^2) - 9}{h} = \frac{6h + h^2}{h} \\[6pt]
+    &= \frac{h(6 + h)}{h} = 6 + h
+    \end{align*}
+    (Nhớ lại rằng chúng ta chỉ xét $h \neq 0$ khi cho $h$ dần tiến về 0.) Do đó
+    \begin{equation*}
+    \lim_{h \to 0} \frac{(3 + h)^2 - 9}{h} = \lim_{h \to 0} (6 + h) = 6 \tag*{\color{stewartcyan}\blacksquare}
+    \end{equation*}
+
+    \vspace{1.8em}
+
+    % VÍ DỤ 6
+    \noindent\textbf{\textsf{\color{stewartcyan}VÍ DỤ 6}}\quad Tìm $\lim\limits_{t \to 0} \dfrac{\sqrt{t^2 + 9} - 3}{t^2}$.
+
+    \vspace{0.3em}
+    \noindent\textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\quad Chúng ta không thể áp dụng Quy tắc Thương ngay lập tức vì giới hạn của mẫu số bằng 0. Ở đây, bước biến đổi đại số sơ bộ là nhân với liên hợp để trục căn thức ở tử số:
+    \begin{align*}
+    \lim_{t \to 0} \frac{\sqrt{t^2 + 9} - 3}{t^2} &= \lim_{t \to 0} \frac{\sqrt{t^2 + 9} - 3}{t^2} \cdot \frac{\sqrt{t^2 + 9} + 3}{\sqrt{t^2 + 9} + 3} \\[7pt]
+    &= \lim_{t \to 0} \frac{(t^2 + 9) - 9}{t^2(\sqrt{t^2 + 9} + 3)} \\[7pt]
+    &= \lim_{t \to 0} \frac{t^2}{t^2(\sqrt{t^2 + 9} + 3)} \\[7pt]
+    &= \lim_{t \to 0} \frac{1}{\sqrt{t^2 + 9} + 3} \\[7pt]
+    &= \frac{1}{\sqrt{\lim\limits_{t \to 0}(t^2 + 9)} + 3} \qquad {\color{stewartcyan}\textsf{\fontsize{7.5pt}{9.5pt}\selectfont\begin{tabular}[c]{@{}l@{}}(Ở đây chúng ta sử dụng một số tính chất\\ của giới hạn: 5, 1, 7, 8, 10.)\end{tabular}}} \\[7pt]
+    &= \frac{1}{3 + 3} = \frac{1}{6}
+    \end{align*}
+
+    \vspace{0.4em}
+    \noindent Phép tính này khẳng định lại dự đoán mà chúng ta đã đưa ra trong Ví dụ 2.2.1.\hfill{\color{stewartcyan}$\blacksquare$}
+
+\end{minipage}
+
+\end{document}
