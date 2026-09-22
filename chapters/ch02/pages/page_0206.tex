@@ -1,0 +1,115 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{tcolorbox}
+\usepackage{enumitem}
+
+\geometry{
+    paperwidth=8.5in,
+    paperheight=11in,
+    top=0.48in,
+    bottom=0.4in,
+    left=0.55in,
+    right=0.55in
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\definecolor{stewartpurple}{RGB}{88, 38, 134}
+\definecolor{stewartcyan}{RGB}{0, 136, 175}
+\definecolor{pillgray}{RGB}{236, 237, 241}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+
+\begin{document}
+
+% --- PHẦN TRÊN: TIÊU ĐỀ, LÝ THUYẾT & VÍ DỤ ---
+\noindent
+\begin{minipage}[t]{0.24\textwidth}
+    \vspace{0pt}%
+    {\fontsize{23}{27}\selectfont\bfseries\sffamily\color{stewartpurple}Bài toán\\[2pt] Nâng cao}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.73\textwidth}
+    \vspace{0pt}%
+    Trong phần Các nguyên lý giải toán sau Chương 1, chúng ta đã xem xét chiến lược giải toán bằng cách \textit{đưa vào một yếu tố phụ}. Trong ví dụ sau đây, chúng ta sẽ thấy nguyên lý này đôi khi hữu ích như thế nào khi tính giới hạn. Ý tưởng ở đây là đổi biến---đưa vào một biến mới có mối liên hệ với biến ban đầu---sao cho bài toán trở nên đơn giản hơn. Sau này, trong Mục 5.5, chúng ta sẽ áp dụng ý tưởng tổng quát này một cách sâu rộng hơn.
+
+    \vspace{5pt}
+    \textbf{\textsf{\color{stewartcyan}VÍ DỤ}}\quad Tính $\displaystyle \lim_{x \to 0} \frac{\sqrt[3]{1 + cx} - 1}{x}$, trong đó $c$ là một hằng số.
+
+    \vspace{3pt}
+    \textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\quad Theo dạng hiện tại, giới hạn này có vẻ khá thách thức. Trong Mục 2.3, chúng ta đã tính các giới hạn mà cả tử thức và mẫu thức đều tiến về 0. Ở đó, chiến lược của chúng ta là thực hiện một phép biến đổi đại số nào đó để có thể triệt tiêu nhằm rút gọn biểu thức, nhưng ở đây không rõ cần phải dùng phép biến đổi đại số nào.
+
+    Vì vậy, chúng ta đưa vào một biến mới $t$ thông qua phương trình
+    \[
+    t = \sqrt[3]{1 + cx}
+    \]
+    Chúng ta cũng cần biểu diễn $x$ theo $t$, nên ta giải phương trình này:
+    \[
+    t^3 = 1 + cx \qquad\qquad x = \frac{t^3 - 1}{c} \qquad (\text{nếu } c \neq 0)
+    \]
+    Lưu ý rằng $x \to 0$ tương đương với $t \to 1$. Điều này cho phép chúng ta chuyển đổi giới hạn đã cho thành một giới hạn theo biến $t$:
+    \begin{align*}
+    \lim_{x \to 0} \frac{\sqrt[3]{1 + cx} - 1}{x} &= \lim_{t \to 1} \frac{t - 1}{(t^3 - 1)/c} \\[3pt]
+    &= \lim_{t \to 1} \frac{c(t - 1)}{t^3 - 1}
+    \end{align*}
+    Phép đổi biến đã cho phép chúng ta thay thế một giới hạn tương đối phức tạp bằng một giới hạn đơn giản hơn thuộc dạng mà chúng ta đã từng gặp trước đây. Phân tích mẫu thức thành nhân tử theo hằng đẳng thức hiệu hai lập phương, ta được
+    \begin{align*}
+    \lim_{t \to 1} \frac{c(t - 1)}{t^3 - 1} &= \lim_{t \to 1} \frac{c(t - 1)}{(t - 1)(t^2 + t + 1)} \\[3pt]
+    &= \lim_{t \to 1} \frac{c}{t^2 + t + 1} = \frac{c}{3}
+    \end{align*}
+    Khi thực hiện phép đổi biến, chúng ta phải loại trừ trường hợp $c = 0$. Nhưng nếu $c = 0$, hàm số bằng 0 với mọi $x \neq 0$ và do đó giới hạn của nó bằng 0. Do vậy, trong mọi trường hợp, giới hạn luôn là $c/3$.\hfill{\color{stewartcyan}$\blacksquare$}
+
+    \vspace{4pt}
+    Các bài toán sau đây nhằm kiểm tra và thử thách các kỹ năng giải quyết vấn đề của bạn. Một số bài đòi hỏi một lượng thời gian đáng kể để suy nghĩ thấu đáo, vì vậy đừng nản lòng nếu bạn không thể giải được chúng ngay lập tức. Nếu bạn gặp bế tắc, bạn có thể thấy hữu ích khi tham khảo lại phần thảo luận về các nguyên lý giải toán sau Chương 1.
+\end{minipage}
+
+\vspace{12pt}
+
+% --- PHẦN DƯỚI: KHUNG "BÀI TOÁN" & BÀI TẬP (DÓNG HÀNG CHUẨN XÁC) ---
+\noindent
+\begin{minipage}[t]{0.24\textwidth}
+    \vspace{0pt}%
+    \begin{tcolorbox}[
+        colback=pillgray,
+        colframe=pillgray,
+        arc=3.2mm,
+        auto outer arc,
+        boxrule=0pt,
+        left=8pt,
+        right=8pt,
+        top=3.5pt,
+        bottom=3.5pt,
+        boxsep=0pt,
+        width=2.5cm,
+        halign=center
+    ]
+        {\fontsize{10.5}{12}\selectfont\bfseries\sffamily\color{stewartpurple}Bài toán}
+    \end{tcolorbox}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.73\textwidth}
+    \vspace{0pt}%
+    \begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=16pt, itemsep=7pt, topsep=0pt, parsep=0pt]
+        \item Tính $\displaystyle\lim_{x \to 1} \frac{\sqrt[3]{x} - 1}{\sqrt{x} - 1}$.
+        \item Tìm các số $a$ và $b$ sao cho $\displaystyle\lim_{x \to 0} \frac{\sqrt{ax + b} - 2}{x} = 1$.
+        \item Tính $\displaystyle\lim_{x \to 0} \frac{|2x - 1| - |2x + 1|}{x}$.\hfill{\fontsize{11}{13}\selectfont\textbf{\textsf{171}}}
+    \end{enumerate}
+\end{minipage}
+
+\vfill
+\begin{center}
+    {\fontsize{5.5}{6.5}\selectfont\color{black!75}
+    Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\par\vspace{1pt}
+    Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.\par}
+\end{center}
+
+\end{document}
