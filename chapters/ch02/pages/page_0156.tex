@@ -1,0 +1,97 @@
+\documentclass[10pt]{article}
+\usepackage[paperwidth=8.5in, paperheight=11in, left=2.4in, right=0.8in, top=0.85in, bottom=0.85in]{geometry}
+\usepackage{fontspec}
+\usepackage{amsmath,amssymb}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage[skins]{tcolorbox}
+
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+
+\definecolor{stewartblue}{RGB}{0, 120, 180}
+\definecolor{stewartred}{RGB}{204, 30, 30}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\textsf{\textbf{MỤC 2.5}}\quad \textsf{Tính liên tục}\qquad \textbf{\textsf{121}}}
+\renewcommand{\headrulewidth}{0pt}
+
+\fancyfoot[C]{%
+  \fontsize{6pt}{7.5pt}\selectfont\color{gray!80!black}%
+  Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\\\vspace{1pt}%
+  Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.%
+}
+
+\setlength{\parindent}{1.5em}
+\setlength{\parskip}{0pt}
+
+\begin{document}
+
+\noindent
+Về mặt trực quan, Định lý 8 là hợp lý vì nếu $x$ ở gần $a$, thì $g(x)$ ở gần $b$, và vì $f$ liên tục tại $b$, nên nếu $g(x)$ ở gần $b$, thì $f(g(x))$ ở gần $f(b)$. Phần chứng minh của Định lý 8 được trình bày trong Phụ lục F.
+
+\vspace{14pt}
+
+\noindent{\bfseries\textsf{\color{stewartblue}VÍ DỤ 8}}\quad Tính $\displaystyle \lim_{x \to 1} \arcsin\left(\frac{1 - \sqrt{x}}{1 - x}\right)$.
+
+\vspace{8pt}
+
+\noindent{\bfseries\textsf{\color{stewartblue}LỜI GIẢI}}\quad Vì arcsin là một hàm số liên tục, ta có thể áp dụng Định lý 8:
+\begin{align*}
+\lim_{x \to 1} \arcsin\left(\frac{1 - \sqrt{x}}{1 - x}\right) 
+&= \arcsin\left( \lim_{x \to 1} \frac{1 - \sqrt{x}}{1 - x} \right) \\[7pt]
+&= \arcsin\left( \lim_{x \to 1} \frac{1 - \sqrt{x}}{(1 - \sqrt{x})(1 + \sqrt{x})} \right) \\[7pt]
+&= \arcsin\left( \lim_{x \to 1} \frac{1}{1 + \sqrt{x}} \right) \\[7pt]
+&= \arcsin \frac{1}{2} = \frac{\pi}{6} \tag*{\textcolor{stewartblue}{\rule{1.2ex}{1.2ex}}}
+\end{align*}
+
+\indent
+Bây giờ chúng ta hãy áp dụng Định lý 8 trong trường hợp đặc biệt $f(x) = \sqrt[n]{x}$, với $n$ là một số nguyên dương. Khi đó
+\[
+f(g(x)) = \sqrt[n]{g(x)}
+\]
+\noindent\rlap{và}\hfill $\displaystyle f\left(\lim_{x \to a} g(x)\right) = \sqrt[n]{\lim_{x \to a} g(x)}$ \hfill\mbox{}\par
+\vspace{6pt}
+\noindent
+Nếu ta đưa các biểu thức này vào Định lý 8, ta được
+\[
+\lim_{x \to a} \sqrt[n]{g(x)} = \sqrt[n]{\lim_{x \to a} g(x)}
+\]
+và do đó Quy tắc giới hạn 7 hiện đã được chứng minh. (Chúng ta giả thiết rằng các căn thức tồn tại.)
+
+\vspace{14pt}
+
+\begin{tcolorbox}[
+    colback=white,
+    colframe=stewartred,
+    boxrule=0.8pt,
+    sharp corners,
+    boxsep=0pt,
+    top=7pt,
+    bottom=7pt,
+    left=8pt,
+    right=8pt
+]
+{\fboxrule=0.8pt\fboxsep=2.5pt\textcolor{stewartred}{\fbox{\bfseries 9}}}\;\; {\bfseries\color{stewartred}Định lý}\quad 
+Nếu $g$ liên tục tại $a$ và $f$ liên tục tại $g(a)$, thì hàm hợp $f \circ g$ xác định bởi $(f \circ g)(x) = f(g(x))$ liên tục tại $a$.
+\end{tcolorbox}
+
+\vspace{10pt}
+
+\indent
+Định lý này thường được diễn đạt một cách nôm na rằng “hàm liên tục của một hàm liên tục là một hàm liên tục”.
+
+\vspace{12pt}
+
+\noindent{\bfseries\textsf{\color{stewartred}CHỨNG MINH}}\quad Vì $g$ liên tục tại $a$, ta có
+\[
+\lim_{x \to a} g(x) = g(a)
+\]
+Vì $f$ liên tục tại $b = g(a)$, ta có thể áp dụng Định lý 8 để nhận được
+\[
+\lim_{x \to a} f(g(x)) = f(g(a))
+\]
+điều này chính xác là khẳng định rằng hàm số $h(x) = f(g(x))$ liên tục tại $a$; tức là, $f \circ g$ liên tục tại $a$. \hfill \textcolor{stewartred}{\rule{1.2ex}{1.2ex}}
+
+\end{document}

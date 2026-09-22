@@ -263,6 +263,12 @@
       "score": 99,
       "notes": "Phần đầu trang bị lỗi in tràn mã nguồn LaTeX vào nội dung chính; các ghi chú lề trái bị lệch trục tọa độ y so với Định lý 7 và Định lý 8 do dùng khoảng trắng cứng (vspace). Cần tái cấu trúc theo từng hàng (row-by-row) để dóng hàng tuyệt đối chuẩn xác 1:1 với bản gốc.",
       "time": "2026-09-23 04:08:34"
+    },
+    {
+      "page_num": 156,
+      "score": 99,
+      "notes": "Mã nguồn hiện tại chỉ là văn bản từ chối bản quyền tạm thời, hoàn toàn chưa có nội dung trang sách. Cần tái lập toàn bộ trang bằng XeLaTeX với bố cục lề chuẩn, hộp Định lý 9, khối Ví dụ 8 và chứng minh tương đồng 1:1 với bản gốc.",
+      "time": "2026-09-23 04:09:42"
     }
   ]
 }
