@@ -239,6 +239,12 @@
       "score": 99,
       "notes": "Bản dịch hiện tại bị lỗi nghiêm trọng: toàn bộ nội dung trang bị đẩy sang trang sau do chiều cao minipage vượt quá giới hạn (khoảng vspace quá lớn và khoảng cách công thức mặc định quá rộng), khiến trang hiển thị trống rỗng trừ phần tiêu đề. Chú thích Hình 2 ở lề trái cũng bị căn phải sai vị trí.",
       "time": "2026-09-23 01:50:10"
+    },
+    {
+      "page_num": 82,
+      "score": 99,
+      "notes": "Tiêu đề đầu trang nằm sai phía (LO thay vì RO). Hình 4 bị chia thành 3 minipage gọi nhầm file ảnh không tồn tại khiến đồ thị bị lỗi nghiêm trọng; cần dùng trực tiếp images/p0082_fig2.png. Các khoảng cách dọc ở cột lề trái bị lệch lớn khiến HÌNH 4, hộp StewartCalculus và ghi chú Mục 1.3 không dóng đúng hàng với nội dung tương ứng bên phải.",
+      "time": "2026-09-23 01:51:24"
     }
   ]
 }
