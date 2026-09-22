@@ -1,0 +1,105 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{geometry}
+\geometry{
+    a4paper,
+    left=20mm,
+    right=18mm,
+    top=22mm,
+    bottom=22mm,
+    headheight=14pt
+}
+\usepackage{xcolor}
+\definecolor{stewartred}{RGB}{204, 34, 41}
+\definecolor{stewartcyan}{RGB}{0, 136, 170}
+\definecolor{stewartgray}{RGB}{100, 100, 100}
+
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{	extsf{\textbf{118}}\hspace{36mm}\textsf{\textbf{CHƯƠNG 2}}\quad \textsf{Giới hạn và Đạo hàm}}
+\fancyhead[R]{}
+\renewcommand{\headrulewidth}{0pt}
+
+\usepackage{newtxtext,newtxmath}
+
+\newtcolorbox{definitionbox}[1][]{
+    enhanced,
+    colback=white,
+    colframe=stewartred,
+    arc=0mm,
+    boxrule=0.8pt,
+    left=9pt,
+    right=9pt,
+    top=7pt,
+    bottom=7pt,
+    #1
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.22\textwidth}
+    % Cột lề trống tương ứng với bản gốc trang 118
+    \vspace{0pt}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.75\textwidth}
+    \begin{definitionbox}
+        \noindent
+        {\color{stewartred}\setlength{\fboxsep}{2.5pt}\framebox{\textbf{\sffamily\color{stewartred}4}}}\;\; \textbf{\textsf{\color{stewartred}Định lý}}\quad Nếu $f$ và $g$ liên tục tại $a$ và $c$ là một hằng số, thì các hàm số sau đây cũng liên tục tại $a$:
+        \vspace{0.5em}
+
+        \noindent
+        \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lll}
+            \textbf{1.} $f + g$ & \textbf{2.} $f - g$ & \textbf{3.} $cf$ \\[6pt]
+            \textbf{4.} $fg$ & \textbf{5.} $\dfrac{f}{g} \quad \text{nếu } g(a) \neq 0$ &
+        \end{tabular*}
+    \end{definitionbox}
+
+    \vspace{0.7em}
+    \noindent\textbf{\textsf{\color{stewartred}CHỨNG MINH}}\quad Mỗi phần trong năm phần của định lý này đều được suy ra từ Quy tắc giới hạn tương ứng trong Mục 2.3. Chẳng hạn, chúng ta đưa ra chứng minh cho phần 1. Vì $f$ và $g$ liên tục tại $a$, ta có
+    \[
+    \lim_{x \to a} f(x) = f(a) \qquad \text{và} \qquad \lim_{x \to a} g(x) = g(a)
+    \]
+    Do đó
+    \begin{align*}
+    \lim_{x \to a} (f + g)(x) &= \lim_{x \to a} [f(x) + g(x)] \\[2pt]
+    &= \lim_{x \to a} f(x) + \lim_{x \to a} g(x) \qquad {\color{stewartcyan}\text{(theo Quy tắc 1)}} \\[2pt]
+    &= f(a) + g(a) \\[2pt]
+    &= (f + g)(a)
+    \end{align*}
+    Điều này chứng tỏ rằng $f + g$ liên tục tại $a$. \hfill {\color{stewartred}$\blacksquare$}
+
+    \vspace{0.7em}
+    \noindent
+    Từ Định lý 4 và Định nghĩa 3 suy ra rằng nếu $f$ và $g$ liên tục trên một khoảng, thì các hàm số $f + g$, $f - g$, $cf$, $fg$ và (nếu $g$ không bao giờ bằng $0$) $f/g$ cũng liên tục trên khoảng đó. Định lý sau đây đã được phát biểu trong Mục 2.3 dưới tên gọi Tính chất thế trực tiếp.
+
+    \vspace{0.7em}
+    \begin{definitionbox}
+        \noindent
+        {\color{stewartred}\setlength{\fboxsep}{2.5pt}\framebox{\textbf{\sffamily\color{stewartred}5}}}\;\; \textbf{\textsf{\color{stewartred}Định lý}}\quad \textbf{(a)}~Mọi đa thức đều liên tục khắp mọi nơi; nghĩa là nó liên tục trên $\mathbb{R} = (-\infty, \infty)$. \textbf{(b)}~Mọi hàm phân thức hữu tỉ đều liên tục tại bất cứ điểm nào mà nó xác định; nghĩa là nó liên tục trên tập xác định của nó.
+    \end{definitionbox}
+
+    \vspace{0.7em}
+    \noindent\textbf{\textsf{\color{stewartred}CHỨNG MINH}}\quad \textbf{(a)}~Một đa thức là một hàm số có dạng
+    \[
+    P(x) = c_n x^n + c_{n-1} x^{n-1} + \dots + c_1 x + c_0
+    \]
+    trong đó $c_0, c_1, \dots, c_n$ là các hằng số. Ta đã biết rằng
+    \begin{alignat*}{2}
+    &\lim_{x \to a} c_0 = c_0 &\qquad\qquad& {\color{stewartcyan}\text{(theo Quy tắc 8)}} \\[3pt]
+    \text{và}\qquad &\lim_{x \to a} x^m = a^m \qquad m = 1, 2, \dots, n && {\color{stewartcyan}\text{(theo 10)}}
+    \end{alignat*}
+    Phương trình này chính là phát biểu rằng hàm số $f(x) = x^m$ là một hàm số liên tục. Do đó, theo phần 3 của Định lý 4, hàm số $g(x) = cx^m$ liên tục. Vì $P$ là tổng của các hàm số có dạng này và một hàm hằng, nên từ phần 1 của Định lý 4 suy ra rằng $P$ là hàm liên tục.
+\end{minipage}
+
+\end{document}

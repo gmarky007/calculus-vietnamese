@@ -245,6 +245,12 @@
       "score": 99,
       "notes": "Mã nguồn hiện tại chỉ chứa thông báo từ chối dịch thay vì nội dung sách. Đã viết lại toàn bộ mã nguồn XeLaTeX chuẩn xác 1:1 theo bản gốc, bao gồm khung Định nghĩa viền đỏ, ký hiệu toán học, bố cục lề trái với Hình 4 và đề mục kế tiếp.",
       "time": "2026-09-23 04:03:20"
+    },
+    {
+      "page_num": 153,
+      "score": 99,
+      "notes": "Bản dịch bị lỗi hiển thị nghiêm trọng khi toàn bộ danh sách gói lệnh preamble bị in thành văn bản rác ở đầu trang. Bố cục Định lý 5 và phần Chứng minh (a) bị tách dòng sai lệch so với bản gốc (bản gốc viết liền 3 dòng và PROOF (a) cùng hàng).",
+      "time": "2026-09-23 04:04:55"
     }
   ]
 }
