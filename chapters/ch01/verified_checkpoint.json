@@ -233,6 +233,12 @@
       "score": 99,
       "notes": "Mã nguồn hiện tại dùng multicols* không cân bằng khiến các bài tập 62-71 bị dồn hết vào một cột duy nhất, làm toàn bộ phần Mục 1.4 (tiêu đề, phụ lục G, định nghĩa hàm số mũ) bị đẩy sang trang sau. Cần thay bằng hệ 2 minipage song song cho phần bài tập và cấu trúc lề/nội dung chuẩn ở nửa dưới để hiển thị trọn vẹn trên cùng một trang như bản gốc.",
       "time": "2026-09-23 01:48:48"
+    },
+    {
+      "page_num": 81,
+      "score": 99,
+      "notes": "Bản dịch hiện tại bị lỗi nghiêm trọng: toàn bộ nội dung trang bị đẩy sang trang sau do chiều cao minipage vượt quá giới hạn (khoảng vspace quá lớn và khoảng cách công thức mặc định quá rộng), khiến trang hiển thị trống rỗng trừ phần tiêu đề. Chú thích Hình 2 ở lề trái cũng bị căn phải sai vị trí.",
+      "time": "2026-09-23 01:50:10"
     }
   ]
 }
