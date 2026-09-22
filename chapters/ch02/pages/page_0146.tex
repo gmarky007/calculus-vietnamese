@@ -1,0 +1,156 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{fancyhdr}
+\usepackage{newtxtext, newtxmath}
+\usepackage{microtype}
+
+% Thiết lập lề trang sách chuẩn James Stewart Calculus
+\geometry{
+    paperwidth=210mm,
+    paperheight=297mm,
+    left=18mm,
+    right=18mm,
+    top=18mm,
+    bottom=18mm,
+    headheight=15pt,
+    headsep=14pt
+}
+
+% Định nghĩa hệ màu chuẩn của giáo trình James Stewart Calculus
+\definecolor{stewartcyan}{RGB}{0, 136, 204}
+\definecolor{stewartred}{RGB}{204, 34, 41}
+\definecolor{stewartdarkgray}{RGB}{90, 90, 90}
+
+% Định nghĩa nhãn công thức đóng khung đỏ kiểu James Stewart
+\newcommand{\stewartnum}[1]{%
+  \tikz[baseline=(char.base)]{%
+    \node[draw=stewartred, semithick, rounded corners=0.8pt, inner sep=1.8pt, font=\sffamily\bfseries\scriptsize, text=stewartred] (char) {#1};%
+  }%
+}
+
+% Thiết lập Header và Footer: Header chỉ nằm trên cột chính (120mm)
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{%
+  \begin{minipage}[b]{120mm}
+    \textsf{\textbf{MỤC 2.4}}\hspace{1.5em}\textsf{Định nghĩa chính xác của giới hạn}\hfill\textsf{\textbf{111}}%
+  \end{minipage}%
+}
+\fancyfoot[C]{%
+  \fontsize{7pt}{9pt}\selectfont\color{stewartdarkgray}%
+  Bản quyền tiếng Việt © 2024. Chuyển ngữ từ giáo trình \textit{Calculus: Early Transcendentals (9th Edition)} của James Stewart. Mọi quyền được bảo lưu.
+}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4.5pt}
+
+\begin{document}
+
+\noindent
+% =========================================================================
+% CỘT LỀ TRÁI (MARGIN COLUMN): Ghi chú lề, Bất đẳng thức tam giác
+% =========================================================================
+\begin{minipage}[t][\textheight][t]{46mm}
+    % Dóng hàng chính xác theo tọa độ: cách đỉnh trang 490pt để ngang hàng với câu 'Sử dụng Bất đẳng thức Tam giác' và công thức (5)
+    \vspace*{490pt}
+    \begin{flushleft}
+    \fontsize{8.5pt}{12pt}\selectfont
+    \textbf{\textsf{Bất đẳng thức tam giác:}}
+    \vspace{-0.4em}
+    \[
+    |a + b| \leqslant |a| + |b|
+    \]
+    \vspace{-0.6em}
+    \textsf{\color{stewartdarkgray}(Xem Phụ lục A.)}
+    \end{flushleft}
+\end{minipage}%
+\hspace{8mm}%
+% =========================================================================
+% CỘT CHÍNH (MAIN COLUMN): Nội dung bài giảng, Ví dụ, Chứng minh
+% =========================================================================
+\begin{minipage}[t][\textheight][t]{120mm}
+    \noindent\textbf{\textsf{\color{stewartcyan}VÍ DỤ 4}}\quad Sử dụng Định nghĩa 4 để chứng minh rằng $\displaystyle\lim_{x \to 0^+} \sqrt{x} = 0$.
+
+    \vspace{0.1em}
+    \noindent\textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}
+
+    \noindent\textbf{1.} \textit{Dự đoán một giá trị của $\delta$.} Giả sử $\varepsilon$ là một số dương cho trước. Ở đây $a = 0$ và $L = 0$, vì vậy chúng ta muốn tìm một số $\delta$ sao cho
+    \begin{center}
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{r@{\quad}l@{\qquad}l@{\qquad}l}
+    & nếu & $0 < x < \delta$ & thì\qquad $|\sqrt{x} - 0| < \varepsilon$ \\
+    tức là, & nếu & $0 < x < \delta$ & thì\qquad $\sqrt{x} < \varepsilon$
+    \end{tabular}
+    \end{center}
+    \vspace{-0.2em}
+    hoặc bình phương hai vế của bất đẳng thức $\sqrt{x} < \varepsilon$, ta được
+    \begin{center}
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{r@{\quad}l@{\qquad}l@{\qquad}l}
+    \phantom{tức là,} & nếu & $0 < x < \delta$ & thì\qquad $x < \varepsilon^2$
+    \end{tabular}
+    \end{center}
+    Điều này gợi ý rằng chúng ta nên chọn $\delta = \varepsilon^2$.
+
+    \vspace{0.2em}
+    \noindent\textbf{2.} \textit{Chứng minh rằng giá trị $\delta$ này thỏa mãn.} Cho $\varepsilon > 0$, chọn $\delta = \varepsilon^2$. Nếu $0 < x < \delta$, thì
+    \[
+    \sqrt{x} < \sqrt{\delta} = \sqrt{\varepsilon^2} = \varepsilon
+    \]
+    \begin{center}
+    \vspace{-0.3em}
+    \begin{tabular}{r@{\qquad\qquad}l}
+    do đó & $|\sqrt{x} - 0| < \varepsilon$
+    \end{tabular}
+    \end{center}
+    \vspace{-0.2em}
+    Theo Định nghĩa 4, điều này chứng tỏ rằng $\displaystyle\lim_{x \to 0^+} \sqrt{x} = 0$. \hfill {\color{stewartcyan}$\blacksquare$}
+
+    \vspace{1.0em}
+    \noindent{\color{stewartcyan}\rule{1.1ex}{1.1ex}}\hspace{0.5em}\textbf{\textsf{\large Các quy tắc giới hạn}}
+
+    \vspace{0.2em}
+    Như các ví dụ trước đã chỉ ra, việc chứng minh các khẳng định về giới hạn bằng định nghĩa $\varepsilon, \delta$ không phải lúc nào cũng dễ dàng. Thật vậy, nếu chúng ta được cho một hàm số phức tạp hơn chẳng hạn như $f(x) = (6x^2 - 8x + 9)/(2x^2 - 1)$, một phép chứng minh sẽ đòi hỏi sự khéo léo rất lớn. May mắn thay điều này là không cần thiết vì Các Quy tắc Giới hạn được phát biểu trong Mục 2.3 có thể được chứng minh bằng cách sử dụng Định nghĩa 2, và sau đó giới hạn của các hàm số phức tạp có thể được tìm một cách chặt chẽ từ Các Quy tắc Giới hạn mà không cần phải dùng trực tiếp đến định nghĩa.
+
+    \par\hspace*{1.5em}Chẳng hạn, chúng ta chứng minh Quy tắc Tổng: Nếu $\displaystyle\lim_{x \to a} f(x) = L$ và $\displaystyle\lim_{x \to a} g(x) = M$ đều tồn tại, thì
+    \[
+    \lim_{x \to a} [f(x) + g(x)] = L + M
+    \]
+    Các quy tắc còn lại được chứng minh trong phần bài tập và trong Phụ lục F.
+
+    \vspace{0.6em}
+    \noindent\textbf{\textsf{\color{stewartred}CHỨNG MINH QUY TẮC TỔNG}}\quad Cho $\varepsilon > 0$. Chúng ta phải tìm $\delta > 0$ sao cho
+    \begin{center}
+    \text{nếu}\qquad $0 < |x - a| < \delta$ \qquad\text{thì}\qquad $|f(x) + g(x) - (L + M)| < \varepsilon$
+    \end{center}
+    Sử dụng Bất đẳng thức Tam giác, chúng ta có thể viết
+    \begin{align*}
+    \makebox[0pt][r]{\stewartnum{5}\hspace{2.2em}} |f(x) + g(x) - (L + M)| &= |(f(x) - L) + (g(x) - M)| \\
+    &\leqslant |f(x) - L| + |g(x) - M|
+    \end{align*}
+    Chúng ta làm cho $|f(x) + g(x) - (L + M)|$ nhỏ hơn $\varepsilon$ bằng cách làm cho mỗi số hạng $|f(x) - L|$ và $|g(x) - M|$ nhỏ hơn $\varepsilon/2$.
+
+    \par\hspace*{1.5em}Vì $\varepsilon/2 > 0$ và $\displaystyle\lim_{x \to a} f(x) = L$, nên tồn tại một số $\delta_1 > 0$ sao cho
+    \begin{center}
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{l@{\qquad}l@{\qquad}l}
+    nếu & $0 < |x - a| < \delta_1$ & thì\qquad $|f(x) - L| < \dfrac{\varepsilon}{2}$
+    \end{tabular}
+    \end{center}
+
+    Tương tự, vì $\displaystyle\lim_{x \to a} g(x) = M$, nên tồn tại một số $\delta_2 > 0$ sao cho
+    \begin{center}
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{l@{\qquad}l@{\qquad}l}
+    nếu & $0 < |x - a| < \delta_2$ & thì\qquad $|g(x) - M| < \dfrac{\varepsilon}{2}$
+    \end{tabular}
+    \end{center}
+\end{minipage}
+
+\end{document}

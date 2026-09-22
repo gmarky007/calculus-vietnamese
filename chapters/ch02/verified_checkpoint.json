@@ -203,6 +203,12 @@
       "score": 99,
       "notes": "Bản dịch hiện tại bị lỗi in chuỗi khai báo package ra văn bản thô ở đầu trang. Tiêu đề mục 'Giới hạn một phía' trong bản gốc là dạng run-in heading (tiếp nối trên cùng dòng với văn bản), và các đoạn văn cần có thụt lề chuẩn xác.",
       "time": "2026-09-23 03:49:52"
+    },
+    {
+      "page_num": 146,
+      "score": 99,
+      "notes": "Bản dịch hiện tại bị lỗi in lộ toàn bộ mã preamble ra đầu trang, header bị lệch không khớp với cột chính, ghi chú lề 'Bất đẳng thức tam giác' bị dóng sai độ cao (quá cao so với công thức [5]), và các dòng điều kiện 'nếu... thì' trong Ví dụ 4 chưa được căn dóng thẳng hàng như bản gốc.",
+      "time": "2026-09-23 03:52:04"
     }
   ]
 }
