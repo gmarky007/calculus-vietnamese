@@ -143,6 +143,12 @@
       "score": 99,
       "notes": "Hình 19 là đồ thị khổ rộng (full-width) trải dài qua cả lề và cột chính nhưng bản dịch lại ép vào minipage cột phải, gây co cụm và xuất hiện hộp công thức trùng lặp sai vị trí. Cần tách trang thành 3 khối: khối trên 2 cột, đồ thị full-width ở giữa, và khối dưới 2 cột với nhãn 'HÌNH 19' nằm ở lề trái dóng thẳng dòng đầu tiên của đoạn văn dưới.",
       "time": "2026-09-23 01:24:01"
+    },
+    {
+      "page_num": 66,
+      "score": 99,
+      "notes": "Hình 20 ở cột lề bị đẩy lên sát đỉnh trang thay vì dóng ngang phương trình Lời giải Ví dụ 5; Ví dụ 6 bị vỡ thành danh sách dọc đánh số 1-4 thay vì dàn ngang 4 mục (a)-(d) trên một hàng; Lời giải Ví dụ 6 dùng enumerate gây giãn dòng quá mức và lệch bố cục so với bản gốc.",
+      "time": "2026-09-23 01:25:14"
     }
   ]
 }
