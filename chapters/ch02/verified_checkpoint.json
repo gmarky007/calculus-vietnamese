@@ -431,6 +431,12 @@
       "score": 99,
       "notes": "Mã nguồn hiện tại là một thông báo từ chối tạo nội dung có bản quyền, hoàn toàn chưa có cấu trúc trang giáo trình. Cần tái tạo lại toàn bộ bố cục 2 cột bất đối xứng, bảng số liệu lề trái, bảng tỉ số sai phân chính, ghi chú đơn vị và nội dung dịch chuẩn xác theo đúng phong cách Stewart Calculus.",
       "time": "2026-09-23 05:14:25"
+    },
+    {
+      "page_num": 184,
+      "score": 99,
+      "notes": "Bản dịch gặp lỗi cú pháp biên dịch khiến phần lớn nội dung hai cột và đồ thị không hiển thị. Cần tái cấu trúc toàn bộ mã nguồn để khôi phục đầy đủ bố cục và hình vẽ theo nguyên bản.",
+      "time": "2026-09-23 05:16:10"
     }
   ]
 }

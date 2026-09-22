@@ -1,0 +1,163 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T5,T1]{fontenc}
+\usepackage[vietnamese,english]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage[letterpaper, top=1.6cm, bottom=1.5cm, left=1.8cm, right=1.8cm, headheight=14pt]{geometry}
+
+\definecolor{stewartcyan}{RGB}{0, 133, 161}
+
+\newcommand{\graphicon}{%
+  \begin{tikzpicture}[baseline=-0.35ex, scale=0.65]
+    \draw[stewartcyan, line width=0.7pt, rounded corners=0.5pt] (0,0) rectangle (0.34, 0.28);
+    \draw[stewartcyan, line width=0.6pt, domain=0.04:0.30, smooth, samples=16] 
+      plot (\x, {0.14 + 0.08*sin((\x-0.04)/(0.26)*360)});
+  \end{tikzpicture}%
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[R]{\textsf{\textbf{\footnotesize MỤC 2.7}\quad \footnotesize Đạo hàm và Tốc độ Thay đổi\qquad\textbf{\normalsize 149}}}
+
+\begin{document}
+\selectlanguage{vietnamese}
+
+\noindent
+\begin{minipage}{\textwidth}
+  \hbox to \textwidth{%
+    \vbox to 16pt{\color{stewartcyan}\hrule width 1.8cm height 0.65pt\vfill\hrule width 1.8cm height 0.65pt\vfill\hrule width 1.8cm height 0.65pt}\hss
+    \hspace{1.2em}%
+    \textsf{\textbf{\LARGE\color{stewartcyan}2.7}}\hspace{0.5em}%
+    {\color{stewartcyan}\vrule width 1.3pt height 16pt depth 2pt}\hspace{0.6em}%
+    \textsf{\textbf{\LARGE Bài tập}}%
+    \hspace{1.2em}%
+    \leaders\vbox to 16pt{\color{stewartcyan}\hrule height 0.65pt\vfill\hrule height 0.65pt\vfill\hrule height 0.65pt}\hfill
+  }
+\end{minipage}
+
+\vspace{0.8em}
+
+\noindent
+\begin{minipage}[t]{0.485\textwidth}
+  \begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=1.4em, labelsep=0.4em, itemsep=0.6em, topsep=0pt, parsep=0pt]
+    \item Một đường cong có phương trình $y = f(x)$.
+      \begin{enumerate}[label=(\alph*), leftmargin=1.3em, labelsep=0.35em, itemsep=1.5pt, topsep=1.5pt]
+        \item Viết biểu thức cho hệ số góc của cát tuyến đi qua các điểm $P(3, f(3))$ và $Q(x, f(x))$.
+        \item Viết biểu thức cho hệ số góc của tiếp tuyến tại $P$.
+      \end{enumerate}
+
+    \item[\llap{\graphicon\hspace{0.35em}}\textbf{2.}] Vẽ đồ thị đường cong $y = e^x$ trong các hình chữ nhật quan sát $[-1, 1]$ theo $[0, 2]$, $[-0.5, 0.5]$ theo $[0.5, 1.5]$, và $[-0.1, 0.1]$ theo $[0.9, 1.1]$. Em nhận thấy điều gì về đường cong khi phóng to dần về phía điểm $(0, 1)$?
+
+    \item 
+      \begin{enumerate}[label=(\alph*), leftmargin=1.3em, labelsep=0.35em, itemsep=1.5pt, topsep=0pt]
+        \item Tìm hệ số góc của tiếp tuyến với parabol $y = x^2 + 3x$ tại điểm $(-1, -2)$
+          \vspace{1pt}
+          \newline\phantom{}\hspace{0.4em}(i) sử dụng Định nghĩa 1 \quad (ii) sử dụng Phương trình 2
+        \item Tìm phương trình tiếp tuyến ở câu (a).
+        \item[\llap{\graphicon\hspace{0.35em}}(c)] Vẽ đồ thị parabol và tiếp tuyến. Để kiểm tra lại kết quả, hãy phóng to dần về phía điểm $(-1, -2)$ cho đến khi parabol và tiếp tuyến hầu như không thể phân biệt được.
+      \end{enumerate}
+
+    \item 
+      \begin{enumerate}[label=(\alph*), leftmargin=1.3em, labelsep=0.35em, itemsep=1.5pt, topsep=0pt]
+        \item Tìm hệ số góc của tiếp tuyến với đường cong $y = x^3 + 1$ tại điểm $(1, 2)$
+          \vspace{1pt}
+          \newline\phantom{}\hspace{0.4em}(i) sử dụng Định nghĩa 1 \quad (ii) sử dụng Phương trình 2
+        \item Tìm phương trình tiếp tuyến ở câu (a).
+        \item[\llap{\graphicon\hspace{0.35em}}(c)] Vẽ đồ thị đường cong và tiếp tuyến trong các hình chữ nhật quan sát thu nhỏ dần có tâm tại $(1, 2)$ cho đến khi đường cong và đường thẳng dường như trùng khít nhau.
+      \end{enumerate}
+
+    \vspace{0.1em}
+    \noindent\textbf{\color{stewartcyan}5--8}\; \textsf{\textbf{Tìm phương trình của tiếp tuyến với đường cong tại điểm đã cho.}}\par\vspace{0.2em}
+
+    \item[\textbf{5.}] $y = 2x^2 - 5x + 1, \quad (3, 4)$
+    \item[\textbf{6.}] $y = x^2 - 2x^3, \quad (1, -1)$
+    \item[\textbf{7.}] $y = \dfrac{x + 2}{x - 3}, \quad (2, -4)$ \hfill \textbf{8.}\; $y = \sqrt{1 - 3x}, \quad (-1, 2)$
+  \end{enumerate}
+
+  \vspace{0.3em}
+  \noindent{\color{stewartcyan}\rule{\linewidth}{0.65pt}}
+  \vspace{0.3em}
+
+  \begin{enumerate}[resume*]
+    \item 
+      \begin{enumerate}[label=(\alph*), leftmargin=1.3em, labelsep=0.35em, itemsep=1.5pt, topsep=0pt]
+        \item Tìm hệ số góc của tiếp tuyến với đường cong $y = 3 + 4x^2 - 2x^3$ tại điểm có $x = a$.
+        \item Tìm phương trình của các tiếp tuyến tại các điểm $(1, 5)$ và $(2, 3)$.
+        \item[\llap{\graphicon\hspace{0.35em}}(c)] Vẽ đồ thị đường cong và cả hai tiếp tuyến trên cùng một màn hình.
+      \end{enumerate}
+
+    \item 
+      \begin{enumerate}[label=(\alph*), leftmargin=1.3em, labelsep=0.35em, itemsep=1.5pt, topsep=0pt]
+        \item Tìm hệ số góc của tiếp tuyến với đường cong $y = 2\sqrt{x}$ tại điểm có $x = a$.
+        \item Tìm phương trình của các tiếp tuyến tại các điểm $(1, 2)$ và $(9, 6)$.
+        \item[\llap{\graphicon\hspace{0.35em}}(c)] Vẽ đồ thị đường cong và cả hai tiếp tuyến trên cùng một màn hình.
+      \end{enumerate}
+
+    \item Một vận động viên nhảy cầu lao mình từ độ cao $100\text{ ft}$ phía trên mặt nước. Quãng đường vận động viên rơi trong $t$ giây được cho bởi hàm số $d(t) = 16t^2\text{ ft}$.
+      \begin{enumerate}[label=(\alph*), leftmargin=1.3em, labelsep=0.35em, itemsep=1.5pt, topsep=1.5pt]
+        \item Sau bao nhiêu giây thì vận động viên chạm mặt nước?
+        \item Vận động viên chạm mặt nước với vận tốc bằng bao nhiêu?
+      \end{enumerate}
+  \end{enumerate}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.485\textwidth}
+  \begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=1.4em, labelsep=0.4em, itemsep=0.6em, topsep=0pt, parsep=0pt, start=12]
+    \item Nếu một hòn đá được ném thẳng đứng lên trên ở Sao Hỏa với vận tốc $10\text{ m/s}$, độ cao của nó (tính bằng mét) sau $t$ giây được cho bởi $H = 10t - 1.86t^2$.
+      \begin{enumerate}[label=(\alph*), leftmargin=1.3em, labelsep=0.35em, itemsep=1.5pt, topsep=1.5pt]
+        \item Tìm vận tốc của hòn đá sau một giây.
+        \item Tìm vận tốc của hòn đá khi $t = a$.
+        \item Khi nào thì hòn đá chạm bề mặt?
+        \item Hòn đá chạm bề mặt với vận tốc bằng bao nhiêu?
+      \end{enumerate}
+
+    \item Độ dịch chuyển (tính bằng mét) của một chất điểm chuyển động trên một đường thẳng được cho bởi phương trình chuyển động $s = 1/t^2$, trong đó $t$ được đo bằng giây. Tìm vận tốc của chất điểm tại các thời điểm $t = a$, $t = 1$, $t = 2$, và $t = 3$.
+
+    \item Độ dịch chuyển (tính bằng feet) của một chất điểm chuyển động trên một đường thẳng được cho bởi $s = \frac{1}{2}t^2 - 6t + 23$, trong đó $t$ được đo bằng giây.
+      \begin{enumerate}[label=(\alph*), leftmargin=1.3em, labelsep=0.35em, itemsep=1.5pt, topsep=1.5pt]
+        \item Tìm vận tốc trung bình trên mỗi khoảng thời gian sau:
+          \vspace{1.5pt}
+          \newline\phantom{}\hspace{0.4em}(i) $[4, 8]$ \qquad (ii) $[6, 8]$ \qquad (iii) $[8, 10]$ \qquad (iv) $[8, 12]$
+        \item Tìm vận tốc tức thời khi $t = 8$.
+        \item Vẽ đồ thị của $s$ theo biến $t$ và vẽ các cát tuyến có hệ số góc là các vận tốc trung bình ở câu (a). Sau đó vẽ tiếp tuyến có hệ số góc là vận tốc tức thời ở câu (b).
+      \end{enumerate}
+
+    \item 
+      \begin{enumerate}[label=(\alph*), leftmargin=1.3em, labelsep=0.35em, itemsep=1.5pt, topsep=0pt]
+        \item Một chất điểm bắt đầu chuyển động sang phải dọc theo một đường thẳng nằm ngang; đồ thị hàm vị trí của nó được cho trong hình vẽ. Khi nào chất điểm chuyển động sang phải? Chuyển động sang trái? Đứng yên?
+        \item Vẽ đồ thị của hàm vận tốc.
+      \end{enumerate}
+      \vspace{0.1em}
+      \begin{center}
+        \includegraphics[width=0.62\linewidth]{images/p0184_fig1.png}
+      \end{center}
+
+    \item Hình bên dưới biểu diễn đồ thị hàm vị trí của hai vận động viên chạy bộ, A và B, cùng thi chạy cự ly 100 mét và về đích hòa nhau.
+      \begin{enumerate}[label=(\alph*), leftmargin=1.3em, labelsep=0.35em, itemsep=1.5pt, topsep=1.5pt]
+        \item Hãy mô tả và so sánh cách chạy của hai vận động viên trong suốt cuộc đua.
+        \item Tại thời điểm nào thì khoảng cách giữa hai vận động viên là lớn nhất?
+        \item Tại thời điểm nào họ có cùng vận tốc?
+      \end{enumerate}
+      \vspace{0.1em}
+      \begin{center}
+        \includegraphics[width=0.62\linewidth]{images/p0184_fig2.png}
+      \end{center}
+  \end{enumerate}
+\end{minipage}
+
+\vfill
+\noindent
+\begin{minipage}{\textwidth}
+  \centering
+  \fontsize{6.5pt}{8pt}\selectfont\color{gray}
+  Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\\[1.5pt]
+  Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+\end{minipage}
+
+\end{document}
