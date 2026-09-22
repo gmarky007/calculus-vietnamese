@@ -275,6 +275,12 @@
       "score": 99,
       "notes": "Bản dịch hiện tại bị lỗi nghiêm trọng khi rò rỉ mã khai báo gói thư viện thành chuỗi văn bản thô ở đầu trang; Hình 8 bị căn giữa thay vì căn lề trái dưới đồ thị con (a); Vị trí dóng hàng dọc của Hình 9 ở lề trái chưa khớp chuẩn xác với đoạn văn đối ứng.",
       "time": "2026-09-23 04:11:29"
+    },
+    {
+      "page_num": 158,
+      "score": 99,
+      "notes": "Bản dịch bị lỗi rò rỉ mã nguồn tiền tố (preamble leak) hiển thị trực tiếp lên đầu trang in. Cột nội dung và tiêu đề trang (header) chưa căn chỉnh chuẩn theo hệ tọa độ x >= 180pt của giáo trình Stewart. Hệ phương trình chứa từ 'và' bị ngắt thành 3 dòng rời rạc thay vì đặt trên cùng một dòng ngang lề như bản gốc; ký hiệu kết thúc ví dụ bị đẩy dạt sang phải.",
+      "time": "2026-09-23 04:13:21"
     }
   ]
 }
