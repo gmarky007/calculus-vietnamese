@@ -155,6 +155,12 @@
       "score": 99,
       "notes": "Bản biên dịch bị lỗi nghiêm trọng khiến toàn bộ phần thân trang trắng tinh và tràn mã nguồn tiền tố ra đầu trang. Cần loại bỏ các vạch kẻ ngang thừa không có trong bản gốc và thiết lập lại hệ thống biểu tượng CAS căn lề chuẩn xác.",
       "time": "2026-09-23 06:51:57"
+    },
+    {
+      "page_num": 234,
+      "score": 99,
+      "notes": "Phát hiện lỗi nghiêm trọng khi mã preamble bị in trực tiếp lên đầu trang ([10pt]article...); nhãn biểu tượng bị hiển thị dạng văn bản thô '[CAS]'; bài 65(c) bị thụt lề sai; bài 68(a)-(b) bị tách dòng không đúng bố cục gốc; tiêu đề Mục 3.4 có thanh dọc thừa không có trong bản gốc.",
+      "time": "2026-09-23 06:54:12"
     }
   ]
 }
