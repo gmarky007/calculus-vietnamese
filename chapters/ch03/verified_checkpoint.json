@@ -113,6 +113,12 @@
       "score": 99,
       "notes": "Trang dịch gặp 2 lỗi nghiêm trọng: (1) Toàn bộ mã khai báo preamble bị in thẳng ra đầu trang thành văn bản thô do lỗi thoát ký tự; (2) Sai cấu trúc bố cục gốc: nửa trên trang (Bài tập 60-66) là bố cục 2 cột đều nhau (khoảng 0.48\\textwidth mỗi cột), chỉ có nửa dưới (bắt đầu Mục 3.3) mới chuyển sang bố cục lề trái/nội dung chính bất đối xứng.",
       "time": "2026-09-23 06:38:32"
+    },
+    {
+      "page_num": 227,
+      "score": 99,
+      "notes": "Bản dịch hiện tại bị lỗi nghiêm trọng khi in lộ toàn bộ mã khai báo gói (preamble text leakage) ở đầu trang ngay dưới header; phương trình (1) thừa dấu nhân chấm (\\cdot) không có ở bản gốc; nhãn 'HÌNH 1' bị đẩy lệch do khối văn bản rác ở trên. Cần sửa triệt để mã nguồn.",
+      "time": "2026-09-23 06:41:15"
     }
   ]
 }

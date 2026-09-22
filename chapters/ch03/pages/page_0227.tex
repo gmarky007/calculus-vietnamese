@@ -1,0 +1,87 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{newtxtext,newtxmath}
+\usepackage[scaled=0.92]{helvet}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{microtype}
+
+\geometry{
+    top=0.75in,
+    bottom=0.85in,
+    left=0.75in,
+    right=0.75in,
+    headheight=14pt,
+    headsep=16pt
+}
+
+\definecolor{stewartcyan}{RGB}{0, 130, 165}
+\definecolor{stewartred}{RGB}{204, 34, 41}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\fontsize{9}{11}\selectfont\textsf{\textbf{192}}\hspace{2.5em}\textsf{\textbf{CHƯƠNG 3}}\hspace{1.5em}\textsf{Các quy tắc đạo hàm}}
+\fancyhead[R]{}
+\renewcommand{\headrulewidth}{0pt}
+
+\newcommand{\stewarttag}[1]{%
+    \begingroup
+    \setlength{\fboxrule}{0.8pt}%
+    \setlength{\fboxsep}{2.5pt}%
+    \fcolorbox{stewartred}{white}{\fontsize{8.5}{9}\selectfont\sffamily\bfseries\color{stewartred}\makebox[1.1ex]{#1}}%
+    \endgroup
+}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.22\textwidth}
+    \vspace{0pt}%
+    \vspace*{215pt}%
+    \textbf{\textsf{HÌNH 1}}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.74\textwidth}
+    \vspace{0pt}%
+    \noindent
+    Bài tập 2.8.16), khi đó có vẻ như đồ thị của $f'$ có thể trùng với đường cong cosin (xem Hình~1).
+
+    \vspace{10pt}
+    \begin{center}
+        \includegraphics[width=\linewidth]{images/p0227_fig1.png}
+    \end{center}
+    \vspace{8pt}
+
+    \noindent
+    Hãy thử xác nhận dự đoán của chúng ta rằng nếu $f(x) = \sin x$ thì $f'(x) = \cos x$. Từ định nghĩa đạo hàm, ta có
+    \begin{align*}
+        f'(x) &= \lim_{h \to 0} \frac{f(x + h) - f(x)}{h} \\[7pt]
+        &= \lim_{h \to 0} \frac{\sin(x + h) - \sin x}{h} \\[7pt]
+        &= \lim_{h \to 0} \frac{\sin x \cos h + \cos x \sin h - \sin x}{h}
+        \quad \begin{tabular}{@{}l@{}}
+            \fontsize{8}{9.5}\selectfont\sffamily\color{stewartcyan}(sử dụng công thức cộng cho\\[-1pt]
+            \fontsize{8}{9.5}\selectfont\sffamily\color{stewartcyan}sin; xem Phụ lục D)
+        \end{tabular} \\[7pt]
+        &= \lim_{h \to 0} \left[ \frac{\sin x \cos h - \sin x}{h} + \frac{\cos x \sin h}{h} \right] \\[7pt]
+        &= \lim_{h \to 0} \left[ \sin x \left( \frac{\cos h - 1}{h} \right) + \cos x \left( \frac{\sin h}{h} \right) \right] \\[7pt]
+        \llap{\stewarttag{1}\hspace{2.2em}} &= \lim_{h \to 0} \sin x \, \lim_{h \to 0} \frac{\cos h - 1}{h} + \lim_{h \to 0} \cos x \, \lim_{h \to 0} \frac{\sin h}{h}
+    \end{align*}
+
+    \vspace{6pt}
+    \noindent
+    Hai trong bốn giới hạn này rất dễ tính. Vì ta xem $x$ là một hằng số khi tính giới hạn khi $h \to 0$, ta có
+    \[
+        \lim_{h \to 0} \sin x = \sin x \qquad\text{và}\qquad \lim_{h \to 0} \cos x = \cos x
+    \]
+
+    \vspace{4pt}
+    \noindent
+    Ở phần sau của mục này, chúng ta sẽ chứng minh rằng
+    \[
+        \lim_{h \to 0} \frac{\sin h}{h} = 1 \qquad\text{và}\qquad \lim_{h \to 0} \frac{\cos h - 1}{h} = 0
+    \]
+\end{minipage}
+
+\end{document}
