@@ -359,6 +359,12 @@
       "score": 99,
       "notes": "Các mục con (a) và (b) ở bài 57-60, 61-62, 69-74 chưa thẳng hàng dọc do dùng hspace tùy ý; biểu tượng CAS [T] và máy tính đồ thị bị lồng khung kép (fbox bọc ngoài tikz); bài 55-56 cần định dạng số đề inline; thuật ngữ 'reflection' nên dịch là 'ảnh đối xứng' thay vì 'hình chiếu đối xứng'.",
       "time": "2026-09-23 02:16:36"
+    },
+    {
+      "page_num": 102,
+      "score": 99,
+      "notes": "Bản dịch bị tràn trang khiến toàn bộ nội dung Câu hỏi Đúng-Sai bị đẩy sang trang sau do khoảng cách dòng quá rộng; ngoài ra các câu con chưa được chia cột ngang như bản gốc.",
+      "time": "2026-09-23 02:17:21"
     }
   ]
 }
