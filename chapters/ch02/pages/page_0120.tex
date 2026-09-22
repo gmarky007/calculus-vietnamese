@@ -1,0 +1,141 @@
+\documentclass[10pt,twoside]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{tikz}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{newtxtext,newtxmath}
+
+\geometry{
+  paperwidth=210mm,
+  paperheight=280mm,
+  left=18mm,
+  right=18mm,
+  top=18mm,
+  bottom=18mm,
+  headheight=14pt,
+  headsep=16pt,
+  footskip=16pt
+}
+
+\definecolor{stewartcyan}{RGB}{0, 130, 185}
+\definecolor{stewartred}{RGB}{204, 30, 30}
+\definecolor{stewarttableheader}{RGB}{220, 235, 246}
+\definecolor{footertext}{RGB}{110, 110, 110}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\small\textsf{\textbf{MỤC 2.2}}\quad Giới hạn của hàm số\qquad\textsf{\textbf{85}}}
+\fancyhead[L]{}
+\renewcommand{\headrulewidth}{0pt}
+
+\fancyfoot[C]{\fontsize{6.5pt}{7.5pt}\selectfont\color{footertext}
+Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\\
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.}
+\renewcommand{\footrulewidth}{0pt}
+
+\newcommand{\cautionicon}{%
+  \tikz[baseline=-0.6ex]{
+    \draw[stewartred, line width=1.1pt, rounded corners=1.5pt] (-5.5pt,-5.5pt) rectangle (5.5pt,5.5pt);
+    \draw[stewartred, line width=1.1pt, line cap=round] (-3.8pt, 3.8pt) -- (3.8pt, -3.8pt);
+  }%
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\begin{document}
+
+% ================= TẦNG 1: PHẦN TRÊN FIGURE 3 =================
+\noindent
+\begin{minipage}[t]{0.26\textwidth}
+  \vspace*{28pt}
+  \fontsize{8.5pt}{11.5pt}\selectfont
+  \textbf{\textsf{www.StewartCalculus.com}}\\[4pt]
+  Để có thêm lời giải thích về lý do tại sao máy tính đôi khi cho các giá trị sai, hãy nhấp vào mục \emph{Lies My Calculator and Computer Told Me} (Những điều dối trá máy tính kể tôi nghe). Cụ thể, xem phần có tên gọi \emph{The Perils of Subtraction} (Mối hiểm họa của phép trừ).
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.71\textwidth}
+  \vspace{0pt}
+  \noindent có nghĩa là đáp số thực sự bằng $0$ thay vì $\frac{1}{6}$ hay không? Không, giá trị của giới hạn là $\frac{1}{6}$, như chúng ta sẽ\\
+  \llap{\cautionicon\hspace{8pt}}chỉ ra trong mục tiếp theo. Vấn đề là {\color{stewartred}máy tính đã cho các giá trị sai} bởi vì $\sqrt{t^2 + 9}$ rất gần với $3$ khi $t$ nhỏ. (Trên thực tế, khi $t$ đủ nhỏ, giá trị của máy tính đối với $\sqrt{t^2 + 9}$ là $3{,}000\dots$ đến số chữ số tối đa mà máy tính có thể lưu trữ.)
+
+  \vspace{8pt}
+  Điều tương tự cũng xảy ra khi chúng ta cố gắng vẽ đồ thị của hàm số
+  \[
+  f(t) = \frac{\sqrt{t^2 + 9} - 3}{t^2}
+  \]
+  ở Ví dụ 1 trên máy tính vẽ đồ thị hoặc máy vi tính. Các phần (a) và (b) của Hình 3 thể hiện các đồ thị khá chính xác của $f$, và nếu lần theo đường cong, chúng ta có thể ước lượng dễ dàng rằng giới hạn xấp xỉ $\frac{1}{6}$. Nhưng nếu chúng ta phóng to quá nhiều, như trong các phần (c) và (d), thì chúng ta sẽ thu được các đồ thị không chính xác, cũng lại do sai số làm tròn trong các phép tính toán.
+\end{minipage}
+
+\vspace{16pt}
+
+% ================= TẦNG 2: HÌNH 3 (FULL WIDTH) =================
+\noindent
+\includegraphics[width=\textwidth]{images/p0120_fig1.png}\\[4pt]
+\textbf{\textsf{HÌNH 3}}
+
+\vspace{16pt}
+
+% ================= TẦNG 3: BẢNG GIÁ TRỊ VÀ VÍ DỤ 2 =================
+\noindent
+\begin{minipage}[t]{0.26\textwidth}
+  \vspace*{14pt}
+  \centering
+  \fontsize{8.5pt}{11pt}\selectfont
+  \setlength{\tabcolsep}{5pt}
+  \renewcommand{\arraystretch}{1.18}
+  \begin{tabular}{|c|c|}
+    \hline
+    \rowcolor{stewarttableheader}
+    $x$ & $\dfrac{\sin x}{x}$ \\[5pt]
+    \hline
+    $\pm 1.0$   & $0.84147098$ \\
+    $\pm 0.5$   & $0.95885108$ \\
+    $\pm 0.4$   & $0.97354586$ \\
+    $\pm 0.3$   & $0.98506736$ \\
+    $\pm 0.2$   & $0.99334665$ \\
+    $\pm 0.1$   & $0.99833417$ \\
+    $\pm 0.05$  & $0.99958339$ \\
+    $\pm 0.01$  & $0.99998333$ \\
+    $\pm 0.005$ & $0.99999583$ \\
+    $\pm 0.001$ & $0.99999983$ \\
+    \hline
+  \end{tabular}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.71\textwidth}
+  \vspace{0pt}
+  \noindent
+  \textbf{\textsf{\color{stewartcyan}VÍ DỤ 2}}\quad Dự đoán giá trị của $\lim\limits_{x\to 0} \dfrac{\sin x}{x}$.
+
+  \vspace{6pt}
+  \noindent
+  \textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\quad Hàm số $f(x) = (\sin x)/x$ không xác định khi $x = 0$. Sử dụng máy tính cầm tay (và lưu ý rằng, nếu $x \in \mathbb{R}$, thì $\sin x$ có nghĩa là sin của góc có số đo radian là $x$), chúng ta lập một bảng các giá trị chính xác đến tám chữ số thập phân. Từ bảng bên trái và đồ thị ở Hình 4, chúng ta dự đoán rằng
+  \[
+  \lim_{x\to 0}\frac{\sin x}{x} = 1
+  \]
+  Dự đoán này trên thực tế là chính xác, như sẽ được chứng minh trong Chương 3 bằng một lập luận hình học.
+
+  \vspace{18pt}
+  \noindent
+  \begin{minipage}[b]{0.18\linewidth}
+    \textbf{\textsf{HÌNH 4}}
+  \end{minipage}%
+  \hfill
+  \begin{minipage}[b]{0.68\linewidth}
+    \centering
+    \includegraphics[width=0.60\linewidth]{images/p0120_fig2.png}
+  \end{minipage}%
+  \hfill
+  \begin{minipage}[b]{0.08\linewidth}
+    \raggedleft
+    {\color{stewartcyan}$\blacksquare$}
+  \end{minipage}
+\end{minipage}
+
+\end{document}
