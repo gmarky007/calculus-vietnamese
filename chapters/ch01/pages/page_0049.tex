@@ -3,19 +3,34 @@
 
 \noindent
 \begin{minipage}[t]{0.26\textwidth}
-    \vspace{1.97cm}
+    \vspace*{4.9cm}
     \raggedleft
     \textbf{\textsf{HÌNH 14}}
     
-    \vspace{5.58cm}
+    \vspace{5.8cm}
     \centering
-    \includegraphics[width=\linewidth]{images/p0049_fig4.png}
+    \begin{tikzpicture}[scale=0.82, baseline=(current bounding box.center)]
+        % Hệ trục tọa độ
+        \draw[-{Stealth[length=4pt]}, line width=0.5pt] (-1.9,0) -- (1.9,0) node[below left, font=\scriptsize] {$x$};
+        \draw[-{Stealth[length=4pt]}, line width=0.5pt] (0,-0.3) -- (0,2.8) node[below left, font=\scriptsize] {$y$};
+        \node[below right, font=\scriptsize] at (0,0) {$0$};
+        % Vạch chia
+        \draw[line width=0.4pt] (-1,0.06) -- (-1,-0.06) node[below, font=\scriptsize] {$-1$};
+        \draw[line width=0.4pt] (1,0.06) -- (1,-0.06) node[below, font=\scriptsize] {$1$};
+        \draw[line width=0.4pt] (0.06,1) -- (-0.06,1) node[left, font=\scriptsize] {$1$};
+        % Nhánh 1: y = 1 - x khi x <= -1
+        \draw[line width=1pt, stewartcyan, domain=-1.6:-1, samples=20] plot (\x, {1 - \x});
+        \fill[stewartcyan] (-1,2) circle (1.8pt);
+        % Nhánh 2: y = x^2 khi x > -1
+        \draw[line width=1pt, stewartcyan, domain=-0.98:1.38, samples=50] plot (\x, {\x*\x});
+        \draw[line width=1pt, stewartcyan, fill=white] (-1,1) circle (1.8pt);
+    \end{tikzpicture}
     
-    \vspace{1mm}
+    \vspace{2mm}
     \raggedright
     \textbf{\textsf{HÌNH 15}}
     
-    \vspace{2.3cm}
+    \vspace{2.2cm}
     \raggedright
     \small
     Để ôn tập kỹ hơn về giá trị tuyệt đối, hãy xem Phụ lục A.
