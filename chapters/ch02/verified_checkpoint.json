@@ -221,6 +221,12 @@
       "score": 99,
       "notes": "Lỗi biên dịch làm rò rỉ mã preamble thành văn bản ở đầu trang; toàn bộ Bài tập 1–9 bị đẩy sang trang 2 do khối minipage quá lớn (để lại trang 1 bị trống nửa dưới). Đã cấu hình lại lề trang, kiểm soát chặt chẽ chiều cao hình ảnh và khoảng cách dòng để khớp 100% trên một trang duy nhất.",
       "time": "2026-09-23 03:56:06"
+    },
+    {
+      "page_num": 149,
+      "score": 99,
+      "notes": "Bản in bị lỗi nghiêm trọng: toàn bộ nội dung bài tập (từ bài 10 đến 44) không hiển thị trên trang 1 do bị tràn sang trang sau; phần thân trang in lỗi chuỗi khai báo gói lệnh; tiêu đề đầu trang bị đặt theo trang lẻ thay vì trang chẵn 114. Cần tái cấu trúc hoàn toàn với số trang 114 và dóng chuẩn bố cục 2 cột.",
+      "time": "2026-09-23 03:58:21"
     }
   ]
 }

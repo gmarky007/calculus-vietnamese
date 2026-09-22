@@ -1,0 +1,174 @@
+\documentclass[10pt,twoside]{article}
+\usepackage[paperwidth=8.5in, paperheight=11in, top=0.55in, bottom=0.55in, left=0.65in, right=0.65in, headheight=13pt, headsep=12pt, footskip=15pt]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T5]{fontenc}
+\usepackage[vietnamese]{babel}
+
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{newtxtext,newtxmath}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+
+% Định nghĩa màu chuẩn giáo trình Stewart Calculus
+\definecolor{stewartcyan}{RGB}{0, 130, 185}
+\definecolor{stewartdarkgray}{RGB}{70, 70, 70}
+
+% Biểu tượng CAS / Máy tính vẽ đồ thị
+\newcommand{\casicon}{%
+  \begin{tikzpicture}[baseline=-0.25ex, scale=0.75]
+    \draw[stewartcyan, line width=0.65pt, rounded corners=0.8pt] (0,0.08) rectangle (0.36,0.36);
+    \draw[stewartcyan, line width=0.65pt] (0.18,0.08) -- (0.18,0.02);
+    \draw[stewartcyan, line width=0.65pt] (0.10,0.02) -- (0.26,0.02);
+    \draw[stewartcyan, line width=0.55pt, smooth] (0.05,0.16) sin (0.18,0.28) cos (0.31,0.16);
+  \end{tikzpicture}%
+}
+
+% Biểu tượng công nghệ [T]
+\newcommand{\ticon}{%
+  \begin{tikzpicture}[baseline=-0.35ex]
+    \node[fill=stewartcyan, text=white, font=\bfseries\sffamily\fontsize{6.5}{6.5}\selectfont, inner sep=1.2pt, rounded corners=0.4pt, minimum size=8.5pt] {T};
+  \end{tikzpicture}%
+}
+
+% Cấu hình Header và Footer theo trang 114 (trang chẵn)
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE]{\textbf{\fontsize{9.5}{11}\selectfont 114}\hspace{2.5em}\textbf{\textsf{\fontsize{9}{11}\selectfont CHƯƠNG 2}}\hspace{1.2em}\textsf{\fontsize{9}{11}\selectfont Giới hạn và Đạo hàm}}
+\fancyhead[RO]{\textsf{\fontsize{9}{11}\selectfont MỤC 2.4}\hspace{1.2em}\textsf{\fontsize{9}{11}\selectfont Định nghĩa chính xác của giới hạn}\hspace{2.5em}\textbf{\fontsize{9.5}{11}\selectfont 114}}
+\renewcommand{\headrulewidth}{0pt}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2pt plus 0.5pt minus 0.5pt}
+
+\begin{document}
+\setcounter{page}{114}
+\enlargethispage{2\baselineskip}
+
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+\raggedright
+
+\casicon\ \textbf{10.} Cho biết $\lim\limits_{x \to \pi} \csc^2 x = \infty$, hãy minh họa Định nghĩa~6 bằng cách tìm các giá trị của $\delta$ tương ứng với (a)~$M = 500$ và (b)~$M = 1000$.
+
+\vspace{2pt}
+\textbf{11.} Một người thợ cơ khí được yêu cầu gia công một đĩa kim loại hình tròn có diện tích $1000\text{ cm}^2$.
+\begin{enumerate}[label=(\alph*), leftmargin=1.5em, topsep=1pt, itemsep=0.5pt, parsep=0pt]
+  \item Bán kính nào sẽ tạo ra một đĩa như vậy?
+  \item Nếu người thợ được phép có sai số dung sai là $\pm 5\text{ cm}^2$ đối với diện tích đĩa, thì người thợ phải khống chế bán kính gần với bán kính lý tưởng ở phần (a) đến mức nào?
+  \item Theo định nghĩa $\varepsilon$, $\delta$ của $\lim\limits_{x \to a} f(x) = L$, thì $x$ là gì? $f(x)$ là gì? $a$ là gì? $L$ là gì? Giá trị $\varepsilon$ nào đã cho? Giá trị tương ứng của $\delta$ là bao nhiêu?
+\end{enumerate}
+
+\vspace{2pt}
+\casicon\ \textbf{12.} Lò nuôi tinh thể được sử dụng trong nghiên cứu để xác định cách tốt nhất sản xuất tinh thể dùng trong linh kiện điện tử. Để tinh thể phát triển thích hợp, nhiệt độ phải được kiểm soát chính xác bằng cách điều chỉnh công suất đầu vào. Giả sử mối quan hệ được cho bởi
+\[ T(w) = 0{,}1w^2 + 2{,}155w + 20 \]
+trong đó $T$ là nhiệt độ tính theo độ Celsius và $w$ là công suất đầu vào tính theo watt.
+\begin{enumerate}[label=(\alph*), leftmargin=1.5em, topsep=1pt, itemsep=0.5pt, parsep=0pt]
+  \item Cần bao nhiêu công suất để duy trì nhiệt độ ở mức $200^\circ\text{C}$?
+  \item Nếu nhiệt độ được phép dao động so với $200^\circ\text{C}$ một khoảng không quá $\pm 1^\circ\text{C}$, thì dải công suất nào được phép đối với công suất đầu vào?
+  \item Theo định nghĩa $\varepsilon$, $\delta$ của $\lim\limits_{x \to a} f(x) = L$, thì $x$ là gì? $f(x)$ là gì? $a$ là gì? $L$ là gì? Giá trị $\varepsilon$ nào đã cho? Giá trị tương ứng của $\delta$ là bao nhiêu?
+\end{enumerate}
+
+\vspace{2pt}
+\textbf{13.} \textbf{(a)} Tìm một số $\delta$ sao cho nếu $|x - 2| < \delta$ thì $|4x - 8| < \varepsilon$, với $\varepsilon = 0{,}1$.\\
+\phantom{\textbf{13.} }\textbf{(b)} Lặp lại phần (a) với $\varepsilon = 0{,}01$.
+
+\vspace{2pt}
+\textbf{14.} Cho biết $\lim\limits_{x \to 2} (5x - 7) = 3$, hãy minh họa Định nghĩa~2 bằng cách tìm các giá trị của $\delta$ tương ứng với $\varepsilon = 0{,}1$, $\varepsilon = 0{,}05$, và $\varepsilon = 0{,}01$.
+
+\vspace{4pt}
+\noindent\textbf{\textsf{\color{stewartcyan}15--18}}\quad Chứng minh khẳng định bằng cách sử dụng định nghĩa $\varepsilon$, $\delta$ của giới hạn và minh họa bằng một sơ đồ giống Hình~9.
+
+\vspace{3pt}
+\noindent
+\begin{tabular}{@{}p{0.48\linewidth}@{\hspace{0.04\linewidth}}p{0.48\linewidth}@{}}
+\textbf{15.} $\lim\limits_{x \to 4} \left(\dfrac{1}{2}x - 1\right) = 1$ & \textbf{16.} $\lim\limits_{x \to 2} (2 - 3x) = -4$ \\[8pt]
+\textbf{17.} $\lim\limits_{x \to -2} (-2x + 1) = 5$ & \textbf{18.} $\lim\limits_{x \to 1} (2x - 5) = -3$
+\end{tabular}
+
+\vspace{4pt}
+\noindent\textbf{\textsf{\color{stewartcyan}19--32}}\quad Chứng minh khẳng định bằng cách sử dụng định nghĩa $\varepsilon$, $\delta$ của giới hạn.
+
+\vspace{3pt}
+\noindent
+\begin{tabular}{@{}p{0.48\linewidth}@{\hspace{0.04\linewidth}}p{0.48\linewidth}@{}}
+\textbf{19.} $\lim\limits_{x \to 9} \left(1 - \dfrac{1}{3}x\right) = -2$ & \textbf{20.} $\lim\limits_{x \to 5} \left(\dfrac{3}{2}x - \dfrac{1}{2}\right) = 7$ \\[9pt]
+\textbf{21.} $\lim\limits_{x \to 4} \dfrac{x^2 - 2x - 8}{x - 4} = 6$ & \textbf{22.} $\lim\limits_{x \to -1{,}5} \dfrac{9 - 4x^2}{3 + 2x} = 6$ \\[11pt]
+\textbf{23.} $\lim\limits_{x \to a} x = a$ & \textbf{24.} $\lim\limits_{x \to a} c = c$ \\[8pt]
+\textbf{25.} $\lim\limits_{x \to 0} x^2 = 0$ & \textbf{26.} $\lim\limits_{x \to 0} x^3 = 0$ \\[8pt]
+\textbf{27.} $\lim\limits_{x \to 0} |x| = 0$ & \textbf{28.} $\lim\limits_{x \to -6^+} \sqrt[8]{6 + x} = 0$
+\end{tabular}
+
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\raggedright
+
+\noindent
+\begin{tabular}{@{}p{0.48\linewidth}@{\hspace{0.04\linewidth}}p{0.48\linewidth}@{}}
+\textbf{29.} $\lim\limits_{x \to 2} (x^2 - 4x + 5) = 1$ & \textbf{30.} $\lim\limits_{x \to 2} (x^2 + 2x - 7) = 1$ \\[8pt]
+\textbf{31.} $\lim\limits_{x \to -2} (x^2 - 1) = 3$ & \textbf{32.} $\lim\limits_{x \to 2} x^3 = 8$
+\end{tabular}
+
+\vspace{4pt}
+\noindent{\color{stewartcyan}\rule{\linewidth}{0.6pt}}
+\vspace{2pt}
+
+\textbf{33.} Kiểm chứng rằng một lựa chọn khả dĩ khác của $\delta$ để chỉ ra $\lim\limits_{x \to 3} x^2 = 9$ trong Ví dụ~3 là $\delta = \min\{2, \varepsilon/8\}$.
+
+\vspace{3pt}
+\textbf{34.} Bằng lập luận hình học, hãy kiểm chứng rằng lựa chọn lớn nhất có thể của $\delta$ để chỉ ra $\lim\limits_{x \to 3} x^2 = 9$ là $\delta = \sqrt{9 + \varepsilon} - 3$.
+
+\vspace{3pt}
+\ticon\ \textbf{35.} \textbf{(a)} Đối với giới hạn $\lim\limits_{x \to 1} (x^3 + x + 1) = 3$, hãy sử dụng đồ thị để tìm một giá trị của $\delta$ tương ứng với $\varepsilon = 0{,}4$.
+\begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=1.5em, topsep=1pt, itemsep=1pt, parsep=0pt, start=2]
+  \item Bằng cách giải phương trình bậc ba $x^3 + x + 1 = 3 + \varepsilon$, hãy tìm giá trị lớn nhất có thể của $\delta$ thỏa mãn với mọi $\varepsilon > 0$ cho trước.
+  \item Thay $\varepsilon = 0{,}4$ vào kết quả của bạn ở phần (b) và so sánh với câu trả lời ở phần (a).
+\end{enumerate}
+
+\vspace{2pt}
+\textbf{36.} Chứng minh rằng $\lim\limits_{x \to 2} \dfrac{1}{x} = \dfrac{1}{2}$.
+
+\vspace{3pt}
+\textbf{37.} Chứng minh rằng $\lim\limits_{x \to a} \sqrt{x} = \sqrt{a}$ nếu $a > 0$.\\
+\phantom{\textbf{37.} }$\left[\textit{Gợi ý: } \text{Sử dụng } |\sqrt{x} - \sqrt{a}| = \dfrac{|x - a|}{\sqrt{x} + \sqrt{a}}.\right]$
+
+\vspace{3pt}
+\textbf{38.} Nếu $H$ là hàm Heaviside được định nghĩa trong Mục~2.2, hãy dùng Định nghĩa~2 để chứng minh rằng $\lim\limits_{t \to 0} H(t)$ không tồn tại. [\textit{Gợi ý:} Sử dụng phép chứng minh phản chứng như sau. Giả sử giới hạn là $L$. Chọn $\varepsilon = \frac{1}{2}$ trong định nghĩa giới hạn và cố gắng đi đến một mâu thuẫn.]
+
+\vspace{3pt}
+\textbf{39.} Nếu hàm số $f$ được xác định bởi
+\[ f(x) = \begin{cases} 0 & \text{nếu } x \text{ là số hữu tỉ} \\ 1 & \text{nếu } x \text{ là số vô tỉ} \end{cases} \]
+hãy chứng minh rằng $\lim\limits_{x \to 0} f(x)$ không tồn tại.
+
+\vspace{2pt}
+\textbf{40.} Bằng cách so sánh các Định nghĩa~2, 3 và 4, hãy chứng minh Định lý~2.3.1:
+\[ \lim_{x \to a} f(x) = L \quad\text{khi và chỉ khi}\quad \lim_{x \to a^-} f(x) = L = \lim_{x \to a^+} f(x) \]
+
+\textbf{41.} Ta phải lấy $x$ gần $-3$ đến mức nào để
+\[ \frac{1}{(x + 3)^4} > 10\,000 \]
+
+\textbf{42.} Dùng Định nghĩa~6, hãy chứng minh rằng $\lim\limits_{x \to -3} \dfrac{1}{(x + 3)^4} = \infty$.
+
+\vspace{2pt}
+\textbf{43.} Chứng minh rằng $\lim\limits_{x \to 0^+} \ln x = -\infty$.
+
+\vspace{2pt}
+\textbf{44.} Giả sử $\lim\limits_{x \to a} f(x) = \infty$ và $\lim\limits_{x \to a} g(x) = c$, trong đó $c$ là một số thực. Chứng minh mỗi khẳng định sau:
+\begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=1.5em, topsep=1pt, itemsep=0.5pt, parsep=0pt]
+  \item $\lim\limits_{x \to a} [f(x) + g(x)] = \infty$
+  \item $\lim\limits_{x \to a} [f(x)g(x)] = \infty \quad\text{nếu } c > 0$
+  \item $\lim\limits_{x \to a} [f(x)g(x)] = -\infty \quad\text{nếu } c < 0$
+\end{enumerate}
+
+\end{minipage}
+
+\vfill
+\begin{center}
+\fontsize{6.5}{8}\selectfont\color{stewartdarkgray}
+Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\\
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+\end{center}
+
+\end{document}
