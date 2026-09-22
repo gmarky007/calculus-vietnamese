@@ -1,0 +1,159 @@
+\documentclass[10pt]{article}
+\usepackage[letterpaper, top=16mm, bottom=14mm, left=15mm, right=15mm]{geometry}
+\usepackage{fontspec}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{array}
+\usepackage{microtype}
+
+\IfFontExistsTF{Times New Roman}{
+  \setmainfont{Times New Roman}
+}{
+  \setmainfont{TeX Gyre Termes}
+}
+\IfFontExistsTF{Arial}{
+  \setsansfont{Arial}
+}{
+  \setsansfont{TeX Gyre Heros}
+}
+
+\definecolor{stewartblue}{RGB}{0, 124, 186}
+\definecolor{tableheader}{RGB}{230, 240, 250}
+\definecolor{tableborder}{RGB}{0, 124, 186}
+
+\pagestyle{empty}
+
+\begin{document}
+
+% Header
+\noindent
+{\small\sffamily\textbf{78}\hspace{2.2cm}\textbf{CHƯƠNG 2}\hspace{0.6cm}Giới hạn và Đạo hàm}\par
+\vspace{12pt}
+
+% Section Header Block
+\noindent
+\begin{minipage}[b]{45mm}
+  \raggedleft
+  {\color{stewartblue}%
+  \rule{36mm}{0.6pt}\\[2.5pt]
+  \rule{36mm}{0.6pt}\\[2.5pt]
+  \rule{36mm}{0.6pt}\\[2.5pt]
+  \rule{36mm}{0.6pt}}\\[2pt]
+  {\fontsize{28}{32}\selectfont\bfseries\sffamily\color{stewartblue}2.1}\hspace{2mm}
+\end{minipage}%
+\hspace{1.5mm}%
+\textcolor{stewartblue}{\rule[-3pt]{1.5pt}{32pt}}%
+\hspace{4mm}%
+\begin{minipage}[b]{133mm}
+  \raggedright
+  {\fontsize{19}{23}\selectfont\bfseries\sffamily Các bài toán tiếp tuyến và vận tốc}\par
+  \vspace{3pt}
+\end{minipage}
+
+\vspace{10pt}
+
+% Main Body: 2 Asymmetric Columns
+\noindent
+\begin{minipage}[t]{45mm}
+  \vspace{0pt}
+  \includegraphics[width=\linewidth]{images/p0113_fig1.png}\par
+  \vspace{2pt}
+  \noindent{\small\bfseries\sffamily HÌNH 1}\par
+  \vspace{14pt}
+  \includegraphics[width=\linewidth]{images/p0113_fig2.png}\par
+  \vspace{2pt}
+  \noindent{\small\bfseries\sffamily HÌNH 2}\par
+  \vspace{16pt}
+  \centering
+  {\small
+  \renewcommand{\arraystretch}{1.12}
+  \setlength{\tabcolsep}{9pt}
+  \arrayrulecolor{tableborder}
+  \begin{tabular}{|c|c|}
+  \hline
+  \rowcolor{tableheader}
+  $x$ & $m_{PQ}$ \\
+  \hline
+  $2$ & $3$ \\
+  $1{,}5$ & $2{,}5$ \\
+  $1{,}1$ & $2{,}1$ \\
+  $1{,}01$ & $2{,}01$ \\
+  $1{,}001$ & $2{,}001$ \\
+  \hline
+  \end{tabular}}\par
+  \vspace{12pt}
+  {\small
+  \renewcommand{\arraystretch}{1.12}
+  \setlength{\tabcolsep}{9pt}
+  \arrayrulecolor{tableborder}
+  \begin{tabular}{|c|c|}
+  \hline
+  \rowcolor{tableheader}
+  $x$ & $m_{PQ}$ \\
+  \hline
+  $0$ & $1$ \\
+  $0{,}5$ & $1{,}5$ \\
+  $0{,}9$ & $1{,}9$ \\
+  $0{,}99$ & $1{,}99$ \\
+  $0{,}999$ & $1{,}999$ \\
+  \hline
+  \end{tabular}}\par
+\end{minipage}%
+\hspace{7mm}%
+\begin{minipage}[t]{133.9mm}
+  \vspace{0pt}
+  \setlength{\parindent}{12pt}
+  \setlength{\parskip}{2.5pt}
+  \setlength{\abovedisplayskip}{5pt}
+  \setlength{\belowdisplayskip}{5pt}
+
+  \noindent Trong mục này, ta sẽ thấy giới hạn xuất hiện như thế nào khi tìm tiếp tuyến của một đường cong hoặc vận tốc của một vật thể.
+
+  \vspace{6pt}
+  \noindent\textcolor{stewartblue}{\rule{1.1ex}{1.1ex}}\hspace{0.5em}{\large\bfseries\sffamily Bài toán tiếp tuyến}\par
+  \vspace{2pt}
+  \noindent Từ \emph{tiếp tuyến} (\emph{tangent}) bắt nguồn từ từ Latin \emph{tangens}, có nghĩa là “tiếp xúc”. Ta có thể hình dung tiếp tuyến của một đường cong là một đường thẳng tiếp xúc với đường cong và có cùng hướng với đường cong tại tiếp điểm. Làm thế nào để định nghĩa ý niệm này một cách chính xác?
+
+  Đối với đường tròn, ta có thể đơn giản theo cách của Euclid và nói rằng tiếp tuyến là một đường thẳng $\ell$ cắt đường tròn tại một và chỉ một điểm, như trong Hình 1(a). Đối với các đường cong phức tạp hơn, định nghĩa này không còn thỏa đáng. Hình 1(b) cho thấy một đường thẳng $\ell$ dường như là tiếp tuyến của đường cong $C$ tại điểm $P$, nhưng nó lại cắt $C$ hai lần.
+
+  Cụ thể hơn, ta hãy xem xét bài toán tìm tiếp tuyến $\ell$ của parabol $y = x^2$ trong ví dụ sau.
+
+  \vspace{6pt}
+  \noindent{\bfseries\sffamily\color{stewartblue}VÍ DỤ 1}\hspace{0.8em}Tìm phương trình tiếp tuyến của parabol $y = x^2$ tại điểm $P(1, 1)$.\par
+  \vspace{3pt}
+  \noindent{\bfseries\sffamily\color{stewartblue}LỜI GIẢI}\hspace{0.8em}Ta sẽ có thể tìm được phương trình của tiếp tuyến $\ell$ ngay khi biết hệ số góc $m$ của nó. Khó khăn ở đây là ta chỉ biết một điểm duy nhất $P$ trên $\ell$, trong khi ta cần hai điểm để tính hệ số góc. Nhưng hãy quan sát rằng ta có thể tính một giá trị xấp xỉ cho $m$ bằng cách chọn một điểm lân cận $Q(x, x^2)$ trên parabol (như trong Hình 2) và tính hệ số góc $m_{PQ}$ của cát tuyến $PQ$. (Một \textbf{cát tuyến} (\emph{secant line}), bắt nguồn từ từ Latin \emph{secans}, có nghĩa là cắt, là một đường thẳng cắt một đường cong tại nhiều hơn một điểm.)
+
+  Ta chọn $x \neq 1$ sao cho $Q \neq P$. Khi đó
+  \[
+  m_{PQ} = \frac{x^2 - 1}{x - 1}
+  \]
+
+  Chẳng hạn, đối với điểm $Q(1{,}5;\; 2{,}25)$, ta có
+  \[
+  m_{PQ} = \frac{2{,}25 - 1}{1{,}5 - 1} = \frac{1{,}25}{0{,}5} = 2{,}5
+  \]
+
+  Các bảng ở cột lề cho thấy các giá trị của $m_{PQ}$ đối với một vài giá trị của $x$ gần 1. Khi $Q$ càng tiến gần $P$, $x$ càng gần 1 và theo như các bảng số liệu, $m_{PQ}$ càng gần 2. Điều này gợi ý rằng hệ số góc của tiếp tuyến $\ell$ phải là $m = 2$.
+
+  Ta nói rằng hệ số góc của tiếp tuyến là \emph{giới hạn} của hệ số góc của các cát tuyến, và biểu diễn điều này bằng ký hiệu
+  \[
+  \lim_{Q \to P} m_{PQ} = m \qquad\text{và}\qquad \lim_{x \to 1} \frac{x^2 - 1}{x - 1} = 2
+  \]
+
+  Giả sử hệ số góc của tiếp tuyến thực sự là 2, ta sử dụng dạng phương trình đường thẳng qua một điểm khi biết hệ số góc [$y - y_1 = m(x - x_1)$, xem Phụ lục B] để viết phương trình tiếp tuyến đi qua $(1, 1)$ như sau:
+  \[
+  y - 1 = 2(x - 1) \qquad\text{hay}\qquad y = 2x - 1 \tag*{$\textcolor{stewartblue}{\blacksquare}$}
+  \]
+\end{minipage}
+
+\vfill
+\begin{center}
+{\fontsize{6.5}{8}\selectfont\color{gray}
+Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\\ 
+Bản quyền thuộc Cengage Learning. Đã đăng ký mọi quyền. Không được sao chép, quét hoặc nhân bản toàn bộ hay một phần.
+}
+\end{center}
+
+\end{document}
