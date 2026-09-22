@@ -329,6 +329,12 @@
       "score": 99,
       "notes": "Bản dịch hiện tại bị lỗi gán sai và lặp ảnh nghiêm trọng: Hình 14 (ảnh dải ngang gồm 3 đồ thị) bị ép méo vào cột lề trái 0.26\\textwidth, Hình 15 và 16 bị đưa nhầm lên Lời giải Ví dụ 12, và Hình 13 bị lặp lại ở cuối trang. Cần tái cấu trúc trang thành bố cục 3 tầng (Tier) chuẩn: tầng trên 2 cột, tầng giữa trải rộng Hình 14 toàn trang, và tầng dưới đưa Hình 15 & 16 về đúng vị trí trong cột nội dung chính.",
       "time": "2026-09-23 02:09:13"
+    },
+    {
+      "page_num": 97,
+      "score": 99,
+      "notes": "Lỗi nghiêm trọng về gán nhầm ảnh: Hình 19 (tam giác vuông - p0097_fig3.png) bị co nhỏ thành biểu tượng 1.1em, trong khi đồ thị arcsin (p0097_fig4.png) bị đưa nhầm vào Hình 19 và nhân đôi ở Hình 20. Biểu tượng cảnh báo cấm ở lề bị thiếu, độ cao dóng hàng ở cột lề bị lệch lên quá cao so với bản gốc, và hai đồ thị Hình 17 - Hình 18 bị lệch trục hoành.",
+      "time": "2026-09-23 02:10:41"
     }
   ]
 }
