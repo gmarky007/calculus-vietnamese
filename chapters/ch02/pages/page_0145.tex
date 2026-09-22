@@ -1,0 +1,109 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{geometry}
+\geometry{
+    top=1.8cm,
+    bottom=2cm,
+    left=1.5cm,
+    right=1.5cm,
+    headheight=14pt,
+    headsep=12pt
+}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{newtxtext,newtxmath}
+
+% Định nghĩa màu chuẩn theo phong cách Stewart Calculus
+\definecolor{stewartcyan}{RGB}{0, 136, 206}
+\definecolor{stewartred}{RGB}{204, 34, 41}
+
+% Khung định nghĩa theo quy tắc
+\newtcolorbox{definitionbox}[1][]{
+    colback=white,
+    colframe=stewartred,
+    boxrule=0.8pt,
+    sharp corners,
+    boxsep=0pt,
+    left=10pt,
+    right=10pt,
+    top=7pt,
+    bottom=7pt,
+    before skip=7pt,
+    after skip=7pt,
+    #1
+}
+
+% Cấu hình Header và Footer
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\fontsize{9}{11}\selectfont \textbf{110}\qquad \textbf{\textsf{CHƯƠNG 2}}\quad \textsf{Giới hạn và Đạo hàm}}
+\fancyhead[R]{}
+\fancyfoot[C]{}
+\renewcommand{\headrulewidth}{0pt}
+
+\setlength{\parindent}{14pt}
+\setlength{\parskip}{2pt}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.26\textwidth}
+    % Cột lề trái: để trống tương ứng với bản gốc trang 110
+    \mbox{}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.71\textwidth}
+    \vspace{-4pt}
+    \noindent Để ý rằng nếu chúng ta có thể tìm được một hằng số dương $C$ sao cho $|x + 3| < C$, thì
+    \[
+    |x + 3||x - 3| < C|x - 3|
+    \]
+    và ta có thể làm cho $C|x - 3| < \varepsilon$ bằng cách chọn $|x - 3| < \varepsilon/C$, do đó ta có thể chọn $\delta = \varepsilon/C$.
+
+    Chúng ta có thể tìm một số $C$ như vậy nếu ta giới hạn $x$ nằm trong một khoảng nào đó có tâm tại $3$. Trên thực tế, vì chúng ta chỉ quan tâm đến các giá trị của $x$ ở gần $3$, nên hoàn toàn hợp lý khi giả định rằng khoảng cách từ $x$ đến $3$ không quá $1$, nghĩa là $|x - 3| < 1$. Khi đó $2 < x < 4$, nên $5 < x + 3 < 7$. Như vậy ta có $|x + 3| < 7$, và do đó $C = 7$ là một lựa chọn phù hợp cho hằng số.
+
+    Nhưng bây giờ có hai điều kiện ràng buộc đối với $|x - 3|$, cụ thể là
+    \[
+    |x - 3| < 1 \qquad \text{và} \qquad |x - 3| < \frac{\varepsilon}{C} = \frac{\varepsilon}{7}
+    \]
+    Để đảm bảo rằng cả hai bất đẳng thức này đều được thỏa mãn, chúng ta chọn $\delta$ là số nhỏ hơn trong hai số $1$ và $\varepsilon/7$. Ký hiệu cho điều này là $\delta = \min\{1, \varepsilon/7\}$.
+
+    \textbf{2.}\, \textit{Chứng minh rằng giá trị $\delta$ này thỏa mãn.}\quad Cho $\varepsilon > 0$, đặt $\delta = \min\{1, \varepsilon/7\}$. Nếu $0 < |x - 3| < \delta$, thì $|x - 3| < 1 \Rightarrow 2 < x < 4 \Rightarrow |x + 3| < 7$ (như ở phần 1). Ta cũng có $|x - 3| < \varepsilon/7$, do đó
+    \[
+    |x^2 - 9| = |x + 3||x - 3| < 7 \cdot \frac{\varepsilon}{7} = \varepsilon
+    \]
+    Điều này chứng tỏ rằng $\lim_{x \to 3} x^2 = 9$. \hfill {\color{stewartcyan}\rule{5pt}{5pt}}
+
+    \vspace{0.8em}
+    \noindent{\color{stewartcyan}\rule[0pt]{6.5pt}{6.5pt}}\hspace{0.5em}\textbf{\textsf{Giới hạn một phía}}\quad Các định nghĩa trực quan về giới hạn một phía đã được đưa ra trong Mục 2.2 có thể được phát biểu lại một cách chính xác như sau.
+
+    \begin{definitionbox}
+        \noindent{\color{stewartred}\setlength{\fboxrule}{0.8pt}\setlength{\fboxsep}{2pt}\fbox{\bfseries\sffamily\color{stewartred}3}}\hspace{0.5em}\textbf{\textsf{\color{stewartred}Định nghĩa chính xác về giới hạn bên trái}}
+        \[
+        \lim_{x \to a^-} f(x) = L
+        \]
+        \noindent nếu với mọi số $\varepsilon > 0$ đều tồn tại một số $\delta > 0$ sao cho
+        \[
+        \text{nếu} \qquad a - \delta < x < a \qquad \text{thì} \qquad |f(x) - L| < \varepsilon
+        \]
+    \end{definitionbox}
+
+    \begin{definitionbox}
+        \noindent{\color{stewartred}\setlength{\fboxrule}{0.8pt}\setlength{\fboxsep}{2pt}\fbox{\bfseries\sffamily\color{stewartred}4}}\hspace{0.5em}\textbf{\textsf{\color{stewartred}Định nghĩa chính xác về giới hạn bên phải}}
+        \[
+        \lim_{x \to a^+} f(x) = L
+        \]
+        \noindent nếu với mọi số $\varepsilon > 0$ đều tồn tại một số $\delta > 0$ sao cho
+        \[
+        \text{nếu} \qquad a < x < a + \delta \qquad \text{thì} \qquad |f(x) - L| < \varepsilon
+        \]
+    \end{definitionbox}
+
+    \vspace{0.3em}
+    Để ý rằng Định nghĩa 3 tương tự như Định nghĩa 2 ngoại trừ việc $x$ bị giới hạn nằm trong nửa \textit{bên trái} $(a - \delta, a)$ của khoảng $(a - \delta, a + \delta)$. Trong Định nghĩa 4, $x$ bị giới hạn nằm trong nửa \textit{bên phải} $(a, a + \delta)$ của khoảng $(a - \delta, a + \delta)$.
+\end{minipage}
+
+\end{document}
