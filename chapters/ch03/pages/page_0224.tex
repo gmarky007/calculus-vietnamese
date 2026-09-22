@@ -1,0 +1,162 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[letterpaper, top=16mm, bottom=16mm, left=18mm, right=18mm]{geometry}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{tikz}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{newtxtext,newtxmath}
+
+\definecolor{stewartcyan}{RGB}{0, 138, 190}
+\definecolor{stewartblue}{RGB}{0, 115, 170}
+\definecolor{stewartred}{RGB}{205, 35, 35}
+\definecolor{stewartgray}{RGB}{110, 110, 110}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[R]{\small\textsf{\textbf{MỤC 3.2}}\quad \textsf{Quy tắc tích và quy tắc thương}\qquad \textbf{\normalsize 189}}
+\fancyfoot[C]{%
+    \fontsize{5.2pt}{6.2pt}\selectfont\color{stewartgray}%
+    Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s).\\
+    Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.%
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\newcommand{\twoex}[4]{%
+    \noindent\parbox[t]{0.48\columnwidth}{\textbf{#1.}\enspace #2}\hfill
+    \parbox[t]{0.50\columnwidth}{\textbf{#3.}\enspace #4}\par\vspace{5.5pt}%
+}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.28\textwidth}
+    \strut
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.70\textwidth}
+    Chúng ta tóm tắt các công thức đạo hàm đã học cho đến nay như sau:
+    \vspace{4pt}
+
+    \begin{tcolorbox}[
+        colframe=stewartred,
+        colback=white,
+        boxrule=0.8pt,
+        arc=0mm,
+        top=5pt, bottom=6pt, left=8pt, right=8pt
+    ]
+        {\bfseries\sffamily\color{stewartred}Bảng các công thức đạo hàm}
+        \vspace{2pt}
+        \begin{center}
+        \renewcommand{\arraystretch}{1.85}
+        \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} lll @{}}
+            $\dfrac{d}{dx}(c) = 0$ & $\dfrac{d}{dx}(x^n) = nx^{n-1}$ & $\dfrac{d}{dx}(e^x) = e^x$ \\[3pt]
+            $(cf)' = cf'$ & $(f + g)' = f' + g'$ & $(f - g)' = f' - g'$ \\[3pt]
+            $(fg)' = fg' + gf'$ & $\left(\dfrac{f}{g}\right)' = \dfrac{gf' - fg'}{g^2}$ & 
+        \end{tabular*}
+        \end{center}
+    \end{tcolorbox}
+\end{minipage}
+
+\vspace{14pt}
+
+\noindent
+\begin{tikzpicture}
+    \node[anchor=west, inner sep=0pt] (title) at (1.4cm, 0) {%
+        {\fontsize{19}{22}\selectfont\bfseries\sffamily\color{stewartcyan}3.2}\hspace{7pt}%
+        {\color{stewartcyan}\rule[-3pt]{1.5pt}{18pt}}\hspace{7pt}%
+        {\fontsize{16}{19}\selectfont\bfseries\sffamily Bài tập}%
+    };
+    \foreach \y in {-3pt, -1pt, 1pt, 3pt} {
+        \draw[stewartcyan, line width=0.6pt] (0, \y) -- ([xshift=-8pt]title.west |- 0, \y);
+    }
+    \foreach \y in {-3pt, -1pt, 1pt, 3pt} {
+        \draw[stewartcyan, line width=0.6pt] ([xshift=8pt]title.east |- 0, \y) -- (\linewidth, \y);
+    }
+\end{tikzpicture}
+
+\vspace{8pt}
+
+\begin{multicols}{2}
+\setlength{\columnsep}{22pt}
+
+\noindent
+\textbf{1.}\enspace Tìm đạo hàm của $f(x) = (1 + 2x^2)(x - x^2)$ bằng hai cách: sử dụng Quy tắc tích và thực hiện phép nhân trước. Các kết quả của bạn có khớp nhau không?
+
+\vspace{5pt}
+\noindent
+\textbf{2.}\enspace Tìm đạo hàm của hàm số
+\[
+F(x) = \frac{x^4 - 5x^3 + \sqrt{x}}{x^2}
+\]
+bằng hai cách: sử dụng Quy tắc thương và rút gọn trước. Hãy chỉ ra rằng các kết quả của bạn là tương đương. Bạn thích phương pháp nào hơn?
+
+\vspace{6pt}
+\noindent
+{\color{stewartcyan}\textbf{\textsf{3–30}}}\quad \textbf{Tính đạo hàm.}
+
+\vspace{5pt}
+\noindent
+\textbf{3.}\enspace $y = (4x^2 + 3)(2x + 5)$ \par\vspace{5.5pt}
+
+\noindent
+\textbf{4.}\enspace $y = (10x^2 + 7x - 2)(2 - x^2)$ \par\vspace{5.5pt}
+
+\twoex{5}{$y = x^3 e^x$}{6}{$y = (e^x + 2)(2e^x - 1)$}
+\twoex{7}{$f(x) = (3x^2 - 5x)e^x$}{8}{$g(x) = (x + 2\sqrt{x})e^x$}
+\twoex{9}{$y = \dfrac{x}{e^x}$}{10}{$y = \dfrac{e^x}{1 - e^x}$}
+\twoex{11}{$g(t) = \dfrac{3 - 2t}{5t + 1}$}{12}{$G(u) = \dfrac{6u^4 - 5u}{u + 1}$}
+\twoex{13}{$f(t) = \dfrac{5t}{t^3 - t - 1}$}{14}{$F(x) = \dfrac{1}{2x^3 - 6x^2 + 5}$}
+\twoex{15}{$y = \dfrac{s - \sqrt{s}}{s^2}$}{16}{$y = \dfrac{\sqrt{x}}{\sqrt{x} + 1}$}
+
+\noindent
+\textbf{17.}\enspace $J(u) = \left(\dfrac{1}{u} + \dfrac{1}{u^2}\right)\left(u + \dfrac{1}{u}\right)$ \par\vspace{5.5pt}
+
+\noindent
+\textbf{18.}\enspace $h(w) = (w^2 + 3w)(w^{-1} - w^{-4})$ \par\vspace{5.5pt}
+
+\noindent
+\textbf{19.}\enspace $H(u) = (u - \sqrt{u})(u + \sqrt{u})$
+
+\columnbreak
+
+\noindent
+\textbf{20.}\enspace $f(z) = (1 - e^z)(z + e^z)$ \par\vspace{5.5pt}
+
+\twoex{21}{$V(t) = (t + 2e^t)\sqrt{t}$}{22}{$W(t) = e^t(1 + te^t)$}
+\twoex{23}{$y = e^p(p + p\sqrt{p})$}{24}{$h(r) = \dfrac{ae^r}{b + e^r}$}
+\twoex{25}{$f(t) = \dfrac{\sqrt[3]{t}}{t - 3}$}{26}{$y = (z^2 + e^z)\sqrt{z}$}
+\twoex{27}{$f(x) = \dfrac{x^2 e^x}{x^2 + e^x}$}{28}{$F(t) = \dfrac{At}{Bt^2 + Ct^3}$}
+\twoex{29}{$f(x) = \dfrac{x}{x + \dfrac{c}{x}}$}{30}{$f(x) = \dfrac{ax + b}{cx + d}$}
+
+\vspace{7pt}
+\noindent
+{\color{stewartcyan}\textbf{\textsf{31–34}}}\quad \textbf{Tìm $f'(x)$ và $f''(x)$.}
+
+\vspace{5pt}
+\twoex{31}{$f(x) = x^2 e^x$}{32}{$f(x) = \sqrt{x}e^x$}
+\twoex{33}{$f(x) = \dfrac{x}{x^2 - 1}$}{34}{$f(x) = \dfrac{x}{1 + \sqrt{x}}$}
+
+\vspace{7pt}
+\noindent
+{\color{stewartcyan}\textbf{\textsf{35–36}}}\quad \textbf{Tìm phương trình tiếp tuyến của đường cong đã cho tại điểm được chỉ ra.}
+
+\vspace{5pt}
+\twoex{35}{$y = \dfrac{x^2}{1 + x},\quad \left(1, \dfrac{1}{2}\right)$}{36}{$y = \dfrac{1 + x}{1 + e^x},\quad \left(0, \dfrac{1}{2}\right)$}
+
+\vspace{7pt}
+\noindent
+{\color{stewartcyan}\textbf{\textsf{37–38}}}\quad \textbf{Tìm các phương trình của tiếp tuyến và pháp tuyến của đường cong đã cho tại điểm được chỉ ra.}
+
+\vspace{5pt}
+\twoex{37}{$y = \dfrac{3x}{1 + 5x^2},\quad \left(1, \dfrac{1}{2}\right)$}{38}{$y = x + xe^x,\quad (0, 0)$}
+
+\end{multicols}
+
+\end{document}
