@@ -161,6 +161,12 @@
       "score": 99,
       "notes": "Toàn bộ khối nội dung bài tập bị tràn chiều cao và đẩy sang trang sau do kích thước minipage quá lớn, đồng thời thiếu file đồ thị vector. Mã sửa đổi tái cấu trúc hai cột cân đối, nhúng trực tiếp đồ thị TikZ chuẩn xác và căn chỉnh vừa vặn trong một trang.",
       "time": "2026-09-23 01:30:52"
+    },
+    {
+      "page_num": 69,
+      "score": 99,
+      "notes": "Nội dung bị tràn chiều cao khiến toàn bộ trang bị đẩy sang trang kế tiếp, để lại khoảng trống trắng dưới tiêu đề. Cần tinh chỉnh cỡ chữ, co giãn khoảng cách các mục và đồ thị để vừa vặn trong một trang duy nhất.",
+      "time": "2026-09-23 01:31:30"
     }
   ]
 }
