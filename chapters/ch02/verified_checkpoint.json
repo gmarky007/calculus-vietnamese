@@ -53,6 +53,12 @@
       "score": 99,
       "notes": "Bản in hiện tại bị lỗi nghiêm trọng khi in lộ toàn bộ mã khai báo gói (preamble) lên đầu trang. Biểu tượng cảnh báo cần chuyển sang hình vuông bo góc viền đỏ có gạch chéo chuẩn phong cách Stewart và dóng đúng đầu dòng 2, bảng giá trị và ghi chú lề cần căn chỉnh độ cao y để khớp chính xác với bản gốc.",
       "time": "2026-09-23 02:53:12"
+    },
+    {
+      "page_num": 121,
+      "score": 99,
+      "notes": "Mã nguồn hiện tại là phản hồi từ chối của AI thay vì nội dung sách. Đã tái cấu trúc toàn diện mã XeLaTeX: thiết lập bố cục 2 cột bất đối xứng chuẩn giáo trình Stewart Calculus, dóng hình HÌNH 5 chính xác ở cột lề trái, tái tạo hai bảng giá trị của Ví dụ 3 và hộp Định nghĩa trực quan 2 về giới hạn một phía chuẩn sư phạm tiếng Việt.",
+      "time": "2026-09-23 02:54:57"
     }
   ]
 }
