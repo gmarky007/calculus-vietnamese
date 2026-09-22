@@ -1,0 +1,93 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{geometry}
+\geometry{
+  paperwidth=8.5in,
+  paperheight=11in,
+  left=2.0in,
+  right=1.0in,
+  top=0.9in,
+  bottom=0.9in
+}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{fancyhdr}
+
+\definecolor{stewartblue}{RGB}{0, 110, 180}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[R]{\small\textsf{\textbf{MỤC 2.4}}\quad \textsf{Định nghĩa chính xác của giới hạn}\quad \textbf{105}}
+
+\begin{document}
+
+\noindent
+\llap{%
+  \raisebox{-0.15em}{%
+    \begin{tikzpicture}[baseline=(current bounding box.center)]
+      \foreach \y in {0, 2.2, 4.4, 6.6, 8.8} {
+        \draw[stewartblue!60, line width=0.6pt] (0, \y pt) -- (40pt, \y pt);
+      }
+    \end{tikzpicture}%
+  }\hspace{8pt}%
+  {\color{stewartblue}\LARGE\bfseries 2.4}\hspace{12pt}%
+}%
+{\LARGE\bfseries Định nghĩa chính xác của giới hạn}\par
+\vspace{14pt}
+
+\noindent
+Định nghĩa trực quan về giới hạn được trình bày trong Mục 2.2 chưa thỏa đáng cho một số mục đích bởi vì những cụm từ như ``$x$ gần 2'' và ``$f(x)$ ngày càng tiến gần đến $L$'' còn mơ hồ. Để có thể chứng minh một cách chặt chẽ rằng
+\[
+\lim_{x \to 0} \left( x^3 + \frac{\cos 5x}{10{,}000} \right) = 0{,}0001 \qquad\text{hoặc}\qquad \lim_{x \to 0} \frac{\sin x}{x} = 1
+\]
+chúng ta phải xây dựng định nghĩa giới hạn thật chính xác.
+
+\vspace{10pt}
+\noindent
+{\color{stewartblue}\blacksquare}\;\textbf{\textsf{Định nghĩa chính xác của giới hạn}}\\[4pt]
+Để gợi mở cho định nghĩa chính xác của giới hạn, hãy xét hàm số
+\[
+f(x) = \begin{cases}
+2x - 1 & \text{nếu } x \neq 3 \\
+6 & \text{nếu } x = 3
+\end{cases}
+\]
+Theo trực giác, rõ ràng là khi $x$ gần 3 nhưng $x \neq 3$, thì $f(x)$ gần 5, và do đó $\lim_{x \to 3} f(x) = 5$.
+
+Để thu được thông tin chi tiết hơn về việc $f(x)$ thay đổi như thế nào khi $x$ gần 3, ta đặt câu hỏi sau:
+\begin{center}
+\textit{Biến $x$ phải gần 3 đến mức nào để $f(x)$ sai khác 5 ít hơn $0{,}1$?}
+\end{center}
+
+\noindent
+Khoảng cách từ $x$ đến 3 là $|x - 3|$ và khoảng cách từ $f(x)$ đến 5 là $|f(x) - 5|$, do đó bài toán của chúng ta là tìm một số $\delta$ (chữ cái Hy Lạp delta) sao cho
+\[
+|f(x) - 5| < 0{,}1 \qquad\text{nếu}\qquad |x - 3| < \delta \quad\text{nhưng } x \neq 3
+\]
+Nếu $|x - 3| > 0$, thì $x \neq 3$, vì vậy một cách diễn đạt tương đương cho bài toán là tìm một số $\delta$ sao cho
+\[
+|f(x) - 5| < 0{,}1 \qquad\text{nếu}\qquad 0 < |x - 3| < \delta
+\]
+Để ý rằng nếu $0 < |x - 3| < (0{,}1)/2 = 0{,}05$, thì
+\[
+|f(x) - 5| = |(2x - 1) - 5| = |2x - 6| = 2|x - 3| < 2(0{,}05) = 0{,}1
+\]
+nghĩa là,
+\[
+|f(x) - 5| < 0{,}1 \qquad\text{nếu}\qquad 0 < |x - 3| < 0{,}05
+\]
+Như vậy, một lời giải cho bài toán được cho bởi $\delta = 0{,}05$; tức là, nếu $x$ nằm trong khoảng cách $0{,}05$ so với 3, thì $f(x)$ sẽ nằm trong khoảng cách $0{,}1$ so với 5.
+
+Nếu thay đổi số $0{,}1$ trong bài toán thành một số nhỏ hơn là $0{,}01$, thì bằng cách áp dụng phương pháp tương tự, ta thấy rằng $f(x)$ sẽ sai khác 5 ít hơn $0{,}01$ với điều kiện $x$ sai khác 3 ít hơn $(0{,}01)/2 = 0{,}005$:
+\[
+|f(x) - 5| < 0{,}01 \qquad\text{nếu}\qquad 0 < |x - 3| < 0{,}005
+\]
+Tương tự,
+\[
+|f(x) - 5| < 0{,}001 \qquad\text{nếu}\qquad 0 < |x - 3| < 0{,}0005
+\]
+
+\end{document}
