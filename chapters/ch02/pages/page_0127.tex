@@ -1,0 +1,180 @@
+\documentclass[10pt]{article}
+\usepackage{fontspec}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage[letterpaper, top=1.3cm, bottom=1.3cm, left=1.4cm, right=1.4cm]{geometry}
+
+\definecolor{stewartcyan}{RGB}{0, 138, 201}
+\definecolor{stewartgray}{RGB}{100, 100, 100}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\fontsize{9}{11}\selectfont\textbf{\textsf{92}}\qquad\textbf{\textsf{CHƯƠNG 2}}\quad\textsf{Giới hạn và Đạo hàm}}
+\fancyhead[R]{}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{13pt}
+
+\setlength{\abovedisplayskip}{2pt}
+\setlength{\belowdisplayskip}{2pt}
+\setlength{\abovedisplayshortskip}{1pt}
+\setlength{\belowdisplayshortskip}{1pt}
+
+\newcommand{\prob}[1]{\par\vspace{4pt}\noindent\hangindent=1.2em\hangafter=1\textbf{#1.}\hspace{0.4em}}
+
+\begin{document}
+
+\noindent
+\begin{tikzpicture}[baseline=(T.base)]
+  \node[inner sep=0pt, outer sep=0pt] (T) {
+    {\fontsize{17}{20}\selectfont
+    \textbf{\textsf{\color{stewartcyan}2.2}}\;
+    \textbf{\textsf{\color{gray!50}\vline width 0.8pt height 15pt depth 2pt}}
+    \textbf{\textsf{Bài tập}}}
+  };
+  \draw[stewartcyan, line width=1.1pt] ([xshift=-4pt, yshift=5.5pt]T.west) -- ++(-1.5cm, 0);
+  \draw[stewartcyan, line width=0.5pt] ([xshift=-4pt, yshift=2pt]T.west) -- ++(-1.5cm, 0);
+  \draw[stewartcyan, line width=1.1pt] ([xshift=6pt, yshift=5.5pt]T.east) -- ([yshift=5.5pt]T.east -| {(\linewidth,0)});
+  \draw[stewartcyan, line width=0.5pt] ([xshift=6pt, yshift=2.5pt]T.east) -- ([yshift=2.5pt]T.east -| {(\linewidth,0)});
+  \draw[stewartcyan, line width=0.5pt] ([xshift=6pt, yshift=-0.5pt]T.east) -- ([yshift=-0.5pt]T.east -| {(\linewidth,0)});
+\end{tikzpicture}
+
+\vspace{0.25cm}
+
+\noindent
+\begin{minipage}[t]{0.485\textwidth}
+\fontsize{8.5}{10.8}\selectfont
+
+\prob{1} Giải thích bằng lời của riêng bạn ý nghĩa của phương trình
+\[
+\lim_{x \to 2} f(x) = 5
+\]
+Khẳng định này có thể đúng mà vẫn có $f(2) = 3$ được không? Giải thích.
+
+\prob{2} Giải thích ý nghĩa khi nói rằng
+\[
+\lim_{x \to 1^-} f(x) = 3 \qquad\text{và}\qquad \lim_{x \to 1^+} f(x) = 7
+\]
+Trong tình huống này, liệu $\lim_{x \to 1} f(x)$ có thể tồn tại không? Giải thích.
+
+\prob{3} Giải thích ý nghĩa của mỗi biểu thức sau đây.
+\vspace{2pt}
+
+\noindent
+\begin{tabularx}{\linewidth}{@{}XX@{}}
+\textbf{(a)} $\displaystyle \lim_{x \to -3} f(x) = \infty$ & \textbf{(b)} $\displaystyle \lim_{x \to 4^+} f(x) = -\infty$
+\end{tabularx}
+
+\prob{4} Sử dụng đồ thị đã cho của $f$ để xác định giá trị của mỗi đại lượng, nếu nó tồn tại. Nếu không tồn tại, hãy giải thích tại sao.
+\vspace{2pt}
+
+\noindent
+\begin{tabularx}{\linewidth}{@{}XXX@{}}
+\textbf{(a)} $\displaystyle \lim_{x \to 2^-} f(x)$ & \textbf{(b)} $\displaystyle \lim_{x \to 2^+} f(x)$ & \textbf{(c)} $\displaystyle \lim_{x \to 2} f(x)$ \\[3pt]
+\textbf{(d)} $f(2)$ & \textbf{(e)} $\displaystyle \lim_{x \to 4} f(x)$ & \textbf{(f)} $f(4)$
+\end{tabularx}
+
+\begin{center}
+  \vspace{-2pt}
+  \includegraphics[width=0.55\linewidth]{images/p0127_fig2.png}
+  \vspace{-4pt}
+\end{center}
+
+\prob{5} Đối với hàm số $f$ có đồ thị đã cho, hãy xác định giá trị của mỗi đại lượng, nếu nó tồn tại. Nếu không tồn tại, hãy giải thích tại sao.
+\vspace{2pt}
+
+\noindent
+\begin{tabularx}{\linewidth}{@{}XXX@{}}
+\textbf{(a)} $\displaystyle \lim_{x \to 1} f(x)$ & \textbf{(b)} $\displaystyle \lim_{x \to 3^-} f(x)$ & \textbf{(c)} $\displaystyle \lim_{x \to 3^+} f(x)$ \\[3pt]
+\textbf{(d)} $\displaystyle \lim_{x \to 3} f(x)$ & \textbf{(e)} $f(3)$ &
+\end{tabularx}
+
+\begin{center}
+  \vspace{-2pt}
+  \includegraphics[width=0.55\linewidth]{images/p0127_fig4.png}
+  \vspace{-4pt}
+\end{center}
+
+\prob{6} Đối với hàm số $h$ có đồ thị đã cho, hãy xác định giá trị của mỗi đại lượng, nếu nó tồn tại. Nếu không tồn tại, hãy giải thích tại sao.
+\vspace{2pt}
+
+\noindent
+\begin{tabularx}{\linewidth}{@{}XXX@{}}
+\textbf{(a)} $\displaystyle \lim_{x \to -3^-} h(x)$ & \textbf{(b)} $\displaystyle \lim_{x \to -3^+} h(x)$ & \textbf{(c)} $\displaystyle \lim_{x \to -3} h(x)$ \\[3pt]
+\textbf{(d)} $h(-3)$ & \textbf{(e)} $\displaystyle \lim_{x \to 0^-} h(x)$ & \textbf{(f)} $\displaystyle \lim_{x \to 0^+} h(x)$ \\[3pt]
+\textbf{(g)} $\displaystyle \lim_{x \to 0} h(x)$ & \textbf{(h)} $h(0)$ & \textbf{(i)} $\displaystyle \lim_{x \to 2} h(x)$
+\end{tabularx}
+
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.485\textwidth}
+\fontsize{8.5}{10.8}\selectfont
+
+\noindent
+\begin{tabularx}{\linewidth}{@{}XXX@{}}
+\textbf{(j)} $h(2)$ & \textbf{(k)} $\displaystyle \lim_{x \to 5^+} h(x)$ & \textbf{(l)} $\displaystyle \lim_{x \to 5^-} h(x)$
+\end{tabularx}
+
+\begin{center}
+  \vspace{-2pt}
+  \includegraphics[width=0.88\linewidth]{images/p0127_fig1.png}
+  \vspace{-4pt}
+\end{center}
+
+\prob{7} Đối với hàm số $g$ có đồ thị như hình vẽ, hãy tìm một số $a$ thỏa mãn mô tả đã cho.
+\begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=1.6em, itemsep=1pt, topsep=1pt]
+  \item $\displaystyle \lim_{x \to a} g(x)$ không tồn tại nhưng $g(a)$ được xác định.
+  \item $\displaystyle \lim_{x \to a} g(x)$ tồn tại nhưng $g(a)$ không được xác định.
+  \item $\displaystyle \lim_{x \to a^-} g(x)$ và $\displaystyle \lim_{x \to a^+} g(x)$ đều tồn tại nhưng $\displaystyle \lim_{x \to a} g(x)$ không tồn tại.
+  \item $\displaystyle \lim_{x \to a^+} g(x) = g(a)$ nhưng $\displaystyle \lim_{x \to a^-} g(x) \neq g(a)$.
+\end{enumerate}
+
+\begin{center}
+  \vspace{-2pt}
+  \includegraphics[width=0.55\linewidth]{images/p0127_fig3.png}
+  \vspace{-4pt}
+\end{center}
+
+\prob{8} Đối với hàm số $A$ có đồ thị như hình vẽ, hãy chỉ ra các điều sau.
+\vspace{2pt}
+
+\noindent
+\begin{tabularx}{\linewidth}{@{}XX@{}}
+\textbf{(a)} $\displaystyle \lim_{x \to -3} A(x)$ & \textbf{(b)} $\displaystyle \lim_{x \to 2^-} A(x)$ \\[3pt]
+\textbf{(c)} $\displaystyle \lim_{x \to 2^+} A(x)$ & \textbf{(d)} $\displaystyle \lim_{x \to -1} A(x)$
+\end{tabularx}
+\vspace{2pt}
+
+\noindent
+\textbf{(e)} Phương trình của các đường tiệm cận đứng
+
+\begin{center}
+  \vspace{-2pt}
+  \includegraphics[width=0.88\linewidth]{images/p0127_fig5.png}
+  \vspace{-4pt}
+\end{center}
+
+\prob{9} Đối với hàm số $f$ có đồ thị như hình vẽ, hãy chỉ ra các điều sau.
+\vspace{2pt}
+
+\noindent
+\begin{tabularx}{\linewidth}{@{}XXX@{}}
+\textbf{(a)} $\displaystyle \lim_{x \to -7} f(x)$ & \textbf{(b)} $\displaystyle \lim_{x \to -3} f(x)$ & \textbf{(c)} $\displaystyle \lim_{x \to 0} f(x)$ \\[3pt]
+\textbf{(d)} $\displaystyle \lim_{x \to 6^-} f(x)$ & \textbf{(e)} $\displaystyle \lim_{x \to 6^+} f(x)$ &
+\end{tabularx}
+
+\end{minipage}
+
+\vfill
+\begin{center}
+\fontsize{5.5}{6.5}\selectfont\color{gray!80}
+Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\\ 
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+\end{center}
+
+\end{document}

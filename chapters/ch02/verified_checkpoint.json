@@ -89,6 +89,12 @@
       "score": 99,
       "notes": "Bản dịch bị lỗi hiển thị nghiêm trọng: toàn bộ mã tiền sảnh (preamble) bị in ra dạng văn bản thô ở đầu trang và phần thân trang bị trắng hoàn toàn. Cần viết lại mã XeLaTeX hoàn chỉnh với cấu trúc hai cột dóng chuẩn các đồ thị Hình 13, 14, 15 với nội dung văn bản tương ứng.",
       "time": "2026-09-23 03:06:45"
+    },
+    {
+      "page_num": 127,
+      "score": 99,
+      "notes": "Bản dịch gặp lỗi biên dịch nghiêm trọng làm rò rỉ mã tiền tố lên đầu trang và mất toàn bộ nội dung bài tập; cần tái cấu trúc hai cột và chuẩn hóa mã nguồn XeLaTeX.",
+      "time": "2026-09-23 03:09:00"
     }
   ]
 }
