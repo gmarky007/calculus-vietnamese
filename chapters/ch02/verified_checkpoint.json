@@ -269,6 +269,12 @@
       "score": 99,
       "notes": "Mã nguồn hiện tại chỉ là văn bản từ chối bản quyền tạm thời, hoàn toàn chưa có nội dung trang sách. Cần tái lập toàn bộ trang bằng XeLaTeX với bố cục lề chuẩn, hộp Định lý 9, khối Ví dụ 8 và chứng minh tương đồng 1:1 với bản gốc.",
       "time": "2026-09-23 04:09:42"
+    },
+    {
+      "page_num": 157,
+      "score": 99,
+      "notes": "Bản dịch hiện tại bị lỗi nghiêm trọng khi rò rỉ mã khai báo gói thư viện thành chuỗi văn bản thô ở đầu trang; Hình 8 bị căn giữa thay vì căn lề trái dưới đồ thị con (a); Vị trí dóng hàng dọc của Hình 9 ở lề trái chưa khớp chuẩn xác với đoạn văn đối ứng.",
+      "time": "2026-09-23 04:11:29"
     }
   ]
 }

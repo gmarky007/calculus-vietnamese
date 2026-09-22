@@ -1,0 +1,109 @@
+\documentclass[10pt]{article}
+\usepackage{iftex}
+\ifXeTeX
+  \usepackage{fontspec}
+\else
+  \usepackage[utf8]{inputenc}
+  \usepackage[T5]{fontenc}
+\fi
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{tcolorbox}
+\usepackage{newtxtext,newtxmath}
+
+% Thiết lập lề trang sách giáo trình Stewart
+\geometry{
+    letterpaper,
+    left=1.6cm,
+    right=1.6cm,
+    top=2.0cm,
+    bottom=2.0cm,
+    headheight=14pt,
+    headsep=15pt
+}
+
+% Định nghĩa màu sắc thương hiệu Stewart Calculus
+\definecolor{stewartcyan}{RGB}{0, 130, 195}
+\definecolor{stewartred}{RGB}{204, 34, 41}
+
+% Thiết lập Header
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textsf{\textbf{122}}\qquad \textsf{\textbf{CHƯƠNG 2}}\quad \textsf{Giới hạn và Đạo hàm}}
+\fancyhead[R]{}
+\renewcommand{\headrulewidth}{0pt}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.26\textwidth}
+    \vspace*{34pt}
+    \includegraphics[width=\linewidth]{images/p0157_fig1.png}\\[3pt]
+    {\small\textbf{\textsf{HÌNH 7}}}\\[1pt]
+    {\small $y = \ln(1 + \cos x)$}
+    
+    % Dóng hàng chuẩn xác với đoạn văn thảo luận về Hình 9
+    \vspace{288pt}
+    
+    \includegraphics[width=\linewidth]{images/p0157_fig3.png}\\[3pt]
+    {\small\textbf{\textsf{HÌNH 9}}}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.71\textwidth}
+    \noindent\textbf{\textsf{\color{stewartcyan}VÍ DỤ 9}}\quad Các hàm số sau đây liên tục ở đâu?\\
+    (a)\; $h(x) = \sin(x^2)$ \qquad\qquad (b)\; $F(x) = \ln(1 + \cos x)$
+
+    \medskip\noindent
+    \textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\\
+    (a) Ta có $h(x) = f(g(x))$, trong đó
+    \[
+    g(x) = x^2 \qquad \text{và} \qquad f(x) = \sin x
+    \]
+    Ta biết rằng $g$ liên tục trên $\mathbb{R}$ vì nó là một hàm đa thức, và $f$ cũng liên tục ở khắp mọi nơi. Do đó $h = f \circ g$ liên tục trên $\mathbb{R}$ theo Định lý 9.
+
+    \medskip\noindent
+    (b) Theo Định lý 7, ta biết rằng $f(x) = \ln x$ liên tục và $g(x) = 1 + \cos x$ liên tục (vì cả hai hàm $y = 1$ và $y = \cos x$ đều liên tục). Do đó, theo Định lý 9, $F(x) = f(g(x))$ liên tục tại mọi điểm mà nó xác định. Biểu thức $\ln(1 + \cos x)$ xác định khi $1 + \cos x > 0$, vì vậy nó không xác định khi $\cos x = -1$, và điều này xảy ra khi $x = \pm\pi, \pm 3\pi, \dots$ Do đó $F$ có các điểm gián đoạn khi $x$ là một bội số lẻ của $\pi$ và liên tục trên các khoảng nằm giữa các giá trị này (xem Hình 7).\hfill{\color{stewartcyan}$\blacksquare$}
+
+    \vspace{1.2em}\noindent
+    {\color{stewartcyan}\rule{1.1ex}{1.1ex}}\hspace{0.5em}\textbf{\textsf{\large Định lý giá trị trung gian}}
+
+    \vspace{0.4em}\noindent
+    Một tính chất quan trọng của các hàm số liên tục được thể hiện qua định lý sau đây, mà chứng minh của nó có thể tìm thấy trong các tài liệu giải tích nâng cao hơn.
+
+    \vspace{0.5em}
+    \begin{tcolorbox}[
+        colframe=stewartred,
+        colback=white,
+        boxrule=0.8pt,
+        sharp corners,
+        left=7pt, right=7pt, top=6pt, bottom=6pt
+    ]
+        \noindent
+        \setlength{\fboxsep}{2pt}\setlength{\fboxrule}{0.8pt}%
+        {\color{stewartred}\fbox{\bfseries\sffamily\color{stewartred}\;10\;}}\hspace{0.6em}%
+        \textbf{\textsf{\color{stewartred}Định lý giá trị trung gian}}\quad
+        Giả sử $f$ liên tục trên đoạn đóng $[a, b]$ và gọi $N$ là một số bất kỳ nằm giữa $f(a)$ và $f(b)$, với $f(a) \neq f(b)$. Khi đó tồn tại một số $c$ thuộc khoảng $(a, b)$ sao cho $f(c) = N$.
+    \end{tcolorbox}
+
+    \vspace{0.5em}\noindent
+    Định lý giá trị trung gian phát biểu rằng một hàm số liên tục nhận mọi giá trị trung gian nằm giữa các giá trị hàm số $f(a)$ và $f(b)$. Định lý này được minh họa bởi Hình 8. Lưu ý rằng giá trị $N$ có thể được nhận đúng một lần [như trong phần (a)] hoặc nhiều hơn một lần [như trong phần (b)].
+
+    \vspace{0.4em}\noindent
+    \includegraphics[width=\linewidth]{images/p0157_fig2.png}\\[3pt]
+    {\small\textbf{\textsf{HÌNH 8}}}\par
+
+    \vspace{0.5em}\noindent
+    Nếu chúng ta coi một hàm số liên tục là một hàm số mà đồ thị của nó không có lỗ thủng hay điểm đứt gãy nào, thì rất dễ tin rằng Định lý giá trị trung gian là đúng. Về mặt hình học, định lý khẳng định rằng nếu vẽ bất kỳ đường thẳng nằm ngang nào $y = N$ nằm giữa $y = f(a)$ và $y = f(b)$ như trong Hình 9, thì đồ thị của hàm số $f$ không thể nhảy vượt qua đường thẳng đó. Nó bắt buộc phải cắt đường thẳng $y = N$ tại một điểm nào đó.
+
+    \medskip\noindent
+    Điều quan trọng là hàm số $f$ trong Định lý 10 phải liên tục. Định lý giá trị trung gian nói chung không đúng đối với các hàm số gián đoạn (xem Bài tập 52).
+\end{minipage}
+
+\end{document}
