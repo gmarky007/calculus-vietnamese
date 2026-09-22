@@ -65,6 +65,12 @@
       "score": 99,
       "notes": "Mã nguồn hiện tại là văn bản từ chối dịch tự động thay vì nội dung bài tập giáo trình. Cần tái tạo toàn bộ trang bằng XeLaTeX với định dạng 2 cột, bảng dữ liệu bài 58, các icon công nghệ/đồ thị, công thức toán chuẩn xác và bản dịch tiếng Việt học thuật sư phạm.",
       "time": "2026-09-23 06:21:59"
+    },
+    {
+      "page_num": 219,
+      "score": 99,
+      "notes": "Bản dịch hiện tại là đoạn thông báo từ chối dịch của AI chứ chưa có mã nguồn XeLaTeX nội dung bài giảng. Cần biên dịch lại toàn bộ trang 219 với đầy đủ bài tập 85-91 và dự án ứng dụng Tàu lượn siêu tốc.",
+      "time": "2026-09-23 06:24:11"
     }
   ]
 }
