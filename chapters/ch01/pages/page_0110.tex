@@ -1,27 +1,33 @@
-\fancyhead[LE,RO]{\bfseries\thepage}
-\fancyhead[RE]{\bfseries\nouppercase{\leftmark}}
-\fancyhead[LO]{\bfseries CÁC BÀI TOÁN}
+\thispagestyle{empty}
+\enlargethispage{4cm}
+
+\setlength{\abovedisplayskip}{3.5pt}
+\setlength{\belowdisplayskip}{3.5pt}
+\setlength{\abovedisplayshortskip}{1pt}
+\setlength{\belowdisplayshortskip}{1pt}
 
 \noindent
-\begin{minipage}[t]{0.26\textwidth}
+\begin{minipage}[t]{0.24\textwidth}
     \vspace{0pt}
     \begin{tcolorbox}[
-        colback=blue!10!purple!15,
-        colframe=blue!10!purple!15,
-        arc=0mm,
+        colback=blue!8!purple!12,
+        colframe=blue!8!purple!12,
+        arc=2.5mm,
         boxrule=0pt,
-        left=4pt,
-        right=4pt,
-        top=3pt,
-        bottom=3pt
+        left=6pt,
+        right=6pt,
+        top=4pt,
+        bottom=4pt,
+        before=\vspace{0pt},
+        after=\vspace{0pt}
     ]
-        {\large\bfseries\textsf{\color{violet!80!black}Bài toán}}
+        {\large\bfseries\textsf{\color{violet!85!black}Các bài toán}}
     \end{tcolorbox}
 \end{minipage}%
 \hfill
-\begin{minipage}[t]{0.71\textwidth}
+\begin{minipage}[t]{0.73\textwidth}
     \vspace{0pt}
-    \begin{enumerate}[label=\bfseries\arabic*., leftmargin=*, itemsep=1.2em]
+    \begin{enumerate}[label=\bfseries\arabic*., leftmargin=*, itemsep=3.2pt, topsep=0pt, parsep=0pt]
         \item Một trong các cạnh góc vuông của một tam giác vuông có độ dài $4\text{ cm}$. Hãy biểu diễn độ dài đường cao hạ xuống cạnh huyền theo độ dài của cạnh huyền.
 
         \item Đường cao vuông góc với cạnh huyền của một tam giác vuông dài $12\text{ cm}$. Hãy biểu diễn độ dài của cạnh huyền dưới dạng một hàm số theo chu vi của tam giác.
@@ -42,14 +48,14 @@
         \]
 
         \item Ký hiệu $\max\{a, b, \dots\}$ chỉ số lớn nhất trong các số $a, b, \dots$ Phác thảo đồ thị của mỗi hàm số sau:
-        \begin{enumerate}[label=(\alph*), itemsep=0.3em]
+        \begin{enumerate}[label=(\alph*), itemsep=1.5pt, topsep=1.5pt, parsep=0pt]
             \item $f(x) = \max\{x, 1/x\}$
             \item $f(x) = \max\{\sin x, \cos x\}$
             \item $f(x) = \max\{x^2, 2 + x, 2 - x\}$
         \end{enumerate}
 
         \item Phác thảo miền trong mặt phẳng được xác định bởi mỗi phương trình hoặc bất phương trình sau:
-        \begin{enumerate}[label=(\alph*), itemsep=0.3em]
+        \begin{enumerate}[label=(\alph*), itemsep=1.5pt, topsep=1.5pt, parsep=0pt]
             \item $\max\{x, 2y\} = 1$
             \item $-1 \leqslant \max\{x, 2y\} \leqslant 1$
             \item $\max\{x, y^2\} = 1$
@@ -67,21 +73,16 @@
             \sin \frac{\pi}{100} + \sin \frac{2\pi}{100} + \sin \frac{3\pi}{100} + \dots + \sin \frac{200\pi}{100}
         \]
 
-        \item 
-        \begin{enumerate}[label=(\alph*), itemsep=0.3em]
-            \item Chứng minh rằng hàm số $f(x) = \ln(x + \sqrt{x^2 + 1})$ là một hàm số lẻ.
-            \item Tìm hàm số ngược của $f$.
-        \end{enumerate}
+        \item (a) Chứng minh rằng hàm số $f(x) = \ln(x + \sqrt{x^2 + 1})$ là một hàm số lẻ.
+        \par\vspace{1.5pt}
+        (b) Tìm hàm số ngược của $f$.
 
         \item Giải bất phương trình $\ln(x^2 - 2x - 2) \leqslant 0$.
 
-        \item Sử dụng phương pháp chứng minh phản chứng để chứng minh rằng $\log_2 5$ là một số vô tỉ.
+        \item Sử dụng phương pháp phản chứng để chứng minh rằng $\log_2 5$ là một số vô tỉ.
 
-        \item Một người lái xe thực hiện một chuyến đi. Trên nửa đầu quãng đường, người đó lái xe với vận tốc thong thả là $30\text{ mi/h}$; trên nửa quãng đường sau, người đó tăng tốc lên $60\text{ mi/h}$. Vận tốc trung bình của người đó trong toàn bộ chuyến đi là bao nhiêu?
+        \item Một người lái xe bắt đầu một chuyến đi. Trên nửa đầu quãng đường, người đó lái xe với vận tốc thong thả là $30\text{ mi/h}$; trên nửa quãng đường sau, người đó tăng tốc lên $60\text{ mi/h}$. Vận tốc trung bình của người đó trong toàn bộ chuyến đi là bao nhiêu?
     \end{enumerate}
+    \vspace{14pt}
+    \par\hfill\textbf{\textsf{75}}
 \end{minipage}
-
-\vfill
-\begin{flushright}
-    \textbf{\textsf{75}}
-\end{flushright}

@@ -407,6 +407,12 @@
       "score": 99,
       "notes": "Nhãn số công thức màu đỏ [4] bị đè/dính sát vào công thức fn(x); Ghi chú lề 1 đặt quá cao (ngang hàng Ví dụ 3 thay vì Lời giải); Ghi chú lề 2 nằm ngang f2 thay vì f3; Từ 'Khi đó' bị đẩy thành dòng riêng thay vì cùng dòng với fk+1 như bản gốc; Ký hiệu kết thúc lời giải bị rớt xuống dòng thứ 3 đơn độc.",
       "time": "2026-09-23 02:27:51"
+    },
+    {
+      "page_num": 110,
+      "score": 99,
+      "notes": "Trang dịch bị lỗi nghiêm trọng: toàn bộ nội dung bài toán bị tràn sang trang sau khiến trang hiện tại bị trắng hoàn toàn (chỉ còn tiêu đề đầu trang sai lệch). Cần tắt header không có trong bản gốc, dùng \\enlargethispage, tinh chỉnh khoảng cách itemsep và đưa số trang 75 vào đúng vị trí để toàn bộ 17 bài toán hiển thị trọn vẹn trên một trang.",
+      "time": "2026-09-23 02:28:51"
     }
   ]
 }
