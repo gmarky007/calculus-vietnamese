@@ -1,0 +1,124 @@
+\documentclass[10pt]{article}
+\usepackage[paperwidth=8.5in, paperheight=11in, top=18mm, bottom=15mm, left=18mm, right=18mm]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{fontspec}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{array}
+\usepackage{microtype}
+
+\IfFontExistsTF{Times New Roman}{
+  \setmainfont{Times New Roman}
+}{}
+\IfFontExistsTF{Arial}{
+  \setsansfont{Arial}
+}{}
+
+% Màu sắc nhận diện chuẩn giáo trình Stewart Calculus
+\definecolor{stewartblue}{RGB}{0, 125, 178}
+\definecolor{tableheader}{RGB}{232, 240, 246}
+\definecolor{darkgraytext}{RGB}{80, 80, 80}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\begin{document}
+
+% TIÊU ĐỀ ĐẦU TRANG
+\noindent{\bfseries\fontsize{10.5pt}{12pt}\selectfont 148}\qquad{\bfseries\sffamily\fontsize{9.5pt}{11pt}\selectfont\color{stewartblue}CHƯƠNG 2}\quad{\sffamily\fontsize{9.5pt}{11pt}\selectfont Giới hạn và Đạo hàm}
+
+\vspace{6mm}
+
+% BỐ CỤC 2 CỘT BẤT ĐỐI XỨNG
+\begin{minipage}[t]{44mm}
+  % BẢNG DỮ LIỆU Ở LỀ TRÁI
+  \centering
+  \renewcommand{\arraystretch}{1.25}
+  \setlength{\tabcolsep}{10pt}
+  \begin{tabular}{|c|c|}
+    \hline
+    \rowcolor{tableheader}
+    \rule{0pt}{2.4ex}$t$ & $D(t)$ \\
+    \hline
+    2000 & \phantom{0}5662{,}2 \\
+    2004 & \phantom{0}7596{,}1 \\
+    2008 & 10\,699{,}8 \\
+    2012 & 16\,432{,}7 \\
+    2016 & 19\,976{,}8 \\
+    \hline
+  \end{tabular}
+
+  \vspace{3pt}
+  {\fontsize{7.5pt}{9pt}\selectfont\color{darkgraytext}\textit{Nguồn: Bộ Ngân khố Hoa Kỳ}\par}
+
+  % KHOẢNG TRỐNG DÓNG HÀNG VỚI NỘI DUNG CHÍNH
+  \vspace{6.2cm}
+
+  % GHI CHÚ VỀ ĐƠN VỊ
+  \raggedright
+  {\fontsize{9pt}{11pt}\selectfont\textbf{\textsf{Ghi chú về đơn vị}}\par}
+  \vspace{3pt}
+  {\fontsize{8.5pt}{11pt}\selectfont
+  Đơn vị của tốc độ thay đổi trung bình $\Delta D/\Delta t$ là đơn vị của $\Delta D$ chia cho đơn vị của $\Delta t$, cụ thể là tỷ đô la trên năm. Tốc độ thay đổi tức thời là giới hạn của tốc độ thay đổi trung bình, vì vậy nó được đo bằng cùng một đơn vị: tỷ đô la trên năm.\par}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{126mm}
+  % VÍ DỤ 8
+  {\color{stewartblue}\textbf{\textsf{VÍ DỤ 8}}}\hspace{0.8em}Giả sử $D(t)$ là nợ công của Hoa Kỳ tại thời điểm $t$. Bảng ở lề bên cung cấp các giá trị xấp xỉ của hàm này bằng cách đưa ra các ước tính vào cuối năm, tính theo tỷ đô la, từ năm 2000 đến năm 2016. Hãy diễn giải ý nghĩa và ước lượng giá trị của $D'(2008)$.\par
+
+  \vspace{3mm}
+  % LỜI GIẢI
+  {\color{stewartblue}\textbf{\textsf{LỜI GIẢI}}}\hspace{0.8em}Đạo hàm $D'(2008)$ biểu thị tốc độ thay đổi của $D$ theo $t$ khi $t = 2008$, nghĩa là tốc độ gia tăng của nợ công quốc gia trong năm 2008.\par
+
+  \vspace{2mm}
+  Theo Phương trình 5,
+  \begin{equation*}
+    D'(2008) = \lim_{t \to 2008} \frac{D(t) - D(2008)}{t - 2008}
+  \end{equation*}
+
+  Một cách chúng ta có thể ước lượng giá trị này là so sánh các tốc độ thay đổi trung bình trên các khoảng thời gian khác nhau bằng cách tính các tỉ số gia, như được tổng hợp trong bảng sau.
+
+  \vspace{2.5mm}
+  % BẢNG TỈ SỐ SAI PHÂN TRONG CỘT CHÍNH
+  \begin{center}
+    \renewcommand{\arraystretch}{1.35}
+    \setlength{\tabcolsep}{8pt}
+    \begin{tabular}{|c|c|c|}
+      \hline
+      \rowcolor{tableheader}
+      \rule[-2ex]{0pt}{5ex} $t$ & Khoảng thời gian & Tốc độ thay đổi trung bình $= \dfrac{D(t) - D(2008)}{t - 2008}$ \\
+      \hline
+      2000 & $[2000, 2008]$ & \phantom{0}629{,}7\phantom{0} \\
+      2004 & $[2004, 2008]$ & \phantom{0}775{,}93 \\
+      2012 & $[2008, 2012]$ & 1433{,}23 \\
+      2016 & $[2008, 2016]$ & 1159{,}63 \\
+      \hline
+    \end{tabular}
+  \end{center}
+
+  \vspace{2mm}
+  Từ bảng này, ta thấy rằng $D'(2008)$ nằm trong khoảng từ 775{,}93 đến 1433{,}23 tỷ đô la mỗi năm. [Ở đây chúng ta đưa ra giả định hợp lý rằng nợ công không biến động quá mạnh giữa năm 2004 và 2012.] Một ước tính tốt cho tốc độ gia tăng nợ công của Hoa Kỳ trong năm 2008 sẽ là giá trị trung bình của hai số này, cụ thể là
+  \begin{equation*}
+    D'(2008) \approx 1105 \text{ tỷ đô la mỗi năm}
+  \end{equation*}
+
+  Một phương pháp khác là vẽ đồ thị hàm nợ công và ước tính hệ số góc của tiếp tuyến khi $t = 2008$.\hfill{\color{stewartblue}\rule{1.1ex}{1.1ex}}\par
+
+  \vspace{4.5mm}
+  % CÁC ĐOẠN VĂN TIẾP THEO
+  Trong các Ví dụ 3, 7 và 8, chúng ta đã thấy ba ví dụ cụ thể về tốc độ thay đổi: vận tốc của một vật là tốc độ thay đổi của độ dịch chuyển theo thời gian; chi phí cận biên là tốc độ thay đổi của chi phí sản xuất theo số lượng sản phẩm được sản xuất; tốc độ thay đổi của nợ công theo thời gian là mối quan tâm trong kinh tế học. Dưới đây là một mẫu nhỏ các tốc độ thay đổi khác: Trong vật lý, tốc độ thay đổi của công theo thời gian được gọi là \textit{công suất} (\textit{power}). Các nhà hóa học nghiên cứu phản ứng hóa học quan tâm đến tốc độ thay đổi nồng độ của một chất phản ứng theo thời gian (gọi là \textit{tốc độ phản ứng} (\textit{rate of reaction})). Một nhà sinh học quan tâm đến tốc độ thay đổi kích thước quần thể của một đàn vi khuẩn theo thời gian. Trên thực tế, việc tính toán tốc độ thay đổi là rất quan trọng trong tất cả các ngành khoa học tự nhiên, trong kỹ thuật và ngay cả trong các ngành khoa học xã hội. Các ví dụ tiếp theo sẽ được giới thiệu trong Mục 3.7.\par
+
+  \vspace{3.5mm}
+  Tất cả các tốc độ thay đổi này đều là đạo hàm và do đó có thể được diễn giải dưới dạng hệ số góc của các tiếp tuyến. Điều này mang lại ý nghĩa sâu sắc hơn cho lời giải của bài toán tiếp tuyến. Bất cứ khi nào giải một bài toán liên quan đến đường tiếp tuyến, chúng ta không chỉ đang giải một bài toán hình học. Chúng ta cũng đang ngầm giải quyết rất nhiều bài toán đa dạng liên quan đến tốc độ thay đổi trong khoa học và kỹ thuật.\par
+\end{minipage}
+
+\vfill
+% DÒNG BẢN QUYỀN CHÂN TRANG
+\begin{center}
+  {\fontsize{6.5pt}{8pt}\selectfont \color{gray!80!black}
+  Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s).\\
+  Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.\par}
+\end{center}
+
+\end{document}
