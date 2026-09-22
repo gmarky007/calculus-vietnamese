@@ -1,0 +1,132 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage[a4paper,left=1.5cm,right=1.5cm,top=1.3cm,bottom=1.2cm,headheight=14pt,headsep=10pt]{geometry}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{fancyhdr}
+\usepackage{array}
+
+% Định nghĩa màu sắc nhận diện thương hiệu sách Stewart Calculus
+\definecolor{stewartcyan}{RGB}{0, 130, 185}
+
+% Thiết lập tiêu đề đầu trang và chân trang
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[R]{\small\textsf{\textbf{MỤC 3.3}}\quad \textsf{Đạo hàm của các hàm số lượng giác}\qquad \textbf{\textsf{197}}}
+\fancyfoot{}
+
+\begin{document}
+
+% ==============================================================================
+% BỐ CỤC 2 CỘT CHO PHẦN LÝ THUYẾT & VÍ DỤ TRÊN TRANG
+% ==============================================================================
+\noindent
+\begin{minipage}[t]{0.24\textwidth}
+    % Cột lề: trang này trong bản gốc để trống
+    ~
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.74\textwidth}
+    Nếu đặt $\theta = 7x$, thì $\theta \to 0$ khi $x \to 0$, do đó theo Phương trình~5 ta có
+    \begin{align*}
+        \lim_{x \to 0} \frac{\sin 7x}{4x} &= \frac{7}{4} \lim_{x \to 0} \left( \frac{\sin 7x}{7x} \right) \\[4pt]
+        &= \frac{7}{4} \lim_{\theta \to 0} \frac{\sin \theta}{\theta} = \frac{7}{4} \cdot 1 = \frac{7}{4} \tag*{\color{stewartcyan}\blacksquare}
+    \end{align*}
+
+    \vspace{0.3em}
+    \noindent
+    \textbf{\textsf{\color{stewartcyan}VÍ DỤ 6}}\quad Tính $\lim\limits_{x \to 0} x \cot x$.
+
+    \vspace{0.25em}
+    \noindent
+    \textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\quad Ở đây ta chia cả tử thức và mẫu thức cho $x$:
+    \begin{align*}
+        \lim_{x \to 0} x \cot x &= \lim_{x \to 0} \frac{x \cos x}{\sin x} \\[5pt]
+        &= \lim_{x \to 0} \frac{\cos x}{\dfrac{\sin x}{x}} = \frac{\lim\limits_{x \to 0} \cos x}{\lim\limits_{x \to 0} \dfrac{\sin x}{x}} \\[7pt]
+        &= \frac{\cos 0}{1} \qquad {\color{stewartcyan}\text{(do tính liên tục của hàm cosin và Phương trình~5)}} \\[5pt]
+        &= 1 \tag*{\color{stewartcyan}\blacksquare}
+    \end{align*}
+
+    \vspace{0.3em}
+    \noindent
+    \textbf{\textsf{\color{stewartcyan}VÍ DỤ 7}}\quad Tìm $\lim\limits_{\theta \to 0} \dfrac{\cos \theta - 1}{\sin \theta}$.
+
+    \vspace{0.25em}
+    \noindent
+    \textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\quad Để sử dụng các Phương trình~5 và 6, ta chia cả tử thức và mẫu thức cho $\theta$:
+    \begin{align*}
+        \lim_{\theta \to 0} \frac{\cos \theta - 1}{\sin \theta} &= \lim_{\theta \to 0} \frac{\dfrac{\cos \theta - 1}{\theta}}{\dfrac{\sin \theta}{\theta}} \\[8pt]
+        &= \frac{\lim\limits_{\theta \to 0} \dfrac{\cos \theta - 1}{\theta}}{\lim\limits_{\theta \to 0} \dfrac{\sin \theta}{\theta}} = \frac{0}{1} = 0 \tag*{\color{stewartcyan}\blacksquare}
+    \end{align*}
+\end{minipage}
+
+\vspace{0.6cm}
+
+% ==============================================================================
+% TIÊU ĐỀ PHẦN BÀI TẬP (TRẢI RỘNG TOÀN TRANG THEO THIẾT KẾ GỐC)
+% ==============================================================================
+\noindent
+\begin{tikzpicture}
+    % Các đường kẻ ngang đặc trưng của Stewart
+    \draw[stewartcyan, line width=0.7pt] (0, 0.45) -- (\linewidth, 0.45);
+    \draw[stewartcyan, line width=0.7pt] (0, 0.32) -- (\linewidth, 0.32);
+    \draw[stewartcyan, line width=0.7pt] (0, 0.12) -- (2.0, 0.12);
+    
+    % Nhãn mục bài tập
+    \node[anchor=base west, inner sep=0pt] at (2.2, -0.18) {\textsf{\textbf{\color{stewartcyan}\LARGE 3.3}}};
+    \draw[stewartcyan, line width=1.2pt] (3.1, -0.22) -- (3.1, 0.22);
+    \node[anchor=base west, inner sep=0pt] at (3.3, -0.18) {\textsf{\textbf{\LARGE Bài tập}}};
+    
+    % Đường kẻ tiếp tục sang phải
+    \draw[stewartcyan, line width=0.7pt] (5.7, 0.12) -- (\linewidth, 0.12);
+\end{tikzpicture}
+
+\vspace{0.35cm}
+
+% ==============================================================================
+% DANH SÁCH BÀI TẬP 1–22 DÀN THÀNH 2 KHỐI CỘT SONG SONG
+% ==============================================================================
+\noindent
+\begin{minipage}[t]{0.485\textwidth}
+    \noindent{\color{stewartcyan}\textbf{1--22}}\quad Tính đạo hàm.
+
+    \vspace{0.28cm}
+    \renewcommand{\arraystretch}{1.18}
+    \begin{tabular}{@{}p{0.48\linewidth}@{\hspace{0.04\linewidth}}p{0.48\linewidth}@{}}
+        \textbf{1.} $f(x) = 3 \sin x - 2 \cos x$ & \textbf{2.} $f(x) = \tan x - 4 \sin x$ \\[8pt]
+        \textbf{3.} $y = x^2 + \cot x$ & \textbf{4.} $y = 2 \sec x - \csc x$ \\[8pt]
+        \textbf{5.} $h(\theta) = \theta^2 \sin \theta$ & \textbf{6.} $g(x) = 3x + x^2 \cos x$ \\[8pt]
+        \textbf{7.} $y = \sec \theta \tan \theta$ & \textbf{8.} $y = \sin \theta \cos \theta$ \\[8pt]
+        \textbf{9.} $f(\theta) = (\theta - \cos \theta) \sin \theta$ & \textbf{10.} $g(\theta) = e^\theta (\tan \theta - \theta)$ \\[8pt]
+        \textbf{11.} $H(t) = \cos^2 t$ & \textbf{12.} $f(x) = e^x \sin x + \cos x$
+    \end{tabular}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.485\textwidth}
+    \renewcommand{\arraystretch}{1.25}
+    \begin{tabular}{@{}p{0.48\linewidth}@{\hspace{0.04\linewidth}}p{0.48\linewidth}@{}}
+        \textbf{13.} $f(\theta) = \dfrac{\sin \theta}{1 + \cos \theta}$ & \textbf{14.} $y = \dfrac{\cos x}{1 - \sin x}$ \\[12pt]
+        \textbf{15.} $y = \dfrac{x}{2 - \tan x}$ & \textbf{16.} $f(t) = \dfrac{\cot t}{e^t}$ \\[12pt]
+        \textbf{17.} $f(w) = \dfrac{1 + \sec w}{1 - \sec w}$ & \textbf{18.} $y = \dfrac{\sin t}{1 + \tan t}$ \\[12pt]
+        \textbf{19.} $y = \dfrac{t \sin t}{1 + t}$ & \textbf{20.} $g(z) = \dfrac{z}{\sec z + \tan z}$ \\[12pt]
+        \textbf{21.} $f(\theta) = \theta \cos \theta \sin \theta$ & \textbf{22.} $f(t) = t e^t \cot t$
+    \end{tabular}
+\end{minipage}
+
+\vspace{0.7cm}
+\noindent
+{\color{stewartcyan}\rule{\linewidth}{0.6pt}}
+
+\vspace{2pt}
+\noindent
+\begin{minipage}{\textwidth}
+    \fontsize{5.5pt}{7pt}\selectfont\color{gray!80!black}
+    \raggedright
+    Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\\[1pt]
+    Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+\end{minipage}
+
+\end{document}
