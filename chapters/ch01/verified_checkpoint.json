@@ -65,6 +65,12 @@
       "score": 99,
       "notes": "Toàn bộ nội dung trang bị tràn xuống trang sau khiến trang 52 bị trắng hoàn toàn (chỉ có tiêu đề đầu trang). Nguyên nhân do lồng toàn bộ phần Lý thuyết và Bài tập vào cùng một minipage quá dài và chia cột bài tập trong phạm vi hẹp khiến chiều cao vượt quá \\textheight. Ngoài ra, phần Bài tập trong bản gốc thực chất trải rộng toàn trang (full width) thành 2 cột đều nhau.",
       "time": "2026-09-23 01:06:24"
+    },
+    {
+      "page_num": 53,
+      "score": 99,
+      "notes": "Bản dịch tiếng Việt rất tốt và chính xác. Cần sửa: bỏ dấu '...' ở đầu đoạn tiếp nối bài 5; căn chỉnh bảng 13 và 14 để số thứ tự nằm cạnh đầu bảng thay vì tách dòng qua môi trường center; tinh chỉnh khoảng cách dọc giữa hai cột để khớp bố cục trang gốc.",
+      "time": "2026-09-23 01:07:09"
     }
   ]
 }
