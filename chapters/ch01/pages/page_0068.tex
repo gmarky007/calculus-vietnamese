@@ -2,147 +2,167 @@
 \fancyhead[R]{\small\sffamily\bfseries 33}
 
 \noindent
-\begin{minipage}{\textwidth}
-    \vspace{-0.5em}
-    {\color{stewartcyan}\rule{\textwidth}{1.2pt}}\\[-0.5em]
-    {\color{stewartcyan}\rule{\textwidth}{0.4pt}}\\[0.2em]
-    {\Huge\bfseries\color{stewartcyan}1.2}\quad{\Huge\bfseries\textsf{Bài tập}}\\[-0.6em]
-    {\color{stewartcyan}\rule{\textwidth}{0.4pt}}\\[-0.5em]
-    {\color{stewartcyan}\rule{\textwidth}{1.2pt}}
-    \vspace{0.82em}
-\end{minipage}
+\begin{tikzpicture}[x=1cm, y=1cm]
+  \foreach \i in {0pt, 2.5pt, 5pt, 7.5pt} {
+    \draw[stewartcyan, line width=0.55pt] (0,\i) -- (\linewidth,\i);
+  }
+  \node[fill=white, inner xsep=8pt, inner ysep=1pt] at (2.2, 3.75pt) {
+    {\Large\bfseries\color{stewartcyan}1.2}\quad{\Large\bfseries\textsf{Bài tập}}
+  };
+\end{tikzpicture}
+
+\vspace{0.3em}
 
 \noindent
 \begin{minipage}[t]{0.485\textwidth}
-\small
+\fontsize{8.2pt}{10.2pt}\selectfont
 \noindent
-\textbf{\color{stewartcyan}1--2}\quad Phân loại mỗi hàm số sau thành hàm lũy thừa, hàm căn thức, đa thức (chỉ rõ bậc), hàm phân thức hữu tỉ, hàm đại số, hàm lượng giác, hàm mũ, hoặc hàm logarit.
+\textbf{\color{stewartcyan}1--2}\enspace Phân loại mỗi hàm số sau thành hàm lũy thừa, hàm căn thức, đa thức (chỉ rõ bậc), hàm phân thức hữu tỉ, hàm đại số, hàm lượng giác, hàm mũ, hoặc hàm logarit.
 
-\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=1.5em, itemsep=1.2em, topsep=0.5em]
-    \item 
-    \begin{minipage}[t]{0.48\linewidth}
-        \textbf{(a)} $f(x) = x^3 + 3x^2$ \\[0.6em]
-        \textbf{(c)} $r(t) = t^{\sqrt{3}}$ \\[0.6em]
-        \textbf{(e)} $y = \dfrac{\sqrt{x}}{x^2 + 1}$
-    \end{minipage}\hfill
-    \begin{minipage}[t]{0.48\linewidth}
-        \textbf{(b)} $g(t) = \cos^2 t - \sin t$ \\[0.6em]
-        \textbf{(d)} $v(t) = 8^t$ \\[0.6em]
-        \textbf{(f)} $g(u) = \log_{10} u$
-    \end{minipage}
+\vspace{0.4em}
+\noindent
+\textbf{1.}\enspace
+\begin{tabular}[t]{@{}ll@{}}
+\textbf{(a)} $f(x) = x^3 + 3x^2$ & \textbf{(b)} $g(t) = \cos^2 t - \sin t$ \\[0.45em]
+\textbf{(c)} $r(t) = t^{\sqrt{3}}$ & \textbf{(d)} $v(t) = 8^t$ \\[0.45em]
+\textbf{(e)} $y = \dfrac{\sqrt{x}}{x^2 + 1}$ & \textbf{(f)} $g(u) = \log_{10} u$
+\end{tabular}
 
-    \item 
-    \begin{minipage}[t]{0.48\linewidth}
-        \textbf{(a)} $f(t) = \dfrac{3t^2 + 2}{t}$ \\[0.8em]
-        \textbf{(c)} $s(t) = \sqrt{t + 4}$ \\[0.8em]
-        \textbf{(e)} $g(x) = \sqrt[3]{x}$
-    \end{minipage}\hfill
-    \begin{minipage}[t]{0.48\linewidth}
-        \textbf{(b)} $h(r) = 2.3^r$ \\[0.8em]
-        \textbf{(d)} $y = x^4 + 5$ \\[0.8em]
-        \textbf{(f)} $y = \dfrac{1}{x^2}$
-    \end{minipage}
-\end{enumerate}
+\vspace{0.4em}
+\noindent
+\textbf{2.}\enspace
+\begin{tabular}[t]{@{}ll@{}}
+\textbf{(a)} $f(t) = \dfrac{3t^2 + 2}{t}$ & \textbf{(b)} $h(r) = 2.3^r$ \\[0.65em]
+\textbf{(c)} $s(t) = \sqrt{t + 4}$ & \textbf{(d)} $y = x^4 + 5$ \\[0.55em]
+\textbf{(e)} $g(x) = \sqrt[3]{x}$ & \textbf{(f)} $y = \dfrac{1}{x^2}$
+\end{tabular}
 
-\vspace{0.66em}
-\noindent{\color{stewartcyan}\rule{\linewidth}{0.6pt}}\vspace{0.66em}
+\vspace{0.4em}
+\noindent{\color{stewartcyan}\rule{\linewidth}{0.5pt}}\vspace{0.3em}
 
 \noindent
-\textbf{\color{stewartcyan}3--4}\quad Ghép mỗi phương trình với đồ thị tương ứng của nó. Giải thích sự lựa chọn của bạn. (Không sử dụng máy tính cầm tay hoặc phần mềm vẽ đồ thị.)
+\textbf{\color{stewartcyan}3--4}\enspace Ghép mỗi phương trình với đồ thị tương ứng của nó. Giải thích sự lựa chọn của bạn. (Không sử dụng máy tính cầm tay hoặc phần mềm vẽ đồ thị.)
 
-\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=1.5em, itemsep=1.5em, topsep=0.5em, resume]
-    \item 
-    \textbf{(a)} $y = x^2$ \qquad
-    \textbf{(b)} $y = x^5$ \qquad
-    \textbf{(c)} $y = x^8$
-    
-    \begin{center}
-        \includegraphics[width=0.82\linewidth]{images/p0068_fig1.png}
-    \end{center}
+\vspace{0.3em}
+\noindent
+\textbf{3.}\enspace \textbf{(a)} $y = x^2$ \qquad \textbf{(b)} $y = x^5$ \qquad \textbf{(c)} $y = x^8$
 
-    \item 
-    \begin{minipage}[t]{0.45\linewidth}
-        \textbf{(a)} $y = 3x$ \\[0.5em]
-        \textbf{(c)} $y = x^3$
-    \end{minipage}\hfill
-    \begin{minipage}[t]{0.5\linewidth}
-        \textbf{(b)} $y = 3^x$ \\[0.5em]
-        \textbf{(d)} $y = \sqrt[3]{x}$
-    \end{minipage}
+\begin{center}
+\vspace{-0.4em}
+\begin{tikzpicture}[scale=0.82, >=stealth]
+  \draw[->] (-1.7,0) -- (1.8,0) node[below] {\footnotesize $x$};
+  \draw[->] (0,-1.4) -- (0,2.1) node[left] {\footnotesize $y$};
+  \node[below left] at (0,0) {\footnotesize $0$};
+  \draw[red!80!black, thick, domain=-1.18:1.18, samples=50] plot (\x, {(\x)^5});
+  \node[left, red!80!black] at (-0.9,-0.8) {\small $f$};
+  \draw[green!55!black, thick, domain=-1.08:1.08, samples=50] plot (\x, {(\x)^8});
+  \node[left, green!55!black] at (-0.9,1.6) {\small $g$};
+  \draw[stewartcyan, thick, domain=-1.35:1.35, samples=50] plot (\x, {(\x)^2});
+  \node[right, stewartcyan] at (1.05,1.4) {\small $h$};
+\end{tikzpicture}
+\vspace{-0.4em}
+\end{center}
 
-    \begin{center}
-        \includegraphics[width=0.82\linewidth]{images/p0068_fig2.png}
-    \end{center}
-\end{enumerate}
+\noindent
+\textbf{4.}\enspace
+\begin{tabular}[t]{@{}ll@{}}
+\textbf{(a)} $y = 3x$ & \textbf{(b)} $y = 3^x$ \\[0.25em]
+\textbf{(c)} $y = x^3$ & \textbf{(d)} $y = \sqrt[3]{x}$
+\end{tabular}
 
+\begin{center}
+\vspace{-0.4em}
+\begin{tikzpicture}[scale=0.82, >=stealth]
+  \draw[->] (-1.7,0) -- (2.0,0) node[below] {\footnotesize $x$};
+  \draw[->] (0,-1.5) -- (0,2.1) node[left] {\footnotesize $y$};
+  \draw[stewartcyan, thick] plot[domain=0:1.9, samples=40] (\x, {(\x)^(1/3)}) plot[domain=-1.7:0, samples=40] (\x, {-(-(\x))^(1/3)});
+  \node[left, stewartcyan] at (-1.0,-0.8) {\small $f$};
+  \draw[green!55!black, thick, domain=-1.15:1.15, samples=50] plot (\x, {(\x)^3});
+  \node[right, green!55!black] at (-0.75,-1.1) {\small $G$};
+  \draw[red!80!black, thick, domain=-0.45:0.65] plot (\x, {3*\x});
+  \node[right, red!80!black] at (0.35,1.7) {\small $F$};
+  \draw[purple!80!black, thick, domain=-1.7:0.7, samples=40] plot (\x, {3^\x});
+  \node[right, purple!80!black] at (1.0,0.7) {\small $g$};
+\end{tikzpicture}
+\vspace{-0.4em}
+\end{center}
 \end{minipage}%
 \hfill
 \begin{minipage}[t]{0.485\textwidth}
-\small
+\fontsize{8.2pt}{10.2pt}\selectfont
 \noindent
-\textbf{\color{stewartcyan}5--6}\quad Tìm tập xác định của hàm số.
+\textbf{\color{stewartcyan}5--6}\enspace Tìm tập xác định của hàm số.
 
-\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=1.5em, itemsep=0.8em, topsep=0.5em, start=5]
-    \item 
-    \begin{minipage}[t]{0.48\linewidth}
-        $f(x) = \dfrac{\cos x}{1 - \sin x}$
-    \end{minipage}\hfill
-    \begin{minipage}[t]{0.48\linewidth}
-        \textbf{6.}\enspace $g(x) = \dfrac{1}{1 - \tan x}$
-    \end{minipage}
-\end{enumerate}
+\vspace{0.3em}
+\noindent
+\textbf{5.}\enspace $f(x) = \dfrac{\cos x}{1 - \sin x}$ \hfill \textbf{6.}\enspace $g(x) = \dfrac{1}{1 - \tan x}$
 
-\vspace{0.41em}
-\noindent{\color{stewartcyan}\rule{\linewidth}{0.6pt}}\vspace{0.41em}
+\vspace{0.4em}
+\noindent{\color{stewartcyan}\rule{\linewidth}{0.5pt}}\vspace{0.3em}
 
-\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=1.5em, itemsep=1.0em, topsep=0.3em, start=7]
-    \item 
-    \textbf{(a)} Viết phương trình cho họ các hàm tuyến tính có hệ số góc bằng $2$ và vẽ phác thảo một số đường thẳng thuộc họ này.\\[0.3em]
-    \textbf{(b)} Viết phương trình cho họ các hàm tuyến tính sao cho $f(2) = 1$. Vẽ phác thảo một số đường thẳng thuộc họ này.\\[0.3em]
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=1.4em, itemsep=0.35em, topsep=0.1em, start=7]
+    \item \textbf{(a)} Tìm một phương trình cho họ các hàm tuyến tính có hệ số góc bằng $2$ và vẽ phác thảo một số đường thẳng thuộc họ này.\\[0.15em]
+    \textbf{(b)} Tìm một phương trình cho họ các hàm tuyến tính sao cho $f(2) = 1$. Vẽ phác thảo một số đường thẳng thuộc họ này.\\[0.15em]
     \textbf{(c)} Hàm số nào thuộc về cả hai họ hàm trên?
 
     \item Điểm chung của tất cả các hàm số thuộc họ hàm tuyến tính $f(x) = 1 + m(x + 3)$ là gì? Vẽ phác thảo một vài đường thẳng thuộc họ này.
 
     \item Điểm chung của tất cả các hàm số thuộc họ hàm tuyến tính $f(x) = c - x$ là gì? Vẽ phác thảo một vài đường thẳng thuộc họ này.
 
-    \item[\color{stewartcyan}\faDesktop\enspace\textbf{10.}] Vẽ phác thảo một số hàm số thuộc họ đa thức $P(x) = x^3 - cx^2$. Đồ thị thay đổi như thế nào khi $c$ thay đổi?
+    \item[\tikz[baseline=-0.6ex]{\draw[stewartcyan, line width=0.6pt, rounded corners=0.5pt] (0,0) rectangle (0.28, 0.2); \draw[stewartcyan, line width=0.6pt] (0.14,0) -- (0.14,-0.04) (0.08,-0.04) -- (0.2,-0.04);}\enspace\textbf{10.}] Vẽ phác thảo một số hàm số thuộc họ đa thức $P(x) = x^3 - cx^2$. Đồ thị thay đổi như thế nào khi $c$ thay đổi?
 \end{enumerate}
 
 \vspace{0.25em}
 \noindent
-\textbf{\color{stewartcyan}11--12}\quad Tìm công thức cho hàm bậc hai có đồ thị được cho như hình vẽ.
+\textbf{\color{stewartcyan}11--12}\enspace Tìm công thức cho hàm bậc hai có đồ thị được cho như hình vẽ.
 
-\vspace{0.41em}
+\vspace{0.3em}
 \noindent
 \begin{minipage}[t]{0.48\linewidth}
-    \textbf{11.}
-    \begin{center}
-        \includegraphics[width=\linewidth]{images/p0068_fig3.png}
-    \end{center}
+  \textbf{11.}\hfill\null\\
+  \centering
+  \begin{tikzpicture}[scale=0.48, >=stealth]
+    \draw[->] (-0.8,0) -- (5.2,0) node[below] {\scriptsize $x$};
+    \draw[->] (0,-0.6) -- (0,4.2) node[left] {\scriptsize $y$};
+    \node[below left] at (0,0) {\scriptsize $0$};
+    \draw[stewartcyan, thick, domain=1.0:4.6, samples=40] plot (\x, {0.6*(\x-3)*(\x-3)});
+    \node[left] at (0,3.6) {\scriptsize $18$};
+    \draw (-0.1,3.6) -- (0.1,3.6);
+    \node[below] at (3,0) {\scriptsize $3$};
+    \filldraw[black] (4,0.6) circle (1.2pt) node[right] {\scriptsize $(4, 2)$};
+    \node[above right, stewartcyan] at (1.4,1.8) {\scriptsize $f$};
+  \end{tikzpicture}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.48\linewidth}
-    \textbf{12.}
-    \begin{center}
-        \includegraphics[width=\linewidth]{images/p0068_fig4.png}
-    \end{center}
+  \textbf{12.}\hfill\null\\
+  \centering
+  \begin{tikzpicture}[scale=0.48, >=stealth]
+    \draw[->] (-3.2,0) -- (2.2,0) node[below] {\scriptsize $x$};
+    \draw[->] (0,-3.2) -- (0,3.2) node[left] {\scriptsize $y$};
+    \node[below left] at (0,0) {\scriptsize $0$};
+    \draw[stewartcyan, thick, domain=-2.8:1.3, samples=40] plot (\x, {-0.6*\x*\x - 1.5*\x + 0.6});
+    \filldraw[black] (-2,1.2) circle (1.2pt) node[above left] {\scriptsize $(-2, 2)$};
+    \filldraw[black] (0,0.6) circle (1.2pt) node[right] {\scriptsize $(0, 1)$};
+    \filldraw[black] (1,-1.5) circle (1.2pt) node[right] {\scriptsize $(1, -2.5)$};
+    \node[left, stewartcyan] at (-2.2,-1.2) {\scriptsize $g$};
+  \end{tikzpicture}
 \end{minipage}
 
-\vspace{0.41em}
-\noindent{\color{stewartcyan}\rule{\linewidth}{0.6pt}}\vspace{0.41em}
+\vspace{0.4em}
+\noindent{\color{stewartcyan}\rule{\linewidth}{0.5pt}}\vspace{0.3em}
 
-\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=1.5em, itemsep=1.0em, topsep=0.3em, start=13]
-    \item Tìm công thức cho một hàm đa thức bậc ba $f$ nếu $f(1) = 6$ và $f(-1) = f(0) = f(2) = 0$.
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=1.4em, itemsep=0.35em, topsep=0.1em, start=13]
+    \item Tìm công thức cho hàm đa thức bậc ba $f$ nếu $f(1) = 6$ và $f(-1) = f(0) = f(2) = 0$.
 
-    \item Các nghiên cứu gần đây chỉ ra rằng nhiệt độ bề mặt trung bình của Trái Đất liên tục gia tăng đều đặn. Một số nhà khoa học đã mô hình hóa nhiệt độ bằng hàm tuyến tính $T = 0{,}02t + 8{,}50$, trong đó $T$ là nhiệt độ tính theo $^\circ\text{C}$ và $t$ biểu thị số năm kể từ năm 1900.\\[0.3em]
-    \textbf{(a)} Hệ số góc và giao điểm với trục $T$ thể hiện ý nghĩa gì?\\[0.3em]
+    \item Các nghiên cứu gần đây chỉ ra rằng nhiệt độ bề mặt trung bình của Trái Đất liên tục gia tăng đều đặn. Một số nhà khoa học đã mô hình hóa nhiệt độ bằng hàm tuyến tính $T = 0{,}02t + 8{,}50$, trong đó $T$ là nhiệt độ tính theo $^\circ\text{C}$ và $t$ biểu thị số năm kể từ năm 1900.\\[0.15em]
+    \textbf{(a)} Hệ số góc và giao điểm với trục $T$ thể hiện ý nghĩa gì?\\[0.15em]
     \textbf{(b)} Sử dụng phương trình này để dự đoán nhiệt độ bề mặt trung bình của Trái Đất vào năm 2100.
 
-    \item Nếu liều lượng thuốc khuyến nghị cho người lớn là $D$ (tính bằng mg), thì để xác định liều lượng thích hợp $c$ dành cho trẻ em ở độ tuổi $a$, các dược sĩ dùng phương trình $c = 0{,}0417D(a + 1)$. Giả sử liều dùng cho người lớn là 200~mg.\\[0.3em]
-    \textbf{(a)} Tìm hệ số góc của đồ thị hàm số $c$. Nó mang ý nghĩa gì?\\[0.3em]
+    \item Nếu liều lượng thuốc khuyến nghị cho người lớn là $D$ (tính bằng mg), thì để xác định liều lượng thích hợp $c$ dành cho trẻ em ở độ tuổi $a$, các dược sĩ dùng phương trình $c = 0{,}0417D(a + 1)$. Giả sử liều dùng cho người lớn là $200\text{ mg}$.\\[0.15em]
+    \textbf{(a)} Tìm hệ số góc của đồ thị hàm số $c$. Nó mang ý nghĩa gì?\\[0.15em]
     \textbf{(b)} Liều lượng dành cho trẻ sơ sinh là bao nhiêu?
 \end{enumerate}
-
 \end{minipage}
 
-\vspace{1.23em}
-\noindent{\color{stewartcyan}\rule{\textwidth}{0.8pt}}
+\vfill
+\noindent{\color{stewartcyan}\rule{\textwidth}{0.6pt}}

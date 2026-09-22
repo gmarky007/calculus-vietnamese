@@ -155,6 +155,12 @@
       "score": 99,
       "notes": "Trang dịch hiện tại bị trắng hoàn toàn nội dung (chỉ hiện mỗi dòng tiêu đề đầu trang) do mã nguồn cũ tham chiếu đến các file ảnh không tồn tại (p0067_fig2 đến fig12) và bảng bị ép vào minipage 0.71 dẫn đến tràn trang. Cần tái cấu trúc toàn trang trải rộng full-width theo bản gốc, sử dụng file `images/p0067_fig1.png` và dùng TikZ phủ màu Việt hóa chuẩn xác 100% cột phân loại hàm số.",
       "time": "2026-09-23 01:28:21"
+    },
+    {
+      "page_num": 68,
+      "score": 99,
+      "notes": "Toàn bộ khối nội dung bài tập bị tràn chiều cao và đẩy sang trang sau do kích thước minipage quá lớn, đồng thời thiếu file đồ thị vector. Mã sửa đổi tái cấu trúc hai cột cân đối, nhúng trực tiếp đồ thị TikZ chuẩn xác và căn chỉnh vừa vặn trong một trang.",
+      "time": "2026-09-23 01:30:52"
     }
   ]
 }
