@@ -1,0 +1,182 @@
+\documentclass[10pt]{article}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage{geometry}
+
+\geometry{
+  paperwidth=8.5in,
+  paperheight=11in,
+  top=0.55in,
+  bottom=0.55in,
+  left=0.7in,
+  right=0.7in
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\definecolor{stewartcyan}{RGB}{0, 130, 185}
+\definecolor{stewartgray}{RGB}{110, 110, 110}
+
+\newcommand{\casicon}{%
+  \begin{tikzpicture}[x=1pt, y=1pt, baseline=-1pt]
+    \draw[line width=0.5pt, color=stewartcyan, rounded corners=0.6pt] (0,0) rectangle (8,8);
+    \draw[line width=0.6pt, color=stewartcyan] (1.2,1.5) .. controls (3.2,6.8) and (4.8,1.2) .. (6.8,6.5);
+  \end{tikzpicture}%
+}
+
+\begin{document}
+\small
+
+% Tiêu đề trang
+\noindent
+\textbf{\textsf{150}}\qquad\textbf{\textsf{CHƯƠNG 2}}\quad\textsf{Giới hạn và Đạo hàm}
+\vspace{4mm}
+
+% Bố cục hai cột
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+  \textbf{17.} Cho hàm số $g$ có đồ thị như hình bên, hãy sắp xếp các số sau theo thứ tự tăng dần và giải thích lý do:
+  \[
+    0 \qquad g'(-2) \qquad g'(0) \qquad g'(2) \qquad g'(4)
+  \]
+  \begin{center}
+    \vspace{-1.5mm}
+    \includegraphics[width=0.74\linewidth]{images/p0185_fig1.png}
+    \vspace{-1.5mm}
+  \end{center}
+
+  \textbf{18.} Đồ thị của hàm số $f$ được cho như hình bên.
+  \begin{enumerate}[label=(\alph*), leftmargin=*, itemsep=1.5pt, topsep=1.5pt, parsep=0pt]
+    \item Tìm tốc độ thay đổi trung bình của $f$ trên đoạn $[20, 60]$.
+    \item Xác định khoảng mà trên đó tốc độ thay đổi trung bình của $f$ bằng $0$.
+    \item Tính
+    \[
+      \frac{f(40) - f(10)}{40 - 10}
+    \]
+    Giá trị này mang ý nghĩa hình học gì?
+    \item Ước lượng giá trị của $f'(50)$.
+    \item Liệu $f'(10) > f'(30)$ không?
+    \item Liệu $f'(60) > \dfrac{f(80) - f(40)}{80 - 40}$ không? Giải thích.
+  \end{enumerate}
+  \begin{center}
+    \vspace{-1.5mm}
+    \includegraphics[width=0.54\linewidth]{images/p0185_fig2.png}
+    \vspace{-2mm}
+  \end{center}
+
+  {\bfseries\color{stewartcyan} 19--20}\quad Sử dụng Định nghĩa 4 để tìm $f'(a)$ tại số $a$ đã cho.
+  \vspace{1.5mm}
+
+  \textbf{19.} $f(x) = \sqrt{4x + 1}, \quad a = 6$
+  \vspace{1.5mm}
+
+  \textbf{20.} $f(x) = 5x^4, \quad a = -1$
+  \vspace{2mm}
+
+  {\color{stewartcyan}\rule{\linewidth}{0.5pt}}
+  \vspace{1.5mm}
+
+  {\bfseries\color{stewartcyan} 21--22}\quad Sử dụng Phương trình 5 để tìm $f'(a)$ tại số $a$ đã cho.
+  \vspace{1.5mm}
+
+  \noindent
+  \begin{minipage}[t]{0.48\linewidth}
+    \textbf{21.} $f(x) = \dfrac{x^2}{x + 6}, \quad a = 3$
+  \end{minipage}\hfill
+  \begin{minipage}[t]{0.48\linewidth}
+    \textbf{22.} $f(x) = \dfrac{1}{\sqrt{2x + 2}}, \quad a = 1$
+  \end{minipage}
+  \vspace{2mm}
+
+  {\color{stewartcyan}\rule{\linewidth}{0.5pt}}
+  \vspace{1.5mm}
+
+  {\bfseries\color{stewartcyan} 23--26}\quad Tìm $f'(a)$.
+  \vspace{1.5mm}
+
+  \noindent
+  \begin{minipage}[t]{0.48\linewidth}
+    \textbf{23.} $f(x) = 2x^2 - 5x + 3$
+    \vspace{2mm}
+
+    \textbf{25.} $f(t) = \dfrac{1}{t^2 + 1}$
+  \end{minipage}\hfill
+  \begin{minipage}[t]{0.48\linewidth}
+    \textbf{24.} $f(t) = t^3 - 3t$
+    \vspace{2mm}
+
+    \textbf{26.} $f(x) = \dfrac{x}{1 - 4x}$
+  \end{minipage}
+  \vspace{2.5mm}
+
+  {\color{stewartcyan}\rule{\linewidth}{0.5pt}}
+  \vspace{1.5mm}
+
+  \textbf{27.} Tìm phương trình tiếp tuyến của đồ thị hàm số $y = B(x)$ tại $x = 6$ nếu $B(6) = 0$ và $B'(6) = -\frac{1}{2}$.
+  \vspace{2mm}
+
+  \textbf{28.} Tìm phương trình tiếp tuyến của đồ thị hàm số $y = g(x)$ tại $x = 5$ nếu $g(5) = -3$ và $g'(5) = 4$.
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+  \textbf{29.} Nếu $f(x) = 3x^2 - x^3$, hãy tìm $f'(1)$ và dùng nó để viết phương trình tiếp tuyến với đường cong $y = 3x^2 - x^3$ tại điểm $(1, 2)$.
+  \vspace{2mm}
+
+  \textbf{30.} Nếu $g(x) = x^4 - 2$, hãy tìm $g'(1)$ và dùng nó để viết phương trình tiếp tuyến với đường cong $y = x^4 - 2$ tại điểm $(1, -1)$.
+  \vspace{2mm}
+
+  \textbf{31.} (a) Nếu $F(x) = 5x/(1 + x^2)$, hãy tìm $F'(2)$ và dùng nó để viết phương trình tiếp tuyến với đường cong $y = 5x/(1 + x^2)$ tại điểm $(2, 2)$.\\[1.5mm]
+  \leavevmode\llap{\casicon\hspace{4pt}}(b) Minh họa phần (a) bằng cách vẽ đường cong và tiếp tuyến trên cùng một màn hình đồ họa.
+  \vspace{2mm}
+
+  \textbf{32.} (a) Nếu $G(x) = 4x^2 - x^3$, hãy tìm $G'(a)$ và dùng nó để viết phương trình các tiếp tuyến với đường cong $y = 4x^2 - x^3$ tại các điểm $(2, 8)$ và $(3, 9)$.\\[1.5mm]
+  \leavevmode\llap{\casicon\hspace{4pt}}(b) Minh họa phần (a) bằng cách vẽ đường cong và các tiếp tuyến trên cùng một màn hình đồ họa.
+  \vspace{2mm}
+
+  \textbf{33.} Nếu tiếp tuyến của đường cong $y = f(x)$ tại điểm có $a = 2$ có phương trình là $y = 4x - 5$, hãy tìm $f(2)$ và $f'(2)$.
+  \vspace{2mm}
+
+  \textbf{34.} Nếu tiếp tuyến của $y = f(x)$ tại điểm $(4, 3)$ đi qua điểm $(0, 2)$, hãy tìm $f(4)$ và $f'(4)$.
+  \vspace{2mm}
+
+  {\bfseries\color{stewartcyan} 35--36}\quad Một chất điểm chuyển động thẳng với phương trình chuyển động $s = f(t)$, với $s$ tính bằng mét và $t$ tính bằng giây. Tìm vận tốc và tốc độ tại thời điểm $t = 4$.
+  \vspace{1.5mm}
+
+  \noindent
+  \begin{minipage}[t]{0.48\linewidth}
+    \textbf{35.} $f(t) = 80t - 6t^2$
+  \end{minipage}\hfill
+  \begin{minipage}[t]{0.48\linewidth}
+    \textbf{36.} $f(t) = 10 + \dfrac{45}{t + 1}$
+  \end{minipage}
+  \vspace{2.5mm}
+
+  {\color{stewartcyan}\rule{\linewidth}{0.5pt}}
+  \vspace{1.5mm}
+
+  \textbf{37.} Một lon nước ngọt ấm được đặt vào trong tủ lạnh. Hãy phác thảo đồ thị nhiệt độ của lon nước ngọt theo thời gian. Tốc độ giảm nhiệt độ ban đầu lớn hơn hay nhỏ hơn sau một giờ?
+  \vspace{2mm}
+
+  \textbf{38.} Một con gà tây nướng lấy từ lò khi đạt $185^\circ\text{F}$ và đặt vào phòng nhiệt độ $75^\circ\text{F}$. Đồ thị cho thấy nhiệt độ gà tây giảm dần về nhiệt độ phòng. Bằng cách đo hệ số góc tiếp tuyến, hãy ước lượng tốc độ thay đổi nhiệt độ sau một giờ.
+  \begin{center}
+    \vspace{-1.5mm}
+    \includegraphics[width=0.64\linewidth]{images/p0185_fig3.png}
+    \vspace{-2mm}
+  \end{center}
+
+  \textbf{39.} Phác thảo đồ thị hàm số $f$ thỏa mãn $f(0) = 0$, $f'(0) = 3$, $f'(1) = 0$, và $f'(2) = -1$.
+\end{minipage}
+
+\vfill
+\noindent
+\parbox{\linewidth}{%
+  \centering\fontsize{6.5pt}{8pt}\selectfont\color{stewartgray}
+  Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\\ 
+  Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+}
+
+\end{document}
