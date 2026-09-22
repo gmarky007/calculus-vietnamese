@@ -287,6 +287,12 @@
       "score": 99,
       "notes": "Bản dịch hiện tại bị lỗi biên dịch khiến toàn bộ mã nguồn phần preamble bị in thô lên đầu trang và mất toàn bộ nội dung bài tập bên dưới. Cần tái tạo lại toàn bộ mã XeLaTeX chuẩn với bố cục 2 cột, dải tiêu đề 4 sọc cyan đặc trưng và dóng hàng chính xác.",
       "time": "2026-09-23 04:16:33"
+    },
+    {
+      "page_num": 160,
+      "score": 99,
+      "notes": "Bản dịch bị lỗi hiển thị rò rỉ mã phần tiền đề (preamble) lên đầu trang; xuất hiện một đường kẻ ngang xanh thừa giữa bài 45 và 46 (bản gốc không có); nhóm bài 25-26 bị ngắt dòng câu (a) xuống dưới nhãn; bài 40 dùng phân số đứng quá lớn thay vì dạng gọn arctan(1/x); các giá trị a ở bài 21-24 chưa được dóng thẳng cột.",
+      "time": "2026-09-23 04:20:19"
     }
   ]
 }
