@@ -101,6 +101,12 @@
       "score": 99,
       "notes": "Bản dịch hiện tại bị lỗi biên dịch nghiêm trọng: toàn bộ nội dung thân trang không hiển thị, xuất hiện văn bản mã nguồn ở đầu trang (do xung đột gói enumitem và cấu trúc dòng lệnh). Đã biên tập lại toàn bộ mã nguồn LaTeX bằng kiến trúc 2 cột minipage cân đối, lưới bảng tabular cho các bài toán phân cột, định dạng \\lim\\limits chuẩn xác sư phạm và icon đồ thị vẽ bằng TikZ đạt độ tương đồng 99%.",
       "time": "2026-09-23 03:12:50"
+    },
+    {
+      "page_num": 129,
+      "score": 99,
+      "notes": "Bản in bị rò rỉ mã tiền tố ở đầu trang do lỗi escape ký tự; câu lệnh màu cho vrule bị lỗi cú pháp làm in chữ thô 'color stewartcyan' và làm tràn vỡ tiêu đề Mục 2.3; công thức Bài 41 cần sửa x - 1 thành x + 1; cần dóng hàng chuẩn khối Mục 2.3 theo đúng layout sách gốc.",
+      "time": "2026-09-23 03:14:53"
     }
   ]
 }

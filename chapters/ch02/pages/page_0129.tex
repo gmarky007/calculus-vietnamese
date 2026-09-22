@@ -1,0 +1,149 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{geometry}
+\geometry{
+  paperwidth=8.5in,
+  paperheight=11in,
+  top=1.6cm,
+  bottom=1.6cm,
+  left=1.8cm,
+  right=1.8cm,
+  headheight=14pt,
+  headsep=12pt
+}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{mathptmx}
+
+\definecolor{stewartcyan}{RGB}{0, 136, 170}
+\definecolor{stewartdark}{RGB}{35, 31, 32}
+
+\newcommand{\graphicon}{%
+  \begin{tikzpicture}[baseline=-0.3ex, scale=0.85]
+    \draw[stewartcyan, line width=0.8pt, rounded corners=1.2pt] (0,0) rectangle (0.36, 0.30);
+    \draw[stewartcyan, line width=0.8pt] (0.04, 0.08) .. controls (0.13, 0.32) and (0.19, -0.02) .. (0.32, 0.22);
+  \end{tikzpicture}%
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\fontsize{9}{11}\selectfont\textbf{94}\hspace{2em}\textbf{\textsf{CHƯƠNG 2}}\hspace{1em}\textsf{Giới hạn và Đạo hàm}}
+\renewcommand{\headrulewidth}{0pt}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3.5pt}
+\setlength{\abovedisplayskip}{3pt}
+\setlength{\belowdisplayskip}{3pt}
+\setlength{\abovedisplayshortskip}{1pt}
+\setlength{\belowdisplayshortskip}{2pt}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.475\textwidth}
+  \textbf{41.} Tìm tiệm cận đứng của hàm số
+  \[
+    f(x) = \frac{x + 1}{2x + 4}
+  \]
+
+  \textbf{42.} (a) Tìm các tiệm cận đứng của hàm số
+  \[
+    y = \frac{x^2 + 1}{3x - 2x^2}
+  \]
+  \llap{\graphicon\hspace{5pt}}(b) Xác nhận câu trả lời của bạn cho phần (a) bằng cách vẽ đồ thị hàm số.
+
+  \textbf{43.} Xác định $\lim\limits_{x \to 1^-} \dfrac{1}{x^3 - 1}$ và $\lim\limits_{x \to 1^+} \dfrac{1}{x^3 - 1}$
+  \begin{enumerate}[label=(\alph*), itemsep=1.5pt, topsep=2pt, parsep=0pt, leftmargin=1.5em]
+    \item bằng cách tính $f(x) = 1/(x^3 - 1)$ với các giá trị của $x$ tiến dần đến $1$ từ bên trái và từ bên phải,
+    \item bằng cách lập luận như trong Ví dụ 7, và
+    \item[\llap{\graphicon\hspace{5pt}}(c)] từ đồ thị của $f$.
+  \end{enumerate}
+
+  \llap{\graphicon\hspace{5pt}}\textbf{44.} (a) Bằng cách vẽ đồ thị hàm số
+  \[
+    f(x) = \frac{\cos 2x - \cos x}{x^2}
+  \]
+  và phóng to về phía điểm mà đồ thị cắt trục $y$, hãy ước lượng giá trị của $\lim\limits_{x \to 0} f(x)$.\\[2pt]
+  (b) Kiểm tra lại câu trả lời của bạn ở phần (a) bằng cách tính $f(x)$ với các giá trị của $x$ tiến dần về $0$.
+
+  \textbf{45.} (a) Ước lượng giá trị của giới hạn $\lim\limits_{x \to 0} (1 + x)^{1/x}$ chính xác đến năm chữ số thập phân. Con số này có quen thuộc không?\\
+  \llap{\graphicon\hspace{5pt}}(b) Minh họa phần (a) bằng cách vẽ đồ thị hàm số $y = (1 + x)^{1/x}$.
+
+  \llap{\graphicon\hspace{5pt}}\textbf{46.} (a) Vẽ đồ thị hàm số $f(x) = e^x + \ln|x - 4|$ với $0 \leqslant x \leqslant 5$. Bạn có nghĩ rằng đồ thị này là một sự biểu diễn chính xác của $f$ không?\\
+  (b) Làm thế nào để bạn thu được một đồ thị biểu diễn $f$ tốt hơn?
+
+  \textbf{47.} (a) Tính giá trị của hàm số $f(x) = x^2 - (2^x/1000)$ với $x = 1;\ 0{,}8;\ 0{,}6;\ 0{,}4;\ 0{,}2;\ 0{,}1$ và $0{,}05$, rồi dự đoán giá trị của
+  \[
+    \lim_{x \to 0} \left(x^2 - \frac{2^x}{1000}\right)
+  \]
+  (b) Tính $f(x)$ với $x = 0{,}04;\ 0{,}02;\ 0{,}01;\ 0{,}005;\ 0{,}003$ và $0{,}001$. Hãy dự đoán lại một lần nữa.
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.475\textwidth}
+  \textbf{48.} (a) Tính giá trị của hàm số
+  \[
+    h(x) = \frac{\tan x - x}{x^3}
+  \]
+  với $x = 1;\ 0{,}5;\ 0{,}1;\ 0{,}05;\ 0{,}01$ và $0{,}05$.\\
+  (b) Dự đoán giá trị của $\lim\limits_{x \to 0} \dfrac{\tan x - x}{x^3}$.\\[2pt]
+  (c) Tính $h(x)$ với các giá trị $x$ nhỏ dần liên tiếp cho đến khi bạn nhận được giá trị bằng $0$ cho $h(x)$. Bạn có còn tự tin rằng dự đoán của mình ở phần (b) là đúng không? Giải thích tại sao cuối cùng bạn lại thu được các giá trị bằng $0$. (Trong Mục 4.4, phương pháp tính giới hạn này sẽ được giải thích.)\\[2pt]
+  \llap{\graphicon\hspace{5pt}}(d) Vẽ đồ thị hàm số $h$ trong khung nhìn $[-1, 1] \times [0, 1]$. Sau đó phóng to về phía điểm mà đồ thị cắt trục $y$ để ước lượng giới hạn của $h(x)$ khi $x$ tiến dần đến $0$. Tiếp tục phóng to cho đến khi bạn quan sát thấy sự biến dạng trên đồ thị của $h$. So sánh với các kết quả của phần (c).
+
+  \llap{\graphicon\hspace{5pt}}\textbf{49.} Sử dụng đồ thị để ước lượng phương trình của tất cả các tiệm cận đứng của đường cong
+  \[
+    y = \tan(2 \sin x) \qquad -\pi \leqslant x \leqslant \pi
+  \]
+  Sau đó tìm phương trình chính xác của các tiệm cận này.
+
+  \textbf{50.} Xét hàm số $f(x) = \tan \dfrac{1}{x}$.\\[2pt]
+  (a) Chứng minh rằng $f(x) = 0$ với $x = \dfrac{1}{\pi},\ \dfrac{1}{2\pi},\ \dfrac{1}{3\pi},\ \dots$\\[2pt]
+  (b) Chứng minh rằng $f(x) = 1$ với $x = \dfrac{4}{\pi},\ \dfrac{4}{5\pi},\ \dfrac{4}{9\pi},\ \dots$\\[2pt]
+  (c) Bạn có thể rút ra kết luận gì về $\lim\limits_{x \to 0^+} \tan \dfrac{1}{x}$?
+
+  \textbf{51.} Trong thuyết tương đối, khối lượng của một hạt chuyển động với vận tốc $v$ là
+  \[
+    m = \frac{m_0}{\sqrt{1 - v^2/c^2}}
+  \]
+  trong đó $m_0$ là khối lượng của hạt khi đứng yên (khối lượng nghỉ) và $c$ là tốc độ ánh sáng. Điều gì xảy ra khi $v \to c^-$?
+\end{minipage}
+
+\vspace{2.5em}
+
+\noindent
+\begin{minipage}[c]{0.22\textwidth}
+  \begin{tikzpicture}[baseline=0.2ex]
+    \foreach \y in {0pt, 2.8pt, 5.6pt, 8.4pt} {
+      \draw[stewartcyan, line width=0.7pt] (0, \y) -- (1.3cm, \y);
+    }
+  \end{tikzpicture}%
+  \hspace{0.4em}%
+  {\fontsize{24}{26}\selectfont\sffamily\bfseries\color{stewartcyan}2.3}
+\end{minipage}%
+{\color{stewartcyan}\rule[-6pt]{1.4pt}{28pt}}%
+\hspace{0.8em}%
+\begin{minipage}[c]{0.73\textwidth}
+  {\fontsize{15}{18}\selectfont\sffamily\bfseries Tính Giới Hạn Bằng Cách Sử Dụng Các Quy Tắc Giới Hạn}
+\end{minipage}
+
+\vspace{1.2em}
+
+\noindent
+\hspace*{0.245\textwidth}%
+\begin{minipage}[t]{0.755\textwidth}
+  {\color{stewartcyan}\rule{1.1ex}{1.1ex}}\hspace{0.5em}{\fontsize{11}{13}\selectfont\sffamily\bfseries Các tính chất của giới hạn}\\[0.4em]
+  \fontsize{9.5}{13.5}\selectfont
+  Trong Mục 2.2, chúng ta đã dùng máy tính bỏ túi và đồ thị để dự đoán giá trị của các giới hạn, nhưng chúng ta thấy rằng các phương pháp như vậy không phải lúc nào cũng dẫn đến câu trả lời chính xác. Trong mục này, chúng ta sử dụng các tính chất sau đây của giới hạn, được gọi là các \textit{Quy tắc Giới hạn}, để tính toán các giới hạn.
+\end{minipage}
+
+\vfill
+\begin{center}
+  \fontsize{6}{7.5}\selectfont\color{gray}
+  Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\\
+  Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+\end{center}
+
+\end{document}
