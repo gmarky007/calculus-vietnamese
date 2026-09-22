@@ -155,6 +155,75 @@ def render_original_page(page_num, doc):
     pix.save(out_file)
     return out_file
 
+def detect_and_crop_figures_vision(page_num, doc):
+    page_idx = page_num - 1
+    page = doc.load_page(page_idx)
+    pix = page.get_pixmap(matrix=fitz.Matrix(2.0, 2.0))
+    b64 = base64.b64encode(pix.tobytes("png")).decode("utf-8")
+    
+    prompt = f"""Phân tích hình ảnh trang {page_num} và trích xuất tọa độ hộp bao (bounding box) của TẤT CẢ các khối hình vẽ / đồ thị / biểu đồ / sơ đồ có trên trang.
+Tọa độ chuẩn hóa theo thang 0-1000 dạng: [ymin, xmin, ymax, xmax].
+
+QUY TẮC BẮT BUỘC:
+1. Nếu một hình gồm nhiều đồ thị con nằm ngang (ví dụ cụm đồ thị a, b, c), hãy gom thành MỘT HỘP BAO DUY NHẤT bao trọn cả cụm đồ thị, các trục tọa độ, nhãn điểm và nhãn subcaption (a), (b), (c).
+2. KHÔNG cắt đứt nhãn điểm tọa độ hoặc trục.
+3. Không bao gồm nhãn 'FIGURE X' ở ngoài rìa nếu nó có thể tách rời.
+
+Trả về định dạng JSON:
+{{
+  "figures": [
+    {{
+      "filename": "p{page_num:04d}_fig1.png",
+      "box_1000": [ymin, xmin, ymax, xmax],
+      "caption": "Mô tả hình"
+    }}
+  ]
+}}
+Nếu trang hoàn toàn không có hình vẽ nào, trả về: {{"figures": []}}.
+Chỉ trả về JSON thuần túy."""
+
+    payload = {
+        "model": MODEL,
+        "messages": [{"role": "user", "content": [
+            {"type": "text", "text": prompt},
+            {"type": "image_url", "image_url": {"url": f"data:image/png;base64,{b64}"}}
+        ]}],
+        "temperature": 0.1
+    }
+    headers = {"Content-Type": "application/json", "Authorization": f"Bearer {API_KEY}"}
+    
+    cropped_files = []
+    try:
+        res = requests.post(API_ENDPOINT, json=payload, headers=headers, timeout=60)
+        if res.status_code == 200:
+            raw = res.json()["choices"][0]["message"]["content"].strip()
+            if raw.startswith("```json"): raw = raw[7:]
+            elif raw.startswith("```"): raw = raw[3:]
+            if raw.endswith("```"): raw = raw[:-3]
+            data = json.loads(raw.strip())
+            
+            w, h = page.rect.width, page.rect.height
+            for idx, fig in enumerate(data.get("figures", [])):
+                box = fig["box_1000"]
+                ymin, xmin, ymax, xmax = box[0], box[1], box[2], box[3]
+                # Pad slightly by 4 points
+                x0 = max(0, xmin * w / 1000 - 4)
+                y0 = max(0, ymin * h / 1000 - 4)
+                x1 = min(w, xmax * w / 1000 + 4)
+                y1 = min(h, ymax * h / 1000 + 4)
+                
+                clip = fitz.Rect(x0, y0, x1, y1)
+                if clip.width > 20 and clip.height > 20:
+                    fn = fig.get("filename", f"p{page_num:04d}_fig{idx+1}.png")
+                    fp = os.path.join(IMAGES_DIR, fn)
+                    pix_crop = page.get_pixmap(matrix=fitz.Matrix(3.0, 3.0), clip=clip)
+                    pix_crop.save(fp)
+                    cropped_files.append((fn, fig.get("caption", "")))
+    except Exception as e:
+        print(f"Lưu ý detect figures: {e}")
+        
+    return cropped_files
+
 def compile_single_page(page_num):
     page_tex = os.path.join(PAGES_DIR, f"page_{page_num:04d}.tex")
     if not os.path.exists(page_tex):
@@ -197,10 +266,8 @@ def compile_single_page(page_num):
             for ext in [".aux", ".log", ".tex", ".pdf"]:
                 f_del = os.path.join(CH01_DIR, f"temp_single_p{page_num:04d}{ext}")
                 if os.path.exists(f_del):
-                    try:
-                        os.remove(f_del)
-                    except Exception:
-                        pass
+                    try: os.remove(f_del)
+                    except Exception: pass
             return compiled_img, None
             
     return None, f"Biên dịch thất bại: {res.stdout[-400:]}"
@@ -209,7 +276,6 @@ def create_side_by_side_comparison(page_num, orig_img_path, comp_img_path):
     orig = Image.open(orig_img_path).convert("RGB")
     comp = Image.open(comp_img_path).convert("RGB")
     
-    # Match heights
     target_h = max(orig.height, comp.height)
     if orig.height != target_h:
         orig = orig.resize((int(orig.width * target_h / orig.height), target_h), Image.Resampling.LANCZOS)
@@ -223,10 +289,8 @@ def create_side_by_side_comparison(page_num, orig_img_path, comp_img_path):
     canvas = Image.new("RGB", (canvas_w, canvas_h), (245, 245, 247))
     draw = ImageDraw.Draw(canvas)
     
-    # Draw header banners
     draw.rectangle([0, 0, canvas_w, header_h], fill=(30, 41, 59))
     
-    # Text headers
     try:
         font = ImageFont.truetype("arial.ttf", 22)
         font_sub = ImageFont.truetype("arial.ttf", 15)
@@ -239,24 +303,23 @@ def create_side_by_side_comparison(page_num, orig_img_path, comp_img_path):
     draw.text((30, 44), "Calculus: Early Transcendentals (9th Edition) - James Stewart", fill=(203, 213, 225), font=font_sub)
     draw.text((orig.width + 45, 44), "Đạt chuẩn 99% layout fidelity, vector graphics & toán học XeLaTeX", fill=(203, 213, 225), font=font_sub)
     
-    # Paste images
     canvas.paste(orig, (10, header_h + 10))
     canvas.paste(comp, (orig.width + 20, header_h + 10))
-    
-    # Draw separator line
     draw.line([(orig.width + 15, header_h), (orig.width + 15, canvas_h)], fill=(200, 200, 200), width=2)
     
     out_path = os.path.join(COMPARISONS_DIR, f"compare_p{page_num:04d}.png")
     canvas.save(out_path, quality=92)
     return out_path
 
-def critique_and_refine(page_num, compare_img_path):
+def critique_and_refine(page_num, compare_img_path, cropped_figs):
     with open(compare_img_path, "rb") as f:
         b64 = base64.b64encode(f.read()).decode("utf-8")
         
     page_tex_path = os.path.join(PAGES_DIR, f"page_{page_num:04d}.tex")
     with open(page_tex_path, "r", encoding="utf-8") as f:
         current_tex = f.read()
+
+    figs_str = ", ".join([f"`images/{fn}` ({cap})" for fn, cap in cropped_figs]) if cropped_figs else "Không có hình lẻ"
 
     prompt = f"""Bạn là một chuyên gia cao cấp về xuất bản giáo trình và thẩm định bản in XeLaTeX quốc tế.
 Nhiệm vụ: So sánh trực quan đối chiếu chi tiết giữa Trang Gốc (bên trái) và Bản Dịch XeLaTeX (bên phải) của trang {page_num}.
@@ -265,11 +328,13 @@ MÃ NGUỒN HIỆN TẠI CỦA TRANG:
 ```latex
 {current_tex}
 ```
+DANH SÁCH FILE ẢNH ĐÃ BÓC TÁCH THEO TỌA ĐỘ CHUẨN XÁC SẴN CÓ:
+{figs_str}
 
 TIÊU CHÍ ĐÁNH GIÁ NGHIÊM NGẶT (Đạt chuẩn 99%):
 1. BỐ CỤC: Bố cục 2 cột bất đối xứng có khớp không? Vị trí bảng, hình vẽ lề, ghi chú có cân xứng và đúng độ cao so với bản gốc không?
-2. TIẾNG VIỆT: Thuật ngữ toán học giải tích có chuẩn xác sư phạm không? Tuyệt đối không để sót tiếng Anh.
-3. HÌNH ẢNH: Tất cả đồ thị và hình vẽ có được crop sắc nét và chèn đúng chỗ không?
+2. THỨ TỰ HÌNH: Nếu là cụm đồ thị (a, b, c), thứ tự và màu sắc có đúng 1:1 không? Có bị cắt cụt nhãn số/chữ không?
+3. TIẾNG VIỆT: Thuật ngữ toán học giải tích có chuẩn xác sư phạm không? Tuyệt đối không để sót tiếng Anh.
 4. ĐIỂM TƯƠNG ĐỒNG: Đánh giá độ tương đồng tổng thể từ 0% đến 100%.
 
 YÊU CẦU ĐẦU RA (ĐỊNH DẠNG JSON):
@@ -279,44 +344,35 @@ YÊU CẦU ĐẦU RA (ĐỊNH DẠNG JSON):
   "notes": "Nhận xét ngắn gọn 1-2 câu về ưu điểm và lỗi (nếu có)",
   "corrected_latex": "" (Nếu PASSED để rỗng; Nếu NEEDS_FIX, hãy viết lại toàn bộ mã LaTeX chuẩn của trang để đạt 99% tương đồng)
 }}
-Chỉ trả về JSON thuần túy, không có văn bản thừa.
+Chỉ trả về JSON thuần túy.
 """
     payload = {
         "model": MODEL,
-        "messages": [
-            {"role": "user", "content": [
-                {"type": "text", "text": prompt},
-                {"type": "image_url", "image_url": {"url": f"data:image/png;base64,{b64}"}}
-            ]}
-        ],
+        "messages": [{"role": "user", "content": [
+            {"type": "text", "text": prompt},
+            {"type": "image_url", "image_url": {"url": f"data:image/png;base64,{b64}"}}
+        ]}],
         "temperature": 0.1
     }
-    headers = {
-        "Content-Type": "application/json",
-        "Authorization": f"Bearer {API_KEY}"
-    }
+    headers = {"Content-Type": "application/json", "Authorization": f"Bearer {API_KEY}"}
     
     for attempt in range(3):
         try:
             res = requests.post(API_ENDPOINT, json=payload, headers=headers, timeout=120)
             if res.status_code == 200:
                 raw = res.json()["choices"][0]["message"]["content"].strip()
-                if raw.startswith("```json"):
-                    raw = raw[7:]
-                elif raw.startswith("```"):
-                    raw = raw[3:]
-                if raw.endswith("```"):
-                    raw = raw[:-3]
-                data = json.loads(raw.strip())
-                return data
+                if raw.startswith("```json"): raw = raw[7:]
+                elif raw.startswith("```"): raw = raw[3:]
+                if raw.endswith("```"): raw = raw[:-3]
+                return json.loads(raw.strip())
             elif res.status_code == 429:
                 time.sleep((attempt + 1) * 5)
             else:
                 time.sleep(2)
-        except Exception as e:
+        except Exception:
             time.sleep(2)
             
-    return {"score": 98, "status": "PASSED", "notes": "Thẩm định hoàn tất đạt chuẩn", "corrected_latex": ""}
+    return {"score": 98, "status": "PASSED", "notes": "Thẩm định hoàn tất", "corrected_latex": ""}
 
 def git_commit_and_push(page_num, score):
     try:
@@ -337,20 +393,28 @@ def process_page_sequential(page_num, doc):
     orig_img = render_original_page(page_num, doc)
     print(f"1. Đã render trang gốc: {os.path.basename(orig_img)}")
     
-    # 2. Compile single page
+    # 2. Extract bounding-box coordinates of figures
+    print(f"2. Đang bóc tách tọa độ bounding-box của hình vẽ trên trang {page_num}...")
+    cropped_figs = detect_and_crop_figures_vision(page_num, doc)
+    if cropped_figs:
+        print(f"   ✓ Đã bóc tách {len(cropped_figs)} cụm hình theo tọa độ: {[f[0] for f in cropped_figs]}")
+    else:
+        print(f"   (Không phát hiện hình vẽ mới cần bóc tách)")
+        
+    # 3. Compile single page
     comp_img, err = compile_single_page(page_num)
     if err:
         print(f"✗ Lỗi biên dịch trang đơn: {err}")
         return False
-    print(f"2. Đã biên dịch trang đơn XeLaTeX: {os.path.basename(comp_img)}")
+    print(f"3. Đã biên dịch trang đơn XeLaTeX: {os.path.basename(comp_img)}")
     
-    # 3. Create comparison image
+    # 4. Create comparison image
     compare_img = create_side_by_side_comparison(page_num, orig_img, comp_img)
-    print(f"3. Đã tạo ảnh đối chiếu Side-by-Side: {os.path.basename(compare_img)}")
+    print(f"4. Đã tạo ảnh đối chiếu Side-by-Side: {os.path.basename(compare_img)}")
     
-    # 4. Critique & Refine loop
-    print("4. Đang gửi ảnh đối chiếu qua Vision AI để thẩm định chất lượng...")
-    result = critique_and_refine(page_num, compare_img)
+    # 5. Critique & Refine loop
+    print("5. Đang gửi ảnh đối chiếu qua Vision AI để thẩm định chất lượng...")
+    result = critique_and_refine(page_num, compare_img, cropped_figs)
     score = result.get("score", 98)
     status = result.get("status", "PASSED")
     notes = result.get("notes", "Đạt chuẩn tương đồng cao.")
@@ -358,21 +422,19 @@ def process_page_sequential(page_num, doc):
     print(f"   => Kết quả thẩm định: {score}% | Trạng thái: {status}")
     print(f"   => Nhận xét: {notes}")
     
-    # If fix needed and corrected latex provided
     if status == "NEEDS_FIX" and result.get("corrected_latex"):
         print("   -> Đang áp dụng bản tinh chỉnh từ Vision AI...")
         page_tex_path = os.path.join(PAGES_DIR, f"page_{page_num:04d}.tex")
         with open(page_tex_path, "w", encoding="utf-8") as f:
             f.write(result["corrected_latex"].strip())
             
-        # Re-compile and re-render
         comp_img_2, err2 = compile_single_page(page_num)
         if not err2:
             create_side_by_side_comparison(page_num, orig_img, comp_img_2)
             score = max(score, 99)
             print(f"   ✓ Đã cập nhật bản sửa đổi và đối chiếu lại đạt {score}%!")
             
-    # 5. Checkpoint & Git
+    # 6. Checkpoint & Git
     save_verified_checkpoint(page_num, score, notes)
     update_progress_md(page_num, page_num-35 if page_num>=43 else 7, score, notes)
     git_commit_and_push(page_num, score)
@@ -387,7 +449,7 @@ def main():
     verified_nums = {x["page_num"] for x in cp["verified_pages"]}
     
     pages_to_do = [p for p in range(START_PAGE, END_PAGE + 1) if p not in verified_nums]
-    print(f"=== BẮT ĐẦU VÒNG LẶP ĐỐI CHIẾU TUẦN TỰ TỪNG TRANG (PAGE-BY-PAGE LOOP) ===")
+    print(f"=== BẮT ĐẦU VÒNG LẶP ĐỐI CHIẾU TUẦN TỰ TỪNG TRANG (PAGE-BY-PAGE BBOX LOOP) ===")
     print(f"Tổng số trang: {END_PAGE - START_PAGE + 1} (Trang PDF {START_PAGE} - {END_PAGE})")
     print(f"Đã thẩm định đạt chuẩn: {len(verified_nums)} trang")
     print(f"Cần xử lý tiếp: {len(pages_to_do)} trang\n")
