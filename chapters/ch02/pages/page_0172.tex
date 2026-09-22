@@ -1,0 +1,178 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{newtxtext,newtxmath}
+\usepackage{enumitem}
+
+\geometry{
+    letterpaper,
+    top=0.6in,
+    bottom=0.55in,
+    left=0.65in,
+    right=0.65in,
+    headheight=14pt,
+    headsep=12pt,
+    footskip=20pt
+}
+
+\definecolor{stewartcyan}{RGB}{0, 130, 165}
+\definecolor{stewartred}{RGB}{205, 32, 38}
+\definecolor{stewartdarkgray}{RGB}{70, 70, 70}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[R]{%
+  \footnotesize
+  \textsf{\textbf{MỤC 2.6}}\quad
+  \textsf{Giới hạn ở vô cực; Tiệm cận ngang}\qquad
+  \normalsize\textbf{137}%
+}
+
+\newcommand{\stripes}[1]{%
+  \parbox[c]{#1}{%
+    \color{stewartcyan}%
+    \hrule height 0.6pt\vskip 1.8pt%
+    \hrule height 0.6pt\vskip 1.8pt%
+    \hrule height 0.6pt\vskip 1.8pt%
+    \hrule height 0.6pt%
+  }%
+}
+
+\begin{document}
+
+% ==================== PHẦN 1: LÝ THUYẾT (TRÊN) ====================
+\noindent
+\begin{minipage}[t]{0.25\textwidth}
+    \vspace{0pt}
+    \centering
+    \includegraphics[width=0.95\linewidth]{images/p0172_fig1.png}\\[4pt]
+    \textbf{\textsf{HÌNH 19}}\\[1pt]
+    $\displaystyle \lim_{x \to \infty} f(x) = \infty$
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.72\textwidth}
+    \vspace{0pt}
+    Cuối cùng, ta lưu ý rằng một giới hạn vô cực ở vô cực có thể được định nghĩa như sau. Minh họa hình học được cho trong Hình~19.
+
+    \vspace{0.4em}
+    \begin{tcolorbox}[
+        colframe=stewartred,
+        colback=white,
+        boxrule=0.8pt,
+        arc=0mm,
+        left=8pt,
+        right=8pt,
+        top=6pt,
+        bottom=6pt
+    ]
+        \noindent
+        \colorbox{stewartred}{\color{white}\bfseries\textsf{9}}\enspace
+        {\bfseries\color{stewartred}\textsf{Định nghĩa chính xác về giới hạn vô cực ở vô cực}}\enspace
+        Cho $f$ là một hàm số xác định trên một khoảng $(a, \infty)$ nào đó. Khi đó
+        \[
+            \lim_{x \to \infty} f(x) = \infty
+        \]
+        có nghĩa là với mọi số dương $M$, tồn tại một số dương $N$ tương ứng sao cho
+        \[
+            \text{nếu } x > N \quad \text{thì } f(x) > M
+        \]
+    \end{tcolorbox}
+    
+    \vspace{0.3em}
+    Các định nghĩa tương tự cũng áp dụng khi ký hiệu $\infty$ được thay bằng $-\infty$. (Xem Bài tập 80.)
+\end{minipage}
+
+\vspace{1.2em}
+
+% ==================== TIÊU ĐỀ BÀI TẬP ====================
+\noindent
+\begin{minipage}{\linewidth}
+  \centering
+  \stripes{1.3in}\enspace
+  {\Large\bfseries\textsf{\color{stewartcyan}2.6}}\enspace
+  {\color{stewartcyan}\rule[-1.5pt]{1.5pt}{13pt}}\enspace
+  {\Large\bfseries\textsf{Bài tập}}\enspace
+  \stripes{3.6in}
+\end{minipage}
+
+\vspace{0.8em}
+
+% ==================== PHẦN 2: BÀI TẬP (2 CỘT) ====================
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+    \vspace{0pt}
+    \begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=1.5em, itemsep=0.6em]
+        \item Hãy giải thích bằng lời của bạn ý nghĩa của mỗi biểu thức sau.\\[3pt]
+        (a) $\displaystyle\lim_{x \to \infty} f(x) = 5$ \hfill (b) $\displaystyle\lim_{x \to -\infty} f(x) = 3$
+
+        \item (a) Đồ thị của hàm số $y = f(x)$ có thể cắt một đường tiệm cận đứng không? Nó có thể cắt một đường tiệm cận ngang không? Hãy vẽ đồ thị phác thảo để minh họa.\\[2pt]
+        (b) Đồ thị của $y = f(x)$ có thể có bao nhiêu đường tiệm cận ngang? Hãy vẽ phác thảo đồ thị để minh họa các khả năng.
+
+        \item Cho hàm số $f$ có đồ thị như hình bên, hãy xác định các giá trị sau.\\[3pt]
+        (a) $\displaystyle\lim_{x \to \infty} f(x)$ \hfill (b) $\displaystyle\lim_{x \to -\infty} f(x)$\\[3pt]
+        (c) $\displaystyle\lim_{x \to 1} f(x)$ \hfill (d) $\displaystyle\lim_{x \to 3} f(x)$\\[3pt]
+        (e) Phương trình của các đường tiệm cận
+    \end{enumerate}
+
+    \vspace{0.3em}
+    \begin{center}
+        \includegraphics[width=0.88\linewidth]{images/p0172_fig3.png}
+    \end{center}
+    \vspace{-0.3em}
+
+    \begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=1.5em, start=4]
+        \item Cho hàm số $g$ có đồ thị như hình trên, hãy xác định các giá trị sau.\\[3pt]
+        (a) $\displaystyle\lim_{x \to \infty} g(x)$ \hfill (b) $\displaystyle\lim_{x \to -\infty} g(x)$\\[3pt]
+        (c) $\displaystyle\lim_{x \to 0} g(x)$ \hfill (d) $\displaystyle\lim_{x \to 2^-} g(x)$\\[3pt]
+        (e) $\displaystyle\lim_{x \to 2^+} g(x)$ \hfill (f) Phương trình các tiệm cận
+    \end{enumerate}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+    \vspace{0pt}
+    \begin{center}
+        \includegraphics[width=0.88\linewidth]{images/p0172_fig2.png}
+    \end{center}
+    \vspace{0.2em}
+
+    \noindent
+    {\bfseries\color{stewartcyan}5--10}\enspace
+    \textbf{Hãy phác thảo đồ thị của một ví dụ về hàm số $f$ thỏa mãn tất cả các điều kiện đã cho.}
+
+    \vspace{0.4em}
+    \begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=1.5em, start=5, itemsep=0.55em]
+        \item $f(2) = 4, \quad f(-2) = -4, \quad \displaystyle\lim_{x \to -\infty} f(x) = 0, \quad \lim_{x \to \infty} f(x) = 2$
+
+        \item $f(0) = 0, \quad \displaystyle\lim_{x \to 1^-} f(x) = \infty, \quad \lim_{x \to 1^+} f(x) = -\infty,$\\[2pt]
+        $\displaystyle\lim_{x \to -\infty} f(x) = -2, \quad \lim_{x \to \infty} f(x) = -2$
+
+        \item $\displaystyle\lim_{x \to 0} f(x) = \infty, \quad \lim_{x \to 3^-} f(x) = -\infty, \quad \lim_{x \to 3^+} f(x) = \infty,$\\[2pt]
+        $\displaystyle\lim_{x \to -\infty} f(x) = 1, \quad \lim_{x \to \infty} f(x) = -1$
+
+        \item $\displaystyle\lim_{x \to -\infty} f(x) = -\infty, \quad \lim_{x \to -2^-} f(x) = \infty, \quad \lim_{x \to -2^+} f(x) = -\infty,$\\[2pt]
+        $\displaystyle\lim_{x \to 2} f(x) = \infty, \quad \lim_{x \to \infty} f(x) = \infty$
+
+        \item $f(0) = 0, \quad \displaystyle\lim_{x \to 1} f(x) = -\infty, \quad \lim_{x \to \infty} f(x) = -\infty, \quad f \text{ là hàm số lẻ}$
+
+        \item $\displaystyle\lim_{x \to -\infty} f(x) = -1, \quad \lim_{x \to 0^-} f(x) = \infty, \quad \lim_{x \to 0^+} f(x) = -\infty,$\\[2pt]
+        $\displaystyle\lim_{x \to 3^-} f(x) = 1, \quad f(3) = 4, \quad \lim_{x \to 3^+} f(x) = 4, \quad \lim_{x \to \infty} f(x) = 1$
+    \end{enumerate}
+\end{minipage}
+
+\vfill
+\noindent
+\begin{minipage}{\linewidth}
+    \fontsize{6.5pt}{7.5pt}\selectfont\color{stewartdarkgray}
+    Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203
+
+    Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+\end{minipage}
+
+\end{document}
