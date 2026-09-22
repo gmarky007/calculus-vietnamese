@@ -2,49 +2,59 @@
 \fancyhead[R]{}
 
 \noindent
-\begin{minipage}[t]{0.26\textwidth}
-    % Các đường kẻ trang trí ở đầu trang phía lề trái
-    \vspace*{0pt}
-    {\color{stewartcyan}%
-    \rule{\linewidth}{0.75pt}\vspace{1.5pt}\par
-    \rule{\linewidth}{0.75pt}\vspace{1.5pt}\par
-    \rule{\linewidth}{0.75pt}\vspace{1.5pt}\par
-    \rule{\linewidth}{0.75pt}\par
-    }
-    
-    \vspace{5.9cm}
-    % Số chương lớn ở cột lề
-    \begin{flushright}
-        {\fontsize{95}{95}\selectfont\sffamily\bfseries\color{stewartcyan}1}
-    \end{flushright}
-\end{minipage}%
-\hfill
-\begin{minipage}[t]{0.71\textwidth}
-    \vspace*{0pt}
-    % Vị trí ảnh đầu chương (Hình tuabin gió)
-    % \includegraphics[width=\linewidth]{wind_turbines.jpg}
-    \vspace{5.08cm} % Khoảng trống tương ứng với chiều cao của ảnh đầu trang
-
-    \vspace{0.25cm}
-    % Chú thích ảnh
-    {\small\sffamily\textbf{Công suất điện do một tuabin gió tạo ra có thể được ước tính bằng một hàm số toán học kết hợp nhiều yếu tố. Chúng ta sẽ khám phá hàm số này trong Bài tập 1.2.25 và xác định công suất phát dự kiến của một tuabin cụ thể ứng với các tốc độ gió khác nhau.}\par}
-    \vspace{2pt}
-    {\scriptsize\sffamily\color{black!70}chaiviewfinder / Shutterstock.com\par}
-
-    \vspace{0.98cm}
-    % Đường kẻ dọc màu cyan ngăn cách số chương và tiêu đề/nội dung
+\begin{minipage}[t][\textheight][t]{\textwidth}
+    % Khối trên: Đường kẻ chỉ bên trái và Ảnh + Chú thích bên phải
     \noindent
-    \smash{\color{stewartcyan}\rule[-15cm]{1.5pt}{16cm}}\hspace{0.5cm}%
-    \parbox[t]{\dimexpr\linewidth-1.5pt-0.5cm\relax}{%
-        {\fontsize{34}{40}\selectfont\sffamily\bfseries Hàm số và Mô hình\par}
-        
-        \vspace{0.98cm}
-        \noindent
-        \textbf{CÁC ĐỐI TƯỢNG CƠ BẢN MÀ CHÚNG TA} làm việc trong giải tích là các hàm số. Chương này chuẩn bị nền tảng cho giải tích bằng cách thảo luận về các ý tưởng cơ bản liên quan đến hàm số, đồ thị của chúng, cùng các phương pháp biến đổi và kết hợp hàm số. Chúng tôi nhấn mạnh rằng một hàm số có thể được biểu diễn theo nhiều cách khác nhau: bằng một phương trình, trong một bảng số liệu, qua một đồ thị, hoặc bằng lời. Chúng ta sẽ tìm hiểu các dạng hàm số chính xuất hiện trong giải tích và mô tả quá trình sử dụng các hàm số này làm mô hình toán học cho các hiện tượng trong thế giới thực.
-    }
+    \begin{minipage}[t]{0.26\textwidth}
+        \vspace*{0pt}%
+        {\color{stewartcyan}%
+        \rule{\linewidth}{0.75pt}\vspace{2.5pt}\par
+        \rule{\linewidth}{0.75pt}\vspace{2.5pt}\par
+        \rule{\linewidth}{0.75pt}\vspace{2.5pt}\par
+        \rule{\linewidth}{0.75pt}\par
+        }
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[t]{0.71\textwidth}
+        \vspace*{0pt}%
+        \IfFileExists{wind_turbines.jpg}{%
+            \includegraphics[width=\linewidth]{wind_turbines.jpg}%
+        }{%
+            \vspace*{7.8cm} % Chiều cao tương đương với ảnh tuabin gió ở bản gốc
+        }%
+        \par\vspace{0.25cm}
+        {\small\sffamily\textbf{Công suất điện do một tuabin gió tạo ra có thể được ước tính bằng một hàm số toán học kết hợp nhiều yếu tố. Chúng ta sẽ khám phá hàm số này trong Bài tập 1.2.25 và xác định công suất phát dự kiến của một tuabin cụ thể ứng với các tốc độ gió khác nhau.}\par}
+        \vspace{2pt}
+        {\scriptsize\sffamily\color{black!70}chaiviewfinder / Shutterstock.com\par}
+    \end{minipage}
 
+    \vspace{1.1cm}
+
+    % Khối dưới: Số chương 1 (lề trái), vạch dọc cyan, Tiêu đề chương và Lời mở đầu
+    \noindent
+    \begin{minipage}[t]{0.26\textwidth}
+        \vspace*{0pt}%
+        \begin{flushright}
+            {\fontsize{105}{105}\selectfont\sffamily\bfseries\color{stewartcyan}1}
+        \end{flushright}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[t]{0.71\textwidth}
+        \vspace*{0pt}%
+        \noindent
+        \smash{\color{stewartcyan}\rule[-12.5cm]{1.5pt}{13.5cm}}\hspace{0.5cm}%
+        \parbox[t]{\dimexpr\linewidth-1.5pt-0.5cm\relax}{%
+            \vspace*{0.8cm}%
+            {\fontsize{34}{40}\selectfont\sffamily\bfseries Hàm số và Mô hình\par}
+            
+            \vspace{0.85cm}
+            \noindent
+            \textbf{CÁC ĐỐI TƯỢNG CƠ BẢN MÀ CHÚNG TA} làm việc trong giải tích là các hàm số. Chương này chuẩn bị nền tảng cho giải tích bằng cách thảo luận về các ý tưởng cơ bản liên quan đến hàm số, đồ thị của chúng, cùng các phương pháp biến đổi và kết hợp hàm số. Chúng tôi nhấn mạnh rằng một hàm số có thể được biểu diễn theo nhiều cách khác nhau: bằng một phương trình, trong một bảng số liệu, qua một đồ thị, hoặc bằng lời. Chúng ta sẽ tìm hiểu các dạng hàm số chính xuất hiện trong giải tích và mô tả quá trình sử dụng các hàm số này làm mô hình toán học cho các hiện tượng trong thế giới thực.
+        }
+    \end{minipage}
+
+    % Số trang đặt ở góc dưới cùng bên phải
     \vfill
-    \vspace{2.46cm}
     \begin{flushright}
         {\fontsize{11}{13}\selectfont\sffamily\bfseries 7}
     \end{flushright}

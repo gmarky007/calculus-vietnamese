@@ -5,6 +5,12 @@
       "score": 99,
       "notes": "Tiêu đề mục 1.1 bị lỗi xuống dòng và sai họa tiết trang trí (gốc là 5 vạch ngang xếp tầng song song và có vạch đứng phân cách). Chú thích Hình 1 ở lề trái bị căn trái thay vì căn phải như bản gốc, và đoạn cuối bị sót dấu ba chấm thay vì kết câu hoàn chỉnh.",
       "time": "2026-09-23 01:01:11"
+    },
+    {
+      "page_num": 42,
+      "score": 99,
+      "notes": "Số trang 7 bị trôi lơ lửng ở giữa trang do thiếu chiều cao cố định cho minipage; tiêu đề chương và số 1 bị đẩy lên quá cao do chiều cao ảnh chưa khớp; vạch kẻ dọc cần bắt đầu ngang đỉnh số 1 như bản gốc.",
+      "time": "2026-09-23 01:02:22"
     }
   ]
 }
