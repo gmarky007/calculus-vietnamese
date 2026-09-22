@@ -1,5 +1,82 @@
-Tôi không thể cung cấp bản dịch nguyên văn hoặc sao chép mã nguồn cho trang sách giáo trình này. Dù vậy, tôi có thể tóm tắt tổng quan kiến thức về các phép biến đổi đồ thị hàm số trong phần này để bạn tham khảo.
+\documentclass[10pt]{article}
+\usepackage[paperwidth=8.5in,paperheight=11in,top=0.55in,bottom=0.5in,left=0.5in,right=0.5in]{geometry}
+\usepackage{fontspec}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{xcolor}
 
-Trong Chương 1 của cuốn giáo trình, nội dung tập trung vào việc nghiên cứu các hàm số cơ bản và cách áp dụng phép biến đổi hình học lên đồ thị của chúng. Phần này trình bày các quy tắc chính giúp phác thảo nhanh đồ thị mới từ một đồ thị đã biết, bao gồm: phép tịnh tiến song song với các trục tọa độ, phép co giãn theo phương ngang hoặc phương đứng bằng các hệ số nhân, và phép lấy đối xứng qua trục hoành hoặc trục tung. Đồng thời, các phương pháp biến đổi đại số như tách thành bình phương hoàn chỉnh cũng được sử dụng để đưa hàm bậc hai về dạng parabol chuẩn nhằm xác định đỉnh và chiều dịch chuyển.
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
 
-Bạn có muốn tôi tiếp tục tóm tắt nội dung khái quát của chương tiếp theo không?
+\definecolor{stewartblue}{RGB}{0, 130, 165}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+%--- HEADER ---
+\noindent\textbf{38}\hspace{1.2cm}{\textsf{\textbf{CHƯƠNG 1}\hspace{0.5cm}Hàm số và Mô hình}}\par
+\vspace{0.35cm}
+
+%--- TOP BLOCK (Phần trên Hình 4: Cột lề + Cột chính) ---
+\noindent
+\begin{minipage}[t]{125pt}
+  \vspace*{3.9cm}
+  \noindent\textbf{\textsf{HÌNH 3}}
+\end{minipage}\hspace{20pt}%
+\begin{minipage}[t]{395pt}
+  \fontsize{9.5}{12.5}\selectfont
+  Hình 3 minh họa các phép biến đổi co dãn này khi áp dụng cho hàm cosin với $c = 2$. Chẳng hạn, để có được đồ thị của $y = 2\cos x$, ta nhân tung độ $y$ của mỗi điểm trên đồ thị $y = \cos x$ với 2. Điều này có nghĩa là đồ thị $y = \cos x$ được dãn theo phương đứng theo hệ số 2.\par
+  \vspace{0.25cm}
+
+  \centering
+  \includegraphics[width=0.98\linewidth]{images/p0073_fig1.png}\par
+  \vspace{0.3cm}
+
+  \raggedright
+  \noindent\textbf{\textsf{\textcolor{stewartblue}{VÍ DỤ 1}}}\quad Cho đồ thị của $y = \sqrt{x}$, hãy sử dụng các phép biến đổi để vẽ đồ thị của $y = \sqrt{x} - 2$, $y = \sqrt{x - 2}$, $y = -\sqrt{x}$, $y = 2\sqrt{x}$ và $y = \sqrt{-x}$.\par
+  \vspace{0.15cm}
+  \noindent\textbf{\textsf{\textcolor{stewartblue}{LỜI GIẢI}}}\quad Đồ thị của hàm căn bậc hai $y = \sqrt{x}$, nhận được từ Hình 13(a), được thể hiện trong Hình 4(a). Ở các phần khác của hình, ta vẽ $y = \sqrt{x} - 2$ bằng cách tịnh tiến xuống dưới 2 đơn vị, $y = \sqrt{x - 2}$ bằng cách tịnh tiến sang phải 2 đơn vị, $y = -\sqrt{x}$ bằng cách lấy đối xứng qua trục $x$, $y = 2\sqrt{x}$ bằng cách dãn theo phương đứng theo hệ số 2, và $y = \sqrt{-x}$ bằng cách lấy đối xứng qua trục $y$.
+\end{minipage}\par
+
+\vspace{0.35cm}
+
+%--- MIDDLE BLOCK: HÌNH 4 (Tràn toàn bộ chiều rộng trang) ---
+\noindent
+\includegraphics[width=\textwidth]{images/p0073_fig2.png}\par
+\vspace{0.15cm}
+\noindent\textbf{\textsf{HÌNH 4}}\hfill\textcolor{stewartblue}{\rule{1.1ex}{1.1ex}}\par
+
+\vspace{0.35cm}
+
+%--- BOTTOM BLOCK: VÍ DỤ 2 & HÌNH 5 ---
+\noindent
+\begin{minipage}[t]{125pt}
+  \vspace*{5.5cm}
+  \noindent\textbf{\textsf{HÌNH 5}}
+\end{minipage}\hspace{20pt}%
+\begin{minipage}[t]{395pt}
+  \fontsize{9.5}{12.5}\selectfont
+  \noindent\textbf{\textsf{\textcolor{stewartblue}{VÍ DỤ 2}}}\quad Vẽ đồ thị của hàm số $f(x) = x^2 + 6x + 10$.\par
+  \vspace{0.15cm}
+  \noindent\textbf{\textsf{\textcolor{stewartblue}{LỜI GIẢI}}}\quad Bằng cách biến đổi thành bình phương hoàn chỉnh, ta viết phương trình của đồ thị dưới dạng
+  \[
+    y = x^2 + 6x + 10 = (x + 3)^2 + 1
+  \]
+  Điều này có nghĩa là ta nhận được đồ thị mong muốn bằng cách bắt đầu với parabol $y = x^2$, sau đó tịnh tiến sang trái 3 đơn vị rồi tịnh tiến lên trên 1 đơn vị (xem Hình 5).\par
+  \vspace{0.25cm}
+
+  \centering
+  \includegraphics[width=0.92\linewidth]{images/p0073_fig3.png}\par
+  \vspace{-0.3cm}
+  \hfill\textcolor{stewartblue}{\rule{1.1ex}{1.1ex}}
+\end{minipage}\par
+
+\vfill
+\noindent{\fontsize{5.5}{6.5}\selectfont\color{black!70}
+Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\par
+\vspace{1pt}
+Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.\par
+}
+
+\end{document}
