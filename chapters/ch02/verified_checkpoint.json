@@ -29,6 +29,12 @@
       "score": 99,
       "notes": "Trang dịch bị lỗi nghiêm trọng khi rò rỉ mã lệnh preamble lên đầu trang văn bản, lặp đúp dòng credit ảnh Tháp CN và để lộ nhãn tiếng Anh 'CN Tower in Toronto', đồng thời Cụm Hình 6 bị đặt quá cao tạo khoảng trống lớn ở góc dưới bên trái.",
       "time": "2026-09-23 02:44:38"
+    },
+    {
+      "page_num": 117,
+      "score": 99,
+      "notes": "Bản dịch bị lỗi tràn text khai báo gói lệnh lên đầu trang và đặt nhầm biểu tượng máy tính đồ họa ở Bài 9 thay vì Bài 4. Cần chuẩn hóa tiêu đề 2.1, lược bỏ mã rác và dóng đều hai cột.",
+      "time": "2026-09-23 02:46:04"
     }
   ]
 }
