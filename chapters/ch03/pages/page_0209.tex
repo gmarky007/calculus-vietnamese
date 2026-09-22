@@ -1,0 +1,189 @@
+\documentclass[10pt]{article}
+\usepackage[paperwidth=8.5in, paperheight=11in, top=0.55in, bottom=0.55in, left=0.55in, right=0.55in]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{newtxtext, newtxmath}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+
+% Bảng màu chuẩn giáo trình James Stewart Calculus
+\definecolor{stewartblue}{RGB}{0, 114, 188}       % Xanh dương đậm
+\definecolor{stewartlightblue}{RGB}{140, 195, 230}% Xanh lơ nhạt
+\definecolor{stewartcyan}{RGB}{0, 168, 204}       % Xanh cyan biểu tượng
+\definecolor{stewartred}{RGB}{210, 35, 42}        % Đỏ khung định lý / số công thức
+\definecolor{stewartdark}{RGB}{35, 31, 32}        % Đen tiêu đề
+\definecolor{stewartgray}{RGB}{100, 100, 100}     % Xám chú thích
+
+% Thiết lập Header và Footer
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead[L]{%
+  \fontsize{9}{11}\selectfont
+  \textbf{\textsf{174}}\hspace{2.5em}\textbf{\textsf{CHƯƠNG 3}}\hspace{1.5em}\textsf{Các quy tắc tính đạo hàm}%
+}
+\fancyfoot[C]{%
+  \fontsize{5.5}{6.5}\selectfont\color{stewartgray}%
+  Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\\%
+  Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.%
+}
+
+% Nhãn số phương trình đóng khung đỏ chuẩn phong cách Stewart
+\newcommand{\redlabel}[1]{%
+  \tikz[baseline=(node.base)]{%
+    \node[draw=stewartred, line width=0.8pt, inner sep=1.8pt, minimum width=12.5pt, minimum height=12.5pt, rounded corners=0.3pt] (node) {%
+      \bfseries\sffamily\color{stewartred}\footnotesize #1%
+    };%
+  }%
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\begin{document}
+
+% =========================================================
+% BANNER TIÊU ĐỀ MỤC 3.1 DÓNG HÀNG NGANG CHUẨN XÁC
+% =========================================================
+\noindent
+\begin{minipage}[c]{0.26\textwidth}
+  \begin{minipage}[c]{0.42\linewidth}
+    \color{stewartlightblue}
+    \rule{\linewidth}{0.8pt}\\[3.5pt]
+    \rule{\linewidth}{0.8pt}\\[3.5pt]
+    \rule{\linewidth}{0.8pt}\\[3.5pt]
+    \rule{\linewidth}{0.8pt}
+  \end{minipage}\hfill
+  \begin{minipage}[c]{0.52\linewidth}
+    \raggedleft
+    \fontsize{28}{28}\selectfont\bfseries\sffamily\color{stewartblue} 3.1
+  \end{minipage}
+\end{minipage}%
+\hspace{8pt}%
+{\color{stewartblue}\rule[-7pt]{2.5pt}{30pt}}%
+\hspace{10pt}%
+\begin{minipage}[c]{0.69\textwidth}
+  \raggedright
+  \fontsize{16.5}{20}\selectfont\bfseries\sffamily\color{stewartdark}%
+  Đạo hàm của các hàm đa thức và hàm mũ
+\end{minipage}
+
+\vspace{14pt}
+
+% =========================================================
+% BỐ CỤC 2 CỘT BẤT ĐỐI XỨNG: CỘT LỀ (0.26) VÀ CỘT CHÍNH (0.71)
+% =========================================================
+\noindent
+% --- CỘT LỀ TRÁI ---
+\begin{minipage}[t]{0.26\textwidth}
+  \vspace{46pt} % Dóng hàng Hình 1 ngang với đoạn văn 'Hãy bắt đầu...'
+
+  % HÌNH 1
+  \noindent
+  \includegraphics[width=\linewidth]{images/p0209_fig1.png}
+  \vspace{3pt}
+
+  \noindent
+  \textbf{\textsf{\small HÌNH 1}}\\[2pt]
+  {\small Đồ thị của $f(x) = c$ là đường thẳng $y = c$, do đó $f'(x) = 0$.}
+
+  \vspace{56pt} % Dóng hàng Hình 2 ngang với đoạn văn 'Tiếp theo, ta xét...'
+
+  % HÌNH 2
+  \noindent
+  \includegraphics[width=\linewidth]{images/p0209_fig2.png}
+  \vspace{3pt}
+
+  \noindent
+  \textbf{\textsf{\small HÌNH 2}}\\[2pt]
+  {\small Đồ thị của $f(x) = x$ là đường thẳng $y = x$, do đó $f'(x) = 1$.}
+\end{minipage}%
+\hfill
+% --- CỘT NỘI DUNG CHÍNH ---
+\begin{minipage}[t]{0.71\textwidth}
+  Trong mục này, chúng ta sẽ học cách tính đạo hàm của các hàm hằng, hàm lũy thừa, đa thức và hàm mũ.
+  \vspace{1.1em}
+
+  % TIỂU MỤC: CÁC HÀM HẰNG
+  \noindent
+  \textcolor{stewartcyan}{\rule{1.1ex}{1.1ex}}\hspace{0.5em}\textbf{\textsf{\large Các hàm hằng}}
+  \vspace{0.6em}
+
+  Hãy bắt đầu với hàm đơn giản nhất trong tất cả các hàm số, hàm hằng $f(x) = c$. Đồ thị của hàm số này là đường thẳng nằm ngang $y = c$, có hệ số góc bằng 0, do đó ta phải có $f'(x) = 0$. (Xem Hình 1.) Một chứng minh chặt chẽ, dựa trên định nghĩa của đạo hàm, cũng rất dễ dàng:
+  \[
+    f'(x) = \lim_{h \to 0} \frac{f(x + h) - f(x)}{h} = \lim_{h \to 0} \frac{c - c}{h} = \lim_{h \to 0} 0 = 0
+  \]
+  Theo ký hiệu Leibniz, ta viết quy tắc này như sau.
+  \vspace{0.6em}
+
+  % Khung quy tắc đạo hàm hàm hằng
+  \begin{tcolorbox}[
+    enhanced,
+    colback=white,
+    colframe=stewartred,
+    boxrule=0.8pt,
+    arc=0pt,
+    width=\linewidth,
+    left=10pt, right=10pt, top=6pt, bottom=4pt
+  ]
+    {\bfseries\sffamily\color{stewartred}\small Đạo hàm của hàm hằng}
+    \vspace{-3pt}
+    \[
+      \frac{d}{dx}(c) = 0
+    \]
+  \end{tcolorbox}
+  \vspace{0.9em}
+
+  % TIỂU MỤC: CÁC HÀM LŨY THỪA
+  \noindent
+  \textcolor{stewartcyan}{\rule{1.1ex}{1.1ex}}\hspace{0.5em}\textbf{\textsf{\large Các hàm lũy thừa}}
+  \vspace{0.6em}
+
+  Tiếp theo, ta xét các hàm số $f(x) = x^n$, trong đó $n$ là một số nguyên dương. Nếu $n = 1$, đồ thị của $f(x) = x$ là đường thẳng $y = x$, có hệ số góc bằng 1. (Xem Hình 2.) Do đó
+  \vspace{0.6em}
+
+  % CÔNG THỨC (1)
+  \noindent
+  \makebox[0pt][l]{\raisebox{-1.5pt}{\redlabel{1}}}%
+  \makebox[\linewidth][c]{%
+    \tikz[baseline=-0.6ex]{%
+      \node[draw=stewartred, line width=0.8pt, inner xsep=20pt, inner ysep=5pt] {$\displaystyle \frac{d}{dx}(x) = 1$};%
+    }%
+  }%
+  \vspace{0.8em}
+
+  (Bạn cũng có thể kiểm chứng Phương trình 1 từ định nghĩa của đạo hàm.) Chúng ta đã khảo sát các trường hợp $n = 2$ và $n = 3$. Trên thực tế, trong Mục 2.8 (Bài tập 19 và 20), chúng ta đã thấy rằng
+  \vspace{0.6em}
+
+  % CÔNG THỨC (2)
+  \noindent
+  \makebox[0pt][l]{\raisebox{-1.5pt}{\redlabel{2}}}%
+  \makebox[\linewidth][c]{%
+    $\displaystyle \frac{d}{dx}(x^2) = 2x \qquad\qquad \frac{d}{dx}(x^3) = 3x^2$%
+  }%
+  \vspace{0.8em}
+
+  Với $n = 4$, ta tìm đạo hàm của hàm số $f(x) = x^4$ như sau:
+  \begin{align*}
+    f'(x) &= \lim_{h \to 0} \frac{f(x + h) - f(x)}{h} = \lim_{h \to 0} \frac{(x + h)^4 - x^4}{h} \\[3pt]
+    &= \lim_{h \to 0} \frac{x^4 + 4x^3h + 6x^2h^2 + 4xh^3 + h^4 - x^4}{h} \\[3pt]
+    &= \lim_{h \to 0} \frac{4x^3h + 6x^2h^2 + 4xh^3 + h^4}{h} \\[3pt]
+    &= \lim_{h \to 0} (4x^3 + 6x^2h + 4xh^2 + h^3) = 4x^3
+  \end{align*}
+  \vspace{0.2em}
+
+  Do đó
+  \vspace{0.5em}
+
+  % CÔNG THỨC (3)
+  \noindent
+  \makebox[0pt][l]{\raisebox{-1.5pt}{\redlabel{3}}}%
+  \makebox[\linewidth][c]{%
+    $\displaystyle \frac{d}{dx}(x^4) = 4x^3$%
+  }%
+\end{minipage}
+
+\end{document}
