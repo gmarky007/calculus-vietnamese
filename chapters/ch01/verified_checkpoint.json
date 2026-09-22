@@ -347,6 +347,12 @@
       "score": 72,
       "notes": "Bản dịch có bố cục hai cột và phân vùng đồ thị tương đồng chặt chẽ với bản gốc. Thuật ngữ toán học và công thức chuẩn xác, vị trí bảng biểu và hình minh họa đạt yêu cầu xuất bản.",
       "time": "2026-09-23 02:13:57"
+    },
+    {
+      "page_num": 100,
+      "score": 99,
+      "notes": "Lỗi nghiêm trọng: Chiều cao minipage vượt quá textheight khiến toàn bộ nội dung bị đẩy sang trang sau, để lại trang in trắng tinh bên dưới header. Ngoài ra bản gốc hoàn toàn không có các vạch kẻ ngang cyan phân cách bài tập. Đã loại bỏ các vạch kẻ thừa, chuẩn hóa font size bài tập (8.8pt/11pt) và tối ưu hóa khoảng cách để trang hiển thị vừa vặn 100% trên một trang duy nhất.",
+      "time": "2026-09-23 02:15:28"
     }
   ]
 }
