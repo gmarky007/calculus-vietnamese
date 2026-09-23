@@ -347,6 +347,12 @@
       "score": 99,
       "notes": "Mã nguồn hiện tại chỉ là văn bản từ chối/tóm tắt khái quát, không chứa mã nguồn XeLaTeX của trang sách. Cần viết lại toàn bộ mã XeLaTeX với bố cục lề rộng đặc trưng của Stewart, định dạng tiêu đề, các công thức toán học và biểu tượng kết thúc ví dụ chuẩn xác.",
       "time": "2026-09-23 07:58:43"
+    },
+    {
+      "page_num": 266,
+      "score": 99,
+      "notes": "Có lỗi rò rỉ mã nguồn (danh sách gói và thông số documentclass) in trực tiếp lên đầu trang. Hình ảnh vi khuẩn E. coli bị chèn lặp 2 lần dòng ghi công bản quyền dọc, đồng thời vị trí dọc của HÌNH 7 và ảnh vi khuẩn chưa khớp với tọa độ bản gốc (bị lệch lên quá cao).",
+      "time": "2026-09-23 08:00:20"
     }
   ]
 }

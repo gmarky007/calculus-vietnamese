@@ -1,0 +1,112 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[T5,T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{microtype}
+\usepackage{lmodern}
+
+% Cấu hình lề trang sách chuẩn Stewart Calculus
+\geometry{
+    top=18mm,
+    bottom=18mm,
+    left=16mm,
+    right=16mm,
+    headheight=14pt,
+    headsep=16pt,
+    footskip=14pt
+}
+
+% Màu nhận diện Stewart Calculus
+\definecolor{stewartcyan}{RGB}{0, 130, 185}
+\definecolor{creditgray}{RGB}{110, 110, 110}
+
+% Cấu hình Header và Footer theo sách gốc
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\fontsize{8.5}{11}\selectfont \textbf{\textsf{MỤC 3.7}}\quad \textsf{Tốc độ thay đổi trong các khoa học tự nhiên và xã hội}\qquad \textbf{\textsf{231}}}
+\fancyhead[L]{}
+\renewcommand{\headrulewidth}{0pt}
+
+\fancyfoot[C]{%
+    \fontsize{6.5}{7.5}\selectfont\color{gray}
+    Bản dịch phục vụ mục đích học tập và nghiên cứu học thuật theo giáo trình Stewart Calculus 9th Edition.\\
+    All rights reserved to original copyright holder.
+}
+\renewcommand{\footrulewidth}{0pt}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4.5pt}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.26\textwidth}
+    \vspace*{0pt}
+    % Dóng hàng chính xác HÌNH 7 ngang đáy đồ thị bên phải
+    \vspace*{178pt}
+
+    % Chú thích HÌNH 7 ở lề trái
+    \raggedright
+    {\fontsize{8.5}{11}\selectfont\textbf{\textsf{HÌNH 7}}}\\[2pt]
+    {\fontsize{8}{10.5}\selectfont Đường cong trơn xấp xỉ\par một hàm tăng trưởng\par}
+
+    % Khoảng cách dóng hàng ảnh vi khuẩn E. coli ngang với đoạn công thức bên phải
+    \vspace{118pt}
+
+    % Ảnh vi khuẩn E. coli (đã có sẵn credit dọc trong file ảnh)
+    \noindent
+    \includegraphics[width=\linewidth]{images/p0266_fig2.png}
+
+    \vspace{4pt}
+    {\fontsize{7.5}{9.8}\selectfont\color{black!90}
+    Vi khuẩn \textit{E. coli} có chiều dài khoảng $2\text{ micromét}$ ($\mu\text{m}$) và chiều rộng khoảng $0{,}75\ \mu\text{m}$. Hình ảnh chụp qua kính hiển vi điện tử quét.\par}
+
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.71\textwidth}
+    \vspace*{0pt}
+    \fontsize{9.5}{13.4}\selectfont
+    hoặc quần thể thực vật, ta có thể thay thế đồ thị bằng một đường cong xấp xỉ trơn nhẵn như trong Hình~7.
+
+    \vspace{6pt}
+    \begin{center}
+        \includegraphics[width=0.82\linewidth]{images/p0266_fig1.png}
+    \end{center}
+    \vspace{2pt}
+
+    Cụ thể hơn, hãy xét một quần thể vi khuẩn trong một môi trường dinh dưỡng đồng nhất. Giả sử rằng bằng việc lấy mẫu quần thể tại các khoảng thời gian nhất định, người ta xác định được rằng quần thể này tăng gấp đôi sau mỗi giờ. Nếu quần thể ban đầu là $n_0$ và thời gian $t$ được đo bằng giờ, thì
+    \[
+    \begin{aligned}
+    f(1) &= 2f(0) = 2n_0 \\
+    f(2) &= 2f(1) = 2^2 n_0 \\
+    f(3) &= 2f(2) = 2^3 n_0
+    \end{aligned}
+    \]
+    và tổng quát,
+    \[
+    f(t) = 2^t n_0
+    \]
+    Hàm số biểu diễn quần thể là $n = n_0 2^t$.
+
+    Trong Mục 3.4 chúng ta đã chỉ ra rằng
+    \[
+    \frac{d}{dx}(b^x) = b^x \ln b
+    \]
+    Do đó, tốc độ tăng trưởng của quần thể vi khuẩn tại thời điểm $t$ là
+    \[
+    \frac{dn}{dt} = \frac{d}{dt}(n_0 2^t) = n_0 2^t \ln 2
+    \]
+    Chẳng hạn, giả sử rằng chúng ta bắt đầu với một quần thể ban đầu gồm $n_0 = 100$ vi khuẩn. Khi đó tốc độ tăng trưởng sau 4 giờ là
+    \[
+    \left. \frac{dn}{dt} \right|_{t=4} = 100 \cdot 2^4 \ln 2 = 1600 \ln 2 \approx 1109
+    \]
+    Điều này có nghĩa là, sau 4 giờ, quần thể vi khuẩn đang tăng trưởng với tốc độ khoảng 1109 vi khuẩn mỗi giờ.\hfill{\color{stewartcyan}\rule{1.1ex}{1.1ex}}
+
+\end{minipage}
+
+\end{document}
