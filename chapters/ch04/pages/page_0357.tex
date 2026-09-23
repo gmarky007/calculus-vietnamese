@@ -1,0 +1,113 @@
+\documentclass[10pt,oneside]{article}
+\usepackage[paperwidth=8.5in,paperheight=11in,
+  left=2.7in,right=0.65in,top=0.85in,bottom=0.85in,
+  marginparwidth=1.75in,marginparsep=0.3in,reversemarginpar]{geometry}
+
+\usepackage{fontspec}
+\IfFontExistsTF{TeX Gyre Termes}{\setmainfont{TeX Gyre Termes}}{}
+
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{marginnote}
+\usepackage{fancyhdr}
+
+\definecolor{stewart}{RGB}{0, 120, 145}
+\definecolor{darkgray}{RGB}{60, 60, 60}
+
+\setlength{\parindent}{12pt}
+\setlength{\parskip}{2pt plus 1pt minus 1pt}
+\setlength{\abovedisplayskip}{5pt plus 2pt minus 2pt}
+\setlength{\belowdisplayskip}{5pt plus 2pt minus 2pt}
+\setlength{\abovedisplayshortskip}{3pt plus 1pt minus 1pt}
+\setlength{\belowdisplayshortskip}{3pt plus 1pt minus 1pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyheadoffset[L]{\dimexpr\marginparwidth+\marginparsep\relax}
+\fancyhead[L]{\small\textbf{322}\qquad\textbf{\color{stewart}CHƯƠNG 4}\quad \textnormal{Ứng dụng của đạo hàm}}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{14pt}
+\fancyfoot[C]{\tiny\textcolor{gray!80}{Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203}}
+
+\newcommand{\marginfigone}{%
+  \raggedright
+  \includegraphics[width=\marginparwidth]{images/p0357_fig1.png}\par\vspace{3pt}
+  {\small\textbf{\color{stewart}HÌNH 5}}\par\vspace{1pt}
+  {\small Phác thảo sơ bộ}\par\vspace{3pt}
+  {\footnotesize\linespread{1.05}\selectfont Ta đã biểu diễn đường cong tiến dần đến tiệm cận ngang của nó từ phía trên trong Hình~5. Điều này được khẳng định bởi các khoảng đồng biến và nghịch biến.\par}%
+}
+
+\newcommand{\marginfigtwo}{%
+  \raggedright
+  \includegraphics[width=\marginparwidth]{images/p0357_fig2.png}\par\vspace{3pt}
+  {\small\textbf{\color{stewart}HÌNH 6}}\par\vspace{1pt}
+  {\small Phác thảo hoàn thiện của $y = \dfrac{2x^2}{x^2 - 1}$\par}%
+}
+
+\begin{document}
+
+\noindent Nếu muốn có thêm độ chính xác gần bất kỳ điểm nào, bạn có thể tính giá trị của đạo hàm tại đó. Tiếp tuyến sẽ chỉ ra hướng mà đường cong đi qua.
+
+\vspace{8pt}
+\noindent\textbf{\color{stewart}VÍ DỤ 1}\quad Dùng các chỉ dẫn để phác thảo đường cong $y = \dfrac{2x^2}{x^2 - 1}$.
+
+\medskip
+\noindent\textbf{A. Tập xác định}\quad Tập xác định là
+\[
+\{x \mid x^2 - 1 \neq 0\} = \{x \mid x \neq \pm 1\} = (-\infty, -1) \cup (-1, 1) \cup (1, \infty)
+\]
+
+\noindent\textbf{B. Giao điểm}\quad Cả giao điểm với trục $x$ và trục $y$ đều bằng $0$.
+
+\medskip
+\noindent\textbf{C. Tính đối xứng}\quad Vì $f(-x) = f(x)$, nên hàm số $f$ là hàm chẵn. Đường cong đối xứng qua trục $y$.
+
+\medskip
+\noindent\textbf{D. Tiệm cận}\quad $\displaystyle\lim_{x \to \pm\infty} \frac{2x^2}{x^2 - 1} = \lim_{x \to \pm\infty} \frac{2}{1 - 1/x^2} = 2$%
+\marginnote[\marginfigone]{\marginfigone}[30pt]
+
+\vspace{4pt}
+Do đó đường thẳng $y = 2$ là một tiệm cận ngang (ở cả bên trái và bên phải).
+
+Vì mẫu số bằng $0$ khi $x = \pm 1$, ta tính các giới hạn sau:
+\[
+\begin{aligned}
+\lim_{x \to 1^+} \frac{2x^2}{x^2 - 1} &= \infty & \qquad\qquad \lim_{x \to 1^-} \frac{2x^2}{x^2 - 1} &= -\infty \\[4pt]
+\lim_{x \to -1^+} \frac{2x^2}{x^2 - 1} &= -\infty & \qquad\qquad \lim_{x \to -1^-} \frac{2x^2}{x^2 - 1} &= \infty
+\end{aligned}
+\]
+Do đó các đường thẳng $x = 1$ và $x = -1$ là các tiệm cận đứng. Thông tin này về các giới hạn và tiệm cận cho phép chúng ta vẽ bản phác thảo sơ bộ ở Hình~5, thể hiện các phần của đường cong gần các đường tiệm cận.
+
+\medskip
+\noindent\textbf{E. Các khoảng đồng biến hoặc nghịch biến}
+\[
+f'(x) = \frac{(x^2 - 1)(4x) - 2x^2 \cdot 2x}{(x^2 - 1)^2} = \frac{-4x}{(x^2 - 1)^2}
+\]
+Vì $f'(x) > 0$ khi $x < 0$ ($x \neq -1$) và $f'(x) < 0$ khi $x > 0$ ($x \neq 1$), nên $f$ đồng biến trên $(-\infty, -1)$ và $(-1, 0)$, và nghịch biến trên $(0, 1)$ và $(1, \infty)$.
+
+\medskip
+\noindent\textbf{F. Giá trị cực đại hoặc cực tiểu địa phương}\quad Số tới hạn duy nhất là $x = 0$. Vì $f'$ đổi dấu từ dương sang âm tại $0$, nên theo Kiểm tra bằng đạo hàm cấp một, $f(0) = 0$ là một cực đại địa phương.
+
+\medskip
+\noindent\textbf{G. Tính lồi, lõm và điểm uốn}%
+\marginnote[\marginfigtwo]{\marginfigtwo}[-2pt]
+\[
+f''(x) = \frac{(x^2 - 1)^2(-4) + 4x \cdot 2(x^2 - 1)2x}{(x^2 - 1)^4} = \frac{12x^2 + 4}{(x^2 - 1)^3}
+\]
+Vì $12x^2 + 4 > 0$ với mọi $x$, ta có
+\[
+f''(x) > 0 \iff x^2 - 1 > 0 \iff |x| > 1
+\]
+và $f''(x) < 0 \iff |x| < 1$. Do đó đường cong lõm lên trên trên các khoảng $(-\infty, -1)$ và $(1, \infty)$, và lõm xuống dưới trên $(-1, 1)$. Đồ thị không có điểm uốn vì $1$ và $-1$ không thuộc tập xác định của $f$.
+
+\medskip
+\noindent\textbf{H. Phác thảo đường cong}\quad Sử dụng các thông tin trong E--G, chúng ta hoàn thiện hình phác thảo ở Hình~6.\hfill\textcolor{stewart}{\rule{1.1ex}{1.1ex}}
+
+\vspace{10pt}
+\noindent\textbf{\color{stewart}VÍ DỤ 2}\quad Phác thảo đồ thị của $f(x) = \dfrac{x^2}{\sqrt{x + 1}}$.
+
+\medskip
+\noindent\textbf{A. Tập xác định}\quad Tập xác định là $\{x \mid x + 1 > 0\} = \{x \mid x > -1\} = (-1, \infty)$.
+
+\end{document}
