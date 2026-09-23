@@ -41,13 +41,13 @@ TEMPLATE_HEADER = r"""\documentclass[10pt,oneside]{article}
 \geometry{
     paperwidth=612.05pt,
     paperheight=720.05pt,
-    top=30pt,
+    top=24pt,
     headheight=14pt,
-    headsep=16pt,
-    bottom=36pt,
+    headsep=14pt,
+    bottom=28pt,
     footskip=14pt,
-    left=36pt,
-    right=36pt
+    left=34pt,
+    right=34pt
 }
 
 \definecolor{stewartcyan}{RGB}{0, 121, 193}

@@ -1,31 +1,24 @@
-\fancyhead[L]{}
-\fancyhead[R]{\textsf{\textbf{MỤC 1.1}}\quad \textsf{Bốn cách biểu diễn một hàm số}\qquad \textbf{\textsf{17}}}
+\fancyhead[L]{\fontsize{8.5pt}{10pt}\selectfont\textbf{\textsf{16}}\qquad \textbf{\textsf{CHƯƠNG 1}}\quad \textsf{Các hàm số và Mô hình}}
+\fancyhead[R]{}
 
 \noindent
-\begin{minipage}[t]{0.26\textwidth}
-    \vspace{3pt}
-    \raggedleft
+\begin{minipage}[t]{0.265\textwidth}
+    \fontsize{8pt}{10pt}\selectfont
+    \centering
+    \includegraphics[width=0.92\linewidth]{images/p0052_fig22.png}\\[2pt]
     \textbf{\textsf{HÌNH 22}}
 
-    \vspace{3pt}
-    \centering
-    \includegraphics[width=0.82\linewidth]{images/p0052_fig2.png}
-    
-    \vspace{0.1cm}
-    \raggedright
+    \vspace{10pt}
+    \includegraphics[width=0.92\linewidth]{images/p0052_fig23.png}\\[2pt]
     \textbf{\textsf{HÌNH 23}}
 \end{minipage}%
 \hfill
-\begin{minipage}[t]{0.71\textwidth}
+\begin{minipage}[t]{0.708\textwidth}
+    \fontsize{9pt}{12pt}\selectfont
     \noindent
-    $a$ và $b$ với $x_1 < x_2$, thì $f(x_1) < f(x_2)$. Chúng ta dùng điều này làm tính chất định nghĩa của một hàm số đồng biến.
+    giữa $a$ và $b$ với $x_1 < x_2$, thì $f(x_1) < f(x_2)$. Chúng ta dùng tính chất này để định nghĩa hàm số đồng biến.
 
-    \vspace{0.15cm}
-    \centering
-    \includegraphics[width=0.82\linewidth]{images/p0052_fig1.png}
-
-    \vspace{0.2cm}
-    \raggedright
+    \vspace{3pt}
     \begin{definitionbox}
         Một hàm số $f$ được gọi là \textbf{đồng biến} trên một khoảng $I$ nếu
         \[
@@ -37,68 +30,56 @@
         \]
     \end{definitionbox}
 
-    \vspace{0.15cm}
+    \vspace{2pt}
     \noindent
-    Trong định nghĩa của hàm số đồng biến, điều quan trọng cần nhận ra là bất đẳng thức $f(x_1) < f(x_2)$ phải được thỏa mãn đối với \emph{mọi} cặp số $x_1$ và $x_2$ trong $I$ với $x_1 < x_2$.
-
-    \noindent
-    Bạn có thể thấy từ Hình 23 rằng hàm số $f(x) = x^2$ nghịch biến trên khoảng $(-\infty, 0]$ và đồng biến trên khoảng $[0, \infty)$.
+    Trong định nghĩa của hàm số đồng biến, điều quan trọng cần nhận ra là bất đẳng thức $f(x_1) < f(x_2)$ phải được thỏa mãn đối với \emph{mọi} cặp số $x_1$ và $x_2$ trong $I$ với $x_1 < x_2$. Từ Hình 23, ta thấy hàm số $f(x) = x^2$ nghịch biến trên khoảng $(-\infty, 0]$ và đồng biến trên khoảng $[0, \infty)$.
 \end{minipage}
 
-\vspace{0.35cm}
+\vspace{6pt}
 \noindent
-{\color{stewartcyan}\rule{\linewidth}{1.2pt}}\\[-0.65em]
+{\color{stewartcyan}\rule{\linewidth}{1.2pt}}\\[-0.7em]
 {\color{stewartcyan}\rule{\linewidth}{0.6pt}}
 
-\vspace{0.15cm}
+\vspace{3pt}
 \noindent
-{\Large\textbf{\textsf{\color{stewartcyan}1.1}}\quad {\color{stewartcyan}\rule[-2pt]{1.5pt}{13pt}}\quad \textbf{\textsf{BÀI TẬP}}}
+{\large\textbf{\textsf{\color{stewartcyan}1.1}}\quad {\color{stewartcyan}\rule[-2pt]{1.5pt}{12pt}}\quad \textbf{\textsf{BÀI TẬP}}}
 
-\vspace{0.25cm}
-\noindent
-\begin{minipage}[t]{0.485\textwidth}
-    \textbf{1.} Nếu $f(x) = x + \sqrt{2 - x}$ và $g(u) = u + \sqrt{2 - u}$, có đúng khi nói $f = g$ không?
+\vspace{3pt}
+\begin{multicols}{2}
+\fontsize{8.2pt}{10.2pt}\selectfont
+\setlength{\abovedisplayskip}{1.5pt}
+\setlength{\belowdisplayskip}{1.5pt}
 
-    \vspace{0.2cm}
-    \textbf{2.} Nếu
-    \[
-    f(x) = \frac{x^2 - x}{x - 1} \quad \text{và} \quad g(x) = x
-    \]
-    có đúng khi nói $f = g$ không?
+\textbf{1.} Nếu $f(x) = x + \sqrt{2 - x}$ và $g(u) = u + \sqrt{2 - u}$, có đúng khi nói rằng $f = g$ không?
 
-    \vspace{0.2cm}
-    \textbf{3.} Đồ thị của một hàm số $g$ được cho như hình bên.
-    \begin{enumerate}[label=(\alph*), leftmargin=*, itemsep=0pt, topsep=1pt, parsep=0pt]
-        \item Nêu các giá trị của $g(-2)$, $g(0)$, $g(2)$ và $g(3)$.
-        \item Với (những) giá trị nào của $x$ thì $g(x) = 3$?
-        \item Với (những) giá trị nào của $x$ thì $g(x) \leqslant 3$?
-        \item Nêu tập xác định và tập giá trị của $g$.
-        \item Trên (những) khoảng nào thì $g$ đồng biến?
-    \end{enumerate}
+\textbf{2.} Nếu $f(x) = \dfrac{x^2 - x}{x - 1}$ và $g(x) = x$, có đúng khi nói $f = g$ không?
 
-    \vspace{0.15cm}
-    \centering
+\textbf{3.} Đồ thị của hàm số $g$ được cho như hình bên.
+\begin{enumerate}[label=(\alph*), leftmargin=*, itemsep=0pt, topsep=1pt, parsep=0pt]
+    \item Nêu các giá trị của $g(-2)$, $g(0)$, $g(2)$ và $g(3)$.
+    \item Với những giá trị nào của $x$ thì $g(x) = 3$?
+    \item Với những giá trị nào của $x$ thì $g(x) \leqslant 3$?
+    \item Nêu tập xác định và tập giá trị của $g$.
+    \item Trên những khoảng nào thì $g$ đồng biến?
+\end{enumerate}
+\begin{center}
     \includegraphics[width=0.72\linewidth]{images/p0052_fig3.png}
-\end{minipage}%
-\hfill
-\begin{minipage}[t]{0.485\textwidth}
-    \textbf{4.} Đồ thị của $f$ và $g$ được cho như hình bên.
-    \begin{enumerate}[label=(\alph*), leftmargin=*, itemsep=0pt, topsep=1pt, parsep=0pt]
-        \item Nêu các giá trị của $f(-4)$ và $g(3)$.
-        \item Giá trị nào lớn hơn, $f(-3)$ hay $g(-3)$?
-        \item Với những giá trị nào của $x$ thì $f(x) = g(x)$?
-        \item Trên (những) khoảng nào thì $f(x) \leqslant g(x)$?
-        \item Nêu nghiệm của phương trình $f(x) = -1$.
-        \item Trên (những) khoảng nào thì $g$ nghịch biến?
-        \item Nêu tập xác định và tập giá trị của $f$.
-        \item Nêu tập xác định và tập giá trị của $g$.
-    \end{enumerate}
+\end{center}
 
-    \vspace{0.15cm}
-    \centering
+\textbf{4.} Đồ thị của $f$ và $g$ được cho như hình bên.
+\begin{enumerate}[label=(\alph*), leftmargin=*, itemsep=0pt, topsep=1pt, parsep=0pt]
+    \item Nêu các giá trị của $f(-4)$ và $g(3)$.
+    \item Giá trị nào lớn hơn, $f(-3)$ hay $g(-3)$?
+    \item Với những giá trị nào của $x$ thì $f(x) = g(x)$?
+    \item Trên những khoảng nào thì $f(x) \leqslant g(x)$?
+    \item Nêu nghiệm của phương trình $f(x) = -1$.
+    \item Trên những khoảng nào thì $g$ nghịch biến?
+    \item Nêu tập xác định và tập giá trị của $f$ và $g$.
+\end{enumerate}
+\begin{center}
     \includegraphics[width=0.72\linewidth]{images/p0052_fig4.png}
+\end{center}
 
-    \vspace{0.25cm}
-    \raggedright
-    \textbf{5.} Hình 1 được ghi lại bởi một thiết bị do Sở Mỏ và Địa chất California vận hành tại
-\end{minipage}
+\textbf{5.} Hình 1 được ghi lại bởi một máy đo địa chấn của Sở Mỏ và Địa chất California...
+
+\end{multicols}
