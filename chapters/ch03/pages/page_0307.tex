@@ -1,0 +1,151 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{geometry}
+\geometry{
+  letterpaper,
+  left=18mm,
+  right=18mm,
+  top=22mm,
+  bottom=20mm,
+  headheight=14pt
+}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{newtxtext,newtxmath}
+
+% Định nghĩa màu sắc nhận diện Stewart Calculus
+\definecolor{stewartcyan}{RGB}{0, 136, 175}
+
+% Biểu tượng công cụ vẽ đồ thị / máy tính bỏ túi (Graphing calculator icon)
+\newcommand{\graphingicon}{%
+  \begin{tikzpicture}[baseline=-0.4ex, scale=0.75]
+    \draw[stewartcyan, line width=0.6pt, rounded corners=0.5pt] (0,0) rectangle (0.34, 0.30);
+    \draw[stewartcyan, line width=0.35pt] (0.04, 0.15) -- (0.30, 0.15);
+    \draw[stewartcyan, line width=0.35pt] (0.17, 0.04) -- (0.17, 0.26);
+    \draw[stewartcyan, line width=0.6pt] (0.06, 0.07) to[out=25, in=205] (0.28, 0.23);
+  \end{tikzpicture}%
+}
+
+% Thiết lập tiêu đề đầu trang và chân trang theo chuẩn sách gốc (trang chẵn 272)
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textbf{272}\qquad\textbf{CHƯƠNG 3}\quad Các quy tắc đạo hàm}
+\fancyhead[R]{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\fontsize{6.5pt}{7.5pt}\selectfont\color{gray} Bản dịch tiếng Việt giáo trình Calculus: Early Transcendentals (9th Edition) --- James Stewart}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\begin{document}
+
+% ==============================================================================
+% BỐ CỤC 2 CỘT CÂN ĐỐI (REVIEW EXERCISES)
+% Cột 1: Bài 93 -> 99
+% Cột 2: Bài 100 -> 108
+% ==============================================================================
+
+\noindent
+\begin{minipage}[t]{0.485\textwidth}
+\textbf{93.} Một chất điểm chuyển động trên một trục thẳng đứng sao cho tọa độ của nó tại thời điểm $t$ là $y = t^3 - 12t + 3$, $t \ge 0$.
+\begin{enumerate}[label=(\alph*), leftmargin=1.8em, itemsep=1.5pt, topsep=2pt]
+    \item Tìm các hàm vận tốc và gia tốc.
+    \item Khi nào chất điểm chuyển động lên trên và khi nào nó chuyển động xuống dưới?
+    \item Tìm quãng đường mà chất điểm đi được trong khoảng thời gian $0 \le t \le 3$.
+    \item[{\makebox[0pt][r]{\graphingicon\hspace{3pt}}(d)}] Vẽ đồ thị các hàm vị trí, vận tốc và gia tốc với $0 \le t \le 3$.
+    \item Khi nào chất điểm tăng tốc? Khi nào nó giảm tốc?
+\end{enumerate}
+
+\medskip
+\textbf{94.} Thể tích của một hình nón tròn xoay là $V = \frac{1}{3}\pi r^2 h$, trong đó $r$ là bán kính đáy và $h$ là chiều cao.
+\begin{enumerate}[label=(\alph*), leftmargin=1.8em, itemsep=1.5pt, topsep=2pt]
+    \item Tìm tốc độ thay đổi của thể tích theo chiều cao nếu bán kính không đổi.
+    \item Tìm tốc độ thay đổi của thể tích theo bán kính nếu chiều cao không đổi.
+\end{enumerate}
+
+\medskip
+\textbf{95.} Khối lượng của một phần sợi dây là $x(1 + \sqrt{x})$ kilôgam, trong đó $x$ được đo bằng mét tính từ một đầu của sợi dây. Tìm mật độ dài của sợi dây khi $x = 4\text{ m}$.
+
+\medskip
+\textbf{96.} Chi phí, tính bằng đô la, để sản xuất $x$ đơn vị của một loại hàng hóa nào đó là
+\[ C(x) = 920 + 2x - 0{,}02x^2 + 0{,}00007x^3 \]
+\begin{enumerate}[label=(\alph*), leftmargin=1.8em, itemsep=1.5pt, topsep=2pt]
+    \item Tìm hàm chi phí biên.
+    \item Tìm $C'(100)$ và giải thích ý nghĩa của nó.
+    \item So sánh $C'(100)$ với chi phí sản xuất sản phẩm thứ 101.
+\end{enumerate}
+
+\medskip
+\textbf{97.} Một mẻ nuôi cấy vi khuẩn ban đầu có 200 tế bào và phát triển với tốc độ tỉ lệ thuận với số lượng tế bào. Sau nửa giờ, quần thể đã tăng lên 360 tế bào.
+\begin{enumerate}[label=(\alph*), leftmargin=1.8em, itemsep=1.5pt, topsep=2pt]
+    \item Tìm số lượng tế bào sau $t$ giờ.
+    \item Tìm số lượng tế bào sau 4 giờ.
+    \item Tìm tốc độ phát triển sau 4 giờ.
+    \item Khi nào quần thể sẽ đạt tới 10.000 tế bào?
+\end{enumerate}
+
+\medskip
+\textbf{98.} Cobalt-60 có chu kỳ bán rã là 5,24 năm.
+\begin{enumerate}[label=(\alph*), leftmargin=1.8em, itemsep=1.5pt, topsep=2pt]
+    \item Tìm khối lượng còn lại từ một mẫu ban đầu 100 mg sau 20 năm.
+    \item Mất bao lâu để khối lượng phân rã còn lại 1 mg?
+\end{enumerate}
+
+\medskip
+\textbf{99.} Gọi $C(t)$ là nồng độ của một loại thuốc trong máu. Khi cơ thể đào thải thuốc, $C(t)$ giảm với tốc độ tỉ lệ thuận với lượng thuốc hiện có tại thời điểm đó. Do đó $C'(t) = -kC(t)$, trong đó $k$ là một hằng số dương được gọi là \textit{hằng số đào thải} của thuốc.
+\begin{enumerate}[label=(\alph*), leftmargin=1.8em, itemsep=1.5pt, topsep=2pt]
+    \item Nếu $C_0$ là nồng độ tại thời điểm $t = 0$, hãy tìm nồng độ tại thời điểm $t$.
+    \item Nếu cơ thể đào thải một nửa lượng thuốc trong 30 giờ, thì mất bao lâu để đào thải 90\% lượng thuốc?
+\end{enumerate}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.485\textwidth}
+\textbf{100.} Một tách sô-cô-la nóng có nhiệt độ $80^\circ\text{C}$ trong một căn phòng luôn giữ ở $20^\circ\text{C}$. Sau nửa giờ, tách sô-cô-la nguội xuống $60^\circ\text{C}$.
+\begin{enumerate}[label=(\alph*), leftmargin=1.8em, itemsep=1.5pt, topsep=2pt]
+    \item Nhiệt độ của tách sô-cô-la sau nửa giờ nữa là bao nhiêu?
+    \item Khi nào thì sô-cô-la sẽ nguội xuống đến $40^\circ\text{C}$?
+\end{enumerate}
+
+\medskip
+\textbf{101.} Thể tích của một khối lập phương đang tăng với tốc độ $10\text{ cm}^3/\text{phút}$. Diện tích toàn phần của nó tăng nhanh như thế nào khi độ dài cạnh là $30\text{ cm}$?
+
+\medskip
+\textbf{102.} Một chiếc cốc giấy có dạng hình nón với chiều cao $10\text{ cm}$ và bán kính miệng cốc là $3\text{ cm}$ (ở phía trên). Nếu nước được rót vào cốc với tốc độ $2\text{ cm}^3/\text{s}$, thì mực nước dâng lên nhanh như thế nào khi độ sâu của nước là $5\text{ cm}$?
+
+\medskip
+\textbf{103.} Một khinh khí cầu đang bay lên thẳng đứng với tốc độ không đổi $5\text{ ft/s}$. Một cậu bé đang đạp xe dọc theo một con đường thẳng với tốc độ $15\text{ ft/s}$. Khi cậu bé đi qua ngay bên dưới khinh khí cầu, khí cầu ở độ cao $45\text{ ft}$ phía trên cậu bé. Khoảng cách giữa cậu bé và khinh khí cầu tăng nhanh như thế nào sau đó $3\text{ s}$?
+
+\medskip
+\textbf{104.} Một vận động viên lướt ván nước trượt lên một đường dốc như trong hình với tốc độ $30\text{ ft/s}$. Cô ấy bay lên nhanh như thế nào khi vừa rời khỏi đường dốc?
+
+\begin{center}
+    \vspace{1pt}
+    \includegraphics[width=0.68\linewidth]{images/p0307_fig1.png}
+    \vspace{1pt}
+\end{center}
+
+\textbf{105.} Góc nâng của mặt trời đang giảm với tốc độ $0{,}25\text{ rad/h}$. Chiều dài bóng đổ của một tòa nhà cao $400\text{ ft}$ tăng nhanh như thế nào khi góc nâng của mặt trời là $\pi/6$?
+
+\medskip
+\begin{enumerate}[label=(\alph*), leftmargin=2.4em, labelsep=0.4em, itemsep=1.5pt, topsep=0pt]
+    \item[\makebox[2.4em][l]{\makebox[0pt][r]{\graphingicon\hspace{3pt}}\textbf{106.}\hfill(a)}] Tìm xấp xỉ tuyến tính của $f(x) = \sqrt{25 - x^2}$ lân cận 3.
+    \item Minh họa phần (a) bằng cách vẽ đồ thị của $f$ và hàm xấp xỉ tuyến tính.
+    \item Với những giá trị nào của $x$ thì phép xấp xỉ tuyến tính chính xác trong khoảng sai số $0{,}1$?
+\end{enumerate}
+
+\medskip
+\begin{enumerate}[label=(\alph*), leftmargin=2.4em, labelsep=0.4em, itemsep=1.5pt, topsep=0pt]
+    \item[\makebox[2.4em][l]{\textbf{107.}\hfill(a)}] Tìm tuyến tính hóa của $f(x) = \sqrt[3]{1 + 3x}$ tại $a = 0$. Nêu xấp xỉ tuyến tính tương ứng và sử dụng nó để đưa ra giá trị xấp xỉ cho $\sqrt[3]{1{,}03}$.
+    \item[{\makebox[0pt][r]{\graphingicon\hspace{3pt}}(b)}] Xác định các giá trị của $x$ để phép xấp xỉ tuyến tính tìm được ở phần (a) có độ chính xác trong khoảng sai số $0{,}1$.
+\end{enumerate}
+
+\medskip
+\textbf{108.} Tính $dy$ nếu $y = x^3 - 2x^2 + 1$, $x = 2$, và $dx = 0{,}2$.
+\end{minipage}
+
+\end{document}
