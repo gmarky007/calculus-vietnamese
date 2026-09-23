@@ -1,0 +1,110 @@
+\documentclass[10pt]{article}
+\usepackage[
+  paperwidth=8.5in,
+  paperheight=11in,
+  left=2.45in,
+  right=0.7in,
+  top=0.75in,
+  bottom=0.75in,
+  headheight=14pt,
+  headsep=18pt
+]{geometry}
+
+\usepackage{fontspec}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+
+\definecolor{stewartred}{RGB}{190, 30, 35}
+
+% Định nghĩa nhãn số phương trình hộp vuông đỏ
+\newcommand{\eqtag}[1]{%
+  \tikz[baseline={([yshift=-0.6ex]X.center)}]{%
+    \node[fill=stewartred, text=white, font=\bfseries\footnotesize, inner xsep=4pt, inner ysep=3pt, rounded corners=1.2pt] (X) {#1};%
+  }%
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyheadoffset[L]{1.75in}
+\fancyhead[L]{\small\textbf{292}\hspace{2.5em}\textbf{\textsf{CHƯƠNG 4}}\hspace{1.5em}\textsf{Các ứng dụng của đạo hàm}}
+\renewcommand{\headrulewidth}{0pt}
+
+\fancyfootoffset[L]{1.75in}
+\fancyfoot[L]{%
+  \parbox{\dimexpr\textwidth+1.75in\relax}{%
+    \centering\fontsize{5.5pt}{7pt}\selectfont\color{black!60}%
+    Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\\
+    Do quyền kỹ thuật số, một số nội dung bên thứ ba có thể bị ẩn khỏi sách điện tử và/hoặc từng chương. Đánh giá biên tập khẳng định rằng nội dung bị ẩn không ảnh hưởng đáng kể đến trải nghiệm học tập tổng thể.%
+  }%
+}
+
+\begin{document}
+
+\noindent
+Trước khi chứng minh định lý này, chúng ta có thể thấy rằng nó hoàn toàn hợp lý khi diễn giải theo mặt hình học. Hình 3 và 4 biểu diễn các điểm $A(a, f(a))$ và $B(b, f(b))$ trên đồ thị của hai hàm số khả vi. Hệ số góc của cát tuyến $AB$ là
+
+\vspace{3pt}
+\noindent\makebox[\linewidth]{\eqtag{3}\hfill $\displaystyle m_{AB} = \frac{f(b) - f(a)}{b - a}$\hfill\phantom{\eqtag{3}}}
+\vspace{5pt}
+
+\noindent
+đây chính là biểu thức ở vế phải của Phương trình 1. Vì $f'(c)$ là hệ số góc của tiếp tuyến tại điểm $(c, f(c))$, nên Định lý Giá trị Trung bình, dưới dạng được cho bởi Phương trình 1, khẳng định rằng có ít nhất một điểm $P(c, f(c))$ trên đồ thị mà tại đó hệ số góc của tiếp tuyến bằng hệ số góc của cát tuyến $AB$. Nói cách khác, tồn tại một điểm $P$ mà tại đó tiếp tuyến song song với cát tuyến $AB$. (Hãy hình dung một đường thẳng ở xa luôn song song với $AB$ và tịnh tiến dần về phía $AB$ cho đến khi chạm vào đồ thị lần đầu tiên.)
+
+\vspace{10pt}
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{images/p0327_fig1.png}\\[5pt]
+  {\small\bfseries\textsf{HÌNH 3}}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{images/p0327_fig2.png}\\[5pt]
+  {\small\bfseries\textsf{HÌNH 4}}
+\end{minipage}
+\vspace{12pt}
+
+\noindent%
+\begin{tikzpicture}[remember picture, overlay]
+  \node[anchor=north east, inner sep=0pt, xshift=-16pt, yshift=4pt] at (0,0) {%
+    \begin{minipage}{140pt}
+      \centering
+      \includegraphics[width=\linewidth]{images/p0327_fig3.png}\\[6pt]
+      {\small\bfseries\textsf{HÌNH 5}}
+    \end{minipage}%
+  };
+\end{tikzpicture}%
+\textbf{\textsf{\textcolor{stewartred}{CHỨNG MINH}}}\quad Ta áp dụng Định lý Rolle cho một hàm số mới $h$ được xác định là hiệu giữa $f$ và hàm số có đồ thị là đường cát tuyến $AB$. Sử dụng Phương trình 3 và phương trình đường thẳng theo điểm và hệ số góc, ta thấy phương trình của đường thẳng $AB$ có thể viết dưới dạng
+
+\vspace{3pt}
+\[
+y - f(a) = \frac{f(b) - f(a)}{b - a}(x - a)
+\]
+\vspace{-4pt}
+\noindent\makebox[\linewidth]{\text{hoặc là}\hfill $\displaystyle y = f(a) + \frac{f(b) - f(a)}{b - a}(x - a)$\hfill\phantom{\text{hoặc là}}}
+\vspace{5pt}
+
+\noindent
+Vì vậy, như minh họa trong Hình 5,
+
+\vspace{3pt}
+\noindent\makebox[\linewidth]{\eqtag{4}\hfill $\displaystyle h(x) = f(x) - f(a) - \frac{f(b) - f(a)}{b - a}(x - a)$\hfill\phantom{\eqtag{4}}}
+\vspace{5pt}
+
+\noindent
+Trước tiên, ta phải kiểm tra xem $h$ có thỏa mãn ba giả thiết của Định lý Rolle hay không.
+
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=1.5em, itemsep=5pt, topsep=4pt]
+  \item Hàm số $h$ liên tục trên $[a, b]$ vì nó là tổng của $f$ và một đa thức bậc nhất, cả hai hàm này đều liên tục.
+  \item Hàm số $h$ khả vi trên $(a, b)$ vì cả $f$ và đa thức bậc nhất đều khả vi. Trên thực tế, ta có thể tính đạo hàm $h'$ trực tiếp từ Phương trình 4:
+  \[
+  h'(x) = f'(x) - \frac{f(b) - f(a)}{b - a}
+  \]
+  (Lưu ý rằng $f(a)$ và $[f(b) - f(a)]/(b - a)$ là các hằng số.)
+\end{enumerate}
+
+\end{document}
