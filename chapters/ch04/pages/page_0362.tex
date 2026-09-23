@@ -1,0 +1,166 @@
+\documentclass[10pt]{article}
+\usepackage[letterpaper, top=1.8cm, bottom=1.8cm, left=1.8cm, right=1.8cm]{geometry}
+
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T5,T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage[vietnamese]{babel}
+\else
+  \usepackage{fontspec}
+\fi
+
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{newtxtext, newtxmath}
+
+% --- MÀU SẮC ĐẶC TRƯNG CỦA GIÁO TRÌNH STEWART ---
+\definecolor{stewartcyan}{RGB}{0, 130, 185}
+\definecolor{stewartred}{RGB}{190, 30, 45}
+\definecolor{stewarttablehead}{RGB}{232, 238, 245}
+\definecolor{stewartborder}{RGB}{160, 185, 205}
+
+% --- CẤU HÌNH HEADER / FOOTER ---
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[R]{\small\textsf{\textbf{\color{stewartcyan}MỤC 4.5}}\quad\textsf{Tổng kết về phác thảo đồ thị}\qquad\textbf{\textsf{327}}}
+
+% --- LỆNH TRÌNH BÀY BÀI TẬP DẠNG DÒNG ĐÔI VÀ DÒNG ĐƠN ---
+\newcommand{\exrow}[3][0.32em]{%
+  \noindent\parbox[t]{0.485\linewidth}{#2}\hfill\parbox[t]{0.485\linewidth}{#3}\par
+  \vspace{#1}%
+}
+\newcommand{\exsingle}[2][0.32em]{%
+  \noindent\parbox[t]{\linewidth}{#2}\par
+  \vspace{#1}%
+}
+
+\begin{document}
+
+% ==============================================================================
+% PHẦN 1: KẾT THÚC VÍ DỤ 6 / PHẦN TRÊN TRANG (HÌNH 13 & BẢNG XÉT DẤU)
+% ==============================================================================
+\noindent
+\begin{minipage}[t]{0.28\textwidth}
+  \vspace{0pt}
+  \centering
+  \includegraphics[width=\linewidth]{images/p0362_fig1.png}
+  
+  \vspace{4pt}
+  \raggedright
+  \textbf{\textsf{HÌNH 13}}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.69\textwidth}
+  \vspace{0pt}
+  Vì $f''(x) = 0$ khi $x = 0$ hoặc $x = \pm\sqrt{3}$, ta lập bảng sau:
+
+  \vspace{0.45em}
+  \centering
+  {\small
+  \renewcommand{\arraystretch}{1.25}
+  \arrayrulecolor{stewartborder}
+  \begin{tabular}{|>{$}c<{$}|>{$}c<{$}|>{$}c<{$}|>{$}c<{$}|>{$}c<{$}|l|}
+    \hline
+    \rowcolor{stewarttablehead}
+    \multicolumn{1}{|c|}{\textsf{Khoảng}} & x & 3 - x^2 & (x^2 + 1)^3 & f''(x) & \multicolumn{1}{c|}{$f$} \\
+    \hline
+    x < -\sqrt{3} & - & - & + & + & Lõm lên trên $(-\infty, -\sqrt{3})$ \\
+    -\sqrt{3} < x < 0 & - & + & + & - & Lõm xuống trên $(-\sqrt{3}, 0)$ \\
+    0 < x < \sqrt{3} & + & + & + & + & Lõm lên trên $(0, \sqrt{3})$ \\
+    x > \sqrt{3} & + & - & + & - & Lõm xuống trên $(\sqrt{3}, \infty)$ \\
+    \hline
+  \end{tabular}
+  }
+
+  \vspace{0.65em}
+  \raggedright
+  Các điểm uốn là $\left(-\sqrt{3}, -\frac{3\sqrt{3}}{4}\right)$, $(0, 0)$ và $\left(\sqrt{3}, \frac{3\sqrt{3}}{4}\right)$.
+
+  \vspace{0.55em}
+  \textbf{\textsf{H. Phác thảo đồ thị}}\quad Đồ thị của $f$ được phác thảo trong Hình 13.\hfill{\color{stewartcyan}$\blacksquare$}
+\end{minipage}
+
+% ==============================================================================
+% PHẦN 2: THANH PHÂN CÁCH MỤC BÀI TẬP (4.5 BÀI TẬP CHUẨN STEWART)
+% ==============================================================================
+\vspace{1.0em}
+\noindent
+\begin{tikzpicture}
+  % Hộp chứa số 4.5 bo viền xanh cyan
+  \node[draw=stewartcyan, line width=1.1pt, inner sep=3pt, minimum width=1.1cm, minimum height=0.62cm] (box) at (0.55, 0) {%
+    \bfseries\sffamily\large\color{stewartcyan}4.5%
+  };
+  % Tiêu đề Bài tập
+  \node[anchor=west, inner sep=0, font=\bfseries\sffamily\Large] (title) at ([xshift=0.35cm]box.east) {Bài tập};
+  % 3 đường kẻ ngang song song màu xanh cyan kéo dài sang mép phải
+  \draw[stewartcyan, line width=0.6pt] ([xshift=0.3cm, yshift=3.2pt]title.east) -- (\linewidth, 0 |- [yshift=3.2pt]title.east);
+  \draw[stewartcyan, line width=0.6pt] ([xshift=0.3cm]title.east) -- (\linewidth, 0 |- title.east);
+  \draw[stewartcyan, line width=0.6pt] ([xshift=0.3cm, yshift=-3.2pt]title.east) -- (\linewidth, 0 |- [yshift=-3.2pt]title.east);
+\end{tikzpicture}
+\vspace{0.5em}
+
+% ==============================================================================
+% PHẦN 3: BỐ CỤC 2 CỘT BÀI TẬP (1–54 VÀ 55–58)
+% ==============================================================================
+\noindent
+\begin{minipage}[t]{0.485\textwidth}
+  \vspace{0pt}
+  \noindent{\bfseries\color{stewartcyan}1--54}\quad Sử dụng các hướng dẫn trong mục này để vẽ đường cong.
+
+  \vspace{0.45em}
+  \exrow{\textbf{1.} $y = x^3 + 3x^2$}{\textbf{2.} $y = 2x^3 - 12x^2 + 18x$}
+  \exrow{\textbf{3.} $y = x^4 - 4x$}{\textbf{4.} $y = x^4 - 8x^2 + 8$}
+  \exrow{\textbf{5.} $y = x(x - 4)^3$}{\textbf{6.} $y = x^5 - 5x$}
+  \exrow[0.5em]{\textbf{7.} $y = \dfrac{1}{5}x^5 - \dfrac{8}{3}x^3 + 16x$}{\textbf{8.} $y = (4 - x^2)^5$}
+  \exrow[0.5em]{\textbf{9.} $y = \dfrac{2x + 3}{x + 2}$}{\textbf{10.} $y = \dfrac{x^2 + 5x}{25 - x^2}$}
+  \exrow[0.5em]{\textbf{11.} $y = \dfrac{x - x^2}{2 - 3x + x^2}$}{\textbf{12.} $y = 1 + \dfrac{1}{x} + \dfrac{1}{x^2}$}
+  \exrow[0.5em]{\textbf{13.} $y = \dfrac{x}{x^2 - 4}$}{\textbf{14.} $y = \dfrac{1}{x^2 - 4}$}
+  \exrow[0.5em]{\textbf{15.} $y = \dfrac{x^2}{x^2 + 3}$}{\textbf{16.} $y = \dfrac{(x - 1)^2}{x^2 + 1}$}
+  \exrow[0.5em]{\textbf{17.} $y = \dfrac{x - 1}{x^2}$}{\textbf{18.} $y = \dfrac{x}{x^3 - 1}$}
+  \exrow[0.5em]{\textbf{19.} $y = \dfrac{x^3}{x^3 + 1}$}{\textbf{20.} $y = \dfrac{x^3}{x - 2}$}
+  \exrow{\textbf{21.} $y = (x - 3)\sqrt{x}$}{\textbf{22.} $y = (x - 4)\sqrt[3]{x}$}
+  \exrow{\textbf{23.} $y = \sqrt{x^2 + x - 2}$}{\textbf{24.} $y = \sqrt{x^2 + x} - x$}
+  \exrow[0.5em]{\textbf{25.} $y = \dfrac{x}{\sqrt{x^2 + 1}}$}{\textbf{26.} $y = x\sqrt{2 - x^2}$}
+  \exrow[0.5em]{\textbf{27.} $y = \dfrac{\sqrt{1 - x^2}}{x}$}{\textbf{28.} $y = \dfrac{x}{\sqrt{x^2 - 1}}$}
+  \exrow{\textbf{29.} $y = x - 3x^{1/3}$}{\textbf{30.} $y = x^{5/3} - 5x^{2/3}$}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.485\textwidth}
+  \vspace{0pt}
+  \exrow{\textbf{31.} $y = \sqrt[3]{x^2 - 1}$}{\textbf{32.} $y = \sqrt[3]{x^3 + 1}$}
+  \exrow{\textbf{33.} $y = \sin^3 x$}{\textbf{34.} $y = x + \cos x$}
+  \exsingle{\textbf{35.} $y = x\tan x, \quad -\pi/2 < x < \pi/2$}
+  \exsingle{\textbf{36.} $y = 2x - \tan x, \quad -\pi/2 < x < \pi/2$}
+  \exsingle{\textbf{37.} $y = \sin x + \sqrt{3}\cos x, \quad -2\pi \le x \le 2\pi$}
+  \exsingle{\textbf{38.} $y = \csc x - 2\sin x, \quad 0 < x < \pi$}
+  \exrow[0.5em]{\textbf{39.} $y = \dfrac{\sin x}{1 + \cos x}$}{\textbf{40.} $y = \dfrac{\sin x}{2 + \cos x}$}
+  \exrow{\textbf{41.} $y = \arctan(e^x)$}{\textbf{42.} $y = (1 - x)e^x$}
+  \exsingle{\textbf{43.} $y = 1/(1 + e^{-x})$}
+  \exsingle{\textbf{44.} $y = e^{-x}\sin x, \quad 0 \le x \le 2\pi$}
+  \exrow[0.5em]{\textbf{45.} $y = \dfrac{1}{x} + \ln x$}{\textbf{46.} $y = x(\ln x)^2$}
+  \exrow{\textbf{47.} $y = (1 + e^x)^{-2}$}{\textbf{48.} $y = e^x/x^2$}
+  \exrow{\textbf{49.} $y = \ln(\sin x)$}{\textbf{50.} $y = \ln(1 + x^3)$}
+  \exrow[0.5em]{\textbf{51.} $y = xe^{-1/x}$}{\textbf{52.} $y = \dfrac{\ln x}{x^2}$}
+  \exrow[0.5em]{\textbf{53.} $y = e^{\arctan x}$}{\textbf{54.} $y = \tan^{-1}\left(\dfrac{x - 1}{x + 1}\right)$}
+
+  \vspace{0.45em}
+  {\color{stewartcyan}\hrule height 0.6pt}
+  \vspace{0.45em}
+
+  \noindent{\bfseries\color{stewartcyan}55--58}\quad Đồ thị của hàm số $f$ được cho trong hình. (Các đường nét đứt biểu thị các tiệm cận ngang.) Tìm mỗi giá trị sau đây cho hàm số $g$ đã cho:
+  \begin{enumerate}[label=\textbf{(\alph*)}, itemsep=1pt, topsep=2pt, leftmargin=1.8em]
+    \item Tập xác định của $g$ và $g'$
+    \item Các số tới hạn của $g$
+    \item Giá trị xấp xỉ của $g'(6)$
+  \end{enumerate}
+\end{minipage}
+
+\end{document}

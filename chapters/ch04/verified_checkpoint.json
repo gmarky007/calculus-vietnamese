@@ -287,6 +287,12 @@
       "score": 99,
       "notes": "Bản dịch hiện tại là đoạn văn xuôi tóm tắt từ chối biên dịch, thiếu hoàn toàn mã nguồn LaTeX và cấu trúc trang gốc. Cần phục dựng toàn bộ trang theo layout 2 cột bất đối xứng, đặt Hình 12 ở cột lề trái và dịch toàn bộ nội dung Ví dụ 6 sang tiếng Việt chuẩn sư phạm giải tích.",
       "time": "2026-09-23 11:52:41"
+    },
+    {
+      "page_num": 362,
+      "score": 99,
+      "notes": "Trang dịch bị lỗi in chuỗi preamble lên đầu trang (do lỗi thoát ký tự), thanh tiêu đề mục 4.5 vẽ 3 đường kẻ ở cả hai bên thay vì đóng khung '4.5' và kẻ 3 đường về bên phải như bản gốc, và bảng xét dấu có quá nhiều đường kẻ ngang giữa các dòng.",
+      "time": "2026-09-23 11:55:55"
     }
   ]
 }
