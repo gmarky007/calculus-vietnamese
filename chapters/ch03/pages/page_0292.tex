@@ -1,0 +1,96 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{vietnam}
+\usepackage[top=2cm, bottom=2.2cm, left=1.8cm, right=1.8cm, headheight=14pt, headsep=18pt]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{newtxtext, newtxmath}
+\usepackage{microtype}
+
+% Định nghĩa màu sắc chuẩn Stewart
+\definecolor{stewartcyan}{RGB}{0, 130, 185}
+
+% Cấu hình header & footer
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[R]{\small\textsf{\textbf{MỤC 3.10}}\hspace{1.8em}\textsf{Xấp xỉ tuyến tính và vi phân}\hspace{3em}\textsf{\textbf{257}}}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.26\textwidth}
+    % Cột lề trái: căn chỉnh các hình vẽ và ghi chú lề theo tọa độ chuẩn
+    \vspace*{9.4cm}
+    
+    \noindent\textbf{\textsf{HÌNH 5}}
+
+    \vspace{3.5cm}
+    \begin{flushleft}
+    \footnotesize\setlength{\parskip}{2pt}
+    Hình~6 thể hiện hàm số trong Ví dụ~3 và sự so sánh giữa $dy$ và $\Delta y$ khi $a = 2$. Khung hình chữ nhật quan sát là $[1{,}8;\, 2{,}5] \times [6;\, 18]$.
+    \end{flushleft}
+
+    \vspace{0.2cm}
+    \noindent\includegraphics[width=\linewidth]{images/p0292_fig2.png}
+    
+    \vspace{0.2cm}
+    \noindent\textbf{\textsf{HÌNH 6}}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.70\textwidth}
+    % Cột chính: nội dung lý thuyết, đồ thị lớn và ví dụ
+    Ý nghĩa hình học của vi phân được thể hiện trong Hình~5. Gọi $P(x, f(x))$ và $Q(x + \Delta x, f(x + \Delta x))$ là các điểm nằm trên đồ thị của $f$ và đặt $dx = \Delta x$. Độ biến thiên tương ứng của $y$ là
+    \[
+    \Delta y = f(x + \Delta x) - f(x)
+    \]
+    Hệ số góc của tiếp tuyến $PR$ là đạo hàm $f'(x)$. Do đó khoảng cách có hướng từ $S$ đến $R$ là $f'(x)\,dx = dy$. Vì vậy, $dy$ đại diện cho mức độ tăng hoặc giảm của tiếp tuyến (độ thay đổi trong sự tuyến tính hóa), trong khi $\Delta y$ đại diện cho mức độ tăng hoặc giảm của đường cong $y = f(x)$ khi $x$ thay đổi một lượng là $dx$.
+
+    \begin{center}
+        \vspace{0.05cm}
+        \includegraphics[width=0.60\linewidth]{images/p0292_fig1.png}
+        \vspace{-0.15cm}
+    \end{center}
+
+    \vspace{0.15cm}
+    \noindent{\bfseries\textsf{\color{stewartcyan}VÍ DỤ 3}}\hspace{1em}So sánh các giá trị của $\Delta y$ và $dy$ nếu $y = f(x) = x^3 + x^2 - 2x + 1$ và $x$ thay đổi (a) từ $2$ đến $2{,}05$ và (b) từ $2$ đến $2{,}01$.
+
+    \vspace{0.25cm}
+    \noindent{\bfseries\textsf{\color{stewartcyan}LỜI GIẢI}}\hspace{1em}(a) Ta có
+    \begin{align*}
+    f(2) &= 2^3 + 2^2 - 2(2) + 1 = 9\\
+    f(2{,}05) &= (2{,}05)^3 + (2{,}05)^2 - 2(2{,}05) + 1 = 9{,}717625\\
+    \Delta y &= f(2{,}05) - f(2) = 0{,}717625
+    \end{align*}
+    \vspace{-0.6em}
+    \noindent Tổng quát,\hfill $dy = f'(x)\,dx = (3x^2 + 2x - 2)\,dx$\hfill\null
+
+    \vspace{0.35em}
+    \noindent Khi $x = 2$ và $dx = \Delta x = 0{,}05$, điều này trở thành
+    \[
+    dy = [3(2)^2 + 2(2) - 2]0{,}05 = 0{,}7
+    \]
+
+    \noindent(b)\hspace{2.2em}$\begin{aligned}[t]
+    f(2{,}01) &= (2{,}01)^3 + (2{,}01)^2 - 2(2{,}01) + 1 = 9{,}140701\\[2pt]
+    \Delta y &= f(2{,}01) - f(2) = 0{,}140701
+    \end{aligned}$
+
+    \vspace{0.45em}
+    \noindent Khi $dx = \Delta x = 0{,}01$,\hfill $dy = [3(2)^2 + 2(2) - 2]0{,}01 = 0{,}14$\hfill{\color{stewartcyan}$\blacksquare$}
+
+    \vspace{0.45cm}
+    Lưu ý rằng phép xấp xỉ $\Delta y \approx dy$ trở nên chính xác hơn khi $\Delta x$ càng nhỏ trong Ví dụ~3. Cũng chú ý rằng $dy$ dễ tính toán hơn rất nhiều so với $\Delta y$.
+
+    \vspace{0.25cm}
+    Dưới ký hiệu của vi phân, xấp xỉ tuyến tính $f(x) \approx f(a) + f'(a)(x - a)$ có thể được viết thành
+    \[
+    f(a + dx) \approx f(a) + dy
+    \]
+\end{minipage}
+
+\end{document}
