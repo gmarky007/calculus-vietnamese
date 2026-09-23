@@ -17,6 +17,12 @@
       "score": 99,
       "notes": "Bản dịch hiện tại bị lỗi in rác danh sách gói lệnh ở đầu trang, dòng chữ trong Ví dụ 1 bị đè nghiêm trọng lên công thức toán do âm vspace, và nhãn Hình 5 bị đặt sai sang cột lề trái thay vì nằm bên phải đồ thị cos x trong cột chính như bản gốc.",
       "time": "2026-09-23 09:46:54"
+    },
+    {
+      "page_num": 317,
+      "score": 99,
+      "notes": "Mã nguồn hiện tại là văn bản từ chối tạo nội dung, thiếu toàn bộ bố cục hai cột, hình minh họa và định dạng chuẩn của trang giáo trình.",
+      "time": "2026-09-23 09:48:50"
     }
   ]
 }
