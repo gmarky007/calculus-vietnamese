@@ -1,0 +1,130 @@
+\documentclass[10pt]{article}
+\usepackage[letterpaper,top=0.75in,bottom=0.8in,left=0.75in,right=0.75in]{geometry}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[vietnamese]{babel}
+\usepackage{newtxtext,newtxmath}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{parskip}
+
+% Bảng màu đặc trưng của giáo trình Stewart Calculus
+\definecolor{stewartred}{RGB}{204, 34, 41}
+\definecolor{stewartcyan}{RGB}{0, 130, 195}
+\definecolor{footercolor}{RGB}{100, 100, 100}
+
+% Cấu hình header và footer
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[L]{\fontsize{10pt}{12pt}\selectfont\textbf{\textsf{218}}\hspace{2.5em}\textbf{\textsf{CHƯƠNG 3}}\hspace{1.2em}\textsf{Các quy tắc đạo hàm}}
+\fancyfoot[C]{\fontsize{6.5pt}{8pt}\selectfont\color{footercolor}Toàn bộ bản quyền thuộc về Cengage Learning. Bản dịch phục vụ mục đích học tập và nghiên cứu theo giáo trình quốc tế.}
+
+\setlength{\fboxrule}{0.8pt}
+\setlength{\fboxsep}{4.5pt}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.22\textwidth}
+  % Cột lề trái: Ghi chú bên lề
+  \vspace*{42pt}
+  \fontsize{9pt}{12.5pt}\selectfont
+  Công thức 3.4.5 chỉ ra rằng
+  \vspace{-0.3em}
+  \[
+    \frac{d}{dx}\,(b^x) = b^x \ln b
+  \]
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.75\textwidth}
+  % Cột chính: Nội dung bài học và ví dụ
+  \noindent
+  \textbf{\textsf{\color{stewartred}CHỨNG MINH}}\quad Đặt $y = \log_b x$. Khi đó
+  \[
+    b^y = x
+  \]
+  Lấy đạo hàm ẩn hai vế của phương trình này theo $x$, và sử dụng Công thức 3.4.5, ta được
+  \[
+    (b^y \ln b)\,\frac{dy}{dx} = 1
+  \]
+  và do đó
+  \[
+    \frac{dy}{dx} = \frac{1}{b^y \ln b} = \frac{1}{x \ln b} \tag*{\color{stewartred}\rule{1.15ex}{1.15ex}}
+  \]
+
+  Nếu ta đặt $b = e$ trong Công thức 1, thì thừa số $\ln b$ ở vế phải trở thành $\ln e = 1$ và ta thu được công thức tính đạo hàm của hàm logarit tự nhiên $\log_e x = \ln x$:
+
+  \vspace{0.4em}
+  \noindent
+  \hbox to \linewidth{%
+    \fcolorbox{stewartred}{white}{\bfseries\color{stewartred}\rule[-0.25ex]{0pt}{1.8ex}\makebox[1.1em][c]{2}}%
+    \hfill
+    \fcolorbox{stewartred}{white}{%
+      \rule[-1.6ex]{0pt}{4.2ex}\hspace{2.2em}%
+      $\displaystyle \frac{d}{dx}\,(\ln x) = \frac{1}{x}$%
+      \hspace{2.2em}%
+    }%
+    \hfill
+    \phantom{\fcolorbox{stewartred}{white}{\bfseries\color{stewartred}\rule[-0.25ex]{0pt}{1.8ex}\makebox[1.1em][c]{2}}}%
+  }
+  \vspace{0.5em}
+
+  Bằng cách so sánh Công thức 1 và 2, chúng ta thấy một trong những lý do chính tại sao logarit tự nhiên (logarit cơ số $e$) lại được sử dụng trong giải tích: công thức tính đạo hàm là đơn giản nhất khi $b = e$ vì $\ln e = 1$.
+
+  \vspace{0.7em}
+  \noindent
+  \textbf{\textsf{\color{stewartcyan}VÍ DỤ 1}}\quad Tính đạo hàm của $y = \ln(x^3 + 1)$.
+
+  \vspace{0.3em}
+  \noindent
+  \textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\quad Để áp dụng Quy tắc chuỗi, ta đặt $u = x^3 + 1$. Khi đó $y = \ln u$, nên
+  \[
+    \frac{dy}{dx} = \frac{dy}{du}\,\frac{du}{dx} = \frac{1}{u}\,\frac{du}{dx} = \frac{1}{x^3 + 1}\,(3x^2) = \frac{3x^2}{x^3 + 1} \tag*{\color{stewartcyan}\rule{1.15ex}{1.15ex}}
+  \]
+
+  Nói chung, nếu ta kết hợp Công thức 2 với Quy tắc chuỗi như trong Ví dụ 1, ta được
+
+  \vspace{0.4em}
+  \noindent
+  \hbox to \linewidth{%
+    \fcolorbox{stewartred}{white}{\bfseries\color{stewartred}\rule[-0.25ex]{0pt}{1.8ex}\makebox[1.1em][c]{3}}%
+    \hfill
+    \fcolorbox{stewartred}{white}{%
+      \rule[-1.6ex]{0pt}{4.2ex}\hspace{1.1em}%
+      $\displaystyle \frac{d}{dx}\,(\ln u) = \frac{1}{u}\,\frac{du}{dx}$%
+      \hspace{1.1em}%
+    }%
+    \hspace{1.2em}hoặc\hspace{1.2em}%
+    \fcolorbox{stewartred}{white}{%
+      \rule[-1.6ex]{0pt}{4.2ex}\hspace{1.1em}%
+      $\displaystyle \frac{d}{dx}\,[\ln g(x)] = \frac{g'(x)}{g(x)}$%
+      \hspace{1.1em}%
+    }%
+    \hfill
+    \phantom{\fcolorbox{stewartred}{white}{\bfseries\color{stewartred}\rule[-0.25ex]{0pt}{1.8ex}\makebox[1.1em][c]{3}}}%
+  }
+  \vspace{0.6em}
+
+  \noindent
+  \textbf{\textsf{\color{stewartcyan}VÍ DỤ 2}}\quad Tìm $\displaystyle \frac{d}{dx}\,\ln(\sin x)$.
+
+  \vspace{0.3em}
+  \noindent
+  \textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\quad Sử dụng (3), ta có
+  \[
+    \frac{d}{dx}\,\ln(\sin x) = \frac{1}{\sin x}\,\frac{d}{dx}\,(\sin x) = \frac{1}{\sin x}\cos x = \cot x \tag*{\color{stewartcyan}\rule{1.15ex}{1.15ex}}
+  \]
+
+  \vspace{0.4em}
+  \noindent
+  \textbf{\textsf{\color{stewartcyan}VÍ DỤ 3}}\quad Tính đạo hàm của $f(x) = \sqrt{\ln x}$.
+
+  \vspace{0.3em}
+  \noindent
+  \textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\quad Lần này hàm logarit là hàm bên trong, vì vậy Quy tắc chuỗi cho ta
+  \[
+    f'(x) = \frac{1}{2}(\ln x)^{-1/2}\,\frac{d}{dx}\,(\ln x) = \frac{1}{2\sqrt{\ln x}}\,\frac{1}{x} = \frac{1}{2x\sqrt{\ln x}} \tag*{\color{stewartcyan}\rule{1.15ex}{1.15ex}}
+  \]
+\end{minipage}
+
+\end{document}

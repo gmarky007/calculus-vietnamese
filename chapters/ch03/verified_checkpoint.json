@@ -269,6 +269,12 @@
       "score": 99,
       "notes": "Mã nguồn hiện tại là văn bản từ chối giữ chỗ (placeholder) chứ chưa có nội dung giáo trình. Cần dựng lại toàn bộ trang với bố cục 2 cột bất đối xứng, hộp Discovery Project trải rộng toàn trang với lề thụt chuẩn, tiêu đề Mục 3.6 kèm 5 vạch trang trí, và khung công thức đạo hàm hàm logarit chuẩn sư phạm.",
       "time": "2026-09-23 07:30:12"
+    },
+    {
+      "page_num": 253,
+      "score": 99,
+      "notes": "Bản dịch bị lỗi rò rỉ mã gói lệnh ở đầu trang, thiếu hẳn hộp số đánh dấu công thức [2] và [3], và cần chuẩn hóa biểu tượng kết thúc chứng minh/ví dụ.",
+      "time": "2026-09-23 07:31:38"
     }
   ]
 }
