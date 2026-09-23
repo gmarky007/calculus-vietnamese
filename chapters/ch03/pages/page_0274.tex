@@ -1,0 +1,125 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage[letterpaper, top=1.4cm, bottom=1.4cm, left=1.5cm, right=1.5cm, headheight=14pt, headsep=10pt]{geometry}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usepackage{enumitem}
+
+% Màu sắc chuẩn theo giáo trình Stewart Calculus
+\definecolor{stewartcyan}{RGB}{0, 136, 204}
+\definecolor{stewartred}{RGB}{204, 0, 0}
+
+% Cấu hình header & footer
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[R]{\small\sffamily\textbf{MỤC 3.8}\quad Sự tăng trưởng và suy giảm theo hàm mũ\qquad\textbf{239}}
+
+% Tinh chỉnh khoảng cách hiển thị công thức toán
+\setlength{\abovedisplayskip}{4pt}
+\setlength{\belowdisplayskip}{4pt}
+\setlength{\abovedisplayshortskip}{2pt}
+\setlength{\belowdisplayshortskip}{2pt}
+
+\begin{document}
+
+% ==============================================================================
+% PHẦN BÀI TẬP CUỐI MỤC 3.7 (TIẾP THEO) - CỠ CHỮ NHỎ CHUẨN STEWART (8.8pt/11.2pt)
+% ==============================================================================
+\noindent
+\begin{minipage}[t]{0.485\textwidth}
+    \fontsize{8.8}{11.2}\selectfont
+    \noindent\textbf{42.}\enspace Hermann Ebbinghaus (1850--1909) là người tiên phong trong việc nghiên cứu trí nhớ. Một bài báo năm 2011 trên tạp chí \textit{Journal of Mathematical Psychology} đã giới thiệu mô hình toán học
+    \[
+    R(t) = a + b(1 + ct)^{-\beta}
+    \]
+    cho \textit{đường cong quên lãng Ebbinghaus}, trong đó $R(t)$ là tỷ lệ trí nhớ được lưu giữ sau $t$ ngày kể từ khi học một nhiệm vụ; $a$, $b$ và $c$ là các hằng số được xác định bằng thực nghiệm nằm trong khoảng từ $0$ đến $1$; $\beta$ là một hằng số dương; và $R(0) = 1$. Các hằng số phụ thuộc vào loại nhiệm vụ được học.
+    \begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=*, itemsep=1pt, topsep=2pt, parsep=0pt]
+        \item Tốc độ thay đổi của khả năng ghi nhớ sau $t$ ngày kể từ khi học một nhiệm vụ là bao nhiêu?
+        \item Bạn quên cách thực hiện một nhiệm vụ nhanh hơn vào thời điểm ngay sau khi học nó hay một thời gian dài sau khi bạn đã học nó?
+        \item Tỷ lệ phần trăm trí nhớ nào là vĩnh viễn?
+    \end{enumerate}
+
+    \vspace{4pt}
+    \noindent\textbf{43.}\enspace Độ khó của việc ``thu nhận một mục tiêu'' (chẳng hạn như dùng chuột để nhấp vào một biểu tượng trên màn hình máy tính) phụ thuộc vào tỷ số
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.485\textwidth}
+    \fontsize{8.8}{11.2}\selectfont
+    \noindent giữa khoảng cách $D$ đến mục tiêu và chiều rộng $W$ của mục tiêu. Theo \textit{định luật Fitts}, chỉ số độ khó $I$ được mô hình hóa bởi
+    \[
+    I = \log_2\left(\frac{2D}{W}\right)
+    \]
+    Định luật này được sử dụng để thiết kế các sản phẩm liên quan đến tương tác người--máy tính.
+    \begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=*, itemsep=1pt, topsep=2pt, parsep=0pt]
+        \item Nếu $W$ được giữ không đổi, tốc độ thay đổi của $I$ theo $D$ là bao nhiêu? Tốc độ này tăng hay giảm khi giá trị của $D$ tăng?
+        \item Nếu $D$ được giữ không đổi, tốc độ thay đổi của $I$ theo $W$ là bao nhiêu? Dấu âm trong câu trả lời của bạn cho biết điều gì? Tốc độ này tăng hay giảm khi giá trị của $W$ tăng?
+        \item Các câu trả lời của bạn cho phần (a) và (b) có phù hợp với trực giác của bạn không?
+    \end{enumerate}
+\end{minipage}
+
+\vspace{16pt}
+
+% ==============================================================================
+% MỤC 3.8: TIÊU ĐỀ DÓNG THEO CỘT LỀ (138pt) VÀ CỘT NỘI DUNG CHÍNH
+% ==============================================================================
+\noindent
+\begin{minipage}[c]{138pt}
+    \raggedleft
+    \begin{tikzpicture}[baseline=(num.base)]
+        \foreach \y in {-6pt, -3pt, 0pt, 3pt, 6pt} {
+            \draw[stewartcyan, line width=0.8pt] (-3.2cm, \y) -- (-0.18cm, \y);
+        }
+        \node[inner sep=0pt, text=stewartcyan, font=\fontsize{22}{22}\selectfont\sffamily\bfseries] (num) at (0.32cm, 0) {3.8};
+    \end{tikzpicture}%
+\end{minipage}%
+\hspace{7pt}%
+{\color{stewartcyan}\vrule width 1.5pt height 22pt depth 5pt}%
+\hspace{9pt}%
+\begin{minipage}[c]{\dimexpr\textwidth - 156pt\relax}
+    {\fontsize{17}{21}\selectfont\sffamily\bfseries Sự tăng trưởng và suy giảm theo hàm mũ}
+\end{minipage}
+
+\vspace{10pt}
+
+% ==============================================================================
+% NỘI DUNG CHÍNH MỤC 3.8 (THỤT LỀ TRÁI 156pt, CHUẨN XÁC VÀ KHÔNG BỊ TRÀN TRANG)
+% ==============================================================================
+\begin{list}{}{\leftmargin=156pt \rightmargin=0pt \topsep=0pt \partopsep=0pt \parsep=0pt \itemsep=0pt \listparindent=1.5em}
+\item\relax
+Trong nhiều hiện tượng tự nhiên, các đại lượng tăng trưởng hoặc suy giảm với tốc độ tỷ lệ thuận với kích thước của chúng. Chẳng hạn, nếu $y = f(t)$ là số lượng cá thể trong một quần thể động vật hoặc vi khuẩn tại thời điểm $t$, thì việc kỳ vọng rằng tốc độ tăng trưởng $f'(t)$ tỷ lệ thuận với quy mô quần thể $f(t)$ dường như là hợp lý; nghĩa là, $f'(t) = kf(t)$ với một hằng số $k$ nào đó. Thật vậy, trong các điều kiện lý tưởng (môi trường không giới hạn, dinh dưỡng đầy đủ, miễn dịch với bệnh tật), mô hình toán học được cho bởi phương trình $f'(t) = kf(t)$ dự đoán khá chính xác những gì thực sự diễn ra. Một ví dụ khác xuất hiện trong vật lý hạt nhân: khối lượng của một chất phóng xạ phân rã với tốc độ tỷ lệ thuận với khối lượng của nó. Trong hóa học, tốc độ của một phản ứng đơn phân tử bậc một tỷ lệ thuận với nồng độ của chất đó. Trong tài chính, giá trị của một tài khoản tiết kiệm với lãi kép liên tục tăng với tốc độ tỷ lệ thuận với giá trị đó.
+
+\vspace{6pt}
+Nói chung, nếu $y(t)$ là giá trị của một đại lượng $y$ tại thời điểm $t$ và nếu tốc độ thay đổi của $y$ theo $t$ tỷ lệ thuận với kích thước $y(t)$ của nó tại bất kỳ thời điểm nào, thì
+
+\vspace{5pt}
+\noindent\makebox[0pt][l]{%
+    \tikz[baseline=-0.5ex]{
+        \node[draw=stewartred, line width=0.8pt, inner sep=2.5pt] {\fontsize{8.5}{10.5}\selectfont\bfseries\color{stewartred}1};
+    }%
+}%
+\hfill
+\tikz[baseline=-0.5ex]{
+    \node[draw=stewartred, line width=0.8pt, inner sep=5pt, minimum width=2.5cm] {$\displaystyle \frac{dy}{dt} = ky$};
+}%
+\hfill\mbox{}
+\vspace{5pt}
+
+\noindent trong đó $k$ là một hằng số. Phương trình 1 đôi khi được gọi là \textbf{quy luật tăng trưởng tự nhiên} (nếu $k > 0$) hoặc \textbf{quy luật suy giảm tự nhiên} (nếu $k < 0$). Nó được gọi là một \textit{phương trình vi phân} vì nó liên quan đến một hàm chưa biết $y$ và đạo hàm của nó $dy/dt$.
+
+\vspace{6pt}
+Không khó để nghĩ ra một nghiệm của Phương trình 1. Phương trình này yêu cầu chúng ta tìm một hàm có đạo hàm bằng một bội số hằng của chính nó. Chúng ta đã gặp những hàm như vậy trong chương này. Bất kỳ hàm mũ nào có dạng $y(t) = C e^{kt}$, trong đó $C$ là một hằng số, đều thỏa mãn
+\[
+\frac{dy}{dt} = C(k e^{kt}) = k(C e^{kt}) = ky
+\]
+
+\noindent Chúng ta sẽ thấy trong Mục 9.4 rằng \textit{bất kỳ} hàm nào thỏa mãn $dy/dt = ky$ đều phải có dạng $y = C e^{kt}$. Để thấy được ý nghĩa của hằng số $C$, chúng ta nhận thấy rằng
+\[
+y(0) = C e^{k \cdot 0} = C
+\]
+\end{list}
+
+\end{document}
