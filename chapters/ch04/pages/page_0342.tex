@@ -1,0 +1,328 @@
+\documentclass[10pt]{article}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc}
+\usepackage{geometry}
+\geometry{
+  paperwidth=210mm,
+  paperheight=297mm,
+  top=1.8cm,
+  bottom=1.8cm,
+  left=1.6cm,
+  right=1.6cm
+}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+
+% Định nghĩa màu chuẩn giáo trình James Stewart
+\definecolor{stewartblue}{RGB}{0, 115, 180}
+\definecolor{stewartred}{RGB}{204, 30, 30}
+\definecolor{stewartcyan}{RGB}{0, 160, 210}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[R]{\small\sffamily\textbf{MỤC 4.3}\hspace{1.5em}Đạo hàm cho ta biết điều gì về hình dạng của đồ thị\hspace{2.5em}\textbf{307}}
+
+% Các biểu tượng chuẩn sách Stewart
+\newcommand{\calcicon}{\tikz[baseline=-2pt]{
+  \draw[stewartcyan, fill=stewartcyan!15, rounded corners=1pt, line width=0.6pt] (0,0) rectangle (9pt,9pt);
+  \draw[stewartcyan, line width=0.7pt] (1.5pt,2pt) .. controls (3.5pt,8pt) and (5.5pt,1pt) .. (7.5pt,7pt);
+}}
+
+\newcommand{\casicon}{\tikz[baseline=-2pt]{
+  \node[fill=stewartcyan, text=white, rounded corners=1pt, inner sep=1.2pt, font=\bfseries\sffamily\fontsize{5.5}{6}\selectfont] {CAS};
+}}
+
+\newcommand{\exerciseline}{\par\vspace{0.4em}\noindent{\color{stewartcyan!70}\rule{\linewidth}{0.6pt}}\par\vspace{0.4em}}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\begin{document}
+\small
+
+\noindent
+\begin{minipage}[t]{0.485\textwidth}
+
+{\color{stewartblue}\textbf{43--44}}\hspace{0.5em}Đồ thị của đạo hàm $f'$ của một hàm số liên tục $f$ được cho trong hình vẽ.
+\begin{enumerate}[label=(\alph*), itemsep=0.5pt, topsep=1.5pt, parsep=0pt, leftmargin=1.4em]
+  \item Trên những khoảng nào thì $f$ đồng biến? Nghịch biến?
+  \item Tại những giá trị nào của $x$ thì $f$ đạt cực đại địa phương? Cực tiểu địa phương?
+  \item Trên những khoảng nào thì $f$ lõm lên trên? Lõm xuống dưới?
+  \item Nêu các hoành độ $x$ của (các) điểm uốn.
+  \item Giả sử $f(0) = 0$, hãy phác họa đồ thị của $f$.
+\end{enumerate}
+
+\vspace{0.3em}
+\noindent
+\begin{tikzpicture}[scale=0.46]
+  % Số thứ tự bài đặt đồng mức tọa độ chuẩn
+  \node[font=\bfseries\small] at (-1.4, 2) {43.};
+  % Lưới tọa độ
+  \draw[step=1, stewartcyan!25, very thin] (0,-2.6) grid (8.5,2.6);
+  % Trục tọa độ
+  \draw[->, >=stealth, line width=0.6pt] (0,-2.6) -- (0,3.1) node[above=-1.5pt, font=\scriptsize] {$y$};
+  \draw[->, >=stealth, line width=0.6pt] (0,0) -- (8.9,0) node[right=-1.5pt, font=\scriptsize] {$x$};
+  % Nhãn số
+  \node[below left=-1pt, font=\tiny] at (0,0) {$0$};
+  \foreach \x in {2,4,6,8} {
+    \node[below=-1pt, font=\tiny] at (\x,0) {$\x$};
+  }
+  \node[left=-1pt, font=\tiny] at (0,2) {$2$};
+  \node[left=-1pt, font=\tiny] at (0,-2) {$-2$};
+  % Nhãn hàm
+  \node[font=\scriptsize, fill=white, inner sep=1pt] at (4.5,2.4) {$y=f'(x)$};
+  % Đồ thị bài 43
+  \draw[stewartred, line width=1pt] (0,2) .. controls (0.4,0.4) and (1.5,-1.6) .. (2.8,-1.6) .. controls (4.2,-1.6) and (5.2,0.8) .. (6,2.3);
+  \filldraw[stewartred, fill=white, line width=1pt] (6,2.3) circle (2pt);
+  \filldraw[stewartred, fill=white, line width=1pt] (6,-1.6) circle (2pt);
+  \draw[stewartred, line width=1pt, ->, >=stealth] (6.08,-1.5) -- (8.5,1.7);
+\end{tikzpicture}
+
+\vspace{0.4em}
+\noindent
+\begin{tikzpicture}[scale=0.46]
+  % Số thứ tự bài
+  \node[font=\bfseries\small] at (-1.4, 2) {44.};
+  % Lưới tọa độ
+  \draw[step=1, stewartcyan!25, very thin] (0,-2.6) grid (8.5,2.6);
+  % Trục tọa độ
+  \draw[->, >=stealth, line width=0.6pt] (0,-2.6) -- (0,3.1) node[above=-1.5pt, font=\scriptsize] {$y$};
+  \draw[->, >=stealth, line width=0.6pt] (0,0) -- (8.9,0) node[right=-1.5pt, font=\scriptsize] {$x$};
+  % Nhãn số
+  \node[below left=-1pt, font=\tiny] at (0,0) {$0$};
+  \foreach \x in {2,4,6,8} {
+    \node[below=-1pt, font=\tiny] at (\x,0) {$\x$};
+  }
+  \node[left=-1pt, font=\tiny] at (0,2) {$2$};
+  \node[left=-1pt, font=\tiny] at (0,-2) {$-2$};
+  % Nhãn hàm
+  \node[font=\scriptsize, fill=white, inner sep=1pt] at (3.5,2.3) {$y=f'(x)$};
+  % Đồ thị bài 44
+  \draw[stewartred, line width=1pt, ->, >=stealth] 
+    plot[smooth, tension=0.75] coordinates {
+      (0,-1.8) (0.8,0) (2,1.6) (3,1.2) (4.8,2.2) (6.0,0) (7.0,-1.0) (7.8,0) (8.5,1.6)
+    };
+\end{tikzpicture}
+
+\exerciseline
+
+{\color{stewartblue}\textbf{45--58}}
+\begin{enumerate}[label=(\alph*), itemsep=0.5pt, topsep=1.5pt, parsep=0pt, leftmargin=1.4em]
+  \item Tìm các khoảng đồng biến hoặc nghịch biến.
+  \item Tìm các giá trị cực đại và cực tiểu địa phương.
+  \item Tìm các khoảng lồi, lõm và các điểm uốn.
+  \item Sử dụng các thông tin từ các phần (a)–(c) để phác họa đồ thị. Bạn có thể muốn kiểm tra lại kết quả bằng máy tính cầm tay có chức năng vẽ đồ thị hoặc máy vi tính.
+\end{enumerate}
+
+\vspace{0.35em}
+\begin{minipage}[t]{0.48\linewidth}
+  \textbf{45.} $f(x) = x^3 - 3x^2 + 4$
+\end{minipage}\hfill
+\begin{minipage}[t]{0.50\linewidth}
+  \textbf{46.} $f(x) = 36x + 3x^2 - 2x^3$
+\end{minipage}
+
+\vspace{0.25em}
+\begin{minipage}[t]{0.48\linewidth}
+  \textbf{47.} $f(x) = \frac{1}{2}x^4 - 4x^2 + 3$
+\end{minipage}\hfill
+\begin{minipage}[t]{0.50\linewidth}
+  \textbf{48.} $g(x) = 200 + 8x^3 + x^4$
+\end{minipage}
+
+\vspace{0.25em}
+\begin{minipage}[t]{0.48\linewidth}
+  \textbf{49.} $g(t) = 3t^4 - 8t^3 + 12$
+\end{minipage}\hfill
+\begin{minipage}[t]{0.50\linewidth}
+  \textbf{50.} $h(x) = 5x^3 - 3x^5$
+\end{minipage}
+
+\vspace{0.25em}
+\begin{minipage}[t]{0.48\linewidth}
+  \textbf{51.} $f(z) = z^7 - 112z^2$
+\end{minipage}\hfill
+\begin{minipage}[t]{0.50\linewidth}
+  \textbf{52.} $f(x) = (x^2 - 4)^3$
+\end{minipage}
+
+\vspace{0.25em}
+\begin{minipage}[t]{0.48\linewidth}
+  \textbf{53.} $F(x) = x\sqrt{6 - x}$
+\end{minipage}\hfill
+\begin{minipage}[t]{0.50\linewidth}
+  \textbf{54.} $G(x) = 5x^{2/3} - 2x^{5/3}$
+\end{minipage}
+
+\vspace{0.25em}
+\begin{minipage}[t]{0.48\linewidth}
+  \textbf{55.} $C(x) = x^{1/3}(x + 4)$
+\end{minipage}\hfill
+\begin{minipage}[t]{0.50\linewidth}
+  \textbf{56.} $f(x) = \ln(x^2 + 9)$
+\end{minipage}
+
+\vspace{0.25em}
+\noindent\textbf{57.} $f(\theta) = 2\cos\theta + \cos^2\theta, \quad 0 \le \theta \le 2\pi$
+
+\vspace{0.25em}
+\noindent\textbf{58.} $S(x) = x - \sin x, \quad 0 \le x \le 4\pi$
+
+\exerciseline
+
+{\color{stewartblue}\textbf{59--66}}
+\begin{enumerate}[label=(\alph*), itemsep=0.5pt, topsep=1.5pt, parsep=0pt, leftmargin=1.4em]
+  \item Tìm các đường tiệm cận đứng và tiệm cận ngang.
+  \item Tìm các khoảng đồng biến hoặc nghịch biến.
+  \item Tìm các giá trị cực đại và cực tiểu địa phương.
+  \item Tìm các khoảng lồi, lõm và các điểm uốn.
+  \item Sử dụng các thông tin từ các phần (a)–(d) để phác họa đồ thị của $f$.
+\end{enumerate}
+
+\vspace{0.3em}
+\begin{minipage}[t]{0.48\linewidth}
+  \textbf{59.} $f(x) = 1 + \dfrac{1}{x} - \dfrac{1}{x^2}$
+\end{minipage}\hfill
+\begin{minipage}[t]{0.50\linewidth}
+  \textbf{60.} $f(x) = \dfrac{x^2 - 4}{x^2 + 4}$
+\end{minipage}
+
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.485\textwidth}
+
+\begin{minipage}[t]{0.48\linewidth}
+  \textbf{61.} $f(x) = e^{-2/x}$
+\end{minipage}\hfill
+\begin{minipage}[t]{0.50\linewidth}
+  \textbf{62.} $f(x) = \dfrac{e^x}{1 - e^x}$
+\end{minipage}
+
+\vspace{0.35em}
+\begin{minipage}[t]{0.48\linewidth}
+  \textbf{63.} $f(x) = e^{-x^2}$
+\end{minipage}\hfill
+\begin{minipage}[t]{0.50\linewidth}
+  \textbf{64.} $f(x) = x - \frac{1}{6}x^2 - \frac{2}{3}\ln x$
+\end{minipage}
+
+\vspace{0.35em}
+\begin{minipage}[t]{0.48\linewidth}
+  \textbf{65.} $f(x) = \ln(1 - \ln x)$
+\end{minipage}\hfill
+\begin{minipage}[t]{0.50\linewidth}
+  \textbf{66.} $f(x) = e^{\arctan x}$
+\end{minipage}
+
+\exerciseline
+
+{\color{stewartblue}\textbf{67--68}}\hspace{0.5em}Sử dụng các phương pháp trong mục này để phác họa một vài đường cong thuộc họ đường cong đã cho. Các đường cong trong họ có đặc điểm gì chung? Chúng khác nhau như thế nào?
+
+\vspace{0.3em}
+\noindent\textbf{67.} $f(x) = x^4 - cx, \quad c > 0$
+
+\vspace{0.25em}
+\noindent\textbf{68.} $f(x) = x^3 - 3c^2x + 2c^3, \quad c > 0$
+
+\exerciseline
+
+\calcicon\hspace{0.3em}{\color{stewartblue}\textbf{69--70}}
+\begin{enumerate}[label=(\alph*), itemsep=0.5pt, topsep=1.5pt, parsep=0pt, leftmargin=1.4em]
+  \item Sử dụng đồ thị của $f$ để ước lượng các giá trị lớn nhất và nhỏ nhất. Sau đó tìm các giá trị chính xác.
+  \item Ước lượng giá trị của $x$ mà tại đó $f$ tăng nhanh nhất. Sau đó tìm giá trị chính xác.
+\end{enumerate}
+
+\vspace{0.25em}
+\begin{minipage}[t]{0.48\linewidth}
+  \textbf{69.} $f(x) = \dfrac{x + 1}{\sqrt{x^2 + 1}}$
+\end{minipage}\hfill
+\begin{minipage}[t]{0.50\linewidth}
+  \textbf{70.} $f(x) = x^2 e^{-x}$
+\end{minipage}
+
+\exerciseline
+
+\calcicon\hspace{0.3em}{\color{stewartblue}\textbf{71--72}}
+\begin{enumerate}[label=(\alph*), itemsep=0.5pt, topsep=1.5pt, parsep=0pt, leftmargin=1.4em]
+  \item Sử dụng đồ thị của $f$ để ước lượng sơ bộ các khoảng lồi, lõm và tọa độ của các điểm uốn.
+  \item Sử dụng đồ thị của $f''$ để có các ước lượng chính xác hơn.
+\end{enumerate}
+
+\vspace{0.25em}
+\noindent\textbf{71.} $f(x) = \sin 2x + \sin 4x, \quad 0 \le x \le \pi$
+
+\vspace{0.25em}
+\noindent\textbf{72.} $f(x) = (x - 1)^2(x + 1)^3$
+
+\exerciseline
+
+\casicon\hspace{0.3em}{\color{stewartblue}\textbf{73--74}}\hspace{0.5em}Ước lượng các khoảng lồi, lõm chính xác đến một chữ số thập phân bằng cách sử dụng một hệ thống đại số máy tính để tính toán và vẽ đồ thị của hàm số $f''$.
+
+\vspace{0.35em}
+\begin{minipage}[t]{0.50\linewidth}
+  \textbf{73.} $f(x) = \dfrac{x^4 + x^3 + 1}{\sqrt{x^2 + x + 1}}$
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+  \textbf{74.} $f(x) = \dfrac{x^2 \tan^{-1}x}{1 + x^3}$
+\end{minipage}
+
+\vspace{0.5em}
+\noindent\textbf{75.}\hspace{0.5em}Đồ thị biểu diễn số lượng tế bào nấm men trong một môi trường nuôi cấy mới ở phòng thí nghiệm theo thời gian được cho trong hình vẽ.
+
+\vspace{0.3em}
+\begin{center}
+  \begin{tikzpicture}[xscale=0.23, yscale=0.0034]
+    % Trục hoành
+    \draw[->, >=stealth, line width=0.55pt] (0,0) -- (19.8,0);
+    \foreach \x in {2,4,6,8,10,12,14,16,18} {
+      \draw[line width=0.5pt] (\x,0) -- (\x, -12);
+      \node[below=-1.5pt, font=\scriptsize] at (\x,-12) {$\x$};
+    }
+    \node[below=9pt, font=\scriptsize] at (9.5,0) {Thời gian (tính bằng giờ)};
+    \node[below left=-1pt, font=\scriptsize] at (0,0) {$0$};
+
+    % Trục tung
+    \draw[->, >=stealth, line width=0.55pt] (0,0) -- (0,750);
+    \foreach \y in {100,200,300,400,500,600,700} {
+      \draw[line width=0.5pt] (0,\y) -- (-0.35,\y);
+      \node[left=-1pt, font=\scriptsize] at (-0.35,\y) {$\y$};
+    }
+    \node[left=10pt, align=center, font=\scriptsize] at (-0.3, 440) {Số lượng\\tế bào\\nấm men};
+
+    % Đường cong logistic
+    \draw[stewartblue, line width=1.1pt] 
+      plot[smooth, tension=0.8] coordinates {
+        (0,18) (2,30) (4,55) (6,120) (7.5,230) (8.8,350) (10,480) (11.5,570) (13,625) (15,655) (18,665)
+      };
+  \end{tikzpicture}
+\end{center}
+
+\vspace{-0.2em}
+\noindent
+\begin{minipage}[t]{0.53\linewidth}
+  \textbf{(a)} Mô tả tốc độ tăng trưởng của quần thể biến thiên như thế nào.
+\end{minipage}\hfill
+\begin{minipage}[t]{0.45\linewidth}
+  \textbf{(b)} Khi nào thì tốc độ tăng trưởng này đạt cực đại?
+\end{minipage}
+
+\vspace{0.2em}
+\noindent\textbf{(c)} Trên những khoảng nào thì hàm số quần thể lõm lên trên hoặc lõm xuống dưới?\\
+\textbf{(d)} Ước lượng tọa độ của điểm uốn.
+
+\end{minipage}
+
+\vfill
+\noindent
+\parbox{\textwidth}{%
+  \tiny\color{gray!80}%
+  \centering
+  Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\\
+  Chỉ dành cho mục đích học tập và nghiên cứu. Mọi quyền liên quan đến nội dung gốc thuộc về Cengage Learning và các tác giả.
+}
+
+\end{document}
