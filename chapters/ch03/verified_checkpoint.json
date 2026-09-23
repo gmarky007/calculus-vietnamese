@@ -305,6 +305,12 @@
       "score": 99,
       "notes": "Bản in hiện tại bị lỗi rò rỉ mã preamble ra đầu trang, cấu trúc Lời giải Ví dụ 9 dùng itemize khiến các phương trình bị tách dòng thụt lề sai so với bản gốc, và các khối ghi chú ở lề trái chưa dóng đúng cao độ y tương ứng với hộp công thức và Ví dụ 9(b).",
       "time": "2026-09-23 07:42:37"
+    },
+    {
+      "page_num": 259,
+      "score": 99,
+      "notes": "Bản dịch hiện tại bị lỗi biên dịch nghiêm trọng: toàn bộ phần khai báo gói (preamble) bị in thô lên đầu trang, tiêu đề chương mục sai định dạng 4 đường kẻ chuẩn Stewart và toàn bộ nội dung bài tập của cả hai cột đều bị biến mất.",
+      "time": "2026-09-23 07:44:54"
     }
   ]
 }
