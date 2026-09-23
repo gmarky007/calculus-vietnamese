@@ -1,0 +1,10 @@
+{
+  "verified_pages": [
+    {
+      "page_num": 42,
+      "score": 99,
+      "notes": "Đã hiệu chỉnh hoàn hảo theo cấu trúc sách gốc Stewart Calculus: 1) Đẩy toàn bộ trang lên trên bằng âm vspace (-1.0cm) để ảnh và 4 vạch cyan trên cùng sát mép trên tự nhiên như sách gốc; 2) Điều chỉnh 4 vạch chỉ cyan ở lề trái lên vị trí chuẩn (cách đỉnh ảnh 0.3cm) thay vì nằm tuột xuống giữa ảnh như trước; 3) Khớp trục dọc giữa mép trái của ảnh, chú thích và vạch kẻ đứng cyan bằng cách chuẩn hóa độ rộng 2 cột (0.27\\textwidth và dimexpr); 4) Căn chỉnh độ cao của số '1' (vspace 28pt) để đỉnh số 1 dóng thẳng hàng ngang với đỉnh tiêu đề 'Hàm số và Mô hình', thu hẹp khoảng cách với vạch cyan còn 8pt; 5) Kéo dài vạch kẻ dọc cyan xuống hết khoảng trống phía dưới (-15.2cm) giống hệt trang gốc; 6) Đảm bảo trọn vẹn đúng 1 trang.",
+      "time": "2026-09-23 12:44:47"
+    }
+  ]
+}
