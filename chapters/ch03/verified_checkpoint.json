@@ -365,6 +365,12 @@
       "score": 99,
       "notes": "Mã nguồn hiện tại là văn bản từ chối của mô hình thay vì nội dung trang sách. Cần dựng lại toàn bộ nội dung trang 233 (PDF 268) của Mục 3.7 - Kinh tế học theo đúng bố cục lề rộng và các công thức toán học chuẩn của Stewart Calculus.",
       "time": "2026-09-23 08:02:46"
+    },
+    {
+      "page_num": 269,
+      "score": 99,
+      "notes": "Mã nguồn hiện tại chỉ là thông báo từ chối/tóm tắt thay vì biên dịch nội dung trang. Cần tái lập toàn bộ mã nguồn XeLaTeX chuẩn với bố cục lề rộng bên trái, định dạng tiêu đề, công thức toán và nội dung dịch tiếng Việt chuẩn xác sư phạm.",
+      "time": "2026-09-23 08:04:08"
     }
   ]
 }

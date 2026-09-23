@@ -1,0 +1,69 @@
+\documentclass[10pt]{article}
+\usepackage[paperwidth=210mm, paperheight=280mm, left=62mm, right=22mm, top=22mm, bottom=18mm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{fontspec}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{microtype}
+
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+
+\definecolor{stewartteal}{RGB}{0, 128, 155}
+\newcommand{\stewartsquare}{\textcolor{stewartteal}{\rule{1.1ex}{1.1ex}}}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyheadoffset[lh]{46mm}
+\fancyhead[L]{\fontsize{9}{11}\selectfont \textbf{234}\hspace{3.5em}\textsf{\textbf{CHƯƠNG 3}}\hspace{1.5em}\textsf{Các quy tắc đạo hàm}}
+\renewcommand{\headrulewidth}{0pt}
+
+\setlength{\parindent}{1.5em}
+\setlength{\parskip}{0pt}
+
+\newcommand{\stewartheading}[1]{%
+  \vspace{1.3em}%
+  \noindent\stewartsquare\hspace{0.5em}{\sffamily\bfseries #1}%
+  \par\vspace{0.4em}\noindent%
+}
+
+\begin{document}
+
+\noindent
+Kết quả này cho biết tốc độ gia tăng của chi phí theo mức sản xuất khi $x = 500$ và dự đoán chi phí của sản phẩm thứ 501.
+
+\vspace{0.3em}
+\noindent
+Chi phí thực tế để sản xuất sản phẩm thứ 501 là
+\begin{align*}
+C(501) - C(500) &= [10{,}000 + 5(501) + 0{,}01(501)^2] \\
+&\quad - [10{,}000 + 5(500) + 0{,}01(500)^2] \\
+&= \$15{,}01
+\end{align*}
+
+\noindent
+Lưu ý rằng $C'(500) \approx C(501) - C(500)$. \hfill \stewartsquare
+
+\vspace{0.8em}
+Các nhà kinh tế học cũng nghiên cứu nhu cầu cận biên, doanh thu cận biên và lợi nhuận cận biên, vốn là các đạo hàm của hàm cầu, hàm doanh thu và hàm lợi nhuận tương ứng. Những khái niệm này sẽ được xem xét trong Chương 4 sau khi chúng ta phát triển các phương pháp tìm giá trị lớn nhất và giá trị nhỏ nhất của hàm số.
+
+\stewartheading{Các ngành khoa học khác}
+Tốc độ thay đổi xuất hiện trong mọi ngành khoa học. Một nhà địa chất học quan tâm đến việc xác định tốc độ mà một khối đá nóng chảy xâm nhập nguội đi do sự truyền dẫn nhiệt vào các tầng đá bao quanh. Một kỹ sư muốn biết tốc độ nước chảy ra khỏi một hồ chứa. Một nhà địa lý đô thị quan tâm đến tốc độ biến thiên mật độ dân số tại một thành phố khi khoảng cách từ trung tâm thành phố tăng lên. Một nhà khí tượng học quan tâm đến tốc độ thay đổi của áp suất khí quyển theo độ cao (xem Bài tập 3.8.19).
+
+Trong tâm lý học, những người nghiên cứu lý thuyết học tập khảo sát đường cong học tập, biểu diễn hiệu suất $P(t)$ của một người đang tiếp thu một kỹ năng dưới dạng hàm số của thời gian rèn luyện $t$. Mối quan tâm đặc biệt hướng vào tốc độ cải thiện hiệu suất theo thời gian trôi qua, tức là $dP/dt$. Các nhà tâm lý học cũng đã nghiên cứu hiện tượng trí nhớ và xây dựng các mô hình cho tốc độ lưu giữ trí nhớ (xem Bài tập 42). Họ cũng nghiên cứu độ khó liên quan đến việc thực hiện các tác vụ nhất định và tốc độ gia tăng độ khó khi một tham số cho trước thay đổi (xem Bài tập 43).
+
+Trong xã hội học, phép tính vi phân được sử dụng để phân tích sự lan truyền tin đồn (hoặc những sáng kiến đổi mới, các trào lưu nhất thời hay mốt thời trang). Nếu $p(t)$ biểu thị tỷ lệ dân số biết đến tin đồn tại thời điểm $t$, thì đạo hàm $dp/dt$ đại diện cho tốc độ lan truyền của tin đồn đó (xem Bài tập 3.4.90).
+
+\stewartheading{Một ý tưởng duy nhất, nhiều cách diễn giải}
+Vận tốc, khối lượng riêng, cường độ dòng điện, công suất và gradient nhiệt độ trong vật lý; tốc độ phản ứng và độ nén trong hóa học; tốc độ tăng trưởng và gradient vận tốc dòng máu trong sinh học; chi phí cận biên và lợi nhuận cận biên trong kinh tế học; tốc độ dòng nhiệt trong địa chất học; tốc độ cải thiện hiệu suất trong tâm lý học; tốc độ lan truyền tin đồn trong xã hội học---tất cả những đại lượng này đều là các trường hợp đặc biệt của một khái niệm toán học duy nhất: đạo hàm.
+
+Tất cả các ứng dụng đa dạng này của đạo hàm minh chứng cho một thực tế rằng một phần sức mạnh của toán học nằm ở tính trừu tượng của nó. Một khái niệm toán học trừu tượng duy nhất (chẳng hạn như đạo hàm) có thể mang nhiều cách diễn giải khác nhau trong mỗi ngành khoa học. Khi chúng ta xây dựng trọn vẹn các tính chất của một khái niệm toán học một lần cho mãi mãi, sau đó chúng ta có thể quay lại và áp dụng những kết quả này cho toàn bộ các ngành khoa học. Điều này mang lại hiệu quả vượt trội so với việc phát triển các tính chất của từng khái niệm chuyên biệt trong mỗi ngành khoa học riêng rẽ. Nhà toán học người Pháp Joseph Fourier (1768--1830) đã đúc kết điều này một cách súc tích: “Toán học so sánh các hiện tượng đa dạng nhất và khám phá ra những sự tương đồng bí ẩn liên kết chúng.”
+
+\vfill
+\begin{center}
+\fontsize{6}{7.5}\selectfont \color{gray!80!black}
+Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\\
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+\end{center}
+
+\end{document}
