@@ -1,0 +1,162 @@
+\documentclass[10pt]{article}
+\usepackage[paperwidth=8.5in, paperheight=11in, top=0.65in, bottom=0.65in, left=0.7in, right=0.7in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+
+% Bảng màu đặc trưng của giáo trình James Stewart Calculus
+\definecolor{stewartcyan}{RGB}{0, 136, 163}
+\definecolor{stewartline}{RGB}{90, 175, 220}
+\definecolor{stewartred}{RGB}{185, 30, 30}
+\definecolor{stewartgray}{RGB}{100, 100, 100}
+
+% Biểu tượng công cụ vẽ đồ thị / Graphing Calculator chuẩn phong cách Stewart
+\newcommand{\graphicon}{%
+  \tikz[baseline=-1.5pt]{
+    \draw[stewartcyan, line width=0.65pt, rounded corners=0.5pt] (0,0) rectangle (0.32,0.32);
+    \draw[stewartcyan!50, line width=0.35pt] (0.04,0.16) -- (0.28,0.16);
+    \draw[stewartcyan!50, line width=0.35pt] (0.16,0.04) -- (0.16,0.28);
+    \draw[stewartcyan, line width=0.7pt] plot[domain=0.06:0.26, samples=15] (\x, {0.16 + 0.08*sin(deg((\x-0.16)*32))});
+  }%
+}
+
+% Cấu hình Header và Footer theo đúng trang lẻ bản gốc (Header lệch về phía cột phải)
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[R]{\textsf{\textbf{MỤC 3.10}\quad Xấp xỉ tuyến tính và vi phân}\qquad\textsf{\textbf{259}}}
+\fancyfoot[C]{\fontsize{7.5pt}{9pt}\selectfont\color{stewartgray} Bản dịch tiếng Việt giáo trình Calculus: Early Transcendentals (9th Edition) -- James Stewart}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+  % Cột bài tập thứ nhất (bên trái)
+  \noindent\makebox[0pt][r]{\graphicon\enspace}\textbf{\textsf{\color{stewartcyan}7--10}}\enspace Xác minh xấp xỉ tuyến tính đã cho tại $a = 0$. Sau đó xác định các giá trị của $x$ để xấp xỉ tuyến tính chính xác trong phạm vi sai số $0{,}1$.
+
+  \vspace{1ex}
+  \noindent
+  \begin{tabularx}{\linewidth}{@{}p{0.5\linewidth}@{\hspace{1em}}p{0.45\linewidth}@{}}
+    \textbf{7.}\enspace $\tan^{-1}x \approx x$ & \textbf{8.}\enspace $(1 + x)^{-3} \approx 1 - 3x$ \\[1.6ex]
+    \textbf{9.}\enspace $\sqrt[4]{1 + 2x} \approx 1 + \frac{1}{2}x$ & \textbf{10.}\enspace $\dfrac{2}{1 + e^x} \approx 1 - \frac{1}{2}x$
+  \end{tabularx}
+
+  \vspace{2.5ex}
+  \noindent\textbf{\textsf{\color{stewartcyan}11--18}}\enspace Tìm vi phân của hàm số.
+
+  \vspace{1ex}
+  \noindent
+  \begin{tabularx}{\linewidth}{@{}p{0.5\linewidth}@{\hspace{1em}}p{0.45\linewidth}@{}}
+    \textbf{11.}\enspace $y = e^{5x}$ & \textbf{12.}\enspace $y = \sqrt{1 - t^4}$ \\[1.6ex]
+    \textbf{13.}\enspace $y = \dfrac{1 + 2u}{1 + 3u}$ & \textbf{14.}\enspace $y = \theta^2 \sin 2\theta$ \\[2.2ex]
+    \textbf{15.}\enspace $y = \dfrac{1}{x^2 - 3x}$ & \textbf{16.}\enspace $y = \sqrt{1 + \cos\theta}$ \\[2.2ex]
+    \textbf{17.}\enspace $y = \ln(\sin\theta)$ & \textbf{18.}\enspace $y = \dfrac{e^x}{1 - e^x}$
+  \end{tabularx}
+
+  \vspace{2.5ex}
+  \noindent\textbf{\textsf{\color{stewartcyan}19--22}}\enspace (a) Tìm vi phân $dy$ và (b) tính giá trị của $dy$ với các giá trị đã cho của $x$ và $dx$.
+
+  \vspace{1ex}
+  \noindent
+  \textbf{19.}\enspace $y = e^{x/10},\quad x = 0,\quad dx = 0{,}1$ \\[1.4ex]
+  \textbf{20.}\enspace $y = \cos \pi x,\quad x = \frac{1}{3},\quad dx = -0{,}02$ \\[1.4ex]
+  \textbf{21.}\enspace $y = \sqrt{3 + x^2},\quad x = 1,\quad dx = -0{,}1$ \\[1.4ex]
+  \textbf{22.}\enspace $y = \dfrac{x + 1}{x - 1},\quad x = 2,\quad dx = 0{,}05$
+
+  \vspace{2.5ex}
+  \noindent\textbf{\textsf{\color{stewartcyan}23--26}}\enspace Tính $\Delta y$ và $dy$ với các giá trị đã cho của $x$ và $dx = \Delta x$. Sau đó phác thảo sơ đồ tương tự Hình~5 biểu diễn các đoạn thẳng có độ dài $dx$, $dy$ và $\Delta y$.
+
+  \vspace{1ex}
+  \noindent
+  \textbf{23.}\enspace $y = x^2 - 4x,\quad x = 3,\quad \Delta x = 0{,}5$ \\[1.4ex]
+  \textbf{24.}\enspace $y = x - x^3,\quad x = 0,\quad \Delta x = -0{,}3$ \\[1.4ex]
+  \textbf{25.}\enspace $y = \sqrt{x - 2},\quad x = 3,\quad \Delta x = 0{,}8$ \\[1.4ex]
+  \textbf{26.}\enspace $y = e^x,\quad x = 0,\quad \Delta x = 0{,}5$
+
+  \vspace{2.5ex}
+  \noindent\textbf{\textsf{\color{stewartcyan}27--30}}\enspace So sánh các giá trị của $\Delta y$ và $dy$ nếu $x$ thay đổi từ $1$ đến $1{,}05$. Điều gì xảy ra nếu $x$ thay đổi từ $1$ đến $1{,}01$? Liệu xấp xỉ $\Delta y \approx dy$ có trở nên tốt hơn khi $\Delta x$ càng nhỏ dần không?
+
+  \vspace{1ex}
+  \noindent
+  \begin{tabularx}{\linewidth}{@{}p{0.5\linewidth}@{\hspace{1em}}p{0.45\linewidth}@{}}
+    \textbf{27.}\enspace $f(x) = x^4 - x + 1$ & \textbf{28.}\enspace $f(x) = e^{2x - 2}$ \\[1.6ex]
+    \textbf{29.}\enspace $f(x) = \sqrt{5 - x}$ & \textbf{30.}\enspace $f(x) = \dfrac{1}{x^2 + 1}$
+  \end{tabularx}
+
+  \vspace{2.5ex}
+  \noindent\textbf{\textsf{\color{stewartcyan}31--36}}\enspace Sử dụng xấp xỉ tuyến tính (hoặc vi phân) để ước lượng số đã cho.
+
+  \vspace{1ex}
+  \noindent
+  \begin{tabularx}{\linewidth}{@{}p{0.33\linewidth}@{\hspace{0.5em}}p{0.33\linewidth}@{\hspace{0.5em}}p{0.3\linewidth}@{}}
+    \textbf{31.}\enspace $(1{,}999)^4$ & \textbf{32.}\enspace $1/4{,}002$ & \textbf{33.}\enspace $\sqrt[3]{1001}$ \\[1.6ex]
+    \textbf{34.}\enspace $\sqrt{100{,}5}$ & \textbf{35.}\enspace $e^{0{,}1}$ & \textbf{36.}\enspace $\cos 29^\circ$
+  \end{tabularx}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+  % Cột bài tập thứ hai (bên phải)
+  \noindent\textbf{\textsf{\color{stewartcyan}37--39}}\enspace Hãy giải thích, theo quan điểm xấp xỉ tuyến tính hoặc vi phân, tại sao các xấp xỉ sau là hợp lý.
+
+  \vspace{1ex}
+  \noindent
+  \begin{tabularx}{\linewidth}{@{}p{0.5\linewidth}@{\hspace{1em}}p{0.45\linewidth}@{}}
+    \textbf{37.}\enspace $\ln 1{,}04 \approx 0{,}04$ & \textbf{38.}\enspace $\sqrt{4{,}02} \approx 2{,}005$
+  \end{tabularx}
+
+  \vspace{1.2ex}
+  \noindent
+  \textbf{39.}\enspace $\dfrac{1}{9{,}98} \approx 0{,}1002$
+
+  \vspace{2ex}
+  \noindent\textbf{40.}\enspace Cho \quad $f(x) = (x - 1)^2 \qquad g(x) = e^{-2x}$ \\
+  \phantom{\textbf{40.}\enspace} và \quad $h(x) = 1 + \ln(1 - 2x)$
+  \begin{enumerate}[label=(\alph*), leftmargin=1.5em, itemsep=1.5pt, topsep=2.5pt, parsep=0pt]
+    \item Tìm các tuyến tính hóa của $f$, $g$ và $h$ tại $a = 0$. Bạn nhận thấy điều gì? Bạn giải thích thế nào về điều đã xảy ra?
+    \item[\makebox[0pt][r]{\graphicon\enspace}(b)] Vẽ đồ thị của $f$, $g$ và $h$ cùng các xấp xỉ tuyến tính của chúng. Với hàm số nào thì xấp xỉ tuyến tính là tốt nhất? Với hàm nào là kém nhất? Giải thích.
+  \end{enumerate}
+
+  \vspace{1.6ex}
+  \noindent\textbf{41.}\enspace Cạnh của một khối lập phương được đo là $30\text{ cm}$ với sai số có thể xảy ra trong phép đo là $0{,}1\text{ cm}$. Hãy sử dụng vi phân để ước lượng sai số tối đa có thể xảy ra, sai số tương đối và sai số phần trăm khi tính (a) thể tích của khối lập phương và (b) diện tích bề mặt của khối lập phương.
+
+  \vspace{1.6ex}
+  \noindent\textbf{42.}\enspace Bán kính của một đĩa tròn được cho là $24\text{ cm}$ với sai số đo tối đa là $0{,}2\text{ cm}$.
+  \begin{enumerate}[label=(\alph*), leftmargin=1.5em, itemsep=1pt, topsep=2pt, parsep=0pt]
+    \item Sử dụng vi phân để ước lượng sai số tối đa trong diện tích tính được của đĩa.
+    \item Sai số tương đối và sai số phần trăm là bao nhiêu?
+  \end{enumerate}
+
+  \vspace{1.6ex}
+  \noindent\textbf{43.}\enspace Chu vi của một hình cầu được đo là $84\text{ cm}$ với sai số có thể xảy ra là $0{,}5\text{ cm}$.
+  \begin{enumerate}[label=(\alph*), leftmargin=1.5em, itemsep=1pt, topsep=2pt, parsep=0pt]
+    \item Sử dụng vi phân để ước lượng sai số tối đa trong diện tích bề mặt tính được. Sai số tương đối là bao nhiêu?
+    \item Sử dụng vi phân để ước lượng sai số tối đa trong thể tích tính được. Sai số tương đối là bao nhiêu?
+  \end{enumerate}
+
+  \vspace{1.6ex}
+  \noindent\textbf{44.}\enspace Sử dụng vi phân để ước lượng lượng sơn cần thiết để quét một lớp sơn dày $0{,}05\text{ cm}$ lên một mái vòm bán cầu có đường kính $50\text{ m}$.
+
+  \vspace{1.6ex}
+  \noindent\textbf{45.}\enspace (a) Sử dụng vi phân để tìm công thức tính thể tích xấp xỉ của một vỏ trụ mỏng có chiều cao $h$, bán kính trong $r$ và độ dày $\Delta r$. \\
+  \phantom{\textbf{45.}\enspace}(b) Sai số gặp phải khi sử dụng công thức ở phần (a) là bao nhiêu?
+
+  \vspace{1.6ex}
+  \noindent\textbf{46.}\enspace Một cạnh góc vuông của một tam giác vuông được biết là dài $20\text{ cm}$ và góc đối diện được đo là $30^\circ$, với sai số có thể xảy ra là $\pm 1^\circ$.
+  \begin{enumerate}[label=(\alph*), leftmargin=1.5em, itemsep=1pt, topsep=2pt, parsep=0pt]
+    \item Sử dụng vi phân để ước lượng sai số khi tính độ dài cạnh huyền.
+    \item Sai số phần trăm là bao nhiêu?
+  \end{enumerate}
+
+  \vspace{1.6ex}
+  \noindent\textbf{47.}\enspace Nếu một dòng điện $I$ chạy qua một điện trở có điện trở $R$, Định luật Ohm phát biểu rằng độ sụt thế là $V = RI$. Nếu $V$ không đổi và $R$ được đo với một sai số nhất định, hãy sử dụng vi phân để chỉ ra rằng sai số tương đối khi tính $I$ xấp xỉ bằng (về độ lớn) sai số tương đối của $R$.
+\end{minipage}
+
+\end{document}
