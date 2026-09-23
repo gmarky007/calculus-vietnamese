@@ -1,0 +1,126 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[paperwidth=8.5in,paperheight=11in,top=1.8cm,bottom=1.8cm,left=1.9cm,right=1.9cm]{geometry}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{newtxtext,newtxmath}
+
+% Màu sắc nhận diện Stewart
+\definecolor{stewartcyan}{RGB}{0, 136, 145}
+\definecolor{stewartred}{RGB}{190, 30, 45}
+
+% Biểu tượng CAS / máy tính đồ thị của Stewart
+\newcommand{\graphicon}{%
+  \begin{tikzpicture}[baseline=-0.55ex, scale=0.85]
+    \draw[stewartcyan, line width=0.6pt, rounded corners=0.5pt, fill=white] (-0.2,-0.2) rectangle (0.2,0.2);
+    \draw[stewartcyan!35, line width=0.3pt] (-0.2,0) -- (0.2,0);
+    \draw[stewartcyan!35, line width=0.3pt] (0,-0.2) -- (0,0.2);
+    \draw[stewartred, line width=0.7pt, smooth] plot coordinates {(-0.16,-0.12) (-0.05,0.14) (0.05,-0.14) (0.16,0.12)};
+  \end{tikzpicture}%
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textsf{\textbf{238}}\qquad\textsf{\textbf{CHƯƠNG 3}}\quad\textsf{Các quy tắc tính đạo hàm}}
+\fancyhead[R]{}
+\renewcommand{\headrulewidth}{0pt}
+
+\setlength{\abovedisplayskip}{4pt plus 1pt minus 1pt}
+\setlength{\belowdisplayskip}{4pt plus 1pt minus 1pt}
+\setlength{\abovedisplayshortskip}{2pt plus 1pt minus 1pt}
+\setlength{\belowdisplayshortskip}{2pt plus 1pt minus 1pt}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.485\textwidth}
+\vspace{0pt}
+\noindent
+... đạo hàm ở câu (a) để xác định điều gì sẽ xảy ra với cao độ của một nốt nhạc
+\begin{enumerate}[label=(\roman*),leftmargin=1.8em,itemsep=1.5pt,topsep=2.5pt,partopsep=0pt,parsep=0pt]
+  \item khi chiều dài hiệu dụng của dây đàn giảm đi bằng cách đặt ngón tay lên dây sao cho một đoạn dây ngắn hơn rung động,
+  \item khi lực căng được tăng lên bằng cách vặn chốt so dây,
+  \item khi mật độ dài tăng lên bằng cách đổi sang một dây khác.
+\end{enumerate}
+
+\begin{enumerate}[label=\textbf{\arabic*.},leftmargin=1.6em,labelsep=0.4em,itemsep=6pt,topsep=5pt,parsep=1.5pt]
+\setcounter{enumi}{32}
+  \item Giả sử chi phí (tính bằng đô la) để một công ty sản xuất $x$ chiếc quần jean của một dòng sản phẩm mới là
+  \[
+  C(x) = 2000 + 3x + 0{,}01x^2 + 0{,}0002x^3
+  \]
+  \textbf{(a)} Tìm hàm chi phí cận biên.\quad \textbf{(b)} Tìm $C'(100)$ và giải thích ý nghĩa của nó. Giá trị này dự đoán điều gì?\quad \textbf{(c)} So sánh $C'(100)$ với chi phí sản xuất chiếc quần jean thứ 101.
+
+  \item Hàm chi phí cho một loại hàng hóa nhất định là
+  \[
+  C(q) = 84 + 0{,}16q - 0{,}0006q^2 + 0{,}000003q^3
+  \]
+  \textbf{(a)} Tìm và giải thích ý nghĩa của $C'(100)$.\quad \textbf{(b)} So sánh $C'(100)$ với chi phí sản xuất sản phẩm thứ 101.
+
+  \item Nếu $p(x)$ là tổng giá trị sản lượng khi có $x$ công nhân trong một nhà máy, thì \textit{năng suất trung bình} của lực lượng lao động tại nhà máy là
+  \[
+  A(x) = \frac{p(x)}{x}
+  \]
+  \textbf{(a)} Tìm $A'(x)$. Tại sao công ty lại muốn thuê thêm công nhân nếu $A'(x) > 0$?\par
+  \textbf{(b)} Chứng minh rằng $A'(x) > 0$ nếu $p'(x)$ lớn hơn năng suất trung bình.
+
+  \item Nếu $R$ biểu thị phản ứng của cơ thể đối với một kích thích có cường độ $x$, thì \textit{độ nhạy} $S$ được định nghĩa là tốc độ thay đổi của phản ứng theo $x$. Một ví dụ cụ thể là khi độ sáng $x$ của một nguồn sáng tăng lên, mắt sẽ phản ứng bằng cách giảm diện tích $R$ của con ngươi. Công thức thực nghiệm
+  \[
+  R = \frac{40 + 24x^{0{,}4}}{1 + 4x^{0{,}4}}
+  \]
+  đã được sử dụng để mô hình hóa sự phụ thuộc của $R$ vào $x$ khi $R$ được đo bằng milimét vuông và $x$ được đo bằng các đơn vị độ sáng thích hợp.
+  \par
+  \textbf{(a)} Tìm độ nhạy.\par
+  \noindent\llap{\graphicon\hspace{3.5pt}}\textbf{(b)} Minh họa câu (a) bằng cách vẽ đồ thị của cả $R$ và $S$ dưới dạng các hàm số của $x$. Hãy nhận xét về các giá trị của $R$ và $S$ ở mức độ sáng thấp. Điều này có đúng như bạn dự đoán không?
+
+  \item Các bệnh nhân phải trải qua quá trình lọc máu để loại bỏ urê khỏi máu khi thận của họ không hoạt động bình thường. Máu được dẫn từ bệnh nhân qua một thiết bị lọc
+\end{enumerate}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.485\textwidth}
+\vspace{0pt}
+\noindent
+để lọc bỏ urê. Trong những điều kiện nhất định, thời gian lọc máu cần thiết, với nồng độ urê ban đầu là $c > 1$, được cho bởi phương trình
+\[
+t = \ln\left( \frac{3c + \sqrt{9c^2 - 8c}}{2} \right)
+\]
+Hãy tính đạo hàm của $t$ theo $c$ và giải thích ý nghĩa của nó.
+
+\begin{enumerate}[label=\textbf{\arabic*.},leftmargin=1.6em,labelsep=0.4em,itemsep=6pt,topsep=5pt,parsep=1.5pt]
+\setcounter{enumi}{37}
+  \item Các loài xâm lấn thường tạo ra một làn sóng bành trướng khi chúng xâm chiếm các vùng lãnh thổ mới. Các mô hình toán học dựa trên sự phát tán ngẫu nhiên và sinh sản đã chứng minh rằng vận tốc di chuyển của các làn sóng như vậy được cho bởi hàm số $f(r) = 2\sqrt{Dr}$, trong đó $r$ là tốc độ sinh sản của các cá thể và $D$ là một tham số định lượng sự phát tán. Hãy tính đạo hàm của vận tốc sóng theo tốc độ sinh sản $r$ và giải thích ý nghĩa của nó.
+
+  \item Định luật chất khí đối với một khí lý tưởng ở nhiệt độ tuyệt đối $T$ (tính bằng kelvin), áp suất $P$ (tính bằng atmotphe), và thể tích $V$ (tính bằng lít) là $PV = nRT$, trong đó $n$ là số mol khí và $R = 0{,}0821$ là hằng số khí lý tưởng. Giả sử tại một thời điểm nhất định, $P = 8{,}0\text{ atm}$ và đang tăng với tốc độ $0{,}10\text{ atm/phút}$ và $V = 10\text{ L}$ đang giảm với tốc độ $0{,}15\text{ L/phút}$. Tìm tốc độ thay đổi của $T$ theo thời gian tại thời điểm đó nếu $n = 10\text{ mol}$.
+
+  \item Tại một trại nuôi cá, một quần thể cá được thả vào hồ và được đánh bắt đều đặn. Mô hình về tốc độ thay đổi của quần thể cá được cho bởi phương trình
+  \[
+  \frac{dP}{dt} = r_0\left( 1 - \frac{P(t)}{P_c} \right)P(t) - \beta P(t)
+  \]
+  trong đó $r_0$ là tỉ lệ sinh của cá, $P_c$ là quần thể tối đa mà hồ có thể duy trì (gọi là \textit{sức chứa của môi trường}), và $\beta$ là tỉ lệ phần trăm quần thể bị đánh bắt.\par
+  \textbf{(a)} Giá trị nào của $dP/dt$ tương ứng với một quần thể ổn định?\par
+  \textbf{(b)} Nếu hồ có thể duy trì $10.000$ con cá, tỉ lệ sinh là $5\%$ và tỉ lệ đánh bắt là $4\%$, hãy tìm mức quần thể ổn định.\par
+  \textbf{(c)} Điều gì xảy ra nếu $\beta$ được nâng lên mức $5\%$?
+
+  \item Trong nghiên cứu hệ sinh thái, các \textit{mô hình vật ăn thịt -- con mồi} thường được sử dụng để nghiên cứu sự tương tác giữa các loài. Xét các quần thể chó sói đài nguyên, cho bởi $W(t)$, và tuần lộc, cho bởi $C(t)$, ở miền bắc Canada. Sự tương tác được mô hình hóa bởi hệ phương trình
+  \[
+  \frac{dC}{dt} = aC - bCW \qquad \frac{dW}{dt} = -cW + dCW
+  \]
+  \textbf{(a)} Những giá trị nào của $dC/dt$ và $dW/dt$ tương ứng với các quần thể ổn định?\par
+  \textbf{(b)} Khẳng định “Loài tuần lộc bị tuyệt chủng” sẽ được biểu diễn bằng ngôn ngữ toán học như thế nào?\par
+  \textbf{(c)} Giả sử rằng $a = 0{,}05$, $b = 0{,}001$, $c = 0{,}05$ và $d = 0{,}0001$. Tìm tất cả các cặp quần thể $(C, W)$ dẫn đến các quần thể ổn định. Theo mô hình này, liệu hai loài có thể cùng chung sống trong trạng thái cân bằng hay một hoặc cả hai loài sẽ bị tuyệt chủng?
+\end{enumerate}
+\end{minipage}
+
+\vfill
+\begin{center}
+{\fontsize{6.5pt}{8pt}\selectfont\color{black!70}
+Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\\
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+}
+\end{center}
+
+\end{document}
