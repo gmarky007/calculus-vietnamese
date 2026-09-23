@@ -1,0 +1,99 @@
+\documentclass[10pt]{article}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{parskip}
+\usepackage{mathptmx}
+
+% Cấu hình kích thước trang chuẩn giáo trình Stewart Calculus
+\geometry{
+    paperwidth=210mm,
+    paperheight=280mm,
+    top=20mm,
+    bottom=20mm,
+    left=18mm,
+    right=18mm,
+    headheight=14pt,
+    headsep=16pt
+}
+
+% Định nghĩa màu chuẩn sách Stewart Calculus
+\definecolor{stewartcyan}{RGB}{0, 130, 185}
+\definecolor{stewartgray}{RGB}{110, 110, 110}
+
+% Cấu hình tiêu đề trang (Header)
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\fontsize{9pt}{11pt}\selectfont\textbf{324}\qquad\textbf{\textsf{CHƯƠNG 4}}\quad\textsf{Các ứng dụng của đạo hàm}}
+\renewcommand{\headrulewidth}{0pt}
+
+% Chân trang chứa dòng bản quyền chuẩn
+\fancyfoot[C]{%
+    \fontsize{6.5pt}{8pt}\selectfont\color{stewartgray}
+    Bản quyền \copyright\ 2021 Cengage Learning. Bảo lưu mọi quyền. Không được sao chép, quét hoặc nhân bản toàn bộ hoặc từng phần.
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4.5pt}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.23\textwidth}
+    % Dóng hàng đồ thị Hình 8 bắt đầu từ mục F và nhãn HÌNH 8 ngang hàng với mục H
+    \vspace*{21mm}
+    \centering
+    \includegraphics[width=\linewidth,keepaspectratio]{images/p0359_fig1.png}
+    \vspace{2mm}
+    
+    \raggedright
+    \textbf{\textsf{HÌNH 8}}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.74\textwidth}
+    \textbf{E. Các khoảng đồng biến hoặc nghịch biến}
+    \[
+        f'(x) = xe^x + e^x = (x + 1)e^x
+    \]
+    Vì $e^x$ luôn dương, ta thấy rằng $f'(x) > 0$ khi $x + 1 > 0$, và $f'(x) < 0$ khi $x + 1 < 0$. Do đó $f$ đồng biến trên $(-1, \infty)$ và nghịch biến trên $(-\infty, -1)$.
+
+    \textbf{F. Các giá trị cực đại hoặc cực tiểu địa phương}\quad Vì $f'(-1) = 0$ và $f'$ đổi dấu từ âm sang dương tại $x = -1$, nên $f(-1) = -e^{-1} \approx -0{,}37$ là một giá trị cực tiểu địa phương (và cũng là cực tiểu tuyệt đối).
+
+    \textbf{G. Tính lõm và điểm uốn}
+    \[
+        f''(x) = (x + 1)e^x + e^x = (x + 2)e^x
+    \]
+    Vì $f''(x) > 0$ nếu $x > -2$ và $f''(x) < 0$ nếu $x < -2$, nên $f$ lõm lên trên trên $(-2, \infty)$ và lõm xuống dưới trên $(-\infty, -2)$. Điểm uốn là $(-2, -2e^{-2}) \approx (-2, -0{,}27)$.
+
+    \textbf{H. Vẽ đồ thị}\quad Ta sử dụng các thông tin này để phác thảo đường cong trong Hình 8.\hfill{\color{stewartcyan}$\blacksquare$}
+
+    \vspace{0.4cm}
+
+    \textbf{\textsf{\color{stewartcyan}VÍ DỤ 4}}\quad Vẽ đồ thị của hàm số $f(x) = \dfrac{\cos x}{2 + \sin x}$.
+
+    \textbf{A. Tập xác định}\quad Tập xác định là $\mathbb{R}$.
+
+    \textbf{B. Giao điểm với các trục}\quad Giao điểm với trục tung là $f(0) = \frac{1}{2}$. Các giao điểm với trục hoành xảy ra khi $\cos x = 0$, nghĩa là $x = (\pi/2) + n\pi$, trong đó $n$ là một số nguyên.
+
+    \textbf{C. Tính đối xứng}\quad $f$ không là hàm chẵn cũng không là hàm lẻ, nhưng $f(x + 2\pi) = f(x)$ với mọi $x$ và do đó $f$ tuần hoàn và có chu kỳ $2\pi$. Vì vậy, trong phần tiếp theo, chúng ta chỉ cần xét $0 \le x \le 2\pi$ rồi sau đó mở rộng đường cong bằng phép tịnh tiến ở phần H.
+
+    \textbf{D. Tiệm cận}\quad Không có.
+
+    \textbf{E. Các khoảng đồng biến hoặc nghịch biến}
+    \[
+        f'(x) = \frac{(2 + \sin x)(-\sin x) - \cos x(\cos x)}{(2 + \sin x)^2} = -\frac{2\sin x + 1}{(2 + \sin x)^2}
+    \]
+    Mẫu số luôn dương, do đó $f'(x) > 0$ khi $2\sin x + 1 < 0 \iff \sin x < -\frac{1}{2} \iff 7\pi/6 < x < 11\pi/6$. Vậy $f$ đồng biến trên $(7\pi/6, 11\pi/6)$ và nghịch biến trên $(0, 7\pi/6)$ và $(11\pi/6, 2\pi)$.
+
+    \textbf{F. Các giá trị cực đại hoặc cực tiểu địa phương}\quad Từ phần E và Quy tắc xét dấu đạo hàm cấp một, ta thấy giá trị cực tiểu địa phương là $f(7\pi/6) = -1/\sqrt{3}$ và giá trị cực đại địa phương là $f(11\pi/6) = 1/\sqrt{3}$.
+
+    \textbf{G. Tính lõm và điểm uốn}\quad Nếu ta áp dụng lại Quy tắc thương và rút gọn, ta được
+    \[
+        f''(x) = -\frac{2\cos x(1 - \sin x)}{(2 + \sin x)^3}
+    \]
+    Vì $(2 + \sin x)^3 > 0$ và $1 - \sin x \ge 0$ với mọi $x$, ta biết rằng $f''(x) > 0$ khi $\cos x < 0$, tức là $\pi/2 < x < 3\pi/2$. Do đó $f$ lõm lên trên trên $(\pi/2, 3\pi/2)$ và lõm xuống dưới trên $(0, \pi/2)$ và $(3\pi/2, 2\pi)$. Các điểm uốn là $(\pi/2, 0)$ và $(3\pi/2, 0)$.
+\end{minipage}
+
+\end{document}

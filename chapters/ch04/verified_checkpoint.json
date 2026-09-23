@@ -269,6 +269,12 @@
       "score": 99,
       "notes": "Phần mã khai báo gói (preamble) bị lọt thành văn bản thô ở đầu trang; Hình 7 ở cột lề bị đặt quá thấp (dóng ngang Ví dụ 3 thay vì dóng ngang mục G và H như bản gốc). Cần hiệu chỉnh lại khoảng cách đứng và mã nguồn LaTeX.",
       "time": "2026-09-23 11:45:41"
+    },
+    {
+      "page_num": 359,
+      "score": 99,
+      "notes": "Phần preamble bị rò rỉ thành dòng chữ thô ở đầu trang do lỗi ký tự thoát (escape). Hình 8 ở lề trái chưa dóng chuẩn: đồ thị bị đẩy lên quá cao (ngang mục E) trong khi nhãn 'HÌNH 8' rơi xuống ngang 'VÍ DỤ 4' thay vì dóng ngang hàng với mục H như bản gốc.",
+      "time": "2026-09-23 11:48:38"
     }
   ]
 }
