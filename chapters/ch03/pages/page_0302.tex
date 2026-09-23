@@ -1,0 +1,186 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{geometry}
+\geometry{
+    top=1.6cm,
+    bottom=1.8cm,
+    left=1.5cm,
+    right=1.5cm,
+    footskip=0.8cm
+}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+
+% Định nghĩa màu sắc thương hiệu Stewart Calculus
+\definecolor{stewartcyan}{RGB}{0, 130, 160}
+\definecolor{stewartblue}{RGB}{30, 115, 190}
+\definecolor{stewartgray}{RGB}{100, 100, 100}
+
+% Khai báo toán tử hypebolic
+\providecommand{\sech}{\operatorname{sech}}
+\providecommand{\csch}{\operatorname{csch}}
+
+% Biểu tượng máy tính vẽ đồ thị
+\newcommand{\casicon}{%
+    \tikz[baseline=-0.5ex, scale=0.7]{
+        \draw[stewartcyan, line width=0.6pt, rounded corners=0.8pt] (0,0) rectangle (0.38, 0.42);
+        \draw[stewartcyan, line width=0.4pt] (0.04, 0.21) -- (0.34, 0.21);
+        \draw[stewartcyan, line width=0.4pt] (0.19, 0.04) -- (0.19, 0.38);
+        \draw[stewartcyan, domain=0.06:0.32, smooth, variable=\t, line width=0.6pt] 
+            plot (\t, {0.21 + 0.12*sin((\t-0.06)*1400)});
+    }%
+}
+
+% Thiết lập Header / Footer
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[R]{%
+    \textsf{\textbf{\color{stewartcyan}MỤC 3.11}\hspace{1.5em}\textmd{Các hàm hypebolic}}\hspace{2.5em}\textbf{267}%
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2.5pt}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+\raggedright
+
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=1.8em, itemsep=2.5pt, topsep=0pt]
+\setcounter{enumi}{16}
+
+\item $\coth^2 x - 1 = \csch^2 x$
+
+\item $\tanh(x + y) = \dfrac{\tanh x + \tanh y}{1 + \tanh x\tanh y}$
+
+\item $\sinh 2x = 2\sinh x\cosh x$
+
+\item $\cosh 2x = \cosh^2 x + \sinh^2 x$
+
+\item $\tanh(\ln x) = \dfrac{x^2 - 1}{x^2 + 1}$
+
+\item $\dfrac{1 + \tanh x}{1 - \tanh x} = e^{2x}$
+
+\item $(\cosh x + \sinh x)^n = \cosh nx + \sinh nx \quad (\text{$n$ là số thực bất kỳ})$
+
+\vspace{-1pt}
+{\color{stewartcyan}\rule{\linewidth}{0.6pt}}
+\vspace{-1pt}
+
+\item Nếu $\tanh x = \frac{12}{13}$, hãy tìm giá trị của các hàm hypebolic còn lại tại $x$.
+
+\item Nếu $\cosh x = \frac{5}{3}$ và $x > 0$, hãy tìm giá trị của các hàm hypebolic còn lại tại $x$.
+
+\item 
+\begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=1.5em, itemsep=2pt, topsep=1pt]
+    \item Sử dụng đồ thị của các hàm $\sinh$, $\cosh$, và $\tanh$ trong các Hình 1--3 để vẽ đồ thị của $\csch$, $\sech$, và $\coth$.
+    \item \llap{\casicon\hspace{0.3em}}Kiểm tra lại các đồ thị bạn đã phác thảo ở phần (a) bằng cách sử dụng máy tính bỏ túi có chức năng vẽ đồ thị hoặc máy vi tính để vẽ chúng.
+\end{enumerate}
+
+\item Sử dụng các định nghĩa của các hàm hypebolic để tìm mỗi giới hạn sau.
+\par\vspace{2pt}
+\noindent
+\begin{tabular}{@{}p{0.48\linewidth}@{}p{0.52\linewidth}@{}}
+\textbf{(a)}\; $\lim\limits_{x\to\infty} \tanh x$ & \textbf{(b)}\; $\lim\limits_{x\to-\infty} \tanh x$ \\[5pt]
+\textbf{(c)}\; $\lim\limits_{x\to\infty} \sinh x$ & \textbf{(d)}\; $\lim\limits_{x\to-\infty} \sinh x$ \\[5pt]
+\textbf{(e)}\; $\lim\limits_{x\to\infty} \sech x$ & \textbf{(f)}\; $\lim\limits_{x\to\infty} \coth x$ \\[5pt]
+\textbf{(g)}\; $\lim\limits_{x\to 0^+} \coth x$ & \textbf{(h)}\; $\lim\limits_{x\to 0^-} \coth x$ \\[5pt]
+\textbf{(i)}\; $\lim\limits_{x\to-\infty} \csch x$ & \textbf{(j)}\; $\lim\limits_{x\to\infty} \dfrac{\sinh x}{e^x}$
+\end{tabular}
+
+\item Chứng minh các công thức được cho trong Bảng 1 đối với đạo hàm của các hàm số (a) $\cosh$, (b) $\tanh$, (c) $\csch$, (d) $\sech$, và (e) $\coth$.
+
+\item Đưa ra một cách giải khác cho Ví dụ 3 bằng cách đặt $y = \sinh^{-1}x$ rồi sử dụng Bài tập 13 và Ví dụ 1(a) với $x$ được thay bởi $y$.
+
+\item Chứng minh Phương trình 4.
+
+\item Chứng minh Phương trình 5 bằng cách sử dụng (a) phương pháp của Ví dụ 3 và (b) Bài tập 22 với $x$ được thay bởi $y$.
+
+\item Đối với mỗi hàm số sau, (i) đưa ra một định nghĩa tương tự như các định nghĩa trong (2), (ii) phác thảo đồ thị, và (iii) tìm một công thức tương tự như Phương trình 3.
+\par\vspace{2pt}
+\textbf{(a)}\; $\csch^{-1}$ \hfill \textbf{(b)}\; $\sech^{-1}$ \hfill \textbf{(c)}\; $\coth^{-1}$ \hspace*{2em}
+
+\end{enumerate}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\raggedright
+
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=1.8em, itemsep=2.5pt, topsep=0pt]
+\setcounter{enumi}{32}
+
+\item Chứng minh công thức được cho trong Bảng 6 đối với đạo hàm của mỗi hàm số sau.
+\par\vspace{2pt}
+\textbf{(a)}\; $\cosh^{-1}$ \hfill \textbf{(b)}\; $\tanh^{-1}$ \hfill \textbf{(c)}\; $\coth^{-1}$ \hspace*{2em}
+
+\item Chứng minh công thức được cho trong Bảng 6 đối với đạo hàm của mỗi hàm số sau.
+\par\vspace{2pt}
+\textbf{(a)}\; $\sech^{-1}$ \hfill \textbf{(b)}\; $\csch^{-1}$ \hspace*{5em}
+\end{enumerate}
+
+\vspace{2pt}
+\noindent{\color{stewartcyan}\textbf{35--53}}\;\; \textbf{Tìm đạo hàm. Rút gọn nếu có thể.}
+\vspace{3pt}
+
+\noindent
+\makebox[0.48\linewidth][l]{\textbf{35.}\, $f(x) = \cosh 3x$}% 
+\makebox[0.52\linewidth][l]{\textbf{36.}\, $f(x) = e^x \cosh x$}\\[3.5pt]
+\makebox[0.48\linewidth][l]{\textbf{37.}\, $h(x) = \sinh(x^2)$}% 
+\makebox[0.52\linewidth][l]{\textbf{38.}\, $g(x) = \sinh^2 x$}\\[3.5pt]
+\makebox[0.48\linewidth][l]{\textbf{39.}\, $G(t) = \sinh(\ln t)$}% 
+\makebox[0.52\linewidth][l]{\textbf{40.}\, $F(t) = \ln(\sinh t)$}\\[3.5pt]
+\makebox[0.48\linewidth][l]{\textbf{41.}\, $f(x) = \tanh\sqrt{x}$}% 
+\makebox[0.52\linewidth][l]{\textbf{42.}\, $H(v) = e^{\tanh 2v}$}\\[3.5pt]
+\makebox[0.48\linewidth][l]{\textbf{43.}\, $y = \sech x\,\tanh x$}% 
+\makebox[0.52\linewidth][l]{\textbf{44.}\, $y = \sech(\tanh x)$}\\[3.5pt]
+\makebox[0.48\linewidth][l]{\textbf{45.}\, $g(t) = t \coth\sqrt{t^2 + 1}$}% 
+\makebox[0.52\linewidth][l]{\textbf{46.}\, $f(t) = \dfrac{1 + \sinh t}{1 - \sinh t}$}\\[5pt]
+\makebox[0.48\linewidth][l]{\textbf{47.}\, $f(x) = \sinh^{-1}(-2x)$}% 
+\makebox[0.52\linewidth][l]{\textbf{48.}\, $g(x) = \tanh^{-1}(x^3)$}\\[2pt]
+
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=1.8em, itemsep=2.5pt, topsep=1pt]
+\setcounter{enumi}{48}
+\item $y = \cosh^{-1}(\sec\theta), \quad 0 \leqslant \theta < \pi/2$
+\item $y = \sech^{-1}(\sin\theta), \quad 0 < \theta < \pi/2$
+\item $G(u) = \cosh^{-1}\sqrt{1 + u^2}, \quad u > 0$
+\item $y = x\tanh^{-1}x + \ln\sqrt{1 - x^2}$
+\item $y = x\sinh^{-1}(x/3) - \sqrt{9 + x^2}$
+\end{enumerate}
+
+\vspace{-1pt}
+{\color{stewartcyan}\rule{\linewidth}{0.6pt}}
+\vspace{-1pt}
+
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=1.8em, itemsep=2.5pt, topsep=1pt]
+\setcounter{enumi}{53}
+\item Chứng minh rằng $\dfrac{d}{dx}\sqrt[4]{\dfrac{1 + \tanh x}{1 - \tanh x}} = \dfrac{1}{2}e^{x/2}$.
+
+\item Chứng minh rằng $\dfrac{d}{dx}\arctan(\tanh x) = \sech 2x$.
+
+\item \textbf{Cổng vòm Gateway Arch}\;\; Cổng vòm Gateway Arch ở thành phố St. Louis được thiết kế bởi Eero Saarinen và được xây dựng dựa trên phương trình
+\[
+y = 211{,}49 - 20{,}96\cosh 0{,}03291765x
+\]
+mô tả đường cong trung tâm của vòm, trong đó $x$ và $y$ được đo bằng mét và $|x| \leqslant 91{,}20$.
+\begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=1.5em, itemsep=2pt, topsep=1pt]
+    \item \llap{\casicon\hspace{0.3em}}Vẽ đồ thị đường cong trung tâm.
+    \item Chiều cao của cổng vòm tại điểm chính giữa là bao nhiêu?
+    \item Tại những điểm nào thì chiều cao đạt $100\text{ m}$?
+    \item Độ dốc của cổng vòm tại các điểm ở phần (c) bằng bao nhiêu?
+\end{enumerate}
+
+\end{enumerate}
+\end{minipage}
+
+\vfill
+\begin{center}
+    \fontsize{6.5pt}{8pt}\selectfont\color{stewartgray}
+    Copyright \copyright\ 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\\
+    Chỉ dùng cho mục đích học tập và nghiên cứu. Mọi quyền sở hữu trí tuệ đối với tác phẩm gốc thuộc về Cengage Learning và các tác giả.
+\end{center}
+
+\end{document}
