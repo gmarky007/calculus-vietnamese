@@ -377,6 +377,12 @@
       "score": 99,
       "notes": "Mã nguồn hiện tại là văn bản từ chối/tóm tắt thô, hoàn toàn thiếu cấu trúc 2 cột bất đối xứng, công thức toán và hình lề Hình 10. Đã viết lại toàn bộ mã nguồn XeLaTeX chuẩn xác 1:1 theo giáo trình James Stewart.",
       "time": "2026-09-23 12:27:11"
+    },
+    {
+      "page_num": 377,
+      "score": 99,
+      "notes": "Trang dịch bị lỗi nghiêm trọng khi in lộ toàn bộ dòng khai báo gói lệnh LaTeX ([10pt]article [utf8]inputenc...) ngay dưới tiêu đề đầu trang. Bố cục khối lời giải phía trên và khoảng cách dóng hàng của 2 cột bài tập cần được căn chỉnh chuẩn xác theo hệ lưới Stewart Calculus.",
+      "time": "2026-09-23 12:31:02"
     }
   ]
 }
