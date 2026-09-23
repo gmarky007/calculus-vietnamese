@@ -1,0 +1,106 @@
+\documentclass[10pt]{article}
+\usepackage[paperwidth=210mm, paperheight=280mm, top=20mm, bottom=20mm, left=18mm, right=18mm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{newtxtext,newtxmath}
+
+% Màu sắc chuẩn theo sách giáo trình của James Stewart
+\definecolor{stewartcyan}{RGB}{0, 130, 185}
+\definecolor{stewartgray}{RGB}{105, 105, 105}
+
+% Thiết lập tiêu đề trang (Trang chẵn 312)
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textsf{\textbf{312}}\qquad\textsf{\textbf{CHƯƠNG 4}}\quad\textsf{Các ứng dụng của đạo hàm}}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{14pt}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.26\textwidth}
+    \vspace{0pt}%
+    {\small\raggedright
+    Đồ thị của hàm số trong Ví dụ 3 được thể hiện trong Hình~3. Trước đây chúng ta đã thảo luận về sự tăng trưởng chậm của hàm logarit, vì vậy không có gì đáng ngạc nhiên khi tỉ số này tiến về $0$ khi $x \to \infty$. Xem thêm Bài tập 76.\par}
+
+    \vspace{8pt}
+    \noindent
+    \includegraphics[width=\linewidth]{images/p0347_fig1.png}
+
+    \vspace{4pt}
+    \noindent
+    {\small\textbf{\textsf{HÌNH 3}}}\par
+
+    \vspace{4.2cm}
+    {\small\raggedright
+    Đồ thị trong Hình~4 mang lại sự xác nhận trực quan cho kết quả của Ví dụ 4. Tuy nhiên, nếu chúng ta phóng to quá mức, ta sẽ nhận được một đồ thị không chính xác vì $\tan x$ rất gần với $x$ khi $x$ nhỏ. Xem Bài tập 2.2.48(d).\par}
+
+    \vspace{8pt}
+    \noindent
+    \includegraphics[width=\linewidth]{images/p0347_fig2.png}
+
+    \vspace{4pt}
+    \noindent
+    {\small\textbf{\textsf{HÌNH 4}}}\par
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.70\textwidth}
+    \vspace{0pt}%
+    \noindent
+    \textbf{\textsf{\color{stewartcyan}VÍ DỤ 3}}\quad Tính $\lim\limits_{x \to \infty} \dfrac{\ln x}{\sqrt{x}}$.
+
+    \vspace{0.4em}
+    \noindent
+    \textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\quad Vì $\ln x \to \infty$ và $\sqrt{x} \to \infty$ khi $x \to \infty$, nên Quy tắc l'Hospital được áp dụng:
+    \[
+    \lim_{x \to \infty} \frac{\ln x}{\sqrt{x}} = \lim_{x \to \infty} \frac{1/x}{\frac{1}{2}x^{-1/2}} = \lim_{x \to \infty} \frac{1/x}{1/(2\sqrt{x})}
+    \]
+    Lưu ý rằng giới hạn ở vế phải hiện là một dạng vô định kiểu $\frac{0}{0}$. Nhưng thay vì áp dụng Quy tắc l'Hospital lần thứ hai như chúng ta đã làm trong Ví dụ 2, ta hãy rút gọn biểu thức và thấy rằng việc áp dụng lần hai là không cần thiết:
+    \begin{equation*}
+    \lim_{x \to \infty} \frac{\ln x}{\sqrt{x}} = \lim_{x \to \infty} \frac{1/x}{1/(2\sqrt{x})} = \lim_{x \to \infty} \frac{2}{\sqrt{x}} = 0 \tag*{\color{stewartcyan}\rule{1.1ex}{1.1ex}}
+    \end{equation*}
+
+    \vspace{0.4em}
+    \noindent
+    Trong cả hai Ví dụ 2 và 3, chúng ta đều đã tính các giới hạn dạng $\frac{\infty}{\infty}$, nhưng lại thu được hai kết quả khác nhau. Trong Ví dụ 2, giới hạn vô cực cho ta biết rằng tử số $e^x$ tăng nhanh hơn đáng kể so với mẫu số $x^2$, dẫn đến các tỉ số ngày càng lớn. Trên thực tế, $y = e^x$ tăng nhanh hơn mọi hàm lũy thừa $y = x^n$ (xem Bài tập 75). Trong Ví dụ 3, chúng ta gặp tình huống ngược lại; giới hạn bằng 0 có nghĩa là mẫu số tăng nhanh vượt trội so với tử số, và tỉ số cuối cùng sẽ tiến dần về 0.
+
+    \vspace{1.2em}
+    \noindent
+    \textbf{\textsf{\color{stewartcyan}VÍ DỤ 4}}\quad Tìm $\lim\limits_{x \to 0} \dfrac{\tan x - x}{x^3}$. (Xem Bài tập 2.2.48.)
+
+    \vspace{0.4em}
+    \noindent
+    \textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\quad Nhận thấy rằng cả $\tan x - x \to 0$ và $x^3 \to 0$ khi $x \to 0$, ta áp dụng Quy tắc l'Hospital:
+    \[
+    \lim_{x \to 0} \frac{\tan x - x}{x^3} = \lim_{x \to 0} \frac{\sec^2 x - 1}{3x^2}
+    \]
+    Vì giới hạn ở vế phải vẫn là dạng vô định kiểu $\frac{0}{0}$, ta áp dụng Quy tắc l'Hospital một lần nữa:
+    \[
+    \lim_{x \to 0} \frac{\sec^2 x - 1}{3x^2} = \lim_{x \to 0} \frac{2\sec^2 x \tan x}{6x}
+    \]
+    Vì $\lim\limits_{x \to 0} \sec^2 x = 1$, ta đơn giản hóa phép tính bằng cách viết
+    \[
+    \lim_{x \to 0} \frac{2\sec^2 x \tan x}{6x} = \frac{1}{3}\lim_{x \to 0} \sec^2 x \cdot \lim_{x \to 0} \frac{\tan x}{x} = \frac{1}{3}\lim_{x \to 0} \frac{\tan x}{x}
+    \]
+    Chúng ta có thể tính giới hạn cuối cùng này bằng cách áp dụng Quy tắc l'Hospital lần thứ ba hoặc bằng cách viết $\tan x$ dưới dạng $(\sin x)/(\cos x)$ và sử dụng hiểu biết của chúng ta về các giới hạn lượng giác. Kết hợp tất cả các bước lại, ta nhận được
+    \begin{align*}
+    \lim_{x \to 0} \frac{\tan x - x}{x^3} &= \lim_{x \to 0} \frac{\sec^2 x - 1}{3x^2} = \lim_{x \to 0} \frac{2\sec^2 x \tan x}{6x} \\[4pt]
+    &= \frac{1}{3}\lim_{x \to 0} \frac{\tan x}{x} = \frac{1}{3}\lim_{x \to 0} \frac{\sec^2 x}{1} = \frac{1}{3} \tag*{\color{stewartcyan}\rule{1.1ex}{1.1ex}}
+    \end{align*}
+\end{minipage}
+
+\vfill
+\noindent
+\begin{minipage}{\textwidth}
+    \tiny\color{stewartgray}
+    Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\\ 
+    Bản quyền thuộc Cengage Learning. Đã đăng ký bản quyền. Không được sao chép, scan hoặc nhân bản toàn bộ hay một phần.
+\end{minipage}
+
+\end{document}
