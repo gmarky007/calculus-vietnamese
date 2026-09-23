@@ -1,0 +1,119 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{newtxtext,newtxmath}
+
+\geometry{
+    paperwidth=210mm,
+    paperheight=297mm,
+    top=20mm,
+    bottom=20mm,
+    left=18mm,
+    right=18mm,
+    headheight=14pt
+}
+
+\definecolor{stewartcyan}{RGB}{0, 130, 155}
+\definecolor{stewartred}{RGB}{204, 51, 51}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textbf{204}\qquad\textbf{\textsf{CHƯƠNG 3}}\quad\textsf{Các quy tắc tính đạo hàm}}
+\fancyhead[R]{}
+\renewcommand{\headrulewidth}{0pt}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.26\textwidth}
+\vspace*{14.8cm}
+\begin{flushleft}
+\footnotesize
+Đừng nhầm lẫn Công thức~5 (trong đó $x$ là \textit{số mũ}) với Quy tắc lũy thừa (trong đó $x$ là \textit{cơ số}):
+\vspace{-1mm}
+\[
+\frac{d}{dx}(x^n) = n x^{n-1}
+\]
+\end{flushleft}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.70\textwidth}
+
+\noindent\textbf{\textsf{\textcolor{stewartcyan}{VÍ DỤ 8}}}\quad Nếu $f(x) = \sin(\cos(\tan x))$, thì
+\begin{align*}
+f'(x) &= \cos(\cos(\tan x)) \frac{d}{dx} \cos(\tan x) \\[3pt]
+&= \cos(\cos(\tan x)) [-\sin(\tan x)] \frac{d}{dx} (\tan x) \\[3pt]
+&= -\cos(\cos(\tan x)) \sin(\tan x) \sec^2 x
+\end{align*}
+Lưu ý rằng chúng ta đã sử dụng Quy tắc chuỗi hai lần.\hfill{\color{stewartcyan}$\blacksquare$}
+
+\vspace{0.4cm}
+\noindent\textbf{\textsf{\textcolor{stewartcyan}{VÍ DỤ 9}}}\quad Tính đạo hàm của $y = e^{\sec 3\theta}$.
+
+\vspace{0.15cm}
+\noindent\textbf{\textsf{\textcolor{stewartcyan}{LỜI GIẢI}}}\quad Hàm ngoài là hàm mũ, hàm ở giữa là hàm secant, và hàm trong cùng là hàm nhân ba. Do đó ta có
+\begin{align*}
+\frac{dy}{d\theta} &= e^{\sec 3\theta} \frac{d}{d\theta}(\sec 3\theta) \\[3pt]
+&= e^{\sec 3\theta} \sec 3\theta \tan 3\theta \frac{d}{d\theta}(3\theta) \\[3pt]
+&= 3e^{\sec 3\theta} \sec 3\theta \tan 3\theta \tag*{{\color{stewartcyan}$\blacksquare$}}
+\end{align*}
+
+\vspace{0.4cm}
+\noindent{\color{stewartcyan}\rule{1.15ex}{1.15ex}}\quad\textbf{\textsf{\large Đạo hàm của các hàm số mũ tổng quát}}
+
+\vspace{0.2cm}
+Chúng ta có thể sử dụng Quy tắc chuỗi để tính đạo hàm của hàm số mũ với cơ số bất kỳ $b > 0$. Nhớ lại từ Phương trình~1.5.10 rằng ta có thể viết
+\[
+b^x = e^{(\ln b)x}
+\]
+và khi đó Quy tắc chuỗi cho ta
+\begin{align*}
+\frac{d}{dx}(b^x) &= \frac{d}{dx}\left(e^{(\ln b)x}\right) = e^{(\ln b)x} \frac{d}{dx}[(\ln b)x] \\[3pt]
+&= e^{(\ln b)x}(\ln b) = b^x \ln b
+\end{align*}
+bởi vì $\ln b$ là một hằng số. Do đó ta có công thức
+
+\vspace{0.25cm}
+\noindent
+\parbox{\linewidth}{%
+  \makebox[0pt][l]{\raisebox{-0.5\height}{\tcbox[colframe=stewartred,colback=white,boxrule=1pt,sharp corners,top=3pt,bottom=3pt,left=6pt,right=6pt]{\textbf{\textcolor{stewartred}{\normalsize 5}}}}}%
+  \hfill
+  \raisebox{-0.5\height}{\tcbox[colframe=stewartred,colback=white,boxrule=1pt,sharp corners,top=6pt,bottom=6pt,left=24pt,right=24pt]{%
+    $\displaystyle \frac{d}{dx}(b^x) = b^x \ln b$%
+  }}%
+  \hfill\null
+}
+\vspace{0.35cm}
+
+\noindent\textbf{\textsf{\textcolor{stewartcyan}{VÍ DỤ 10}}}\quad Tìm đạo hàm của mỗi hàm số sau:
+\vspace{0.15cm}
+
+\noindent
+\textbf{(a)} $g(x) = 2^x$ \qquad\qquad\qquad \textbf{(b)} $h(x) = 5^{-x}$
+
+\vspace{0.25cm}
+\noindent\textbf{\textsf{\textcolor{stewartcyan}{LỜI GIẢI}}}
+\vspace{0.1cm}
+
+\noindent
+\textbf{(a)} Ta sử dụng Công thức 5 với $b = 2$:
+\[
+g'(x) = \frac{d}{dx}(2^x) = 2^x \ln 2
+\]
+Kết quả này phù hợp với ước lượng
+\[
+\frac{d}{dx}(2^x) \approx (0{,}693)2^x
+\]
+mà chúng ta đã đưa ra trong \textbf{\textsf{Mục 3.1}} vì $\ln 2 \approx 0{,}693147$.
+
+\end{minipage}
+
+\end{document}
