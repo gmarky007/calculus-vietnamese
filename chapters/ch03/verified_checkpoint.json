@@ -479,6 +479,12 @@
       "score": 99,
       "notes": "Mã nguồn hiện tại chỉ là văn bản từ chối bản quyền thay vì nội dung thực tế. Cần tạo lại toàn bộ trang 252 (trang 287 của tài liệu) với bố cục 2 cột cân xứng, hệ thống bài tập từ 17 đến 31, 4 hình vẽ minh họa đúng vị trí và bản dịch tiếng Việt chuẩn mực.",
       "time": "2026-09-23 08:41:34"
+    },
+    {
+      "page_num": 288,
+      "score": 99,
+      "notes": "Bản dịch bị lỗi biên dịch khiến phần lớn trang bị trống và lộ mã preamble ở đầu trang; cần chuẩn hóa toàn bộ mã nguồn XeLaTeX.",
+      "time": "2026-09-23 08:43:40"
     }
   ]
 }

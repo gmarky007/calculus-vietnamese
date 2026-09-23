@@ -1,0 +1,113 @@
+\documentclass[10pt]{article}
+\usepackage{geometry}
+\geometry{
+  paperwidth=8.5in,
+  paperheight=11in,
+  top=2.0cm,
+  bottom=2.2cm,
+  left=1.8cm,
+  right=1.8cm
+}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+
+\definecolor{stewartcyan}{RGB}{0, 130, 155}
+\definecolor{stewartgray}{RGB}{110, 110, 110}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[R]{\fontsize{9}{11}\selectfont\textsf{\textbf{MỤC 3.9}}\hspace{1.5em}\textsf{Tốc độ liên quan}\hspace{2.5em}\textbf{253}}
+\fancyfoot[C]{\fontsize{6.5}{8}\selectfont\color{stewartgray} Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\\[1pt] Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\newlist{exerciselist}{enumerate}{1}
+\setlist[exerciselist,1]{
+  label=\textbf{\arabic*.},
+  leftmargin=1.8em,
+  labelwidth=1.3em,
+  labelsep=0.5em,
+  itemsep=7.5pt,
+  parsep=0pt,
+  topsep=0pt
+}
+
+\newcommand{\casicon}{%
+  \begin{tikzpicture}[scale=0.8, baseline=-1.5pt]
+    \draw[stewartcyan, thick, rounded corners=0.5pt] (0,0) rectangle (9pt, 8pt);
+    \draw[stewartcyan, line width=0.5pt] (0, 4pt) -- (9pt, 4pt);
+    \draw[stewartcyan, line width=0.5pt] (4.5pt, 0) -- (4.5pt, 8pt);
+  \end{tikzpicture}%
+}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+\begin{exerciselist}[start=32]
+  \item Một con diều ở độ cao $100\text{ ft}$ so với mặt đất chuyển động theo phương ngang với tốc độ $8\text{ ft/s}$. Góc giữa dây diều và phương ngang giảm với tốc độ bao nhiêu khi $200\text{ ft}$ dây đã được thả ra?
+
+  \item Một ô tô đang chạy về phía bắc trên một con đường thẳng với tốc độ $20\text{ m/s}$ và một thiết bị bay không người lái (drone) đang bay về phía đông với tốc độ $6\text{ m/s}$ ở độ cao $25\text{ m}$. Tại một thời điểm, drone bay qua ngay phía trên ô tô. Hỏi khoảng cách giữa drone và ô tô thay đổi với tốc độ bao nhiêu sau đó $5$ giây?
+
+  \item Nếu kim phút của một chiếc đồng hồ có chiều dài $r$ (tính bằng xentimét), hãy tìm tốc độ quét diện tích của nó dưới dạng một hàm số theo $r$.
+
+  \item Trong Ví dụ 2, góc giữa thang và mặt đất thay đổi nhanh như thế nào khi chân thang cách tường $6\text{ ft}$?
+
+  \item Theo mô hình chúng ta đã sử dụng để giải Ví dụ 2, điều gì sẽ xảy ra khi đỉnh thang tiến gần đến mặt đất? Mô hình đó có phù hợp với các giá trị nhỏ của $y$ không?
+
+  \item Định luật Boyle phát biểu rằng khi một khối khí bị nén ở nhiệt độ không đổi, áp suất $P$ và thể tích $V$ thỏa mãn phương trình $PV = C$, trong đó $C$ là một hằng số. Giả sử tại một thời điểm nhất định thể tích là $600\text{ cm}^3$, áp suất là $150\text{ kPa}$, và áp suất đang tăng với tốc độ $20\text{ kPa/phút}$. Hỏi tại thời điểm này thể tích đang giảm với tốc độ bao nhiêu?
+
+  \item[\llap{\casicon\hspace{4pt}}\textbf{38.}] Một vòi nước đang chảy vào một chậu hình bán cầu đường kính $60\text{ cm}$ với tốc độ $2\text{ L/phút}$. Tìm tốc độ dâng lên của mực nước trong chậu khi chậu đầy một nửa. [Sử dụng các dữ kiện sau: $1\text{ L} = 1000\text{ cm}^3$. Thể tích của phần hình cầu bán kính $r$ tính từ đáy đến độ cao $h$ là $V = \pi (rh^2 - \frac{1}{3}h^3)$, như chúng ta sẽ chỉ ra trong Chương 6.]
+
+  \item Nếu hai điện trở có điện trở $R_1$ và $R_2$ được mắc song song, như trong hình vẽ, thì điện trở tương đương $R$, đo bằng ôm ($\Omega$), được cho bởi
+  \[
+    \frac{1}{R} = \frac{1}{R_1} + \frac{1}{R_2}
+  \]
+  Nếu $R_1$ và $R_2$ đang tăng với tốc độ tương ứng là $0{,}3\ \Omega/\text{s}$ và $0{,}2\ \Omega/\text{s}$, thì $R$ thay đổi nhanh như thế nào khi $R_1 = 80\ \Omega$ và $R_2 = 100\ \Omega$?
+
+  \begin{center}
+    \vspace{1pt}
+    \includegraphics[width=0.62\columnwidth]{images/p0288_fig2.png}
+    \vspace{1pt}
+  \end{center}
+
+  \item Khi không khí giãn nở đoạn nhiệt (không nhận thêm hoặc mất nhiệt lượng), áp suất $P$ và thể tích $V$ của nó liên hệ với nhau bởi phương trình $PV^{1{,}4} = C$, trong đó $C$ là một hằng số. Giả sử tại một thời điểm nhất định thể tích là $400\text{ cm}^3$, áp suất là $80\text{ kPa}$ và đang giảm với tốc độ $10\text{ kPa/phút}$. Hỏi tại thời điểm này thể tích đang tăng với tốc độ bao nhiêu?
+\end{exerciselist}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\begin{exerciselist}[start=41]
+  \item Hai con đường thẳng phân kỳ từ một giao lộ với một góc $60^\circ$. Hai ô tô cùng rời khỏi giao lộ tại một thời điểm, xe thứ nhất đi trên một con đường với tốc độ $40\text{ mi/h}$ và xe thứ hai đi trên con đường kia với tốc độ $60\text{ mi/h}$. Hỏi khoảng cách giữa hai xe thay đổi với tốc độ bao nhiêu sau nửa giờ? [\textit{Gợi ý:} Sử dụng Định lý Cosin (Công thức 21 trong Phụ lục D).]
+
+  \item Khối lượng não $B$ như một hàm số của khối lượng cơ thể $W$ ở loài cá đã được mô hình hóa bằng hàm lũy thừa $B = 0{,}007W^{2/3}$, trong đó $B$ và $W$ được đo bằng gam. Một mô hình cho khối lượng cơ thể như một hàm số của chiều dài cơ thể $L$ (đo bằng xentimét) là $W = 0{,}12L^{2{,}53}$. Nếu trong vòng 10 triệu năm, chiều dài trung bình của một loài cá tiến hóa từ $15\text{ cm}$ đến $20\text{ cm}$ với tốc độ không đổi, thì não của loài này phát triển nhanh như thế nào khi chiều dài trung bình của nó là $18\text{ cm}$?
+
+  \item Hai cạnh của một tam giác có độ dài $12\text{ m}$ và $15\text{ m}$. Góc xen giữa chúng đang tăng với tốc độ $2^\circ/\text{phút}$. Hỏi độ dài của cạnh thứ ba tăng nhanh như thế nào khi góc giữa hai cạnh có độ dài cố định đó là $60^\circ$? [\textit{Gợi ý:} Sử dụng Định lý Cosin (Công thức 21 trong Phụ lục D).]
+
+  \item Hai chiếc xe, A và B, được nối với nhau bằng một sợi dây dài $39\text{ ft}$ vắt qua một ròng rọc $P$. (Xem hình vẽ.) Điểm $Q$ nằm trên sàn ngay phía dưới $P$ một khoảng $12\text{ ft}$ và nằm giữa hai xe. Xe A đang bị kéo ra xa khỏi $Q$ với tốc độ $2\text{ ft/s}$. Hỏi xe B đang chuyển động về phía $Q$ với tốc độ bao nhiêu tại thời điểm khi xe A cách $Q$ một khoảng $5\text{ ft}$?
+
+  \begin{center}
+    \vspace{1pt}
+    \includegraphics[width=0.75\columnwidth]{images/p0288_fig1.png}
+    \vspace{1pt}
+  \end{center}
+
+  \item Một máy quay truyền hình được đặt cách chân bệ phóng tên lửa $4000\text{ ft}$. Góc nâng của máy quay phải thay đổi với tốc độ thích hợp để giữ tên lửa trong tầm nhìn. Ngoài ra, cơ chế lấy nét của máy quay phải tính đến khoảng cách ngày càng tăng từ máy quay đến tên lửa đang bay lên. Giả sử tên lửa bay lên theo phương thẳng đứng và tốc độ của nó là $600\text{ ft/s}$ khi nó đã lên cao $3000\text{ ft}$.
+  \begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=1.5em, itemsep=2pt, topsep=2pt]
+    \item Khoảng cách từ máy quay truyền hình đến tên lửa thay đổi với tốc độ bao nhiêu tại thời điểm đó?
+    \item Nếu máy quay truyền hình luôn hướng về phía tên lửa, thì góc nâng của máy quay thay đổi với tốc độ bao nhiêu tại cùng thời điểm đó?
+  \end{enumerate}
+
+  \item Một ngọn hải đăng nằm trên một hòn đảo nhỏ cách điểm $P$ gần nhất trên một bờ biển thẳng $3\text{ km}$ và đèn của nó quay bốn vòng mỗi phút. Hỏi chùm sáng di chuyển dọc theo bờ biển với tốc độ bao nhiêu khi nó cách $P$ một khoảng $1\text{ km}$?
+
+  \item Một chiếc máy bay bay theo phương ngang ở độ cao $5\text{ km}$ và bay qua ngay phía trên một kính thiên văn theo dõi trên mặt đất. Khi
+\end{exerciselist}
+\end{minipage}
+
+\end{document}
