@@ -1,0 +1,129 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{calc}
+
+\geometry{
+    paperwidth=8.5in,
+    paperheight=11in,
+    top=1.8cm,
+    bottom=2cm,
+    left=1.8cm,
+    right=1.8cm,
+    headheight=14pt,
+    headsep=12pt
+}
+
+\definecolor{stewartcyan}{RGB}{0, 130, 185}
+\definecolor{stewartred}{RGB}{205, 35, 38}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textsf{\textbf{MỤC 3.6}}\quad \textsf{Đạo hàm của hàm logarit và hàm lượng giác ngược}}
+\fancyhead[R]{\small\textsf{\textbf{223}}}
+\renewcommand{\headrulewidth}{0pt}
+
+\newtcolorbox{definitionbox}[1][]{
+    colback=white,
+    colframe=stewartred,
+    arc=0mm,
+    boxrule=1.1pt,
+    left=12pt,
+    right=12pt,
+    top=8pt,
+    bottom=8pt,
+    #1
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.26\textwidth}
+    \footnotesize
+    \vspace{0pt}
+    Hình 5 biểu diễn đồ thị của $f(x) = \tan^{-1}x$ và đạo hàm của nó $f'(x) = 1/(1 + x^2)$. Chú ý rằng $f$ đồng biến và $f'(x)$ luôn dương. Việc $\tan^{-1}x \to \pm\pi/2$ khi $x \to \pm\infty$ được phản ánh qua việc $f'(x) \to 0$ khi $x \to \pm\infty$.
+
+    \vspace{8pt}
+    \centering
+    \includegraphics[width=\linewidth]{images/p0258_fig1.png}
+    
+    \vspace{4pt}
+    \raggedright
+    \textbf{\textsf{HÌNH 5}}
+
+    \vspace{50pt}
+    Công thức tính đạo hàm của $\csc^{-1}x$ và $\sec^{-1}x$ phụ thuộc vào định nghĩa được sử dụng cho các hàm này. Xem Bài tập 82.
+
+    \vspace{135pt}
+    Nhắc lại rằng $\arctan x$ là một ký hiệu thay thế cho $\tan^{-1}x$.
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.71\textwidth}
+    \vspace{0pt}
+    Công thức tính đạo hàm của hàm arctang được thiết lập theo cách tương tự. Nếu $y = \tan^{-1}x$, thì $\tan y = x$. Lấy đạo hàm hai vế của $\tan y = x$ theo biến $x$, ta có
+    \[
+    \sec^2 y \, \frac{dy}{dx} = 1
+    \]
+    \[
+    \frac{dy}{dx} = \frac{1}{\sec^2 y} = \frac{1}{1 + \tan^2 y} = \frac{1}{1 + x^2}
+    \]
+
+    \vspace{-2pt}
+    \begin{center}
+    \begin{tcolorbox}[colback=white, colframe=stewartred, width=0.48\textwidth, arc=0mm, boxrule=0.9pt, halign=center, top=5pt, bottom=5pt]
+    $\displaystyle \frac{d}{dx}(\tan^{-1}x) = \frac{1}{1 + x^2}$
+    \end{tcolorbox}
+    \end{center}
+
+    \vspace{2pt}
+    Các hàm lượng giác ngược $\sin^{-1}x$ và $\tan^{-1}x$ xuất hiện thường xuyên nhất. Đạo hàm của bốn hàm còn lại được cho trong bảng sau. Việc chứng minh các công thức này được dành lại như các bài tập.
+
+    \vspace{4pt}
+    \begin{definitionbox}
+        \textbf{\textsf{\color{stewartred}Đạo hàm của các hàm lượng giác ngược}}
+        \vspace{6pt}
+        \begin{align*}
+        \frac{d}{dx}(\sin^{-1}x) &= \frac{1}{\sqrt{1 - x^2}} & \frac{d}{dx}(\csc^{-1}x) &= -\frac{1}{x\sqrt{x^2 - 1}} \\[10pt]
+        \frac{d}{dx}(\cos^{-1}x) &= -\frac{1}{\sqrt{1 - x^2}} & \frac{d}{dx}(\sec^{-1}x) &= \frac{1}{x\sqrt{x^2 - 1}} \\[10pt]
+        \frac{d}{dx}(\tan^{-1}x) &= \frac{1}{1 + x^2} & \frac{d}{dx}(\cot^{-1}x) &= -\frac{1}{1 + x^2}
+        \end{align*}
+    \end{definitionbox}
+
+    \vspace{10pt}
+    \textbf{\textsf{\color{stewartcyan}VÍ DỤ 9}}\quad Tính đạo hàm của (a) $y = \dfrac{1}{\sin^{-1}x}$ và (b) $f(x) = x \arctan\sqrt{x}$.
+
+    \vspace{4pt}
+    \textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}
+    \begin{align*}
+    \text{(a)}\quad \frac{dy}{dx} &= \frac{d}{dx}(\sin^{-1}x)^{-1} = -(\sin^{-1}x)^{-2}\frac{d}{dx}(\sin^{-1}x) \\[6pt]
+    &= -\frac{1}{(\sin^{-1}x)^2\sqrt{1 - x^2}} \\[10pt]
+    \text{(b)}\quad f'(x) &= x \cdot \frac{1}{1 + (\sqrt{x})^2}\left(\frac{1}{2}x^{-1/2}\right) + \arctan\sqrt{x} \\[6pt]
+    &= \frac{\sqrt{x}}{2(1 + x)} + \arctan\sqrt{x} \tag*{{\color{stewartcyan}\blacksquare}}
+    \end{align*}
+
+    \vspace{6pt}
+    \textbf{\textsf{\color{stewartcyan}VÍ DỤ 10}}\quad Tính đạo hàm của $g(x) = \sec^{-1}(x^2)$.
+
+    \vspace{4pt}
+    \textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}
+    \begin{align*}
+    g'(x) = \frac{1}{x^2\sqrt{(x^2)^2 - 1}}(2x) = \frac{2}{x\sqrt{x^4 - 1}} \tag*{{\color{stewartcyan}\blacksquare}}
+    \end{align*}
+\end{minipage}
+
+\vfill
+\begin{center}
+    \tiny\color{gray}
+    Copyright \copyright\ 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part.
+\end{center}
+
+\end{document}
