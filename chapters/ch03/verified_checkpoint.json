@@ -341,6 +341,12 @@
       "score": 99,
       "notes": "Mã nguồn hiện tại từ chối dịch và không chứa nội dung giáo trình. Đã biên soạn lại toàn bộ trang XeLaTeX đạt chuẩn 99% theo phong cách giáo trình James Stewart (bố cục lề trái rộng, tiêu đề chuẩn, công thức hóa học và đạo hàm tốc độ phản ứng chuẩn xác).",
       "time": "2026-09-23 07:57:10"
+    },
+    {
+      "page_num": 265,
+      "score": 99,
+      "notes": "Mã nguồn hiện tại chỉ là văn bản từ chối/tóm tắt khái quát, không chứa mã nguồn XeLaTeX của trang sách. Cần viết lại toàn bộ mã XeLaTeX với bố cục lề rộng đặc trưng của Stewart, định dạng tiêu đề, các công thức toán học và biểu tượng kết thúc ví dụ chuẩn xác.",
+      "time": "2026-09-23 07:58:43"
     }
   ]
 }
