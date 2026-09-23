@@ -533,6 +533,12 @@
       "score": 99,
       "notes": "Bản dịch hiện tại bị lỗi nghiêm trọng: mã nguồn phần preamble bị in trực tiếp ra đầu trang thành văn bản thô, toàn bộ Mục 3.11 cùng Khung Định nghĩa bị tràn và đẩy sang trang 2, đồ họa 5 vạch cyan và dóng hàng hai cột bị vỡ hoàn toàn. Cần viết lại toàn bộ mã nguồn để gói gọn chính xác trong 1 trang duy nhất theo chuẩn thiết kế sách Stewart Calculus.",
       "time": "2026-09-23 09:00:15"
+    },
+    {
+      "page_num": 297,
+      "score": 99,
+      "notes": "Mã nguồn bị lỗi rò rỉ toàn bộ phần tiền tố (preamble) ra đầu trang văn bản do thiếu escape dấu gạch chéo ngược. Tiêu đề khung công thức bị căn giữa thay vì căn trái, công thức sech bị lỗi hiển thị và vị trí các hình vẽ ở cột lề trái chưa dóng hàng chuẩn xác với các đoạn văn bản tương ứng.",
+      "time": "2026-09-23 09:01:49"
     }
   ]
 }

@@ -1,0 +1,154 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{tcolorbox}
+\usepackage{mathptmx}
+
+% Cấu hình kích thước trang chuẩn sách giáo trình quốc tế
+\geometry{
+  paperwidth=216mm,
+  paperheight=280mm,
+  left=15mm,
+  right=15mm,
+  top=22mm,
+  bottom=20mm,
+  headheight=14pt,
+  headsep=6mm,
+  footskip=10mm
+}
+
+% Định nghĩa màu sắc đặc trưng của giáo trình Stewart Calculus
+\definecolor{stewartred}{RGB}{204, 37, 41}
+\definecolor{copyrightgray}{RGB}{110, 110, 110}
+
+\providecommand{\sech}{\operatorname{sech}}
+
+% Thiết lập Header và Footer (trang chẵn 262)
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{%
+  \textsf{\textbf{\large 262}}\hspace{2em}%
+  \textsf{\textbf{\small CHƯƠNG 3}}\hspace{1.5em}%
+  \textrm{\small Các quy tắc tính đạo hàm}%
+}
+\renewcommand{\headrulewidth}{0pt}
+
+\fancyfoot[C]{%
+  \fontsize{6.5pt}{8pt}\selectfont\color{copyrightgray}%
+  Bản quyền thuộc © 2021 Cengage Learning. Mọi quyền được bảo lưu. Không được sao chép, quét hoặc nhân bản toàn bộ hoặc một phần. Do quyền điện tử, một số nội dung của bên thứ ba có thể bị ẩn khỏi sách điện tử hoặc eChapter.\\
+  Đánh giá của biên tập viên đã cho rằng bất kỳ nội dung nào bị ẩn cũng không ảnh hưởng đáng kể đến trải nghiệm học tập tổng thể. Cengage Learning có quyền xóa nội dung bổ sung bất cứ lúc nào nếu các hạn chế về quyền sau này yêu cầu.
+}
+\renewcommand{\footrulewidth}{0pt}
+
+\setlength{\parindent}{1.5em}
+\setlength{\parskip}{0pt}
+
+\begin{document}
+
+\noindent
+% ==============================================================================
+% CỘT LỀ TRÁI (0.28\textwidth) - Chứa Hình 1, Hình 4, Hình 5 và các ghi chú
+% ==============================================================================
+\begin{minipage}[t]{0.28\textwidth}
+  \vspace*{34pt} % Dóng hàng đỉnh đồ thị Hình 1 ngang bằng với Hình 2 & 3
+
+  % HÌNH 1
+  \noindent
+  \includegraphics[width=\linewidth]{images/p0297_fig1.png}\\[4pt]
+  \textsf{\textbf{\small HÌNH 1}}\\[2pt]
+  {\small $y = \sinh x = \frac{1}{2}e^x - \frac{1}{2}e^{-x}$}
+
+  \vspace{56pt} % Dóng hàng chuẩn xác đến vị trí đoạn văn mô tả đường dây võng
+
+  % HÌNH 4
+  \noindent
+  \includegraphics[width=\linewidth]{images/p0297_fig4.png}\\[4pt]
+  \textsf{\textbf{\small HÌNH 4}}\\[2pt]
+  {\small Đường dây võng $y = c + a\cosh(x/a)$}
+
+  \vspace{40pt} % Dóng hàng chuẩn xác đến vị trí công thức vận tốc sóng nước
+
+  % HÌNH 5
+  \noindent
+  \includegraphics[width=\linewidth]{images/p0297_fig5.png}\\[4pt]
+  \textsf{\textbf{\small HÌNH 5}}\\[2pt]
+  {\small Sóng nước lý tưởng hóa}
+\end{minipage}%
+\hfill
+% ==============================================================================
+% CỘT NỘI DUNG CHÍNH (0.68\textwidth) - Lý thuyết, công thức và các hộp kiến thức
+% ==============================================================================
+\begin{minipage}[t]{0.68\textwidth}
+  \noindent
+  Đồ thị của hàm sin hyperbolic và cosin hyperbolic có thể được phác họa bằng phương pháp cộng đồ thị như trong Hình 1 và 2.
+
+  \vspace{10pt}
+
+  % Cụm đồ thị đặt cạnh nhau: Hình 2 và Hình 3
+  \noindent
+  \begin{minipage}[t]{0.485\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{images/p0297_fig2.png}\\[4pt]
+    \raggedright
+    \textsf{\textbf{\small HÌNH 2}}\\[2pt]
+    {\small $y = \cosh x = \frac{1}{2}e^x + \frac{1}{2}e^{-x}$}
+  \end{minipage}\hfill
+  \begin{minipage}[t]{0.485\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{images/p0297_fig3.png}\\[4pt]
+    \raggedright
+    \textsf{\textbf{\small HÌNH 3}}\\[2pt]
+    {\small $y = \tanh x$}
+  \end{minipage}
+
+  \vspace{14pt}
+
+  \noindent
+  Lưu ý rằng hàm $\sinh$ có tập xác định $\mathbb{R}$ và tập giá trị $\mathbb{R}$, trong khi hàm $\cosh$ có tập xác định $\mathbb{R}$ và tập giá trị $[1, \infty)$. Đồ thị của hàm $\tanh$ được hiển thị trong Hình 3. Nó có các đường tiệm cận ngang $y = \pm 1$. (Xem Bài tập 27.)
+
+  \vspace{6pt}
+  Một số ứng dụng toán học của các hàm hyperbolic sẽ được trình bày trong Chương 7. Các ứng dụng vào khoa học và kỹ thuật xuất hiện bất cứ khi nào một thực thể như ánh sáng, vận tốc, dòng điện hoặc độ phóng xạ bị hấp thụ hoặc suy giảm dần theo thời gian, vì sự suy giảm này có thể được mô tả bởi các hàm hyperbolic. Ứng dụng nổi tiếng nhất là việc sử dụng hàm cosin hyperbolic để mô tả hình dạng của một sợi dây treo tự do. Người ta có thể chứng minh rằng nếu một dây cáp mềm và nặng (chẳng hạn như đường dây tải điện trên không) được treo giữa hai điểm có cùng độ cao, thì nó sẽ tạo thành hình dạng của một đường cong có phương trình
+  \[
+  y = c + a\cosh(x/a)
+  \]
+  được gọi là một \textit{đường dây võng} (\textit{catenary}, xem Hình 4). (Từ La-tinh \textit{catena} có nghĩa là ``dây xích''.)
+
+  \vspace{4pt}
+  Một ứng dụng khác của các hàm hyperbolic xuất hiện trong việc mô tả sóng biển: vận tốc của một sóng nước có bước sóng $L$ chuyển động trên một vùng nước có độ sâu $d$ được mô hình hóa bởi hàm số
+  \[
+  v = \sqrt{\frac{gL}{2\pi}\tanh\left(\frac{2\pi d}{L}\right)}
+  \]
+  trong đó $g$ là gia tốc trọng trường (xem Hình 5 và Bài tập 57).
+
+  \vspace{4pt}
+  Các hàm hyperbolic thỏa mãn một loạt các đồng nhất thức tương tự như các đồng nhất thức lượng giác quen thuộc. Chúng tôi liệt kê một số trong đó ở đây và dành hầu hết các phép chứng minh cho phần bài tập.
+
+  \vspace{8pt}
+
+  % KHUNG ĐỒNG NHẤT THỨC HYPERBOLIC (Hyperbolic Identities)
+  \begin{tcolorbox}[
+    colback=white,
+    colframe=stewartred,
+    boxrule=0.85pt,
+    arc=0mm,
+    left=14pt,
+    right=14pt,
+    top=8pt,
+    bottom=8pt
+  ]
+    {\textsf{\textbf{\color{stewartred}\large Các đồng nhất thức Hyperbolic}}}\\[8pt]
+    \begin{tabular}{@{}l@{\hspace{2.2cm}}l@{}}
+      $\sinh(-x) = -\sinh x$ & $\cosh(-x) = \cosh x$ \\[6pt]
+      $\cosh^2 x - \sinh^2 x = 1$ & $1 - \tanh^2 x = \sech^2 x$ \\[6pt]
+      \multicolumn{2}{@{}l@{}}{$\sinh(x + y) = \sinh x \cosh y + \cosh x \sinh y$} \\[6pt]
+      \multicolumn{2}{@{}l@{}}{$\cosh(x + y) = \cosh x \cosh y + \sinh x \sinh y$}
+    \end{tabular}
+  \end{tcolorbox}
+\end{minipage}
+
+\end{document}
