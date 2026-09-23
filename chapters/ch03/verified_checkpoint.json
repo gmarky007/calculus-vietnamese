@@ -491,6 +491,12 @@
       "score": 99,
       "notes": "Mã nguồn hiện tại là văn bản từ chối của mô hình trước đó, chưa dịch và chưa tái lập bố cục trang giáo trình. Cần xây dựng lại toàn bộ trang với bố cục 2 cột bất đối xứng, bài tập 48-53, phần 3.10, công thức đóng khung đỏ và Hình 1 dóng chính xác theo tọa độ bản gốc.",
       "time": "2026-09-23 08:45:51"
+    },
+    {
+      "page_num": 290,
+      "score": 99,
+      "notes": "Bản dịch hiện tại bị lỗi nghiêm trọng khi toàn bộ mã preamble bị in trực tiếp lên đầu trang nội dung; tiêu đề đầu trang (header) chưa được dóng thẳng hàng với cột nội dung chính; bảng giá trị cần căn chỉnh đúng chuẩn giáo trình Stewart (bỏ các đường kẻ ngang giữa các dòng dữ liệu); vị trí Hình 2 cần tinh chỉnh độ cao để khớp tuyệt đối với bản gốc.",
+      "time": "2026-09-23 08:47:39"
     }
   ]
 }

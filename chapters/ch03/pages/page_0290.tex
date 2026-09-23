@@ -1,0 +1,120 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{array}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{mathpazo}
+
+\geometry{
+    paperwidth=8.5in,
+    paperheight=11in,
+    left=0.75in,
+    right=0.75in,
+    top=0.75in,
+    bottom=0.75in,
+    headheight=14pt,
+    headsep=16pt,
+    footskip=20pt
+}
+
+% Màu sắc nhận diện chuẩn giáo trình Stewart Calculus
+\definecolor{stewartcyan}{RGB}{0, 130, 185}
+\definecolor{tableheadcolor}{RGB}{218, 233, 243}
+
+% Cấu hình Header theo chuẩn trang lẻ của Stewart
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\hspace*{0.29\textwidth}\textsf{\textbf{MỤC 3.10}}\quad \textsf{Xấp xỉ tuyến tính và vi phân}}
+\fancyhead[R]{\textbf{\textsf{255}}}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot{}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4.5pt}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.25\textwidth}
+    % Cột lề trái: Vị trí Hình 2 dóng khớp theo tọa độ bản gốc
+    \vspace*{118pt}
+    \centering
+    \includegraphics[width=\linewidth]{images/p0290_fig1.png}
+    
+    \vspace{4pt}
+    \raggedright
+    \textbf{\textsf{HÌNH 2}}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.71\textwidth}
+    % Cột chính: Nội dung bài học
+    rằng hàm tuyến tính hóa là
+    \[
+    L(x) = f(1) + f'(1)(x - 1) = 2 + \frac{1}{4}(x - 1) = \frac{7}{4} + \frac{x}{4}
+    \]
+    Xấp xỉ tuyến tính tương ứng (2) là
+    \[
+    \sqrt{x + 3} \approx \frac{7}{4} + \frac{x}{4} \qquad {\color{stewartcyan}\text{(khi $x$ gần 1)}}
+    \]
+    Đặc biệt, ta có
+    \[
+    \sqrt{3{,}98} \approx \frac{7}{4} + \frac{0{,}98}{4} = 1{,}995 \qquad \text{và} \qquad \sqrt{4{,}05} \approx \frac{7}{4} + \frac{1{,}05}{4} = 2{,}0125
+    \]
+
+    Xấp xỉ tuyến tính được minh họa trong Hình~2. Chúng ta thấy rằng, quả thực, xấp xỉ bằng tiếp tuyến là một xấp xỉ tốt cho hàm số đã cho khi $x$ ở gần~1. Chúng ta cũng thấy rằng các ước lượng của chúng ta là những ước lượng thừa (ước lượng trên) bởi vì tiếp tuyến nằm phía trên đường cong.
+
+    Dĩ nhiên, máy tính cầm tay có thể cho chúng ta các giá trị xấp xỉ của $\sqrt{3{,}98}$ và $\sqrt{4{,}05}$, nhưng xấp xỉ tuyến tính đem lại một xấp xỉ \textit{trên toàn bộ một khoảng}.\hfill{\color{stewartcyan}$\blacksquare$}
+
+    \vspace{0.3em}
+    Trong bảng dưới đây, chúng ta so sánh các ước lượng từ xấp xỉ tuyến tính trong Ví dụ~1 với các giá trị thực. Hãy chú ý từ bảng này, và cũng từ Hình~2, rằng xấp xỉ bằng tiếp tuyến cho các ước lượng tốt khi $x$ gần~1, nhưng độ chính xác của xấp xỉ sẽ giảm dần khi $x$ càng ra xa~1.
+
+    \begin{center}
+    \vspace{-1pt}
+    \renewcommand{\arraystretch}{1.25}
+    \setlength{\tabcolsep}{10pt}
+    \begin{tabular}{|>{$}c<{$}|>{$}c<{$}|>{$}c<{$}|c|}
+    \hline
+    \rowcolor{tableheadcolor}
+    & x & \text{Từ } L(x) & \text{Giá trị thực} \\
+    \hline
+    \sqrt{3{,}9}  & 0{,}9  & 1{,}975  & $1{,}97484176\dots$ \\
+    \sqrt{3{,}98} & 0{,}98 & 1{,}995  & $1{,}99499373\dots$ \\
+    \sqrt{4}      & 1      & 2        & $2{,}00000000\dots$ \\
+    \sqrt{4{,}05} & 1{,}05 & 2{,}0125 & $2{,}01246117\dots$ \\
+    \sqrt{4{,}1}  & 1{,}1  & 2{,}025  & $2{,}02484567\dots$ \\
+    \sqrt{5}      & 2      & 2{,}25   & $2{,}23606797\dots$ \\
+    \sqrt{6}      & 3      & 2{,}5    & $2{,}44948974\dots$ \\
+    \hline
+    \end{tabular}
+    \vspace{-1pt}
+    \end{center}
+
+    \vspace{0.2em}
+    Xấp xỉ mà chúng ta nhận được trong Ví dụ~1 tốt đến mức nào? Ví dụ tiếp theo cho thấy rằng bằng cách sử dụng máy tính vẽ đồ thị hoặc máy vi tính, chúng ta có thể xác định một khoảng mà trên đó xấp xỉ tuyến tính đảm bảo một độ chính xác định trước.
+
+    \vspace{0.6em}
+    \noindent
+    \textbf{\textsf{\color{stewartcyan}VÍ DỤ 2}}\hspace{0.8em}Với những giá trị nào của $x$ thì xấp xỉ tuyến tính
+    \[
+    \sqrt{x + 3} \approx \frac{7}{4} + \frac{x}{4}
+    \]
+    chính xác trong phạm vi $0{,}5$? Thế còn độ chính xác trong phạm vi $0{,}1$?
+
+    \vspace{0.5em}
+    \noindent
+    \textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\hspace{0.8em}Độ chính xác trong phạm vi $0{,}5$ có nghĩa là các hàm số chỉ sai khác nhau ít hơn $0{,}5$:
+    \[
+    \left| \sqrt{x + 3} - \left( \frac{7}{4} + \frac{x}{4} \right) \right| < 0{,}5
+    \]
+    Một cách tương đương, chúng ta có thể viết
+    \[
+    \sqrt{x + 3} - 0{,}5 < \frac{7}{4} + \frac{x}{4} < \sqrt{x + 3} + 0{,}5
+    \]
+\end{minipage}
+
+\end{document}
