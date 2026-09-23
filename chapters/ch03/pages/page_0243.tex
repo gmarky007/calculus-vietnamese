@@ -1,0 +1,157 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{geometry}
+\geometry{top=18mm, bottom=18mm, left=16mm, right=16mm}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{colortbl}
+\usepackage{array}
+
+\definecolor{stewartcyan}{RGB}{0, 160, 210}
+\definecolor{tableheaderblue}{RGB}{225, 235, 245}
+\definecolor{tableborder}{RGB}{140, 160, 180}
+
+\newcommand{\graphicon}{%
+  \begin{tikzpicture}[baseline=-0.5ex]
+    \draw[stewartcyan, fill=white, rounded corners=0.5pt, line width=0.6pt] (0,0) rectangle (9pt,9pt);
+    \draw[stewartcyan, line width=0.5pt] (1.5pt,2pt) .. controls (3.5pt,8pt) and (5.5pt,1pt) .. (7.5pt,7pt);
+  \end{tikzpicture}%
+}
+
+\newcommand{\techicon}{%
+  \begin{tikzpicture}[baseline=-0.5ex]
+    \node[fill=stewartcyan, text=white, inner sep=1.2pt, rounded corners=0.5pt, font=\sffamily\bfseries\tiny] {T};
+  \end{tikzpicture}%
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textbf{\textsf{208}}\qquad \textbf{\textsf{CHƯƠNG 3}}\quad \textsf{Các quy tắc tính đạo hàm}}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{14pt}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.485\textwidth}
+\textbf{88.} Trong Ví dụ 1.3.4, chúng ta đã thu được một mô hình cho số giờ có ánh sáng ban ngày (tính bằng giờ) ở Philadelphia vào ngày thứ $t$ trong năm:
+\[
+L(t) = 12 + 2{,}8 \sin\left[ \frac{2\pi}{365}(t - 80) \right]
+\]
+Hãy sử dụng mô hình này để so sánh tốc độ tăng của số giờ có ánh sáng ban ngày ở Philadelphia vào ngày 21 tháng 3 ($t = 80$) và ngày 21 tháng 5 ($t = 141$).
+
+\vspace{8pt}
+\noindent
+\llap{\graphicon\enspace}\textbf{89.} Chuyển động của một lò xo chịu tác dụng của lực ma sát hoặc lực cản (chẳng hạn như bộ giảm xóc trong ô tô) thường được mô hình hóa bằng tích của một hàm mũ và một hàm sin hoặc cosin. Giả sử phương trình chuyển động của một điểm trên một lò xo như vậy là
+\[
+s(t) = 2e^{-1{,}5t} \sin 2\pi t
+\]
+trong đó $s$ được đo bằng centimét và $t$ tính bằng giây. Hãy tìm vận tốc sau $t$ giây và vẽ đồ thị của cả hai hàm vị trí và vận tốc với $0 \leqslant t \leqslant 2$.
+
+\vspace{8pt}
+\noindent
+\textbf{90.} Trong một số điều kiện nhất định, một tin đồn lan truyền theo phương trình
+\[
+p(t) = \frac{1}{1 + ae^{-kt}}
+\]
+trong đó $p(t)$ là tỉ lệ dân số đã nghe tin đồn tại thời điểm $t$, còn $a$ và $k$ là các hằng số dương. [Trong Mục 9.4, chúng ta sẽ thấy rằng đây là một phương trình hợp lý cho $p(t)$.]
+\begin{enumerate}[label=(\alph*), leftmargin=*, itemsep=1pt, topsep=2pt]
+  \item Tìm $\lim\limits_{t \to \infty} p(t)$ và giải thích ý nghĩa của kết quả tìm được.
+  \item Tìm tốc độ lan truyền của tin đồn.
+  \item[\llap{\graphicon\enspace}(c)] Vẽ đồ thị hàm số $p$ trong trường hợp $a = 10$, $k = 0{,}5$ với $t$ được tính bằng giờ. Sử dụng đồ thị để ước tính mất bao lâu để 80\% dân số nghe được tin đồn.
+\end{enumerate}
+
+\vspace{8pt}
+\noindent
+\textbf{91.} Nồng độ cồn trong máu (BAC) trung bình của tám đối tượng nam giới được đo sau khi uống 15 mL ethanol (tương đương với một đơn vị đồ uống có cồn). Dữ liệu kết quả thu được đã được mô hình hóa bởi hàm nồng độ
+\[
+C(t) = 0{,}00225te^{-0{,}0467t}
+\]
+trong đó $t$ được đo bằng phút sau khi uống và $C$ được đo bằng g/dL.
+\begin{enumerate}[label=(\alph*), leftmargin=*, itemsep=1pt, topsep=2pt]
+  \item Sau 10 phút, nồng độ BAC tăng nhanh như thế nào?
+  \item Sau đó nửa giờ, nồng độ BAC giảm nhanh như thế nào?
+\end{enumerate}
+\vspace{2pt}
+{\footnotesize \textit{Nguồn:} Phỏng theo P. Wilkinson và cộng sự, “Pharmacokinetics of Ethanol after Oral Administration in the Fasting State,” \textit{Journal of Pharmacokinetics and Biopharmaceutics} 5 (1977): 207--24.}
+
+\vspace{8pt}
+\noindent
+\textbf{92.} Không khí đang được bơm vào một bóng thám không hình cầu. Tại thời điểm $t$ bất kỳ, thể tích của quả bóng là $V(t)$ và bán kính của nó là $r(t)$.
+\begin{enumerate}[label=(\alph*), leftmargin=*, itemsep=1pt, topsep=2pt]
+  \item Các đạo hàm $dV/dr$ và $dV/dt$ biểu thị điều gì?
+  \item Biểu diễn $dV/dt$ theo $dr/dt$.
+\end{enumerate}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.485\textwidth}
+\textbf{93.} Một chất điểm chuyển động dọc theo một đường thẳng với độ dời $s(t)$, vận tốc $v(t)$ và gia tốc $a(t)$. Chứng minh rằng
+\[
+a(t) = v(t)\,\frac{dv}{ds}
+\]
+Giải thích sự khác nhau về ý nghĩa giữa các đạo hàm $dv/dt$ và $dv/ds$.
+
+\vspace{8pt}
+\noindent
+\textbf{94.} Bảng dưới đây cho biết dân số Hoa Kỳ từ năm 1790 đến năm 1860.
+\begin{center}
+\renewcommand{\arraystretch}{1.15}
+\small
+\begin{tabular}{|c|c||c|c|}
+\hline
+\rowcolor{tableheaderblue}
+\textbf{Năm} & \textbf{Dân số} & \textbf{Năm} & \textbf{Dân số} \\
+\hline
+1790 & 3.929.000 & 1830 & 12.861.000 \\
+1800 & 5.308.000 & 1840 & 17.063.000 \\
+1810 & 7.240.000 & 1850 & 23.192.000 \\
+1820 & 9.639.000 & 1860 & 31.443.000 \\
+\hline
+\end{tabular}
+\end{center}
+\begin{enumerate}[label=(\alph*), leftmargin=*, itemsep=1pt, topsep=2pt]
+  \item[\llap{\techicon\enspace}(a)] Khớp một hàm số mũ với dữ liệu. Vẽ các điểm dữ liệu và mô hình hàm mũ. Độ phù hợp của mô hình tốt đến mức nào?
+  \item Ước tính tốc độ tăng dân số vào các năm 1800 và 1850 bằng cách lấy trung bình hệ số góc của các đường cát tuyến.
+  \item Sử dụng mô hình hàm mũ ở phần (a) để ước tính tốc độ tăng dân số vào các năm 1800 và 1850. So sánh các ước tính này với kết quả ở phần (b).
+  \item Sử dụng mô hình hàm mũ để dự đoán dân số vào năm 1870. So sánh với dân số thực tế là 38.558.000 người. Bạn có thể giải thích sự chênh lệch này không?
+\end{enumerate}
+
+\vspace{8pt}
+\noindent
+\textbf{95.} Sử dụng Quy tắc chuỗi để chứng minh các khẳng định sau:
+\begin{enumerate}[label=(\alph*), leftmargin=*, itemsep=1pt, topsep=2pt]
+  \item Đạo hàm của một hàm số chẵn là một hàm số lẻ.
+  \item Đạo hàm của một hàm số lẻ là một hàm số chẵn.
+\end{enumerate}
+
+\vspace{8pt}
+\noindent
+\textbf{96.} Sử dụng Quy tắc chuỗi và Quy tắc tích để đưa ra một cách chứng minh khác cho Quy tắc thương.\\
+{[\textit{Gợi ý:} Viết $f(x)/g(x) = f(x)[g(x)]^{-1}$.]}
+
+\vspace{8pt}
+\noindent
+\textbf{97.} Sử dụng Quy tắc chuỗi để chỉ ra rằng nếu $\theta$ được đo bằng độ thì
+\[
+\frac{d}{d\theta} (\sin\theta) = \frac{\pi}{180} \cos\theta
+\]
+(Điều này đưa ra một lý do cho quy ước rằng số đo radian luôn được sử dụng khi làm việc với các hàm lượng giác trong giải tích: các công thức tính đạo hàm sẽ không còn đơn giản như vậy nếu chúng ta dùng số đo bằng độ.)
+
+\vspace{8pt}
+\noindent
+\textbf{98.}
+\begin{enumerate}[label=(\alph*), leftmargin=*, itemsep=1pt, topsep=2pt]
+  \item Viết $|x| = \sqrt{x^2}$ và sử dụng Quy tắc chuỗi để chỉ ra rằng
+  \[
+  \frac{d}{dx} |x| = \frac{x}{|x|}
+  \]
+  \item Nếu $f(x) = |\sin x|$, hãy tìm $f'(x)$ và phác thảo đồ thị của $f$ và $f'$. Hàm số $f$ không khả vi tại những điểm nào?
+  \item Nếu $g(x) = \sin |x|$, hãy tìm $g'(x)$ và phác thảo đồ thị của $g$ và $g'$. Hàm số $g$ không khả vi tại những điểm nào?
+\end{enumerate}
+\end{minipage}
+
+\end{document}
