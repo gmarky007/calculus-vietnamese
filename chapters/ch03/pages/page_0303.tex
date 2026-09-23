@@ -1,0 +1,148 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[paperwidth=8.5in,paperheight=11in,top=1.8cm,bottom=1.8cm,left=1.8cm,right=1.8cm]{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{newtxtext,newtxmath}
+
+% Thiết lập màu sắc theo phong cách sách giáo trình Stewart
+\definecolor{stewartcyan}{RGB}{0, 136, 175}
+\definecolor{footergray}{RGB}{110, 110, 110}
+
+% Icon máy tính / CAS của Stewart dạng vector chuẩn xác
+\newcommand{\casicon}{%
+  \begingroup\normalfont
+  \tikz[baseline=-0.6ex, line cap=round, line join=round]{%
+    \draw[stewartcyan, line width=0.6pt, rounded corners=0.8pt] (0,0.06) rectangle (0.32, 0.32);
+    \draw[stewartcyan, line width=0.55pt] (0.05, 0.13) .. controls (0.11, 0.30) and (0.21, 0.08) .. (0.27, 0.25);
+    \draw[stewartcyan, line width=0.6pt] (0.12, 0.06) -- (0.10, 0.0) -- (0.22, 0.0) -- (0.20, 0.06);
+  }%
+  \endgroup
+}
+
+% Lệnh tạo mục có icon CAS treo lề trái mà không làm sai biến đếm enumi
+\newcommand{\casitem}{%
+  \refstepcounter{enumi}%
+  \item[\makebox[0pt][r]{\casicon\hspace{3.5pt}}\textbf{\theenumi.}]%
+}
+
+% Định dạng Header và Footer
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\fontsize{9pt}{11pt}\selectfont\textbf{268}\qquad\textbf{\textsf{CHƯƠNG 3}}\quad \textsf{Các quy tắc đạo hàm}}
+\fancyfoot[C]{\fontsize{6.5pt}{8pt}\selectfont\color{footergray} Bản dịch tiếng Việt phục vụ học tập và nghiên cứu. Nguyên tác: \textit{Calculus: Early Transcendentals, 9th Edition} © Cengage Learning.}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\abovedisplayskip}{4pt plus 1pt minus 1pt}
+\setlength{\belowdisplayskip}{4pt plus 1pt minus 1pt}
+\setlength{\abovedisplayshortskip}{2pt plus 1pt minus 1pt}
+\setlength{\belowdisplayshortskip}{2pt plus 1pt minus 1pt}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.482\textwidth}
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=*, itemsep=8.5pt, topsep=0pt, parsep=0pt]
+\setcounter{enumi}{56}
+
+\item Nếu một sóng nước có bước sóng $L$ chuyển động với vận tốc $v$ trong một vùng nước có độ sâu $d$, thì
+\[
+v = \sqrt{\frac{gL}{2\pi} \tanh\left(\frac{2\pi d}{L}\right)}
+\]
+trong đó $g$ là gia tốc trọng trường. (Xem Hình 5.) Hãy giải thích vì sao công thức xấp xỉ
+\[
+v \approx \sqrt{\frac{gL}{2\pi}}
+\]
+lại thích hợp trong vùng nước sâu.
+
+\casitem Một dây cáp mềm luôn võng xuống theo hình dạng của một đường dây xích (catenary) $y = c + a\cosh(x/a)$, trong đó $c$ và $a$ là các hằng số và $a > 0$ (xem Hình 4 và Bài tập 60). Hãy vẽ đồ thị một vài đường cong trong họ hàm số $y = a\cosh(x/a)$. Đồ thị thay đổi như thế nào khi $a$ biến thiên?
+
+\item Một đường dây điện thoại treo giữa hai cột điện cách nhau $14\text{ m}$ có hình dạng của đường dây xích $y = 20\cosh(x/20) - 15$, trong đó $x$ và $y$ được tính bằng mét.
+\begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=*, itemsep=2pt, topsep=2pt]
+\item Tìm hệ số góc của đường cong này tại vị trí nó chạm vào cột điện bên phải.
+\item Tìm góc $\theta$ hợp bởi đường dây và cột điện.
+\end{enumerate}
+
+\begin{center}
+  \vspace{1mm}
+  \includegraphics[width=0.68\linewidth]{images/p0303_fig1.png}
+  \vspace{-1mm}
+\end{center}
+
+\item Dựa vào các nguyên lý vật lý, người ta có thể chứng minh rằng khi một dây cáp được treo giữa hai cột, nó sẽ có hình dạng của một đường cong $y = f(x)$ thỏa mãn phương trình vi phân
+\[
+\frac{d^2y}{dx^2} = \frac{\rho g}{T}\sqrt{1 + \left(\frac{dy}{dx}\right)^2}
+\]
+trong đó $\rho$ là mật độ khối lượng dài của dây cáp, $g$ là gia tốc trọng trường, $T$ là lực căng của dây cáp tại điểm thấp nhất của nó, và hệ tọa độ được chọn thích hợp. Hãy kiểm tra rằng hàm số
+\[
+y = f(x) = \frac{T}{\rho g}\cosh\left(\frac{\rho gx}{T}\right)
+\]
+là một nghiệm của phương trình vi phân này.
+
+\end{enumerate}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.482\textwidth}
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=*, itemsep=8.5pt, topsep=0pt, parsep=0pt]
+\setcounter{enumi}{60}
+
+\item Một dây cáp có mật độ khối lượng dài $\rho = 2\text{ kg/m}$ được căng giữa đỉnh của hai cột điện cách nhau $200\text{ m}$.
+\begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=*, itemsep=2pt, topsep=2pt]
+\item Sử dụng Bài tập 60 để tìm lực căng $T$ sao cho điểm thấp nhất của dây cáp cách mặt đất $60\text{ m}$. Chiều cao của các cột điện là bao nhiêu?
+\item Nếu lực căng tăng lên gấp đôi, thì điểm thấp nhất mới của dây cáp là bao nhiêu? Khi đó các cột điện cao bao nhiêu?
+\end{enumerate}
+
+\item Một mô hình xác định vận tốc của một vật rơi sau thời gian $t$ là
+\[
+v(t) = \sqrt{\frac{mg}{k}}\tanh\left(t\sqrt{\frac{gk}{m}}\right)
+\]
+trong đó $m$ là khối lượng của vật, $g = 9{,}8\text{ m/s}^2$ là gia tốc trọng trường, $k$ là một hằng số, $t$ tính bằng giây và $v$ tính bằng $\text{m/s}$.
+\begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=*, itemsep=2pt, topsep=2pt]
+\item Hãy tính vận tốc giới hạn của vật, nghĩa là $\lim_{t\to\infty} v(t)$.
+\item Khi một người nhảy dù khỏi máy bay, giá trị của hằng số $k$ phụ thuộc vào tư thế rơi. Với tư thế rơi ``sấp bụng hướng xuống đất'' (belly-to-earth), $k = 0{,}515\text{ kg/s}$, còn với tư thế rơi ``chân hướng xuống trước'' (feet-first), $k = 0{,}067\text{ kg/s}$. Nếu một người nặng $60\text{ kg}$ rơi ở tư thế sấp bụng, vận tốc giới hạn là bao nhiêu? Còn ở tư thế chân hướng xuống trước thì sao?
+\end{enumerate}
+\vspace{1pt}
+{\scriptsize\textit{Nguồn: L. Long et al., ``How Terminal Is Terminal Velocity?'' American Mathematical Monthly 113 (2006): 752--55.}}
+
+\item \textbf{(a)}~Chứng minh rằng mọi hàm số có dạng
+\[
+y = A\sinh mx + B\cosh mx
+\]
+đều thỏa mãn phương trình vi phân $y'' = m^2y$.\[4pt]
+\textbf{(b)}~Tìm hàm số $y = y(x)$ sao cho $y'' = 9y$, $y(0) = -4$, và $y'(0) = 6$.
+
+\item Nếu $x = \ln(\sec\theta + \tan\theta)$, hãy chứng minh rằng $\sec\theta = \cosh x$.
+
+\item Tại điểm nào trên đường cong $y = \cosh x$ thì tiếp tuyến có hệ số góc bằng 1?
+
+\casitem Khảo sát họ hàm số
+\[
+f_n(x) = \tanh(n\sin x)
+\]
+trong đó $n$ là một số nguyên dương. Hãy mô tả điều gì xảy ra với đồ thị của $f_n$ khi $n$ trở nên rất lớn.
+
+\item Chứng minh rằng nếu $a \neq 0$ và $b \neq 0$, thì luôn tồn tại các số $\alpha$ và $\beta$ sao cho $ae^x + be^{-x}$ bằng một trong hai dạng
+\[
+\alpha\sinh(x + \beta) \qquad \text{hoặc} \qquad \alpha\cosh(x + \beta)
+\]
+Nói cách khác, hầu hết mọi hàm số có dạng $f(x) = ae^x + be^{-x}$ đều là một hàm sin hyperbolic hoặc cosin hyperbolic bị tịnh tiến và co giãn.
+
+\end{enumerate}
+\end{minipage}
+
+\vfill
+\begin{center}
+{\fontsize{5.2pt}{6.5pt}\selectfont\color{footergray}
+Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\\
+Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.}
+\end{center}
+
+\end{document}
