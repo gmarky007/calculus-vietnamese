@@ -1,141 +1,119 @@
-\fancyhf{}
-\renewcommand{\headrulewidth}{0pt}
-\fancyhead[L]{\textbf{\textsf{36}}\qquad\textsf{\color{stewartgray}\textbf{CHƯƠNG 1}\quad CÁC HÀM SỐ VÀ MÔ HÌNH}}
-\fancyhead[R]{}
-\fancyfoot[C]{}
+\fancyhead[LE]{\fontsize{8.5pt}{10pt}\selectfont\textbf{\textsf{36}}\quad \textbf{\textsf{CHƯƠNG 1}}\quad \textsf{Các hàm số và Mô hình}}
+\fancyhead[RO]{}
 
-% Định nghĩa biểu tượng công nghệ [T] chuẩn Stewart: khung viền cyan, chữ T cyan
-\newcommand{\techbox}{\begingroup\fboxsep=1.2pt\fboxrule=0.8pt\textcolor{stewartcyan}{\fbox{\textsf{\textbf{\scriptsize T}}}}\endgroup}
-
-% Phần trên: Các bài tập còn lại của Mục 1.2 (Bố cục 2 cột cân xứng)
 \noindent
-\begin{minipage}[t]{0.48\textwidth}
-\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=1.8em, itemsep=1.2em, topsep=0pt]
-    \item[\llap{\techbox\hspace{0.4em}}\textbf{33.}] Bảng sau cho biết mức tiêu thụ dầu mỏ trung bình hàng ngày của thế giới từ năm 1985 đến năm 2015, tính theo nghìn thùng mỗi ngày.
-    \begin{enumerate}[label=\textnormal{(\alph*)}, leftmargin=*, itemsep=2pt, topsep=3pt]
-        \item Hãy vẽ biểu đồ phân tán và nhận định xem mô hình tuyến tính có phù hợp hay không.
-        \item Tìm và vẽ đồ thị của đường hồi quy.
-        \item Sử dụng mô hình tuyến tính để ước tính mức tiêu thụ dầu mỏ vào các năm 2002 và 2017.
+\begin{minipage}[t]{0.485\textwidth}
+    \fontsize{9pt}{12pt}\selectfont
+    \textbf{\tikz[baseline=-0.6ex]\node[draw=stewartcyan, fill=stewartcyan!10, rounded corners=1pt, inner sep=1.2pt, line width=0.6pt]{\fontsize{7pt}{7pt}\selectfont\textbf{\textsf{\color{stewartcyan}T}}};~33.} Bảng dưới đây cho biết mức tiêu thụ dầu mỏ trung bình hàng ngày của thế giới từ năm 1985 đến năm 2015, tính theo đơn vị nghìn thùng mỗi ngày.
+    \begin{enumerate}[label=(\alph*), leftmargin=*, itemsep=2pt, topsep=2pt]
+        \item Vẽ biểu đồ phân tán và quyết định xem mô hình tuyến tính có phù hợp hay không.
+        \item Tìm và vẽ đồ thị đường hồi quy.
+        \item Sử dụng mô hình tuyến tính để ước tính lượng tiêu thụ dầu mỏ vào các năm 2002 và 2017.
     \end{enumerate}
 
-    \vspace{0.3em}
     \begin{center}
-    \small
-    \renewcommand{\arraystretch}{1.15}
-    \begin{tabular}{|c|c|}
-    \hline
-    \rowcolor{stewartcyan!15}
-    \begin{tabular}{c} Số năm \\ kể từ 1985 \end{tabular} & 
-    \begin{tabular}{c} Nghìn thùng dầu \\ mỗi ngày \end{tabular} \\
-    \hline
-    0  & 60{,}083 \\
-    5  & 66{,}533 \\
-    10 & 70{,}099 \\
-    15 & 76{,}784 \\
-    20 & 84{,}077 \\
-    25 & 87{,}302 \\
-    30 & 94{,}071 \\
-    \hline
-    \end{tabular}
-    
-    \vspace{3pt}
-    {\scriptsize \textit{Nguồn: US Energy Information Administration}}
+        \includegraphics[width=0.82\linewidth]{images/p0071_graph_1.png}\\[2pt]
+        {\fontsize{7.5pt}{9pt}\selectfont\textit{Nguồn: US Energy Information Administration}}
     \end{center}
 
-    \item[\llap{\techbox\hspace{0.4em}}\textbf{34.}] Bảng sau cho biết khoảng cách trung bình $d$ từ các hành tinh đến Mặt Trời (lấy khoảng cách từ Trái Đất đến Mặt Trời làm đơn vị đo) và chu kỳ quay $T$ của chúng (thời gian chuyển động quanh Mặt Trời tính bằng năm).
-    \begin{enumerate}[label=\textnormal{(\alph*)}, leftmargin=*, itemsep=2pt, topsep=3pt]
-        \item Khớp một mô hình hàm lũy thừa với các dữ liệu đã cho.
-        \item Định luật thứ ba của Kepler về chuyển động hành tinh phát biểu rằng: “Bình phương chu kỳ quay của một hành tinh tỉ lệ thuận với lập phương khoảng cách trung bình của nó đến Mặt Trời.” Mô hình của bạn có chứng thực Định luật thứ ba của Kepler hay không?
+    \vspace{0.3em}
+    \noindent
+    \textbf{\tikz[baseline=-0.6ex]\node[draw=stewartcyan, fill=stewartcyan!10, rounded corners=1pt, inner sep=1.2pt, line width=0.6pt]{\fontsize{7pt}{7pt}\selectfont\textbf{\textsf{\color{stewartcyan}T}}};~34.} Bảng dưới đây cho biết khoảng cách trung bình $d$ từ các hành tinh đến Mặt Trời (lấy đơn vị đo là khoảng cách từ Trái Đất đến Mặt Trời) và chu kỳ quay $T$ của chúng (thời gian chuyển động một vòng quanh Mặt Trời tính bằng năm).
+    \begin{enumerate}[label=(\alph*), leftmargin=*, itemsep=2pt, topsep=2pt]
+        \item Xây dựng một mô hình hàm lũy thừa phù hợp với dữ liệu.
+        \item Định luật thứ ba của Kepler về chuyển động của các hành tinh phát biểu rằng:
+        \begin{quote}\fontsize{8.5pt}{11pt}\selectfont
+        ``Bình phương chu kỳ quay của một hành tinh tỉ lệ thuận với lập phương khoảng cách trung bình của nó đến Mặt Trời.''
+        \end{quote}
+        Mô hình của bạn có củng cố (chứng thực) cho Định luật thứ ba của Kepler hay không?
     \end{enumerate}
 
-    \vspace{0.3em}
     \begin{center}
-    \small
-    \renewcommand{\arraystretch}{1.12}
-    \begin{tabular}{|l|r@{.}l|r@{.}l|}
-    \hline
-    \rowcolor{stewartcyan!15}
-    \multicolumn{1}{|c|}{Hành tinh} & \multicolumn{2}{c|}{$d$} & \multicolumn{2}{c|}{$T$} \\
-    \hline
-    Sao Thủy        &  0&387  &   0&241 \\
-    Sao Kim         &  0&723  &   0&615 \\
-    Trái Đất        &  1&000  &   1&000 \\
-    Sao Hỏa         &  1&523  &   1&881 \\
-    Sao Mộc         &  5&203  &  11&861 \\
-    Sao Thổ         &  9&541  &  29&457 \\
-    Sao Thiên Vương & 19&190  &  84&008 \\
-    Sao Hải Vương   & 30&086  & 164&784 \\
-    \hline
-    \end{tabular}
+        \fontsize{8.5pt}{11pt}\selectfont
+        \renewcommand{\arraystretch}{1.12}
+        \begin{tabular}{|l|c|c|}
+            \hline
+            \rowcolor{stewartcyan!15} \multicolumn{1}{|c|}{\textbf{\textsf{Hành tinh}}} & $\bm{d}$ & $\bm{T}$ \\
+            \hline
+            Sao Thủy (Mercury) & $0{,}387$ & $0{,}241$ \\
+            Sao Kim (Venus) & $0{,}723$ & $0{,}615$ \\
+            Trái Đất (Earth) & $1{,}000$ & $1{,}000$ \\
+            Sao Hỏa (Mars) & $1{,}523$ & $1{,}881$ \\
+            Sao Mộc (Jupiter) & $5{,}203$ & $11{,}861$ \\
+            Sao Thổ (Saturn) & $9{,}541$ & $29{,}457$ \\
+            Sao Thiên Vương (Uranus) & $19{,}190$ & $84{,}008$ \\
+            Sao Hải Vương (Neptune) & $30{,}086$ & $164{,}784$ \\
+            \hline
+        \end{tabular}
     \end{center}
-\end{enumerate}
 \end{minipage}%
 \hfill
-\begin{minipage}[t]{0.48\textwidth}
-\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=1.8em, itemsep=1.1em, topsep=0pt]
-    \item[\textbf{35.}] Thông thường, diện tích của một vùng càng lớn thì số lượng loài cư trú trong vùng đó càng nhiều. Nhiều nhà sinh thái học đã mô hình hóa mối quan hệ diện tích--loài bằng một hàm lũy thừa. Cụ thể, số lượng loài dơi $S$ sống trong các hang động ở miền trung Mexico có liên hệ với diện tích bề mặt $A$ của hang động theo phương trình $S = 0{,}7 A^{0{,}3}$.
-    \begin{enumerate}[label=\textnormal{(\alph*)}, leftmargin=*, itemsep=2pt, topsep=3pt]
-        \item Hang động có tên là \textit{Misión Imposible} gần Puebla, Mexico, có diện tích bề mặt là $A = 60\text{ m}^2$. Bạn dự kiến sẽ tìm thấy bao nhiêu loài dơi trong hang động đó?
-        \item Nếu bạn phát hiện ra bốn loài dơi cùng sống trong một hang động, hãy ước tính diện tích của hang động đó.
-    \end{enumerate}
-
-    \item[\llap{\techbox\hspace{0.4em}}\textbf{36.}] Bảng sau cho biết số lượng $N$ loài bò sát và lưỡng cư cư trú trên các hòn đảo vùng Caribe và diện tích $A$ của hòn đảo tính theo dặm vuông.
-    \begin{enumerate}[label=\textnormal{(\alph*)}, leftmargin=*, itemsep=2pt, topsep=3pt]
-        \item Sử dụng một hàm lũy thừa để mô hình hóa $N$ theo biến số $A$.
-        \item Đảo Dominica ở Caribe có diện tích $291\text{ mi}^2$. Bạn dự kiến sẽ tìm thấy bao nhiêu loài bò sát và lưỡng cư trên đảo Dominica?
+\begin{minipage}[t]{0.485\textwidth}
+    \fontsize{9pt}{12pt}\selectfont
+    \textbf{35.} Rõ ràng là diện tích của một khu vực càng lớn thì số lượng loài sinh sống ở khu vực đó càng nhiều. Nhiều nhà sinh thái học đã mô hình hóa mối quan hệ loài--diện tích bằng một hàm lũy thừa. Cụ thể, số loài dơi $S$ sống trong các hang động ở miền trung Mexico có mối liên hệ với diện tích bề mặt $A$ của hang theo phương trình $S = 0{,}7A^{0{,}3}$.
+    \begin{enumerate}[label=(\alph*), leftmargin=*, itemsep=2pt, topsep=2pt]
+        \item Hang động có tên là \textit{Misión Imposible} gần Puebla, Mexico, có diện tích bề mặt là $A = 60\text{ m}^2$. Bạn dự đoán sẽ tìm thấy bao nhiêu loài dơi trong hang động đó?
+        \item Nếu bạn phát hiện có bốn loài dơi sống trong một hang động, hãy ước tính diện tích của hang động đó.
     \end{enumerate}
 
     \vspace{0.3em}
+    \noindent
+    \textbf{\tikz[baseline=-0.6ex]\node[draw=stewartcyan, fill=stewartcyan!10, rounded corners=1pt, inner sep=1.2pt, line width=0.6pt]{\fontsize{7pt}{7pt}\selectfont\textbf{\textsf{\color{stewartcyan}T}}};~36.} Bảng dưới đây cho biết số loài bò sát và lưỡng cư $N$ sinh sống trên các hòn đảo thuộc vùng Caribe và diện tích $A$ của hòn đảo tính bằng dặm vuông.
+    \begin{enumerate}[label=(\alph*), leftmargin=*, itemsep=2pt, topsep=2pt]
+        \item Sử dụng hàm lũy thừa để mô hình hóa $N$ như một hàm số của $A$.
+        \item Hòn đảo Dominica thuộc vùng Caribe có diện tích $291\text{ mi}^2$. Bạn dự đoán sẽ tìm thấy bao nhiêu loài bò sát và lưỡng cư trên đảo Dominica?
+    \end{enumerate}
+
     \begin{center}
-    \small
-    \renewcommand{\arraystretch}{1.12}
-    \begin{tabular}{|l|r|r|}
-    \hline
-    \rowcolor{stewartcyan!15}
-    \multicolumn{1}{|c|}{Hòn đảo} & \multicolumn{1}{c|}{$A$} & \multicolumn{1}{c|}{$N$} \\
-    \hline
-    Saba        &      4 &  5 \\
-    Montserrat  &     40 &  9 \\
-    Puerto Rico &  3{,}459 & 40 \\
-    Jamaica     &  4{,}411 & 39 \\
-    Hispaniola  & 29{,}418 & 84 \\
-    Cuba        & 44{,}218 & 76 \\
-    \hline
-    \end{tabular}
+        \fontsize{8.5pt}{11pt}\selectfont
+        \renewcommand{\arraystretch}{1.12}
+        \begin{tabular}{|l|r|c|}
+            \hline
+            \rowcolor{stewartcyan!15} \multicolumn{1}{|c|}{\textbf{\textsf{Đảo}}} & \multicolumn{1}{c|}{$\bm{A}$} & $\bm{N}$ \\
+            \hline
+            Saba & 4 & 5 \\
+            Montserrat & 40 & 9 \\
+            Puerto Rico & $3\,459$ & 40 \\
+            Jamaica & $4\,411$ & 39 \\
+            Hispaniola & $29\,418$ & 84 \\
+            Cuba & $44\,218$ & 76 \\
+            \hline
+        \end{tabular}
     \end{center}
 
-    \item[\textbf{37.}] Giả sử một lực hoặc năng lượng phát ra từ một nguồn điểm và lan truyền đều theo mọi hướng, chẳng hạn như ánh sáng từ một bóng đèn hoặc lực hấp dẫn của một hành tinh. Khi đó ở khoảng cách $r$ tính từ nguồn, cường độ $I$ của lực hoặc năng lượng bằng cường độ nguồn $S$ chia cho diện tích bề mặt của mặt cầu bán kính $r$. Hãy chứng minh rằng $I$ thỏa mãn định luật nghịch đảo bình phương $I = k/r^2$, trong đó $k$ là một hằng số dương.
-\end{enumerate}
+    \vspace{0.3em}
+    \noindent
+    \textbf{37.} Giả sử một lực hoặc năng lượng phát ra từ một nguồn điểm và lan truyền tác động như nhau theo mọi hướng, chẳng hạn như ánh sáng từ bóng đèn hoặc lực hấp dẫn của một hành tinh. Khi đó, tại khoảng cách $r$ tính từ nguồn, cường độ $I$ của lực hoặc năng lượng bằng công suất nguồn $S$ chia cho diện tích mặt cầu bán kính $r$. Hãy chứng minh rằng $I$ thỏa mãn định luật nghịch đảo bình phương $I = k/r^2$, trong đó $k$ là một hằng số dương.
 \end{minipage}
 
-\vspace{1.8em}
-
-% Phần dưới: Bắt đầu Mục 1.3 theo cấu trúc chuẩn 2 cột bất đối xứng
+\vspace{2.5em}
 \noindent
-\begin{minipage}[t]{0.26\textwidth}
-    \vspace{0pt}%
-    \raggedleft
-    \begin{tikzpicture}[baseline=0pt]
-        \foreach \y in {4.5, 7.5, 10.5, 13.5} {
-            \draw[stewartcyan, line width=1.1pt] (0, \y pt) -- (2.6cm, \y pt);
+\begin{minipage}{\textwidth}
+    \begin{tikzpicture}[baseline=(num.base)]
+        \foreach \y in {-6pt, -3pt, 0pt, 3pt, 6pt} {
+            \draw[stewartcyan!80, line width=0.8pt] (-5cm, \y) -- (-0.35cm, \y);
         }
-    \end{tikzpicture}\hspace{0.45em}%
-    {\fontsize{26}{30}\selectfont\textbf{\textsf{\color{stewartcyan}1.3}}}\hspace{0.5em}%
-    \textcolor{stewartcyan}{\rule[-5pt]{1.4pt}{27pt}}%
+        \node[inner sep=0pt] (num) at (0,0) {\fontsize{26pt}{28pt}\selectfont\textbf{\textsf{\color{stewartcyan}1.3}}};
+    \end{tikzpicture}%
+    \hspace{12pt}%
+    {\fontsize{20pt}{24pt}\selectfont\textbf{\textsf{Các hàm số mới từ các hàm số cũ}}}
+\end{minipage}
+
+\vspace{1.2em}
+\noindent
+\begin{minipage}[t]{0.265\textwidth}
+    \fontsize{8pt}{10pt}\selectfont
+    % Cột lề: dành cho các ghi chú và hình ảnh lề phụ
 \end{minipage}%
-\hspace{0.03\textwidth}%
-\begin{minipage}[t]{0.71\textwidth}
-    \vspace{0pt}%
-    {\LARGE\textbf{\textsf{Các hàm số mới từ các hàm số cũ}}}\par
-    \vspace{0.75em}
-    \normalsize
-    Trong mục này, chúng ta bắt đầu từ các hàm số cơ bản đã khảo sát ở Mục 1.2 để xây dựng nên các hàm số mới thông qua việc tịnh tiến, co giãn và lấy đối xứng đồ thị của chúng. Chúng ta cũng sẽ trình bày cách kết hợp các cặp hàm số bằng các phép toán số học thông thường cũng như phép hợp thành hàm số.
+\hfill
+\begin{minipage}[t]{0.708\textwidth}
+    \fontsize{9.3pt}{13.5pt}\selectfont
+    Trong mục này, chúng ta bắt đầu với các hàm số cơ bản đã thảo luận ở Mục~1.2 và thu được các hàm số mới bằng cách tịnh tiến, co giãn và lấy đối xứng đồ thị của chúng. Chúng ta cũng sẽ chỉ ra cách kết hợp các cặp hàm số bằng các phép toán số học thông thường và bằng phép hợp thành hàm số.
 
-    \vspace{0.95em}
+    \vspace{1.2em}
     \noindent
-    {\raisebox{1pt}{\textcolor{stewartcyan}{\rule{5.5pt}{5.5pt}}}}\hspace{0.5em}{\large\textbf{\textsf{Các phép biến đổi hàm số}}}
+    \textbf{\textsf{\large\color{stewartcyan}\rule{2.5mm}{2.5mm}\quad Các phép biến đổi hàm số}}
 
-    \vspace{0.45em}
-    \noindent
-    Bằng cách áp dụng một số phép biến đổi nhất định lên đồ thị của một hàm số đã cho, chúng ta có thể suy ra đồ thị của các hàm số liên quan. Điều này giúp chúng ta có thể phác thảo nhanh đồ thị của nhiều hàm số bằng tay, đồng thời cho phép thiết lập phương trình tương ứng cho các đồ thị đã biết.
+    \vspace{0.5em}
+    Bằng cách áp dụng các phép biến đổi nhất định lên đồ thị của một hàm số đã cho, chúng ta có thể nhận được đồ thị của các hàm số liên quan. Điều này mang lại cho chúng ta khả năng phác thảo nhanh đồ thị của nhiều hàm số bằng tay. Nó cũng cho phép chúng ta viết phương trình cho các đồ thị đã cho.
 \end{minipage}

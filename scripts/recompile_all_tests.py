@@ -148,8 +148,8 @@ def compile_and_compare_page(page_num):
     return page_num, status, page_count
 
 def main():
-    print("=== KIỂM THỬ BIÊN DỊCH VÀ XUẤT ẢNH SO SÁNH 24 TRANG (P46-P69) ===")
-    for p in range(46, 70):
+    print("=== KIỂM THỬ BIÊN DỊCH VÀ XUẤT ẢNH SO SÁNH 24 TRANG (P70-P93) ===")
+    for p in range(70, 94):
         p_num, status, pages = compile_and_compare_page(p)
         sym = "✓" if status == "OK" else ("⚠" if status == "OVERFLOW" else "✗")
         print(f"Trang {p_num:04d}: {sym} {status} (Số trang: {pages})")

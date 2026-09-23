@@ -6,9 +6,7 @@ import re
 CH01_DIR = r"C:\Users\TONY\.gemini\antigravity\scratch\calculus_vietnamese\chapters\ch01"
 PAGES_DIR = os.path.join(CH01_DIR, "pages")
 
-# List of overflow pages from previous run:
-# 49, 50, 51, 52, 53, 55, 56, 57, 58, 60, 66, 67, 68
-overflow_pages = [49, 50, 51, 52, 53, 55, 56, 57, 58, 60, 66, 67, 68]
+overflow_pages = [77, 78, 79, 81, 82, 86, 87]
 
 if sys.platform == "win32":
     sys.stdout.reconfigure(encoding="utf-8")

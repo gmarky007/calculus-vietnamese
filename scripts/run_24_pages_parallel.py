@@ -55,13 +55,13 @@ PAGE_TEMPLATE_HEADER = r"""\documentclass[10pt,oneside]{article}
 \geometry{
     paperwidth=612.05pt,
     paperheight=720.05pt,
-    top=30pt,
+    top=24pt,
     headheight=14pt,
-    headsep=16pt,
-    bottom=36pt,
+    headsep=14pt,
+    bottom=28pt,
     footskip=14pt,
-    left=36pt,
-    right=36pt
+    left=34pt,
+    right=34pt
 }
 
 \definecolor{stewartcyan}{RGB}{0, 121, 193}
@@ -314,15 +314,15 @@ def call_vision_api(prompt, b64_img):
     return None
 
 def compile_and_compare(page_num, tex_body):
-    test_tex_path = os.path.join(TESTS_DIR, f"test_p{page_num:04d}.tex")
+    test_tex_path = os.path.join(CH01_DIR, f"temp_p{page_num:04d}.tex")
     full_tex = PAGE_TEMPLATE_HEADER + "\n" + tex_body + "\n" + PAGE_TEMPLATE_FOOTER
     with open(test_tex_path, "w", encoding="utf-8") as f:
         f.write(full_tex)
 
-    cmd = [XELATEX_EXE, "-interaction=nonstopmode", f"test_p{page_num:04d}.tex"]
-    res = subprocess.run(cmd, cwd=TESTS_DIR, capture_output=True, text=True)
+    cmd = [XELATEX_EXE, "-interaction=nonstopmode", f"temp_p{page_num:04d}.tex"]
+    res = subprocess.run(cmd, cwd=CH01_DIR, capture_output=True, text=True)
 
-    test_pdf_path = os.path.join(TESTS_DIR, f"test_p{page_num:04d}.pdf")
+    test_pdf_path = os.path.join(CH01_DIR, f"temp_p{page_num:04d}.pdf")
     page_count = 0
     compiled_ok = os.path.exists(test_pdf_path)
 
@@ -358,6 +358,14 @@ def compile_and_compare(page_num, tex_body):
         except Exception as e:
             print(f"Error making comparison for P{page_num}: {e}")
 
+        for ext in [".aux", ".log", ".tex", ".pdf"]:
+            tmp_f = os.path.join(CH01_DIR, f"temp_p{page_num:04d}{ext}")
+            if os.path.exists(tmp_f):
+                try:
+                    os.remove(tmp_f)
+                except Exception:
+                    pass
+
     return compiled_ok, page_count
 
 def process_page_worker(page_num):
@@ -367,7 +375,7 @@ def process_page_worker(page_num):
     page = doc[page_idx]
     
     page_text = page.get_text()
-    is_exercise = ("EXERCISES" in page_text) or ("BÀI TẬP" in page_text) or (page_num in [53, 54, 55, 56, 67, 68, 69])
+    is_exercise = ("EXERCISES" in page_text) or ("BÀI TẬP" in page_text) or (page_num in [53, 54, 55, 56, 67, 68, 69, 77, 78, 79, 80, 87, 88])
 
     figs = extract_page_figures(doc, page_num)
     
@@ -410,8 +418,8 @@ def process_page_worker(page_num):
     }
 
 def main():
-    target_pages = list(range(46, 70))
-    print(f"=== CHẠY THỬ 24 TRANG (P46 ĐẾN P69) VỚI PROMPT V2 & 12 WORKERS ===")
+    target_pages = list(range(70, 94))
+    print(f"=== CHẠY THỬ 24 TRANG (P70 ĐẾN P93) VỚI PROMPT V2 & 12 WORKERS ===")
     start_time = time.time()
 
     results = []

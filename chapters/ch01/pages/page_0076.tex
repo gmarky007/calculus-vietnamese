@@ -1,89 +1,81 @@
-\fancyhead[L]{\textsf{\textbf{MỤC 1.3}\hspace{1em}Các hàm số mới từ các hàm số cũ}}
-\fancyhead[R]{\textsf{\textbf{41}}}
+\fancyhead[RO]{\fontsize{8.5pt}{10pt}\selectfont\textsf{MỤC 1.3}\quad \textsf{Các hàm số mới từ các hàm số cũ}\quad \textbf{\textsf{41}}}
 
 \noindent
-\begin{minipage}[t]{0.26\textwidth}
-    \vspace{0pt}
-    \includegraphics[width=\textwidth]{images/p0076_fig1.png}
-    \vspace{-1mm}
-    \begin{flushleft}
-        \small
-        \textbf{\textsf{HÌNH 11}}\\[1pt]
-        Máy $f \circ g$ được cấu tạo từ máy $g$ (trước) và sau đó là máy $f$.
-    \end{flushleft}
+\begin{minipage}[t]{0.265\textwidth}
+    \fontsize{8pt}{10pt}\selectfont
+    \vspace*{24pt}
+    \begin{center}
+        \includegraphics[width=0.92\linewidth]{images/p0076_fig11.png}
+    \end{center}
+    \vspace{-4pt}
+    \textbf{\textsf{HÌNH 11}}\\[2pt]
+    Cỗ máy $f \circ g$ được hợp thành từ cỗ máy $g$ (trước) và sau đó là cỗ máy $f$.
 
-    \vspace{255pt}
-    \begin{flushleft}
-        \small
-        {\color{stewartcyan}\textit{Nếu $0 \leqslant a \leqslant b$ thì $a^2 \leqslant b^2$.}}
-    \end{flushleft}
+    \vspace{210pt}
+    \begin{flushright}
+        \color{stewartcyan}\textit{Nếu $0 \leqslant a \leqslant b$ thì $a^2 \leqslant b^2$.}
+    \end{flushright}
 \end{minipage}%
 \hfill
-\begin{minipage}[t]{0.71\textwidth}
-    \vspace{0pt}
-    của $u$ và $u$ lại là một hàm số của $x$, suy ra $y$ xét cho cùng là một hàm số của $x$. Chúng ta tính hàm này bằng phép thế:
+\begin{minipage}[t]{0.708\textwidth}
+    \fontsize{9.3pt}{13.2pt}\selectfont
+    của $u$ và đến lượt $u$ lại là một hàm số của $x$, suy ra rằng rốt cuộc $y$ là một hàm số của $x$. Ta tính điều này bằng phép thế:
     \[
     y = f(u) = f(g(x)) = f(x^2 + 1) = \sqrt{x^2 + 1}
     \]
-    Thủ tục này được gọi là \textit{phép hợp} (composition) bởi vì hàm số mới được \textit{hợp thành} (composed) từ hai hàm số đã cho $f$ và $g$.
+    Quy trình này được gọi là \textit{phép hợp thành} (composition) bởi vì hàm số mới được \textit{hợp thành} (composed) từ hai hàm số $f$ và $g$ đã cho.
 
-    Tổng quát, cho hai hàm số $f$ và $g$ bất kỳ, ta bắt đầu với một số $x$ thuộc tập xác định của $g$ và tính $g(x)$. Nếu số $g(x)$ này thuộc tập xác định của $f$, thì ta có thể tính giá trị $f(g(x))$. Hãy chú ý rằng đầu ra của một hàm số được dùng làm đầu vào cho hàm số tiếp theo. Kết quả là một hàm số mới $h(x) = f(g(x))$ nhận được bằng cách thế $g$ vào $f$. Nó được gọi là \textit{hàm hợp} (composition hoặc composite) của $f$ và $g$ và được ký hiệu là $f \circ g$ (đọc là ``$f$ tròn $g$'').
+    Nói chung, cho hai hàm số $f$ và $g$ bất kỳ, ta bắt đầu với một số $x$ thuộc tập xác định của $g$ và tính $g(x)$. Nếu số $g(x)$ này thuộc tập xác định của $f$, thì ta có thể tính được giá trị $f(g(x))$. Chú ý rằng kết quả đầu ra của hàm số thứ nhất được sử dụng làm đầu vào cho hàm số tiếp theo. Kết quả thu được là một hàm số mới $h(x) = f(g(x))$ bằng cách thế $g$ vào $f$. Nó được gọi là \textit{hàm hợp} (hay \textit{hợp thành}) của $f$ và $g$, ký hiệu là $f \circ g$ (đọc là ``$f$ hợp $g$'').
 
-    \begin{tcolorbox}[colback=white, colframe=stewartred, arc=0mm, left=3mm, right=3mm, top=2.5mm, bottom=2.5mm, boxrule=0.8pt]
-        \textbf{\textsf{\color{stewartred}Định nghĩa}}\hspace{0.8em}Cho hai hàm số $f$ và $g$, \textbf{hàm hợp} $f \circ g$ (còn gọi là \textbf{hợp} của $f$ và $g$) được xác định bởi
+    \begin{definitionbox}
+        \textbf{\textcolor{stewartred}{Định nghĩa}}\quad Cho hai hàm số $f$ và $g$, \textbf{hàm hợp} $f \circ g$ (còn gọi là \textbf{hợp thành} của $f$ và $g$) được định nghĩa bởi
         \[
         (f \circ g)(x) = f(g(x))
         \]
-    \end{tcolorbox}
+    \end{definitionbox}
 
-    \vspace{1mm}
-    Tập xác định của $f \circ g$ là tập hợp tất cả các $x$ thuộc tập xác định của $g$ sao cho $g(x)$ thuộc tập xác định của $f$. Nói cách khác, $(f \circ g)(x)$ xác định bất cứ khi nào cả $g(x)$ và $f(g(x))$ đều xác định. Hình 11 cho thấy cách hình dung $f \circ g$ theo các cỗ máy.
+    Tập xác định của $f \circ g$ là tập hợp tất cả các giá trị $x$ thuộc tập xác định của $g$ sao cho $g(x)$ thuộc tập xác định của $f$. Nói cách khác, $(f \circ g)(x)$ xác định bất cứ khi nào cả $g(x)$ và $f(g(x))$ đều xác định. Hình 11 minh họa cách hình dung $f \circ g$ dưới dạng các cỗ máy.
 
-    \vspace{2.5mm}
-    \noindent
-    \textbf{\textsf{\color{stewartcyan}VÍ DỤ 6}}\hspace{0.8em}Nếu $f(x) = x^2$ và $g(x) = x - 3$, hãy tìm các hàm hợp $f \circ g$ và $g \circ f$.
+    \vspace{4pt}
+    \noindent\textbf{\textsf{\color{stewartcyan}VÍ DỤ 6}}\quad Nếu $f(x) = x^2$ và $g(x) = x - 3$, hãy tìm các hàm hợp $f \circ g$ và $g \circ f$.
 
-    \vspace{1mm}
-    \noindent
-    \textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\hspace{0.8em}Ta có
+    \vspace{2pt}
+    \noindent\textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\quad Ta có
     \begin{align*}
         (f \circ g)(x) &= f(g(x)) = f(x - 3) = (x - 3)^2\\[3pt]
-        (g \circ f)(x) &= g(f(x)) = g(x^2) = x^2 - 3 \tag*{{\color{stewartcyan}$\blacksquare$}}
+        (g \circ f)(x) &= g(f(x)) = g(x^2) = x^2 - 3
     \end{align*}
+    \hfill{\color{stewartcyan}$\blacksquare$}
 
-    \vspace{-2mm}
-    \noindent
-    \tikz[baseline=-2.5pt]{\draw[stewartred, line width=1.3pt] (0,0) circle (4.5pt); \draw[stewartred, line width=1.3pt] (-3.2pt,3.2pt) -- (3.2pt,-3.2pt);}\hspace{0.4em}\textbf{\textsf{\color{stewartred}GHI CHÚ}}\hspace{0.8em}Bạn có thể thấy từ Ví dụ 6 rằng, nhìn chung, $f \circ g \neq g \circ f$. Hãy nhớ rằng, {\color{stewartred}ký hiệu $f \circ g$ có nghĩa là hàm $g$ được áp dụng trước và sau đó hàm $f$ được áp dụng sau}. Trong Ví dụ 6, $f \circ g$ là hàm số \textit{trước tiên} trừ đi 3 và \textit{sau đó} bình phương; $g \circ f$ là hàm số \textit{trước tiên} bình phương và \textit{sau đó} trừ đi 3.
+    \vspace{2pt}
+    \noindent\tikz[baseline=-0.7ex]{\draw[stewartred, line width=1pt] (0,0) circle (5.5pt); \draw[stewartred, line width=1pt] (-3.8pt,-3.8pt) -- (3.8pt,3.8pt);}\;\textbf{\textsf{\color{stewartgreen}CHÚ Ý}}\quad Từ Ví dụ 6, bạn có thể thấy rằng nói chung $f \circ g \ne g \circ f$. Hãy nhớ rằng, \textcolor{stewartred}{ký hiệu $f \circ g$ có nghĩa là hàm $g$ được thực hiện trước rồi hàm $f$ mới được thực hiện sau.} Trong Ví dụ 6, $f \circ g$ là hàm số \textit{trước tiên} trừ đi 3 và \textit{sau đó} mới bình phương; còn $g \circ f$ là hàm số \textit{trước tiên} bình phương và \textit{sau đó} mới trừ đi 3.
 
-    \vspace{2.5mm}
-    \noindent
-    \textbf{\textsf{\color{stewartcyan}VÍ DỤ 7}}\hspace{0.8em}Nếu $f(x) = \sqrt{x}$ và $g(x) = \sqrt{2 - x}$, hãy tìm mỗi hàm số sau và tập xác định của nó.
+    \vspace{6pt}
+    \noindent\textbf{\textsf{\color{stewartcyan}VÍ DỤ 7}}\quad Nếu $f(x) = \sqrt{x}$ và $g(x) = \sqrt{2 - x}$, hãy xác định từng hàm số sau cùng tập xác định của nó:
+    \begin{center}
+        \textbf{(a)}\; $f \circ g$ \qquad\qquad \textbf{(b)}\; $g \circ f$ \qquad\qquad \textbf{(c)}\; $f \circ f$ \qquad\qquad \textbf{(d)}\; $g \circ g$
+    \end{center}
 
-    \vspace{1.5mm}
-    \noindent
-    \textbf{(a)}~$f \circ g$\hspace{4em}\textbf{(b)}~$g \circ f$\hspace{4em}\textbf{(c)}~$f \circ f$\hspace{4em}\textbf{(d)}~$g \circ g$
+    \vspace{-2pt}
+    \noindent\textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}
 
-    \vspace{2mm}
-    \noindent
-    \textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\hspace{0.8em}\textbf{(a)}\hspace{0.5em}$(f \circ g)(x) = f(g(x)) = f(\sqrt{2 - x}) = \sqrt{\sqrt{2 - x}} = \sqrt[4]{2 - x}$
-
-    \vspace{1mm}
-    \noindent
+    \noindent\textbf{(a)}\;
+    \[
+    (f \circ g)(x) = f(g(x)) = f(\sqrt{2 - x}) = \sqrt{\sqrt{2 - x}} = \sqrt[4]{2 - x}
+    \]
     Tập xác định của $f \circ g$ là $\{x \mid 2 - x \geqslant 0\} = \{x \mid x \leqslant 2\} = (-\infty, 2]$.
 
-    \vspace{2mm}
-    \noindent
-    \textbf{(b)}\hspace{0.5em}$(g \circ f)(x) = g(f(x)) = g(\sqrt{x}) = \sqrt{2 - \sqrt{x}}$
+    \vspace{3pt}
+    \noindent\textbf{(b)}\;
+    \[
+    (g \circ f)(x) = g(f(x)) = g(\sqrt{x}) = \sqrt{2 - \sqrt{x}}
+    \]
+    Để $\sqrt{x}$ xác định, ta phải có $x \geqslant 0$. Để $\sqrt{2 - \sqrt{x}}$ xác định, ta phải có $2 - \sqrt{x} \geqslant 0$, tức là $\sqrt{x} \leqslant 2$, hay $x \leqslant 4$. Do đó ta có $0 \leqslant x \leqslant 4$, vậy tập xác định của $g \circ f$ là đoạn $[0, 4]$.
 
-    \vspace{1mm}
-    \noindent
-    Để $\sqrt{x}$ xác định thì ta phải có $x \geqslant 0$. Để $\sqrt{2 - \sqrt{x}}$ xác định thì ta phải có $2 - \sqrt{x} \geqslant 0$, tức là $\sqrt{x} \leqslant 2$, hay $x \leqslant 4$. Do đó ta có $0 \leqslant x \leqslant 4$, vì vậy tập xác định của $g \circ f$ là đoạn $[0, 4]$.
-
-    \vspace{2mm}
-    \noindent
-    \textbf{(c)}\hspace{0.5em}$(f \circ f)(x) = f(f(x)) = f(\sqrt{x}) = \sqrt{\sqrt{x}} = \sqrt[4]{x}$
-
-    \vspace{1mm}
-    \noindent
+    \vspace{3pt}
+    \noindent\textbf{(c)}\;
+    \[
+    (f \circ f)(x) = f(f(x)) = f(\sqrt{x}) = \sqrt{\sqrt{x}} = \sqrt[4]{x}
+    \]
     Tập xác định của $f \circ f$ là $[0, \infty)$.
 \end{minipage}
