@@ -1,0 +1,227 @@
+\documentclass[10pt]{article}
+\usepackage{fontspec}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+\usepackage{geometry}
+\geometry{
+    paperwidth=612.05pt,
+    paperheight=720.05pt,
+    top=0.9cm,
+    bottom=0.8cm,
+    left=1.25cm,
+    right=1.25cm,
+    headheight=14pt,
+    headsep=0.25cm,
+    footskip=0.3cm
+}
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+\usepackage{multicol}
+\usepackage{tikz}
+
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+
+\definecolor{stewartcyan}{RGB}{0, 118, 186}
+\definecolor{stewartred}{RGB}{218, 41, 28}
+\definecolor{stewartgray}{RGB}{120, 120, 120}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+
+\newcommand{\casicon}{%
+  \tikz[baseline=-0.7ex]{%
+    \draw[stewartcyan, fill=cyan!8, rounded corners=0.8pt, line width=0.6pt] (0,0) rectangle (9.5pt, 8pt);
+    \draw[stewartcyan, line width=0.6pt] (1.8pt, 2pt) .. controls (3.8pt, 7pt) and (5.8pt, 1pt) .. (7.8pt, 6pt);
+  }%
+}
+
+\newcommand{\coldivider}{%
+  \par\vspace{0.35em}
+  {\color{stewartcyan}\hrule height 0.6pt}
+  \par\vspace{0.35em}
+}
+
+\begin{document}
+\fancyhead[L]{\textbf{\textsf{224}}\qquad \textbf{\textsf{CHƯƠNG 3}}\quad \textsf{Các quy tắc tính đạo hàm}}
+\fancyhead[R]{}
+
+% Tiêu đề mục Bài tập chuẩn Stewart (4 vạch kẻ hai bên)
+\noindent
+\begin{tikzpicture}
+  \node[anchor=west, inner sep=0] (title) at (48pt, 0) {%
+    {\fontsize{16}{18}\selectfont\bfseries\color{stewartcyan}3.6}\hspace{8pt}%
+    {\color{stewartcyan}\vrule width 0.8pt height 13pt depth 3pt}\hspace{8pt}%
+    {\fontsize{16}{18}\selectfont\bfseries\textsf{Bài tập}}%
+  };
+  \foreach \y in {-4.5pt, -1.5pt, 1.5pt, 4.5pt} {
+    \draw[stewartcyan, line width=0.5pt] (0pt, \y) -- (40pt, \y);
+    \draw[stewartcyan, line width=0.5pt] ([xshift=8pt]title.east |- 0, \y) -- (\linewidth, \y);
+  }
+\end{tikzpicture}
+\vspace{0.8em}
+
+\noindent
+{\fontsize{8.7pt}{10.7pt}\selectfont\setlength{\columnsep}{18pt}\begin{multicols}{2}
+\textbf{1.} Giải thích tại sao hàm số logarit tự nhiên $y = \ln x$ được sử dụng thường xuyên hơn nhiều trong giải tích so với các hàm số logarit khác $y = \log_b x$.
+
+\vspace{0.5em}
+\noindent
+{\bfseries\color{stewartcyan}2--26}\enspace \textbf{Tính đạo hàm của hàm số.}
+
+\vspace{0.15em}
+\noindent
+\textbf{2.} $f(t) = \ln(3 + t^2)$
+
+\vspace{0.25em}
+\noindent
+\begin{tabularx}{\linewidth}{@{}X@{\hspace{0.5em}}X@{}}
+\textbf{3.} $f(x) = \ln(x^2 + 3x + 5)$ & \textbf{4.} $f(x) = x\ln x - x$ \\[0.15em]
+\textbf{5.} $f(x) = \sin(\ln x)$ & \textbf{6.} $f(x) = \ln(\sin^2 x)$ \\[0.15em]
+\textbf{7.} $f(x) = \ln\dfrac{1}{x}$ & \textbf{8.} $y = \dfrac{1}{\ln x}$ \\[0.25em]
+\textbf{9.} $g(x) = \ln(xe^{-2x})$ & \textbf{10.} $g(t) = \sqrt{1 + \ln t}$ \\[0.2em]
+\textbf{11.} $F(t) = (\ln t)^2 \sin t$ & \textbf{12.} $p(t) = \ln\sqrt{t^2 + 1}$ \\[0.2em]
+\textbf{13.} $y = \log_8(x^2 + 3x)$ & \textbf{14.} $y = \log_{10}\sec x$ \\[0.2em]
+\textbf{15.} $F(s) = \ln\ln s$ & \textbf{16.} $P(v) = \dfrac{\ln v}{1 - v}$ \\[0.25em]
+\textbf{17.} $T(z) = 2^z \log_2 z$ & \textbf{18.} $g(t) = \ln\dfrac{t(t^2 + 1)^4}{\sqrt[3]{2t - 1}}$ \\[0.15em]
+\textbf{19.} $y = \ln|3 - 2x^5|$ & \textbf{20.} $y = \ln(\csc x - \cot x)$ \\[0.15em]
+\textbf{21.} $y = \ln(e^{-x} + xe^{-x})$ & \textbf{22.} $g(x) = e^{x^2 \ln x}$ \\[0.15em]
+\textbf{23.} $h(x) = e^{x^2 + \ln x}$ & \textbf{24.} $y = \ln\sqrt{\dfrac{1 + 2x}{1 - 2x}}$ \\[0.15em]
+\textbf{25.} $y = \ln\dfrac{x^a}{b^x}$ & \textbf{26.} $y = \log_2(x\log_5 x)$
+\end{tabularx}
+
+\coldivider
+
+\noindent
+\textbf{27.} Chứng minh rằng $\dfrac{d}{dx}\ln(x + \sqrt{x^2 + 1}) = \dfrac{1}{\sqrt{x^2 + 1}}$.
+
+\vspace{0.2em}
+\noindent
+\textbf{28.} Chứng minh rằng $\dfrac{d}{dx}\ln\sqrt{\dfrac{1 - \cos x}{1 + \cos x}} = \csc x$.
+
+\coldivider
+
+\noindent
+{\bfseries\color{stewartcyan}29--32}\enspace \textbf{Tìm $y'$ và $y''$.}
+
+\vspace{0.15em}
+\noindent
+\begin{tabularx}{\linewidth}{@{}X@{\hspace{0.5em}}X@{}}
+\textbf{29.} $y = \sqrt{x}\ln x$ & \textbf{30.} $y = \dfrac{\ln x}{1 + \ln x}$ \\[0.25em]
+\textbf{31.} $y = \ln|\sec x|$ & \textbf{32.} $y = \ln(1 + \ln x)$
+\end{tabularx}
+
+\coldivider
+
+\noindent
+{\bfseries\color{stewartcyan}33--36}\enspace \textbf{Tính đạo hàm của $f$ và tìm tập xác định của $f$.}
+
+\vspace{0.15em}
+\noindent
+\begin{tabularx}{\linewidth}{@{}X@{\hspace{0.5em}}X@{}}
+\textbf{33.} $f(x) = \dfrac{x}{1 - \ln(x - 1)}$ & \textbf{34.} $f(x) = \sqrt{2 + \ln x}$ \\[0.7em]
+\textbf{35.} $f(x) = \ln(x^2 - 2x)$ & \textbf{36.} $f(x) = \ln\ln\ln x$
+\end{tabularx}
+
+\vspace{0.25em}
+\noindent
+\textbf{37.} Nếu $f(x) = \ln(x + \ln x)$, hãy tìm $f'(1)$.
+
+\vspace{0.15em}
+\noindent
+\textbf{38.} Nếu $f(x) = \cos(\ln x^2)$, hãy tìm $f'(1)$.
+
+\columnbreak
+\noindent
+{\bfseries\color{stewartcyan}39--40}\enspace \textbf{Tìm phương trình tiếp tuyến của đường cong tại điểm đã cho.}
+
+\vspace{0.15em}
+\noindent
+\textbf{39.} $y = \ln(x^2 - 3x + 1), \quad (3, 0)$
+
+\vspace{0.3em}
+\noindent
+\textbf{40.} $y = x^2\ln x, \quad (1, 0)$
+
+\coldivider
+
+\noindent
+\casicon\enspace \textbf{41.} Nếu $f(x) = \sin x + \ln x$, hãy tìm $f'(x)$. Kiểm tra xem câu trả lời của bạn có hợp lý không bằng cách so sánh đồ thị của $f$ và $f'$.
+
+\vspace{0.4em}
+\noindent
+\casicon\enspace \textbf{42.} Tìm các phương trình tiếp tuyến của đường cong $y = (\ln x)/x$ tại các điểm $(1, 0)$ và $(e, 1/e)$. Minh họa bằng cách vẽ đồ thị của đường cong và các tiếp tuyến đó.
+
+\vspace{0.4em}
+\noindent
+\textbf{43.} Cho $f(x) = cx + \ln(\cos x)$. Với giá trị nào của $c$ thì $f'(\pi/4) = 6$?
+
+\vspace{0.4em}
+\noindent
+\textbf{44.} Cho $f(x) = \log_b(3x^2 - 2)$. Với giá trị nào của $b$ thì $f'(1) = 3$?
+
+\coldivider
+
+\noindent
+{\bfseries\color{stewartcyan}45--56}\enspace \textbf{Sử dụng đạo hàm logarit để tìm đạo hàm của hàm số.}
+
+\vspace{0.15em}
+\noindent
+\begin{tabularx}{\linewidth}{@{}X@{\hspace{0.5em}}X@{}}
+\textbf{45.} $y = (x^2 + 2)^2(x^4 + 4)^4$ & \textbf{46.} $y = \dfrac{e^{-x}\cos^2 x}{x^2 + x + 1}$ \\[0.75em]
+\textbf{47.} $y = \sqrt{\dfrac{x - 1}{x^4 + 1}}$ & \textbf{48.} $y = \sqrt{x}\,e^{x^2 - 2x}(x + 1)^{2/3}$ \\[0.75em]
+\textbf{49.} $y = x^x$ & \textbf{50.} $y = x^{1/x}$ \\[0.2em]
+\textbf{51.} $y = x^{\sin x}$ & \textbf{52.} $y = (\sqrt{x})^x$ \\[0.2em]
+\textbf{53.} $y = (\cos x)^x$ & \textbf{54.} $y = (\sin x)^{\ln x}$ \\[0.2em]
+\textbf{55.} $y = x^{\ln x}$ & \textbf{56.} $y = (\ln x)^{\cos x}$
+\end{tabularx}
+
+\coldivider
+
+\noindent
+\textbf{57.} Tìm $y'$ nếu $y = \ln(x^2 + y^2)$.
+
+\vspace{0.25em}
+\noindent
+\textbf{58.} Tìm $y'$ nếu $x^y = y^x$.
+
+\vspace{0.25em}
+\noindent
+\textbf{59.} Tìm công thức cho $f^{(n)}(x)$ nếu $f(x) = \ln(x - 1)$.
+
+\vspace{0.25em}
+\noindent
+\textbf{60.} Tìm $\dfrac{d^9}{dx^9}(x^8\ln x)$.
+
+\vspace{0.25em}
+\noindent
+\textbf{61.} Sử dụng định nghĩa đạo hàm để chứng minh rằng
+\[
+\lim_{x \to 0}\frac{\ln(1 + x)}{x} = 1
+\]
+
+\vspace{-0.2em}
+\noindent
+\textbf{62.} Chứng minh rằng $\lim\limits_{n \to \infty}\left(1 + \dfrac{x}{n}\right)^n = e^x$ với mọi $x > 0$.
+
+\coldivider
+
+\noindent
+{\bfseries\color{stewartcyan}63--78}\enspace \textbf{Tính đạo hàm của hàm số. Rút gọn nếu có thể.}
+
+\vspace{0.15em}
+\noindent
+\begin{tabularx}{\linewidth}{@{}X@{\hspace{0.5em}}X@{}}
+\textbf{63.} $f(x) = \sin^{-1}(5x)$ & \textbf{64.} $g(x) = \sec^{-1}(e^x)$ \\[0.2em]
+\textbf{65.} $y = \tan^{-1}\sqrt{x - 1}$ & \textbf{66.} $y = \tan^{-1}(x^2)$ \\[0.2em]
+\textbf{67.} $y = (\tan^{-1}x)^2$ & \textbf{68.} $g(x) = \arccos\sqrt{x}$ \\[0.2em]
+\textbf{69.} $h(x) = (\arcsin x)\ln x$ & \textbf{70.} $g(t) = \ln(\arctan(t^4))$ \\[0.2em]
+\textbf{71.} $f(z) = e^{\arcsin(z^2)}$ & \textbf{72.} $y = \tan^{-1}(x - \sqrt{1 + x^2})$
+\end{tabularx}
+
+\end{multicols}}
+\end{document}

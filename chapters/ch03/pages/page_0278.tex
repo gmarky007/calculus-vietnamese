@@ -1,0 +1,88 @@
+\documentclass[10pt]{article}
+\usepackage[paperwidth=210mm, paperheight=297mm, left=65mm, right=18mm, top=22mm, bottom=22mm, marginparsep=6mm, marginparwidth=45mm, reversemarginpar]{geometry}
+\usepackage{fontspec}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{marginnote}
+\usepackage{fancyhdr}
+
+\IfFontExistsTF{Times New Roman}{
+  \setmainfont{Times New Roman}
+}{
+  \IfFontExistsTF{TeX Gyre Termes}{
+    \setmainfont{TeX Gyre Termes}
+  }{}
+}
+
+\definecolor{stewartblue}{RGB}{0, 130, 185}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[C]{\fontsize{9pt}{11pt}\selectfont\textbf{MỤC 3.8}\hspace{1.5em}Tăng trưởng và suy giảm theo hàm mũ}
+\fancyhead[R]{\fontsize{9pt}{11pt}\selectfont\textbf{243}}
+\fancyfoot[C]{\fontsize{6.5pt}{8pt}\selectfont\color{gray!80}Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part.}
+\setlength{\headheight}{14pt}
+
+\setlength{\parindent}{1.5em}
+\setlength{\parskip}{2pt}
+\setlength{\abovedisplayskip}{6pt plus 2pt minus 2pt}
+\setlength{\belowdisplayskip}{6pt plus 2pt minus 2pt}
+
+\begin{document}
+
+\noindent\textbf{\textcolor{stewartblue}{LỜI GIẢI}}\hspace{0.8em}\textbf{(a)} Gọi $T(t)$ là nhiệt độ của tách trà sau $t$ phút. Nhiệt độ của môi trường xung quanh là $T_s = 44^\circ\text{F}$, vì vậy Định luật làm nguội của Newton phát biểu rằng
+\begin{equation*}
+\frac{dT}{dt} = k(T - 44)
+\end{equation*}
+Nếu ta đặt $y = T - 44$, thì $y(0) = T(0) - 44 = 72 - 44 = 28$, do đó $y$ thỏa mãn
+\begin{equation*}
+\frac{dy}{dt} = ky \qquad y(0) = 28
+\end{equation*}
+và theo (2) ta có\qquad $y(t) = y(0)e^{kt} = 28e^{kt}$
+
+Theo giả thiết ta có $T(30) = 61$, nên $y(30) = 61 - 44 = 17$ và
+\begin{equation*}
+28e^{30k} = 17 \qquad e^{30k} = \frac{17}{28}
+\end{equation*}
+Lấy logarit tự nhiên hai vế, ta được
+\begin{equation*}
+k = \frac{\ln\left(\frac{17}{28}\right)}{30} \approx -0{,}01663
+\end{equation*}
+Do đó
+\begin{align*}
+y(t) &= 28e^{-0{,}01663t} \\
+T(t) &= 44 + 28e^{-0{,}01663t} \\
+T(60) &= 44 + 28e^{-0{,}01663(60)} \approx 54{,}3
+\end{align*}
+Vậy sau một nửa giờ nữa, tách trà đã nguội xuống còn khoảng $54^\circ\text{F}$.
+
+\marginnote{
+  \centering
+  \includegraphics[width=\linewidth]{images/p0278_fig1.png}
+}[0.1cm]
+\textbf{(b)} Ta có $T(t) = 50$ khi
+\begin{align*}
+44 + 28e^{-0{,}01663t} &= 50 \\
+e^{-0{,}01663t} &= \frac{6}{28} \\
+t &= \frac{\ln\left(\frac{6}{28}\right)}{-0{,}01663} \approx 92{,}6
+\end{align*}
+Tách trà nguội đến $50^\circ\text{F}$ sau khoảng 1 giờ 33 phút.\hfill\textcolor{stewartblue}{\rule{1.1ex}{1.1ex}}
+
+Lưu ý rằng trong Ví dụ 3, ta có
+\begin{equation*}
+\lim_{t \to \infty} T(t) = \lim_{t \to \infty} (44 + 28e^{-0{,}01663t}) = 44 + 28 \cdot 0 = 44
+\end{equation*}
+Điều này có nghĩa là, đúng như dự đoán, nhiệt độ của tách trà tiến dần đến nhiệt độ môi trường bên trong tủ lạnh. Đồ thị của hàm nhiệt độ được thể hiện trong Hình 3.
+
+\vspace{1.5em}
+\noindent{\textcolor{stewartblue}{\rule{1.2ex}{1.2ex}}}\hspace{0.5em}\textbf{\large Lãi kép liên tục}
+\vspace{0.6em}
+
+\noindent\textbf{\textcolor{stewartblue}{VÍ DỤ 4}}\hspace{0.8em}Nếu $\$5000$ được đầu tư với lãi suất $2\%$, tính lãi kép hàng năm, thì sau 1 năm khoản đầu tư có giá trị là $\$5000(1{,}02) = \$5100{,}00$, sau 2 năm có giá trị là $[\$5000(1{,}02)](1{,}02) = \$5202{,}00$, và sau $t$ năm nó có giá trị là $\$5000(1{,}02)^t$. Nói chung, nếu một số tiền $A_0$ được đầu tư với lãi suất $r$ ($r = 0{,}02$ trong ví dụ này), thì sau $t$ năm nó có giá trị là $A_0(1 + r)^t$. Thông thường, tiền lãi được tính kép định kỳ thường xuyên hơn, chẳng hạn $n$ lần mỗi năm. Khi đó trong mỗi kỳ tính lãi, tỷ lệ lãi suất là $r/n$, và có $nt$ kỳ tính lãi trong $t$ năm, do đó giá trị của khoản đầu tư là
+\begin{equation*}
+A = A_0 \left(1 + \frac{r}{n}\right)^{nt}
+\end{equation*}
+
+\end{document}
