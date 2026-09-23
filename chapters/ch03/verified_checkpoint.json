@@ -425,6 +425,12 @@
       "score": 99,
       "notes": "Bản dịch hiện tại là thông báo từ chối dịch của AI thay vì mã nguồn trang sách. Cần tạo lại toàn bộ mã nguồn XeLaTeX với bố cục 2 cột bất đối xứng, đồ thị Hình 3 ở lề trái và nội dung toán học được dịch chuẩn xác sư phạm.",
       "time": "2026-09-23 08:26:11"
+    },
+    {
+      "page_num": 279,
+      "score": 99,
+      "notes": "Lỗi nghiêm trọng: Mã nguồn hiện tại bị in thô chuỗi khai báo preamble ra đầu trang; thanh tiêu đề và chú thích lề Phương trình 3.6.6 bị lệch vị trí đáng kể (thấp hơn khoảng 4cm so với bản gốc); thụt đầu dòng và khoảng cách đoạn chưa chuẩn phong cách giáo trình Stewart.",
+      "time": "2026-09-23 08:27:45"
     }
   ]
 }

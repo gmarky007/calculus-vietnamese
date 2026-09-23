@@ -1,0 +1,90 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{microtype}
+\usepackage{mathptmx}
+
+\geometry{
+    paperwidth=216mm,
+    paperheight=279mm,
+    left=66mm,
+    right=20mm,
+    top=24mm,
+    bottom=22mm,
+    headheight=14pt,
+    headsep=16pt,
+    footskip=15mm
+}
+
+\definecolor{stewartcyan}{RGB}{0, 136, 181}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyheadoffset[L]{48mm}
+\fancyhead[L]{\textsf{\textbf{244}}\hspace{3em}\textsf{\textbf{CHƯƠNG 3}}\hspace{2em}\textsf{Các quy tắc đạo hàm}}
+\renewcommand{\headrulewidth}{0pt}
+
+\fancyfootoffset[L]{48mm}
+\fancyfoot[L]{%
+  \fontsize{6pt}{7.5pt}\selectfont\color{gray}%
+  Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\\[1pt]%
+  Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.%
+}
+\fancyfoot[C]{}
+\renewcommand{\footrulewidth}{0pt}
+
+\setlength{\parindent}{14pt}
+\setlength{\parskip}{0pt}
+
+\begin{document}
+
+\noindent
+Chẳng hạn, sau 3 năm với lãi suất $2\%$, khoản đầu tư $\$5000$ sẽ có giá trị là
+\begin{align*}
+\$5000(1.02)^3 &= \$5306.04 && \text{khi ghép lãi hàng năm} \\
+\$5000(1.01)^6 &= \$5307.60 && \text{khi ghép lãi nửa năm một lần} \\
+\$5000(1.005)^{12} &= \$5308.39 && \text{khi ghép lãi theo quý} \\
+\$5000\left(1 + \frac{0.02}{12}\right)^{36} &= \$5308.92 && \text{khi ghép lãi hàng tháng} \\
+\$5000\left(1 + \frac{0.02}{365}\right)^{365 \cdot 3} &= \$5309.17 && \text{khi ghép lãi hàng ngày}
+\end{align*}
+
+Bạn có thể thấy rằng số tiền lãi nhận được tăng lên khi số kỳ ghép lãi ($n$) tăng. Nếu chúng ta cho $n \to \infty$, khi đó chúng ta sẽ ghép lãi \textbf{liên tục} và giá trị của khoản đầu tư sẽ là
+\begin{align*}
+A(t) &= \lim_{n \to \infty} A_0 \left(1 + \frac{r}{n}\right)^{nt} \\[6pt]
+&= \lim_{n \to \infty} A_0 \left[\left(1 + \frac{r}{n}\right)^{n/r}\right]^{rt} \\[8pt]
+&= A_0 \left[\lim_{n \to \infty} \left(1 + \frac{r}{n}\right)^{n/r}\right]^{rt} \\[8pt]
+&= A_0 \left[\lim_{m \to \infty} \left(1 + \frac{1}{m}\right)^m\right]^{rt} \qquad {\color{stewartcyan}\text{(với $m = n/r$)}}
+\end{align*}
+
+\noindent
+\makebox[0pt][r]{%
+  \smash{\parbox[t]{44mm}{%
+    \raggedright
+    {\small\textsf{\textbf{\color{stewartcyan}Phương trình 3.6.6:}}}\\[4pt]
+    \centering
+    {\color{stewartcyan}$\displaystyle e = \lim_{n \to \infty} \left(1 + \frac{1}{n}\right)^{\!n}$}
+  }}\hspace{8mm}%
+}\hspace{\parindent}Nhưng giới hạn trong biểu thức này chính bằng số $e$ (xem Phương trình 3.6.6). Do đó, với việc ghép lãi liên tục ở lãi suất $r$, số tiền sau $t$ năm là
+\[
+A(t) = A_0 e^{rt}
+\]
+
+Nếu lấy đạo hàm phương trình này, ta được
+\[
+\frac{dA}{dt} = rA_0 e^{rt} = rA(t)
+\]
+\noindent
+điều này nói lên rằng, với việc ghép lãi liên tục, tốc độ tăng của khoản đầu tư tỉ lệ thuận với giá trị của nó.
+
+Trở lại ví dụ về khoản đầu tư $\$5000$ trong 3 năm với lãi suất $2\%$, ta thấy rằng khi ghép lãi liên tục, giá trị của khoản đầu tư sẽ là
+\[
+A(3) = \$5000e^{(0.02)3} = \$5309.18
+\]
+
+Hãy chú ý xem giá trị này gần đến mức nào so với số tiền chúng ta đã tính khi ghép lãi hàng ngày, $\$5309.17$. Nhưng giá trị này dễ tính toán hơn nhiều nếu chúng ta sử dụng việc ghép lãi liên tục.\hfill{\color{stewartcyan}\rule{1.15ex}{1.15ex}}
+
+\end{document}
