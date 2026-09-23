@@ -1,0 +1,143 @@
+\documentclass[10pt]{article}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{newtxtext,newtxmath}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{tcolorbox}
+\usepackage[a4paper, left=1.5cm, right=1.5cm, top=2.0cm, bottom=2.0cm, footskip=1.0cm]{geometry}
+\usepackage{fancyhdr}
+
+% Định nghĩa bảng màu đặc trưng của sách James Stewart Calculus
+\definecolor{stewartcyan}{RGB}{0, 130, 185}
+\definecolor{stewartred}{RGB}{204, 34, 41}
+
+% Thiết lập tiêu đề đầu trang và chân trang
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\small\textsf{\textbf{MỤC 4.1}}\hspace{1.5em}\textsf{Giá trị lớn nhất và giá trị nhỏ nhất}\hspace{2.5em}\textbf{\textsf{281}}}
+\fancyhead[L]{}
+\renewcommand{\headrulewidth}{0pt}
+
+\fancyfoot[C]{%
+  \fontsize{6.5pt}{8pt}\selectfont\color{gray!80}%
+  \textcopyright\,2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\\[1pt]%
+  \textcopyright\,2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s).\\[1pt]%
+  Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.%
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.26\textwidth}
+  \vspace{0pt}
+  % HÌNH 4 (ngang hàng Ví dụ 1)
+  \noindent
+  \includegraphics[width=\linewidth]{images/p0316_fig1.png}\\[3pt]
+  \textbf{\textsf{\footnotesize HÌNH 4}}
+
+  \vspace{27mm}
+
+  % HÌNH 6 (ngang hàng Ví dụ 3)
+  \noindent
+  \includegraphics[width=\linewidth]{images/p0316_fig3.png}\\[3pt]
+  \textbf{\textsf{\footnotesize HÌNH 6}}\hspace{0.4em}{\footnotesize Giá trị nhỏ nhất là 0, không có giá trị lớn nhất}
+
+  \vspace{7mm}
+
+  % HÌNH 7 (ngang hàng Ví dụ 4)
+  \noindent
+  \includegraphics[width=\linewidth]{images/p0316_fig4.png}\\[3pt]
+  \textbf{\textsf{\footnotesize HÌNH 7}}\hspace{0.4em}{\footnotesize Không có giá trị nhỏ nhất, không có giá trị lớn nhất}
+
+  \vspace{24mm}
+
+  % CHÚ THÍCH HÌNH 8 (ngang hàng đồ thị Hình 8)
+  \noindent
+  \textbf{\textsf{\footnotesize HÌNH 8}}\\[2pt]
+  {\footnotesize Các hàm số liên tục trên một đoạn đóng luôn đạt các giá trị cực trị.}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.70\textwidth}
+  \vspace{0pt}
+  % VÍ DỤ 1
+  \noindent
+  \textbf{\textsf{\color{stewartcyan}VÍ DỤ 1}}\hspace{0.8em}Đồ thị của hàm số
+  \begin{equation*}
+  \setlength{\abovedisplayskip}{3pt}
+  \setlength{\belowdisplayskip}{4pt}
+  f(x) = 3x^4 - 16x^3 + 18x^2 \qquad -1 \leqslant x \leqslant 4
+  \end{equation*}
+  được biểu diễn trong Hình 4. Bạn có thể thấy rằng $f(1) = 5$ là một cực đại địa phương, trong khi giá trị lớn nhất là $f(-1) = 37$. (Giá trị lớn nhất này không phải là một cực đại địa phương vì nó xảy ra tại một điểm đầu mút.) Ngoài ra, $f(0) = 0$ là một cực tiểu địa phương và $f(3) = -27$ vừa là cực tiểu địa phương vừa là giá trị nhỏ nhất. Chú ý rằng $f$ không có cực đại địa phương cũng như không đạt giá trị lớn nhất tại $x = 4$.\hfill{\color{stewartcyan}$\blacksquare$}
+
+  \vspace{3.5mm}
+
+  % VÍ DỤ 2
+  \noindent
+  \textbf{\textsf{\color{stewartcyan}VÍ DỤ 2}}\hspace{0.8em}Hàm số $f(x) = \cos x$ đạt giá trị lớn nhất (đồng thời là cực đại địa phương) bằng 1 vô số lần, vì $\cos 2n\pi = 1$ với mọi số nguyên $n$ và $-1 \leqslant \cos x \leqslant 1$ với mọi $x$. (Xem Hình 5.) Tương tự, $\cos(2n + 1)\pi = -1$ là giá trị nhỏ nhất của nó, với $n$ là một số nguyên bất kỳ.
+
+  \vspace{1.5mm}
+  \noindent
+  \begin{minipage}[c]{0.68\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{images/p0316_fig2.png}
+  \end{minipage}%
+  \hfill
+  \begin{minipage}[c]{0.24\linewidth}
+    \textbf{\textsf{\footnotesize HÌNH 5}}\\[2pt]
+    {\footnotesize $y = \cos x$}
+  \end{minipage}%
+  \hfill
+  \raisebox{-8pt}{\color{stewartcyan}$\blacksquare$}
+
+  \vspace{3.5mm}
+
+  % VÍ DỤ 3
+  \noindent
+  \textbf{\textsf{\color{stewartcyan}VÍ DỤ 3}}\hspace{0.8em}Nếu $f(x) = x^2$, thì $f(x) \geqslant f(0)$ vì $x^2 \geqslant 0$ với mọi $x$. Do đó $f(0) = 0$ là giá trị nhỏ nhất (và là cực tiểu địa phương) của $f$. Điều này tương ứng với việc gốc tọa độ là điểm thấp nhất trên parabol $y = x^2$. (Xem Hình 6.) Tuy nhiên, không có điểm nào cao nhất trên parabol và vì thế hàm số này không có giá trị lớn nhất.\hfill{\color{stewartcyan}$\blacksquare$}
+
+  \vspace{3.5mm}
+
+  % VÍ DỤ 4
+  \noindent
+  \textbf{\textsf{\color{stewartcyan}VÍ DỤ 4}}\hspace{0.8em}Từ đồ thị của hàm số $f(x) = x^3$, được thể hiện trong Hình 7, ta thấy rằng hàm số này không có giá trị lớn nhất cũng như không có giá trị nhỏ nhất. Trên thực tế, nó cũng không có bất kỳ giá trị cực trị địa phương nào.\hfill{\color{stewartcyan}$\blacksquare$}
+
+  \vspace{3.5mm}
+
+  \noindent
+  Chúng ta đã thấy rằng một số hàm số có các giá trị cực trị, trong khi những hàm khác thì không. Định lý sau đây đưa ra các điều kiện đảm bảo một hàm số chắc chắn đạt các giá trị cực trị.
+
+  \vspace{2.5mm}
+
+  % ĐỊNH LÝ 3
+  \begin{tcolorbox}[
+      colback=white,
+      colframe=stewartred,
+      arc=0mm,
+      boxrule=0.75pt,
+      left=6pt,
+      right=6pt,
+      top=5pt,
+      bottom=5.5pt
+  ]
+  \noindent
+  \tikz[baseline=(c.base)]{\node[draw=stewartred, line width=0.8pt, inner sep=2pt, font=\bfseries\small, text=stewartred] (c) {3};}\hspace{0.5em}%
+  \textbf{\textsf{\color{stewartred}Định lý giá trị cực trị}}\hspace{0.8em}%
+  Nếu $f$ liên tục trên một đoạn đóng $[a, b]$, thì $f$ đạt giá trị lớn nhất $f(c)$ và giá trị nhỏ nhất $f(d)$ tại các số $c$ và $d$ nào đó trong $[a, b]$.
+  \end{tcolorbox}
+
+  \vspace{2mm}
+
+  \noindent
+  Định lý giá trị cực trị được minh họa trong Hình 8. Lưu ý rằng một giá trị cực trị có thể đạt được nhiều hơn một lần. Mặc dù Định lý giá trị cực trị rất trực quan và có vẻ hiển nhiên, nhưng việc chứng minh nó khá khó khăn nên chúng ta sẽ bỏ qua phần chứng minh ở đây.
+
+  \vspace{2.5mm}
+  \noindent
+  \includegraphics[width=\linewidth]{images/p0316_fig5.png}
+\end{minipage}
+
+\end{document}
