@@ -281,6 +281,12 @@
       "score": 99,
       "notes": "Trang bị lỗi nghiêm trọng do rò rỉ mã nguồn gói lệnh (preamble) in thẳng lên đầu trang nội dung. Hình 9 bị đặt quá cao so với Hình 10; Hình 11 bị lệch hàng so với Bước F; công thức đạo hàm cấp hai ở Mục G bị sai dấu (+ 2x(-2x) thay vì - (-2x)(-2x)).",
       "time": "2026-09-23 11:51:04"
+    },
+    {
+      "page_num": 361,
+      "score": 99,
+      "notes": "Bản dịch hiện tại là đoạn văn xuôi tóm tắt từ chối biên dịch, thiếu hoàn toàn mã nguồn LaTeX và cấu trúc trang gốc. Cần phục dựng toàn bộ trang theo layout 2 cột bất đối xứng, đặt Hình 12 ở cột lề trái và dịch toàn bộ nội dung Ví dụ 6 sang tiếng Việt chuẩn sư phạm giải tích.",
+      "time": "2026-09-23 11:52:41"
     }
   ]
 }

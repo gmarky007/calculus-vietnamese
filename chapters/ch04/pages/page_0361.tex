@@ -1,0 +1,96 @@
+\documentclass[10pt]{article}
+\usepackage[paperwidth=612pt, paperheight=792pt, left=36pt, right=36pt, top=36pt, bottom=36pt]{geometry}
+\usepackage{fontspec}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{paracol}
+
+\definecolor{stewartblue}{RGB}{0, 115, 170}
+\setlength{\parindent}{0pt}
+\pagestyle{empty}
+
+\begin{document}
+
+% Header
+\noindent
+{\small\textbf{326}\qquad\textbf{CHƯƠNG 4}\quad Các ứng dụng của đạo hàm}
+\vspace{1.5em}
+
+\setcolumnwidth{130pt, 390pt}
+\setlength{\columnsep}{20pt}
+\begin{paracol}{2}
+
+% Cột lề trái
+\vspace*{6pt}
+\noindent
+\includegraphics[width=\linewidth]{images/p0361_fig1.png}
+
+\vspace{4pt}
+\centerline{\small\textbf{HÌNH 12}}
+
+\switchcolumn
+
+% Cột nội dung chính
+\noindent
+{\color{stewartblue}\rule{1.1ex}{1.1ex}}\hspace{0.5em}\textbf{\large Tiệm cận xiên}\par\vspace{4pt}
+Một số đường cong có các đường tiệm cận \textit{xiên}, tức là không nằm ngang cũng không thẳng đứng. Nếu
+\begin{equation*}
+\lim_{x \to \infty} [f(x) - (mx + b)] = 0
+\end{equation*}
+trong đó $m \neq 0$, thì đường thẳng $y = mx + b$ được gọi là một \textbf{tiệm cận xiên} vì khoảng cách theo phương thẳng đứng giữa đường cong $y = f(x)$ và đường thẳng $y = mx + b$ tiến dần về 0, như trong Hình 12. (Một tình huống tương tự cũng xảy ra nếu ta xét $x \to -\infty$.) Trong trường hợp các hàm phân thức hữu tỉ, tiệm cận xiên xuất hiện khi bậc của tử thức lớn hơn bậc của mẫu thức đúng một bậc. Trong trường hợp đó, phương trình của đường tiệm cận xiên có thể tìm được bằng phép chia đa thức như trong ví dụ sau đây.
+
+\vspace{10pt}
+\noindent
+{\color{stewartblue}\textbf{VÍ DỤ 6}}\quad Phác thảo đồ thị của hàm số $f(x) = \dfrac{x^3}{x^2 + 1}$.
+
+\vspace{8pt}
+\noindent
+\textbf{A. Tập xác định}\quad Tập xác định là $\mathbb{R}$.
+
+\vspace{5pt}
+\noindent
+\textbf{B. Giao điểm với các trục tọa độ}\quad Các giao điểm với trục $x$ và trục $y$ đều bằng 0.
+
+\vspace{5pt}
+\noindent
+\textbf{C. Tính đối xứng}\quad Vì $f(-x) = -f(x)$, nên $f$ là hàm lẻ và đồ thị của nó đối xứng qua gốc tọa độ.
+
+\vspace{5pt}
+\noindent
+\textbf{D. Tiệm cận}\quad Vì $x^2 + 1$ không bao giờ bằng 0, nên không có tiệm cận đứng. Vì $f(x) \to \infty$ khi $x \to \infty$ và $f(x) \to -\infty$ khi $x \to -\infty$, nên không có tiệm cận ngang. Nhưng phép chia đa thức cho ta
+\begin{equation*}
+f(x) = \frac{x^3}{x^2 + 1} = x - \frac{x}{x^2 + 1}
+\end{equation*}
+Phương trình này gợi ý rằng $y = x$ là một ứng viên cho đường tiệm cận xiên. Thật vậy,
+\begin{equation*}
+f(x) - x = -\frac{x}{x^2 + 1} = -\frac{\dfrac{1}{x}}{1 + \dfrac{1}{x^2}} \to 0 \quad \text{khi} \quad x \to \pm\infty
+\end{equation*}
+Do đó đường thẳng $y = x$ thực sự là một tiệm cận xiên.
+
+\vspace{5pt}
+\noindent
+\textbf{E. Các khoảng tăng hoặc giảm}
+\begin{equation*}
+f'(x) = \frac{(x^2 + 1)(3x^2) - x^3 \cdot 2x}{(x^2 + 1)^2} = \frac{x^2(x^2 + 3)}{(x^2 + 1)^2}
+\end{equation*}
+Vì $f'(x) > 0$ với mọi $x$ (ngoại trừ 0), nên $f$ đồng biến trên $(-\infty, \infty)$.
+
+\vspace{5pt}
+\noindent
+\textbf{F. Giá trị cực đại hoặc cực tiểu địa phương}\quad Mặc dù $f'(0) = 0$, nhưng $f'$ không đổi dấu tại 0, do đó không có cực đại hay cực tiểu địa phương nào.
+
+\vspace{5pt}
+\noindent
+\textbf{G. Tính lồi, lõm và các điểm uốn}
+\begin{equation*}
+f''(x) = \frac{(x^2 + 1)^2(4x^3 + 6x) - (x^4 + 3x^2) \cdot 2(x^2 + 1)2x}{(x^2 + 1)^4} = \frac{2x(3 - x^2)}{(x^2 + 1)^3}
+\end{equation*}
+
+\end{paracol}
+
+\vfill
+\noindent
+{\tiny\color{gray}Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203}
+
+\end{document}
