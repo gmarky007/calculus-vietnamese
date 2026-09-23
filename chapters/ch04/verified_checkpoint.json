@@ -29,6 +29,12 @@
       "score": 99,
       "notes": "Bản dịch trước đó bị lỗi escape ký tự backslash trong JSON khiến toàn bộ lệnh LaTeX bị mất và in ra dạng văn bản thô trên trang. Cần khôi phục toàn bộ mã nguồn LaTeX với đầy đủ cấu trúc 2 cột, dóng hàng chính xác Hình 12 và Hình 13 đối xứng với Ví dụ 5 và Ví dụ 6.",
       "time": "2026-09-23 09:51:23"
+    },
+    {
+      "page_num": 319,
+      "score": 99,
+      "notes": "Bản dịch bị lỗi hiển thị văn bản rác của preamble ở đầu trang, cột lề trái bị đẩy xuống quá thấp (ghi chú Hình 14 phải dóng ngang hàng với LỜI GIẢI Ví dụ 7 ở y≈147pt), và LỜI GIẢI bị ngắt dòng thay vì đi liền với (a) như bản gốc.",
+      "time": "2026-09-23 09:53:25"
     }
   ]
 }
