@@ -431,6 +431,12 @@
       "score": 99,
       "notes": "Lỗi nghiêm trọng: Mã nguồn hiện tại bị in thô chuỗi khai báo preamble ra đầu trang; thanh tiêu đề và chú thích lề Phương trình 3.6.6 bị lệch vị trí đáng kể (thấp hơn khoảng 4cm so với bản gốc); thụt đầu dòng và khoảng cách đoạn chưa chuẩn phong cách giáo trình Stewart.",
       "time": "2026-09-23 08:27:45"
+    },
+    {
+      "page_num": 280,
+      "score": 99,
+      "notes": "Bản dịch bị lỗi rò rỉ mã tiền sảnh (preamble) ra trang in và thanh tiêu đề mục cần tinh chỉnh lại độ dày viền cùng khoảng cách để khớp chính xác với bản gốc.",
+      "time": "2026-09-23 08:29:10"
     }
   ]
 }

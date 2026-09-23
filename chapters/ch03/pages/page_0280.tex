@@ -1,0 +1,157 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{vietnam}
+\usepackage[letterpaper, top=20mm, bottom=22mm, left=18mm, right=18mm, headheight=14pt]{geometry}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{tikz}
+\usepackage{newtxtext, newtxmath}
+
+\definecolor{stewartcyan}{RGB}{0, 136, 170}
+\definecolor{tableheadcolor}{RGB}{218, 232, 242}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[R]{\small\textsf{\textbf{MỤC 3.8}\quad Tăng trưởng và suy giảm theo hàm mũ}\qquad\textbf{\textsf{245}}}
+\fancyfoot[C]{\fontsize{7.5pt}{9pt}\selectfont\color{gray} Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part.}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\begin{document}
+
+\noindent
+\begin{tikzpicture}[baseline=(title.base)]
+    \node[inner sep=0pt, outer sep=0pt] (title) at (0,0) {
+        \hspace{1.5cm}\textbf{\textsf{\color{stewartcyan}\Large 3.8}}\quad\textbf{\textsf{\Large Bài tập}}
+    };
+    \draw[stewartcyan, line width=1.2pt] (-0.2, 0.18) -- (1.2, 0.18);
+    \draw[stewartcyan, line width=0.6pt] (-0.2, 0.06) -- (1.2, 0.06);
+    \draw[stewartcyan, line width=1.2pt] ([xshift=0.35cm, yshift=0.18cm]title.east) -- (\linewidth, 0.18);
+    \draw[stewartcyan, line width=0.6pt] ([xshift=0.35cm, yshift=0.06cm]title.east) -- (\linewidth, 0.06);
+\end{tikzpicture}
+
+\vspace{10pt}
+
+\noindent
+\begin{minipage}[t]{0.485\textwidth}
+\raggedright
+
+\textbf{1.} Một quần thể tế bào nấm men \textit{Saccharomyces cerevisiae} (một loại nấm men dùng trong lên men) phát triển với tốc độ tăng trưởng tương đối không đổi là $0{,}4159$ mỗi giờ. Quần thể ban đầu gồm $3{,}8$ triệu tế bào. Hãy tìm kích thước quần thể sau 2 giờ.
+
+\vspace{8pt}
+\textbf{2.} Một cư dân phổ biến trong ruột người là vi khuẩn \textit{Escherichia coli}, được đặt theo tên của bác sĩ nhi khoa người Đức Theodor Escherich, người đã phát hiện ra nó vào năm 1885. Một tế bào vi khuẩn này trong môi trường canh dinh dưỡng phân chia thành hai tế bào sau mỗi 20 phút. Quần thể ban đầu của mẻ cấy là 50 tế bào.
+\begin{enumerate}[label=(\alph*), leftmargin=16pt, itemsep=2pt, topsep=3pt]
+    \item Tìm tốc độ tăng trưởng tương đối.
+    \item Tìm biểu thức biểu diễn số lượng tế bào sau $t$ giờ.
+    \item Tìm số lượng tế bào sau 6 giờ.
+    \item Tìm tốc độ tăng trưởng sau 6 giờ.
+    \item Khi nào quần thể sẽ đạt tới một triệu tế bào?
+\end{enumerate}
+
+\vspace{8pt}
+\textbf{3.} Một mẻ cấy vi khuẩn \textit{Salmonella enteritidis} ban đầu chứa 50 tế bào. Khi được đưa vào môi trường canh dinh dưỡng, mẻ cấy phát triển với tốc độ tỉ lệ thuận với kích thước của nó. Sau $1{,}5$ giờ, quần thể đã tăng lên đến 975 tế bào.
+\begin{enumerate}[label=(\alph*), leftmargin=16pt, itemsep=2pt, topsep=3pt]
+    \item Tìm biểu thức biểu diễn số lượng vi khuẩn sau $t$ giờ.
+    \item Tìm số lượng vi khuẩn sau 3 giờ.
+    \item Tìm tốc độ tăng trưởng sau 3 giờ.
+    \item Sau bao nhiêu giờ thì quần thể sẽ đạt 250.000 tế bào?
+\end{enumerate}
+
+\vspace{8pt}
+\textbf{4.} Một mẻ cấy vi khuẩn phát triển với tốc độ tăng trưởng tương đối không đổi. Số lượng vi khuẩn đếm được là 400 sau 2 giờ và 25.600 sau 6 giờ.
+\begin{enumerate}[label=(\alph*), leftmargin=16pt, itemsep=2pt, topsep=3pt]
+    \item Tốc độ tăng trưởng tương đối là bao nhiêu? Biểu diễn câu trả lời dưới dạng phần trăm.
+    \item Kích thước ban đầu của mẻ cấy là bao nhiêu?
+    \item Tìm biểu thức biểu diễn số lượng vi khuẩn sau $t$ giờ.
+    \item Tìm số lượng vi khuẩn sau $4{,}5$ giờ.
+    \item Tìm tốc độ tăng trưởng sau $4{,}5$ giờ.
+    \item Khi nào quần thể sẽ đạt 50.000 tế bào?
+\end{enumerate}
+
+\vspace{8pt}
+\textbf{5.} Bảng dưới đây cung cấp các ước tính về dân số thế giới, tính theo triệu người, từ năm 1750 đến năm 2000.
+
+\vspace{4pt}
+\begin{center}
+\small
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{|c|c||c|c|}
+\hline
+\rowcolor{tableheadcolor}
+\textsf{Năm} & \textsf{\begin{tabular}[c]{@{}c@{}}Dân số\\ (triệu)\end{tabular}} & \textsf{Năm} & \textsf{\begin{tabular}[c]{@{}c@{}}Dân số\\ (triệu)\end{tabular}} \\
+\hline
+1750 & \phantom{0}790 & 1900 & 1650 \\
+1800 & \phantom{0}980 & 1950 & 2560 \\
+1850 & 1260           & 2000 & 6080 \\
+\hline
+\end{tabular}
+\end{center}
+\vspace{4pt}
+
+\begin{enumerate}[label=(\alph*), leftmargin=16pt, itemsep=2pt, topsep=0pt]
+    \item Sử dụng mô hình hàm mũ và số liệu dân số các năm 1750 và 1800 để dự đoán dân số thế giới vào năm 1900 và 1950. So sánh với các số liệu thực tế.
+\end{enumerate}
+
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.485\textwidth}
+\raggedright
+
+\begin{enumerate}[label=(\alph*), leftmargin=16pt, itemsep=3.5pt, topsep=0pt]
+    \setcounter{enumi}{1}
+    \item Sử dụng mô hình hàm mũ và số liệu dân số các năm 1850 và 1900 để dự đoán dân số thế giới vào năm 1950. So sánh với dân số thực tế.
+    \item Sử dụng mô hình hàm mũ và số liệu dân số các năm 1900 và 1950 để dự đoán dân số thế giới vào năm 2000. So sánh với dân số thực tế và cố gắng giải thích sự chênh lệch đó.
+\end{enumerate}
+
+\vspace{8pt}
+\textbf{6.} Bảng dưới đây cho biết dữ liệu điều tra dân số của Indonesia, tính theo triệu người, trong nửa sau của thế kỷ 20.
+
+\vspace{4pt}
+\begin{center}
+\small
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{|c|c|}
+\hline
+\rowcolor{tableheadcolor}
+\textsf{Năm} & \textsf{\begin{tabular}[c]{@{}c@{}}Dân số\\ (triệu)\end{tabular}} \\
+\hline
+1950 & \phantom{0}83 \\
+1960 & 100 \\
+1970 & 122 \\
+1980 & 150 \\
+1990 & 182 \\
+2000 & 214 \\
+\hline
+\end{tabular}
+\end{center}
+\vspace{4pt}
+
+\begin{enumerate}[label=(\alph*), leftmargin=16pt, itemsep=3pt, topsep=2pt]
+    \item Giả sử dân số tăng với tốc độ tỉ lệ thuận với quy mô của nó, hãy sử dụng dữ liệu điều tra dân số năm 1950 và 1960 để dự đoán dân số vào năm 1980. So sánh với số liệu thực tế.
+    \item Sử dụng dữ liệu điều tra dân số năm 1960 và 1980 để dự đoán dân số vào năm 2000. So sánh với dân số thực tế.
+    \item Sử dụng dữ liệu điều tra dân số năm 1980 và 2000 để dự đoán dân số vào năm 2010 và so sánh với dân số thực tế là 243 triệu người.
+    \item Sử dụng mô hình ở phần (c) để dự đoán dân số vào năm 2025. Bạn nghĩ dự đoán này sẽ quá cao hay quá thấp? Tại sao?
+\end{enumerate}
+
+\vspace{8pt}
+\textbf{7.} Các thí nghiệm chỉ ra rằng nếu phản ứng hóa học
+\[
+    \mathrm{N}_2\mathrm{O}_5 \to 2\mathrm{NO}_2 + \tfrac{1}{2}\mathrm{O}_2
+\]
+diễn ra ở $45^\circ\text{C}$, thì tốc độ phản ứng của đinitơ pentaoxit tỉ lệ thuận với nồng độ của nó như sau:
+\[
+    -\frac{d[\mathrm{N}_2\mathrm{O}_5]}{dt} = 0{,}0005[\mathrm{N}_2\mathrm{O}_5]
+\]
+\begin{enumerate}[label=(\alph*), leftmargin=16pt, itemsep=3pt, topsep=2pt]
+    \item Tìm biểu thức biểu diễn nồng độ $[\mathrm{N}_2\mathrm{O}_5]$ sau $t$ giây nếu nồng độ ban đầu là $C$.
+    \item Phản ứng sẽ mất bao lâu để làm giảm nồng độ của $\mathrm{N}_2\mathrm{O}_5$ xuống còn $90\%$ giá trị ban đầu của nó?
+\end{enumerate}
+
+\end{minipage}
+
+\end{document}
