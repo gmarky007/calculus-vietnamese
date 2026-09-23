@@ -335,6 +335,12 @@
       "score": 99,
       "notes": "Trang dịch bị lỗi nghiêm trọng khi in lộ mã nguồn preamble lên đầu trang ([10pt]article [utf8]inputenc...); thanh tiêu đề mục 4.6 Bài tập bị lệch và hở khoảng cách; cột bài tập bên phải thừa một đường kẻ ngang không có trong bản gốc; thiếu đường kẻ chỉ màu cyan phân cách phần bài tập và chân trang copyright.",
       "time": "2026-09-23 12:13:27"
+    },
+    {
+      "page_num": 370,
+      "score": 99,
+      "notes": "Mã nguồn hiện tại từ chối dịch và không cung cấp nội dung giáo trình. Cần biên dịch lại toàn bộ trang 370 sang XeLaTeX với bố cục hai cột bất đối xứng, biểu tượng công nghệ [T] chuẩn Stewart, thuật ngữ giải tích sư phạm và dóng hàng chính xác 1:1 theo bản gốc.",
+      "time": "2026-09-23 12:16:35"
     }
   ]
 }

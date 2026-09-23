@@ -1,0 +1,151 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[top=14mm, bottom=14mm, left=18mm, right=14mm]{geometry}
+\usepackage{fontspec}
+\usepackage{amsmath,amssymb}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{enumitem}
+
+\pagestyle{empty}
+
+\definecolor{stewartblue}{RGB}{0, 128, 150}
+
+\newcommand{\casicon}{%
+  \tikz[baseline=-0.6ex]{%
+    \node[draw=stewartblue, rounded corners=0.5pt, line width=0.6pt, inner sep=0.8pt, text=stewartblue, font=\sffamily\bfseries\fontsize{6.5pt}{7pt}\selectfont, minimum size=8.5pt] {T};%
+  }%
+}
+
+\newcommand{\exercisedivider}{\par\vspace{4pt}{\color{stewartblue!60}\hrule height 0.45pt}\vspace{4pt}}
+
+\newlist{exsubparts}{enumerate}{1}
+\setlist[exsubparts]{label=\textbf{(\alph*)}, leftmargin=1.8em, itemsep=1.5pt, parsep=0pt, topsep=1.5pt}
+
+\begin{document}
+\fontsize{8.7pt}{11pt}\selectfont
+
+%% Running header
+\noindent
+\begin{minipage}[b]{0.485\textwidth}
+  ~ \vspace{0.1pt}
+\end{minipage}\hfill
+\begin{minipage}[b]{0.485\textwidth}
+  \raggedleft\small\textsf{\textbf{MỤC 4.6}\hspace{1.5em}Khảo sát đồ thị bằng Giải tích \textit{và} Công nghệ\hspace{2.5em}\textbf{335}}
+\end{minipage}
+\vspace{1.2em}
+
+\noindent
+%% CỘT TRÁI
+\begin{minipage}[t]{0.485\textwidth}
+  \noindent\textbf{\color{stewartblue}11--12}
+  \begin{exsubparts}
+    \item Vẽ đồ thị hàm số.
+    \item Sử dụng quy tắc l'Hospital để giải thích dáng điệu của đồ thị khi $x \to 0$.
+    \item Ước lượng giá trị cực tiểu và các khoảng lồi/lõm. Sau đó dùng phép tính vi tích phân để tìm các giá trị chính xác.
+  \end{exsubparts}
+  \vspace{2pt}
+  \noindent\textbf{11.}\;\; $f(x) = x^2 \ln x$ \hfill \textbf{12.}\;\; $f(x) = x e^{1/x}$
+
+  \exercisedivider
+
+  \noindent\textbf{\color{stewartblue}13--14}\quad Phác họa đồ thị bằng tay bằng cách sử dụng các đường tiệm cận và các giao điểm với trục tọa độ, nhưng không dùng đạo hàm. Sau đó dùng hình phác họa của bạn làm hướng dẫn để vẽ đồ thị bằng máy tính cầm tay hoặc máy tính nhằm thể hiện các đặc trưng chính của đường cong. Sử dụng các đồ thị này để ước lượng các giá trị cực đại và cực tiểu.
+  \vspace{4pt}
+
+  \noindent\textbf{13.}\;\; $f(x) = \dfrac{(x + 4)(x - 3)^2}{x^4(x - 1)}$ \hfill \textbf{14.}\;\; $f(x) = \dfrac{(2x + 3)^2(x - 2)^5}{x^3(x - 5)^2}$
+
+  \exercisedivider
+
+  \noindent\makebox[0pt][r]{\casicon\hspace{3pt}}\textbf{15.}\quad Đối với hàm số $f$ trong Ví dụ 3, hãy sử dụng hệ thống đại số máy tính để tính $f'$ và sau đó vẽ đồ thị của nó nhằm xác nhận rằng tất cả các giá trị cực đại và cực tiểu đều đúng như đã cho trong ví dụ. Tính $f''$ và sử dụng nó để ước lượng các khoảng lồi/lõm cùng các điểm uốn.
+  \vspace{3pt}
+
+  \noindent\makebox[0pt][r]{\casicon\hspace{3pt}}\textbf{16.}\quad Đối với hàm số $f$ trong Bài tập 14, hãy sử dụng hệ thống đại số máy tính để tìm $f'$ và $f''$ rồi dùng đồ thị của chúng để ước lượng các khoảng tăng, giảm và tính lồi/lõm của $f$.
+  \vspace{3pt}
+
+  \noindent\makebox[0pt][r]{\casicon\hspace{3pt}}\textbf{\color{stewartblue}17--22}\quad Sử dụng hệ thống đại số máy tính để vẽ đồ thị $f$ và tìm $f'$, $f''$. Sử dụng đồ thị của các đạo hàm này để ước lượng các khoảng đồng biến và nghịch biến, các giá trị cực trị, các khoảng lồi/lõm và các điểm uốn của $f$.
+  \vspace{3pt}
+
+  \noindent\textbf{17.}\;\; $f(x) = \dfrac{x^3 + 5x^2 + 1}{x^4 + x^3 - x^2 + 2}$
+  \vspace{2.5pt}
+
+  \noindent\textbf{18.}\;\; $f(x) = \dfrac{x^{2/3}}{1 + x + x^4}$
+  \vspace{2.5pt}
+
+  \noindent\textbf{19.}\;\; $f(x) = \sqrt{x + 5 \sin x}, \quad x \le 20$
+  \vspace{2.5pt}
+
+  \noindent\textbf{20.}\;\; $f(x) = x - \tan^{-1}(x^2)$
+  \vspace{2.5pt}
+
+  \noindent\textbf{21.}\;\; $f(x) = \dfrac{1 - e^{1/x}}{1 + e^{1/x}}$
+  \vspace{2.5pt}
+
+  \noindent\textbf{22.}\;\; $f(x) = \dfrac{3}{3 + 2 \sin x}$
+
+  \exercisedivider
+
+  \noindent\textbf{\color{stewartblue}23--24}\quad Vẽ đồ thị hàm số bằng cách sử dụng nhiều khung nhìn hiển thị cần thiết để mô tả đúng bản chất thực của hàm số.
+  \vspace{3pt}
+
+  \noindent\textbf{23.}\;\; $f(x) = \dfrac{1 - \cos(x^4)}{x^8}$ \hfill \textbf{24.}\;\; $f(x) = e^x + \ln|x - 4|$
+
+  \exercisedivider
+
+  \noindent\textbf{\color{stewartblue}25--26}
+  \begin{exsubparts}
+    \item Vẽ đồ thị hàm số.
+    \item Giải thích hình dạng của đồ thị bằng cách tính giới hạn khi $x \to 0^+$ hoặc khi $x \to \infty$.
+  \end{exsubparts}
+\end{minipage}\hfill
+%% CỘT PHẢI
+\begin{minipage}[t]{0.485\textwidth}
+  \begin{exsubparts}[start=3]
+    \item Ước lượng các giá trị cực đại và cực tiểu rồi sử dụng phép tính vi tích phân để tìm các giá trị chính xác.
+    \item[\llap{\casicon\hspace{3pt}}\textbf{(d)}] Sử dụng hệ thống đại số máy tính để tính $f''$. Sau đó dùng đồ thị của $f''$ để ước lượng hoành độ $x$ của các điểm uốn.
+  \end{exsubparts}
+  \vspace{2pt}
+  \noindent\textbf{25.}\;\; $f(x) = x^{1/x}$ \hfill \textbf{26.}\;\; $f(x) = (\sin x)^{\sin x}$
+
+  \exercisedivider
+
+  \noindent\textbf{27.}\quad Trong Ví dụ 4, chúng ta đã xét một hàm số thuộc họ hàm $f(x) = \sin(x + \sin cx)$ xuất hiện trong tổng hợp điều chế tần số (FM synthesis). Ở đây ta khảo sát hàm số với $c = 3$. Bắt đầu bằng cách vẽ đồ thị $f$ trong khung nhìn $[0, \pi] \times [-1.2, 1.2]$. Bạn quan sát thấy bao nhiêu điểm cực đại địa phương? Đồ thị có nhiều điểm hơn mức mắt thường nhìn thấy. Để phát hiện các điểm cực đại và cực tiểu bị ẩn, bạn cần khảo sát đồ thị của $f'$ một cách rất cẩn thận. Trên thực tế, việc quan sát đồng thời đồ thị của $f''$ sẽ rất hữu ích. Hãy tìm tất cả các giá trị cực đại, cực tiểu và các điểm uốn. Sau đó vẽ đồ thị $f$ trong khung nhìn $[-2\pi, 2\pi] \times [-1.2, 1.2]$ và nhận xét về tính đối xứng.
+  \vspace{4pt}
+
+  \noindent\textbf{\color{stewartblue}28--35}\quad Mô tả sự thay đổi của đồ thị $f$ khi $c$ biến thiên. Hãy vẽ một vài đường cong trong họ để minh họa xu hướng mà bạn phát hiện. Đặc biệt, bạn nên khảo sát xem các điểm cực đại, cực tiểu và điểm uốn dịch chuyển như thế nào khi $c$ thay đổi. Bạn cũng nên xác định các giá trị chuyển tiếp của $c$ mà tại đó hình dạng cơ bản của đường cong bị thay đổi.
+  \vspace{3pt}
+
+  \noindent\textbf{28.}\;\; $f(x) = x^3 + cx$
+  \vspace{2.5pt}
+
+  \noindent\textbf{29.}\;\; $f(x) = x^2 + 6x + c/x$ \quad (đinh ba của Newton)
+  \vspace{2.5pt}
+
+  \noindent\textbf{30.}\;\; $f(x) = x\sqrt{c^2 - x^2}$ \hfill \textbf{31.}\;\; $f(x) = e^x + c e^{-x}$
+  \vspace{2.5pt}
+
+  \noindent\textbf{32.}\;\; $f(x) = \ln(x^2 + c)$ \hfill \textbf{33.}\;\; $f(x) = \dfrac{cx}{1 + c^2 x^2}$
+  \vspace{2.5pt}
+
+  \noindent\textbf{34.}\;\; $f(x) = \dfrac{\sin x}{c + \cos x}$ \hfill \textbf{35.}\;\; $f(x) = cx + \sin x$
+
+  \exercisedivider
+
+  \noindent\textbf{36.}\quad Họ hàm số $f(t) = C(e^{-at} - e^{-bt})$, trong đó $a$, $b$ và $C$ là các số dương và $b > a$, đã được dùng để mô hình hóa nồng độ của một loại thuốc tiêm vào máu tại thời điểm $t = 0$. Hãy vẽ đồ thị một số hàm trong họ này. Chúng có đặc điểm gì chung? Với các giá trị cố định của $C$ và $a$, hãy khám phá bằng đồ thị xem điều gì xảy ra khi $b$ tăng. Sau đó sử dụng giải tích để chứng minh những điều bạn đã phát hiện.
+  \vspace{4pt}
+
+  \noindent\textbf{37.}\quad Khảo sát họ đường cong cho bởi $f(x) = x e^{-cx}$, trong đó $c$ là một số thực. Bắt đầu bằng cách tính các giới hạn khi $x \to \pm\infty$. Xác định bất kỳ giá trị chuyển tiếp nào của $c$ mà tại đó hình dạng cơ bản thay đổi. Điều gì xảy ra với các điểm cực đại hoặc cực tiểu và các điểm uốn khi $c$ thay đổi? Minh họa bằng cách vẽ đồ thị một số đường cong thuộc họ này.
+  \vspace{4pt}
+
+  \noindent\textbf{38.}\quad Hình vẽ biểu diễn đồ thị (màu xanh lam) của một vài đường cong trong họ đa thức $f(x) = cx^4 - 4x^2 + 1$.
+  \begin{exsubparts}
+    \item Với những giá trị nào của $c$ thì đường cong có các điểm cực tiểu?
+  \end{exsubparts}
+\end{minipage}
+
+\vfill
+\begin{center}
+\fontsize{5.2pt}{6.4pt}\selectfont\color{gray}
+Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\\[1pt]
+Copyright 2021 Cengage Learning. Đã đăng ký bản quyền. Không được sao chép, quét hoặc nhân bản toàn bộ hay một phần. Do quyền điện tử, một số nội dung của bên thứ ba có thể bị ẩn khỏi sách điện tử và/hoặc chương điện tử. Đánh giá biên tập cho thấy bất kỳ nội dung bị ẩn nào không ảnh hưởng nghiêm trọng đến trải nghiệm học tập tổng thể. Cengage Learning có quyền gỡ bỏ nội dung bổ sung vào bất kỳ lúc nào nếu các hạn chế về quyền sau đó yêu cầu.
+\end{center}
+
+\end{document}
