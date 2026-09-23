@@ -107,6 +107,12 @@
       "score": 99,
       "notes": "Bản dịch bị lỗi hiển thị rò rỉ mã tiền tố ở đầu trang và sai sót số mũ tại Bài 20 ($e^{-2x}$). Tiêu đề mục 4.3 bị rớt dòng chữ đơn lẻ cần được căn chỉnh lại tỉ lệ.",
       "time": "2026-09-23 10:28:40"
+    },
+    {
+      "page_num": 332,
+      "score": 99,
+      "notes": "Mã nguồn hiện tại chỉ là phản hồi từ chối của AI chứ không phải mã XeLaTeX của trang sách. Cần tái lập toàn bộ bố cục 2 cột bất đối xứng chuẩn giáo trình Stewart, chèn các hình minh họa và dịch thuật ngữ giải tích sang tiếng Việt chuẩn sư phạm.",
+      "time": "2026-09-23 10:30:50"
     }
   ]
 }

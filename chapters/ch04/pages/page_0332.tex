@@ -1,0 +1,137 @@
+\documentclass[10pt]{article}
+\usepackage[a4paper, top=1.8cm, bottom=1.5cm, left=1.8cm, right=1.5cm]{geometry}
+\usepackage{fontspec}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage[skins]{tcolorbox}
+
+\definecolor{stewartblue}{RGB}{0, 120, 170}
+\definecolor{stewartred}{RGB}{190, 30, 45}
+\definecolor{stewartdarkred}{RGB}{140, 20, 30}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[L]{\hspace*{5.2cm}\small\textbf{\textsf{MỤC 4.3}}\quad \textsf{Đạo hàm cho ta biết gì về hình dáng đồ thị}}
+\fancyhead[R]{\small\textbf{297}}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\begin{document}
+
+% Block 1: Hình 1 và phần mở đầu tiểu mục
+\noindent
+\begin{minipage}[t]{4.8cm}
+  \vspace{0pt}
+  \centering
+  \includegraphics[width=\linewidth]{images/p0332_fig1.png}
+  \par\vspace{3pt}
+  {\small\textsf{\textbf{HÌNH 1}}}
+\end{minipage}\hfill
+\begin{minipage}[t]{12.3cm}
+  \vspace{0pt}
+  \noindent \dots diễn tiến tại mỗi điểm. Vì vậy, hoàn toàn hợp lý khi kỳ vọng rằng thông tin về $f'(x)$ sẽ cung cấp cho chúng ta thông tin về $f(x)$.
+  
+  \vspace{0.8em}
+  \noindent\textcolor{stewartblue}{\rule{1.2ex}{1.2ex}}\quad \textbf{\large $f'$ Cho Chúng Ta Biết Gì Về $f$?}
+  \vspace{0.5em}
+  
+  \noindent Để thấy đạo hàm của $f$ có thể cho chúng ta biết khi nào một hàm số đồng biến hay nghịch biến, hãy xem Hình 1. (Hàm số đồng biến và hàm số nghịch biến đã được định nghĩa trong Mục 1.1.) Giữa $A$ và $B$ cũng như giữa $C$ và $D$, các tiếp tuyến có hệ số góc dương và do đó $f'(x) > 0$. Giữa $B$ và $C$, các tiếp tuyến có hệ số góc âm và do đó $f'(x) < 0$. Vì thế, có vẻ như $f$ đồng biến khi $f'(x)$ dương và nghịch biến khi $f'(x)$ âm. Để chứng minh điều này luôn đúng, chúng ta sử dụng Định lý Giá trị Trung bình.
+\end{minipage}
+
+\vspace{1.0em}
+
+% Block 2: Ghi chú Ký hiệu và Hộp Phép thử Đồng biến/Nghịch biến
+\noindent
+\begin{minipage}[t]{4.8cm}
+  \vspace{0pt}
+  \textbf{Ký hiệu}\par\vspace{3pt}
+  {\small Ta quy ước viết tắt tên của phép thử này thành Phép thử ĐB/NB (I/D Test).}
+\end{minipage}\hfill
+\begin{minipage}[t]{12.3cm}
+  \vspace{0pt}
+  \begin{tcolorbox}[
+    enhanced,
+    colframe=stewartred,
+    colback=white,
+    boxrule=0.8pt,
+    sharp corners,
+    left=10pt, right=10pt, top=6pt, bottom=6pt
+  ]
+    {\bfseries\textcolor{stewartred}{Phép thử Đồng biến/Nghịch biến}}\par\vspace{3pt}
+    \begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=2em, itemsep=2pt, topsep=2pt, parsep=0pt]
+      \item Nếu $f'(x) > 0$ trên một khoảng thì $f$ đồng biến trên khoảng đó.
+      \item Nếu $f'(x) < 0$ trên một khoảng thì $f$ nghịch biến trên khoảng đó.
+    \end{enumerate}
+  \end{tcolorbox}
+\end{minipage}
+
+\vspace{1.0em}
+
+% Block 3: Chứng minh, Ví dụ 1 và đầu Lời giải
+\noindent
+\begin{minipage}[t]{4.8cm}
+  \vspace{0pt}
+  ~
+\end{minipage}\hfill
+\begin{minipage}[t]{12.3cm}
+  \vspace{0pt}
+  \noindent\textbf{\color{stewartdarkred}\textsf{CHỨNG MINH}}\par\vspace{3pt}
+  \noindent\textbf{(a)}\; Giả sử $x_1$ và $x_2$ là hai số bất kỳ trong khoảng với $x_1 < x_2$. Theo định nghĩa của hàm số đồng biến (Mục 1.1), ta cần chứng minh rằng $f(x_1) < f(x_2)$.
+  \par\vspace{3pt}
+  Vì giả thiết cho $f'(x) > 0$, ta biết rằng $f$ khả vi trên $[x_1, x_2]$. Do đó, theo Định lý Giá trị Trung bình, tồn tại một số $c$ nằm giữa $x_1$ và $x_2$ sao cho
+  \vspace{2pt}
+  \begin{center}
+    \makebox[\linewidth][s]{%
+      \tikz[baseline=-0.6ex]{\node[draw=stewartred, line width=0.8pt, inner sep=2.5pt, font=\bfseries\footnotesize, text=stewartred] {1};}%
+      \hfill
+      $f(x_2) - f(x_1) = f'(c)(x_2 - x_1)$%
+      \hfill
+      \phantom{\tikz[baseline=-0.6ex]{\node[draw=stewartred, line width=0.8pt, inner sep=2.5pt, font=\bfseries\footnotesize, text=stewartred] {1};}}%
+    }
+  \end{center}
+  \vspace{2pt}
+  Bây giờ, theo giả thiết $f'(c) > 0$ và $x_2 - x_1 > 0$ vì $x_1 < x_2$. Do đó vế phải của Phương trình 1 là dương, và vì vậy
+  $$f(x_2) - f(x_1) > 0 \qquad \text{hay} \qquad f(x_1) < f(x_2)$$
+  Điều này chứng tỏ rằng $f$ đồng biến.
+  \par\vspace{3pt}
+  \noindent Phần (b) được chứng minh tương tự.\hfill\textcolor{stewartred}{\rule{1.2ex}{1.2ex}}
+
+  \vspace{1.0em}
+  \noindent\textbf{\color{stewartblue}\textsf{VÍ DỤ 1}}\quad Tìm các khoảng mà hàm số $f(x) = 3x^4 - 4x^3 - 12x^2 + 5$ đồng biến và các khoảng mà nó nghịch biến.
+
+  \vspace{0.6em}
+  \noindent\textbf{\color{stewartblue}\textsf{LỜI GIẢI}}\quad Trước hết ta tính đạo hàm của $f$:
+  $$f'(x) = 12x^3 - 12x^2 - 24x = 12x(x - 2)(x + 1)$$
+\end{minipage}
+
+\vspace{0.8em}
+
+% Block 4: Hình 2 và đoạn thảo luận dấu đạo hàm
+\noindent
+\begin{minipage}[t]{4.8cm}
+  \vspace{0pt}
+  \centering
+  \includegraphics[width=\linewidth]{images/p0332_fig2.png}
+  \par\vspace{3pt}
+  {\small\textsf{\textbf{HÌNH 2}}}
+\end{minipage}\hfill
+\begin{minipage}[t]{12.3cm}
+  \vspace{0pt}
+  \noindent Để sử dụng Phép thử ĐB/NB, ta cần biết $f'(x) > 0$ ở đâu và $f'(x) < 0$ ở đâu. Để giải các bất phương trình này, trước tiên ta tìm các điểm mà $f'(x) = 0$, cụ thể là tại $x = 0, 2$, và $-1$. Đây là các số tới hạn của $f$, và chúng chia miền xác định thành bốn khoảng (xem trục số trong Hình 2). Trên mỗi khoảng, $f'(x)$ luôn mang dấu dương hoặc luôn mang dấu âm. (Xem Ví dụ 3 và 4 trong Phụ lục A.) Ta có thể xác định dấu của từng khoảng từ dấu của ba nhân tử của $f'(x)$, cụ thể là $12x$, $x - 2$, và $x + 1$, như thể hiện trong bảng dưới đây. Dấu cộng cho biết biểu thức nhận giá trị dương, và dấu trừ cho biết biểu thức nhận giá trị âm. Cột cuối cùng của bảng đưa ra kết luận dựa trên Phép thử ĐB/NB. Chẳng hạn,
+\end{minipage}
+
+\vfill
+\begin{center}
+{\fontsize{6.5pt}{8pt}\selectfont\color{black!60}
+Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\\
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+}
+\end{center}
+
+\end{document}
