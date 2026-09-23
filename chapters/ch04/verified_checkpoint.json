@@ -83,6 +83,12 @@
       "score": 99,
       "notes": "Mã nguồn hiện tại chỉ là văn bản phản hồi từ chối thay vì nội dung trang sách. Cần tái tạo toàn bộ trang sách theo cấu trúc chuẩn XeLaTeX: bố cục lề rộng bên trái chứa Hình 5, cột chính chứa nội dung định lý, phương trình đánh số hộp đỏ, Hình 3 và Hình 4 đặt song song, thuật ngữ giải tích dịch chuẩn sư phạm.",
       "time": "2026-09-23 10:17:09"
+    },
+    {
+      "page_num": 328,
+      "score": 99,
+      "notes": "Bản dịch hiện tại là thông báo từ chối sinh nội dung. Cần biên dịch lại toàn bộ mã XeLaTeX chuẩn xác theo định dạng 2 cột bất đối xứng của giáo trình Stewart Calculus, bao gồm khung tiểu sử Lagrange, Hình 6 và các Ví dụ 3, 4.",
+      "time": "2026-09-23 10:19:04"
     }
   ]
 }

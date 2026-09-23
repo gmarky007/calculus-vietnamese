@@ -1,0 +1,125 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{vietnam}
+\usepackage{fontspec}
+\usepackage[letterpaper, top=1.8cm, bottom=2.0cm, left=1.8cm, right=1.8cm]{geometry}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+
+\definecolor{stewartblue}{RGB}{0, 114, 180}
+\definecolor{lagrangegreen}{RGB}{0, 130, 60}
+\definecolor{qedred}{RGB}{204, 34, 34}
+
+\tcbset{
+  lagrangebox/.style={
+    colback=white,
+    colframe=lagrangegreen,
+    arc=1.5mm,
+    boxrule=0.8pt,
+    left=6pt, right=6pt, top=6pt, bottom=6pt
+  }
+}
+
+\begin{document}
+\pagestyle{empty}
+
+% Header
+\noindent
+\hfill{\small\textsf{\textbf{MỤC 4.2}\quad Định lý giá trị trung bình\qquad\textbf{293}}}
+\vspace{0.6cm}
+
+\noindent
+\begin{minipage}[t]{0.28\textwidth}
+  \vspace{0pt}
+  % Khung Lagrange
+  \begin{tcolorbox}[lagrangebox]
+    {\raggedright\bfseries\sffamily\color{lagrangegreen}
+    Lagrange và\\Định lý giá trị trung bình\par}
+    \vspace{5pt}
+    \fontsize{8pt}{10.5pt}\selectfont
+    Định lý giá trị trung bình lần đầu tiên được phát biểu bởi Joseph-Louis Lagrange (1736--1813), sinh tại Ý có cha là người Pháp và mẹ là người Ý. Ông là một thần đồng và trở thành giáo sư tại Turin ở tuổi 19. Lagrange đã có những đóng góp to lớn cho lý thuyết số, lý thuyết hàm số, lý thuyết phương trình, cũng như cơ học giải tích và cơ học thiên thể. Đặc biệt, ông đã áp dụng phép vi tích phân vào việc phân tích tính ổn định của hệ Mặt Trời. Theo lời mời của Friedrich Đại đế, ông đã kế nhiệm Euler tại Viện Hàn lâm Berlin và khi Friedrich qua đời, Lagrange nhận lời mời của Vua Louis XVI đến Paris, nơi ông được cấp phòng ở trong Cung điện Louvre và trở thành giáo sư tại École Polytechnique. Bất chấp mọi danh vọng và xa hoa, ông là một người hiền lành, trầm lặng và chỉ cống hiến trọn đời cho khoa học.
+  \end{tcolorbox}
+
+  \vspace{1.8cm}
+  % Hình 6
+  \begin{center}
+    \includegraphics[width=\linewidth]{images/p0328_fig1.png}
+  \end{center}
+  \vspace{-2pt}
+  \noindent{\small\textsf{\textbf{HÌNH 6}}}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.68\textwidth}
+  \vspace{0pt}
+  \noindent
+  \textbf{3.}\hspace{1.5em}
+  \begin{minipage}[t]{0.88\linewidth}
+    \vspace{-1.2em}
+    \begin{align*}
+      h(a) &= f(a) - f(a) - \frac{f(b) - f(a)}{b - a}(a - a) = 0\\[6pt]
+      h(b) &= f(b) - f(a) - \frac{f(b) - f(a)}{b - a}(b - a)\\[3pt]
+           &= f(b) - f(a) - [f(b) - f(a)] = 0
+    \end{align*}
+  \end{minipage}
+
+  \vspace{6pt}
+  \noindent
+  Do đó $h(a) = h(b)$.
+
+  \vspace{6pt}
+  \noindent
+  Vì $h$ thỏa mãn tất cả các giả thiết của Định lý Rolle, nên theo định lý đó tồn tại một số $c$ thuộc khoảng $(a, b)$ sao cho $h'(c) = 0$. Do đó
+  \[
+  0 = h'(c) = f'(c) - \frac{f(b) - f(a)}{b - a}
+  \]
+  và vì vậy
+  \[
+  f'(c) = \frac{f(b) - f(a)}{b - a} \tag*{\textcolor{qedred}{\rule{1.2ex}{1.2ex}}}
+  \]
+
+  \vspace{14pt}
+  \noindent
+  {\color{stewartblue}\textsf{\textbf{VÍ DỤ 3}}}\hspace{0.8em}Để minh họa Định lý giá trị trung bình với một hàm số cụ thể, hãy xét hàm số $f(x) = x^3 - x$, $a = 0$, $b = 2$. Vì $f$ là một hàm đa thức, nên nó liên tục và khả vi với mọi $x$, do đó nó chắc chắn liên tục trên đoạn $[0, 2]$ và khả vi trên khoảng $(0, 2)$. Vì vậy, theo Định lý giá trị trung bình, tồn tại một số $c$ thuộc $(0, 2)$ sao cho
+  \[
+  f(2) - f(0) = f'(c)(2 - 0)
+  \]
+  Bây giờ $f(2) = 6$, $f(0) = 0$, và $f'(x) = 3x^2 - 1$, nên phương trình trên trở thành
+  \[
+  6 = (3c^2 - 1)2 = 6c^2 - 2
+  \]
+  cho ta $c^2 = \frac{4}{3}$, tức là $c = \pm 2/\sqrt{3}$. Nhưng $c$ phải nằm trong khoảng $(0, 2)$, do đó $c = 2/\sqrt{3}$.
+
+  \vspace{6pt}
+  \noindent
+  Hình 6 minh họa phép tính này: tiếp tuyến tại giá trị này của $c$ song song với cát tuyến $OB$.\hfill\textcolor{stewartblue}{\rule{1.1ex}{1.1ex}}
+
+  \vspace{14pt}
+  \noindent
+  {\color{stewartblue}\textsf{\textbf{VÍ DỤ 4}}}\hspace{0.8em}Nếu một vật chuyển động trên một đường thẳng với hàm vị trí $s = f(t)$, thì vận tốc trung bình giữa hai thời điểm $t = a$ và $t = b$ là
+  \[
+  \frac{f(b) - f(a)}{b - a}
+  \]
+  và vận tốc tại thời điểm $t = c$ là $f'(c)$. Do đó Định lý giá trị trung bình (dưới dạng Phương trình 1) cho ta biết rằng tại một thời điểm $t = c$ nào đó giữa $a$ và $b$, vận tốc tức thời $f'(c)$ bằng với vận tốc trung bình đó. Chẳng hạn, nếu một chiếc ô tô đi được $180\text{ km}$ trong $2\text{ giờ}$, thì tốc kế chắc chắn phải chỉ $90\text{ km/h}$ ít nhất một lần.
+
+  \vspace{8pt}
+  \noindent
+  Nói chung, Định lý giá trị trung bình có thể được hiểu là khẳng định rằng luôn tồn tại một thời điểm mà tại đó tốc độ thay đổi tức thời bằng với tốc độ thay đổi trung bình trên một khoảng.\hfill\textcolor{stewartblue}{\rule{1.1ex}{1.1ex}}
+
+  \vspace{12pt}
+  \noindent
+  Ý nghĩa quan trọng nhất của Định lý giá trị trung bình là nó cho phép chúng ta thu nhận thông tin về một hàm số từ thông tin về đạo hàm của nó. Ví dụ tiếp theo sẽ minh họa cho nguyên lý này.
+\end{minipage}
+
+\vfill
+\noindent
+{\fontsize{6.5pt}{8pt}\selectfont\color{black!70}
+\begin{center}
+Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\\[1.5pt]
+Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+\end{center}}
+
+\end{document}
