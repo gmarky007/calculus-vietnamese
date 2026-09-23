@@ -281,6 +281,12 @@
       "score": 99,
       "notes": "Bản dịch hiện tại bị lỗi hiển thị rò rỉ mã preamble ra đầu trang nội dung; đồng thời độ cao dóng hàng của khối Hình 1 và Hình 2 ở cột lề trái chưa khớp chuẩn xác theo tọa độ trục y của bản gốc.",
       "time": "2026-09-23 07:32:53"
+    },
+    {
+      "page_num": 255,
+      "score": 15,
+      "notes": "Mã nguồn hiện tại chỉ là văn bản từ chối/tóm tắt thay vì bản dịch LaTeX thực sự của trang sách. Cần tạo lại toàn bộ trang với bố cục 2 cột bất đối xứng Stewart Calculus, các khung công thức màu đỏ, ghi chú lề và biểu tượng kết thúc ví dụ/chứng minh đúng chuẩn sư phạm.",
+      "time": "2026-09-23 07:35:16"
     }
   ]
 }
