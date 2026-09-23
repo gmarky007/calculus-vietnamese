@@ -413,6 +413,12 @@
       "score": 99,
       "notes": "Bản dịch hiện tại bị lỗi nghiêm trọng trong khâu biên dịch: toàn bộ khai báo gói lệnh bị in tràn ra dưới dạng văn bản thường ở đầu trang và nội dung chính của trang không xuất hiện (hoặc bị đẩy sang trang sau). Cần thiết lập lại layout lề rộng Stewart chuẩn, dóng hàng Hình 1 và chú thích lề chính xác.",
       "time": "2026-09-23 08:22:02"
+    },
+    {
+      "page_num": 277,
+      "score": 99,
+      "notes": "1. Lỗi rò rỉ mã preamble in trực tiếp lên đầu trang dưới dạng text. 2. Lỗi tràn màu cyan (toàn bộ nửa dưới trang bị biến thành màu xanh lam do lệnh đóng ngoặc màu không chuẩn). 3. 'Định luật làm nguội của Newton' trong bản gốc là tiêu đề dạng run-in (nằm cùng dòng với đoạn văn), không phải tiêu đề độc lập cỡ lớn. 4. Hình 2 bị đẩy quá cao, cần hạ xuống khoảng 2cm để khớp đúng tọa độ dóng hàng với đoạn kiểm tra đồ thị và trước đề mục Newton.",
+      "time": "2026-09-23 08:24:01"
     }
   ]
 }
