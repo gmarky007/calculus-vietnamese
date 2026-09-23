@@ -1,0 +1,104 @@
+\documentclass[10pt]{article}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage[top=2cm, bottom=2.2cm, left=1.8cm, right=1.8cm, headheight=14pt, footskip=1.2cm]{geometry}
+\usepackage{newtxtext,newtxmath}
+
+% Định nghĩa màu sắc theo phong cách Stewart Calculus
+\definecolor{stewartcyan}{RGB}{0, 136, 206}
+\definecolor{stewartred}{RGB}{196, 18, 48}
+\definecolor{graytext}{RGB}{100, 100, 100}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\textsf{\fontsize{8.5}{11}\selectfont \textbf{MỤC 4.5}\hspace{1.5em}Tổng kết về vẽ đường cong}\hspace{2.5em}\textsf{\textbf{325}}}
+\renewcommand{\headrulewidth}{0pt}
+
+\fancyfoot[C]{\fontsize{6.5}{8}\selectfont\color{graytext} Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s).\\
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.26\textwidth}
+    \vspace*{28pt}
+    % Hình 9
+    \includegraphics[width=\linewidth]{images/p0360_fig1.png}
+    \vspace{3pt}
+    
+    {\fontsize{8}{10}\selectfont\textbf{\textsf{HÌNH 9}}}
+
+    \vspace{10.8cm}
+
+    % Hình 11
+    \includegraphics[width=\linewidth]{images/p0360_fig3.png}
+    \vspace{3pt}
+    
+    {\fontsize{8}{10}\selectfont\textbf{\textsf{HÌNH 11}}\\[2pt]
+    $y = \ln(4 - x^2)$}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.71\textwidth}
+    \vspace{0pt}
+    \textbf{H.\hspace{0.5em}Vẽ đường cong}\hspace{0.8em}Đồ thị của hàm số khi thu hẹp trên đoạn $0 \leqslant x \leqslant 2\pi$ được thể hiện trong Hình~9. Sau đó, ta mở rộng nó bằng cách sử dụng tính tuần hoàn để thu được đồ thị ở Hình~10.
+
+    \vspace{5pt}
+    \begin{center}
+        \includegraphics[width=0.98\linewidth]{images/p0360_fig2.png}
+    \end{center}
+    \vspace{-4pt}
+    {\fontsize{8}{10}\selectfont\textbf{\textsf{HÌNH 10}}}\hfill{\color{stewartcyan}\rule{1.15ex}{1.15ex}}
+
+    \vspace{10pt}
+    {\fontsize{9.5}{13}\selectfont\textbf{\textsf{\color{stewartcyan}VÍ DỤ 5}}\hspace{1em}Vẽ đồ thị của hàm số $y = \ln(4 - x^2)$.}
+
+    \vspace{2pt}
+    \textbf{A.\hspace{0.5em}Tập xác định}\hspace{0.8em}Tập xác định là
+    \[
+    \{x \mid 4 - x^2 > 0\} = \{x \mid x^2 < 4\} = \{x \mid |x| < 2\} = (-2, 2)
+    \]
+
+    \textbf{B.\hspace{0.5em}Giao điểm với các trục}\hspace{0.8em}Giao điểm với trục $y$ là $f(0) = \ln 4$. Để tìm giao điểm với trục $x$, ta đặt
+    \[
+    y = \ln(4 - x^2) = 0
+    \]
+    Ta biết rằng $\ln 1 = 0$, nên ta có $4 - x^2 = 1 \implies x^2 = 3$ và do đó các giao điểm với trục $x$ là $\pm\sqrt{3}$.
+
+    \vspace{2pt}
+    \textbf{C.\hspace{0.5em}Tính đối xứng}\hspace{0.8em}Vì $f(-x) = f(x)$ nên $f$ là hàm chẵn và đường cong đối xứng qua trục $y$.
+
+    \vspace{2pt}
+    \textbf{D.\hspace{0.5em}Tiệm cận}\hspace{0.8em}Ta tìm các đường tiệm cận đứng tại các điểm mút của tập xác định. Vì $4 - x^2 \to 0^+$ khi $x \to 2^-$ và cũng khi $x \to -2^+$, ta có
+    \[
+    \lim_{x \to 2^-} \ln(4 - x^2) = -\infty \qquad\qquad \lim_{x \to -2^+} \ln(4 - x^2) = -\infty
+    \]
+    Do đó, các đường thẳng $x = 2$ và $x = -2$ là các tiệm cận đứng.
+
+    \vspace{2pt}
+    \textbf{E.\hspace{0.5em}Các khoảng tăng hoặc giảm}
+    \[
+    f'(x) = \frac{-2x}{4 - x^2}
+    \]
+    Vì $f'(x) > 0$ khi $-2 < x < 0$ và $f'(x) < 0$ khi $0 < x < 2$, nên $f$ đồng biến trên $(-2, 0)$ và nghịch biến trên $(0, 2)$.
+
+    \vspace{2pt}
+    \textbf{F.\hspace{0.5em}Giá trị cực đại hoặc cực tiểu địa phương}\hspace{0.8em}Số tới hạn duy nhất là $x = 0$. Vì $f'$ đổi dấu từ dương sang âm tại $0$, nên theo Kiểm định đạo hàm cấp một, $f(0) = \ln 4$ là một giá trị cực đại địa phương.
+
+    \vspace{2pt}
+    \textbf{G.\hspace{0.5em}Tính lõm và điểm uốn}
+    \[
+    f''(x) = \frac{(4 - x^2)(-2) + 2x(-2x)}{(4 - x^2)^2} = \frac{-8 - 2x^2}{(4 - x^2)^2}
+    \]
+    Vì $f''(x) < 0$ với mọi $x$, đường cong lõm xuống trên $(-2, 2)$ và không có điểm uốn.
+
+    \vspace{2pt}
+    \textbf{H.\hspace{0.5em}Vẽ đường cong}\hspace{0.8em}Sử dụng các thông tin này, ta phác họa đường cong trong Hình~11.\hfill{\color{stewartcyan}\rule{1.15ex}{1.15ex}}
+\end{minipage}
+
+\end{document}

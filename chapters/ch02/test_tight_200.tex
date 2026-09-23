@@ -1,0 +1,140 @@
+\documentclass[10pt]{article}
+\usepackage{fontspec}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+\usepackage{geometry}
+\geometry{
+    paperwidth=612.05pt,
+    paperheight=720.05pt,
+    top=20pt,
+    headheight=14pt,
+    headsep=12pt,
+    bottom=28pt,
+    footskip=12pt,
+    left=36pt,
+    right=36pt
+}
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+\usepackage{multicol}
+\usepackage{tikz}
+
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+
+\definecolor{stewartcyan}{RGB}{0, 118, 186}
+\definecolor{stewartred}{RGB}{218, 41, 28}
+\definecolor{stewartgray}{RGB}{120, 120, 120}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+
+\setlength{\abovedisplayskip}{3pt}
+\setlength{\belowdisplayskip}{3pt}
+\setlength{\abovedisplayshortskip}{1pt}
+\setlength{\belowdisplayshortskip}{1pt}
+\setlength{\parskip}{0pt}
+
+\begin{document}
+\noindent
+\begin{minipage}[t]{0.485\textwidth}
+\raggedright
+
+\textbf{\color{stewartred}50.}\enspace Hình vẽ cho thấy các đồ thị của $f$, $f'$, $f''$ và $f'''$. Hãy xác định từng đường cong và giải thích sự lựa chọn của bạn.
+
+{\centering 
+  \vspace{-2pt}
+  \includegraphics[width=0.76\linewidth]{images/p0200_fig1.png}
+  \vspace{-2pt}
+\par}
+
+\textbf{\color{stewartred}51.}\enspace Hình vẽ cho thấy đồ thị của ba hàm số. Một đồ thị là hàm vị trí của một chiếc ô tô, một là vận tốc của ô tô, và một là gia tốc của nó. Hãy xác định từng đường cong và giải thích sự lựa chọn của bạn.
+
+{\centering 
+  \vspace{-2pt}
+  \includegraphics[width=0.82\linewidth]{images/p0200_fig2.png}
+  \vspace{-2pt}
+\par}
+
+\textbf{\color{stewartred}52.}\enspace Hình vẽ cho thấy đồ thị của bốn hàm số. Một đồ thị là hàm vị trí của một chiếc ô tô, một là vận tốc của ô tô, một là gia tốc của nó, và một là độ giật của nó. Hãy xác định từng đường cong và giải thích sự lựa chọn của bạn.
+
+{\centering 
+  \vspace{-2pt}
+  \includegraphics[width=0.82\linewidth]{images/p0200_fig3.png}
+  \vspace{-2pt}
+\par}
+
+\casicon\enspace \textbf{\color{stewartcyan}53--54}\enspace Sử dụng định nghĩa đạo hàm để tìm $f'(x)$ và $f''(x)$. Sau đó vẽ đồ thị của $f$, $f'$ và $f''$ trên cùng một màn hình và kiểm tra xem các câu trả lời của bạn có hợp lý hay không.
+
+\vspace{2pt}
+\textbf{\color{stewartred}53.}\enspace $f(x) = 3x^2 + 2x + 1$ \hfill \textbf{\color{stewartred}54.}\enspace $f(x) = x^3 - 3x$
+
+\vspace{3pt}
+\casicon\enspace \textbf{\color{stewartcyan}55.}\enspace Nếu $f(x) = 2x^2 - x^3$, hãy tìm $f'(x)$, $f''(x)$, $f'''(x)$ và $f^{(4)}(x)$. Vẽ đồ thị của $f$, $f'$, $f''$ và $f'''$ trên cùng một màn hình. Các đồ thị này có phù hợp với các ý nghĩa hình học của những đạo hàm này không?
+
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.485\textwidth}
+\raggedright
+
+\textbf{\color{stewartred}56.}\enspace \textbf{(a)}\enspace Đồ thị hàm vị trí của một chiếc ô tô được cho như hình vẽ, trong đó $s$ được đo bằng foot và $t$ bằng giây. Hãy sử dụng đồ thị này để vẽ đồ thị vận tốc và gia tốc của chiếc ô tô. Gia tốc tại thời điểm $t = 10$ giây là bao nhiêu?
+
+{\centering 
+  \vspace{-2pt}
+  \includegraphics[width=0.76\linewidth]{images/p0200_fig4.png}
+  \vspace{-2pt}
+\par}
+
+\textbf{(b)}\enspace Sử dụng đường cong gia tốc từ phần (a) để ước lượng độ giật (jerk) tại $t = 10$ giây. Đơn vị của độ giật là gì?
+
+\vspace{1pt}
+\textbf{\color{stewartred}57.}\enspace Cho $f(x) = \sqrt[3]{x}$.\par
+\textbf{(a)}\enspace Nếu $a \neq 0$, hãy sử dụng Phương trình 2.7.5 để tìm $f'(a)$.\par
+\textbf{(b)}\enspace Chứng minh rằng $f'(0)$ không tồn tại.\par
+\textbf{(c)}\enspace Chứng minh rằng $y = \sqrt[3]{x}$ có một tiếp tuyến thẳng đứng tại $(0, 0)$. (Nhớ lại hình dạng đồ thị của $f$. Xem Hình 1.2.13.)
+
+\vspace{1pt}
+\textbf{\color{stewartred}58.}\enspace \textbf{(a)}\enspace Nếu $g(x) = x^{2/3}$, hãy chứng minh rằng $g'(0)$ không tồn tại.\par
+\hspace*{1.6em}\textbf{(b)}\enspace Nếu $a \neq 0$, hãy tìm $g'(a)$.\par
+\hspace*{1.6em}\textbf{(c)}\enspace Chứng minh rằng $y = x^{2/3}$ có một tiếp tuyến thẳng đứng tại $(0, 0)$.\par
+\hspace*{1.6em}\llap{\casicon\hspace{4pt}}\textbf{(d)}\enspace Minh họa phần (c) bằng cách vẽ đồ thị hàm số $y = x^{2/3}$.
+
+\vspace{1pt}
+\textbf{\color{stewartred}59.}\enspace Chứng minh rằng hàm số $f(x) = |x - 6|$ không khả vi tại $6$. Tìm một công thức cho $f'$ và vẽ đồ thị của nó.
+
+\textbf{\color{stewartred}60.}\enspace Hàm phần nguyên $f(x) = \llbracket x \rrbracket$ không khả vi tại những điểm nào? Tìm một công thức cho $f'$ và vẽ đồ thị của nó.
+
+\textbf{\color{stewartred}61.}\enspace \textbf{(a)}\enspace Vẽ đồ thị của hàm số $f(x) = x|x|$.\par
+\hspace*{1.6em}\textbf{(b)}\enspace Với những giá trị nào của $x$ thì $f$ khả vi?\par
+\hspace*{1.6em}\textbf{(c)}\enspace Tìm một công thức cho $f'$.
+
+\textbf{\color{stewartred}62.}\enspace \textbf{(a)}\enspace Vẽ đồ thị của hàm số $g(x) = x + |x|$.\par
+\hspace*{1.6em}\textbf{(b)}\enspace Với những giá trị nào của $x$ thì $g$ khả vi?\par
+\hspace*{1.6em}\textbf{(c)}\enspace Tìm một công thức cho $g'$.
+
+\textbf{\color{stewartred}63.}\enspace \textbf{Đạo hàm của hàm số chẵn và hàm số lẻ}\enspace Nhắc lại rằng một hàm số $f$ được gọi là \textit{chẵn} nếu $f(-x) = f(x)$ với mọi $x$ thuộc tập xác định của nó và \textit{lẻ} nếu $f(-x) = -f(x)$ với mọi $x$ như vậy. Hãy chứng minh mỗi khẳng định sau:\par
+\hspace*{1.6em}\textbf{(a)}\enspace Đạo hàm của một hàm số chẵn là một hàm số lẻ.\par
+\hspace*{1.6em}\textbf{(b)}\enspace Đạo hàm của một hàm số lẻ là một hàm số chẵn.
+
+\vspace{1pt}
+\textbf{\color{stewartcyan}64--65\quad Đạo hàm bên trái và bên phải}\enspace \textit{Đạo hàm bên trái} và \textit{đạo hàm bên phải} của $f$ tại $a$ được định nghĩa lần lượt bởi
+\begin{align*}
+f'_-(a) &= \lim_{h \to 0^-} \frac{f(a+h) - f(a)}{h} \\[2pt]
+\text{và}\qquad f'_+(a) &= \lim_{h \to 0^+} \frac{f(a+h) - f(a)}{h}
+\end{align*}
+nếu các giới hạn này tồn tại. Khi đó $f'(a)$ tồn tại khi và chỉ khi các đạo hàm một phía này cùng tồn tại và bằng nhau.
+
+\end{minipage}
+
+\vfill
+{\centering 
+  \fontsize{6.5pt}{7.5pt}\selectfont\color{black!55}
+  Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\\ 
+  Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+\par}
+
+\end{document}
