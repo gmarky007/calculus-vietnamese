@@ -1,0 +1,156 @@
+\documentclass[10pt]{article}
+\usepackage[paperwidth=216mm, paperheight=279mm, top=18mm, bottom=16mm, left=62mm, right=18mm, headheight=14pt, headsep=6mm, footskip=8mm]{geometry}
+\usepackage{fontspec}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+
+% Định nghĩa màu sắc theo bản gốc
+\definecolor{discoverybg}{RGB}{239, 245, 241}
+\definecolor{discoverygreen}{RGB}{0, 133, 95}
+\definecolor{discoverydark}{RGB}{25, 30, 28}
+\definecolor{sectionblue}{RGB}{0, 130, 195}
+\definecolor{titlecharcoal}{RGB}{20, 25, 30}
+\definecolor{formulaRed}{RGB}{205, 45, 40}
+
+% Cài đặt Header
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textsf{\fontsize{8.5}{10}\selectfont\color{gray!80!black} MỤC 3.6 \quad Đạo hàm của hàm logarit và hàm lượng giác ngược}}
+\fancyhead[R]{\textsf{\fontsize{10}{12}\selectfont\bfseries 217}}
+\renewcommand{\headrulewidth}{0pt}
+
+% Icon dự án khám phá dạng vector
+\newcommand{\projecticon}{%
+  \begin{tikzpicture}[x=1pt, y=1pt, baseline=1pt]
+    \draw[discoverygreen, line width=0.6pt] (0,1) -- (0,10) -- (5.5,12) -- (11,10) -- (11,1) -- (5.5,3) -- cycle;
+    \draw[discoverygreen, line width=0.6pt] (5.5,3) -- (5.5,12);
+    \draw[discoverygreen, line width=0.45pt] (1.8,4.5) -- (4,5.3);
+    \draw[discoverygreen, line width=0.45pt] (1.8,7) -- (4,7.8);
+    \draw[discoverygreen, line width=0.45pt] (7,5.3) -- (9.2,4.5);
+    \draw[discoverygreen, line width=0.45pt] (7,7.8) -- (9.2,7);
+  \end{tikzpicture}%
+}
+
+\begin{document}
+
+% Hộp DỰ ÁN KHÁM PHÁ (Trải rộng lề trái sang lề phải, căn văn bản theo cột chính)
+\begin{tcolorbox}[
+  enhanced,
+  breakable,
+  colback=discoverybg,
+  colframe=discoverybg,
+  arc=0mm,
+  boxrule=0pt,
+  left=0mm, right=0mm, top=4mm, bottom=5mm,
+  enlarge left by=44mm,
+  width=\textwidth+44mm,
+]
+  \begin{center}
+  \begin{tikzpicture}
+    \node[inner sep=0pt] (centertext) at (0,0) {%
+      \textsf{\textbf{\fontsize{10.5}{13}\selectfont\color{discoverygreen} DỰ ÁN KHÁM PHÁ}}\hspace{8pt}%
+      \raisebox{-1.5pt}{\projecticon}\hspace{8pt}%
+      \textsf{\textbf{\fontsize{10.5}{13}\selectfont\color{discoverydark} CÁC HỌ ĐƯỜNG CONG ẨN}}%
+    };
+    \coordinate (Ledge) at (-84mm, 0);
+    \coordinate (Redge) at (84mm, 0);
+    \foreach \y in {-3.6pt, -1.8pt, 0pt, 1.8pt, 3.6pt} {
+      \draw[discoverygreen, line width=0.45pt] (Ledge |- 0,\y) -- ([xshift=-8pt]centertext.west |- 0,\y);
+      \draw[discoverygreen, line width=0.45pt] ([xshift=8pt]centertext.east |- 0,\y) -- (Redge |- 0,\y);
+    }
+  \end{tikzpicture}
+  \end{center}
+  \vspace{1mm}
+
+  \noindent\hspace*{44mm}%
+  \begin{minipage}{\textwidth}
+  \fontsize{9.5}{13}\selectfont
+  Trong dự án này, bạn sẽ khám phá sự thay đổi hình dạng của các đường cong được định nghĩa ẩn khi bạn thay đổi các hằng số trong một họ, và xác định những đặc trưng nào là chung cho mọi đường cong trong họ.
+
+  \begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=15pt, itemsep=6pt, topsep=4pt]
+    \item Xét họ đường cong
+    \[
+      y^2 - 2x^2(x + 8) = c\big[(y + 1)^2(y + 9) - x^2\big]
+    \]
+    \begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=18pt, itemsep=3pt, topsep=2pt]
+      \item Bằng cách vẽ đồ thị các đường cong với $c = 0$ và $c = 2$, hãy xác định xem có bao nhiêu giao điểm. (Bạn có thể phải phóng to để tìm thấy tất cả chúng.)
+      \item Bây giờ hãy vẽ thêm các đường cong với $c = 5$ và $c = 10$ vào đồ thị của bạn ở phần (a). Bạn nhận thấy điều gì? Điều gì xảy ra với các giá trị khác của $c$?
+    \end{enumerate}
+
+    \item \textbf{(a)}~Vẽ đồ thị một vài đường cong trong họ đường cong
+    \[
+      x^2 + y^2 + cx^2 y^2 = 1
+    \]
+    \begin{list}{}{%
+      \setlength{\leftmargin}{18pt}%
+      \setlength{\itemsep}{3pt}%
+      \setlength{\topsep}{2pt}%
+      \setlength{\parsep}{0pt}%
+    }
+      \item[] Mô tả đồ thị thay đổi như thế nào khi bạn thay đổi giá trị của $c$.
+      \item[\textbf{(b)}] Điều gì xảy ra với đường cong khi $c = -1$? Hãy mô tả những gì xuất hiện trên màn hình. Bạn có thể chứng minh điều đó bằng đại số không?
+      \item[\textbf{(c)}] Tìm $y'$ bằng phương pháp đạo hàm hàm ẩn. Đối với trường hợp $c = -1$, biểu thức $y'$ của bạn có nhất quán với những gì bạn đã khám phá ở phần (b) không?
+    \end{list}
+  \end{enumerate}
+  \end{minipage}
+\end{tcolorbox}
+
+\vspace{8mm}
+
+% Tiêu đề Mục 3.6 kèm số 3.6 và 5 vạch xanh ở lề trái
+\noindent
+\makebox[\linewidth][l]{%
+  \begin{tikzpicture}[remember picture]
+    \node[anchor=north west, inner sep=0pt, text width=\linewidth] (sectitle) at (0,0) {%
+      \fontsize{15.5}{19.5}\selectfont\sffamily\bfseries\color{titlecharcoal}
+      Đạo hàm của hàm logarit và hàm lượng giác ngược
+    };
+    \node[anchor=north east, inner sep=0pt] (secnum) at (-10pt, 0) {%
+      \fontsize{22}{22}\selectfont\sffamily\bfseries\color{sectionblue} 3.6
+    };
+    \foreach \y in {-4pt, -2pt, 0pt, 2pt, 4pt} {
+      \draw[sectionblue, line width=0.45pt] ([xshift=-36pt, yshift=-10pt+\y]secnum.north west) -- ([xshift=-6pt, yshift=-10pt+\y]secnum.north west);
+    }
+  \end{tikzpicture}%
+}
+
+\vspace{4.5mm}
+\noindent
+Trong mục này, chúng ta sử dụng phương pháp đạo hàm hàm ẩn để tìm đạo hàm của các hàm logarit và hàm lượng giác ngược.
+
+\vspace{5mm}
+\noindent
+{\color{sectionblue}\rule{6.5pt}{6.5pt}}\hspace{7pt}%
+{\fontsize{11}{14}\selectfont\sffamily\bfseries\color{titlecharcoal} Đạo hàm của hàm logarit}
+
+\vspace{3mm}
+Trong Phụ lục F, chúng ta chứng minh rằng nếu $f$ là một hàm khả vi một-đối-một, thì hàm ngược của nó $f^{-1}$ cũng khả vi, ngoại trừ những điểm mà các tiếp tuyến của nó là đường thẳng đứng. Điều này là hợp lý vì về mặt hình học, ta có thể xem một hàm khả vi là một hàm có đồ thị không có điểm gãy hoặc điểm lùi. Ta nhận được đồ thị của $f^{-1}$ bằng cách lấy đối xứng đồ thị của $f$ qua đường thẳng $y = x$, vì vậy đồ thị của $f^{-1}$ cũng không có điểm gãy hay điểm lùi. (Lưu ý rằng nếu $f$ có tiếp tuyến nằm ngang tại một điểm, thì $f^{-1}$ có tiếp tuyến thẳng đứng tại điểm đối xứng tương ứng và do đó $f^{-1}$ không khả vi tại đó.)
+
+Vì hàm logarit $y = \log_b x$ là hàm ngược của hàm mũ $y = b^x$, hàm số mà chúng ta đã biết là khả vi từ Mục 3.1, nên suy ra hàm logarit cũng khả vi. Bây giờ chúng ta phát biểu và chứng minh công thức tính đạo hàm của hàm logarit.
+
+\vspace{4mm}
+\noindent
+\makebox[\linewidth]{%
+  \makebox[0pt][l]{%
+    \tikz\node[draw=formulaRed, line width=0.8pt, inner sep=2.5pt, minimum size=13pt] {\bfseries\color{formulaRed}\small 1};%
+  }%
+  \hfill
+  \tikz\node[draw=formulaRed, line width=0.8pt, inner sep=8pt] {$\displaystyle \frac{d}{dx}(\log_b x) = \frac{1}{x \ln b}$};%
+  \hfill
+  \phantom{\tikz\node[draw=formulaRed, line width=0.8pt, inner sep=2.5pt, minimum size=13pt] {\bfseries\small 1};}%
+}
+
+\vfill
+\begin{center}
+  \fontsize{6.5}{8}\selectfont\color{gray}
+  Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\\[1pt]
+  Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+\end{center}
+
+\end{document}

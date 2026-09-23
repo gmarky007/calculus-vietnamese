@@ -263,6 +263,12 @@
       "score": 99,
       "notes": "Trang dịch xuất hiện dòng rác văn bản thông số kỹ thuật ở đầu trang làm xô lệch toàn bộ bố cục. Thừa một dòng kẻ ngang màu xanh giữa bài 56 và 57 (bản gốc không có). Cần bỏ dòng kẻ, tinh chỉnh biểu tượng CAS và dóng hàng chính xác hai cột.",
       "time": "2026-09-23 07:27:49"
+    },
+    {
+      "page_num": 252,
+      "score": 99,
+      "notes": "Mã nguồn hiện tại là văn bản từ chối giữ chỗ (placeholder) chứ chưa có nội dung giáo trình. Cần dựng lại toàn bộ trang với bố cục 2 cột bất đối xứng, hộp Discovery Project trải rộng toàn trang với lề thụt chuẩn, tiêu đề Mục 3.6 kèm 5 vạch trang trí, và khung công thức đạo hàm hàm logarit chuẩn sư phạm.",
+      "time": "2026-09-23 07:30:12"
     }
   ]
 }
