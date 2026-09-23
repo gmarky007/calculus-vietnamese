@@ -1,0 +1,70 @@
+\documentclass[10pt]{article}
+\usepackage[paperwidth=216mm, paperheight=279.4mm, left=62mm, right=18mm, top=20mm, bottom=22mm, marginparwidth=44mm, marginparsep=6mm, reversemarginpar]{geometry}
+\usepackage{fontspec}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+
+\definecolor{stewartblue}{RGB}{0, 114, 188}
+\definecolor{stewartred}{RGB}{204, 41, 43}
+\definecolor{darkgray}{RGB}{80, 80, 80}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyheadoffset[L]{\dimexpr\marginparwidth+\marginparsep\relax}
+\fancyhead[L]{{\small\sffamily\bfseries MỤC 4.3}\quad {\small\sffamily Các đạo hàm cho ta biết gì về hình dạng đồ thị}}
+\fancyhead[R]{{\small\sffamily\bfseries 301}}
+\fancyfoot[C]{\scriptsize\color{darkgray} Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part.\\
+\tiny Editorial review has deemed that any suppressed content does not materially affect the overall learning experience.}
+
+\newcommand{\exampletag}[1]{{\sffamily\bfseries\color{stewartblue}#1}}
+\newcommand{\solutiontag}{{\sffamily\bfseries\color{stewartblue}LỜI GIẢI}\quad}
+
+\newtcolorbox{definitionbox}{%
+  enhanced,
+  colback=white,
+  colframe=stewartred,
+  boxrule=0.8pt,
+  sharp corners,
+  left=8pt, right=8pt, top=6pt, bottom=6pt,
+  before skip=10pt, after skip=10pt
+}
+
+\begin{document}
+
+\noindent\exampletag{VÍ DỤ 4}\quad Hình~9 thể hiện đồ thị số lượng cá thể của một đàn ong nuôi trong trại ong. Tốc độ tăng trưởng của quần thể thay đổi theo thời gian như thế nào? Khi nào tốc độ này đạt giá trị lớn nhất? Quần thể $P$ lõm lên hay lõm xuống trên các khoảng nào?
+
+\begin{center}
+  \marginpar{\vspace{3.1cm}\raggedleft\sffamily\bfseries\small HÌNH 9}
+  \includegraphics[width=0.72\textwidth]{images/p0336_fig1.png}
+\end{center}
+
+\noindent\solutiontag Quan sát độ dốc của đường cong khi $t$ tăng, ta thấy tốc độ tăng trưởng của quần thể ban đầu rất nhỏ, sau đó lớn dần cho đến khi đạt cực đại tại khoảng $t = 12$ tuần, rồi giảm dần khi số lượng cá thể bắt đầu chững lại. Khi quần thể tiến gần đến giá trị cực đại khoảng 75.000 (được gọi là \emph{sức chứa của môi trường}), tốc độ tăng trưởng, $P'(t)$, tiến dần về 0. Đường cong dường như lõm lên trên $(0, 12)$ và lõm xuống trên $(12, 18)$.\hfill{\color{stewartblue}\rule{1.2ex}{1.2ex}}
+
+\medskip
+Trong Ví dụ~4, đường cong số lượng quần thể đã chuyển từ lõm lên sang lõm xuống tại điểm xấp xỉ $(12, 38.000)$. Điểm này được gọi là một \emph{điểm uốn} (inflection point) của đường cong. Ý nghĩa của điểm này là tốc độ tăng trưởng quần thể đạt giá trị lớn nhất tại đó. Nhìn chung, điểm uốn là điểm mà tại đó đường cong thay đổi hướng bề lõm.
+
+\begin{definitionbox}
+\noindent{\sffamily\bfseries\color{stewartred} Định nghĩa}\quad Một điểm $P$ trên đường cong $y = f(x)$ được gọi là một \textbf{điểm uốn} nếu $f$ liên tục tại đó và đường cong chuyển từ lõm lên sang lõm xuống hoặc từ lõm xuống sang lõm lên tại $P$.
+\end{definitionbox}
+
+Chẳng hạn, trong Hình~8, $B$, $C$, $D$ và $P$ là các điểm uốn. Chú ý rằng nếu một đường cong có tiếp tuyến tại một điểm uốn, thì đường cong sẽ cắt tiếp tuyến đó tại chính điểm này.
+
+Theo Kiểm định tính lõm, luôn tồn tại một điểm uốn tại bất kỳ điểm nào mà hàm số liên tục và đạo hàm cấp hai đổi dấu.
+
+\bigskip
+\noindent\exampletag{VÍ DỤ 5}\quad Phác thảo một đồ thị có thể có của hàm số $f$ thỏa mãn các điều kiện sau:
+\begin{enumerate}[label=(\roman*), topsep=3pt, itemsep=2pt, leftmargin=2.5em]
+  \item $f'(x) > 0$ trên $(-\infty, 1)$, \quad $f'(x) < 0$ trên $(1, \infty)$
+  \item $f''(x) > 0$ trên $(-\infty, -2)$ và $(2, \infty)$, \quad $f''(x) < 0$ trên $(-2, 2)$
+  \item $\lim\limits_{x \to -\infty} f(x) = -2$, \quad $\lim\limits_{x \to \infty} f(x) = 0$
+\end{enumerate}
+
+\medskip
+\noindent\solutiontag Điều kiện~(i) cho biết $f$ đồng biến trên $(-\infty, 1)$ và nghịch biến trên $(1, \infty)$. Điều kiện~(ii) cho biết $f$ lõm lên trên $(-\infty, -2)$ và $(2, \infty)$, lõm xuống trên $(-2, 2)$. Từ điều kiện~(iii), ta biết đồ thị hàm số $f$ có hai đường tiệm cận ngang: $y = -2$ (ở bên trái) và $y = 0$ (ở bên phải).
+
+\end{document}
