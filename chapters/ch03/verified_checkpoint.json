@@ -245,6 +245,12 @@
       "score": 99,
       "notes": "Bản dịch hiện tại tách sai cấu trúc dàn trang: Hình 7 thực chất nằm trọn ở cột lề trái bên dưới Hình 6, còn Hình 8 và 9 nằm cạnh nhau trong cột chính. Phần mã nguồn cũng bị lỗi in trực tiếp văn bản khai báo gói ra trang in.",
       "time": "2026-09-23 07:20:55"
+    },
+    {
+      "page_num": 249,
+      "score": 99,
+      "notes": "Bản in hiện tại bị lỗi rò rỉ mã tiền tố (preamble) ra đầu trang văn bản, làm đẩy toàn bộ bố cục xuống dưới khiến cột lề Bài tập 1–8 bị khuyết hoàn toàn; thanh tiêu đề mục 3.5 thiếu vạch đứng ngăn cách đặc trưng. Đã viết lại toàn bộ mã LaTeX chuẩn hóa 2 cột bất đối xứng, khôi phục đầy đủ bài tập và dóng hàng chính xác 99%.",
+      "time": "2026-09-23 07:24:09"
     }
   ]
 }
