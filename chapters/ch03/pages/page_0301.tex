@@ -1,0 +1,135 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{geometry}
+\usepackage{tikz}
+
+\geometry{
+    paperwidth=210mm,
+    paperheight=280mm,
+    left=16mm,
+    right=16mm,
+    top=18mm,
+    bottom=18mm,
+    headheight=14pt,
+    headsep=14pt,
+    footskip=18pt
+}
+
+% Màu chuẩn giáo trình Stewart Calculus
+\definecolor{stewartcyan}{RGB}{0, 136, 175}
+\definecolor{stewartline}{RGB}{90, 175, 205}
+\definecolor{stewartdark}{RGB}{40, 40, 40}
+
+\newcommand{\sech}{\operatorname{sech}}
+\newcommand{\stewartbox}{{\color{stewartcyan}\rule{1.1ex}{1.1ex}}}
+
+% Cấu hình Header / Footer
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\fontsize{9}{11}\selectfont\textbf{266}\qquad\textsf{\textbf{CHƯƠNG 3}}\quad\textsf{Các quy tắc tính đạo hàm}}
+\fancyfoot[C]{\fontsize{7}{8.5}\selectfont\color{gray} Bản quyền 2021 Cengage Learning. Mọi quyền được bảo lưu. Không được sao chép, scan hoặc nhân bản toàn bộ hay một phần. WCN 02-200-203}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\begin{document}
+
+% ================= PHẦN TRÊN: LỀ TRÁI RỖNG + NỘI DUNG CHÍNH =================
+\noindent
+\begin{minipage}[t]{0.26\linewidth}
+    \strut
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.72\linewidth}
+    Vì $\cosh^2 y - \sinh^2 y = 1$ và $\cosh y \geqslant 0$, nên ta có $\cosh y = \sqrt{1 + \sinh^2 y}$, do đó
+    \[
+    \frac{dy}{dx} = \frac{1}{\cosh y} = \frac{1}{\sqrt{1 + \sinh^2 y}} = \frac{1}{\sqrt{1 + x^2}}
+    \]
+
+    \vspace{0.6em}
+    \noindent
+    \textbf{\textsf{\color{stewartcyan}LỜI GIẢI 2}}\quad Từ Phương trình 3 (đã được chứng minh trong Ví dụ 3), ta có
+    \begin{align*}
+    \frac{d}{dx}(\sinh^{-1} x) &= \frac{d}{dx}\ln(x + \sqrt{x^2 + 1}) \\[4pt]
+    &= \frac{1}{x + \sqrt{x^2 + 1}}\,\frac{d}{dx}(x + \sqrt{x^2 + 1}) \\[4pt]
+    &= \frac{1}{x + \sqrt{x^2 + 1}}\left(1 + \frac{x}{\sqrt{x^2 + 1}}\right) \\[4pt]
+    &= \frac{\sqrt{x^2 + 1} + x}{(x + \sqrt{x^2 + 1})\sqrt{x^2 + 1}} \\[4pt]
+    &= \frac{1}{\sqrt{x^2 + 1}} \tag*{\smash{\raisebox{-1pt}{\stewartbox}}}
+    \end{align*}
+
+    \vspace{0.4em}
+    \noindent
+    \textbf{\textsf{\color{stewartcyan}VÍ DỤ 5}}\quad Tìm $\dfrac{d}{dx}\left[\tanh^{-1}(\sin x)\right]$.
+
+    \vspace{0.6em}
+    \noindent
+    \textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\quad Áp dụng Bảng 6 và Quy tắc chuỗi, ta có
+    \begin{align*}
+    \frac{d}{dx}\left[\tanh^{-1}(\sin x)\right] &= \frac{1}{1 - (\sin x)^2}\,\frac{d}{dx}(\sin x) \\[5pt]
+    &= \frac{1}{1 - \sin^2 x}\cos x = \frac{\cos x}{\cos^2 x} = \sec x \tag*{\smash{\raisebox{-1pt}{\stewartbox}}}
+    \end{align*}
+\end{minipage}
+
+\vspace{24pt}
+
+% ================= THANH TIÊU ĐỀ BÀI TẬP 3.11 =================
+\noindent
+\begin{tikzpicture}
+    \foreach \y in {0pt, 2.6pt, 5.2pt, 7.8pt} {
+        \draw[stewartline, line width=0.55pt] (0, \y) -- (30mm, \y);
+        \draw[stewartline, line width=0.55pt] (69mm, \y) -- (\linewidth, \y);
+    }
+    \node[anchor=west, inner sep=0pt] at (33mm, 3.9pt) {%
+        {\fontsize{16}{18}\selectfont\sffamily\bfseries\color{stewartcyan}3.11}\hspace{2.5mm}%
+        {\color{stewartcyan}\rule[-2pt]{1.2pt}{14pt}}\hspace{2.5mm}%
+        {\fontsize{15}{17}\selectfont\sffamily\bfseries\color{stewartdark}Bài tập}%
+    };
+\end{tikzpicture}
+
+\vspace{14pt}
+
+% ================= PHẦN DƯỚI: 2 CỘT BÀI TẬP =================
+\noindent
+\begin{minipage}[t]{0.48\linewidth}
+    \fontsize{9}{12.5}\selectfont
+    \noindent\textbf{\textsf{\color{stewartcyan}1--6}}\quad Tìm giá trị số của mỗi biểu thức sau.
+    \vspace{0.7em}
+
+    \noindent\makebox[1.6em][l]{\textbf{1.}}\makebox[38mm][l]{(a)\; $\sinh 0$}(b)\; $\cosh 0$\par\vspace{0.55em}
+    \noindent\makebox[1.6em][l]{\textbf{2.}}\makebox[38mm][l]{(a)\; $\tanh 0$}(b)\; $\tanh 1$\par\vspace{0.55em}
+    \noindent\makebox[1.6em][l]{\textbf{3.}}\makebox[38mm][l]{(a)\; $\cosh(\ln 5)$}(b)\; $\cosh 5$\par\vspace{0.55em}
+    \noindent\makebox[1.6em][l]{\textbf{4.}}\makebox[38mm][l]{(a)\; $\sinh 4$}(b)\; $\sinh(\ln 4)$\par\vspace{0.55em}
+    \noindent\makebox[1.6em][l]{\textbf{5.}}\makebox[38mm][l]{(a)\; $\sech 0$}(b)\; $\cosh^{-1} 1$\par\vspace{0.55em}
+    \noindent\makebox[1.6em][l]{\textbf{6.}}\makebox[38mm][l]{(a)\; $\sinh 1$}(b)\; $\sinh^{-1} 1$\par
+
+    \vspace{0.75em}
+    \noindent{\color{stewartline}\rule{\linewidth}{0.55pt}}\par
+    \vspace{0.75em}
+
+    \noindent\makebox[1.6em][l]{\textbf{7.}}Viết $8\sinh x + 5\cosh x$ theo $e^x$ và $e^{-x}$.\par\vspace{0.65em}
+    \noindent\makebox[1.6em][l]{\textbf{8.}}Viết $2e^{2x} + 3e^{-2x}$ theo $\sinh 2x$ và $\cosh 2x$.\par
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \fontsize{9}{12.5}\selectfont
+    \noindent\makebox[1.8em][l]{\textbf{9.}}Viết $\sinh(\ln x)$ dưới dạng hàm hữu tỉ của $x$.\par\vspace{0.65em}
+    \noindent\makebox[1.8em][l]{\textbf{10.}}Viết $\cosh(4\ln x)$ dưới dạng hàm hữu tỉ của $x$.\par\vspace{0.75em}
+
+    \noindent\textbf{\textsf{\color{stewartcyan}11--23}}\quad Chứng minh đẳng thức.\par\vspace{0.65em}
+
+    \noindent\makebox[1.8em][l]{\textbf{11.}}$\sinh(-x) = -\sinh x$\hfill{\footnotesize(Điều này chứng tỏ $\sinh$ là hàm số lẻ)}\par\vspace{0.55em}
+    \noindent\makebox[1.8em][l]{\textbf{12.}}$\cosh(-x) = \cosh x$\hfill{\footnotesize(Điều này chứng tỏ $\cosh$ là hàm số chẵn)}\par\vspace{0.55em}
+    \noindent\makebox[1.8em][l]{\textbf{13.}}$\cosh x + \sinh x = e^x$\par\vspace{0.55em}
+    \noindent\makebox[1.8em][l]{\textbf{14.}}$\cosh x - \sinh x = e^{-x}$\par\vspace{0.55em}
+    \noindent\makebox[1.8em][l]{\textbf{15.}}$\sinh(x + y) = \sinh x\cosh y + \cosh x\sinh y$\par\vspace{0.55em}
+    \noindent\makebox[1.8em][l]{\textbf{16.}}$\cosh(x + y) = \cosh x\cosh y + \sinh x\sinh y$\par
+\end{minipage}
+
+\end{document}
