@@ -1,0 +1,184 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage[paperwidth=8.5in, paperheight=11in, top=0.6in, bottom=0.6in, left=0.75in, right=0.75in]{geometry}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+
+% --- BẢNG MÀU CHUẨN CỦA SÁCH STEWART CALCULUS ---
+\definecolor{stewartcyan}{RGB}{0, 158, 224}
+\definecolor{stewartred}{RGB}{195, 30, 45}
+\definecolor{stewartgray}{RGB}{110, 110, 110}
+\definecolor{stewartlightgray}{RGB}{240, 240, 240}
+
+% --- THIẾT LẬP HEADER / FOOTER ---
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\small\textsf{\textbf{MỤC 3.7}\quad Tốc độ thay đổi trong khoa học tự nhiên và xã hội}\qquad\textbf{\textsf{225}}}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\fontsize{7}{8}\selectfont\color{stewartgray} Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part.}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+
+\begin{document}
+
+% =========================================================================
+% PHẦN TRÊN: TIẾP TỤC CÁC BÀI TẬP CỦA MỤC TRƯỚC (BỐ CỤC 2 CỘT CÂN BẰNG)
+% =========================================================================
+\noindent
+\begin{minipage}[t]{0.475\textwidth}
+    \begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=*, itemsep=2.5pt, topsep=0pt]
+        \setcounter{enumi}{72}
+        \item $h(t) = \cot^{-1}(t) + \cot^{-1}(1/t)$
+        \item $R(t) = \arcsin(1/t)$
+        \item $y = x\sin^{-1}x + \sqrt{1 - x^2}$
+        \item $y = \cos^{-1}(\sin^{-1}t)$
+        \item $y = \tan^{-1}\!\left(\dfrac{x}{a}\right) + \ln\sqrt{\dfrac{x - a}{x + a}}$
+        \item $y = \arctan\sqrt{\dfrac{1 - x}{1 + x}}$
+    \end{enumerate}
+
+    \vspace{2pt}
+    {\color{stewartcyan}\rule{\linewidth}{0.6pt}}
+    \vspace{1pt}
+
+    \noindent
+    \tikz[baseline=-0.6ex]{
+        \draw[stewartcyan, fill=white, line width=0.8pt] (0,0) rectangle (0.32, 0.30);
+        \draw[stewartcyan, line width=0.8pt] (0.04, 0.08) .. controls (0.12, 0.26) and (0.20, 0.05) .. (0.28, 0.22);
+    }\hspace{4pt}%
+    \textbf{\color{stewartcyan}79--80}\; \small Tìm $f'(x)$. Kiểm tra xem câu trả lời của bạn có hợp lý hay không bằng cách so sánh đồ thị của $f$ và $f'$.
+    
+    \vspace{3pt}
+    \noindent
+    \textbf{79.}\; $f(x) = \sqrt{1 - x^2}\;\arcsin x$\hfill
+    \textbf{80.}\; $f(x) = \arctan(x^2 - x)$
+
+    \vspace{1pt}
+    {\color{stewartcyan}\rule{\linewidth}{0.6pt}}
+    \vspace{3pt}
+
+    \noindent
+    \textbf{81.}\; Chứng minh công thức tính $(d/dx)(\cos^{-1}x)$ bằng phương pháp tương tự như đối với $(d/dx)(\sin^{-1}x)$.
+
+    \vspace{4pt}
+    \noindent
+    \textbf{82.}\; (a) Một cách định nghĩa $\sec^{-1}x$ là coi $y = \sec^{-1}x \iff \sec y = x$ và $0 \le y < \pi/2$ hoặc $\pi \le y < 3\pi/2$. Hãy chứng minh rằng, với định nghĩa này,
+    \[
+    \frac{d}{dx}(\sec^{-1}x) = \frac{1}{x\sqrt{x^2 - 1}}
+    \]
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.485\textwidth}
+    \noindent
+    (b) Một cách định nghĩa $\sec^{-1}x$ khác đôi khi cũng được sử dụng là coi $y = \sec^{-1}x \iff \sec y = x$ và $0 \le y \le \pi,\; y \ne \pi/2$. Hãy chứng minh rằng, với định nghĩa này,
+    \[
+    \frac{d}{dx}(\sec^{-1}x) = \frac{1}{|x|\sqrt{x^2 - 1}}
+    \]
+
+    \noindent
+    \textbf{83. Đạo hàm của hàm ngược}\quad Giả sử $f$ là hàm đơn ánh khả vi và hàm ngược $f^{-1}$ của nó cũng khả vi. Sử dụng phương pháp đạo hàm ẩn để chứng minh rằng
+    \[
+    (f^{-1})'(x) = \frac{1}{f'(f^{-1}(x))}
+    \]
+    với điều kiện mẫu số khác 0.
+
+    \vspace{2pt}
+    \noindent
+    \textbf{\color{stewartcyan}84--86}\; Sử dụng công thức trong Bài tập 83.
+    \begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=*, itemsep=1.5pt, topsep=2pt]
+        \setcounter{enumi}{83}
+        \item Nếu $f(4) = 5$ và $f'(4) = \frac{2}{3}$, hãy tìm $(f^{-1})'(5)$.
+        \item Nếu $f(x) = x + e^x$, hãy tìm $(f^{-1})'(1)$.
+        \item Nếu $f(x) = x^3 + 3\sin x + 2\cos x$, hãy tìm $(f^{-1})'(2)$.
+    \end{enumerate}
+
+    \vspace{2pt}
+    {\color{stewartcyan}\rule{\linewidth}{0.6pt}}
+    \vspace{3pt}
+
+    \noindent
+    \textbf{87.}\; Giả sử rằng $f$ và $g$ là các hàm khả vi và đặt $h(x) = f(x)^{g(x)}$. Sử dụng đạo hàm logarit để thiết lập công thức
+    \[
+    h' = g \cdot f^{g-1} \cdot f' + (\ln f) \cdot f^g \cdot g'
+    \]
+
+    \noindent
+    \textbf{88.}\; Sử dụng công thức trong Bài tập 87 để tìm đạo hàm.
+    
+    \vspace{2pt}
+    \noindent
+    (a) $h(x) = x^3$\hfill (b) $h(x) = 3^x$\hfill (c) $h(x) = (\sin x)^x$
+\end{minipage}
+
+\vspace{18pt}
+
+% =========================================================================
+% DẢI TIÊU ĐỀ MỤC 3.7
+% =========================================================================
+\noindent
+\begin{minipage}[c]{0.26\textwidth}
+    \color{stewartcyan}
+    \rule{\linewidth}{1.2pt}\\[3.5pt]
+    \rule{\linewidth}{1.2pt}\\[3.5pt]
+    \rule{\linewidth}{1.2pt}\\[3.5pt]
+    \rule{\linewidth}{1.2pt}
+\end{minipage}%
+\hspace{8pt}%
+\begin{minipage}[c]{0.70\textwidth}
+    \noindent\textsf{\textbf{\fontsize{24}{26}\selectfont\color{stewartcyan}3.7}}%
+    \hspace{6pt}%
+    {\color{stewartcyan}\rule[-4pt]{1.5pt}{24pt}}%
+    \hspace{8pt}%
+    \textsf{\textbf{\fontsize{13.5}{16}\selectfont Tốc độ thay đổi trong Khoa học Tự nhiên và Xã hội}}
+\end{minipage}
+
+\vspace{10pt}
+
+% =========================================================================
+% PHẦN DƯỚI: NỘI DUNG LÝ THUYẾT VÀ HÌNH MINH HỌA BÊN LỀ
+% =========================================================================
+\noindent
+\begin{minipage}[t]{0.26\textwidth}
+    % Khoảng cách dóng thẳng hàng hình minh họa với đoạn nhắc đến "Hình 1"
+    \vspace{70pt}
+    
+    \centering
+    \includegraphics[width=\linewidth]{images/p0260_fig1.png}
+    
+    \vspace{6pt}
+    {\small\raggedright
+    $m_{PQ} = \text{tốc độ thay đổi trung bình}$\\
+    $m = f'(x_1) = \text{tốc độ thay đổi tức thời}$\par
+    }
+    
+    \vspace{6pt}
+    \noindent{\bfseries\textsf{HÌNH 1}}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.71\textwidth}
+    Chúng ta biết rằng nếu $y = f(x)$, thì đạo hàm $dy/dx$ có thể được hiểu là tốc độ thay đổi của $y$ theo $x$. Trong mục này, chúng ta sẽ xem xét một số ứng dụng của ý tưởng này vào vật lý, hóa học, sinh học, kinh tế học và các ngành khoa học khác.
+
+    Hãy nhớ lại từ Mục 2.7 ý tưởng cơ bản đằng sau tốc độ thay đổi. Nếu $x$ thay đổi từ $x_1$ đến $x_2$, thì độ biến thiên của $x$ là
+    \[
+    \Delta x = x_2 - x_1
+    \]
+    và độ biến thiên tương ứng của $y$ là
+    \[
+    \Delta y = f(x_2) - f(x_1)
+    \]
+    Tỉ số biến thiên
+    \[
+    \frac{\Delta y}{\Delta x} = \frac{f(x_2) - f(x_1)}{x_2 - x_1}
+    \]
+    là \textbf{tốc độ thay đổi trung bình của $y$ theo $x$} trên đoạn $[x_1, x_2]$ và có thể được hiểu là hệ số góc của cát tuyến $PQ$ trong Hình 1. Giới hạn của tỉ số này khi $\Delta x \to 0$ là đạo hàm $f'(x_1)$, do đó có thể được hiểu là \textbf{tốc độ thay đổi tức thời của $y$ theo $x$} hoặc hệ số góc của tiếp tuyến tại điểm $P(x_1, f(x_1))$. Sử dụng ký hiệu Leibniz, chúng ta viết quá trình này dưới dạng
+    \[
+    \frac{dy}{dx} = \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}
+    \]
+\end{minipage}
+
+\end{document}
