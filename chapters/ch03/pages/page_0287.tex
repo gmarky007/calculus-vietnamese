@@ -1,0 +1,113 @@
+\documentclass[10pt]{article}
+\usepackage[paperwidth=8.5in,paperheight=11in,top=0.45in,bottom=0.45in,left=0.7in,right=0.7in]{geometry}
+\usepackage{fontspec}
+\usepackage{amsmath,amssymb}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{enumitem}
+
+\IfFontExistsTF{Times New Roman}{
+  \setmainfont{Times New Roman}
+}{
+  \IfFontExistsTF{TeX Gyre Termes}{
+    \setmainfont{TeX Gyre Termes}
+  }{}
+}
+
+\IfFontExistsTF{Arial}{
+  \setsansfont{Arial}
+}{
+  \IfFontExistsTF{TeX Gyre Heros}{
+    \setsansfont{TeX Gyre Heros}
+  }{}
+}
+
+\definecolor{stewartblue}{RGB}{0, 124, 186}
+\setlength{\columnsep}{22pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\newcommand{\ex}[1]{\par\vspace{6.5pt}\noindent\hangindent=1.6em\hangafter=1\textbf{#1.}\hspace{0.5em}}
+
+\begin{document}
+\fontsize{9pt}{11.5pt}\selectfont
+
+% Header trang
+\noindent{\textbf{252}\hspace{2.5em}\textsf{\textbf{CHƯƠNG 3}}\hspace{1.5em}Các quy tắc đạo hàm}
+\vspace{10pt}
+
+\begin{multicols}{2}
+
+\ex{17} Hai ô tô cùng xuất phát từ một điểm. Một xe đi về phía nam với vận tốc $60\text{ mi/h}$ và xe kia đi về phía tây với vận tốc $25\text{ mi/h}$. Hỏi khoảng cách giữa hai xe tăng với tốc độ nào sau đó hai giờ?
+
+\ex{18} Một đèn rọi trên mặt đất chiếu vào một bức tường cách đó $12\text{ m}$. Nếu một người đàn ông cao $2\text{ m}$ đi từ đèn rọi về phía tòa nhà với tốc độ $1{,}6\text{ m/s}$, thì chiều cao bóng của người đó trên bức tường giảm với tốc độ nào khi anh ta cách tòa nhà $4\text{ m}$?
+
+\ex{19} Một người đàn ông bắt đầu đi bộ về phía bắc với tốc độ $4\text{ ft/s}$ từ điểm $P$. Năm phút sau, một người phụ nữ bắt đầu đi bộ về phía nam với tốc độ $5\text{ ft/s}$ từ một điểm cách $P$ đúng $500\text{ ft}$ về phía đông. Hỏi khoảng cách giữa hai người tăng với tốc độ nào sau $15\text{ phút}$ kể từ khi người phụ nữ bắt đầu đi?
+
+\ex{20} Sân trong của một sân bóng chày là một hình vuông cạnh $90\text{ ft}$. Một cầu thủ đánh bóng và chạy về phía chốt một với tốc độ $24\text{ ft/s}$.
+\begin{enumerate}[label=(\alph*),leftmargin=1.5em,itemsep=1pt,topsep=2pt]
+  \item Khoảng cách từ anh ta đến chốt hai giảm với tốc độ nào khi anh ta đi được nửa đường đến chốt một?
+  \item Khoảng cách từ anh ta đến chốt ba tăng với tốc độ nào tại cùng thời điểm đó?
+\end{enumerate}
+
+\begin{center}
+  \vspace{2pt}
+  \includegraphics[width=0.62\columnwidth]{images/p0287_fig1.png}
+  \vspace{2pt}
+\end{center}
+
+\ex{21} Chiều cao của một tam giác đang tăng với tốc độ $1\text{ cm/min}$ trong khi diện tích của tam giác tăng với tốc độ $2\text{ cm}^2\text{/min}$. Đáy của tam giác thay đổi với tốc độ nào khi chiều cao bằng $10\text{ cm}$ và diện tích bằng $100\text{ cm}^2$?
+
+\ex{22} Một chiếc thuyền được kéo vào bến bằng một sợi dây buộc vào mũi thuyền và luồn qua một ròng rọc trên bến cao hơn mũi thuyền $1\text{ m}$. Nếu dây được kéo vào với tốc độ $1\text{ m/s}$, thuyền đang tiến lại gần bến với tốc độ nào khi nó cách bến $8\text{ m}$?
+
+\begin{center}
+  \vspace{2pt}
+  \includegraphics[width=0.88\columnwidth]{images/p0287_fig2.png}
+  \vspace{2pt}
+\end{center}
+
+\vspace{4pt}
+\noindent\hangindent=2.6em\hangafter=1{\color{stewartblue}\textbf{23–24}}\hspace{0.6em}Sử dụng dữ kiện khoảng cách (tính bằng mét) mà một hòn đá rơi tự do rơi được sau $t$ giây là $d = 4{,}9t^2$.
+
+\ex{23} Một người phụ nữ đứng gần mép một vách đá và thả một hòn đá xuống. Đúng một giây sau, cô thả tiếp một hòn đá khác. Một giây sau đó, khoảng cách giữa hai hòn đá thay đổi với tốc độ nào?
+
+\ex{24} Hai người đàn ông đứng cách nhau $10\text{ m}$ trên mặt đất bằng phẳng gần mép một vách đá. Một người thả một hòn đá và một giây sau người kia thả một hòn đá. Một giây sau đó, khoảng cách giữa hai hòn đá thay đổi với tốc độ nào?
+
+\columnbreak
+
+\ex{25} Nước đang rò rỉ ra khỏi một bể hình nón ngược với tốc độ $10.000\text{ cm}^3\text{/min}$ cùng lúc nước đang được bơm vào bể với tốc độ không đổi. Bể có chiều cao $6\text{ m}$ và đường kính ở đỉnh là $4\text{ m}$. Nếu mực nước đang dâng lên với tốc độ $20\text{ cm/min}$ khi chiều cao của nước là $2\text{ m}$, hãy tìm tốc độ nước được bơm vào bể.
+
+\ex{26} Một chất điểm chuyển động dọc theo đường cong $y = 2\sin(\pi x/2)$. Khi chất điểm đi qua điểm $(\frac{1}{3}, 1)$, hoành độ $x$ của nó tăng với tốc độ $\sqrt{10}\text{ cm/s}$. Khoảng cách từ chất điểm đến gốc tọa độ thay đổi nhanh như thế nào tại thời điểm đó?
+
+\ex{27} Một máng nước dài $10\text{ m}$ và có mặt cắt ngang là hình thang cân rộng $30\text{ cm}$ ở đáy, $80\text{ cm}$ ở miệng trên và có chiều cao $50\text{ cm}$. Nếu máng đang được đổ đầy nước với tốc độ $0{,}2\text{ m}^3\text{/min}$, mực nước dâng lên nhanh như thế nào khi nước sâu $30\text{ cm}$?
+
+\ex{28} Một cái máng dài $10\text{ ft}$ và hai đầu có dạng hình tam giác cân rộng $3\text{ ft}$ ở đỉnh và có chiều cao $1\text{ ft}$. Nếu máng đang được đổ đầy nước với tốc độ $12\text{ ft}^3\text{/min}$, mực nước dâng lên nhanh như thế nào khi nước sâu $6\text{ inches}$?
+
+\ex{29} Sỏi đang được đổ từ một băng chuyền với tốc độ $30\text{ ft}^3\text{/min}$, và độ thô của nó tạo thành một đống có dạng hình nón với đường kính đáy và chiều cao luôn bằng nhau. Chiều cao của đống sỏi tăng nhanh như thế nào khi đống sỏi cao $10\text{ ft}$?
+
+\begin{center}
+  \vspace{2pt}
+  \includegraphics[width=0.62\columnwidth]{images/p0287_fig3.png}
+  \vspace{2pt}
+\end{center}
+
+\ex{30} Một hồ bơi rộng $20\text{ ft}$, dài $40\text{ ft}$, sâu $3\text{ ft}$ ở đầu nông và sâu $9\text{ ft}$ ở điểm sâu nhất. Một mặt cắt ngang được cho trong hình vẽ. Nếu hồ bơi đang được bơm đầy với tốc độ $0{,}8\text{ ft}^3\text{/min}$, mực nước dâng lên nhanh như thế nào khi độ sâu tại điểm sâu nhất là $5\text{ ft}$?
+
+\begin{center}
+  \vspace{2pt}
+  \includegraphics[width=0.84\columnwidth]{images/p0287_fig4.png}
+  \vspace{2pt}
+\end{center}
+
+\ex{31} Các cạnh của một tam giác đều đang tăng với tốc độ $10\text{ cm/min}$. Diện tích của tam giác tăng với tốc độ nào khi các cạnh dài $30\text{ cm}$?
+
+\end{multicols}
+
+\vfill
+\noindent{\color{stewartblue}\rule{\textwidth}{0.8pt}}\\[3pt]
+{\fontsize{5.2pt}{6.5pt}\selectfont
+\noindent Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\\[1.5pt]
+Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.\par}
+
+\end{document}
