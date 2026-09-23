@@ -1,0 +1,136 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{array}
+
+\geometry{
+    letterpaper,
+    left=18mm,
+    right=18mm,
+    top=20mm,
+    bottom=20mm,
+    headheight=14pt,
+    headsep=14pt
+}
+
+\definecolor{stewartcyan}{RGB}{0, 130, 155}
+\definecolor{tableheader}{RGB}{225, 235, 245}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[L]{\small\textsf{\textbf{MỤC 4.3}}\quad \textsf{Các đạo hàm cho ta biết điều gì về hình dạng của đồ thị}}
+\fancyhead[R]{\small\textsf{\textbf{299}}}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt}
+
+\newlength{\leftcolwidth}
+\newlength{\rightcolwidth}
+\setlength{\leftcolwidth}{0.25\textwidth}
+\setlength{\rightcolwidth}{0.72\textwidth}
+
+\begin{document}
+
+% Block 1: Lời giải tiếp theo của Ví dụ 1 & Đề bài + Mở đầu Lời giải Ví dụ 3
+\noindent
+\begin{minipage}[t]{\leftcolwidth}
+    \vspace{0pt}\mbox{}
+\end{minipage}\hfill
+\begin{minipage}[t]{\rightcolwidth}
+    \vspace{0pt}
+    \textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\quad Từ bảng trong lời giải của Ví dụ 1, ta thấy rằng $f'(x)$ đổi dấu từ âm sang dương tại $-1$, do đó theo Kiểm định Đạo hàm Cấp một, $f(-1) = 0$ là một giá trị cực tiểu địa phương. Tương tự, $f'$ đổi dấu từ âm sang dương tại $2$, nên $f(2) = -27$ cũng là một giá trị cực tiểu địa phương. Như đã lưu ý trước đó, $f(0) = 5$ là một giá trị cực đại địa phương vì $f'(x)$ đổi dấu từ dương sang âm tại $0$.\hfill{\color{stewartcyan}$\blacksquare$}
+
+    \vspace{2.5mm}
+    \textbf{\textsf{\color{stewartcyan}VÍ DỤ 3}}\quad Tìm các giá trị cực đại và cực tiểu địa phương của hàm số
+    \[
+    g(x) = x + 2\sin x \qquad 0 \leqslant x \leqslant 2\pi
+    \]
+
+    \textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\quad Tương tự như Ví dụ 1, ta bắt đầu bằng việc tìm các số tới hạn. Đạo hàm là:
+    \[
+    g'(x) = 1 + 2\cos x
+    \]
+    suy ra $g'(x) = 0$ khi $\cos x = -\frac{1}{2}$. Các nghiệm của phương trình này là $2\pi/3$ và $4\pi/3$. Vì $g$ khả vi khắp nơi, nên các số tới hạn duy nhất là $2\pi/3$ và $4\pi/3$. Ta chia miền xác định thành các khoảng theo các số tới hạn. Trên mỗi khoảng, $g'(x)$ hoặc luôn dương hoặc luôn âm, và vì thế ta phân tích $g$ trong bảng sau.
+\end{minipage}
+
+\vspace{3mm}
+% Block 2: Ghi chú lề dóng hàng chính xác với Bảng biến thiên
+\noindent
+\begin{minipage}[c]{\leftcolwidth}
+    {\footnotesize\raggedright
+    Các dấu $+$ trong bảng xuất phát từ việc $g'(x) > 0$ khi $\cos x > -\frac{1}{2}$. Từ đồ thị của $y = \cos x$, điều này đúng trên các khoảng đã chỉ ra. Ngoài ra, ta có thể chọn một giá trị kiểm tra trong mỗi khoảng và xác định dấu của $g'(x)$ bằng giá trị đó.\par}
+\end{minipage}\hfill
+\begin{minipage}[c]{\rightcolwidth}
+    \centering
+    \renewcommand{\arraystretch}{1.35}
+    \small
+    \begin{tabular}{|c|c|c|}
+    \hline
+    \rowcolor{tableheader}
+    \textbf{Khoảng} & \boldmath$g'(x) = 1 + 2\cos x$ & \boldmath$g$ \\
+    \hline
+    $0 < x < 2\pi/3$ & $+$ & đồng biến trên $(0, 2\pi/3)$ \\
+    $2\pi/3 < x < 4\pi/3$ & $-$ & nghịch biến trên $(2\pi/3, 4\pi/3)$ \\
+    $4\pi/3 < x < 2\pi$ & $+$ & đồng biến trên $(4\pi/3, 2\pi)$ \\
+    \hline
+    \end{tabular}
+\end{minipage}
+
+\vspace{3mm}
+% Block 3: Hình 5 ở lề dóng hàng với các phép tính giá trị cực trị & Kết luận
+\noindent
+\begin{minipage}[t]{\leftcolwidth}
+    \vspace{0pt}
+    \includegraphics[width=\linewidth]{images/p0334_fig1.png}
+    
+    \vspace{2mm}
+    {\footnotesize\raggedright\textbf{\textsf{HÌNH 5}}\quad $g(x) = x + 2\sin x$\par}
+\end{minipage}\hfill
+\begin{minipage}[t]{\rightcolwidth}
+    \vspace{0pt}
+    Vì $g'(x)$ đổi dấu từ dương sang âm tại $2\pi/3$, Kiểm định Đạo hàm Cấp một cho biết rằng hàm số đạt cực đại địa phương tại $2\pi/3$ và giá trị cực đại địa phương là
+    \[
+    g(2\pi/3) = \frac{2\pi}{3} + 2\sin\frac{2\pi}{3} = \frac{2\pi}{3} + 2\left(\frac{\sqrt{3}}{2}\right) = \frac{2\pi}{3} + \sqrt{3} \approx 3{,}83
+    \]
+    Tương tự, $g'(x)$ đổi dấu từ âm sang dương tại $4\pi/3$ và do đó
+    \[
+    g(4\pi/3) = \frac{4\pi}{3} + 2\sin\frac{4\pi}{3} = \frac{4\pi}{3} + 2\left(-\frac{\sqrt{3}}{2}\right) = \frac{4\pi}{3} - \sqrt{3} \approx 2{,}46
+    \]
+    là một giá trị cực tiểu địa phương. Đồ thị của $g$ trong Hình 5 củng cố cho kết luận của chúng ta.\hfill{\color{stewartcyan}$\blacksquare$}
+\end{minipage}
+
+\vspace{4.5mm}
+% Block 4: Tiêu đề mục nhỏ mới & Đoạn văn giới thiệu
+\noindent
+\begin{minipage}[t]{\leftcolwidth}
+    \vspace{0pt}\mbox{}
+\end{minipage}\hfill
+\begin{minipage}[t]{\rightcolwidth}
+    \vspace{0pt}
+    \noindent
+    {\raisebox{0.1ex}{\color{stewartcyan}\rule{1.1ex}{1.1ex}}}\;\textbf{\large Đạo hàm $f''$ cho ta biết điều gì về $f$?}
+    
+    \vspace{1.5mm}
+    Hình 6 cho thấy đồ thị của hai hàm số đồng biến trên $(a, b)$. Cả hai đồ thị đều nối điểm $A$ với điểm $B$ nhưng trông khác nhau vì chúng uốn cong theo các hướng khác nhau. Làm thế nào chúng ta có thể phân biệt giữa hai dạng hành vi này?
+\end{minipage}
+
+\vspace{3.5mm}
+% Block 5: Hình 6 (HÌNH 6 dóng đáy ngang hàng chuẩn xác với nhãn (a), (b))
+\noindent
+\begin{minipage}[b]{\leftcolwidth}
+    {\footnotesize\textbf{\textsf{HÌNH 6}}}
+    \vspace*{1.2mm}
+\end{minipage}\hfill
+\begin{minipage}[b]{\rightcolwidth}
+    \centering
+    \includegraphics[width=\linewidth]{images/p0334_fig2.png}
+\end{minipage}
+
+\end{document}

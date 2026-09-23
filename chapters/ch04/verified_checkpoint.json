@@ -119,6 +119,12 @@
       "score": 99,
       "notes": "Mã nguồn hiện tại chứa văn bản từ chối thay vì nội dung sách. Cần tái lập toàn bộ cấu trúc trang gồm lề phụ bên trái, bảng xét dấu đạo hàm, khung quy tắc và hai hình minh họa.",
       "time": "2026-09-23 10:32:42"
+    },
+    {
+      "page_num": 334,
+      "score": 99,
+      "notes": "Bản in hiện tại bị lỗi in tràn chuỗi khai báo mã nguồn ở đầu trang; vị trí nhãn 'HÌNH 6' ở lề trái bị lệch độ cao so với đồ thị Hình 6 (cần dóng đáy ngang hàng nhãn (a), (b)), và bảng biến thiên thừa các đường kẻ ngang nội bộ so với bản gốc.",
+      "time": "2026-09-23 10:35:38"
     }
   ]
 }
