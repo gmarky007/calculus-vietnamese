@@ -1,0 +1,115 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{mathpazo}
+\usepackage{helvet}
+\usepackage{calc}
+
+\geometry{
+  paperwidth=8.5in,
+  paperheight=11in,
+  top=0.7in,
+  bottom=0.75in,
+  left=0.75in,
+  right=0.75in
+}
+
+\definecolor{stewartcyan}{RGB}{0, 130, 195}
+\definecolor{stewartdarkgray}{RGB}{80, 80, 80}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{14pt}
+\fancyhead[L]{\fontsize{9}{11}\selectfont \textbf{338}\qquad \textbf{\textsf{CHƯƠNG 4}}\quad Ứng dụng của đạo hàm}
+
+\setlength{\parindent}{14pt}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.24\textwidth}
+  \vspace{0pt}
+  \centering
+  \includegraphics[width=0.72\linewidth]{images/p0373_fig1.png}
+  
+  \vspace{4pt}
+  {\fontsize{8.5}{10.5}\selectfont \textbf{\textsf{HÌNH 3}}}
+
+  \vspace{20pt}
+  \includegraphics[width=0.98\linewidth]{images/p0373_fig2.png}
+  
+  \vspace{4pt}
+  {\fontsize{8.5}{10.5}\selectfont \textbf{\textsf{HÌNH 4}}}
+
+  \vspace{52pt}
+  \includegraphics[width=0.88\linewidth]{images/p0373_fig3.png}
+  
+  \vspace{4pt}
+  {\fontsize{8.5}{10.5}\selectfont \textbf{\textsf{HÌNH 5}}}
+
+  \vspace{18pt}
+  \begin{flushleft}
+  {\fontsize{8}{10.5}\selectfont\raggedright
+  Trong Dự án Ứng dụng theo sau mục này, chúng ta sẽ khảo sát hình dạng kinh tế nhất của một chiếc lon bằng cách tính đến các chi phí sản xuất khác.}
+  \end{flushleft}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.725\textwidth}
+  \vspace{0pt}
+  \noindent
+  \textbf{\textsf{\color{stewartcyan}VÍ DỤ 2}}\quad Một chiếc lon hình trụ được sản xuất để chứa $1\text{ L}$ dầu. Hãy tìm các kích thước sao cho chi phí kim loại để chế tạo lon là nhỏ nhất.
+
+  \vspace{6pt}
+  \noindent
+  \textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\quad Ta vẽ một hình biểu diễn như trong Hình 3, trong đó $r$ là bán kính đáy và $h$ là chiều cao của hình trụ (đều tính theo xentimét). Để tối thiểu hóa chi phí kim loại, ta cần làm cực tiểu diện tích toàn phần của hình trụ (gồm hai đáy trên, dưới và mặt xung quanh). Từ Hình 4, ta thấy mặt xung quanh khi trải phẳng là một hình chữ nhật với hai kích thước là $2\pi r$ và $h$. Do đó, diện tích toàn phần là
+  \[
+    A = 2\pi r^2 + 2\pi rh
+  \]
+  Ta muốn biểu diễn $A$ qua một biến duy nhất là $r$. Để triệt tiêu biến $h$, ta sử dụng dữ kiện thể tích của lon bằng $1\text{ L}$, tương đương với $1000\text{ cm}^3$. Như vậy
+  \[
+    \pi r^2 h = 1000
+  \]
+  \noindent
+  suy ra $h = 1000/(\pi r^2)$. Thay biểu thức này vào công thức của $A$, ta được:
+  \[
+    A = 2\pi r^2 + 2\pi r \left( \frac{1000}{\pi r^2} \right) = 2\pi r^2 + \frac{2000}{r}
+  \]
+  Ta biết rằng bán kính $r$ phải là số dương, và không có giới hạn nào về độ lớn của $r$. Do đó, hàm số ta cần tìm giá trị nhỏ nhất là
+  \[
+    A(r) = 2\pi r^2 + \frac{2000}{r}, \qquad r > 0
+  \]
+  Để tìm các số tới hạn, ta lấy đạo hàm:
+  \[
+    A'(r) = 4\pi r - \frac{2000}{r^2} = \frac{4(\pi r^3 - 500)}{r^2}
+  \]
+  Khi đó $A'(r) = 0$ khi $\pi r^3 = 500$, do đó số tới hạn duy nhất là $r = \sqrt[3]{500/\pi}$.
+
+  Vì tập xác định của $A$ là $(0, \infty)$, ta không thể dùng phương pháp kiểm tra giá trị tại các đầu mút như ở Ví dụ 1. Tuy nhiên, ta nhận thấy rằng $A'(r) < 0$ với $r < \sqrt[3]{500/\pi}$ và $A'(r) > 0$ với $r > \sqrt[3]{500/\pi}$, nghĩa là hàm số $A$ nghịch biến trên toàn bộ khoảng bên trái số tới hạn và đồng biến trên toàn bộ khoảng bên phải số tới hạn. Như vậy, điểm $r = \sqrt[3]{500/\pi}$ chắc chắn mang lại một \textit{giá trị nhỏ nhất tuyệt đối}.
+
+  [Cách khác, ta có thể lập luận rằng $A(r) \to \infty$ khi $r \to 0^+$ và $A(r) \to \infty$ khi $r \to \infty$, vì thế phải tồn tại giá trị nhỏ nhất của $A(r)$, và giá trị này nhất thiết phải đạt được tại số tới hạn. Xem Hình 5.]
+
+  Giá trị của $h$ tương ứng với $r = \sqrt[3]{500/\pi}$ là
+  \[
+    h = \frac{1000}{\pi r^2} = \frac{1000}{\pi (500/\pi)^{2/3}} = 2\sqrt[3]{\frac{500}{\pi}} = 2r
+  \]
+  Như vậy, để chi phí làm lon là nhỏ nhất thì bán kính đáy phải là $\sqrt[3]{500/\pi}\text{ cm}$ và chiều cao phải bằng hai lần bán kính đáy, nghĩa là bằng đúng đường kính của lon.\hfill{\color{stewartcyan}$\blacksquare$}
+
+  \vspace{16pt}
+  \noindent
+  \textbf{\textsf{\color{stewartcyan}CHÚ Ý 1}}\quad Lập luận được sử dụng ở Ví dụ 2 để khẳng định giá trị nhỏ nhất tuyệt đối chính là một dạng biến thể của Kiểm định Đạo hàm Cấp một (vốn chỉ áp dụng cho các giá trị cực đại hoặc cực tiểu \textit{địa phương}) và sẽ được phát biểu tổng quát dưới đây để tiện tra cứu về sau.
+\end{minipage}
+
+\vfill
+\noindent
+{\fontsize{6.5}{8}\selectfont \color{stewartdarkgray}
+Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\\
+Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s).\\
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.}
+
+\end{document}
