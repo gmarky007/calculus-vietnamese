@@ -1,0 +1,123 @@
+\documentclass[10pt]{article}
+\usepackage[paperwidth=8.5in, paperheight=11in, left=0.75in, right=0.75in, top=0.55in, bottom=0.5in]{geometry}
+\usepackage[leqno]{amsmath}
+\usepackage{amssymb,amsfonts}
+\usepackage{fontspec}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage{xcolor}
+
+\setmainfont{TeX Gyre Termes}
+\setsansfont{TeX Gyre Heros}
+
+\definecolor{stewartblue}{RGB}{0, 115, 175}
+\definecolor{stewartcyan}{RGB}{40, 150, 205}
+\definecolor{stewartred}{RGB}{205, 35, 35}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+
+\begin{document}
+
+% Running Header
+{\small\textsf{\textbf{MỤC 4.4}\quad Dạng vô định và quy tắc l'Hôpital}\hfill\textbf{\textsf{309}}}
+
+\vspace{10pt}
+
+% Top exercises block: Two columns
+\begin{minipage}[t]{0.48\textwidth}
+  \fontsize{9pt}{12pt}\selectfont
+  \textbf{95.} Chứng minh rằng hàm số $g(x) = x|x|$ có một điểm uốn tại $(0, 0)$ nhưng $g''(0)$ không tồn tại.
+
+  \vspace{6pt}
+  \textbf{96.} Giả sử $f'''$ liên tục và $f'(c) = f''(c) = 0$, nhưng $f'''(c) > 0$. Hàm số $f$ có đạt cực đại địa phương hay cực tiểu địa phương tại $c$ không? $f$ có điểm uốn tại $c$ không?
+
+  \vspace{6pt}
+  \textbf{97.} Giả sử $f$ khả vi trên một khoảng $I$ và $f'(x) > 0$ với mọi số $x$ trong $I$ ngoại trừ duy nhất một số $c$. Chứng minh rằng $f$ đồng biến trên toàn bộ khoảng $I$.
+
+  \vspace{6pt}
+  \textbf{98.} Với các giá trị nào của $c$ thì hàm số
+  \[
+    f(x) = cx + \frac{1}{x^2 + 3}
+  \]
+  đồng biến trên $(-\infty, \infty)$?
+\end{minipage}\hfill\begin{minipage}[t]{0.48\textwidth}
+  \fontsize{9pt}{12pt}\selectfont
+  \textbf{99.} Ba trường hợp trong Phép thử đạo hàm cấp một bao quát các tình huống thường gặp nhưng không vét cạn mọi khả năng. Xét các hàm số $f, g$ và $h$ có giá trị tại $0$ đều bằng $0$ và với $x \neq 0$,
+  \[
+    f(x) = x^4 \sin \frac{1}{x} \qquad g(x) = x^4\left(2 + \sin\frac{1}{x}\right)
+  \]
+  \[
+    h(x) = x^4\left(-2 + \sin\frac{1}{x}\right)
+  \]
+  \begin{enumerate}[label=\textnormal{(\alph*)}, leftmargin=*, itemsep=2pt, topsep=1pt, parsep=0pt]
+    \item Chứng minh rằng 0 là một điểm tới hạn của cả ba hàm số nhưng đạo hàm của chúng đổi dấu vô số lần ở cả hai phía của 0.
+    \item Chứng minh rằng $f$ không có cực đại địa phương cũng không có cực tiểu địa phương tại 0, $g$ đạt cực tiểu địa phương, và $h$ đạt cực đại địa phương.
+  \end{enumerate}
+\end{minipage}
+
+\vspace{24pt}
+
+% Section 4.4 Header with decorative stripes
+\noindent
+\begin{minipage}[c]{0.23\textwidth}
+  \begin{tikzpicture}[baseline=0pt]
+    \foreach \y in {-8pt, -5pt, -2pt, 1pt, 4pt, 7pt} {
+      \draw[stewartcyan!70, line width=0.8pt] (0, \y) -- (3.3cm, \y);
+    }
+  \end{tikzpicture}
+\end{minipage}\hfill\begin{minipage}[c]{0.74\textwidth}
+  \tikz[baseline=(box.base)]{
+    \node[draw=stewartcyan, line width=1.5pt, inner sep=3.5pt, rounded corners=1pt] (box) {\sffamily\bfseries\Large\color{stewartcyan} 4.4};
+  }\quad {\sffamily\bfseries\LARGE\color{black!90} Dạng vô định và quy tắc l'Hôpital}
+\end{minipage}
+
+\vspace{12pt}
+
+% Section 4.4 Body: wide left margin, main text on the right
+\noindent
+\begin{minipage}[t]{0.23\textwidth}
+  \vspace{1pt}
+\end{minipage}\hfill\begin{minipage}[t]{0.74\textwidth}
+  \fontsize{9.5pt}{13.2pt}\selectfont
+  Giả sử chúng ta đang cố gắng phân tích hành vi của hàm số
+  \[
+    F(x) = \frac{\ln x}{x - 1}
+  \]
+  Mặc dù $F$ không xác định khi $x = 1$, chúng ta cần biết $F$ có hành vi như thế nào \textit{gần} 1. Cụ thể, chúng ta muốn biết giá trị của giới hạn
+
+  \begin{equation}
+    \tag{\tikz[baseline=-0.6ex]\node[fill=stewartred, text=white, inner sep=2pt, rounded corners=1.5pt, font=\sffamily\bfseries\footnotesize]{1};}
+    \lim_{x \to 1} \frac{\ln x}{x - 1}
+  \end{equation}
+
+  Khi tính giới hạn này, chúng ta không thể áp dụng Quy tắc 5 về giới hạn (giới hạn của một thương là thương của các giới hạn, xem Mục 2.3) vì giới hạn của mẫu số bằng 0. Trên thực tế, mặc dù giới hạn trong (1) tồn tại, giá trị của nó không hiển nhiên vì cả tử số và mẫu số đều tiến tới 0 và $\frac{0}{0}$ không xác định.
+
+  \vspace{8pt}
+  \noindent
+  {\color{stewartcyan}\rule{5.5pt}{5.5pt}}\hspace{5pt}\textbf{\textsf{Dạng vô định (Dạng $\boldsymbol{\frac{0}{0}}$, $\boldsymbol{\frac{\infty}{\infty}}$)}}
+
+  \vspace{2pt}
+  Nói chung, nếu ta có một giới hạn dạng
+  \[
+    \lim_{x \to a} \frac{f(x)}{g(x)}
+  \]
+  trong đó cả $f(x) \to 0$ và $g(x) \to 0$ khi $x \to a$, thì giới hạn này có thể tồn tại hoặc không tồn tại và được gọi là một \textbf{dạng vô định loại $\boldsymbol{\frac{0}{0}}$}. Chúng ta đã gặp một số giới hạn dạng này ở Chương 2. Đối với các phân thức hữu tỉ, ta có thể triệt tiêu các thừa số chung:
+  \[
+    \lim_{x \to 1} \frac{x^2 - x}{x^2 - 1} = \lim_{x \to 1} \frac{x(x - 1)}{(x + 1)(x - 1)} = \lim_{x \to 1} \frac{x}{x + 1} = \frac{1}{2}
+  \]
+  Trong Mục 3.3 chúng ta đã sử dụng lập luận hình học để chỉ ra rằng
+  \[
+    \lim_{x \to 0} \frac{\sin x}{x} = 1
+  \]
+  Nhưng các phương pháp này không có tác dụng đối với những giới hạn như (1).
+\end{minipage}
+
+\vfill
+\noindent
+{\fontsize{6.5pt}{8pt}\selectfont\color{black!55}
+Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203
+}
+
+\end{document}
