@@ -1,0 +1,90 @@
+\documentclass[10pt]{article}
+\usepackage[paperwidth=216mm, paperheight=279mm, left=66mm, right=18mm, top=20mm, bottom=20mm, marginparwidth=44mm, marginparsep=6mm]{geometry}
+\usepackage{fontspec}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{tcolorbox}
+\usepackage{enumitem}
+\usepackage{marginnote}
+
+\pagestyle{empty}
+\reversemarginpar
+
+\definecolor{cengageblue}{HTML}{008080}
+\definecolor{tableheader}{HTML}{D9E2F3}
+\definecolor{ruleboxred}{HTML}{D9383A}
+
+\begin{document}
+
+\noindent{\small\textbf{298}\qquad\textbf{\textsf{CHƯƠNG 4}}\quad Các ứng dụng của đạo hàm}
+\vspace{12pt}
+
+\marginnote{
+  \centering
+  \includegraphics[width=\marginparwidth]{images/p0333_fig1.png}\\[4pt]
+  \raggedright\footnotesize\textbf{\textsf{HÌNH 3}}
+}[0pt]
+
+\noindent $f'(x) < 0$ với $0 < x < 2$, nên $f$ nghịch biến trên $(0, 2)$. (Cũng đúng nếu nói rằng $f$ nghịch biến trên đoạn đóng $[0, 2]$.)
+
+\begin{center}
+\renewcommand{\arraystretch}{1.25}
+\small
+\begin{tabular}{|c|c|c|c||c|l|}
+\hline
+\rowcolor{tableheader}
+Khoảng & $12x$ & $x - 2$ & $x + 1$ & $f'(x)$ & \multicolumn{1}{c|}{$f$} \\
+\hline
+$x < -1$ & $-$ & $-$ & $-$ & $-$ & nghịch biến trên $(-\infty, -1)$ \\
+$-1 < x < 0$ & $-$ & $-$ & $+$ & $+$ & đồng biến trên $(-1, 0)$ \\
+$0 < x < 2$ & $+$ & $-$ & $+$ & $-$ & nghịch biến trên $(0, 2)$ \\
+$x > 2$ & $+$ & $+$ & $+$ & $+$ & đồng biến trên $(2, \infty)$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\noindent Đồ thị của $f$ trong Hình 3 xác nhận thông tin trong bảng.\hfill\textcolor{cengageblue}{\rule{1.4ex}{1.4ex}}
+
+\vspace{1em}
+\noindent\textcolor{cengageblue}{\rule{1.4ex}{1.4ex}}\quad\textbf{\textsf{\large Quy tắc đạo hàm cấp một}}
+
+\vspace{0.4em}
+Nhắc lại từ Mục 4.1 rằng nếu $f$ đạt cực đại hoặc cực tiểu địa phương tại $c$, thì $c$ phải là một số tới hạn của $f$ (theo Định lý Fermat), nhưng không phải mọi số tới hạn đều cho ta cực đại hoặc cực tiểu. Do đó, chúng ta cần một quy tắc để xác định xem liệu $f$ có đạt cực đại hoặc cực tiểu địa phương tại một số tới hạn hay không.
+
+Từ Hình 3, bạn có thể thấy rằng đối với hàm số $f$ trong Ví dụ 1, $f(0) = 5$ là một giá trị cực đại địa phương của $f$ vì $f$ đồng biến trên $(-1, 0)$ và nghịch biến trên $(0, 2)$. Hay theo ngôn ngữ đạo hàm, $f'(x) > 0$ với $-1 < x < 0$ và $f'(x) < 0$ với $0 < x < 2$. Nói cách khác, dấu của $f'(x)$ đổi từ dương sang âm tại $0$. Quan sát này chính là cơ sở của quy tắc sau đây.
+
+\vspace{0.6em}
+\begin{tcolorbox}[
+  colframe=ruleboxred,
+  colback=white,
+  boxrule=0.8pt,
+  sharp corners,
+  left=10pt, right=10pt, top=6pt, bottom=6pt
+]
+\textbf{\textcolor{ruleboxred}{Quy tắc đạo hàm cấp một}}\quad Giả sử $c$ là một số tới hạn của một hàm số liên tục $f$.
+\begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=18pt, itemsep=2pt, topsep=3pt]
+  \item Nếu $f'$ đổi từ dương sang âm tại $c$, thì $f$ đạt cực đại địa phương tại $c$.
+  \item Nếu $f'$ đổi từ âm sang dương tại $c$, thì $f$ đạt cực tiểu địa phương tại $c$.
+  \item Nếu $f'$ mang dấu dương ở cả bên trái và bên phải của $c$, hoặc mang dấu âm ở cả bên trái và bên phải của $c$, thì $f$ không đạt cực đại hay cực tiểu địa phương tại $c$.
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.6em}
+\noindent Quy tắc đạo hàm cấp một là một hệ quả của Quy tắc ĐB/NB. Chẳng hạn, trong phần (a), vì dấu của $f'(x)$ đổi từ dương sang âm tại $c$, nên $f$ đồng biến ở bên trái của $c$ và nghịch biến ở bên phải của $c$. Từ đó suy ra $f$ đạt cực đại địa phương tại $c$.
+
+\vspace{0.4em}
+\noindent Rất dễ ghi nhớ Quy tắc đạo hàm cấp một bằng cách trực quan hóa các sơ đồ như trong Hình 4.
+
+\vspace{1em}
+\noindent\hspace*{-\dimexpr\marginparwidth+\marginparsep\relax}%
+\begin{minipage}{\dimexpr\textwidth+\marginparwidth+\marginparsep\relax}
+  \includegraphics[width=\linewidth]{images/p0333_fig2.png}\\[2pt]
+  \footnotesize\textbf{\textsf{HÌNH 4}}
+\end{minipage}
+
+\vspace{1.2em}
+\noindent\textbf{\textcolor{cengageblue}{\textsf{VÍ DỤ 2}}}\quad\textsf{Tìm các giá trị cực tiểu và cực đại địa phương của hàm số $f$ trong Ví dụ 1.}
+
+\end{document}
