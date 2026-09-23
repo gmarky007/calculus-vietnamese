@@ -1,0 +1,126 @@
+\documentclass[10pt]{article}
+\usepackage[paperwidth=8.5in,paperheight=11in,top=0.7in,bottom=0.6in,left=0.75in,right=0.75in]{geometry}
+\usepackage{fontspec}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{calc}
+
+% Cấu hình font chữ
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+
+% Màu sắc nhận diện chuẩn sách Stewart
+\definecolor{stewartblue}{RGB}{0, 110, 140}
+\definecolor{boxred}{RGB}{185, 30, 40}
+
+\setlength{\parindent}{1.5em}
+\setlength{\parskip}{0pt}
+\pagestyle{empty}
+
+\begin{document}
+
+% HEADER
+\noindent
+{\small\textbf{256}\qquad\textsf{\textbf{CHƯƠNG 3}}\quad\textsf{Các quy tắc đạo hàm}}
+\vspace{1.2em}
+
+\noindent
+% BỐ CỤC 2 CỘT BẤT ĐỐI XỨNG (CỘT LỀ 27%, CỘT CHÍNH 70%)
+\begin{minipage}[t]{0.27\textwidth}
+  \vspace{0pt}
+  % HÌNH 3
+  \centering
+  \includegraphics[width=\linewidth]{images/p0291_fig1.png}
+  \vspace{2pt}
+  \centerline{\footnotesize\textsf{\textbf{HÌNH 3}}}
+  
+  \vspace{2.2em}
+  % HÌNH 4
+  \includegraphics[width=\linewidth]{images/p0291_fig2.png}
+  \vspace{2pt}
+  \centerline{\footnotesize\textsf{\textbf{HÌNH 4}}}
+  
+  \vspace{6.4cm}
+  % GHI CHÚ LỀ DÓNG HÀNG VỚI PHƯƠNG TRÌNH 3
+  \begin{flushleft}
+  \small\baselineskip=12pt
+  Nếu $dx \neq 0$, ta có thể chia cả hai vế của Phương trình 3 cho $dx$ để nhận được
+  \[
+    \frac{dy}{dx} = f'(x)
+  \]
+  Chúng ta đã từng thấy các phương trình tương tự trước đây, nhưng giờ đây vế trái thực sự có thể được hiểu như một tỉ số của các vi phân.
+  \end{flushleft}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.70\textwidth}
+  \vspace{0pt}
+  \baselineskip=13.2pt
+  \noindent
+  Điều này nói rằng xấp xỉ tuyến tính phải nằm giữa các đường cong nhận được bằng cách dịch chuyển đường cong $y = \sqrt{x+3}$ lên trên và xuống dưới một lượng là $0{,}5$. Hình~3 cho thấy đường tiếp tuyến $y = (7+x)/4$ cắt đường cong phía trên $y = \sqrt{x+3}+0{,}5$ tại $P$ và $Q$. Chúng ta ước lượng rằng hoành độ $x$ của $P$ vào khoảng $-2{,}66$ và hoành độ $x$ của $Q$ vào khoảng $8{,}66$. Do đó, từ đồ thị ta thấy rằng xấp xỉ
+  \[
+    \sqrt{x+3} \approx \frac{7}{4} + \frac{x}{4}
+  \]
+  \noindent
+  chính xác trong phạm vi $0{,}5$ khi $-2{,}6 < x < 8{,}6$. (Chúng ta đã làm tròn giá trị nhỏ hơn lên và giá trị lớn hơn xuống.)
+
+  Tương tự, từ Hình~4 ta thấy rằng xấp xỉ chính xác trong phạm vi $0{,}1$ khi $-1{,}1 < x < 3{,}9$.
+  \hfill{\color{stewartblue}\rule{1.2ex}{1.2ex}}
+
+  \vspace{1.2em}
+  \noindent
+  {\color{stewartblue}\rule{1.3ex}{1.3ex}}\;\textsf{\textbf{Ứng dụng trong Vật lý}}
+
+  \vspace{0.4em}
+  \noindent
+  Các xấp xỉ tuyến tính thường được sử dụng trong vật lý. Khi phân tích các hệ quả của một phương trình, một nhà vật lý đôi khi cần đơn giản hóa một hàm số bằng cách thay thế nó bằng xấp xỉ tuyến tính của nó. Chẳng hạn, khi thiết lập công thức tính chu kỳ của một con lắc, các sách giáo trình vật lý thu được một biểu thức chứa $\sin\theta$ rồi sau đó thay $\sin\theta$ bằng $\theta$ với nhận xét rằng $\sin\theta$ rất gần với $\theta$ nếu $\theta$ không quá lớn. Bạn có thể kiểm tra rằng sự tuyến tính hóa của hàm số $f(x) = \sin x$ tại $a = 0$ là $L(x) = x$ và do đó xấp xỉ tuyến tính tại $0$ là
+  \[
+    \sin x \approx x
+  \]
+  \noindent
+  (xem Bài tập 50). Do đó, trên thực tế, việc thiết lập công thức cho chu kỳ của một con lắc đã sử dụng xấp xỉ đường tiếp tuyến cho hàm sin.
+
+  Một ví dụ khác xuất hiện trong lý thuyết quang học, nơi các tia sáng truyền tới ở các góc nông so với trục quang được gọi là các \textit{tia cận trục} (paraxial rays). Trong quang học cận trục (hay Gauss), cả $\sin\theta$ và $\cos\theta$ đều được thay thế bằng các tuyến tính hóa của chúng. Nói cách khác, các xấp xỉ tuyến tính
+  \[
+    \sin\theta \approx \theta \qquad\text{và}\qquad \cos\theta \approx 1
+  \]
+  \noindent
+  được sử dụng vì $\theta$ rất gần $0$. Kết quả của các tính toán được thực hiện với các xấp xỉ này đã trở thành công cụ lý thuyết cơ bản được sử dụng để thiết kế thấu kính. (Xem cuốn \textit{Optics}, xuất bản lần thứ 5, của Eugene Hecht [Boston, 2017], tr.~164.)
+
+  Trong Mục 11.11, chúng tôi sẽ trình bày một số ứng dụng khác của ý tưởng xấp xỉ tuyến tính vào vật lý và kỹ thuật.
+
+  \vspace{1.2em}
+  \noindent
+  {\color{stewartblue}\rule{1.3ex}{1.3ex}}\;\textsf{\textbf{Vi phân}}
+
+  \vspace{0.4em}
+  \noindent
+  Ý tưởng đằng sau các xấp xỉ tuyến tính đôi khi được phát biểu theo thuật ngữ và ký hiệu của \textit{vi phân}. Nếu $y = f(x)$, trong đó $f$ là một hàm khả vi, thì \textbf{vi phân} $dx$ là một biến độc lập; nghĩa là, $dx$ có thể nhận giá trị của bất kỳ số thực nào. \textbf{Vi phân} $dy$ sau đó được xác định theo $dx$ bởi phương trình
+  
+  \vspace{0.3em}
+  \noindent
+  \begin{minipage}{\linewidth}
+    \makebox[0pt][l]{%
+      \tcbox[colback=boxred!8,colframe=boxred,boxrule=0.8pt,arc=1.5pt,top=2pt,bottom=2pt,left=4pt,right=4pt]{\textcolor{boxred}{\sffamily\textbf{3}}}%
+    }%
+    \hfill
+    $\displaystyle dy = f'(x)\,dx$
+    \hfill\null
+  \end{minipage}
+  \vspace{0.3em}
+
+  \noindent
+  Như vậy, $dy$ là một biến phụ thuộc; nó phụ thuộc vào các giá trị của $x$ và $dx$. Nếu $dx$ được cho một giá trị cụ thể và $x$ được lấy là một số xác định nào đó trong miền xác định của $f$, thì giá trị bằng số của $dy$ được xác định hoàn toàn.
+\end{minipage}
+
+% FOOTNOTE / COPYRIGHT ĐÁY TRANG
+\vfill
+\begin{center}
+  {\fontsize{6.5pt}{8pt}\selectfont\color{black!70}
+  Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\\
+  Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+  }
+\end{center}
+
+\end{document}

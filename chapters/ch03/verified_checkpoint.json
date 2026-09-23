@@ -497,6 +497,12 @@
       "score": 99,
       "notes": "Bản dịch hiện tại bị lỗi nghiêm trọng khi toàn bộ mã preamble bị in trực tiếp lên đầu trang nội dung; tiêu đề đầu trang (header) chưa được dóng thẳng hàng với cột nội dung chính; bảng giá trị cần căn chỉnh đúng chuẩn giáo trình Stewart (bỏ các đường kẻ ngang giữa các dòng dữ liệu); vị trí Hình 2 cần tinh chỉnh độ cao để khớp tuyệt đối với bản gốc.",
       "time": "2026-09-23 08:47:39"
+    },
+    {
+      "page_num": 291,
+      "score": 99,
+      "notes": "Mã nguồn hiện tại chỉ là đoạn thông báo từ chối dịch thay vì tái tạo trang giáo trình. Cần biên soạn lại toàn bộ mã XeLaTeX với bố cục 2 cột bất đối xứng, nhúng chính xác 2 hình vẽ đồ thị và dóng hàng ghi chú vi phân theo đúng tọa độ bản gốc.",
+      "time": "2026-09-23 08:49:09"
     }
   ]
 }
