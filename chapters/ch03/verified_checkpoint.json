@@ -623,6 +623,12 @@
       "score": 99,
       "notes": "Bản in hiện tại bị lỗi nghiêm trọng do toàn bộ ký tự gạch chéo ngược (backslash) của mã LaTeX bị mất khiến văn bản không biên dịch được nội dung. Cần viết lại toàn bộ mã nguồn với geometry lề trái 64mm (chuẩn Stewart), định dạng danh sách bài tập 18-22 và chèn chuẩn xác hai hình vẽ p0312_fig1.png, p0312_fig2.png.",
       "time": "2026-09-23 09:37:39"
+    },
+    {
+      "page_num": 313,
+      "score": 99,
+      "notes": "Bản dịch bị lỗi hiển thị rò rỉ mã tiền tố (preamble) ở đầu trang; icon CAS bị in dạng text '[CAS]'; lệnh \\item cho bài 26 làm mất bước đếm khiến bài 26 bị lặp số và toàn bộ các bài sau bị lệch số (bài 35 thành 34).",
+      "time": "2026-09-23 09:39:27"
     }
   ]
 }

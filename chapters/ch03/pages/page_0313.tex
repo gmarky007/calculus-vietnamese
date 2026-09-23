@@ -1,0 +1,121 @@
+\documentclass[10pt]{article}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{newtxtext,newtxmath}
+\usepackage{microtype}
+
+% Cấu hình kích thước trang chuẩn của sách giáo trình Stewart
+\geometry{
+    paperwidth=8.5in,
+    paperheight=11in,
+    top=18mm,
+    bottom=16mm,
+    left=16mm,
+    right=16mm
+}
+
+\pagestyle{empty}
+
+% Định nghĩa màu sắc thương hiệu Stewart
+\definecolor{stewartcyan}{RGB}{0, 138, 186}
+\definecolor{stewartgray}{RGB}{90, 90, 90}
+
+% Biểu tượng công nghệ [T] chuẩn của Stewart 9th Edition
+\newcommand{\casicon}{%
+    \tikz[baseline=-0.55ex]{%
+        \node[fill=stewartcyan, rounded corners=1pt, inner sep=1.2pt, minimum size=2.3ex] {%
+            \bfseries\sffamily\fontsize{7pt}{7.5pt}\selectfont\color{white}T%
+        };%
+    }%
+}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t][0.91\textheight][s]{0.24\textwidth}
+    \vspace*{0pt}
+    % Hình vẽ cho bài toán 23 căn chỉnh theo tọa độ cột lề trái
+    \begin{center}
+        \includegraphics[width=\linewidth]{images/p0313_fig1.png}
+        \vspace{4pt}
+        
+        {\fontsize{7.5pt}{9.5pt}\selectfont\bfseries\sffamily HÌNH CHO BÀI TẬP 23}
+    \end{center}
+
+    \vfill
+
+    % Số trang gốc 278 ở góc dưới lề trái
+    \noindent{\fontsize{13pt}{14pt}\selectfont\bfseries\sffamily 278}
+\end{minipage}%
+\hfill
+\begin{minipage}[t][0.91\textheight]{0.73\textwidth}
+    \vspace*{0pt}
+    \begin{enumerate}[label=\bfseries\arabic*., leftmargin=*, itemsep=0.82em, topsep=0pt, parsep=0pt]
+        \setcounter{enumi}{22}
+
+        % Bài 23
+        \item Giả sử ta thay thế gương parabol trong Bài tập~22 bằng một gương cầu. Mặc dù gương cầu không có tiêu điểm thực sự, ta có thể chứng minh sự tồn tại của một tiêu điểm \textit{xấp xỉ}. Trong hình bên, $C$ là một nửa đường tròn tâm $O$. Một tia sáng chiếu tới gương song song với trục dọc theo đường thẳng $PQ$ sẽ phản xạ tới điểm $R$ trên trục sao cho $\angle PQO = \angle OQR$ (góc tới bằng góc phản xạ). Điều gì sẽ xảy ra với điểm $R$ khi điểm $P$ được lấy ngày càng gần trục hơn?
+
+        % Bài 24
+        \item Nếu $f$ và $g$ là các hàm số khả vi thỏa mãn $f(0) = g(0) = 0$ và $g'(0) \neq 0$, hãy chứng minh rằng
+        \[
+        \lim_{x \to 0} \frac{f(x)}{g(x)} = \frac{f'(0)}{g'(0)}
+        \]
+
+        % Bài 25
+        \item Tính giá trị $\lim\limits_{x \to 0} \dfrac{\sin(a + 2x) - 2 \sin(a + x) + \sin a}{x^2}$.
+
+        % Bài 26
+        \stepcounter{enumi}%
+        \item[{\llap{\casicon\hspace{4pt}}\textbf{\theenumi.}}]% 
+        \textbf{(a)}~Hàm bậc ba $f(x) = x(x - 2)(x - 6)$ có ba nghiệm phân biệt: $0$, $2$ và $6$. Hãy vẽ đồ thị của hàm số $f$ và các tiếp tuyến của nó tại giá trị \textit{trung bình} của từng cặp nghiệm. Bạn nhận thấy điều gì?
+        \par\vspace{3pt}
+        \textbf{(b)}~Giả sử hàm bậc ba $f(x) = (x - a)(x - b)(x - c)$ có ba nghiệm phân biệt: $a$, $b$ và $c$. Bằng việc sử dụng hệ thống đại số máy tính (CAS), hãy chứng minh rằng tiếp tuyến kẻ tại trung bình cộng của hai nghiệm $a$ và $b$ sẽ cắt đồ thị của hàm số $f$ tại nghiệm thứ ba.
+
+        % Bài 27
+        \item Với giá trị nào của $k$ thì phương trình $e^{2x} = k\sqrt{x}$ có đúng một nghiệm?
+
+        % Bài 28
+        \item Với những số thực dương $a$ nào thì bất đẳng thức $a^x \geqslant 1 + x$ đúng với mọi $x$?
+
+        % Bài 29
+        \item Nếu
+        \[
+        y = \frac{x}{\sqrt{a^2 - 1}} - \frac{2}{\sqrt{a^2 - 1}} \arctan \frac{\sin x}{a + \sqrt{a^2 - 1} + \cos x}
+        \]
+        hãy chứng minh rằng $y' = \dfrac{1}{a + \cos x}$.
+
+        % Bài 30
+        \item Cho elip $x^2/a^2 + y^2/b^2 = 1$, trong đó $a \neq b$. Hãy tìm phương trình của tập hợp tất cả các điểm mà từ đó có thể kẻ được hai tiếp tuyến tới đường cong sao cho hệ số góc của chúng (a)~là nghịch đảo của nhau và (b)~là đối nghịch đảo của nhau (nghịch đảo và trái dấu).
+
+        % Bài 31
+        \item Tìm hai điểm trên đường cong $y = x^4 - 2x^2 - x$ có cùng một tiếp tuyến chung.
+
+        % Bài 32
+        \item Giả sử ba điểm trên parabol $y = x^2$ có tính chất là các pháp tuyến tại các điểm đó đồng quy tại một điểm. Chứng minh rằng tổng các hoành độ $x$ của ba điểm này bằng $0$.
+
+        % Bài 33
+        \item Một \textit{điểm nguyên} (lattice point) trong mặt phẳng là một điểm có tọa độ nguyên. Giả sử các đường tròn bán kính $r$ được vẽ với tâm là tất cả các điểm nguyên. Tìm giá trị nhỏ nhất của $r$ sao cho mọi đường thẳng có hệ số góc bằng $\frac{2}{5}$ đều cắt ít nhất một trong các đường tròn này.
+
+        % Bài 34
+        \item Một khối nón có bán kính đáy $r\text{ cm}$ và chiều cao $h\text{ cm}$ được hạ thẳng đứng với đỉnh chúc xuống trước với tốc độ $1\text{ cm/s}$ vào một bình hình trụ cao có bán kính $R\text{ cm}$ đang chứa một phần nước. Mực nước dâng lên với tốc độ bao nhiêu tại thời điểm khối nón vừa ngập hoàn toàn trong nước?
+
+        % Bài 35
+        \item Một bình chứa có hình dạng một khối nón ngược có chiều cao $16\text{ cm}$ và bán kính miệng trên là $5\text{ cm}$. Bình đang chứa một lượng chất lỏng bị rò rỉ qua các thành bên với tốc độ tỉ lệ thuận với diện tích bề mặt bình tiếp xúc với chất lỏng. (Diện tích xung quanh của khối nón là $\pi r l$, trong đó $r$ là bán kính đáy và $l$ là đường sinh.) Nếu ta rót chất lỏng vào bình với tốc độ $2\text{ cm}^3/\text{phút}$, thì chiều cao của khối chất lỏng giảm với tốc độ $0{,}3\text{ cm/phút}$ khi chiều cao đang là $10\text{ cm}$. Nếu mục tiêu là duy trì chất lỏng ở chiều cao không đổi $10\text{ cm}$, thì ta cần rót chất lỏng vào bình với tốc độ bao nhiêu?
+    \end{enumerate}
+\end{minipage}
+
+\vfill
+\noindent
+\parbox{\textwidth}{%
+    \centering\fontsize{6.5pt}{8pt}\selectfont\color{stewartgray}%
+    Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\\
+    Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.%
+}
+
+\end{document}
