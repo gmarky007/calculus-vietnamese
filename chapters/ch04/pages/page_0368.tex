@@ -1,0 +1,131 @@
+\documentclass[10pt,oneside]{article}
+\usepackage[letterpaper, top=16mm, bottom=20mm, left=66mm, right=16mm, marginparwidth=44mm, marginparsep=6mm, headheight=14pt, headsep=5mm, footskip=10mm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{fontspec}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{marginnote}
+\usepackage{array}
+
+% Cấu hình phông chữ tương thích đa nền tảng
+\IfFontExistsTF{Times New Roman}{
+  \setmainfont{Times New Roman}
+}{
+  \IfFontExistsTF{TeX Gyre Termes}{
+    \setmainfont{TeX Gyre Termes}
+  }{
+    \setmainfont{Liberation Serif}
+  }
+}
+
+\IfFontExistsTF{Arial}{
+  \setsansfont{Arial}
+}{
+  \IfFontExistsTF{TeX Gyre Heros}{
+    \setsansfont{TeX Gyre Heros}
+  }{
+    \setmainfont{Liberation Sans}
+  }
+}
+
+% Màu nhận diện thương hiệu giáo trình Stewart
+\definecolor{stewartblue}{RGB}{0, 114, 186}
+
+% Thiết lập Header & Footer dóng theo cột nội dung chính
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[L]{\textsf{\textbf{MỤC 4.6}}\quad \textsf{Vẽ đồ thị bằng Giải tích \textit{và} Công nghệ}}
+\fancyhead[R]{\textsf{\textbf{333}}}
+\fancyfoot[L]{%
+  \hspace*{-50mm}%
+  \parbox{\paperwidth - 32mm}{%
+    \fontsize{5.5}{6.5}\selectfont\color{black!75}%
+    Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s).\\
+    Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.%
+  }%
+}
+
+\reversemarginpar
+\raggedbottom
+
+\begin{document}
+
+% Cột lề trái đặt Hình 17 và chú thích họ hàm số FM
+\marginnote{%
+  \parbox[t]{\marginparwidth}{%
+    \raisebox{-\height+\ht\strutbox}{\includegraphics[width=\linewidth]{images/p0368_fig1.png}}\par
+    \vspace{2mm}%
+    {\noindent\bfseries\sffamily HÌNH 17}\par
+    \vspace{3.5mm}%
+    {\footnotesize\noindent Họ hàm số
+    \[ f(x) = \sin(x + \sin cx) \]
+    trong đó $c$ là một hằng số, xuất hiện trong các ứng dụng điều chế tần số (FM). Một sóng sin được điều chế bởi một sóng có tần số khác ($\sin cx$). Trường hợp $c = 2$ đã được nghiên cứu trong Ví dụ 4. Bài tập 27 khảo sát một trường hợp đặc biệt khác.\par}%
+  }%
+}[0pt]%
+% Nội dung cột chính
+\noindent Vẽ đồ thị cả $f$ và $f''$ trong Hình 17, ta thu được các giá trị xấp xỉ sau:
+
+\vspace{1.5mm}
+\begin{list}{}{%
+  \setlength{\leftmargin}{1.5em}%
+  \setlength{\topsep}{0pt}%
+  \setlength{\partopsep}{0pt}%
+}
+\item
+\begin{tabular}{@{}ll@{}}
+Lõm lên trên: & $(0{,}8;\ 1{,}3)$,\quad $(1{,}8;\ 2{,}3)$ \\[2pt]
+Lõm xuống dưới: & $(0;\ 0{,}8)$,\quad $(1{,}3;\ 1{,}8)$,\quad $(2{,}3;\ \pi)$ \\[2pt]
+Điểm uốn: & $(0,\ 0)$,\quad $(0{,}8;\ 0{,}97)$,\quad $(1{,}3;\ 0{,}97)$,\quad $(1{,}8;\ 0{,}97)$,\quad $(2{,}3;\ 0{,}97)$
+\end{tabular}
+\end{list}
+
+\vspace{2mm}
+Sau khi đã kiểm tra rằng Hình 15 quả thực biểu diễn chính xác $f$ với $0 \leqslant x \leqslant \pi$, ta có thể khẳng định rằng đồ thị mở rộng trong Hình 18 biểu diễn chính xác $f$ với $-2\pi \leqslant x \leqslant 2\pi$.
+
+\vspace{3mm}
+\begin{center}
+  \includegraphics[width=0.48\linewidth]{images/p0368_fig2.png}
+\end{center}
+\vspace{-2mm}
+\noindent{\bfseries\sffamily HÌNH 18}\hfill{\color{stewartblue}\rule{1.2ex}{1.2ex}}
+
+\vspace{3mm}
+Ví dụ cuối cùng của chúng ta liên quan đến các \textit{họ} hàm số. Điều này có nghĩa là các hàm số trong họ liên hệ với nhau bởi một công thức chứa một hoặc nhiều hằng số tùy ý. Mỗi giá trị của hằng số cho ra một hàm thành viên của họ và ý tưởng ở đây là quan sát đồ thị hàm số biến đổi như thế nào khi hằng số thay đổi.
+
+\vspace{3.5mm}
+\noindent{\bfseries\sffamily\color{stewartblue} VÍ DỤ 5}\hspace{1.2em}Đồ thị của hàm số $f(x) = 1/(x^2 + 2x + c)$ biến thiên như thế nào khi $c$ thay đổi?
+
+\vspace{2.5mm}
+\noindent{\bfseries\sffamily\color{stewartblue} LỜI GIẢI}\hspace{1.2em}Đồ thị ở các Hình 19 và 20 (các trường hợp đặc biệt $c = 2$ và $c = -2$) cho thấy hai đường cong có hình dạng rất khác nhau.
+
+\vspace{2.5mm}
+\begin{center}
+\begin{minipage}[t]{0.48\linewidth}
+  \centering
+  \includegraphics[width=\linewidth]{images/p0368_fig3.png}\par
+  \vspace{2pt}
+  \raggedright
+  {\bfseries\sffamily HÌNH 19}\quad $c = 2$
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+  \centering
+  \includegraphics[width=\linewidth]{images/p0368_fig4.png}\par
+  \vspace{2pt}
+  \raggedright
+  {\bfseries\sffamily HÌNH 20}\quad $c = -2$
+\end{minipage}
+\end{center}
+
+\vspace{2mm}
+Trước khi vẽ thêm đồ thị nào khác, hãy xem các hàm thành viên trong họ này có những điểm gì chung. Vì
+\[
+\lim_{x \to \pm\infty} \frac{1}{x^2 + 2x + c} = 0
+\]
+với mọi giá trị của $c$, nên tất cả chúng đều nhận trục $x$ làm tiệm cận ngang. Tiệm cận đứng sẽ xuất hiện khi $x^2 + 2x + c = 0$. Giải phương trình bậc hai này, ta được $x = -1 \pm \sqrt{1 - c}$. Khi $c > 1$, đồ thị không có tiệm cận đứng nào (như trong Hình 19). Khi $c = 1$, đồ thị có một tiệm cận đứng duy nhất là $x = -1$ vì
+\[
+\lim_{x \to -1} \frac{1}{x^2 + 2x + 1} = \lim_{x \to -1} \frac{1}{(x + 1)^2} = \infty
+\]
+
+\end{document}
