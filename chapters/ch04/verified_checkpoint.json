@@ -263,6 +263,12 @@
       "score": 99,
       "notes": "Bản dịch hiện tại là đoạn văn bản từ chối/tóm tắt thay vì biên dịch mã nguồn XeLaTeX đầy đủ. Cần dựng lại toàn bộ trang sách theo đúng bố cục lề rộng đặc trưng của giáo trình Stewart, tích hợp 2 hình vẽ lề và chuyển ngữ chuẩn xác các thuật ngữ giải tích.",
       "time": "2026-09-23 11:43:11"
+    },
+    {
+      "page_num": 358,
+      "score": 99,
+      "notes": "Phần mã khai báo gói (preamble) bị lọt thành văn bản thô ở đầu trang; Hình 7 ở cột lề bị đặt quá thấp (dóng ngang Ví dụ 3 thay vì dóng ngang mục G và H như bản gốc). Cần hiệu chỉnh lại khoảng cách đứng và mã nguồn LaTeX.",
+      "time": "2026-09-23 11:45:41"
     }
   ]
 }
