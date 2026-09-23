@@ -1,0 +1,145 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{vietnam}
+\usepackage[a4paper, top=16mm, bottom=16mm, left=16mm, right=16mm, headheight=14pt]{geometry}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+
+\definecolor{stewartcyan}{RGB}{0, 136, 204}
+\definecolor{stewartdarkblue}{RGB}{0, 82, 140}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\fontsize{9pt}{11pt}\selectfont\textbf{308} \qquad \textbf{\textsf{CHƯƠNG 4}} \quad \textsf{Các ứng dụng của đạo hàm}}
+\fancyhead[R]{}
+\renewcommand{\headrulewidth}{0pt}
+
+\newcommand{\casicon}{%
+  \begin{tikzpicture}[baseline=-0.6ex, line width=0.6pt, color=stewartcyan]
+    \draw[rounded corners=0.5pt] (0,0) rectangle (0.32cm, 0.26cm);
+    \draw (0.05cm, 0.07cm) .. controls (0.12cm, 0.24cm) and (0.20cm, 0.02cm) .. (0.27cm, 0.19cm);
+  \end{tikzpicture}%
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\begin{document}
+
+\fontsize{9pt}{11.5pt}\selectfont
+
+\noindent
+\begin{minipage}[t]{0.485\textwidth}
+\textbf{76.} Trong một tập của loạt phim hoạt hình truyền hình \textit{The Simpsons}, Homer đọc từ một tờ báo và tuyên bố: ``Đây là tin tốt! Theo bài viết thu hút sự chú ý này, điểm thi SAT đang giảm với tốc độ chậm hơn.'' Hãy giải thích lời tuyên bố của Homer theo một hàm số cùng các đạo hàm cấp một và cấp hai của nó.
+
+\vspace{2mm}
+\textbf{77.} Tổng thống tuyên bố rằng mức thâm hụt ngân sách quốc gia đang tăng, nhưng với tốc độ giảm dần. Hãy giải thích lời tuyên bố này theo một hàm số cùng các đạo hàm cấp một và cấp hai của nó.
+
+\vspace{2mm}
+\textbf{78.} Gọi $f(t)$ là nhiệt độ tại thời điểm $t$ ở nơi bạn sống và giả sử rằng tại thời điểm $t = 3$, bạn cảm thấy nóng bức khó chịu. Bạn cảm thấy thế nào về dữ liệu được cho trong mỗi trường hợp sau?
+\begin{enumerate}[label=(\alph*), itemsep=0.5pt, topsep=1.5pt, parsep=0pt, leftmargin=1.5em]
+    \item $f'(3) = 2, \quad f''(3) = 4$
+    \item $f'(3) = 2, \quad f''(3) = -4$
+    \item $f'(3) = -2, \quad f''(3) = 4$
+    \item $f'(3) = -2, \quad f''(3) = -4$
+\end{enumerate}
+
+\vspace{2mm}
+\textbf{79.} Gọi $K(t)$ là thước đo lượng kiến thức bạn tích lũy được khi ôn thi trong $t$ giờ. Theo bạn, đại lượng nào lớn hơn, $K(8) - K(7)$ hay $K(3) - K(2)$? Đồ thị của $K$ có bề lõm hướng lên trên hay hướng xuống dưới? Tại sao?
+
+\vspace{2mm}
+\textbf{80.} Cà phê đang được rót vào chiếc cốc trong hình vẽ với tốc độ không đổi (đo bằng thể tích trên một đơn vị thời gian). Hãy phác thảo sơ lược đồ thị độ sâu của cà phê trong cốc theo thời gian. Giải thích hình dạng của đồ thị dựa trên tính lồi lõm. Điểm uốn ở đây có ý nghĩa gì?
+
+\begin{center}
+    \vspace{1mm}
+    \includegraphics[width=0.38\linewidth]{images/p0343_fig1.png}
+    \vspace{1mm}
+\end{center}
+
+\vspace{0.5mm}
+\noindent\makebox[0pt][r]{\casicon\hspace{4pt}}\textbf{81.} Một \textit{đường cong đáp ứng thuốc} mô tả nồng độ của thuốc trong máu sau khi dùng thuốc. Một hàm tăng vọt $S(t) = At^p e^{-kt}$ thường được dùng để mô hình hóa đường cong đáp ứng, thể hiện sự gia tăng đột ngột ban đầu về nồng độ thuốc rồi sau đó giảm dần từ từ hơn. Nếu đối với một loại thuốc cụ thể, $A = 0{,}01$, $p = 4$, $k = 0{,}07$, và $t$ được đo bằng phút, hãy ước tính các thời điểm tương ứng với các điểm uốn và giải thích ý nghĩa của chúng. Sau đó, vẽ đồ thị của đường cong đáp ứng thuốc.
+
+\vspace{2mm}
+\textbf{82. Các hàm mật độ chuẩn}\quad Họ các đường cong hình chuông
+\[
+y = \frac{1}{\sigma \sqrt{2\pi}}\, e^{-(x-\mu)^2/(2\sigma^2)}
+\]
+xuất hiện trong lý thuyết xác suất và thống kê, nơi nó được gọi là \textit{hàm mật độ chuẩn}. Hằng số $\mu$ được gọi là \textit{giá trị trung bình} và hằng số dương $\sigma$ được gọi là \textit{độ lệch chuẩn}. Để cho đơn giản, ta thu phóng hàm số để loại bỏ hệ số $1/(\sigma \sqrt{2\pi})$ và xét trường hợp đặc biệt $\mu = 0$. Vì vậy, ta khảo sát hàm số
+\[
+f(x) = e^{-x^2/(2\sigma^2)}
+\]
+\begin{enumerate}[label=(\alph*), itemsep=0.5pt, topsep=1.5pt, parsep=0pt, leftmargin=1.5em]
+    \item Tìm các đường tiệm cận, giá trị lớn nhất và các điểm uốn của $f$.
+\end{enumerate}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.485\textwidth}
+\begin{enumerate}[label=(\alph*), itemsep=0.5pt, topsep=0pt, parsep=0pt, leftmargin=1.5em, start=2]
+    \item \makebox[0pt][r]{\casicon\hspace{4pt}}$\sigma$ đóng vai trò gì đối với hình dạng của đường cong?
+    \item Minh họa bằng cách vẽ đồ thị bốn hàm số thuộc họ này trên cùng một màn hình.
+\end{enumerate}
+
+\vspace{2mm}
+\textbf{83.} Tìm một hàm bậc ba $f(x) = ax^3 + bx^2 + cx + d$ có giá trị cực đại địa phương bằng $3$ tại $x = -2$ và giá trị cực tiểu địa phương bằng $0$ tại $x = 1$.
+
+\vspace{2mm}
+\textbf{84.} Với các giá trị nào của các số $a$ và $b$ thì hàm số
+\[
+f(x) = axe^{bx^2}
+\]
+đạt giá trị lớn nhất $f(2) = 1$?
+
+\vspace{2mm}
+\textbf{85.} Chứng minh rằng đường cong $y = (1 + x)/(1 + x^2)$ có ba điểm uốn và tất cả chúng đều cùng nằm trên một đường thẳng.
+
+\vspace{2mm}
+\textbf{86.} Chứng minh rằng các đường cong $y = e^{-x}$ và $y = -e^{-x}$ tiếp xúc với đường cong $y = e^{-x} \sin x$ tại các điểm uốn của nó.
+
+\vspace{2mm}
+\textbf{87.} Chứng minh rằng các điểm uốn của đường cong $y = x \sin x$ nằm trên đường cong $y^2(x^2 + 4) = 4x^2$.
+
+\vspace{2.2mm}
+\noindent\colorbox{stewartcyan}{\textcolor{white}{\textbf{88--90}}}\quad \textbf{Giả sử rằng tất cả các hàm số đều khả vi hai lần và các đạo hàm cấp hai không bao giờ triệt tiêu.}
+
+\vspace{1.8mm}
+\textbf{88.}
+\begin{enumerate}[label=(\alph*), itemsep=0.5pt, topsep=1.5pt, parsep=0pt, leftmargin=1.5em]
+    \item Nếu $f$ và $g$ có bề lõm hướng lên trên trên một khoảng $I$, hãy chứng minh rằng $f + g$ cũng có bề lõm hướng lên trên trên $I$.
+    \item Nếu $f$ dương và có bề lõm hướng lên trên trên $I$, hãy chứng minh rằng hàm số $g(x) = [f(x)]^2$ cũng có bề lõm hướng lên trên trên $I$.
+\end{enumerate}
+
+\vspace{1.8mm}
+\textbf{89.}
+\begin{enumerate}[label=(\alph*), itemsep=0.5pt, topsep=1.5pt, parsep=0pt, leftmargin=1.5em]
+    \item Nếu $f$ và $g$ là các hàm số dương, đồng biến và có bề lõm hướng lên trên trên một khoảng $I$, hãy chứng minh rằng hàm tích $fg$ cũng có bề lõm hướng lên trên trên $I$.
+    \item Chứng minh rằng kết luận ở phần (a) vẫn đúng nếu cả $f$ và $g$ đều nghịch biến.
+    \item Giả sử $f$ đồng biến và $g$ nghịch biến. Bằng cách đưa ra ba ví dụ, hãy chỉ ra rằng $fg$ có thể có bề lõm hướng lên trên, hướng xuống dưới hoặc tuyến tính. Tại sao lập luận ở các phần (a) và (b) không áp dụng được trong trường hợp này?
+\end{enumerate}
+
+\vspace{1.8mm}
+\textbf{90.} Giả sử $f$ và $g$ đều có bề lõm hướng lên trên trên $(-\infty, \infty)$. Dưới điều kiện nào đối với $f$ thì hàm hợp $h(x) = f(g(x))$ sẽ có bề lõm hướng lên trên?
+
+\vspace{2.2mm}
+\noindent{\color{stewartcyan}\rule{\linewidth}{0.65pt}}
+\vspace{1.5mm}
+
+\textbf{91.} Chứng minh rằng một hàm bậc ba (đa thức bậc ba) luôn có đúng một điểm uốn. Nếu đồ thị của nó có ba giao điểm với trục hoành là $x_1, x_2$ và $x_3$, hãy chứng minh rằng hoành độ của điểm uốn là $(x_1 + x_2 + x_3)/3$.
+
+\vspace{2mm}
+\noindent\makebox[0pt][r]{\casicon\hspace{4pt}}\textbf{92.} Với những giá trị nào của $c$ thì đa thức
+\[
+P(x) = x^4 + cx^3 + x^2
+\]
+có hai điểm uốn? Một điểm uốn? Không có điểm uốn nào? Minh họa bằng cách vẽ đồ thị của $P$ với một vài giá trị của $c$. Đồ thị thay đổi như thế nào khi $c$ giảm dần?
+
+\vspace{2mm}
+\textbf{93.} Chứng minh rằng nếu $(c, f(c))$ là một điểm uốn của đồ thị hàm số $f$ và $f''$ tồn tại trên một khoảng mở chứa $c$, thì $f''(c) = 0$. [\textit{Gợi ý:} Áp dụng Kiểm tra Đạo hàm cấp một và Định lý Fermat cho hàm số $g = f'$.]
+
+\vspace{2mm}
+\textbf{94.} Chứng minh rằng nếu $f(x) = x^4$, thì $f''(0) = 0$, nhưng $(0, 0)$ không phải là một điểm uốn của đồ thị hàm số $f$.
+\end{minipage}
+
+\end{document}
