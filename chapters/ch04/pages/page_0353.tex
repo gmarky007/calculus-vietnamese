@@ -1,0 +1,103 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{vietnam}
+\usepackage[letterpaper, top=1.6cm, bottom=2.0cm, left=1.8cm, right=1.8cm]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{newtxtext, newtxmath}
+\usepackage{microtype}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[L]{\fontsize{9}{11}\selectfont \textbf{318}\qquad \textbf{\textsf{CHƯƠNG 4}}\quad \textsf{Các ứng dụng của đạo hàm}}
+\fancyfoot[C]{\fontsize{6.8}{8.5}\selectfont \color{gray} Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\\[1pt] Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.485\textwidth}
+\textbf{82.} Ánh sáng đi vào mắt qua con ngươi và đập vào võng mạc, nơi các tế bào thụ cảm ánh sáng cảm nhận ánh sáng và màu sắc. W. Stanley Stiles và B. H. Crawford đã nghiên cứu hiện tượng trong đó độ sáng đo được giảm đi khi ánh sáng đi vào càng xa tâm của con ngươi (xem hình vẽ).
+
+\begin{center}
+    \includegraphics[width=0.88\linewidth]{images/p0353_fig1.png}\\[4pt]
+    \parbox{0.95\linewidth}{\footnotesize \textit{Một chùm sáng A đi qua tâm của con ngươi đo được sáng hơn một chùm sáng B đi vào gần rìa của con ngươi.}}
+\end{center}
+
+Họ đã trình bày chi tiết các phát hiện của mình về hiện tượng này, được gọi là \textit{hiệu ứng Stiles--Crawford loại một}, trong một bài báo quan trọng xuất bản năm 1933. Đặc biệt, họ nhận thấy lượng độ chói cảm nhận được \textit{không} tỉ lệ thuận với diện tích con ngươi như họ kỳ vọng. Phần trăm $P$ của tổng độ chói đi vào con ngươi bán kính $r\text{ mm}$ được cảm nhận tại võng mạc có thể được mô tả bởi
+\[
+P = \frac{1 - 10^{-\rho r^2}}{\rho r^2 \ln 10}
+\]
+trong đó $\rho$ là một hằng số được xác định bằng thực nghiệm, thường xấp xỉ $0{,}05$.
+\begin{enumerate}[label=\textbf{(\alph*)},leftmargin=16pt,itemsep=1pt,topsep=2pt,partopsep=0pt,parsep=0pt]
+    \item Phần trăm độ chói được cảm nhận bởi một con ngươi bán kính $3\text{ mm}$ là bao nhiêu? Sử dụng $\rho = 0{,}05$.
+    \item Tính phần trăm độ chói được cảm nhận bởi một con ngươi bán kính $2\text{ mm}$. Việc giá trị này lớn hơn kết quả ở phần (a) có hợp lý không?
+    \item Tính $\lim_{r \to 0^+} P$. Kết quả này có đúng như bạn kỳ vọng không? Kết quả này có khả thi về mặt vật lý không?
+\end{enumerate}
+
+\vspace{2pt}
+{\fontsize{7.2}{8.8}\selectfont \textit{Nguồn:} Phỏng theo W. Stiles và B. Crawford, ``The Luminous Efficiency of Rays Entering the Eye Pupil at Different Points,'' \textit{Proceedings of the Royal Society of London, Series B: Biological Sciences} 112 (1933): 428--50.\par}
+
+\vspace{6pt}
+\textbf{83. Phương trình logistic}\quad Một số quần thể ban đầu tăng trưởng theo hàm mũ nhưng sau đó sẽ chững lại. Các phương trình có dạng
+\[
+P(t) = \frac{M}{1 + Ae^{-kt}}
+\]
+trong đó $M, A$ và $k$ là các hằng số dương, được gọi là \textit{phương trình logistic} và thường được sử dụng để mô hình hóa các quần thể như vậy. (Chúng ta sẽ khảo sát chi tiết các phương trình này trong Chương 9.) Ở đây $M$ được gọi là
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.485\textwidth}
+\textit{sức chứa của môi trường} và đại diện cho kích thước quần thể tối đa có thể được duy trì, và
+\[
+A = \frac{M - P_0}{P_0}
+\]
+trong đó $P_0$ là kích thước quần thể ban đầu.
+\begin{enumerate}[label=\textbf{(\alph*)},leftmargin=16pt,itemsep=1pt,topsep=2pt,partopsep=0pt,parsep=0pt]
+    \item Tính $\lim_{t \to \infty} P(t)$. Giải thích vì sao kết quả nhận được là điều có thể dự đoán trước.
+    \item Tính $\lim_{M \to \infty} P(t)$. (Lưu ý rằng $A$ được định nghĩa theo $M$.) Kết quả của bạn là dạng hàm số nào?
+\end{enumerate}
+
+\vspace{6pt}
+\textbf{84.} Một sợi cáp kim loại có bán kính $r$ và được bọc bởi lớp cách điện sao cho khoảng cách từ tâm sợi cáp đến mặt ngoài của lớp cách điện là $R$. Vận tốc $v$ của một xung điện truyền trong sợi cáp là
+\[
+v = -c \left(\frac{r}{R}\right)^2 \ln\left(\frac{r}{R}\right)
+\]
+trong đó $c$ là một hằng số dương. Hãy tìm các giới hạn sau và giải thích ý nghĩa các kết quả của bạn.
+\begin{center}
+    \textbf{(a)}\; $\lim_{R \to r^+} v$ \qquad\qquad\qquad \textbf{(b)}\; $\lim_{r \to 0^+} v$
+\end{center}
+
+\vspace{3pt}
+\textbf{85.} Quy tắc l'Hospital xuất hiện lần đầu tiên trên bản in trong cuốn sách \textit{Analyse des infiniment petits} do Hầu tước de l'Hospital xuất bản năm 1696. Đây là cuốn sách giáo trình giải tích đầu tiên từng được xuất bản. Ví dụ mà Hầu tước đã sử dụng trong cuốn sách đó để minh họa cho quy tắc của mình là tìm giới hạn của hàm số
+\[
+y = \frac{\sqrt{2a^3x - x^4} - a\sqrt[3]{aax}}{a - \sqrt[4]{ax^3}}
+\]
+khi $x$ tiến tới $a$, với $a > 0$. (Vào thời kỳ đó, người ta thường viết $aa$ thay cho $a^2$.) Hãy giải bài toán này.
+
+\vspace{6pt}
+\textbf{86.} Hình vẽ bên cho thấy một hình quạt tròn có góc ở tâm $\theta$. Gọi $A(\theta)$ là diện tích của hình viên phân nằm giữa dây cung $PR$ và cung tròn $PR$. Gọi $B(\theta)$ là diện tích của tam giác $PQR$. Tìm $\lim_{\theta \to 0^+} A(\theta)/B(\theta)$.
+
+\begin{center}
+    \includegraphics[width=0.48\linewidth]{images/p0353_fig2.png}
+\end{center}
+
+\vspace{2pt}
+\textbf{87.} Tính
+\[
+\lim_{x \to \infty} \left[ x - x^2 \ln\left(\frac{1+x}{x}\right) \right]
+\]
+
+\vspace{4pt}
+\textbf{88.} Giả sử $f$ là một hàm số dương. Nếu $\lim_{x \to a} f(x) = 0$ và $\lim_{x \to a} g(x) = \infty$, hãy chứng minh rằng
+\[
+\lim_{x \to a} [f(x)]^{g(x)} = 0
+\]
+Điều này chứng tỏ rằng $0^\infty$ không phải là một dạng vô định.
+\end{minipage}
+
+\end{document}

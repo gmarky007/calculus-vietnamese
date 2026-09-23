@@ -233,6 +233,12 @@
       "score": 99,
       "notes": "Bản dịch gặp lỗi phân tách khối khiến toàn bộ nội dung bài tập bị đẩy tràn trang, trang đầu chỉ hiển thị phần đầu đề và chuỗi ký tự lỗi. Cần tinh chỉnh lại cấu trúc minipage và khoảng cách dòng để đảm bảo bố cục 2 cột nằm trọn vẹn trên một trang.",
       "time": "2026-09-23 11:25:20"
+    },
+    {
+      "page_num": 353,
+      "score": 99,
+      "notes": "Bản dịch gặp lỗi nghiêm trọng trong quá trình biên dịch (mất dấu gạch chéo ngược ở phần tiền sảnh khiến các lệnh documentclass, usepackage bị in thẳng ra trang như văn bản và toàn bộ thân trang bị trắng). Đã sửa lại toàn bộ mã nguồn chuẩn xác 1:1 theo bản gốc.",
+      "time": "2026-09-23 11:28:22"
     }
   ]
 }
