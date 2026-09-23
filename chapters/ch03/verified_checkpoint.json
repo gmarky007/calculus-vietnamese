@@ -227,6 +227,12 @@
       "score": 99,
       "notes": "Bản dịch hiện tại là thông báo từ chối sinh nội dung bản quyền thay vì mã nguồn XeLaTeX tái tạo trang sách. Cần viết lại toàn bộ mã nguồn theo chuẩn xuất bản quốc tế với bố cục hai cột bất đối xứng, hình ảnh và công thức chuẩn xác.",
       "time": "2026-09-23 07:15:33"
+    },
+    {
+      "page_num": 246,
+      "score": 99,
+      "notes": "Bản in hiện tại bị lỗi nghiêm trọng in các tham số khai báo gói (preamble) ra đầu trang văn bản do lỗi ký tự thoát; ghi chú lề bị đặt quá cao so với vị trí chuẩn ở Lời giải 2; từ 'Do đó' bị nhảy dòng thay vì dóng trái cùng hàng với phương trình; tiêu đề 'LƯU Ý 1' dùng sai màu (phải là màu xanh lá cây đặc trưng của Stewart thay vì màu cyan).",
+      "time": "2026-09-23 07:17:44"
     }
   ]
 }

@@ -1,0 +1,95 @@
+\documentclass[10pt]{article}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{mathptmx}
+\usepackage{helvet}
+\usepackage{microtype}
+
+\geometry{
+    paperwidth=8.5in,
+    paperheight=11in,
+    top=0.65in,
+    bottom=0.8in,
+    left=0.7in,
+    right=0.75in
+}
+
+\definecolor{stewartcyan}{RGB}{0, 130, 185}
+\definecolor{stewartgreen}{RGB}{0, 130, 70}
+\definecolor{stewartdark}{RGB}{40, 40, 40}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[R]{\small\sffamily\textbf{MỤC 3.5}\hspace{1.5em}\textsf{Đạo hàm ẩn}\hspace{3em}\textbf{211}}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.23\textwidth}
+\raggedright
+\vspace*{530pt}
+
+\footnotesize\sffamily\color{stewartdark}
+Ví dụ 1 minh họa rằng ngay cả khi có thể giải một phương trình để tìm $y$ một cách tường minh theo $x$, thì việc sử dụng đạo hàm ẩn vẫn có thể thuận tiện hơn.
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.73\textwidth}
+\vspace*{0pt}
+
+\noindent\textbf{\textsf{\color{stewartcyan}VÍ DỤ 1}}\hspace{1em}Nếu $x^2 + y^2 = 25$, hãy tìm $\frac{dy}{dx}$. Sau đó, hãy viết phương trình tiếp tuyến của đường tròn $x^2 + y^2 = 25$ tại điểm $(3, 4)$.
+
+\medskip
+\noindent\textbf{\textsf{\color{stewartcyan}LỜI GIẢI 1}}\hspace{1em}Lấy đạo hàm cả hai vế của phương trình $x^2 + y^2 = 25$:
+\begin{gather*}
+\frac{d}{dx}(x^2 + y^2) = \frac{d}{dx}(25) \\[4pt]
+\frac{d}{dx}(x^2) + \frac{d}{dx}(y^2) = 0
+\end{gather*}
+Ghi nhớ rằng $y$ là một hàm số của $x$ và áp dụng Quy tắc chuỗi, ta có
+\[
+\frac{d}{dx}(y^2) = \frac{d}{dy}(y^2)\,\frac{dy}{dx} = 2y\,\frac{dy}{dx}
+\]
+
+\noindent\makebox[0pt][l]{Do đó}\hfill $2x + 2y\,\dfrac{dy}{dx} = 0$\hfill\null
+\vspace{2pt}
+
+Bây giờ ta giải phương trình này để tìm $dy/dx$:
+\[
+\frac{dy}{dx} = -\frac{x}{y}
+\]
+Tại điểm $(3, 4)$, ta có $x = 3$ và $y = 4$, vì thế
+\[
+\frac{dy}{dx} = -\frac{3}{4}
+\]
+Do đó, phương trình tiếp tuyến của đường tròn tại $(3, 4)$ là
+\[
+y - 4 = -\frac{3}{4}(x - 3) \qquad\text{hay}\qquad 3x + 4y = 25
+\]
+
+\medskip
+\noindent\textbf{\textsf{\color{stewartcyan}LỜI GIẢI 2}}\hspace{1em}Giải phương trình $x^2 + y^2 = 25$ theo $y$, ta nhận được $y = \pm\sqrt{25 - x^2}$. Điểm $(3, 4)$ nằm trên nửa đường tròn phía trên $y = \sqrt{25 - x^2}$ và do đó ta xét hàm số $f(x) = \sqrt{25 - x^2}$. Lấy đạo hàm của $f$ nhờ sử dụng Quy tắc chuỗi, ta có
+\begin{align*}
+f'(x) &= \frac{1}{2}(25 - x^2)^{-1/2}\,\frac{d}{dx}(25 - x^2) \\[6pt]
+&= \frac{1}{2}(25 - x^2)^{-1/2}(-2x) = -\frac{x}{\sqrt{25 - x^2}}
+\end{align*}
+Tại điểm $(3, 4)$, ta có
+\[
+f'(3) = -\frac{3}{\sqrt{25 - 3^2}} = -\frac{3}{4}
+\]
+và tương tự như trong Lời giải 1, phương trình của tiếp tuyến là $3x + 4y = 25$. \hfill{\color{stewartcyan}$\blacksquare$}
+
+\bigskip
+\noindent\textbf{\textsf{\color{stewartgreen}LƯU Ý 1}}\hspace{1em}Biểu thức $dy/dx = -x/y$ trong Lời giải 1 cho đạo hàm theo cả $x$ và $y$. Biểu thức này luôn đúng bất kể hàm số $y$ nào được xác định bởi phương trình đã cho. Chẳng hạn, với $y = f(x) = \sqrt{25 - x^2}$, ta có
+\[
+\frac{dy}{dx} = -\frac{x}{y} = -\frac{x}{\sqrt{25 - x^2}}
+\]
+
+\end{minipage}
+
+\end{document}
