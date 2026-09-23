@@ -221,6 +221,12 @@
       "score": 99,
       "notes": "Bản dịch hiện tại bị lỗi rò rỉ mã nguồn LaTeX ở đầu trang ([10pt]article...); toàn bộ Phần Mở đầu Mục 3.5 (Implicit Differentiation) bị tràn trang đẩy sang trang 2; thanh tiêu đề DỰ ÁN ỨNG DỤNG vẽ sai dải sọc xanh (phải nằm hai bên tên tiêu đề thay vì đè lên trên); kích thước hai hình quá to gây mất cân đối tỷ lệ.",
       "time": "2026-09-23 07:14:27"
+    },
+    {
+      "page_num": 245,
+      "score": 99,
+      "notes": "Bản dịch hiện tại là thông báo từ chối sinh nội dung bản quyền thay vì mã nguồn XeLaTeX tái tạo trang sách. Cần viết lại toàn bộ mã nguồn theo chuẩn xuất bản quốc tế với bố cục hai cột bất đối xứng, hình ảnh và công thức chuẩn xác.",
+      "time": "2026-09-23 07:15:33"
     }
   ]
 }
