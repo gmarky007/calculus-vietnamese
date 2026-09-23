@@ -1,0 +1,146 @@
+\documentclass[10pt]{article}
+\usepackage[paperwidth=8.5in,paperheight=11in,top=0.65in,bottom=0.65in,left=0.75in,right=0.75in]{geometry}
+\usepackage{fontspec}
+\usepackage{amsmath,amssymb}
+\usepackage{paracol}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{tikz}
+
+\setmainfont{TeX Gyre Termes}
+\setsansfont{TeX Gyre Heros}
+
+\definecolor{exercisecyan}{RGB}{0,136,206}
+\definecolor{lightrule}{RGB}{200,200,200}
+
+% Icon graphing calculator tương tự nguyên tác James Stewart
+\newcommand{\calcicon}{%
+  \begin{tikzpicture}[x=0.085cm,y=0.085cm,baseline=-0.35ex]
+    \draw[line width=0.55pt,draw=exercisecyan,rounded corners=0.6pt] (0,0) rectangle (9,12.5);
+    \draw[line width=0.4pt,draw=exercisecyan] (1.2,7.2) rectangle (7.8,11.3);
+    \draw[line width=0.45pt,draw=exercisecyan] (1.8,8.8) to[out=25,in=205] (4.8,10.2) to[out=25,in=195] (7.2,8.6);
+    \foreach \x in {2.3, 4.5, 6.7}
+      \foreach \y in {1.8, 3.5, 5.2}
+        \fill[exercisecyan] (\x,\y) circle (0.35pt);
+  \end{tikzpicture}%
+}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\begin{document}
+
+% Header
+{\small\textsf{\textbf{246}}\qquad\textsf{\textbf{CHƯƠNG 3}}\quad\textsf{Các quy tắc đạo hàm}}
+\vspace{10pt}
+
+\columnratio{0.485, 0.485}
+\setlength{\columnsep}{22pt}
+\begin{paracol}{2}
+
+% CỘT 1
+\begin{enumerate}[label=\textbf{\arabic*.},leftmargin=*,itemsep=9pt,topsep=0pt,parsep=2pt]
+  \setcounter{enumi}{7}
+  \item Stronti-90 có chu kỳ bán rã là 28 ngày.
+    \begin{enumerate}[label=\textbf{(\alph*)},leftmargin=1.5em,itemsep=1.5pt,topsep=1.5pt]
+      \item Một mẫu có khối lượng ban đầu là 50 mg. Tìm công thức xác định khối lượng còn lại sau $t$ ngày.
+      \item Tìm khối lượng còn lại sau 40 ngày.
+      \item Mất bao lâu để mẫu phân rã chỉ còn lại khối lượng 2 mg?
+      \item Phác thảo đồ thị của hàm khối lượng.
+    \end{enumerate}
+
+  \item Chu kỳ bán rã của xesi-137 là 30 năm. Giả sử ta có một mẫu 100 mg.
+    \begin{enumerate}[label=\textbf{(\alph*)},leftmargin=1.5em,itemsep=1.5pt,topsep=1.5pt]
+      \item Tìm khối lượng còn lại sau $t$ năm.
+      \item Khối lượng mẫu còn lại sau 100 năm là bao nhiêu?
+      \item Sau bao lâu thì chỉ còn lại 1 mg?
+    \end{enumerate}
+
+  \item Một mẫu einsteini-252 phân rã còn 64,3\% khối lượng ban đầu sau 300 ngày.
+    \begin{enumerate}[label=\textbf{(\alph*)},leftmargin=1.5em,itemsep=1.5pt,topsep=1.5pt]
+      \item Chu kỳ bán rã của einsteini-252 là bao nhiêu?
+      \item Mất bao lâu để mẫu phân rã chỉ còn một phần ba khối lượng ban đầu?
+    \end{enumerate}
+\end{enumerate}
+
+\vspace{6pt}
+{\small
+\noindent\textbf{\textcolor{exercisecyan}{11–13}}\enspace\textbf{Định tuổi bằng cacbon phóng xạ}\enspace Các nhà khoa học có thể xác định niên đại của các cổ vật bằng phương pháp \textit{định tuổi bằng cacbon phóng xạ}. Sự bắn phá của các tia vũ trụ ở thượng tầng khí quyển biến đổi nitơ thành một đồng vị phóng xạ của cacbon, $^{14}\text{C}$, với chu kỳ bán rã khoảng 5730 năm. Thực vật hấp thụ cacbon đioxit từ khí quyển và động vật đồng hóa $^{14}\text{C}$ qua chuỗi thức ăn. Khi một thực vật hay động vật chết đi, nó ngừng hấp thụ cacbon và lượng $^{14}\text{C}$ hiện diện bắt đầu giảm dần do phân rã phóng xạ. Do đó mức độ phóng xạ cũng phải giảm theo hàm mũ.\par
+}
+
+\vspace{4pt}
+\begin{enumerate}[label=\textbf{\arabic*.},leftmargin=*,itemsep=8pt,topsep=0pt,parsep=2pt]
+  \setcounter{enumi}{10}
+  \item Một phát hiện đã làm lộ ra một mảnh giấy da có độ phóng xạ $^{14}\text{C}$ bằng khoảng 74\% so với vật liệu thực vật trên Trái Đất ngày nay. Hãy ước tính niên đại của mảnh giấy da đó.
+
+  \item Các hóa thạch khủng long quá cổ để có thể xác định niên đại một cách đáng tin cậy bằng cacbon-14. Giả sử ta có một hóa thạch khủng long 68 triệu năm tuổi. Tỉ lệ $^{14}\text{C}$ còn lại ngày nay so với khi khủng long còn sống là bao nhiêu? Giả sử khối lượng tối thiểu có thể phát hiện được là 0,1\%. Niên đại tối đa của một hóa thạch có thể xác định được bằng $^{14}\text{C}$ là bao nhiêu?
+
+  \item Hóa thạch khủng long thường được định tuổi bằng cách dùng một nguyên tố khác ngoài cacbon, chẳng hạn như kali-40, nguyên tố có chu kỳ bán rã dài hơn (trong trường hợp này là khoảng 1,25 tỉ năm). Giả sử khối lượng tối thiểu có thể phát hiện được là 0,1\% và một con khủng long được xác định niên đại bằng $^{40}\text{K}$ là 68 triệu năm tuổi. Việc định tuổi như vậy có khả thi không? Nói cách khác, niên đại tối đa của một hóa thạch có thể xác định được bằng $^{40}\text{K}$ là bao nhiêu?
+\end{enumerate}
+
+\vspace{6pt}
+\noindent\textcolor{lightrule}{\rule{\linewidth}{0.4pt}}
+\vspace{4pt}
+
+\begin{enumerate}[label=\textbf{\arabic*.},leftmargin=*,itemsep=0pt,topsep=0pt,parsep=2pt]
+  \setcounter{enumi}{13}
+  \item Một đường cong đi qua điểm $(0, 5)$ và có tính chất là hệ số góc của tiếp tuyến tại mọi điểm $P$ bằng hai lần tung độ của $P$. Phương trình của đường cong đó là gì?
+\end{enumerate}
+
+\switchcolumn
+
+% CỘT 2
+\begin{enumerate}[label=\textbf{\arabic*.},leftmargin=*,itemsep=9pt,topsep=0pt,parsep=2pt]
+  \setcounter{enumi}{14}
+  \item Một con gà tây nướng được lấy ra khỏi lò khi nhiệt độ của nó đạt $185^\circ\text{F}$ và được đặt trên bàn trong một căn phòng có nhiệt độ môi trường là $75^\circ\text{F}$.
+    \begin{enumerate}[label=\textbf{(\alph*)},leftmargin=1.5em,itemsep=1.5pt,topsep=1.5pt]
+      \item Nếu nhiệt độ của gà tây là $150^\circ\text{F}$ sau nửa giờ, thì nhiệt độ sau 45 phút là bao nhiêu?
+      \item Khi nào thì gà tây sẽ nguội xuống còn $100^\circ\text{F}$?
+    \end{enumerate}
+
+  \item Trong một cuộc điều tra án mạng, nhiệt độ của thi thể là $32{,}5^\circ\text{C}$ lúc 1:30 chiều và $30{,}3^\circ\text{C}$ một giờ sau đó. Nhiệt độ cơ thể người bình thường là $37{,}0^\circ\text{C}$ và nhiệt độ môi trường là $20{,}0^\circ\text{C}$. Vụ án mạng đã xảy ra vào thời điểm nào?
+
+  \item Khi một đồ uống lạnh được lấy ra khỏi tủ lạnh, nhiệt độ của nó là $5^\circ\text{C}$. Sau 25 phút để trong căn phòng $20^\circ\text{C}$, nhiệt độ của nó tăng lên đến $10^\circ\text{C}$.
+    \begin{enumerate}[label=\textbf{(\alph*)},leftmargin=1.5em,itemsep=1.5pt,topsep=1.5pt]
+      \item Nhiệt độ của đồ uống sau 50 phút là bao nhiêu?
+      \item Khi nào thì nhiệt độ của nó đạt tới $15^\circ\text{C}$?
+    \end{enumerate}
+
+  \item Một tách cà phê mới pha có nhiệt độ $95^\circ\text{C}$ trong căn phòng $20^\circ\text{C}$. Khi nhiệt độ của nó là $70^\circ\text{C}$, nó đang nguội đi với tốc độ $1^\circ\text{C}$ mỗi phút. Điều này xảy ra vào lúc nào?
+
+  \item Tốc độ thay đổi của áp suất khí quyển $P$ theo độ cao $h$ tỉ lệ thuận với $P$, với giả định nhiệt độ là không đổi. Ở $15^\circ\text{C}$, áp suất là $101{,}3\text{ kPa}$ tại mực nước biển và $87{,}14\text{ kPa}$ ở độ cao $h = 1000\text{ m}$.
+    \begin{enumerate}[label=\textbf{(\alph*)},leftmargin=1.5em,itemsep=1.5pt,topsep=1.5pt]
+      \item Áp suất ở độ cao $3000\text{ m}$ là bao nhiêu?
+      \item Áp suất tại đỉnh núi McKinley, ở độ cao $6187\text{ m}$, là bao nhiêu?
+    \end{enumerate}
+
+  \item
+    \begin{enumerate}[label=\textbf{(\alph*)},leftmargin=1.5em,itemsep=3pt,topsep=0pt]
+      \item Nếu vay 2500\$ với lãi suất 4,5\%, hãy tìm số tiền phải trả vào cuối năm thứ 3 nếu tiền lãi được ghép lãi (i) hàng năm, (ii) hàng quý, (iii) hàng tháng, (iv) hàng tuần, (v) hàng ngày, (vi) hàng giờ, và (vii) liên tục.
+      \item \llap{\calcicon\hspace{4pt}}Giả sử vay 2500\$ và tiền lãi được ghép lãi liên tục. Nếu $A(t)$ là số tiền phải trả sau $t$ năm, với $0 \leqslant t \leqslant 3$, hãy vẽ đồ thị của $A(t)$ ứng với mỗi mức lãi suất 5\%, 6\% và 7\% trên cùng một màn hình.
+    \end{enumerate}
+
+  \item
+    \begin{enumerate}[label=\textbf{(\alph*)},leftmargin=1.5em,itemsep=3pt,topsep=0pt]
+      \item Nếu đầu tư 4000\$ với lãi suất 1,75\%, hãy tìm giá trị của khoản đầu tư vào cuối năm thứ 5 nếu tiền lãi được ghép lãi (i) hàng năm, (ii) nửa năm một lần, (iii) hàng tháng, (iv) hàng tuần, (v) hàng ngày, và (vi) liên tục.
+      \item Nếu $A(t)$ là giá trị của khoản đầu tư tại thời điểm $t$ đối với trường hợp ghép lãi liên tục, hãy viết một phương trình vi phân và điều kiện ban đầu mà $A(t)$ thỏa mãn.
+    \end{enumerate}
+
+  \item
+    \begin{enumerate}[label=\textbf{(\alph*)},leftmargin=1.5em,itemsep=2pt,topsep=0pt]
+      \item Mất bao lâu để một khoản đầu tư tăng gấp đôi giá trị nếu lãi suất là 3\%, ghép lãi liên tục?
+      \item Lãi suất tương đương hàng năm là bao nhiêu?
+    \end{enumerate}
+\end{enumerate}
+
+\end{paracol}
+
+\vfill
+\begin{center}
+  \fontsize{7pt}{8.5pt}\selectfont\color{gray!80}
+  Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\\
+  Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+\end{center}
+
+\end{document}
