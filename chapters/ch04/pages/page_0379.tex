@@ -1,0 +1,110 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[top=1.6cm, bottom=1.5cm, left=1.8cm, right=1.8cm]{geometry}
+\usepackage{fontspec}
+\setmainfont{TeX Gyre Termes}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{microtype}
+
+\setlength{\columnsep}{22pt}
+\setlength{\parindent}{0pt}
+
+\newcommand{\casicon}{%
+  \raisebox{-0.15ex}{%
+    \begin{tikzpicture}[x=1ex, y=1ex, baseline=0]
+      \draw[rounded corners=0.5pt, draw=cyan!80!blue, fill=white, line width=0.5pt] (0,0) rectangle (1.45, 1.45);
+      \draw[draw=cyan!80!blue, line width=0.55pt, smooth] (0.2, 0.35) .. controls (0.55, 1.35) and (0.9, 0.15) .. (1.25, 1.15);
+    \end{tikzpicture}%
+  }%
+}
+
+\newcommand{\prob}[1]{\par\vspace{5pt}\noindent\hangindent=1.5em\hangafter=1\textbf{#1.}\hspace{0.5em}}
+
+\begin{document}
+\pagestyle{empty}
+
+% Header trang
+\noindent{\textbf{344}}\qquad\textbf{CHƯƠNG 4}\quad Ứng dụng của đạo hàm
+\vspace{10pt}
+
+\begin{multicols*}{2}
+
+\par\vspace{1pt}\noindent\hangindent=2.3em\hangafter=1\casicon\ \textbf{28.}\hspace{0.45em}Tìm tọa độ của điểm trên đường cong $y = \sin x$ gần điểm $(4, 2)$ nhất, chính xác đến hai chữ số thập phân.
+
+\prob{29}Tìm các kích thước của hình chữ nhật có diện tích lớn nhất có thể nội tiếp trong một đường tròn bán kính $r$.
+
+\prob{30}Tìm diện tích của hình chữ nhật lớn nhất có thể nội tiếp trong elip $x^2/a^2 + y^2/b^2 = 1$.
+
+\prob{31}Tìm các kích thước của hình chữ nhật có diện tích lớn nhất có thể nội tiếp trong một tam giác đều cạnh $L$ nếu một cạnh của hình chữ nhật nằm trên cạnh đáy của tam giác.
+
+\prob{32}Tìm diện tích của hình thang lớn nhất có thể nội tiếp trong một đường tròn bán kính $1$ và có đáy là một đường kính của đường tròn.
+
+\prob{33}Tìm các kích thước của tam giác cân có diện tích lớn nhất có thể nội tiếp trong một đường tròn bán kính $r$.
+
+\prob{34}Nếu hai cạnh bằng nhau của một tam giác cân có độ dài $a$, hãy tìm độ dài của cạnh thứ ba sao cho diện tích của tam giác đạt giá trị lớn nhất.
+
+\prob{35}Nếu một cạnh của một tam giác có độ dài $a$ và cạnh kia có độ dài $2a$, hãy chứng minh rằng diện tích lớn nhất có thể của tam giác là $a^2$.
+
+\prob{36}Một hình chữ nhật có cạnh đáy nằm trên trục $x$ và hai đỉnh phía trên nằm trên parabol $y = 4 - x^2$. Diện tích lớn nhất có thể của hình chữ nhật này là bao nhiêu?
+
+\prob{37}Một hình trụ tròn xoay nội tiếp trong một mặt cầu bán kính $r$. Tìm thể tích lớn nhất có thể của hình trụ đó.
+
+\prob{38}Một hình trụ tròn xoay nội tiếp trong một hình nón có chiều cao $h$ và bán kính đáy $r$. Tìm thể tích lớn nhất có thể của hình trụ đó.
+
+\prob{39}Một hình trụ tròn xoay nội tiếp trong một mặt cầu bán kính $r$. Tìm diện tích toàn phần lớn nhất có thể của hình trụ đó.
+
+\prob{40}Một cửa sổ kiểu Norman có hình dạng gồm một hình chữ nhật phía dưới gắn liền với một nửa hình tròn phía trên. (Do đó đường kính của nửa hình tròn bằng chiều rộng của hình chữ nhật. Xem Bài tập 1.1.72.) Nếu chu vi của cửa sổ là $30\text{ ft}$, hãy tìm các kích thước của cửa sổ sao cho lượng ánh sáng đi qua là lớn nhất.
+
+\begin{center}
+  \vspace{3pt}
+  \includegraphics[width=0.38\linewidth]{images/p0379_fig2.png}
+  \vspace{1pt}
+\end{center}
+
+\par\vspace{4pt}\noindent\hangindent=1.5em\hangafter=1\textbf{41.}\hspace{0.5em}Lề trên và lề dưới của một tấm áp phích đều là $6\text{ cm}$ và các lề hai bên đều là $4\text{ cm}$. Nếu diện tích của phần in
+\columnbreak
+\noindent\hangindent=1.5em\hangafter=0 trên tấm áp phích được cố định là $384\text{ cm}^2$, hãy tìm các kích thước của tấm áp phích sao cho diện tích của nó là nhỏ nhất.
+
+\begin{center}
+  \vspace{2pt}
+  \includegraphics[width=0.45\linewidth]{images/p0379_fig1.png}
+  \vspace{2pt}
+\end{center}
+
+\prob{42}Một tấm áp phích cần có diện tích $180\text{ in}^2$ với lề dưới và lề hai bên là $1\text{ inch}$, lề trên là $2\text{ inch}$. Những kích thước nào sẽ cho diện tích phần in là lớn nhất?
+
+\prob{43}Một đoạn dây kim loại dài $10\text{ m}$ được cắt làm hai đoạn. Một đoạn được uốn thành một hình vuông và đoạn còn lại được uốn thành một tam giác đều. Đoạn dây nên được cắt như thế nào để tổng diện tích giới hạn bởi hai hình là (a) lớn nhất? (b) nhỏ nhất?
+
+\prob{44}Trả lời Bài tập 43 nếu một đoạn được uốn thành một hình vuông và đoạn kia được uốn thành một hình tròn.
+
+\prob{45}Nếu bạn được mời một miếng bánh từ một chiếc bánh pizza tròn (nói cách khác là một hình quạt tròn) và miếng bánh phải có chu vi là $32\text{ inch}$, thì chiếc bánh pizza có đường kính bao nhiêu sẽ cho bạn miếng bánh có diện tích lớn nhất?
+
+\prob{46}Một hàng rào cao $8\text{ ft}$ chạy song song với một tòa nhà cao tầng và cách tòa nhà $4\text{ ft}$. Chiều dài ngắn nhất của chiếc thang có thể bắc từ mặt đất qua hàng rào tới tường của tòa nhà là bao nhiêu?
+
+\begin{center}
+  \vspace{2pt}
+  \includegraphics[width=0.62\linewidth]{images/p0379_fig3.png}
+  \vspace{2pt}
+\end{center}
+
+\prob{47}Một chiếc cốc uống nước hình nón được làm từ một mảnh giấy hình tròn bán kính $R$ bằng cách cắt bỏ một hình quạt tròn rồi ghép hai mép $CA$ và $CB$ lại với nhau. Hãy tìm dung tích lớn nhất của một chiếc cốc như vậy.
+
+\begin{center}
+  \vspace{2pt}
+  \includegraphics[width=0.78\linewidth]{images/p0379_fig4.png}
+  \vspace{2pt}
+\end{center}
+
+\end{multicols*}
+
+\vfill
+\begin{center}
+  \fontsize{5.5pt}{7pt}\selectfont\color{black!70}
+  Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\\
+  Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+\end{center}
+
+\end{document}
