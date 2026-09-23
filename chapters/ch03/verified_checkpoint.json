@@ -233,6 +233,12 @@
       "score": 99,
       "notes": "Bản in hiện tại bị lỗi nghiêm trọng in các tham số khai báo gói (preamble) ra đầu trang văn bản do lỗi ký tự thoát; ghi chú lề bị đặt quá cao so với vị trí chuẩn ở Lời giải 2; từ 'Do đó' bị nhảy dòng thay vì dóng trái cùng hàng với phương trình; tiêu đề 'LƯU Ý 1' dùng sai màu (phải là màu xanh lá cây đặc trưng của Stewart thay vì màu cyan).",
       "time": "2026-09-23 07:17:44"
+    },
+    {
+      "page_num": 247,
+      "score": 99,
+      "notes": "Bản in hiện tại bị lỗi nghiêm trọng khi in lộ toàn bộ thông số preamble lên đầu trang do lỗi ký tự thoát. Bố cục phần giải phương trình đạo hàm chưa dóng hàng ngang cùng dòng với văn bản như bản gốc. Đã khắc phục triệt để lỗi hiển thị và chuẩn hóa dóng hàng 1:1.",
+      "time": "2026-09-23 07:19:27"
     }
   ]
 }
