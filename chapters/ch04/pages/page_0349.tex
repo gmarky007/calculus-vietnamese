@@ -1,0 +1,79 @@
+\documentclass[10pt]{article}
+\usepackage[paperwidth=8.5in,paperheight=11in,left=2.5in,right=0.75in,top=0.75in,bottom=0.85in]{geometry}
+\usepackage{fontspec}
+\usepackage{amsmath,amssymb}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+
+\setmainfont{TeX Gyre Termes}
+\setsansfont{TeX Gyre Heros}
+
+\definecolor{stewartblue}{RGB}{0, 110, 182}
+\definecolor{stewartgreen}{RGB}{0, 133, 73}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyheadoffset[L]{1.75in}
+\fancyhead[L]{\textsf{\textbf{314}\qquad \textbf{CHƯƠNG 4}\quad Các ứng dụng của đạo hàm}}
+\renewcommand{\headrulewidth}{0pt}
+
+\fancyfootoffset[L]{1.75in}
+\fancyfoot[L]{%
+  \vspace{10pt}%
+  \fontsize{5.5}{6.5}\selectfont\color{black!75}%
+  \parbox{\textwidth+1.75in}{%
+    \centering
+    Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\\[1pt]
+    Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+  }%
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt minus 1pt}
+
+\begin{document}
+
+\noindent\textcolor{stewartgreen}{\textsf{\textbf{LƯU Ý}}}\quad Khi giải Ví dụ 6, một phương án khả dĩ khác là viết
+\[
+\lim_{x \to 0^+} x \ln x = \lim_{x \to 0^+} \frac{x}{1/\ln x}
+\]
+Điều này dẫn đến dạng vô định kiểu $\frac{0}{0}$, nhưng nếu áp dụng quy tắc l'Hospital, ta sẽ nhận được một biểu thức phức tạp hơn biểu thức ban đầu. Nói chung, khi viết lại một tích vô định, ta cố gắng chọn phương án dẫn đến giới hạn đơn giản hơn.
+
+\vspace{1.2em}
+\noindent\textcolor{stewartblue}{\rule{1.1ex}{1.1ex}}\hspace{0.5em}\textbf{Hiệu vô định (Dạng $\boldsymbol{\infty - \infty}$)}
+
+\vspace{0.2em}
+Nếu $\lim_{x \to a} f(x) = \infty$ và $\lim_{x \to a} g(x) = \infty$, thì giới hạn
+\[
+\lim_{x \to a} [f(x) - g(x)]
+\]
+được gọi là một \textbf{dạng vô định kiểu $\boldsymbol{\infty - \infty}$}. Ở đây lại có một sự tranh chấp giữa $f$ và $g$. Liệu kết quả sẽ là $\infty$ ($f$ thắng) hay sẽ là $-\infty$ ($g$ thắng), hay chúng sẽ dung hòa tại một số hữu hạn? Để tìm câu trả lời, ta cố gắng biến đổi hiệu thành một thương (chẳng hạn bằng cách quy đồng mẫu số, nhân lượng liên hợp, hoặc đặt thừa số chung) để có được dạng vô định kiểu $\frac{0}{0}$ hoặc $\frac{\infty}{\infty}$.
+
+\vspace{1.3em}
+\noindent\textcolor{stewartblue}{\textbf{VÍ DỤ 7}}\quad Tính $\lim_{x \to 1^+} \left( \dfrac{1}{\ln x} - \dfrac{1}{x - 1} \right)$.
+
+\vspace{0.3em}
+\noindent\textcolor{stewartblue}{\textbf{LỜI GIẢI}}\quad Trước hết nhận thấy rằng $1/(\ln x) \to \infty$ và $1/(x - 1) \to \infty$ khi $x \to 1^+$, do đó giới hạn có dạng vô định kiểu $\infty - \infty$. Ở đây ta có thể bắt đầu bằng cách quy đồng mẫu số:
+\[
+\lim_{x \to 1^+} \left( \frac{1}{\ln x} - \frac{1}{x - 1} \right) = \lim_{x \to 1^+} \frac{x - 1 - \ln x}{(x - 1)\ln x}
+\]
+Cả tử số và mẫu số đều có giới hạn bằng $0$, vì vậy quy tắc l'Hospital được áp dụng, cho ta
+\[
+\lim_{x \to 1^+} \frac{x - 1 - \ln x}{(x - 1)\ln x} = \lim_{x \to 1^+} \frac{1 - \dfrac{1}{x}}{(x - 1)\cdot \dfrac{1}{x} + \ln x} = \lim_{x \to 1^+} \frac{x - 1}{x - 1 + x\ln x}
+\]
+Một lần nữa ta lại gặp giới hạn vô định kiểu $\frac{0}{0}$, do đó ta áp dụng quy tắc l'Hospital lần thứ hai:
+\begin{align*}
+\lim_{x \to 1^+} \frac{x - 1}{x - 1 + x\ln x} &= \lim_{x \to 1^+} \frac{1}{1 + x \cdot \dfrac{1}{x} + \ln x} \\[6pt]
+&= \lim_{x \to 1^+} \frac{1}{2 + \ln x} = \frac{1}{2} \tag*{\textcolor{stewartblue}{\rule{1.1ex}{1.1ex}}}
+\end{align*}
+
+\vspace{0.8em}
+\noindent\textcolor{stewartblue}{\textbf{VÍ DỤ 8}}\quad Tính $\lim_{x \to \infty} (e^x - x)$.
+
+\vspace{0.3em}
+\noindent\textcolor{stewartblue}{\textbf{LỜI GIẢI}}\quad Đây là một hiệu vô định vì cả $e^x$ và $x$ đều tiến tới vô cùng. Ta dự đoán giới hạn sẽ là vô cùng vì $e^x \to \infty$ nhanh hơn rất nhiều so với $x$. Nhưng ta có thể kiểm chứng điều này bằng cách đặt $x$ làm thừa số chung:
+\[
+e^x - x = x\left( \frac{e^x}{x} - 1 \right)
+\]
+
+\end{document}
