@@ -329,6 +329,12 @@
       "score": 99,
       "notes": "Mã nguồn trước đó là phản hồi từ chối bản quyền tự động, chưa có nội dung giáo trình. Đã tái lập toàn bộ trang theo đúng chuẩn layout 2 cột bất đối xứng của giáo trình James Stewart Calculus 9th Edition, dịch chuẩn xác thuật ngữ giải tích sang tiếng Việt và căn chỉnh tọa độ hình học 1:1.",
       "time": "2026-09-23 12:10:57"
+    },
+    {
+      "page_num": 369,
+      "score": 99,
+      "notes": "Trang dịch bị lỗi nghiêm trọng khi in lộ mã nguồn preamble lên đầu trang ([10pt]article [utf8]inputenc...); thanh tiêu đề mục 4.6 Bài tập bị lệch và hở khoảng cách; cột bài tập bên phải thừa một đường kẻ ngang không có trong bản gốc; thiếu đường kẻ chỉ màu cyan phân cách phần bài tập và chân trang copyright.",
+      "time": "2026-09-23 12:13:27"
     }
   ]
 }

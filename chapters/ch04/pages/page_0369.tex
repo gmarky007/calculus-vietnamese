@@ -1,0 +1,171 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{fancyhdr}
+\usepackage{newtxtext,newtxmath}
+\usepackage[scaled=0.92]{helvet}
+\usepackage[letterpaper, top=1.8cm, bottom=1.8cm, left=2.0cm, right=2.0cm, headheight=14pt]{geometry}
+
+% Định nghĩa màu chuẩn Stewart Calculus
+\definecolor{stewartcyan}{RGB}{0, 136, 175}
+\definecolor{stewartred}{RGB}{204, 0, 0}
+\definecolor{linegray}{RGB}{180, 180, 180}
+
+% Cấu hình Header và Footer
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\fontsize{9}{11}\selectfont\textbf{\textsf{334}}\quad\textbf{\textsf{CHƯƠNG 4}}\quad\textsf{Các ứng dụng của đạo hàm}}
+\fancyhead[R]{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\begin{document}
+
+% ==========================================
+% KHỐI 1: NỬA TRÊN TRANG (LỀ TRÁI VÀ CỘT CHÍNH)
+% ==========================================
+\noindent
+\begin{minipage}[t]{0.22\textwidth}
+  \mbox{} % Lề trái để trống chuẩn theo bản gốc Stewart
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.75\textwidth}
+  Khi $c < 1$, có hai đường tiệm cận đứng: $x = -1 \pm \sqrt{1 - c}$ (như trong Hình 20).
+
+  \vspace{5pt}
+  \hspace*{1.2em}Bây giờ ta tính đạo hàm:
+  \[
+  f'(x) = -\frac{2x + 2}{(x^2 + 2x + c)^2}
+  \]
+  Điều này cho thấy $f'(x) = 0$ khi $x = -1$ (nếu $c \neq 1$), $f'(x) > 0$ khi $x < -1$, và $f'(x) < 0$ khi $x > -1$. Với $c \geqslant 1$, điều này có nghĩa là $f$ đồng biến trên $(-\infty, -1)$ và nghịch biến trên $(-1, \infty)$. Với $c > 1$, hàm số đạt giá trị cực đại tuyệt đối tại $f(-1) = 1/(c - 1)$. Với $c < 1$, $f(-1) = 1/(c - 1)$ là một giá trị cực đại địa phương và các khoảng đồng biến, nghịch biến bị gián đoạn tại các đường tiệm cận đứng.
+
+  \vspace{5pt}
+  \hspace*{1.2em}Hình 21 là một ``chuỗi hình chiếu'' hiển thị năm hàm số trong họ, tất cả đều được vẽ trong khung chữ nhật quan sát $[-5, 4] \times [-2, 2]$. Đúng như dự đoán, có một sự chuyển tiếp diễn ra từ hai đường tiệm cận đứng thành một tiệm cận đứng khi $c = 1$, và sau đó không còn tiệm cận đứng nào khi $c > 1$. Khi $c$ tăng dần từ 1, ta thấy điểm cực đại trở nên thấp hơn; điều này được giải thích bởi thực tế là $1/(c - 1) \to 0$ khi $c \to \infty$. Khi $c$ giảm dần từ 1, các đường tiệm cận đứng tách xa nhau hơn do khoảng cách giữa chúng là $2\sqrt{1 - c}$, đại lượng này trở nên rất lớn khi $c \to -\infty$. Một lần nữa, điểm cực đại lại tiến gần về trục hoành $x$ vì $1/(c - 1) \to 0$ khi $c \to -\infty$.
+\end{minipage}
+
+\vspace{0.35cm}
+
+% ==========================================
+% KHỐI 2: HÌNH 21 ĐỒ THỊ TRẢI RỘNG TOÀN TRANG
+% ==========================================
+\noindent
+\includegraphics[width=\textwidth]{images/p0369_fig1.png}
+
+\vspace{0.2cm}
+
+% ==========================================
+% KHỐI 3: CHÚ THÍCH HÌNH BÊN TRÁI & NỘI DUNG TIẾP THEO
+% ==========================================
+\noindent
+\begin{minipage}[t]{0.22\textwidth}
+  \raggedright
+  \textbf{\textsf{HÌNH 21}}\\[2pt]
+  {\small Họ các hàm số\\
+  $f(x) = 1/(x^2 + 2x + c)$}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.75\textwidth}
+  Rõ ràng không có điểm uốn nào khi $c \leqslant 1$. Với $c > 1$, ta tính được
+  \[
+  f''(x) = \frac{2(3x^2 + 6x + 4 - c)}{(x^2 + 2x + c)^3}
+  \]
+  và suy ra rằng các điểm uốn xuất hiện khi $x = -1 \pm \sqrt{3(c - 1)}/3$. Do đó, các điểm uốn càng trở nên dãn cách rộng ra khi $c$ tăng lên và điều này có vẻ hoàn toàn phù hợp khi quan sát hai đồ thị cuối cùng của Hình 21.\hfill{\color{stewartcyan}\rule{1.1ex}{1.1ex}}
+\end{minipage}
+
+\vspace{0.45cm}
+
+% ==========================================
+% KHỐI 4: THANH PHÂN CÁCH MỤC 4.6 BÀI TẬP
+% ==========================================
+\noindent
+\begin{tikzpicture}[x=1cm, y=1cm, baseline=0]
+  \foreach \dy in {-0.09, -0.03, 0.03, 0.09} {
+    \draw[stewartcyan, line width=0.6pt] (0, \dy) -- (2.6, \dy);
+    \draw[stewartcyan, line width=0.6pt] (5.5, \dy) -- (\linewidth, \dy);
+  }
+  
+  % Hộp số mục 4.6
+  \node[draw=stewartcyan, fill=white, rounded corners=2.5pt, line width=1.1pt, inner sep=2.5pt, anchor=west] at (2.7, 0) {
+    \fontsize{11}{12}\selectfont\bfseries\sffamily\color{stewartcyan}4.6
+  };
+  
+  % Icon quyển sách mở
+  \begin{scope}[shift={(3.75, -0.02)}, scale=0.17]
+    \draw[stewartcyan, line width=1.1pt, rounded corners=0.4pt] 
+      (-1.25, 1.05) -- (-1.25, -0.85) .. controls (-0.6, -0.65) .. (0, -0.95) 
+      .. controls (0.6, -0.65) .. (1.25, -0.85) -- (1.25, 1.05);
+    \draw[stewartcyan, line width=1.1pt] (0, -0.95) -- (0, 0.95);
+    \draw[stewartcyan, line width=0.9pt] 
+      (-1.15, 0.95) .. controls (-0.6, 1.15) .. (0, 0.95) .. controls (0.6, 1.15) .. (1.15, 0.95);
+  \end{scope}
+
+  % Tiêu đề Bài tập
+  \node[anchor=west] at (4.15, 0) {
+    \fontsize{13}{14}\selectfont\bfseries\sffamily Bài tập
+  };
+\end{tikzpicture}
+
+\vspace{0.35cm}
+
+% ==========================================
+% KHỐI 5: PHẦN BÀI TẬP CHIA LÀM HAI CỘT
+% ==========================================
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+  \fontsize{9.5}{13.5}\selectfont
+  \textbf{\textsf{\color{stewartcyan}1--8}}\enspace Hãy vẽ đồ thị của hàm số $f$ sao cho thể hiện được tất cả các khía cạnh quan trọng của đường cong. Cụ thể, bạn nên dùng đồ thị của $f'$ và $f''$ để ước lượng các khoảng đồng biến, nghịch biến, các giá trị cực trị, các khoảng lồi, lõm và các điểm uốn.
+
+  \vspace{7pt}
+  \textbf{1.}\enspace $f(x) = x^5 - 5x^4 - x^3 + 28x^2 - 2x$
+
+  \vspace{6pt}
+  \textbf{2.}\enspace $f(x) = -2x^6 + 5x^5 + 140x^3 - 110x^2$
+
+  \vspace{6pt}
+  \textbf{3.}\enspace $f(x) = x^6 - 5x^5 + 25x^3 - 6x^2 - 48x$
+
+  \vspace{6pt}
+  \textbf{4.}\enspace $f(x) = \dfrac{x^4 - x^3 - 8}{x^2 - x - 6}$
+
+  \vspace{8pt}
+  \textbf{5.}\enspace $f(x) = \dfrac{x}{x^3 + x^2 + 1}$
+
+  \vspace{8pt}
+  \textbf{6.}\enspace $f(x) = 6\sin x - x^2, \quad -5 \leqslant x \leqslant 3$
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+  \fontsize{9.5}{13.5}\selectfont
+  \textbf{7.}\enspace $f(x) = 6\sin x + \cot x, \quad -\pi \leqslant x \leqslant \pi$
+
+  \vspace{6pt}
+  \textbf{8.}\enspace $f(x) = e^x - 0.186x^4$
+
+  \vspace{8pt}
+  \textbf{\textsf{\color{stewartcyan}9--10}}\enspace Hãy vẽ đồ thị của hàm số $f$ sao cho thể hiện được tất cả các khía cạnh quan trọng của đường cong. Ước lượng các khoảng đồng biến, nghịch biến và các khoảng lồi, lõm, đồng thời sử dụng phép tính vi tích phân để tìm chính xác các khoảng này.
+
+  \vspace{7pt}
+  \textbf{9.}\enspace $f(x) = 1 + \dfrac{1}{x} + \dfrac{8}{x^2} + \dfrac{1}{x^3}$
+
+  \vspace{9pt}
+  \textbf{10.}\enspace $f(x) = \dfrac{1}{x^8} - \dfrac{2 \times 10^8}{x^4}$
+\end{minipage}
+
+\vspace{0.45cm}
+
+% ==========================================
+% KHỐI 6: ĐƯỜNG KẺ CYAN VÀ CHÂN TRANG BẢN QUYỀN
+% ==========================================
+\noindent{\color{stewartcyan}\rule{\textwidth}{0.8pt}}\\[4pt]
+{\centering\fontsize{6.5}{8.5}\selectfont\color{black!70}
+Bản quyền thuộc Cengage Learning. Đã đăng ký bản quyền. Không được sao chép, quét hoặc nhân bản toàn bộ hay một phần. WCN 02-200-203\\[1pt]
+Đánh giá của ban biên tập cho thấy nội dung bị lược bỏ không ảnh hưởng đáng kể đến trải nghiệm học tập tổng thể. Cengage Learning có quyền gỡ bỏ nội dung bổ sung vào bất kỳ lúc nào nếu các hạn chế bản quyền sau đó yêu cầu.\par}
+
+\end{document}
