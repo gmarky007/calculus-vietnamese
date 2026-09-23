@@ -1,0 +1,93 @@
+\documentclass[10pt]{article}
+\usepackage[paperwidth=8.5in, paperheight=11in, left=2.3in, right=0.85in, top=0.75in, bottom=0.75in, headheight=14pt]{geometry}
+\usepackage{fontspec}
+\setmainfont{TeX Gyre Termes}
+\setsansfont{TeX Gyre Heros}
+\usepackage{amsmath,amssymb}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{microtype}
+
+\definecolor{stewartblue}{RGB}{0, 115, 175}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlength{\abovedisplayskip}{5.5pt}
+\setlength{\belowdisplayskip}{5.5pt}
+\setlength{\abovedisplayshortskip}{3pt}
+\setlength{\belowdisplayshortskip}{3pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyheadoffset[L]{1.45in}
+\fancyfootoffset[L]{1.45in}
+\fancyhead[L]{\fontsize{9pt}{11pt}\selectfont\textbf{226}\hspace{2.5em}\textbf{\textsf{CHƯƠNG 3}}\hspace{1.5em}Các quy tắc tính đạo hàm}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyfoot[C]{%
+  \fontsize{5.5pt}{7pt}\selectfont\color{black!70}%
+  \centering
+  Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\\[1pt]
+  {\fontsize{4.5pt}{5.5pt}\selectfont Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s).}\\[0.5pt]
+  {\fontsize{4.5pt}{5.5pt}\selectfont Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.}%
+}
+
+\begin{document}
+
+Bất cứ khi nào hàm số $y = f(x)$ mang một ý nghĩa cụ thể trong một ngành khoa học, đạo hàm của nó cũng sẽ có một ý nghĩa cụ thể như là một tốc độ thay đổi. (Như chúng ta đã thảo luận trong Mục~2.7, đơn vị của $dy/dx$ là đơn vị của $y$ chia cho đơn vị của $x$.) Giờ đây chúng ta hãy xem xét một số ý nghĩa này trong các ngành khoa học tự nhiên và khoa học xã hội.
+
+\vspace{0.4em}
+{\color{stewartblue}\rule{1.1ex}{1.1ex}}\hspace{0.5em}\textbf{\textsf{Vật lý}}
+
+\vspace{0.1em}
+Nếu $s = f(t)$ là hàm vị trí của một chất điểm chuyển động trên một đường thẳng, thì $\Delta s/\Delta t$ biểu diễn vận tốc trung bình trong một khoảng thời gian $\Delta t$, và $v = ds/dt$ biểu diễn \textbf{vận tốc} tức thời (tốc độ thay đổi của độ dịch chuyển theo thời gian). Tốc độ thay đổi tức thời của vận tốc theo thời gian là \textbf{gia tốc}: $a(t) = v'(t) = s''(t)$. Nội dung này đã được thảo luận trong các Mục~2.7 và 2.8, nhưng giờ đây khi đã nắm vững các công thức tính đạo hàm, chúng ta có thể dễ dàng giải quyết các bài toán liên quan đến chuyển động của các vật thể hơn.
+
+\vspace{0.6em}
+{\color{stewartblue}\textbf{\textsf{VÍ DỤ 1}}}\hspace{0.8em}Vị trí của một chất điểm được cho bởi phương trình
+\[
+s = f(t) = t^3 - 6t^2 + 9t
+\]
+trong đó $t$ được đo bằng giây và $s$ tính bằng mét.
+\begin{enumerate}[label=\textnormal{(\alph*)}, leftmargin=1.8em, itemsep=1.2pt, topsep=2pt, parsep=0pt]
+  \item Tìm vận tốc tại thời điểm $t$.
+  \item Vận tốc sau $2\text{ s}$ là bao nhiêu? Sau $4\text{ s}$?
+  \item Khi nào chất điểm đứng yên?
+  \item Khi nào chất điểm chuyển động về phía trước (nghĩa là theo chiều dương)?
+  \item Vẽ sơ đồ biểu diễn chuyển động của chất điểm.
+  \item Tìm tổng quãng đường mà chất điểm đi được trong năm giây đầu tiên.
+  \item Tìm gia tốc tại thời điểm $t$ và sau $4\text{ s}$.
+  \item Vẽ đồ thị các hàm vị trí, vận tốc và gia tốc với $0 \le t \le 5$.
+  \item Khi nào chất điểm tăng tốc? Khi nào chất điểm giảm tốc?
+\end{enumerate}
+
+\vspace{0.5em}
+{\color{stewartblue}\textbf{\textsf{LỜI GIẢI}}}\hspace{0.8em}\textbf{(a)}~Hàm vận tốc là đạo hàm của hàm vị trí:
+\[
+s = f(t) = t^3 - 6t^2 + 9t
+\]
+\[
+v(t) = \frac{ds}{dt} = 3t^2 - 12t + 9
+\]
+
+\textbf{(b)}~Vận tốc sau $2\text{ s}$ có nghĩa là vận tốc tức thời khi $t = 2$, tức là
+\[
+v(2) = \left.\frac{ds}{dt}\right|_{t=2} = 3(2)^2 - 12(2) + 9 = -3\text{ m/s}
+\]
+Vận tốc sau $4\text{ s}$ là
+\[
+v(4) = 3(4)^2 - 12(4) + 9 = 9\text{ m/s}
+\]
+
+\textbf{(c)}~Chất điểm đứng yên khi $v(t) = 0$, nghĩa là
+\[
+3t^2 - 12t + 9 = 3(t^2 - 4t + 3) = 3(t - 1)(t - 3) = 0
+\]
+và điều này đúng khi $t = 1$ hoặc $t = 3$. Do đó chất điểm đứng yên sau $1\text{ s}$ và sau $3\text{ s}$.
+
+\textbf{(d)}~Chất điểm chuyển động theo chiều dương khi $v(t) > 0$, tức là
+\[
+3t^2 - 12t + 9 = 3(t - 1)(t - 3) > 0
+\]
+
+\end{document}

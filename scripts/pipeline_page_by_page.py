@@ -366,8 +366,19 @@ def compile_single_page(page_num, ch_dir, pages_dir, comp_dir):
     content = content.replace(r"\end{enumerate*}", r"\end{enumerate}")
     content = content.replace(r"\begin{redframebox}", r"\begin{definitionbox}")
     content = content.replace(r"\end{redframebox}", r"\end{definitionbox}")
-    content = content.replace("28ptenter", "28pt")
+    if r"\begin{document}" in content:
+        content = content.split(r"\begin{document}", 1)[1]
+    if r"\end{document}" in content:
+        content = content.split(r"\end{document}", 1)[0]
     
+    clean_lines = []
+    for l in content.splitlines():
+        sl = l.strip()
+        if sl.startswith(r"\documentclass") or sl.startswith(r"\usepackage"):
+            continue
+        clean_lines.append(l)
+    content = "\n".join(clean_lines)
+
     single_tex_file = os.path.join(ch_dir, f"temp_single_p{page_num:04d}.tex")
     full_content = MASTER_PREAMBLE + content + "\n\\end{document}\n"
     
