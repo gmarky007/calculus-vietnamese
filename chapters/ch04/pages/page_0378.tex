@@ -1,0 +1,104 @@
+\documentclass[10pt]{article}
+\usepackage[letterpaper, top=1.8cm, bottom=2.0cm, left=1.8cm, right=1.8cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{microtype}
+
+% Thiết lập tiêu đề trang và chân trang theo phong cách Stewart Calculus
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[R]{%
+  \parbox{0.485\textwidth}{%
+    \textsf{\textbf{MỤC 4.7}}\hspace{1.5em}\textsf{Các bài toán tối ưu hóa}\hfill\textbf{\textsf{343}}%
+  }%
+}
+\fancyfoot[C]{\fontsize{7}{8.5}\selectfont\color{black!60}Copyright 2021 Cengage Learning. Bản dịch tiếng Việt phục vụ mục đích học tập và nghiên cứu.}
+
+% Macro định dạng bài tập với thụt lề chuẩn dòng 2 trở đi
+\newcommand{\exercise}[2]{%
+  \noindent\hangindent=1.8em\hangafter=1
+  \textbf{#1.}\hspace{0.55em}#2\par\vspace{0.65em}%
+}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.485\textwidth}
+\vspace{0pt}%
+\noindent ...cắt ra một hình vuông từ mỗi góc trong bốn góc rồi gập các thành lên. Hãy tìm thể tích lớn nhất mà một chiếc hộp như vậy có thể có.
+
+\begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=1.8em, itemsep=2pt, parsep=0pt, topsep=2pt]
+  \item Vẽ một vài hình để minh họa cho tình huống này, một số hộp thấp có đáy lớn và một số hộp cao có đáy nhỏ. Hãy tính thể tích của một vài chiếc hộp như vậy. Liệu có vẻ như tồn tại một thể tích cực đại hay không? Nếu có, hãy ước lượng giá trị đó.
+  \item Vẽ một hình minh họa cho tình huống tổng quát. Đưa vào các ký hiệu và chú thích lên hình vẽ bằng các ký hiệu của bạn.
+  \item Viết một biểu thức biểu thị thể tích.
+  \item Sử dụng thông tin đã cho để viết một phương trình liên hệ giữa các biến.
+  \item Sử dụng phần (d) để viết thể tích dưới dạng một hàm của một biến.
+  \item Hoàn thành việc giải bài toán và so sánh kết quả với ước lượng của bạn ở phần (a).
+\end{enumerate}
+\vspace{0.65em}
+
+\exercise{13}{Một người nông dân muốn rào một khu đất hình chữ nhật có diện tích $1{,}5$ triệu foot vuông, sau đó chia đôi khu đất bằng một hàng rào song song với một trong các cạnh của hình chữ nhật. Người đó nên làm thế nào để chi phí làm hàng rào là nhỏ nhất?}
+
+\exercise{14}{Một người nông dân có $1200\text{ ft}$ hàng rào để bao quanh một thửa ruộng hình thang ven sông như hình vẽ. Một trong hai cạnh song song dài gấp ba lần cạnh kia. Không cần rào dọc theo bờ sông. Hãy tìm diện tích lớn nhất mà người nông dân có thể rào được.}
+
+\begin{center}
+  \vspace{-0.3em}
+  \includegraphics[width=0.78\columnwidth]{images/p0378_fig2.png}
+  \vspace{-0.1em}
+\end{center}
+
+\exercise{15}{Một người nông dân muốn rào một mảnh đất hình chữ nhật liền kề với bức tường phía bắc của chuồng trại của mình. Không cần làm hàng rào dọc theo chuồng trại, và hàng rào dọc theo phía tây của mảnh đất được dùng chung với một người hàng xóm, người sẽ chia sẻ một nửa chi phí cho phần hàng rào đó. Nếu chi phí lắp đặt hàng rào là \$20 cho mỗi foot dài và người nông dân không muốn chi quá \$5000, hãy tìm các kích thước của mảnh đất để diện tích bao quanh được là lớn nhất.}
+
+\exercise{16}{Nếu người nông dân trong Bài tập 15 muốn rào một mảnh đất rộng $8000\text{ foot vuông}$, thì kích thước nào sẽ làm tối thiểu hóa chi phí làm hàng rào?}
+
+\noindent\hangindent=1.8em\hangafter=1
+\textbf{17.}\hspace{0.55em}\textbf{(a)}\hspace{0.4em}Chứng minh rằng trong tất cả các hình chữ nhật có diện tích cho trước, hình chữ nhật có chu vi nhỏ nhất là hình vuông.\par\vspace{0.25em}
+\noindent\hspace*{1.8em}\hangindent=3.6em\hangafter=1
+\textbf{(b)}\hspace{0.4em}Chứng minh rằng trong tất cả các hình chữ nhật có chu vi cho trước, hình chữ nhật có diện tích lớn nhất là hình vuông.\par\vspace{0.65em}
+
+\exercise{18}{Một chiếc hộp có đáy hình vuông và không có nắp phải có thể tích là $32\,000\text{ cm}^3$. Hãy tìm các kích thước của chiếc hộp sao cho lượng vật liệu cần sử dụng là ít nhất.}
+
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.485\textwidth}
+\vspace{0pt}%
+
+\exercise{19}{Nếu có sẵn $1200\text{ cm}^2$ vật liệu để làm một chiếc hộp có đáy hình vuông và không có nắp, hãy tìm thể tích lớn nhất có thể của chiếc hộp.}
+
+\exercise{20}{Một chiếc hộp không nắp được tạo thành từ một tấm bìa các-tông hình chữ nhật kích thước $4\text{ ft} \times 3\text{ ft}$ bằng cách cắt bỏ các hình vuông hoặc hình chữ nhật ở mỗi góc trong bốn góc, như trong hình vẽ, rồi gập các thành lên. Một trong các cạnh dài hơn của chiếc hộp sẽ có hai lớp bìa các-tông, có được bằng cách gập cạnh đó hai lần. Hãy tìm thể tích lớn nhất mà một chiếc hộp như vậy có thể có.}
+
+\begin{center}
+  \vspace{-0.3em}
+  \includegraphics[width=0.72\columnwidth]{images/p0378_fig1.png}
+  \vspace{-0.1em}
+\end{center}
+
+\exercise{21}{Một thùng chứa hình hộp chữ nhật không có nắp phải có thể tích là $10\text{ m}^3$. Chiều dài của đáy gấp đôi chiều rộng. Vật liệu làm đáy có giá \$10 mỗi mét vuông. Vật liệu làm các mặt bên có giá \$6 mỗi mét vuông. Hãy tìm chi phí vật liệu cho chiếc thùng chứa có chi phí thấp nhất như vậy.}
+
+\exercise{22}{Làm lại Bài tập 21 với giả thiết thùng chứa có nắp được làm cùng loại vật liệu với các mặt bên.}
+
+\exercise{23}{Một kiện hàng gửi qua dịch vụ bưu chính Hoa Kỳ không được có tổng chiều dài và chu vi vòng (girth) vượt quá $108\text{ inch}$. (Chiều dài là kích thước lớn nhất và chu vi vòng là khoảng cách lớn nhất quanh kiện hàng, vuông góc với chiều dài.) Hãy tìm kích thước của chiếc hộp chữ nhật có đáy hình vuông với thể tích lớn nhất có thể được gửi đi.}
+
+\begin{center}
+  \vspace{-0.3em}
+  \includegraphics[width=0.82\columnwidth]{images/p0378_fig3.png}
+  \vspace{-0.1em}
+\end{center}
+
+\exercise{24}{Tham khảo Bài tập 23. Hãy tìm các kích thước của ống gửi thư hình trụ có thể tích lớn nhất có thể gửi qua bưu cục Hoa Kỳ.}
+
+\exercise{25}{Tìm điểm trên đường thẳng $y = 2x + 3$ gần gốc tọa độ nhất.}
+
+\exercise{26}{Tìm điểm trên đường cong $y = \sqrt{x}$ gần điểm $(3, 0)$ nhất.}
+
+\exercise{27}{Tìm các điểm trên elip $4x^2 + y^2 = 4$ cách xa điểm $(1, 0)$ nhất.}
+
+\end{minipage}
+
+\end{document}
