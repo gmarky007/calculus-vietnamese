@@ -95,6 +95,12 @@
       "score": 98,
       "notes": "Thẩm định hoàn tất",
       "time": "2026-09-23 10:23:45"
+    },
+    {
+      "page_num": 330,
+      "score": 99,
+      "notes": "Trang dịch bị lỗi nghiêm trọng: dòng lệnh khai báo gói bị in trần ra đầu trang; toàn bộ khối bài tập bị tràn xuống trang 2 do ảnh quá lớn và khoảng cách hiển thị quá rộng khiến trang 1 bị bỏ trống phần lớn; thiếu các đường kẻ ngang phân cách nhóm bài 9-12 và 13.",
+      "time": "2026-09-23 10:27:16"
     }
   ]
 }
