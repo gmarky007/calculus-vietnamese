@@ -1,0 +1,161 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage[most]{tcolorbox}
+
+\geometry{
+    a4paper,
+    left=14mm,
+    right=14mm,
+    top=18mm,
+    bottom=18mm,
+    headheight=14pt,
+    headsep=12pt
+}
+
+% Định nghĩa màu sắc theo nhận diện bộ sách Stewart Calculus
+\definecolor{stewartcyan}{RGB}{0, 130, 185}
+\definecolor{stewartred}{RGB}{205, 35, 35}
+
+% Định nghĩa khung định nghĩa viền đỏ
+\newtcolorbox{definitionbox}[1][]{
+    enhanced,
+    colback=white,
+    colframe=stewartred,
+    arc=0mm,
+    boxrule=0.8pt,
+    left=8pt,
+    right=8pt,
+    top=5pt,
+    bottom=5pt,
+    boxsep=0pt,
+    #1
+}
+
+% Định nghĩa ô số công thức viền đỏ
+\newcommand{\rednum}[1]{%
+    \begingroup
+    \setlength{\fboxsep}{2.5pt}%
+    \setlength{\fboxrule}{0.8pt}%
+    \textcolor{stewartred}{\fbox{\bfseries\textcolor{stewartred}{\textsf{#1}}}}%
+    \endgroup
+}
+
+% Thiết lập tiêu đề trang (Header)
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[L]{\textsf{\textbf{264}}\qquad\textsf{\textbf{CHƯƠNG 3}}\quad\textsf{Các quy tắc đạo hàm}}
+\fancyhead[R]{}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+
+\begin{document}
+
+% KHỐI 1: Phần nội dung trên (cột lề trái để trống, nội dung nằm ở cột chính rộng 130mm)
+\noindent
+\hspace*{52mm}%
+\begin{minipage}[t]{130mm}
+    Bất kỳ quy tắc đạo hàm nào trong số này đều có thể kết hợp với Quy tắc chuỗi, như trong ví dụ tiếp theo.
+
+    \medskip
+    \noindent{\color{stewartcyan}\textbf{\textsf{VÍ DỤ 2}}}\quad Nếu $y = \cosh\sqrt{x}$, hãy tìm $dy/dx$.
+
+    \smallskip
+    \noindent{\color{stewartcyan}\textbf{\textsf{LỜI GIẢI}}}\quad Áp dụng (1) và Quy tắc chuỗi, ta có
+    \begin{equation*}
+        \frac{dy}{dx} = \frac{d}{dx}(\cosh\sqrt{x}) = \sinh\sqrt{x}\,\frac{d}{dx}\sqrt{x} = \frac{\sinh\sqrt{x}}{2\sqrt{x}} \tag*{{\color{stewartcyan}\blacksquare}}
+    \end{equation*}
+
+    \vspace{0.6em}
+    \noindent{\color{stewartcyan}\rule{1.1ex}{1.1ex}}\hspace{0.5em}\textbf{\textsf{\large Các hàm hyperbolic ngược và đạo hàm của chúng}}
+
+    \vspace{0.3em}
+    Từ các Hình 1 và 3, ta có thể thấy rằng $\sinh$ và $\tanh$ là các hàm đơn ánh, do đó chúng có các hàm ngược được ký hiệu tương ứng là $\sinh^{-1}$ và $\tanh^{-1}$. Hình 2 cho thấy rằng $\cosh$ không phải là hàm đơn ánh, nhưng nếu ta thu hẹp tập xác định vào khoảng $[0, \infty)$, thì hàm số $y = \cosh x$ trở thành đơn ánh và nhận mọi giá trị trong tập giá trị $[1, \infty)$ của nó. Hàm cosin hyperbolic ngược được định nghĩa là hàm ngược của hàm số bị thu hẹp này.
+
+    \medskip
+    \noindent
+    \hspace*{8pt}%
+    \parbox[c]{18pt}{\rednum{2}}%
+    \hspace{6pt}%
+    \begin{minipage}[c]{0.78\linewidth}
+        \begin{definitionbox}
+            \vspace{-0.3em}
+            \begin{align*}
+                y = \sinh^{-1}x &\iff \sinh y = x \\
+                y = \cosh^{-1}x &\iff \cosh y = x \quad\text{và}\quad y \ge 0 \\
+                y = \tanh^{-1}x &\iff \tanh y = x
+            \end{align*}
+            \vspace{-0.5em}
+        \end{definitionbox}
+    \end{minipage}
+
+    \medskip
+    Các hàm hyperbolic ngược còn lại được định nghĩa tương tự (xem Bài tập 32).
+
+    Chúng ta phác thảo đồ thị của $\sinh^{-1}$, $\cosh^{-1}$ và $\tanh^{-1}$ trong các Hình 8, 9 và 10 bằng cách tham chiếu đến các Hình 1, 2 và 3.
+\end{minipage}
+
+\vspace{1.2em}
+
+% KHỐI 2: Dãy 3 đồ thị HÌNH 8, 9, 10 dóng thẳng hàng ngang qua toàn bộ chiều rộng trang
+\noindent
+\begin{minipage}[t]{44mm}
+    \centering
+    \includegraphics[width=\linewidth]{images/p0299_fig1.png}\\[4pt]
+    {\small \textbf{\textsf{HÌNH 8}}\quad $y = \sinh^{-1}x$\\[1pt]
+    tập xác định $= \mathbb{R}$\quad tập giá trị $= \mathbb{R}$}
+\end{minipage}%
+\hspace{8mm}%
+\begin{minipage}[t]{61mm}
+    \centering
+    \includegraphics[width=\linewidth]{images/p0299_fig2.png}\\[4pt]
+    {\small \textbf{\textsf{HÌNH 9}}\quad $y = \cosh^{-1}x$\\[1pt]
+    tập xác định $= [1, \infty)$\quad tập giá trị $= [0, \infty)$}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{61mm}
+    \centering
+    \includegraphics[width=\linewidth]{images/p0299_fig3.png}\\[4pt]
+    {\small \textbf{\textsf{HÌNH 10}}\quad $y = \tanh^{-1}x$\\[1pt]
+    tập xác định $= (-1, 1)$\quad tập giá trị $= \mathbb{R}$}
+\end{minipage}
+
+\vspace{1.2em}
+
+% KHỐI 3: Đoạn văn trước Khung công thức
+\noindent
+\hspace*{52mm}%
+\begin{minipage}[t]{130mm}
+    Vì các hàm hyperbolic được định nghĩa theo các hàm mũ, nên không có gì đáng ngạc nhiên khi các hàm hyperbolic ngược có thể được biểu diễn qua logarit. Cụ thể, ta có:
+\end{minipage}
+
+\vspace{0.8em}
+
+% KHỐI 4: Khung công thức 3, 4, 5 dóng hàng chuẩn xác với Ghi chú lề trái
+\noindent
+\begin{minipage}[c]{44mm}
+    \raggedright
+    {\footnotesize Công thức 3 được chứng minh trong Ví dụ 3. Các phép chứng minh cho Công thức 4 và 5 được yêu cầu trong Bài tập 30 và 31.\par}
+\end{minipage}%
+\hspace{8mm}%
+\begin{minipage}[c]{130mm}
+    \begin{definitionbox}
+        \vspace{-0.2em}
+        \noindent
+        \begin{tabular*}{\linewidth}{@{\hspace{0.5em}} l @{\hspace{1.5em}} l @{\extracolsep{\fill}} r @{\hspace{0.5em}}}
+            \rednum{3} & $\sinh^{-1}x = \ln\left(x + \sqrt{x^2 + 1}\right)$ & $x \in \mathbb{R}$ \\[10pt]
+            \rednum{4} & $\cosh^{-1}x = \ln\left(x + \sqrt{x^2 - 1}\right)$ & $x \ge 1$ \\[10pt]
+            \rednum{5} & $\tanh^{-1}x = \dfrac{1}{2}\ln\left(\dfrac{1 + x}{1 - x}\right)$ & $-1 < x < 1$
+        \end{tabular*}
+        \vspace{-0.2em}
+    \end{definitionbox}
+\end{minipage}
+
+\end{document}
