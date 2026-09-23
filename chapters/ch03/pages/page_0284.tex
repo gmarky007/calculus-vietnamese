@@ -1,0 +1,116 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage[paperwidth=8.5in, paperheight=11in, top=0.6in, bottom=0.6in, left=0.75in, right=0.75in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage[most]{tcolorbox}
+\usepackage{mathptmx}
+
+\definecolor{stewartblue}{RGB}{0, 130, 185}
+\definecolor{strategypurple}{RGB}{82, 38, 105}
+\definecolor{strategybg}{RGB}{247, 243, 250}
+\definecolor{warningred}{RGB}{205, 32, 38}
+
+\pagestyle{empty}
+
+\begin{document}
+
+% Header
+\noindent\hfill{\small\textbf{MỤC 3.9}\quad Tốc độ biến thiên liên quan\qquad \textbf{249}}\par
+\vspace{1.2em}
+
+\noindent
+\begin{minipage}[t]{0.25\textwidth}
+  \vspace*{42pt}
+  
+  % PS Look back
+  \noindent{\footnotesize\colorbox{strategypurple}{\textcolor{white}{\bfseries\sffamily PS}}\; \textbf{Nhìn lại:} Chúng ta đã học được gì từ Ví dụ 1 và 2 có thể giúp chúng ta giải quyết các bài toán sau này?}\par
+
+  \vspace{18pt}
+  
+  % Warning
+  \noindent{\footnotesize
+  \begin{tikzpicture}[baseline=-0.6ex, scale=0.7]
+    \draw[warningred, line width=1.4pt] (0,0) circle (0.22);
+    \draw[warningred, line width=1.4pt] (-0.155,-0.155) -- (0.155,0.155);
+  \end{tikzpicture}\hspace{3pt}%
+  \textbf{\textcolor{warningred}{CẢNH BÁO}}\;\;Một sai lầm phổ biến là thay dữ liệu số đã cho (đối với các đại lượng biến thiên theo thời gian) quá sớm. Việc này chỉ nên làm \textit{sau khi} đã lấy đạo hàm. (Bước 7 theo sau Bước 6.) Chẳng hạn, trong Ví dụ 1, chúng ta đã thao tác với giá trị tổng quát của $r$ cho đến khi thay $r = 25$ ở bước cuối cùng. (Nếu ta thay $r = 25$ sớm hơn, ta sẽ nhận được $dV/dt = 0$, điều này rõ ràng là sai.)}\par
+
+  \vspace{35pt}
+  
+  % Figure 3
+  \noindent\centering
+  \includegraphics[width=0.92\linewidth]{images/p0284_fig1.png}\\[5pt]
+  {\footnotesize\textbf{\textsf{HÌNH 3}}}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.71\textwidth}
+  \noindent Việc $dy/dt$ mang dấu âm có nghĩa là khoảng cách từ đỉnh thang đến mặt đất đang \textit{giảm} với tốc độ $3\text{ ft/s}$. Nói cách khác, đỉnh thang đang trượt xuống dọc theo bức tường với tốc độ $3\text{ ft/s}$.\hfill\textcolor{stewartblue}{\rule{1.1ex}{1.1ex}}\par
+
+  \vspace{10pt}
+
+  \begin{tcolorbox}[
+    colback=strategybg,
+    colframe=strategypurple,
+    coltitle=white,
+    fonttitle=\bfseries\sffamily\normalsize,
+    title={Chiến lược giải bài toán},
+    arc=0mm,
+    boxrule=1pt,
+    left=8pt, right=8pt, top=6pt, bottom=6pt
+  ]
+    \small
+    Thật hữu ích khi nhắc lại một số nguyên lý giải bài toán và vận dụng chúng vào các bài toán tốc độ biến thiên liên quan dựa trên kinh nghiệm từ Ví dụ 1 và 2:
+    \begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=1.5em, itemsep=3pt, topsep=4pt, parsep=0pt]
+      \item \textbf{Đọc kỹ đề bài.}
+      \item \textbf{Vẽ hình minh họa} nếu có thể.
+      \item \textbf{Đặt ký hiệu.} Gán các ký hiệu cho tất cả các đại lượng là hàm theo thời gian.
+      \item \textbf{Biểu diễn} thông tin đã cho và tốc độ cần tìm dưới dạng các đạo hàm.
+      \item \textbf{Thiết lập một phương trình} liên hệ các đại lượng khác nhau trong bài toán. Nếu cần, hãy sử dụng tính chất hình học của bài toán để triệt tiêu một trong các biến bằng phép thế (xem Ví dụ 3 bên dưới).
+      \item \textbf{Sử dụng Quy tắc đạo hàm hàm hợp} để lấy đạo hàm cả hai vế của phương trình theo $t$.
+      \item \textbf{Thay thế} thông tin đã cho vào phương trình nhận được và giải ra tốc độ chưa biết.
+    \end{enumerate}
+    \vspace{4pt}
+    {\footnotesize Xem thêm Các nguyên lý giải bài toán ở phần sau Chương 1.}
+  \end{tcolorbox}
+
+  \vspace{8pt}
+  \noindent Các ví dụ sau đây sẽ minh họa rõ hơn chiến lược này.
+
+  \vspace{10pt}
+  \noindent\textbf{\textcolor{stewartblue}{VÍ DỤ 3}}\quad Một bồn chứa nước có hình dạng một hình nón tròn xoay úp ngược với bán kính đáy $2\text{ m}$ và chiều cao $4\text{ m}$. Nếu nước được bơm vào bồn với tốc độ $2\text{ m}^3\text{/phút}$, hãy tìm tốc độ dâng lên của mực nước khi nước sâu $3\text{ m}$.
+
+  \vspace{8pt}
+  \noindent\textbf{\textcolor{stewartblue}{LỜI GIẢI}}\quad Trước hết, ta phác họa hình nón và đánh dấu các đại lượng như trong Hình 3. Gọi $V$, $r$ và $h$ lần lượt là thể tích của nước, bán kính của mặt nước và độ sâu của nước tại thời điểm $t$, trong đó $t$ được tính bằng phút.
+
+  \vspace{4pt}
+  Ta biết rằng $dV/dt = 2\text{ m}^3\text{/phút}$ và cần tìm $dh/dt$ khi $h = 3\text{ m}$. Các đại lượng $V$ và $h$ liên hệ với nhau qua công thức
+  \[
+  V = \frac{1}{3}\pi r^2 h
+  \]
+  nhưng sẽ rất hữu ích nếu ta biểu diễn $V$ chỉ theo một biến $h$. Để triệt tiêu $r$, ta sử dụng các tam giác đồng dạng trong Hình 3 để viết
+  \[
+  \frac{r}{h} = \frac{2}{4} \qquad r = \frac{h}{2}
+  \]
+  và biểu thức của $V$ trở thành
+  \[
+  V = \frac{1}{3}\pi \left(\frac{h}{2}\right)^2 h = \frac{\pi}{12} h^3
+  \]
+  Bây giờ ta có thể lấy đạo hàm hai vế theo $t$:
+  \[
+  \frac{dV}{dt} = \frac{\pi}{4} h^2 \frac{dh}{dt}
+  \]
+  \noindent do đó
+  \[
+  \frac{dh}{dt} = \frac{4}{\pi h^2} \frac{dV}{dt}
+  \]
+\end{minipage}
+
+\vfill
+\noindent{\tiny\textcolor{gray!80}{Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203}}
+
+\end{document}

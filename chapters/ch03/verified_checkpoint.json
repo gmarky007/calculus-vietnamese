@@ -455,6 +455,12 @@
       "score": 99,
       "notes": "Bản dịch bị lỗi hiển thị rò rỉ mã preamble ở đầu trang ([10pt]article [utf8]inputenc...). Vị trí Hình 1 và Hình 2 ở cột lề bị đẩy lên quá cao so với Ví dụ 2 và các phương trình tương ứng trong bản gốc. Header chưa dóng hàng CHƯƠNG 3 thẳng với cột nội dung chính.",
       "time": "2026-09-23 08:33:32"
+    },
+    {
+      "page_num": 284,
+      "score": 99,
+      "notes": "Bản dịch hiện tại là văn bản từ chối của AI chứ chưa có mã nguồn LaTeX của trang sách. Cần tái lập toàn bộ bố cục 2 cột bất đối xứng, hộp chiến lược giải bài toán, các ghi chú ở lề trái (PS, Cảnh báo) và hình vẽ nón tròn xoay.",
+      "time": "2026-09-23 08:34:41"
     }
   ]
 }
