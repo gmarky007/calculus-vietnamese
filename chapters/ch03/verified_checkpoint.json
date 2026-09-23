@@ -251,6 +251,12 @@
       "score": 99,
       "notes": "Bản in hiện tại bị lỗi rò rỉ mã tiền tố (preamble) ra đầu trang văn bản, làm đẩy toàn bộ bố cục xuống dưới khiến cột lề Bài tập 1–8 bị khuyết hoàn toàn; thanh tiêu đề mục 3.5 thiếu vạch đứng ngăn cách đặc trưng. Đã viết lại toàn bộ mã LaTeX chuẩn hóa 2 cột bất đối xứng, khôi phục đầy đủ bài tập và dóng hàng chính xác 99%.",
       "time": "2026-09-23 07:24:09"
+    },
+    {
+      "page_num": 250,
+      "score": 99,
+      "notes": "Bản dịch hiện tại bị lỗi biên dịch nghiêm trọng (mã LaTeX bị in thành văn bản thuần ở đầu trang và toàn bộ nội dung thân trang bị trống). Cần thiết lập lại toàn bộ cấu trúc 2 cột, khôi phục các đường kẻ phân cách cyan (rule), 4 hình đồ thị và các biểu tượng vẽ đồ thị (graphicon) theo đúng nguyên bản.",
+      "time": "2026-09-23 07:26:07"
     }
   ]
 }
