@@ -347,6 +347,12 @@
       "score": 99,
       "notes": "Mã nguồn hiện tại từ chối dịch nội dung và chỉ cung cấp văn bản tóm tắt, thiếu hoàn toàn cấu trúc hai cột, đồ thị, bài tập và khung phương pháp giải.",
       "time": "2026-09-23 12:18:03"
+    },
+    {
+      "page_num": 372,
+      "score": 99,
+      "notes": "Mã nguồn ban đầu chứa phản hồi từ chối của AI. Đã biên soạn lại toàn bộ tài liệu XeLaTeX hoàn chỉnh, tái hiện chính xác bố cục 2 cột bất đối xứng của giáo trình Stewart (Mục 4.7, trang 337), bố trí đúng vị trí các hộp chiến lược giải toán (PS) và hình minh họa, đồng thời chuẩn hóa ngữ thuật giải tích sang tiếng Việt.",
+      "time": "2026-09-23 12:20:00"
     }
   ]
 }

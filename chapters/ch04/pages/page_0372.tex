@@ -1,0 +1,150 @@
+\documentclass[10pt]{article}
+\usepackage[paperwidth=8.5in, paperheight=11in, left=15mm, right=15mm, top=18mm, bottom=16mm]{geometry}
+\usepackage{fontspec}
+\IfFontExistsTF{Times New Roman}{\setmainfont{Times New Roman}}{\IfFontExistsTF{TeX Gyre Termes}{\setmainfont{TeX Gyre Termes}}{}}
+\IfFontExistsTF{Arial}{\setsansfont{Arial}}{\IfFontExistsTF{TeX Gyre Heros}{\setsansfont{TeX Gyre Heros}}{}}
+
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+
+% Màu sắc nhận diện chuẩn giáo trình Stewart
+\definecolor{stewartblue}{RGB}{0, 114, 188}
+\definecolor{pspurple}{RGB}{112, 48, 160}
+\definecolor{psbg}{RGB}{242, 237, 247}
+\definecolor{darkgray}{RGB}{50, 50, 50}
+
+% Huy hiệu PS (Problem Solving)
+\newcommand{\psbadge}{%
+  \tcbox[
+    on line,
+    arc=1.5pt,
+    boxsep=0pt,
+    top=1.5pt,bottom=1.5pt,left=2.5pt,right=2.5pt,
+    colback=pspurple,
+    colframe=pspurple
+  ]{\fontsize{6pt}{6.5pt}\selectfont\bfseries\sffamily\color{white}PS}%
+}
+
+% Hộp ghi chú chiến lược giải toán lề trái
+\newtcolorbox{psbox}{%
+  enhanced,
+  colback=psbg,
+  colframe=psbg,
+  arc=2pt,
+  boxsep=2pt,
+  top=4pt,bottom=4pt,left=4pt,right=4pt,
+  boxrule=0pt
+}
+
+% Thiết lập Header / Footer
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead[L]{\fontsize{9pt}{11pt}\selectfont\textsf{\textbf{MỤC 4.7}}\hspace{1.5em}\textsf{Các bài toán tối ưu hóa}}
+\fancyhead[R]{\fontsize{10pt}{12pt}\selectfont\textsf{\textbf{337}}}
+\fancyfoot[L]{%
+  \fontsize{5.5pt}{6.5pt}\selectfont\color{gray}%
+  Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\\
+  Bản dịch tiếng Việt phục vụ mục đích nghiên cứu và học tập giải tích.
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\abovedisplayskip}{4.5pt}
+\setlength{\belowdisplayskip}{4.5pt}
+\setlength{\abovedisplayshortskip}{2.5pt}
+\setlength{\belowdisplayshortskip}{2.5pt}
+
+\begin{document}
+
+% KHỐI 1: Phần đầu Ví dụ 1 và Hộp chiến lược PS 1
+\noindent
+\begin{minipage}[t]{44mm}
+  \vspace{0pt}
+  \begin{psbox}
+    \begin{tabular}{@{}l@{\hspace{4pt}}p{3.2cm}@{}}
+      \psbadge & \fontsize{7.8pt}{10pt}\selectfont\sffamily\color{darkgray}Hiểu bài toán \\[4pt]
+      \psbadge & \fontsize{7.8pt}{10pt}\selectfont\sffamily\color{darkgray}Tương tự: Thử các trường hợp đặc biệt \\[4pt]
+      \psbadge & \fontsize{7.8pt}{10pt}\selectfont\sffamily\color{darkgray}Vẽ hình minh họa
+    \end{tabular}
+  \end{psbox}
+\end{minipage}%
+\hspace{7mm}%
+\begin{minipage}[t]{134.9mm}
+  \vspace{0pt}
+  \noindent{\color{stewartblue}\textsf{\textbf{VÍ DỤ 1}}}\hspace{0.8em}%
+  Một người nông dân có $2400\text{ ft}$ hàng rào và muốn rào một cánh đồng hình chữ nhật tiếp giáp với một con sông thẳng. Ông không cần làm hàng rào dọc theo bờ sông. Hỏi kích thước của cánh đồng là bao nhiêu để diện tích rào được là lớn nhất?
+
+  \vspace{0.8em}
+  \noindent{\color{stewartblue}\textsf{\textbf{LỜI GIẢI}}}\hspace{0.8em}%
+  Để có cảm nhận trực quan về những gì đang diễn ra trong bài toán này, chúng ta hãy thử nghiệm với một số trường hợp cụ thể. Hình 1 (không theo đúng tỷ lệ) cho thấy ba cách khả dĩ để bố trí $2400\text{ ft}$ hàng rào.
+\end{minipage}
+
+\vspace{0.9em}
+
+% KHỐI 2: HÌNH 1 (Trải rộng toàn bộ chiều rộng trang)
+\noindent
+\includegraphics[width=\textwidth]{images/p0372_fig1.png}
+
+\vspace{0.25em}
+\noindent\makebox[44mm][l]{\fontsize{8.5pt}{10pt}\selectfont\textsf{\textbf{HÌNH 1}}}
+
+\vspace{0.6em}
+
+% KHỐI 3: Thân lời giải chi tiết và HÌNH 2 ở lề trái
+\noindent
+\begin{minipage}[t]{44mm}
+  \vspace{0pt}
+  \begin{psbox}
+    \begin{tabular}{@{}l@{\hspace{4pt}}p{3.2cm}@{}}
+      \psbadge & \fontsize{7.8pt}{10pt}\selectfont\sffamily\color{darkgray}Thiết lập ký hiệu
+    \end{tabular}
+  \end{psbox}
+
+  \vspace{0.8em}
+  \noindent\includegraphics[width=\linewidth]{images/p0372_fig2.png}
+
+  \vspace{0.3em}
+  \noindent\fontsize{8.5pt}{10pt}\selectfont\textsf{\textbf{HÌNH 2}}
+\end{minipage}%
+\hspace{7mm}%
+\begin{minipage}[t]{134.9mm}
+  \vspace{0pt}
+  \setlength{\parindent}{1.2em}
+  Ta thấy rằng khi thử các cánh đồng nông và rộng, hoặc sâu và hẹp, ta đều nhận được diện tích tương đối nhỏ. Dường như rất hợp lý khi cho rằng tồn tại một cấu hình trung gian tạo ra diện tích lớn nhất.
+
+  Hình 2 minh họa trường hợp tổng quát. Chúng ta muốn tối đa hóa diện tích $A$ của hình chữ nhật. Gọi $x$ và $y$ lần lượt là chiều sâu và chiều rộng của hình chữ nhật (tính bằng foot). Khi đó ta biểu diễn $A$ theo $x$ và $y$:
+  \[
+  A = xy
+  \]
+  Chúng ta muốn biểu diễn $A$ thành một hàm chỉ theo một biến số duy nhất, vì vậy ta triệt tiêu $y$ bằng cách biểu diễn nó theo $x$. Để làm điều này, ta sử dụng dữ kiện đã cho rằng tổng chiều dài của hàng rào là $2400\text{ ft}$. Do đó
+  \[
+  2x + y = 2400
+  \]
+  \noindent Từ phương trình này ta có $y = 2400 - 2x$, dẫn đến
+  \[
+  A = xy = x(2400 - 2x) = 2400x - 2x^2
+  \]
+  Lưu ý rằng giá trị lớn nhất mà $x$ có thể nhận là $1200$ (khi đó toàn bộ hàng rào được dùng cho hai cạnh chiều sâu và chiều rộng bằng $0$) và $x$ không thể nhận giá trị âm, vì vậy hàm số mà ta muốn tối đa hóa là
+  \[
+  A(x) = 2400x - 2x^2 \qquad 0 \leqslant x \leqslant 1200
+  \]
+  Đạo hàm là $A'(x) = 2400 - 4x$, do đó để tìm các số tới hạn ta giải phương trình
+  \[
+  2400 - 4x = 0
+  \]
+  \noindent từ đó suy ra $x = 600$. Giá trị lớn nhất của $A$ phải xảy ra hoặc tại số tới hạn này hoặc tại một điểm đầu mút của đoạn. Vì $A(0) = 0$, $A(600) = 720{,}000$, và $A(1200) = 0$, nên Phương pháp khoảng đóng cho giá trị lớn nhất là
+  \[
+  A(600) = 720{,}000.
+  \]
+  [Ngoài ra, ta cũng có thể nhận thấy rằng $A''(x) = -4 < 0$ với mọi $x$, do đó đồ thị của $A$ luôn lõm xuống và điểm cực đại địa phương tại $x = 600$ phải là điểm cực đại tuyệt đối.]
+
+  Giá trị $y$ tương ứng là $y = 2400 - 2(600) = 1200$, do đó cánh đồng hình chữ nhật cần có kích thước chiều sâu là $600\text{ ft}$ và chiều rộng là $1200\text{ ft}$.\hfill{\color{stewartblue}$\blacksquare$}
+\end{minipage}
+
+\end{document}
+```
