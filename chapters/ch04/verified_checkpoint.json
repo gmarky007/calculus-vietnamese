@@ -317,6 +317,12 @@
       "score": 99,
       "notes": "Phát hiện lỗi nghiêm trọng trong bản in thử: toàn bộ khai báo preamble bị rò rỉ in lên đầu trang; lệnh màu cyan bị tràn làm đổi màu toàn bộ nửa dưới trang; tiêu đề đầu trang chưa được dóng thẳng hàng với cột nội dung chính và khoảng cách các hình ở cột lề cần tinh chỉnh để khớp tọa độ gốc.",
       "time": "2026-09-23 12:06:04"
+    },
+    {
+      "page_num": 367,
+      "score": 99,
+      "notes": "Bản dịch bị lỗi rò rỉ mã preamble lên đầu trang văn bản; Hình 12 bị đẩy lên quá cao không dóng hàng ngang với Hình 13 và Hình 14; thiếu dấu âm ở giá trị cực tiểu địa phương (-211); bảng danh sách khoảng đơn điệu và cực trị bị căn giữa thay vì thụt lề trái theo bản gốc.",
+      "time": "2026-09-23 12:08:44"
     }
   ]
 }

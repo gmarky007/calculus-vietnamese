@@ -1,0 +1,119 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{newtxtext,newtxmath}
+\usepackage{microtype}
+
+\geometry{
+  paperwidth=210mm,
+  paperheight=297mm,
+  left=15mm,
+  right=15mm,
+  top=20mm,
+  bottom=18mm,
+  headheight=14pt,
+  footskip=14pt
+}
+
+\definecolor{stewartcyan}{RGB}{0, 130, 185}
+\definecolor{stewartred}{RGB}{204, 0, 0}
+\definecolor{stewartgray}{RGB}{100, 100, 100}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\fontsize{9}{11}\selectfont\textbf{\textsf{332}}\qquad \textbf{\textsf{\color{stewartgray}CHƯƠNG 4}}\quad \textsf{Các ứng dụng của đạo hàm}}
+\fancyfoot[C]{\fontsize{6.5}{8}\selectfont\textcolor{gray}{\begin{tabular}{c}Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\\ Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.\end{tabular}}}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.26\textwidth}
+  \vspace*{32pt}
+  \centering
+  \includegraphics[width=\linewidth]{images/p0367_fig1.png}
+  
+  \vspace{3pt}
+  \raggedright{\fontsize{8.5}{10}\selectfont\textbf{\textsf{HÌNH 12}}}
+  
+  \vspace{8.3cm}
+  \centering
+  \includegraphics[width=\linewidth]{images/p0367_fig4.png}
+  
+  \vspace{3pt}
+  \raggedright{\fontsize{8.5}{10}\selectfont\textbf{\textsf{HÌNH 15}}}
+  
+  \vspace{16pt}
+  \centering
+  \includegraphics[width=\linewidth]{images/p0367_fig5.png}
+  
+  \vspace{3pt}
+  \raggedright{\fontsize{8.5}{10}\selectfont\textbf{\textsf{HÌNH 16}}}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.71\textwidth}
+  \fontsize{9.5}{13.5}\selectfont
+  Bây giờ khi đã biết những gì cần tìm, ta phóng to (nhiều lần) để thu được đồ thị ở các Hình 12 và 13, đồng thời thu nhỏ (nhiều lần) để có được Hình 14.
+
+  \vspace{4pt}
+  \noindent
+  \begin{minipage}[t]{0.485\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{images/p0367_fig2.png}
+    
+    \vspace{3pt}
+    \raggedright{\fontsize{8.5}{10}\selectfont\textbf{\textsf{HÌNH 13}}}
+  \end{minipage}%
+  \hfill
+  \begin{minipage}[t]{0.485\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{images/p0367_fig3.png}
+    
+    \vspace{3pt}
+    \raggedright{\fontsize{8.5}{10}\selectfont\textbf{\textsf{HÌNH 14}}}
+  \end{minipage}
+
+  \vspace{8pt}
+  Từ các đồ thị này, ta có thể nhận thấy rằng giá trị nhỏ nhất tuyệt đối xấp xỉ $-0{,}02$ và đạt được khi $x \approx -20$. Ngoài ra còn có một cực đại địa phương $\approx 0{,}00002$ khi $x \approx -0{,}3$ và một cực tiểu địa phương $\approx -211$ khi $x \approx 2{,}5$. Các đồ thị này cũng cho thấy ba điểm uốn ở gần $-35$, $-5$ và $-1$, cùng hai điểm uốn nằm giữa $-1$ và $0$. Để ước lượng chính xác các điểm uốn, ta cần vẽ đồ thị của $f''$, nhưng việc tính toán $f''$ bằng tay là một công việc quá nặng nhọc. Nếu bạn có một hệ thống đại số máy tính, việc này sẽ rất dễ dàng (xem Bài tập 15).
+
+  Ta đã thấy rằng, đối với hàm số cụ thể này, cần tới \emph{ba} đồ thị (các Hình 12, 13 và 14) mới truyền tải hết toàn bộ thông tin hữu ích. Cách duy nhất để hiển thị tất cả các đặc trưng này của hàm số trên một đồ thị đơn lẻ là vẽ bằng tay. Bất chấp những sự phóng đại và biến dạng, Hình 11 vẫn tóm lược được bản chất cốt lõi của hàm số. \hfill {\color{stewartcyan}$\blacksquare$}
+
+  \vspace{8pt}
+  \noindent
+  \textbf{\textsf{\color{stewartcyan}VÍ DỤ 4}}\hspace{0.8em}Vẽ đồ thị hàm số $f(x) = \sin(x + \sin 2x)$. Với $0 \leqslant x \leqslant \pi$, hãy ước lượng tất cả các giá trị cực đại và cực tiểu, các khoảng đồng biến và nghịch biến, cùng các điểm uốn.
+
+  \vspace{4pt}
+  \noindent
+  \textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\hspace{0.8em}Trước hết, ta lưu ý rằng $f$ là hàm tuần hoàn với chu kỳ $2\pi$. Đồng thời, $f$ là hàm lẻ và $|f(x)| \leqslant 1$ với mọi $x$. Do đó, việc lựa chọn một khung hình chữ nhật không phải là vấn đề đối với hàm số này: ta bắt đầu với $[0, \pi] \times [-1{,}1;\ 1{,}1]$. (Xem Hình 15.) Dường như có ba giá trị cực đại địa phương và hai giá trị cực tiểu địa phương trong khung nhìn đó. Để khẳng định các giá trị này và xác định vị trí của chúng chính xác hơn, ta tính
+  \[
+    f'(x) = \cos(x + \sin 2x)(1 + 2\cos 2x)
+  \]
+  và vẽ cả hai đồ thị $f$ và $f'$ trong Hình 16.
+
+  Sau khi ước lượng giá trị các giao điểm với trục hoành của $f'$, ta áp dụng Tiêu chuẩn đạo hàm cấp một để tìm các giá trị xấp xỉ sau:
+
+  \vspace{2pt}
+  \hspace*{1.2em}\begin{tabular}{@{}ll}
+    Khoảng đồng biến: & $(0;\ 0{,}6)$,\quad $(1{,}0;\ 1{,}6)$,\quad $(2{,}1;\ 2{,}5)$ \\[3pt]
+    Khoảng nghịch biến: & $(0{,}6;\ 1{,}0)$,\quad $(1{,}6;\ 2{,}1)$,\quad $(2{,}5;\ \pi)$ \\[3pt]
+    Các giá trị cực đại địa phương: & $f(0{,}6) \approx 1$,\quad $f(1{,}6) \approx 1$,\quad $f(2{,}5) \approx 1$ \\[3pt]
+    Các giá trị cực tiểu địa phương: & $f(1{,}0) \approx 0{,}94$,\quad $f(2{,}1) \approx 0{,}94$
+  \end{tabular}
+
+  \vspace{4pt}
+  Đạo hàm cấp hai là
+  \[
+    f''(x) = -(1 + 2\cos 2x)^2 \sin(x + \sin 2x) - 4\sin 2x \cos(x + \sin 2x)
+  \]
+\end{minipage}
+
+\end{document}
