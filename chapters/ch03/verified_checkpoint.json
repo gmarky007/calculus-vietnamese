@@ -575,6 +575,12 @@
       "score": 99,
       "notes": "Trang dịch gặp các lỗi nghiêm trọng: rò rỉ mã preamble thành văn bản ở đầu trang; toàn bộ nội dung Câu hỏi Đúng-Sai (câu 1-15) bị đẩy tràn sang trang 2; đánh số các câu ở cột phải phần Kiểm tra khái niệm bị sai (hiển thị 3, 4, 5, 6 thay vì 4, 5, 6, 7); đoạn hướng dẫn Đúng-Sai bị dàn ngang toàn trang thay vì nằm trong cột trái tương ứng tọa độ gốc.",
       "time": "2026-09-23 09:16:57"
+    },
+    {
+      "page_num": 305,
+      "score": 99,
+      "notes": "Bản dịch hiện tại bị lỗi biên dịch khiến toàn bộ phần bài tập biến mất và in chuỗi văn bản thô ở đầu trang. Ngoài ra, mã nguồn cũ tự ý thêm các đường kẻ ngang cyan không có trong bản gốc, sai dạng toán câu 39 (lũy thừa) và câu 50 (căn thức thay vì trị tuyệt đối), cùng vị trí nhãn icon CAS chưa dóng chuẩn mép lề.",
+      "time": "2026-09-23 09:19:58"
     }
   ]
 }

@@ -1,0 +1,177 @@
+\documentclass[10pt]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{fancyhdr}
+\usepackage{iftex}
+
+\ifXeTeX
+  \usepackage{fontspec}
+\else
+  \usepackage[utf8]{inputenc}
+  \usepackage[vietnamese]{babel}
+\fi
+
+\geometry{
+  paperwidth=8.5in,
+  paperheight=11in,
+  top=0.65in,
+  bottom=0.65in,
+  left=0.7in,
+  right=0.7in
+}
+
+\definecolor{stewartcyan}{RGB}{0, 130, 185}
+
+% CAS / Graphing Calculator Icon
+\newcommand{\casicon}{%
+  \tikz[baseline=-0.5ex]{%
+    \draw[stewartcyan, line width=0.8pt, rounded corners=0.8pt] (0,0) rectangle (0.34cm, 0.26cm);%
+    \draw[stewartcyan, line width=0.6pt] (0.04cm, 0.07cm) sin (0.13cm, 0.20cm) cos (0.21cm, 0.06cm) sin (0.30cm, 0.17cm);%
+  }%
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\fontsize{9pt}{11pt}\selectfont\textbf{\textsf{270}}\qquad \textbf{\textsf{CHƯƠNG 3}}\quad \textsf{Các quy tắc tính đạo hàm}}
+\fancyhead[R]{}
+\renewcommand{\headrulewidth}{0pt}
+
+\fancyfoot[C]{%
+  \fontsize{6.5pt}{8pt}\selectfont\color{gray!80!black}
+  Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\\
+  Chỉnh lý biên tập đã xác nhận rằng nội dung bị lược bỏ không ảnh hưởng đáng kể đến trải nghiệm học tập tổng thể. Cengage Learning bảo lưu quyền gỡ bỏ nội dung bổ sung vào bất kỳ lúc nào nếu các hạn chế về bản quyền sau đó yêu cầu.
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\begin{document}
+\fontsize{9pt}{12pt}\selectfont
+
+% Tiêu đề mục BÀI TẬP (EXERCISES)
+{\fontsize{14pt}{16pt}\selectfont\textbf{\textsf{\color{stewartcyan}BÀI TẬP}}}\\[3pt]
+{\color{stewartcyan}\rule{\linewidth}{1.5pt}}\\[9pt]
+
+% Bố cục 2 cột chính tương xứng hoàn hảo với bản gốc
+\noindent
+\begin{minipage}[t]{0.485\textwidth}
+  {\color{stewartcyan}\textbf{1--54}}\quad Tính $y'$.\\[6pt]
+  % 1, 2
+  \parbox[t]{0.48\linewidth}{\textbf{1.} $y = (x^2 + x^3)^4$}\hfill
+  \parbox[t]{0.50\linewidth}{\textbf{2.} $y = \dfrac{1}{\sqrt{x}} - \dfrac{1}{\sqrt[5]{x^3}}}$\\[5.5pt]
+  % 3, 4
+  \parbox[t]{0.48\linewidth}{\textbf{3.} $y = \dfrac{x^2 - x + 2}{\sqrt{x}}}$}\hfill
+  \parbox[t]{0.50\linewidth}{\textbf{4.} $y = \dfrac{\tan x}{1 + \cos x}$}\\[5.5pt]
+  % 5, 6
+  \parbox[t]{0.48\linewidth}{\textbf{5.} $y = x^2 \sin \pi x$}\hfill
+  \parbox[t]{0.50\linewidth}{\textbf{6.} $y = x \cos^{-1} x$}\\[5.5pt]
+  % 7, 8
+  \parbox[t]{0.48\linewidth}{\textbf{7.} $y = \dfrac{t^4 - 1}{t^4 + 1}$}\hfill
+  \parbox[t]{0.50\linewidth}{\textbf{8.} $x e^y = y \sin x$}\\[5.5pt]
+  % 9, 10
+  \parbox[t]{0.48\linewidth}{\textbf{9.} $y = \ln(x \ln x)$}\hfill
+  \parbox[t]{0.50\linewidth}{\textbf{10.} $y = e^{mx} \cos nx$}\\[5.5pt]
+  % 11, 12
+  \parbox[t]{0.48\linewidth}{\textbf{11.} $y = \sqrt{x} \cos \sqrt{x}$}\hfill
+  \parbox[t]{0.50\linewidth}{\textbf{12.} $y = (\arcsin 2x)^2$}\\[5.5pt]
+  % 13, 14
+  \parbox[t]{0.48\linewidth}{\textbf{13.} $y = \dfrac{e^{1/x}}{x^2}$}\hfill
+  \parbox[t]{0.50\linewidth}{\textbf{14.} $y = \ln \sec x$}\\[5.5pt]
+  % 15, 16
+  \parbox[t]{0.48\linewidth}{\textbf{15.} $y + x \cos y = x^2 y$}\hfill
+  \parbox[t]{0.50\linewidth}{\textbf{16.} $y = \left(\dfrac{u - 1}{u^2 + u + 1}\right)^4$}\\[5.5pt]
+  % 17, 18
+  \parbox[t]{0.48\linewidth}{\textbf{17.} $y = \sqrt{\arctan x}$}\hfill
+  \parbox[t]{0.50\linewidth}{\textbf{18.} $y = \cot(\csc x)$}\\[5.5pt]
+  % 19, 20
+  \parbox[t]{0.48\linewidth}{\textbf{19.} $y = \tan\left(\dfrac{t}{1 + t^2}\right)$}\hfill
+  \parbox[t]{0.50\linewidth}{\textbf{20.} $y = e^{x \sec x}$}\\[5.5pt]
+  % 21, 22
+  \parbox[t]{0.48\linewidth}{\textbf{21.} $y = 3^{x \ln x}$}\hfill
+  \parbox[t]{0.50\linewidth}{\textbf{22.} $y = \sec(1 + x^2)$}\\[5.5pt]
+  % 23, 24
+  \parbox[t]{0.48\linewidth}{\textbf{23.} $y = (1 - x^{-1})^{-1}$}\hfill
+  \parbox[t]{0.50\linewidth}{\textbf{24.} $y = 1 / \sqrt[3]{x + \sqrt{x}}$}\\[5.5pt]
+  % 25, 26
+  \parbox[t]{0.48\linewidth}{\textbf{25.} $\sin(xy) = x^2 - y$}\hfill
+  \parbox[t]{0.50\linewidth}{\textbf{26.} $y = \sqrt{\sin \sqrt{x}}$}\\[5.5pt]
+  % 27, 28
+  \parbox[t]{0.48\linewidth}{\textbf{27.} $y = \log_5(1 + 2x)$}\hfill
+  \parbox[t]{0.50\linewidth}{\textbf{28.} $y = (\cos x)^x$}\\[5.5pt]
+  % 29, 30
+  \parbox[t]{0.48\linewidth}{\textbf{29.} $y = \ln \sin x - \frac{1}{2} \sin^2 x$}\hfill
+  \parbox[t]{0.50\linewidth}{\textbf{30.} $y = \dfrac{(x^2 + 1)^4}{(2x + 1)^3(3x - 1)^5}$}\\[5.5pt]
+  % 31, 32
+  \parbox[t]{0.48\linewidth}{\textbf{31.} $y = x \tan^{-1}(4x)$}\hfill
+  \parbox[t]{0.50\linewidth}{\textbf{32.} $y = e^{\cos x} + \cos(e^x)$}\\[5.5pt]
+  % 33, 34
+  \parbox[t]{0.48\linewidth}{\textbf{33.} $y = \ln|\sec 5x + \tan 5x|$}\hfill
+  \parbox[t]{0.50\linewidth}{\textbf{34.} $y = 10^{\tan \pi\theta}$}\\[5.5pt]
+  % 35, 36
+  \parbox[t]{0.48\linewidth}{\textbf{35.} $y = \cot(3x^2 + 5)$}\hfill
+  \parbox[t]{0.50\linewidth}{\textbf{36.} $y = \sqrt{t \ln(t^4)}$}\\[5.5pt]
+  % 37, 38
+  \parbox[t]{0.48\linewidth}{\textbf{37.} $y = \sin(\tan \sqrt{1 + x^3})$}\hfill
+  \parbox[t]{0.50\linewidth}{\textbf{38.} $y = x \sec^{-1} x$}\\[5.5pt]
+  % 39
+  \textbf{39.} $y = 5^{\arctan(1/x)}$\\[5.5pt]
+  % 40
+  \textbf{40.} $y = \sin^{-1}(\cos\theta), \quad 0 < \theta < \pi$\\[5.5pt]
+  % 41
+  \textbf{41.} $y = x \tan^{-1} x - \frac{1}{2}\ln(1 + x^2)$\\[5.5pt]
+  % 42, 43
+  \parbox[t]{0.48\linewidth}{\textbf{42.} $y = \ln(\arcsin x^2)$}\hfill
+  \parbox[t]{0.50\linewidth}{\textbf{43.} $y = \tan^2(\sin\theta)$}\\[5.5pt]
+  % 44, 45
+  \parbox[t]{0.42\linewidth}{\textbf{44.} $y + \ln y = xy^2$}\hfill
+  \parbox[t]{0.56\linewidth}{\textbf{45.} $y = \dfrac{\sqrt{x + 1}\,(2 - x)^5}{(x + 3)^7}$}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.485\textwidth}
+  % 46, 47
+  \parbox[t]{0.48\linewidth}{\textbf{46.} $y = \dfrac{(x + \lambda)^4}{x^4 + \lambda^4}$}\hfill
+  \parbox[t]{0.50\linewidth}{\textbf{47.} $y = x \sinh(x^2)$}\\[5.5pt]
+  % 48, 49
+  \parbox[t]{0.48\linewidth}{\textbf{48.} $y = \dfrac{\sin mx}{x}$}\hfill
+  \parbox[t]{0.50\linewidth}{\textbf{49.} $y = \ln(\cosh 3x)$}\\[5.5pt]
+  % 50, 51
+  \parbox[t]{0.48\linewidth}{\textbf{50.} $y = \ln\sqrt{\dfrac{x^2 - 4}{2x + 5}}$}\hfill
+  \parbox[t]{0.50\linewidth}{\textbf{51.} $y = \cosh^{-1}(\sinh x)$}\\[5.5pt]
+  % 52, 53
+  \parbox[t]{0.48\linewidth}{\textbf{52.} $y = x \tanh^{-1}\sqrt{x}$}\hfill
+  \parbox[t]{0.50\linewidth}{\textbf{53.} $y = \cos(e^{\sqrt{\tan 3x}})}$}\\[5.5pt]
+  % 54
+  \textbf{54.} $y = \sin^2(\cos\sqrt{\sin\pi x})$\\[11pt]
+
+  % 55-60
+  \textbf{55.} Cho $f(t) = \sqrt{4t + 1}$, hãy tìm $f''(2)$.\\[4pt]
+  \textbf{56.} Cho $g(\theta) = \theta \sin\theta$, hãy tìm $g''(\pi/6)$.\\[4pt]
+  \textbf{57.} Tìm $y''$ nếu $x^6 + y^6 = 1$.\\[4pt]
+  \textbf{58.} Tìm $f^{(n)}(x)$ nếu $f(x) = 1/(2 - x)$.\\[4pt]
+  \textbf{59.} Dùng phương pháp quy nạp toán học để chứng minh rằng nếu $f(x) = x e^x$, thì $f^{(n)}(x) = (x + n)e^x$. (\textit{Ghi chú:} Xem Các nguyên lý giải toán sau Chương 1.)\\[4pt]
+  \textbf{60.} Tính giới hạn $\displaystyle\lim_{t \to 0}\frac{t^3}{\tan^3(2t)}$.\\[11pt]
+
+  % 61-63
+  {\color{stewartcyan}\textbf{61--63}}\quad Tìm phương trình tiếp tuyến của đường cong tại điểm đã cho.\\[5pt]
+  \parbox[t]{0.50\linewidth}{\textbf{61.} $y = 4 \sin^2 x, \quad (\pi/6, 1)$}\hfill
+  \parbox[t]{0.48\linewidth}{\textbf{62.} $y = \dfrac{x^2 - 1}{x^2 + 1}, \quad (0, -1)$}\\[5pt]
+  \textbf{63.} $y = \sqrt{1 + 4 \sin x}, \quad (0, 1)$\\[11pt]
+
+  % 64-65
+  {\color{stewartcyan}\textbf{64--65}}\quad Tìm phương trình tiếp tuyến và pháp tuyến của đường cong tại điểm đã cho.\\[5pt]
+  \textbf{64.} $x^2 + 4xy + y^2 = 13, \quad (2, 1)$\\[4.5pt]
+  \textbf{65.} $y = (2 + x)e^{-x}, \quad (0, 2)$\\[11pt]
+
+  % 66
+  \noindent\llap{\casicon\hspace{4pt}}\textbf{66.} Cho $f(x) = x e^{\sin x}$, hãy tìm $f'(x)$. Vẽ đồ thị của $f$ và $f'$ trên cùng một màn hình và nhận xét.\\[7pt]
+
+  % 67
+  \textbf{67.} (a) Cho $f(x) = x\sqrt{5 - x}$, hãy tìm $f'(x)$.\\[3pt]
+  \hspace*{1.4em}(b) Tìm phương trình các tiếp tuyến của đường cong $y = x\sqrt{5 - x}$ tại các điểm $(1, 2)$ và $(4, 4)$.\\[3pt]
+  \noindent\llap{\casicon\hspace{4pt}}\hspace*{1.4em}(c) Minh họa câu (b) bằng cách vẽ đồ thị của đường cong và các tiếp tuyến trên cùng một màn hình.\\[3pt]
+  \noindent\llap{\casicon\hspace{4pt}}\hspace*{1.4em}(d) Kiểm tra xem câu trả lời ở câu (a) có hợp lý hay không bằng cách so sánh đồ thị của $f$ và $f'$.
+\end{minipage}
+
+\end{document}
