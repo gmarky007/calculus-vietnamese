@@ -1,0 +1,133 @@
+\documentclass[10pt]{article}
+\usepackage[paperwidth=612pt, paperheight=792pt, left=36pt, right=36pt, top=36pt, bottom=28pt]{geometry}
+\usepackage{fontspec}
+\IfFontExistsTF{Times New Roman}{
+  \setmainfont{Times New Roman}
+  \setsansfont{Arial}
+}{
+  \setmainfont{TeX Gyre Termes}
+  \setsansfont{TeX Gyre Heros}
+}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage[skins]{tcolorbox}
+\usepackage{microtype}
+
+% Màu sắc nhận diện chuẩn giáo trình Stewart Calculus
+\definecolor{stewartteal}{RGB}{0, 120, 140}
+\definecolor{stewartred}{RGB}{198, 44, 44}
+\definecolor{stewartgreen}{RGB}{0, 130, 75}
+\definecolor{copyrightgray}{RGB}{110, 110, 110}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+
+\begin{document}
+
+% Header trang
+\noindent{\textbf{\textsf{310}}}\qquad{\small\textsf{\textbf{CHƯƠNG 4}}}\quad{\small\textsf{Các ứng dụng của đạo hàm}}
+\vspace{10pt}
+
+% Bố cục hai cột: Cột lề trái (142pt) + Khoảng cách (18pt) + Cột nội dung chính (380pt)
+\noindent
+\begin{minipage}[t]{142pt}
+  \vspace*{172pt}
+  \centering
+  \includegraphics[width=\linewidth]{images/p0345_fig1.png}
+  \vspace{2pt}
+
+  \raggedright
+  \textbf{\textsf{\footnotesize HÌNH 1}}
+  \vspace{2pt}
+
+  \begin{footnotesize}
+  \setlength{\parskip}{3pt}
+  \setlength{\abovedisplayskip}{3pt}
+  \setlength{\belowdisplayskip}{3pt}
+  Hình 1 gợi ý một cách trực quan lý do tại sao quy tắc L'Hospital có thể đúng. Đồ thị đầu tiên thể hiện hai hàm khả vi $f$ và $g$, mỗi hàm đều tiến tới $0$ khi $x \to a$. Nếu chúng ta phóng to về phía điểm $(a, 0)$, các đồ thị sẽ bắt đầu trông gần như tuyến tính. Nhưng nếu các hàm số thực sự \textit{tuyến tính}, như trong đồ thị thứ hai, thì tỉ số của chúng sẽ là
+  \[
+  \frac{m_1(x - a)}{m_2(x - a)} = \frac{m_1}{m_2}
+  \]
+  chính là tỉ số các đạo hàm của chúng. Điều này gợi ý rằng
+  \[
+  \lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a} \frac{f'(x)}{g'(x)}
+  \]
+  \end{footnotesize}
+\end{minipage}%
+\hspace{18pt}%
+\begin{minipage}[t]{380pt}
+  \setlength{\parindent}{0pt}
+  \setlength{\parskip}{5pt}
+  Một tình huống khác mà ở đó giới hạn không hiển nhiên xảy ra khi ta tìm tiệm cận ngang của $F$ và cần tính giới hạn
+
+  \vspace{2pt}
+  \noindent
+  \makebox[0pt][l]{%
+    \tikz[baseline=-2.5pt]\node[draw=stewartred, line width=0.8pt, inner sep=2pt, rounded corners=0.5pt] {\textcolor{stewartred}{\bfseries\small 2}};%
+  }%
+  \hfill
+  $\displaystyle \lim_{x \to \infty} \frac{\ln x}{x - 1}$
+  \hfill\null
+  \vspace{2pt}
+
+  Việc tính giới hạn này là không hiển nhiên vì cả tử số và mẫu số đều trở nên rất lớn khi $x \to \infty$. Có một sự giằng co giữa tử số và mẫu số. Nếu tử số thắng, giới hạn sẽ là $\infty$ (tử số tăng nhanh hơn đáng kể so với mẫu số); nếu mẫu số thắng, kết quả sẽ bằng $0$. Hoặc có thể có sự thỏa hiệp nào đó, khi đó kết quả sẽ là một số dương hữu hạn.
+
+  Nói chung, nếu ta có một giới hạn dạng
+  \[
+  \lim_{x \to a} \frac{f(x)}{g(x)}
+  \]
+  trong đó cả $f(x) \to \infty$ (hoặc $-\infty$) và $g(x) \to \infty$ (hoặc $-\infty$), thì giới hạn có thể tồn tại hoặc không tồn tại và được gọi là một \textbf{dạng vô định kiểu $\boldsymbol{\infty/\infty}$}. Chúng ta đã thấy trong Mục 2.6 rằng kiểu giới hạn này có thể được tính đối với một số hàm số nhất định, bao gồm các hàm phân thức hữu tỉ, bằng cách chia cả tử số và mẫu số cho lũy thừa bậc cao nhất của $x$ xuất hiện ở mẫu số. Chẳng hạn,
+  \[
+  \lim_{x \to \infty} \frac{x^2 - 1}{2x^2 + 1} = \lim_{x \to \infty} \frac{1 - \dfrac{1}{x^2}}{2 + \dfrac{1}{x^2}} = \frac{1 - 0}{2 + 0} = \frac{1}{2}
+  \]
+  Nhưng phương pháp này không áp dụng được cho các giới hạn như (2).
+
+  \vspace{2pt}
+  \noindent
+  {\color{stewartteal}\rule{1.1ex}{1.1ex}}\enspace\textbf{\textsf{Quy tắc L'Hospital}}\quad Giờ đây chúng ta giới thiệu một phương pháp có hệ thống, được gọi là \textit{quy tắc L'Hospital}, để tính các dạng vô định kiểu $0/0$ hoặc kiểu $\infty/\infty$.
+
+  \vspace{3pt}
+  \begin{tcolorbox}[
+    enhanced,
+    colback=white,
+    colframe=stewartred,
+    boxrule=1pt,
+    arc=0mm,
+    top=7pt,
+    bottom=7pt,
+    left=9pt,
+    right=9pt
+  ]
+    \noindent\textbf{\textcolor{stewartred}{Quy tắc L'Hospital}}\enspace Giả sử $f$ và $g$ là các hàm khả vi và $g'(x) \neq 0$ trên một khoảng mở $I$ chứa $a$ (ngoại trừ có thể tại $a$). Giả sử rằng
+    \[
+    \lim_{x \to a} f(x) = 0 \qquad \text{và} \qquad \lim_{x \to a} g(x) = 0
+    \]
+    hoặc rằng
+    \[
+    \lim_{x \to a} f(x) = \pm\infty \qquad \text{và} \qquad \lim_{x \to a} g(x) = \pm\infty
+    \]
+    (Nói cách khác, chúng ta có một dạng vô định kiểu $0/0$ hoặc $\infty/\infty$.) Khi đó
+    \[
+    \lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a} \frac{f'(x)}{g'(x)}
+    \]
+    nếu giới hạn ở vế phải tồn tại (hoặc là $\infty$ hay $-\infty$).
+  \end{tcolorbox}
+
+  \vspace{4pt}
+  \noindent
+  \textbf{\textsf{\textcolor{stewartgreen}{GHI CHÚ 1}}}\enspace Quy tắc L'Hospital nói rằng giới hạn của một thương các hàm số bằng giới hạn của thương các đạo hàm của chúng, miễn là các điều kiện đã cho được thỏa mãn. Điều đặc biệt quan trọng là phải kiểm tra các điều kiện về giới hạn của $f$ và $g$ trước khi áp dụng quy tắc L'Hospital.
+\end{minipage}
+
+\vfill
+% Dòng bản quyền chân trang
+\noindent
+\begin{minipage}{\textwidth}
+  \centering\fontsize{6.5}{8}\selectfont\textcolor{copyrightgray}{%
+  Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\\
+  Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.}
+\end{minipage}
+
+\end{document}
