@@ -239,6 +239,12 @@
       "score": 99,
       "notes": "Bản in hiện tại bị lỗi nghiêm trọng khi in lộ toàn bộ thông số preamble lên đầu trang do lỗi ký tự thoát. Bố cục phần giải phương trình đạo hàm chưa dóng hàng ngang cùng dòng với văn bản như bản gốc. Đã khắc phục triệt để lỗi hiển thị và chuẩn hóa dóng hàng 1:1.",
       "time": "2026-09-23 07:19:27"
+    },
+    {
+      "page_num": 248,
+      "score": 99,
+      "notes": "Bản dịch hiện tại tách sai cấu trúc dàn trang: Hình 7 thực chất nằm trọn ở cột lề trái bên dưới Hình 6, còn Hình 8 và 9 nằm cạnh nhau trong cột chính. Phần mã nguồn cũng bị lỗi in trực tiếp văn bản khai báo gói ra trang in.",
+      "time": "2026-09-23 07:20:55"
     }
   ]
 }
