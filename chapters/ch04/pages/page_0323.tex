@@ -1,0 +1,177 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{tabularx}
+\usepackage{colortbl}
+\usepackage{fancyhdr}
+\usepackage{newtxtext,newtxmath}
+\usepackage{microtype}
+
+\geometry{
+  paperwidth=8.5in,
+  paperheight=11in,
+  top=1.8cm,
+  bottom=1.8cm,
+  left=1.8cm,
+  right=1.8cm,
+  headheight=14pt,
+  headsep=12pt,
+  footskip=22pt
+}
+
+\definecolor{stewartcyan}{RGB}{0, 136, 175}
+\definecolor{tableblue}{RGB}{217, 226, 236}
+\definecolor{textgray}{RGB}{90, 90, 90}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textbf{\textsf{\Large 288}}\qquad\textbf{\textsf{CHƯƠNG 4}}\quad\textsf{Các ứng dụng của đạo hàm}}
+\renewcommand{\headrulewidth}{0pt}
+
+\fancyfoot[C]{%
+  \parbox{\textwidth}{\centering\tiny\color{textgray}%
+  Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\\
+  Bản quyền © 2021 Cengage Learning. Mọi quyền được bảo lưu. Không được sao chép, quét hoặc tái bản toàn bộ hay từng phần do các hạn chế về bản quyền điện tử.
+  }}
+\renewcommand{\footrulewidth}{0pt}
+
+\setlength{\abovedisplayskip}{3.5pt}
+\setlength{\belowdisplayskip}{3.5pt}
+\setlength{\abovedisplayshortskip}{2pt}
+\setlength{\belowdisplayshortskip}{2pt}
+
+\newcommand{\techicon}{%
+  \tikz[baseline=-0.6ex]{%
+    \draw[stewartcyan, line width=0.8pt, rounded corners=0.5pt, fill=white] (-0.18,-0.18) rectangle (0.18,0.18);
+    \node at (0,0) {\textsf{\textbf{\color{stewartcyan}\footnotesize T}}};
+  }%
+}
+
+\newcommand{\exitem}[1]{%
+  \par\vspace{5pt}%
+  \noindent\hangindent=1.9em\hangafter=1%
+  \hbox to 1.9em{\textbf{#1.}\hss}%
+}
+
+\newcommand{\exitemtech}[1]{%
+  \par\vspace{5pt}%
+  \noindent\hangindent=3.1em\hangafter=1%
+  \hbox to 3.1em{\techicon\hspace{2pt}\textbf{#1.}\hss}%
+}
+
+\begin{document}
+
+\noindent
+% ==================== CỘT TRÁI ====================
+\begin{minipage}[t]{0.482\textwidth}
+\exitem{73} Sau khi uống một thức uống có cồn, nồng độ cồn trong máu (viết tắt là BAC) tăng vọt khi cồn được hấp thụ, tiếp theo là sự giảm dần khi cồn bị chuyển hóa. Hàm số
+\[
+C(t) = 0{,}135t e^{-2{,}802t}
+\]
+mô hình hóa nồng độ BAC trung bình, đo bằng g/dL, của một nhóm gồm tám nam giới sau $t$ giờ kể từ khi uống nhanh 15~mL ethanol (tương đương với một đơn vị cồn tiêu chuẩn). Nồng độ BAC trung bình tối đa trong 3 giờ đầu tiên là bao nhiêu? Nó đạt được vào lúc nào?
+
+\vspace{2pt}
+{\scriptsize\textit{Nguồn:} Phỏng theo P. Wilkinson và cộng sự, “Pharmacokinetics of Ethanol after Oral Administration in the Fasting State,” \textit{Journal of Pharmacokinetics and Biopharmaceutics} 5 (1977): 207–24.}
+
+\exitem{74} Sau khi uống một viên kháng sinh, nồng độ kháng sinh trong máu được mô hình hóa bởi hàm số
+\[
+C(t) = 8\left(e^{-0{,}4t} - e^{-0{,}6t}\right)
+\]
+trong đó thời gian $t$ được tính bằng giờ và $C$ được tính bằng $\mu\text{g/mL}$. Nồng độ lớn nhất của kháng sinh trong 12 giờ đầu tiên là bao nhiêu?
+
+\exitem{75} Trong khoảng từ $0^\circ\text{C}$ đến $30^\circ\text{C}$, thể tích $V$ (tính bằng centimét khối) của $1\text{ kg}$ nước ở nhiệt độ $T$ được cho xấp xỉ bởi công thức
+\[
+V = 999{,}87 - 0{,}06426T + 0{,}0085043T^2 - 0{,}0000679T^3
+\]
+Hãy tìm nhiệt độ mà tại đó nước đạt khối lượng riêng lớn nhất.
+
+\exitem{76} Một vật có trọng lượng $W$ được kéo dọc theo một mặt phẳng nằm ngang bởi một lực tác dụng dọc theo sợi dây buộc vào vật. Nếu sợi dây hợp với mặt phẳng một góc $\theta$, thì độ lớn của lực kéo là
+\[
+F = \frac{\mu W}{\mu \sin\theta + \cos\theta}
+\]
+trong đó $\mu$ là một hằng số dương gọi là \textit{hệ số ma sát} và $0 \leqslant \theta \leqslant \pi/2$. Hãy chứng minh rằng $F$ đạt giá trị nhỏ nhất khi $\tan\theta = \mu$.
+
+\exitem{77} Mực nước của Hồ Lanier ở Georgia, Hoa Kỳ trong năm 2012, đo bằng foot so với mực nước biển trung bình, có thể được mô hình hóa bởi hàm số
+\[
+L(t) = 0{,}01441t^3 - 0{,}4177t^2 + 2{,}703t + 1060{,}1
+\]
+trong đó $t$ được tính bằng tháng kể từ ngày 1 tháng 1 năm 2012. Hãy ước tính thời điểm mực nước đạt mức cao nhất trong năm 2012.
+
+\exitemtech{78} Vào năm 1992, tàu con thoi \textit{Endeavour} được phóng trong sứ mệnh STS-49 nhằm lắp đặt một động cơ đẩy cận điểm mới cho vệ tinh viễn thông Intelsat. Bảng số liệu cho biết dữ liệu vận tốc của tàu con thoi từ lúc rời bệ phóng cho đến khi tách tầng tên lửa đẩy nhiên liệu rắn.
+\begin{itemize}
+  \setlength{\itemsep}{0pt}%
+  \setlength{\topsep}{2pt}%
+  \setlength{\leftmargin}{1.5em}%
+  \item[(a)] Sử dụng máy tính có chức năng vẽ đồ thị hoặc phần mềm toán học để tìm đa thức bậc ba mô hình hóa tốt nhất vận tốc của tàu con thoi trong khoảng thời gian $t \in [0, 125]$. Sau đó, hãy vẽ đồ thị của đa thức này.
+\end{itemize}
+\end{minipage}%
+\hfill
+% ==================== CỘT PHẢI ====================
+\begin{minipage}[t]{0.482\textwidth}
+\begin{itemize}
+  \setlength{\itemsep}{0pt}%
+  \setlength{\topsep}{0pt}%
+  \setlength{\leftmargin}{1.5em}%
+  \item[(b)] Tìm một mô hình cho gia tốc của tàu con thoi và sử dụng mô hình đó để ước tính các giá trị lớn nhất và nhỏ nhất của gia tốc trong 125 giây đầu tiên.
+\end{itemize}
+
+\vspace{2pt}
+\noindent
+\renewcommand{\arraystretch}{1.12}
+\small
+\begin{tabularx}{\linewidth}{Xcr}
+\hline
+\rowcolor{tableblue}
+\textbf{Sự kiện} & \textbf{Thời gian (s)} & \textbf{Vận tốc (ft/s)} \\
+\hline
+Rời bệ phóng & 0 & 0 \\
+Bắt đầu thao tác xoay trục & 10 & 185 \\
+Kết thúc thao tác xoay trục & 15 & 319 \\
+Tiết lưu về mức 89\% & 20 & 447 \\
+Tiết lưu về mức 67\% & 32 & 742 \\
+Tăng tiết lưu lên 104\% & 59 & 1325 \\
+Áp suất động lực tối đa & 62 & 1445 \\
+Tách tầng đẩy nhiên liệu rắn & 125 & 4151 \\
+\hline
+\end{tabularx}
+
+\exitem{79} Khi một dị vật mắc kẹt trong khí quản làm người bệnh ho, cơ hoành bị đẩy mạnh lên trên, gây tăng áp suất trong phổi. Quá trình này đi kèm với sự co lại của khí quản, tạo ra một đường dẫn hẹp hơn cho luồng không khí tống ra ngoài. Để một lượng khí nhất định thoát ra trong một thời gian cố định, nó phải chuyển động nhanh hơn qua đường hẹp so với đường rộng. Vận tốc luồng khí càng lớn thì lực tác dụng lên dị vật càng mạnh. Hình ảnh X-quang cho thấy bán kính ống khí quản hình tròn co lại còn khoảng hai phần ba bán kính bình thường trong cơn ho. Theo một mô hình toán học của phản xạ ho, vận tốc $v$ của luồng khí liên hệ với bán kính $r$ của khí quản theo phương trình
+\[
+v(r) = k(r_0 - r)r^2 \qquad \frac{1}{2}r_0 \leqslant r \leqslant r_0
+\]
+trong đó $k$ là một hằng số và $r_0$ là bán kính bình thường của khí quản. Giới hạn đối với $r$ là do thành khí quản bị cứng lại dưới áp suất cao và sự co thắt vượt quá $\frac{1}{2}r_0$ bị ngăn chặn (nếu không người bệnh sẽ bị ngạt thở).
+\begin{itemize}
+  \setlength{\itemsep}{1pt}%
+  \setlength{\topsep}{2pt}%
+  \setlength{\leftmargin}{1.5em}%
+  \item[(a)] Xác định giá trị của $r$ trong đoạn $\left[\frac{1}{2}r_0, r_0\right]$ mà tại đó $v$ đạt giá trị lớn nhất tuyệt đối. Kết quả này so với các chứng cứ thực nghiệm như thế nào?
+  \item[(b)] Giá trị lớn nhất tuyệt đối của $v$ trên đoạn đó bằng bao nhiêu?
+  \item[(c)] Phác thảo đồ thị của $v$ trên đoạn $[0, r_0]$.
+\end{itemize}
+
+\exitem{80} Chứng minh rằng hàm số
+\[
+f(x) = x^{101} + x^{51} + x + 1
+\]
+không có giá trị cực đại địa phương cũng như cực tiểu địa phương.
+
+\exitem{81} (a) Nếu $f$ có một giá trị cực tiểu địa phương tại $c$, hãy chứng minh rằng hàm số $g(x) = -f(x)$ có một giá trị cực đại địa phương tại $c$.
+
+\vspace{1.5pt}
+(b) Sử dụng phần (a) để chứng minh Định lý Fermat cho trường hợp hàm $f$ có cực tiểu địa phương tại $c$.
+
+\exitem{82} Một hàm bậc ba là một đa thức bậc 3; nghĩa là nó có dạng $f(x) = ax^3 + bx^2 + cx + d$, trong đó $a \neq 0$.
+
+\vspace{1.5pt}
+(a) Chứng minh rằng một hàm bậc ba có thể có hai, một hoặc không có điểm tới hạn nào. Hãy đưa ra các ví dụ và hình vẽ phác thảo để minh họa cho ba khả năng đó.
+
+\vspace{1.5pt}
+(b) Một hàm bậc ba có thể có tối đa bao nhiêu giá trị cực trị địa phương?
+\end{minipage}
+
+\end{document}
