@@ -443,6 +443,12 @@
       "score": 99,
       "notes": "Mã nguồn hiện tại chỉ là lời từ chối của hệ thống AI chứ chưa biên dịch trang sách. Đã phục dựng toàn bộ trang 246 (CHƯƠNG 3: Các quy tắc tính đạo hàm) gồm các bài tập từ 8 đến 22, hộp chuyên đề Định tuổi bằng cacbon phóng xạ, icon máy tính đồ thị và căn chỉnh tỷ lệ 2 cột chuẩn xác theo nguyên tác.",
       "time": "2026-09-23 08:30:38"
+    },
+    {
+      "page_num": 282,
+      "score": 99,
+      "notes": "Mã nguồn hiện tại chứa thông báo từ chối thay vì nội dung sách. Cần tái lập toàn bộ bố cục trang gồm Hộp Dự án ứng dụng (tràn lề trên), đề mục 3.9 và cột ghi chú bài toán bên lề trái.",
+      "time": "2026-09-23 08:31:39"
     }
   ]
 }
