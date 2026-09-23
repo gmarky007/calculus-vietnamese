@@ -1,0 +1,231 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{fontspec}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage[shortlabels,inline]{enumitem}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{multicol}
+\usepackage{tikz}
+
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+
+\geometry{
+    paperwidth=612.05pt,
+    paperheight=720.05pt,
+    top=33.8pt,
+    headheight=13pt,
+    headsep=16pt,
+    bottom=44pt,
+    footskip=18pt,
+    left=36pt,
+    right=36pt,
+    includehead
+}
+
+\definecolor{stewartcyan}{RGB}{0, 118, 186}
+\definecolor{stewartred}{RGB}{218, 41, 28}
+\definecolor{stewarttableheader}{RGB}{210, 224, 238}
+\definecolor{stewarttablehead}{RGB}{210, 224, 238}
+\definecolor{tableblue}{RGB}{210, 224, 238}
+\definecolor{stewartlightblue}{RGB}{235, 243, 250}
+\definecolor{stewartblue}{RGB}{0, 118, 186}
+\definecolor{stewartgray}{RGB}{120, 120, 120}
+\definecolor{stewartlightgray}{RGB}{240, 240, 240}
+\definecolor{stewartpurple}{RGB}{85, 30, 95}
+\definecolor{stewartpurplebg}{RGB}{243, 238, 245}
+\definecolor{stewartpurpletext}{RGB}{85, 30, 95}
+\definecolor{darkgray}{RGB}{40, 40, 40}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+
+\providecommand{\makecell}[2][c]{\begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+\providecommand{\faDesktop}{\textbf{[Máy tính]}}
+\providecommand{\casicon}{\textbf{\textsf{[CAS]}}}
+\providecommand{\ticon}{\textbf{\textsf{[T]}}}
+\providecommand{\captionof}[2]{\par\vspace{2pt}{\small\textbf{#1}: #2}\par}
+\NewDocumentEnvironment{tasks}{o d()}{\begin{enumerate}}{\end{enumerate}}
+\providecommand{\task}{\item}
+\newenvironment{redframebox}{\begin{definitionbox}}{\end{definitionbox}}
+
+\newtcolorbox{definitionbox}{
+    colback=white,
+    colframe=stewartred,
+    arc=0mm,
+    boxrule=0.9pt,
+    left=3.5mm, right=3.5mm, top=3mm, bottom=3mm
+}
+
+\begin{document}
+
+
+\fontsize{9}{12}\selectfont
+
+% =========================================================================
+% PHẦN BÀI TẬP CUỐI MỤC (64 - 68)
+% =========================================================================
+\noindent
+\begin{minipage}[t]{0.485\textwidth}
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=1.5em, start=64, itemsep=6pt, topsep=0pt]
+    \item Tìm $f'_-(0)$ và $f'_+(0)$ đối với hàm số $f$ đã cho. Hàm số $f$ có khả vi tại $0$ không?
+    \begin{enumerate}[label=(\alph*), leftmargin=1.6em, itemsep=2pt, topsep=2pt]
+        \item $f(x) = \begin{cases} 
+            0 & \text{nếu } x \leqslant 0 \\ 
+            x & \text{nếu } x > 0 
+        \end{cases}$
+        \item $f(x) = \begin{cases} 
+            0 & \text{nếu } x \leqslant 0 \\ 
+            x^2 & \text{nếu } x > 0 
+        \end{cases}$
+    \end{enumerate}
+
+    \item Cho
+    \[
+    f(x) = \begin{cases} 
+        0 & \text{nếu } x \leqslant 0 \\ 
+        5 - x & \text{nếu } 0 < x < 4 \\ 
+        \dfrac{1}{5-x} & \text{nếu } x \geqslant 4 
+    \end{cases}
+    \]
+    \begin{enumerate}[label=(\alph*), leftmargin=1.6em, itemsep=1.5pt, topsep=2pt]
+        \item Tìm $f'_-(4)$ và $f'_+(4)$.
+        \item Phác thảo đồ thị của $f$.
+        \item Hàm số $f$ gián đoạn tại đâu?
+        \item Hàm số $f$ không khả vi tại đâu?
+    \end{enumerate}
+\end{enumerate}
+
+\vspace{6pt}
+\noindent{\color{stewartcyan}\rule{\linewidth}{0.8pt}}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.485\textwidth}
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=1.5em, start=66, itemsep=6pt, topsep=0pt]
+    \item Khi bạn mở một vòi nước nóng, nhiệt độ $T$ của nước phụ thuộc vào thời gian nước đã chảy. Trong Ví dụ 1.1.4, chúng ta đã phác thảo một đồ thị có thể có của $T$ theo biến thời gian $t$ đã trôi qua kể từ khi vòi nước được mở.
+    \begin{enumerate}[label=(\alph*), leftmargin=1.6em, itemsep=1.5pt, topsep=2pt]
+        \item Hãy mô tả tốc độ thay đổi của $T$ theo $t$ biến thiên như thế nào khi $t$ tăng.
+        \item Phác thảo đồ thị đạo hàm của $T$.
+    \end{enumerate}
+
+    \item Nick bắt đầu chạy bộ và chạy ngày càng nhanh trong 3 phút, sau đó anh ấy đi bộ trong 5 phút. Anh ấy dừng lại ở một ngã tư trong 2 phút, chạy khá nhanh trong 5 phút, rồi đi bộ trong 4 phút.
+    \begin{enumerate}[label=(\alph*), leftmargin=1.6em, itemsep=1.5pt, topsep=2pt]
+        \item Phác thảo một đồ thị có thể có của quãng đường $s$ mà Nick đã đi được sau $t$ phút.
+        \item Phác thảo đồ thị của $ds/dt$.
+    \end{enumerate}
+
+    \item Gọi $\ell$ là tiếp tuyến của parabol $y = x^2$ tại điểm $(1, 1)$. \textit{Góc nghiêng} của $\ell$ là góc $\phi$ mà $\ell$ tạo với chiều dương của trục $x$. Hãy tính $\phi$ chính xác đến độ gần nhất.
+\end{enumerate}
+\end{minipage}
+
+\vspace{10pt}
+
+% =========================================================================
+% BANNER ÔN TẬP CHƯƠNG 2
+% =========================================================================
+\noindent
+\begingroup
+\setlength{\fboxsep}{0pt}%
+\colorbox{bannerdark}{\parbox[c][22pt][c]{24pt}{\centering\textcolor{white}{\fontsize{13}{15}\selectfont\textbf{\textsf{2}}}}}%
+\colorbox{bannerlight}{\parbox[c][22pt][c]{\dimexpr\textwidth-24pt\relax}{\hspace{10pt}\fontsize{12}{14}\selectfont\textbf{\textsf{ÔN TẬP}}}}%
+\endgroup
+
+\vspace{7pt}
+
+% =========================================================================
+% THANH TIÊU ĐỀ: KIỂM TRA KHÁI NIỆM
+% =========================================================================
+\noindent
+{\fontsize{10}{12}\selectfont\textbf{\textsf{\color{stewartcyan}KIỂM TRA KHÁI NIỆM}}}%
+\hfill
+{\footnotesize\textit{Đáp án cho phần Kiểm tra khái niệm có tại StewartCalculus.com.}}
+\par\vspace{2pt}
+\noindent{\color{stewartcyan}\rule{\textwidth}{0.8pt}}
+
+\vspace{7pt}
+
+% =========================================================================
+% NỘI DUNG PHẦN KIỂM TRA KHÁI NIỆM (1 - 11)
+% =========================================================================
+\noindent
+\begin{minipage}[t]{0.485\textwidth}
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=1.5em, start=1, itemsep=6pt, topsep=0pt]
+    \item Giải thích ý nghĩa của mỗi biểu thức sau và minh họa bằng hình vẽ.
+    \par\vspace{2pt}
+    \begingroup
+    \setlength{\tabcolsep}{1.5pt}
+    \begin{tabular}{@{}lll@{}}
+        (a) $\lim\limits_{x\to a} f(x) = L$ & (b) $\lim\limits_{x\to a^+} f(x) = L$ & (c) $\lim\limits_{x\to a^-} f(x) = L$ \\[5pt]
+        (d) $\lim\limits_{x\to a} f(x) = \infty$ & (e) $\lim\limits_{x\to \infty} f(x) = L$ &
+    \end{tabular}
+    \endgroup
+
+    \item Nêu một số trường hợp mà một giới hạn không tồn tại. Minh họa bằng các hình vẽ.
+
+    \item Phát biểu các Quy tắc giới hạn sau đây.
+    \begin{enumerate}[label=(\alph*), leftmargin=1.6em, itemsep=1.5pt, topsep=2pt]
+        \item Quy tắc tổng
+        \item Quy tắc hiệu
+        \item Quy tắc nhân với hằng số
+        \item Quy tắc tích
+        \item Quy tắc thương
+        \item Quy tắc lũy thừa
+        \item Quy tắc căn thức
+    \end{enumerate}
+
+    \item Định lý kẹp phát biểu điều gì?
+
+    \item (a) Nói đường thẳng $x = a$ là tiệm cận đứng của đường cong $y = f(x)$ có nghĩa là gì? Hãy vẽ các đường cong để minh họa các trường hợp khác nhau.
+    \par\vspace{2pt}
+    (b) Nói đường thẳng $y = L$ là tiệm cận ngang của đường cong $y = f(x)$ có nghĩa là gì? Hãy vẽ các đường cong để minh họa các trường hợp khác nhau.
+\end{enumerate}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.485\textwidth}
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=1.5em, start=6, itemsep=6pt, topsep=0pt]
+    \item Những đường cong nào sau đây có tiệm cận đứng? Những đường cong nào có tiệm cận ngang?
+    \par\vspace{2pt}
+    \begingroup
+    \setlength{\tabcolsep}{2pt}
+    \begin{tabular}{@{}lll@{}}
+        (a) $y = x^4$ & (b) $y = \sin x$ & (c) $y = \tan x$ \\[3pt]
+        (d) $y = \tan^{-1} x$ \hspace{0.5em} & (e) $y = e^x$ \hspace{1em} & (f) $y = \ln x$ \\[3pt]
+        (g) $y = 1/x$ & (h) $y = \sqrt{x}$ &
+    \end{tabular}
+    \endgroup
+
+    \item (a) Hàm số $f$ liên tục tại $a$ có nghĩa là gì?
+    \par\vspace{2pt}
+    (b) Hàm số $f$ liên tục trên khoảng $(-\infty, \infty)$ có nghĩa là gì? Bạn có thể nói gì về đồ thị của một hàm số như vậy?
+
+    \item (a) Hãy cho ví dụ về các hàm số liên tục trên $[-1, 1]$.
+    \par\vspace{2pt}
+    (b) Hãy cho ví dụ về một hàm số không liên tục trên $[0, 1]$.
+
+    \item Định lý giá trị trung gian phát biểu điều gì?
+
+    \item Viết biểu thức tính hệ số góc của tiếp tuyến với đường cong $y = f(x)$ tại điểm $(a, f(a))$.
+
+    \item Giả sử một vật chuyển động dọc theo một đường thẳng với phương trình vị trí $f(t)$ tại thời điểm $t$. Viết biểu thức cho vận tốc tức thời của vật tại thời điểm $t = a$. Bạn có thể giải thích vận tốc này như thế nào theo đồ thị của $f$?
+\end{enumerate}
+\end{minipage}
+
+\vfill
+\begin{center}
+{\fontsize{6.5}{8}\selectfont\color{gray!80!black}
+Bản quyền 2021 Cengage Learning. Bảo lưu mọi quyền. Không được sao chép, quét hoặc nhân bản toàn bộ hoặc từng phần. WCN 02-200-203\\[1pt]
+Đánh giá biên tập cho thấy mọi nội dung bị loại bỏ không ảnh hưởng đáng kể đến trải nghiệm học tập tổng thể. Cengage Learning có quyền loại bỏ nội dung bổ sung vào bất kỳ lúc nào nếu các hạn chế về quyền sau đó yêu cầu.
+}
+\end{center}
+
+\end{document}
