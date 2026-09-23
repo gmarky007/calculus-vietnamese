@@ -1,0 +1,139 @@
+\documentclass[10pt]{article}
+\usepackage[paperwidth=8.5in, paperheight=11in, top=1in, bottom=1in, left=0.75in, right=0.75in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath, amssymb, amsthm, mathtools}
+\usepackage{newtxtext, newtxmath}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins, breakable}
+\usepackage{fancyhdr}
+
+% Định nghĩa hệ màu đặc trưng của sách Stewart Calculus
+\definecolor{stewartcyan}{RGB}{0, 130, 195}
+\definecolor{stewartred}{RGB}{208, 40, 35}
+\definecolor{stewartgreen}{RGB}{0, 135, 60}
+\definecolor{stewartgray}{RGB}{90, 90, 90}
+
+% Cấu hình header và footer
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[L]{%
+  \fontsize{9}{11}\selectfont%
+  \textbf{294}\qquad%
+  \textsf{\textbf{CHƯƠNG 4}}\quad%
+  \textsf{Các ứng dụng của đạo hàm}%
+}
+
+% Hộp số định lý và phương trình
+\newcommand{\stewartboxnum}[1]{%
+  \tcbox[on line, colback=white, colframe=stewartred, arc=0mm, boxrule=0.8pt,
+         left=3pt, right=3pt, top=1.5pt, bottom=1.5pt]{%
+    \fontsize{9.5}{11}\selectfont\sffamily\bfseries\color{stewartred}#1%
+  }%
+}
+
+% Khung định lý / hệ quả viền đỏ
+\newtcolorbox{stewarttheorembox}{
+  enhanced,
+  colback=white,
+  colframe=stewartred,
+  arc=0mm,
+  boxrule=0.8pt,
+  left=6pt,
+  right=6pt,
+  top=6pt,
+  bottom=6pt
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.25\textwidth}
+  \vspace*{423pt}
+  \fontsize{8.8}{12}\selectfont
+  Hệ quả 7 phát biểu rằng nếu hai hàm số có cùng đạo hàm trên một khoảng, thì đồ thị của chúng là các phép tịnh tiến theo phương thẳng đứng của nhau trên khoảng đó. Nói cách khác, các đồ thị có cùng hình dạng, nhưng có thể bị dịch chuyển lên trên hoặc xuống dưới.
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.71\textwidth}
+  \fontsize{9.5}{13.5}\selectfont
+
+  \textbf{\textsf{\color{stewartcyan}VÍ DỤ 5}}\quad Giả sử rằng $f(0) = -3$ và $f'(x) \leqslant 5$ với mọi giá trị của $x$. Giá trị lớn nhất mà $f(2)$ có thể đạt được là bao nhiêu?
+
+  \vspace{2pt}
+  \textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\quad Ta được cho biết $f$ khả vi (và do đó liên tục) khắp mọi nơi. Cụ thể, ta có thể áp dụng Định lý Giá trị Trung bình trên đoạn $[0, 2]$. Tồn tại một số $c$ sao cho
+  \[
+    f(2) - f(0) = f'(c)(2 - 0)
+  \]
+  do đó
+  \[
+    f(2) = f(0) + 2f'(c) = -3 + 2f'(c)
+  \]
+  Ta biết rằng $f'(x) \leqslant 5$ với mọi $x$, do đó cụ thể ta có $f'(c) \leqslant 5$. Nhân cả hai vế của bất đẳng thức này với 2, ta được $2f'(c) \leqslant 10$, vì vậy
+  \[
+    f(2) = -3 + 2f'(c) \leqslant -3 + 10 = 7
+  \]
+  Giá trị lớn nhất có thể có của $f(2)$ là 7. \hfill {\color{stewartcyan}\blacksquare}
+
+  \vspace{6pt}
+  Định lý Giá trị Trung bình có thể được dùng để thiết lập một số tính chất cơ bản của phép tính vi phân. Một trong những tính chất cơ bản này là định lý sau đây. Các tính chất khác sẽ được thảo luận trong những mục tiếp theo.
+
+  \vspace{4pt}
+  \begin{stewarttheorembox}
+    \stewartboxnum{5}\hspace{0.6em}\textbf{\textsf{\color{stewartred}Định lý}}\hspace{0.8em}Nếu $f'(x) = 0$ với mọi $x$ trong một khoảng $(a, b)$, thì $f$ là hàm hằng trên $(a, b)$.
+  \end{stewarttheorembox}
+
+  \vspace{3pt}
+  \textbf{\textsf{\color{stewartred}CHỨNG MINH}}\quad Gọi $x_1$ và $x_2$ là hai số bất kỳ trong $(a, b)$ với $x_1 < x_2$. Vì $f$ khả vi trên $(a, b)$, nên nó phải khả vi trên $(x_1, x_2)$ và liên tục trên $[x_1, x_2]$. Bằng cách áp dụng Định lý Giá trị Trung bình cho $f$ trên đoạn $[x_1, x_2]$, ta tìm được một số $c$ sao cho $x_1 < c < x_2$ và
+  
+  \vspace{-2pt}
+  \noindent
+  \makebox[\linewidth]{%
+    \makebox[0pt][l]{\stewartboxnum{6}}%
+    \hfill $f(x_2) - f(x_1) = f'(c)(x_2 - x_1)$ \hfill
+  }
+  
+  \vspace{1pt}
+  Vì $f'(x) = 0$ với mọi $x$, ta có $f'(c) = 0$, và do đó Phương trình 6 trở thành
+  \[
+    f(x_2) - f(x_1) = 0 \qquad \text{hay} \qquad f(x_2) = f(x_1)
+  \]
+  Do đó $f$ có cùng một giá trị tại hai số $x_1$ và $x_2$ bất kỳ trong $(a, b)$. Điều này có nghĩa là $f$ là hàm hằng trên $(a, b)$. \hfill {\color{stewartred}\blacksquare}
+
+  \vspace{4pt}
+  \begin{stewarttheorembox}
+    \stewartboxnum{7}\hspace{0.6em}\textbf{\textsf{\color{stewartred}Hệ quả}}\hspace{0.8em}Nếu $f'(x) = g'(x)$ với mọi $x$ trong một khoảng $(a, b)$, thì $f - g$ là hàm hằng trên $(a, b)$; nghĩa là, $f(x) = g(x) + c$ với $c$ là một hằng số.
+  \end{stewarttheorembox}
+
+  \vspace{3pt}
+  \textbf{\textsf{\color{stewartred}CHỨNG MINH}}\quad Đặt $F(x) = f(x) - g(x)$. Khi đó
+  \[
+    F'(x) = f'(x) - g'(x) = 0
+  \]
+  với mọi $x$ trong $(a, b)$. Do đó, theo Định lý 5, $F$ là hàm hằng; tức là, $f - g$ là hằng số. \hfill {\color{stewartred}\blacksquare}
+
+  \vspace{4pt}
+  \textbf{\textsf{\color{stewartgreen}LƯU Ý}}\quad Cần phải cẩn trọng khi áp dụng Định lý 5. Xét hàm số
+  \[
+    f(x) = \frac{x}{|x|} =
+    \begin{cases}
+      1  & \text{nếu } x > 0 \\
+      -1 & \text{nếu } x < 0
+    \end{cases}
+  \]
+  Tập xác định của $f$ là $D = \{x \mid x \neq 0\}$ và $f'(x) = 0$ với mọi $x \in D$. Nhưng rõ ràng $f$ không phải là một hàm hằng. Điều này không mâu thuẫn với Định lý 5 bởi vì $D$ không phải là một khoảng.
+\end{minipage}
+
+\vfill
+\noindent
+\parbox{\textwidth}{%
+  \fontsize{6.8}{8}\selectfont\color{stewartgray}
+  Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\newline
+  Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+}
+
+\end{document}
