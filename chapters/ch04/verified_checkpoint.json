@@ -305,6 +305,12 @@
       "score": 99,
       "notes": "Bản dịch bị lỗi nghiêm trọng: dòng mã preamble bị in thô lên đầu trang do lỗi ký tự thoát, đồng thời khối minipage chính bị tràn làm toàn bộ nửa dưới trang bị đẩy sang trang 2 (để lại khoảng trắng lớn). Cần định dạng lại kích thước, hình ảnh và tỷ lệ 2 cột để toàn bộ trang khớp 1:1 trên cùng một trang chuẩn xác.",
       "time": "2026-09-23 12:01:32"
+    },
+    {
+      "page_num": 365,
+      "score": 99,
+      "notes": "Mã nguồn hiện tại là phản hồi từ chối dịch của AI. Cần tái tạo lại toàn bộ trang 330 (trang 365 tài liệu) với bố cục 2 cột bất đối xứng, dóng hàng tọa độ chính xác, chèn đủ 4 hình ảnh và chuyển ngữ chuẩn xác sư phạm giải tích.",
+      "time": "2026-09-23 12:03:40"
     }
   ]
 }

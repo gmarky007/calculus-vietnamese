@@ -1,0 +1,94 @@
+\documentclass[10pt]{article}
+\usepackage[paperwidth=8.5in, paperheight=11in, left=18mm, right=18mm, top=15mm, bottom=15mm]{geometry}
+\usepackage{fontspec}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+\pagestyle{empty}
+\definecolor{stewartblue}{RGB}{0, 130, 155}
+
+\begin{document}
+
+% HEADER
+\noindent
+{\small\textsf{\textbf{330}\qquad\textbf{\color{stewartblue}CHƯƠNG 4}\quad Các ứng dụng của đạo hàm}}
+\par\vspace{1.2em}
+
+% KHỐI NỘI DUNG 2 CỘT
+\newsavebox{\rightcolbox}
+\begin{lrbox}{\rightcolbox}
+\begin{minipage}[t]{0.71\textwidth}
+  \vspace{0pt}%
+  \noindent thấy những gì chúng ta đã bỏ sót trước đây: một giá trị cực đại địa phương bằng $0$ khi $x = 0$ và một giá trị cực tiểu địa phương khoảng $-0{,}1$ khi $x \approx 0{,}35$.
+
+  Còn về tính lõm và các điểm uốn thì sao? Từ các Hình 2 và 4, dường như có các điểm uốn khi $x$ nằm lệch một chút về bên trái của $-1$ và khi $x$ nằm lệch một chút về bên phải của $0$. Nhưng rất khó để xác định các điểm uốn từ đồ thị của $f$, vì vậy chúng ta vẽ đồ thị của đạo hàm cấp hai $f''$ trong Hình 5. Ta thấy rằng $f''$ đổi dấu từ dương sang âm khi $x \approx -1{,}23$ và từ âm sang dương khi $x \approx 0{,}19$. Do đó, với độ chính xác đến hai chữ số thập phân, $f$ lõm lên trên các khoảng $(-\infty; -1{,}23)$ và $(0{,}19; \infty)$, và lõm xuống dưới trên khoảng $(-1{,}23; 0{,}19)$. Các điểm uốn là $(-1{,}23; -10{,}18)$ và $(0{,}19; -0{,}05)$.
+
+  Chúng ta đã phát hiện ra rằng không một đồ thị đơn lẻ nào có thể thể hiện được tất cả các đặc trưng quan trọng của đa thức này. Nhưng khi kết hợp cả Hình 2 và Hình 4 lại với nhau, chúng thực sự mang lại một hình ảnh chính xác. \hfill {\color{stewartblue}\rule{1.2ex}{1.2ex}}
+
+  \vspace{1em}
+  \noindent\textsf{\textbf{\color{stewartblue}VÍ DỤ 2}}\quad Vẽ đồ thị của hàm số
+  \[
+  f(x) = \frac{x^2 + 7x + 3}{x^2}
+  \]
+  trong một khung nhìn thể hiện được tất cả các đặc trưng quan trọng của hàm số. Hãy ước lượng các giá trị cực đại và cực tiểu địa phương cùng các khoảng lồi, lõm. Sau đó dùng phép tính vi tích phân để tìm chính xác các đại lượng này.
+
+  \vspace{0.8em}
+  \noindent\textsf{\textbf{\color{stewartblue}LỜI GIẢI}}\quad Hình 6---được tạo bởi phần mềm vẽ đồ thị với tỉ lệ chia tự động---là một thảm họa. Một số máy tính bỏ túi có chức năng vẽ đồ thị sử dụng khung nhìn mặc định là $[-10, 10] \times [-10, 10]$, vì vậy ta hãy thử khung nhìn này. Ta thu được đồ thị như trong Hình 7; đây là một bước cải thiện đáng kể.
+
+  \vspace{0.8em}
+  \begin{center}
+  \begin{minipage}[b]{0.48\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{images/p0365_fig2.png}
+    \par\vspace{4pt}
+    {\footnotesize\textsf{\textbf{HÌNH 6}}}
+  \end{minipage}\hfill
+  \begin{minipage}[b]{0.48\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{images/p0365_fig3.png}
+    \par\vspace{4pt}
+    {\footnotesize\textsf{\textbf{HÌNH 7}}}
+  \end{minipage}
+  \end{center}
+  \vspace{0.5em}
+
+  \noindent Trục $y$ dường như là một đường tiệm cận đứng và quả thực đúng như vậy vì
+  \[
+  \lim_{x \to 0} \frac{x^2 + 7x + 3}{x^2} = \infty
+  \]
+
+  Hình 7 cũng cho phép chúng ta ước lượng các giao điểm với trục $x$: khoảng $-0{,}5$ và $-6{,}5$. Các giá trị chính xác thu được bằng cách sử dụng công thức nghiệm phương trình bậc hai để giải phương trình $x^2 + 7x + 3 = 0$; ta được $x = (-7 \pm \sqrt{37})/2$.
+
+  Để quan sát rõ hơn các đường tiệm cận ngang, chúng ta chuyển sang khung nhìn $[-20, 20] \times [-5, 10]$ trong Hình 8. Dường như $y = 1$ là đường tiệm cận ngang và điều này dễ dàng được xác nhận:
+  \[
+  \lim_{x \to \pm\infty} \frac{x^2 + 7x + 3}{x^2} = \lim_{x \to \pm\infty} \left(1 + \frac{7}{x} + \frac{3}{x^2}\right) = 1
+  \]
+\end{minipage}
+\end{lrbox}
+
+\noindent
+\begin{minipage}[t][\dimexpr\ht\rightcolbox+\dp\rightcolbox\relax][t]{0.25\textwidth}
+  \vspace{0pt}%
+  \vspace*{18pt}
+  \includegraphics[width=\linewidth]{images/p0365_fig1.png}
+  \par\vspace{3pt}
+  {\centering\footnotesize\textsf{\textbf{HÌNH 5}}\par}
+  \vfill
+  \includegraphics[width=\linewidth]{images/p0365_fig4.png}
+  \par\vspace{3pt}
+  {\centering\footnotesize\textsf{\textbf{HÌNH 8}}\par}
+  \vspace{0pt}%
+\end{minipage}\hfill
+\usebox{\rightcolbox}
+
+% FOOTER
+\vfill
+\begin{center}
+{\fontsize{5.5}{6.5}\selectfont\color{black!60}
+Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\par\vspace{1pt}
+Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+}
+\end{center}
+
+\end{document}
