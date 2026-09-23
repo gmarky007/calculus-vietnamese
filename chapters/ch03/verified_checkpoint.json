@@ -509,6 +509,12 @@
       "score": 99,
       "notes": "Bản dịch hiện tại bị lỗi in tràn chuỗi preamble mã nguồn ở đầu trang ([10pt]article...); Hình 5 trong cột chính quá to làm đẩy lệch các khối bên dưới; Lời giải phần (b) bị ngắt dòng sai khiến mất cân đối không gian; Vị trí dóng hàng các nhãn lề HÌNH 5 và HÌNH 6 chưa khớp chuẩn xác với tọa độ bản gốc.",
       "time": "2026-09-23 08:50:52"
+    },
+    {
+      "page_num": 293,
+      "score": 99,
+      "notes": "Mã nguồn bị lỗi rò rỉ mã preamble ra đầu trang in; thanh tiêu đề mục 3.10 BÀI TẬP chưa đúng chuẩn 4 đường kẻ song song của sách Stewart; độ dóng hàng và căn lề hai cột bất đối xứng chưa khớp tọa độ gốc.",
+      "time": "2026-09-23 08:53:20"
     }
   ]
 }

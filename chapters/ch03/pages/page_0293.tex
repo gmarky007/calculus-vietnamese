@@ -1,0 +1,153 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage{geometry}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{fancyhdr}
+\usepackage{microtype}
+\usepackage{iftex}
+
+\ifXeTeX
+  \usepackage{fontspec}
+  \setmainfont{Times New Roman}
+  \setsansfont{Arial}
+\else
+  \usepackage[utf8]{inputenc}
+  \usepackage[vietnamese]{babel}
+  \usepackage{newtxtext,newtxmath}
+\fi
+
+\geometry{
+    a4paper,
+    left=16mm,
+    right=16mm,
+    top=20mm,
+    bottom=20mm,
+    headheight=14pt,
+    headsep=16pt
+}
+
+% Màu chuẩn giáo trình Stewart Calculus
+\definecolor{stewartcyan}{RGB}{0, 130, 195}
+\definecolor{stewartgreen}{RGB}{0, 140, 70}
+\definecolor{stewartgray}{RGB}{115, 115, 115}
+
+% Biểu tượng máy tính đồ họa của bài tập Stewart
+\newcommand{\graphcalc}{%
+  \begin{tikzpicture}[baseline=0.5pt, x=1pt, y=1pt]
+    \draw[stewartcyan, fill=stewartcyan!12, rounded corners=0.8pt, line width=0.55pt] (0,0) rectangle (11, 8.5);
+    \draw[stewartcyan, line width=0.55pt, line cap=round] (1.8, 2.2) .. controls (4, 1.5) and (6, 7) .. (9.2, 5.5);
+  \end{tikzpicture}%
+}
+
+% Cấu hình Header trang chẵn
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[L]{\textsf{\textbf{258}}\hspace{2.5em}\textsf{\textbf{CHƯƠNG 3}}\hspace{1.2em}\textsf{Các quy tắc tính đạo hàm}}
+\fancyhead[R]{}
+
+\begin{document}
+
+% ==================== PHẦN 1: NỘI DUNG LÝ THUYẾT & VÍ DỤ (LỆCH PHẢI) ====================
+\noindent
+\hfill
+\begin{minipage}[t]{128mm}
+    \noindent bằng cách lấy $dx = x - a$, do đó $x = a + dx$. Chẳng hạn, đối với hàm số $f(x) = \sqrt{x+3}$ trong Ví dụ 1, ta có
+    \[
+    dy = f'(x)\,dx = \frac{dx}{2\sqrt{x+3}}
+    \]
+    Nếu $a = 1$ và $dx = \Delta x = 0{,}05$, thì
+    \[
+    dy = \frac{0{,}05}{2\sqrt{1+3}} = 0{,}0125
+    \]
+    \noindent\makebox[\linewidth][l]{\makebox[0pt][l]{và}\hfill$\sqrt{4{,}05} = f(1{,}05) = f(1 + 0{,}05) \approx f(1) + dy = 2{,}0125$\hfill}%
+    \vspace{1mm}
+
+    \noindent đúng như kết quả chúng ta đã tìm thấy trong Ví dụ 1.
+
+    \medskip
+    \indent Ví dụ cuối cùng của chúng ta minh họa việc sử dụng vi phân để ước lượng các sai số phát sinh do các phép đo xấp xỉ.
+
+    \medskip
+    \noindent\textbf{\textsf{\color{stewartcyan}VÍ DỤ 4}}\quad Bán kính của một hình cầu được đo và ghi nhận là $21\text{ cm}$ với sai số đo có thể xảy ra tối đa là $0{,}05\text{ cm}$. Sai số lớn nhất khi sử dụng giá trị này của bán kính để tính thể tích hình cầu là bao nhiêu?
+
+    \medskip
+    \noindent\textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\quad Nếu bán kính của hình cầu là $r$, thì thể tích của nó là $V = \frac{4}{3}\pi r^3$. Nếu sai số trong giá trị đo của $r$ được ký hiệu là $dr = \Delta r$, thì sai số tương ứng trong giá trị tính toán của $V$ là $\Delta V$, có thể được xấp xỉ bằng vi phân
+    \[
+    dV = 4\pi r^2\,dr
+    \]
+    Khi $r = 21$ và $dr = 0{,}05$, điều này trở thành
+    \[
+    dV = 4\pi (21)^2 0{,}05 \approx 277
+    \]
+    Sai số lớn nhất trong thể tích tính toán là khoảng $277\text{ cm}^3$.\hfill{\color{stewartcyan}\rule{1.15ex}{1.15ex}}
+
+    \medskip
+    \noindent\textbf{\textsf{\color{stewartgreen}GHI CHÚ}}\quad Mặc dù sai số có thể xảy ra trong Ví dụ 4 có vẻ khá lớn, nhưng một hình dung tốt hơn về sai số được thể hiện qua \textbf{sai số tương đối}, được tính bằng cách chia sai số cho tổng thể tích:
+    \[
+    \frac{\Delta V}{V} \approx \frac{dV}{V} = \frac{4\pi r^2\,dr}{\frac{4}{3}\pi r^3} = 3\,\frac{dr}{r}
+    \]
+    Do đó, sai số tương đối của thể tích gấp khoảng ba lần sai số tương đối của bán kính. Trong Ví dụ 4, sai số tương đối của bán kính xấp xỉ là $dr/r = 0{,}05/21 \approx 0{,}0024$ và nó tạo ra sai số tương đối khoảng $0{,}007$ đối với thể tích. Các sai số này cũng có thể được biểu diễn dưới dạng sai số phần trăm là $0{,}24\%$ đối với bán kính và $0{,}7\%$ đối với thể tích.
+\end{minipage}
+
+\vspace{2.2em}
+
+% ==================== PHẦN 2: THANH PHÂN CÁCH MỤC BÀI TẬP 3.10 ====================
+\noindent
+\begin{tikzpicture}
+  \node[anchor=west, inner sep=0pt] (title) at (28mm, 0) {%
+    \Large\textsf{\textbf{\color{stewartcyan}3.10}}\hspace{6pt}%
+    {\color{stewartcyan}\rule[-2pt]{1.3pt}{14pt}}\hspace{6pt}%
+    \textsf{\textbf{Bài tập}}%
+  };
+  % 4 đường kẻ mảnh song song bên trái
+  \foreach \dy in {-2.4pt, -0.8pt, 0.8pt, 2.4pt} {
+    \draw[stewartcyan, line width=0.55pt] (0, \dy) -- ([xshift=-8pt]title.west |- 0, \dy);
+  }
+  % 4 đường kẻ mảnh song song bên phải kéo dài hết lề
+  \foreach \dy in {-2.4pt, -0.8pt, 0.8pt, 2.4pt} {
+    \draw[stewartcyan, line width=0.55pt] ([xshift=8pt]title.east |- 0, \dy) -- (\textwidth, \dy);
+  }
+\end{tikzpicture}
+
+\vspace{1.2em}
+
+% ==================== PHẦN 3: BÀI TẬP (2 CỘT CHIẾM TRỌN CHIỀU RỘNG) ====================
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+    \small
+    \noindent\textbf{\textsf{\color{stewartcyan}1--4}}\quad Tìm hàm tuyến tính hóa $L(x)$ của hàm số tại $a$.
+
+    \medskip
+    \noindent\textbf{1.}\enspace $f(x) = x^3 - x^2 + 3,\quad a = -2$
+
+    \medskip
+    \noindent\textbf{2.}\enspace $f(x) = e^{3x},\quad a = 0$
+
+    \medskip
+    \noindent\textbf{3.}\enspace $f(x) = \sqrt[3]{x},\quad a = 8$
+
+    \medskip
+    \noindent\textbf{4.}\enspace $f(x) = \cos 2x,\quad a = \pi/6$
+
+    \vspace{0.9em}
+    \noindent{\color{stewartcyan!60}\rule{\linewidth}{0.5pt}}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+    \small
+    \noindent\graphcalc\enspace\textbf{5.}\enspace Tìm xấp xỉ tuyến tính của hàm số $f(x) = \sqrt{1-x}$ tại $a = 0$ và sử dụng nó để xấp xỉ các số $\sqrt{0{,}9}$ và $\sqrt{0{,}99}$. Minh họa bằng cách vẽ đồ thị của $f$ và tiếp tuyến.
+
+    \medskip
+    \noindent\graphcalc\enspace\textbf{6.}\enspace Tìm xấp xỉ tuyến tính của hàm số $g(x) = \sqrt[3]{1+x}$ tại $a = 0$ và sử dụng nó để xấp xỉ các số $\sqrt[3]{0{,}95}$ và $\sqrt[3]{1{,}1}$. Minh họa bằng cách vẽ đồ thị của $g$ và tiếp tuyến.
+\end{minipage}
+
+\vfill
+\begin{center}
+  \tiny\color{stewartgray}%
+  Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part.  WCN 02-200-203\\[1.5pt]
+  Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+\end{center}
+
+\end{document}
