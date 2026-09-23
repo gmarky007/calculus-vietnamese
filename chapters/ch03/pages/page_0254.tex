@@ -1,0 +1,122 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{newtxtext,newtxmath}
+
+\geometry{
+  paperwidth=210mm,
+  paperheight=280mm,
+  top=22mm,
+  bottom=20mm,
+  left=18mm,
+  right=18mm,
+  headheight=14pt,
+  headsep=8mm,
+  footskip=10mm
+}
+
+\definecolor{stewartcyan}{RGB}{0, 130, 195}
+\definecolor{copyrightgray}{RGB}{100, 100, 100}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\fontsize{9pt}{11pt}\selectfont\textbf{\textsf{MỤC 3.6}}\quad \textsf{Đạo hàm của các hàm số logarit và lượng giác ngược}}
+\fancyhead[R]{\fontsize{10pt}{12pt}\selectfont\textbf{\textsf{219}}}
+\renewcommand{\headrulewidth}{0pt}
+
+\fancyfoot[C]{%
+  \fontsize{6.5pt}{8pt}\selectfont\color{copyrightgray}%
+  \begin{tabular}{@{}c@{}}
+    Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\\ 
+    Được số hóa và dịch thuật phục vụ mục đích học tập và nghiên cứu phi thương mại.
+  \end{tabular}%
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.265\textwidth}
+  \vspace*{118pt}
+  {\fontsize{8.5pt}{11pt}\selectfont
+  Hình~1 biểu diễn đồ thị của hàm số $f$ trong Ví dụ~5 cùng với đồ thị đạo hàm của nó. Nó cho phép kiểm tra trực quan kết quả tính toán của chúng ta. Chú ý rằng $f'(x)$ có giá trị âm lớn khi $f$ giảm nhanh.
+  
+  \vspace{6pt}
+  \centering
+  \includegraphics[width=\linewidth]{images/p0254_fig1.png}
+  
+  \vspace{4pt}
+  \raggedright\textbf{\textsf{HÌNH 1}}
+
+  \vspace{36pt}
+  Hình~2 biểu diễn đồ thị của hàm số $f(x) = \ln|x|$ trong Ví dụ~6 và đạo hàm của nó $f'(x) = 1/x$. Chú ý rằng khi $x$ nhỏ, đồ thị của $y = \ln|x|$ rất dốc và vì thế $f'(x)$ có giá trị rất lớn (dương hoặc âm).
+  
+  \vspace{6pt}
+  \centering
+  \includegraphics[width=\linewidth]{images/p0254_fig2.png}
+  
+  \vspace{4pt}
+  \raggedright\textbf{\textsf{HÌNH 2}}
+  }
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.705\textwidth}
+  \noindent\textbf{\textsf{\color{stewartcyan}VÍ DỤ 4}}\quad Tính đạo hàm của $f(x) = \log_{10}(2 + \sin x)$.
+
+  \vspace{5pt}
+  \noindent\textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\quad Áp dụng Công thức~1 với $b = 10$, ta có
+  \begin{align*}
+    f'(x) &= \frac{d}{dx} \log_{10}(2 + \sin x) \\[3pt]
+    &= \frac{1}{(2 + \sin x) \ln 10} \frac{d}{dx} (2 + \sin x) \\[3pt]
+    &= \frac{\cos x}{(2 + \sin x) \ln 10} \tag*{\color{stewartcyan}\blacksquare}
+  \end{align*}
+
+  \vspace{10pt}
+  \noindent\textbf{\textsf{\color{stewartcyan}VÍ DỤ 5}}\quad Tìm $\displaystyle \frac{d}{dx} \ln \frac{x + 1}{\sqrt{x - 2}}$.
+
+  \vspace{6pt}
+  \noindent\textbf{\textsf{\color{stewartcyan}LỜI GIẢI 1}}
+  \begin{align*}
+    \frac{d}{dx} \ln \frac{x + 1}{\sqrt{x - 2}} &= \frac{1}{\dfrac{x + 1}{\sqrt{x - 2}}} \frac{d}{dx} \frac{x + 1}{\sqrt{x - 2}} \\[4pt]
+    &= \frac{\sqrt{x - 2}}{x + 1} \cdot \frac{\sqrt{x - 2}\cdot 1 - (x + 1)\left(\frac{1}{2}\right)(x - 2)^{-1/2}}{x - 2} \\[4pt]
+    &= \frac{x - 2 - \frac{1}{2}(x + 1)}{(x + 1)(x - 2)} \\[4pt]
+    &= \frac{x - 5}{2(x + 1)(x - 2)}
+  \end{align*}
+
+  \vspace{6pt}
+  \noindent\textbf{\textsf{\color{stewartcyan}LỜI GIẢI 2}}\quad Nếu trước hết ta khai triển hàm số đã cho bằng cách dùng các quy tắc logarit, thì việc lấy đạo hàm sẽ trở nên dễ dàng hơn:
+  \begin{align*}
+    \frac{d}{dx} \ln \frac{x + 1}{\sqrt{x - 2}} &= \frac{d}{dx} \left[ \ln(x + 1) - \tfrac{1}{2}\ln(x - 2) \right] \\[3pt]
+    &= \frac{1}{x + 1} - \frac{1}{2}\left(\frac{1}{x - 2}\right)
+  \end{align*}
+  (Kết quả này có thể để nguyên như vậy, nhưng nếu ta quy đồng mẫu số thì sẽ thấy nó cho cùng kết quả như ở Lời giải~1.) \hfill {\color{stewartcyan}$\blacksquare$}
+
+  \vspace{12pt}
+  \noindent\textbf{\textsf{\color{stewartcyan}VÍ DỤ 6}}\quad Tìm $f'(x)$ nếu $f(x) = \ln|x|$.
+
+  \vspace{5pt}
+  \noindent\textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\quad Vì
+  \[
+    f(x) = \begin{cases}
+      \ln x & \text{nếu } x > 0 \\[2pt]
+      \ln(-x) & \text{nếu } x < 0
+    \end{cases}
+  \]
+  nên suy ra
+  \[
+    f'(x) = \begin{cases}
+      \dfrac{1}{x} & \text{nếu } x > 0 \\[10pt]
+      \dfrac{1}{-x}(-1) = \dfrac{1}{x} & \text{nếu } x < 0
+    \end{cases}
+  \]
+  Do đó $f'(x) = 1/x$ với mọi $x \ne 0$. \hfill {\color{stewartcyan}$\blacksquare$}
+\end{minipage}
+
+\end{document}
