@@ -1,0 +1,91 @@
+\documentclass[10pt]{article}
+\usepackage[
+  paperwidth=8.5in,
+  paperheight=11in,
+  left=2.5in,
+  right=0.7in,
+  top=0.75in,
+  bottom=0.75in,
+  marginparwidth=1.9in,
+  marginparsep=0.25in
+]{geometry}
+\reversemarginpar
+
+\usepackage{fontspec}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{marginnote}
+\usepackage{fancyhdr}
+
+\definecolor{stewartblue}{RGB}{0, 130, 185}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[R]{\small\textsf{\textbf{MỤC 4.7}\quad Các bài toán tối ưu hóa}\quad\textbf{\textsf{341}}}
+\fancyfoot[C]{}
+
+\setlength{\parindent}{1.5em}
+\setlength{\parskip}{0pt}
+
+\begin{document}
+
+\noindent
+Để triệt tiêu $y$, ta sử dụng điều kiện $(x, y)$ nằm trên đường tròn $x^2 + y^2 = r^2$ và do đó $y = \sqrt{r^2 - x^2}$. Khi đó
+\[
+A = 2x\sqrt{r^2 - x^2}
+\]
+Tập xác định của hàm số này là $0 \leqslant x \leqslant r$. Đạo hàm của nó là
+\[
+A' = 2\sqrt{r^2 - x^2} - \frac{2x^2}{\sqrt{r^2 - x^2}} = \frac{2(r^2 - 2x^2)}{\sqrt{r^2 - x^2}}
+\]
+bằng $0$ khi $2x^2 = r^2$, tức là $x = r/\sqrt{2}$ (vì $x > 0$). Giá trị này của $x$ mang lại giá trị lớn nhất của $A$ vì $A(0) = 0$ và $A(r) = 0$. Do đó diện tích của hình chữ nhật nội tiếp lớn nhất là
+\[
+A\left(\frac{r}{\sqrt{2}}\right) = 2\,\frac{r}{\sqrt{2}}\sqrt{r^2 - \frac{r^2}{2}} = r^2
+\]
+
+\marginnote{
+  \centering
+  \includegraphics[width=\marginparwidth]{images/p0376_fig1.png}\\[4pt]
+  {\footnotesize\textbf{\textsf{HÌNH 10}}}
+}[10pt]%
+\noindent
+\textbf{\textcolor{stewartblue}{\textsf{LỜI GIẢI 2}}}\quad Một lời giải đơn giản hơn có thể thực hiện được nếu ta nghĩ đến việc sử dụng một góc làm biến số. Gọi $\theta$ là góc được chỉ ra trong Hình 10. Khi đó diện tích của hình chữ nhật là
+\[
+A(\theta) = (2r\cos\theta)(r\sin\theta) = r^2(2\sin\theta\cos\theta) = r^2\sin 2\theta
+\]
+\indent
+Ta biết rằng $\sin 2\theta$ có giá trị lớn nhất là 1 và đạt được khi $2\theta = \pi/2$. Do đó $A(\theta)$ có giá trị lớn nhất là $r^2$ và đạt được khi $\theta = \pi/4$.
+
+Lưu ý rằng lời giải lượng giác này không liên quan đến phép lấy đạo hàm. Trên thực tế, chúng ta hoàn toàn không cần dùng đến giải tích.\hfill{\color{stewartblue}\rule{1.1ex}{1.1ex}}
+
+\vspace{1.2em}
+\noindent
+{\color{stewartblue}\rule{1.1ex}{1.1ex}}\hspace{0.5em}{\large\textbf{\textsf{Ứng dụng trong Kinh doanh và Kinh tế}}}
+\vspace{0.6em}
+
+\noindent
+Trong Mục 3.7 chúng ta đã giới thiệu khái niệm chi phí cận biên. Nhắc lại rằng nếu $C(x)$, \textbf{hàm chi phí}, là chi phí sản xuất $x$ đơn vị của một sản phẩm nhất định, thì \textbf{chi phí cận biên} là tốc độ thay đổi của $C$ theo $x$. Nói cách khác, hàm chi phí cận biên là đạo hàm, $C'(x)$, của hàm chi phí.
+
+Bây giờ chúng ta hãy xem xét về tiếp thị. Gọi $p(x)$ là đơn giá mà công ty có thể định mức nếu bán được $x$ đơn vị sản phẩm. Khi đó $p$ được gọi là \textbf{hàm cầu} (hoặc \textbf{hàm giá}) và ta kỳ vọng đó là một hàm giảm theo $x$. (Càng bán được nhiều đơn vị tương ứng với đơn giá càng thấp.) Nếu $x$ đơn vị được bán và đơn giá là $p(x)$, thì tổng doanh thu là
+\[
+R(x) = \text{số lượng} \times \text{đơn giá} = x p(x)
+\]
+và $R$ được gọi là \textbf{hàm doanh thu}. Đạo hàm $R'$ của hàm doanh thu được gọi là \textbf{hàm doanh thu cận biên} và nó là tốc độ thay đổi của doanh thu theo số đơn vị bán được.
+
+Nếu $x$ đơn vị được bán, thì tổng lợi nhuận là
+\[
+P(x) = R(x) - C(x)
+\]
+và $P$ được gọi là \textbf{hàm lợi nhuận}. \textbf{Hàm lợi nhuận cận biên} là $P'$, đạo hàm của hàm lợi nhuận. Trong các Bài tập 65--69, bạn được yêu cầu sử dụng các hàm chi phí cận biên, doanh thu cận biên và lợi nhuận cận biên để cực tiểu hóa chi phí và cực đại hóa doanh thu cùng lợi nhuận.
+
+\vspace{1.2em}
+\noindent
+\textbf{\textcolor{stewartblue}{\textsf{VÍ DỤ 6}}}\quad Một cửa hàng đã bán được 200 màn hình TV mỗi tuần với giá 350\$ mỗi chiếc. Một cuộc khảo sát thị trường chỉ ra rằng với mỗi khoản giảm giá 10\$ dành cho người mua, số màn hình bán được sẽ tăng thêm 20 chiếc mỗi tuần. Hãy tìm hàm cầu và hàm doanh thu. Cửa hàng nên đưa ra mức giảm giá bao nhiêu để cực đại hóa doanh thu?
+
+\vspace{0.6em}
+\noindent
+\textbf{\textcolor{stewartblue}{\textsf{LỜI GIẢI}}}\quad Nếu $x$ là số lượng màn hình bán được mỗi tuần, thì mức tăng doanh số hàng tuần là $x - 200$. Với mỗi mức tăng 20 đơn vị bán ra, giá bán sẽ giảm đi 10\$. Do đó
+
+\end{document}

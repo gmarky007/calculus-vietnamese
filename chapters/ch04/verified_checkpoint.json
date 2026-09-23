@@ -371,6 +371,12 @@
       "score": 99,
       "notes": "Bản dịch hiện tại là văn bản từ chối của AI, thiếu toàn bộ nội dung trang 375 (Ví dụ 4, Ví dụ 5, các công thức toán học và 3 hình đồ thị). Cần dựng lại toàn bộ mã nguồn XeLaTeX chuẩn đối chiếu 1:1 với bản gốc.",
       "time": "2026-09-23 12:25:40"
+    },
+    {
+      "page_num": 376,
+      "score": 99,
+      "notes": "Mã nguồn hiện tại là văn bản từ chối/tóm tắt thô, hoàn toàn thiếu cấu trúc 2 cột bất đối xứng, công thức toán và hình lề Hình 10. Đã viết lại toàn bộ mã nguồn XeLaTeX chuẩn xác 1:1 theo giáo trình James Stewart.",
+      "time": "2026-09-23 12:27:11"
     }
   ]
 }
