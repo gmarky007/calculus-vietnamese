@@ -1,0 +1,105 @@
+\documentclass[10pt]{article}
+\usepackage[vietnamese]{babel}
+\usepackage[letterpaper, top=2.0cm, bottom=2.0cm, left=1.8cm, right=1.8cm, headheight=14pt]{geometry}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{fancyhdr}
+
+% Định nghĩa hệ màu chuẩn Stewart Calculus
+\definecolor{stewartcyan}{RGB}{0, 130, 185}
+\definecolor{stewarterror}{RGB}{204, 30, 30}
+\definecolor{stewartred}{RGB}{180, 0, 0}
+\definecolor{stewartgray}{RGB}{90, 90, 90}
+
+% Biểu tượng cảnh báo lỗi sai phổ biến của giáo trình Stewart
+\newcommand{\stewartwarning}{%
+  \begin{tikzpicture}[baseline=-0.5ex, scale=0.85]
+    \draw[stewarterror, line width=1.3pt] (0,0) circle (5.2pt);
+    \draw[stewarterror, line width=1.3pt] (-3.7pt, 3.7pt) -- (3.7pt, -3.7pt);
+  \end{tikzpicture}%
+}
+
+% Thiết lập tiêu đề đầu trang và chân trang chuẩn
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[R]{\textsf{\fontsize{8.5}{11}\selectfont \textbf{MỤC 4.4}\hspace{1.5em}Các dạng vô định và quy tắc l'Hospital}\hspace{3.5em}\textbf{\textsf{\fontsize{10}{12}\selectfont 313}}}
+\fancyfoot[C]{\fontsize{7}{9}\selectfont\color{stewartgray} Bản dịch số hóa học thuật phục vụ học tập và nghiên cứu}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4.5pt}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.26\textwidth}
+    % Cột lề trái: Ghi chú và Hình 5 dóng thẳng hàng ngang chính xác với đoạn "Loại giới hạn này..."
+    \vspace*{11.8cm}
+    {\fontsize{8.5}{11.5}\selectfont\noindent Hình~5 biểu diễn đồ thị của hàm số trong Ví dụ~6. Chú ý rằng hàm số không xác định tại $x = 0$; đồ thị tiệm cận dần về gốc tọa độ nhưng không bao giờ thực sự chạm tới điểm đó.\par}
+
+    \vspace{1.0em}
+    \centering
+    \IfFileExists{images/p0348_fig1.png}{%
+        \includegraphics[width=0.95\linewidth]{images/p0348_fig1.png}%
+    }{%
+        \begin{tikzpicture}[scale=1.15, >=stealth]
+            \draw[->] (-0.3, 0) -- (2.35, 0) node[below] {\footnotesize $x$};
+            \draw[->] (0, -0.65) -- (0, 1.85) node[left] {\footnotesize $y$};
+            \node[below left] at (0, 0) {\footnotesize $0$};
+            \draw[domain=0.035:2.1, samples=120, smooth, thick, stewarterror] 
+                plot (\x, {\x * ln(\x)});
+            \draw[stewarterror, fill=white, thick] (0,0) circle (1.8pt);
+            \draw (1, 0.05) -- (1, -0.05) node[below] {\footnotesize $1$};
+            \node[above left] at (1.8, 1.15) {\footnotesize $y = x\ln x$};
+        \end{tikzpicture}%
+    }
+    \par\vspace{0.4em}
+    {\textbf{\textsf{\footnotesize HÌNH 5}}}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.71\textwidth}
+    % Cột chính: Các ví dụ, lý thuyết và công thức toán học
+    \textbf{\textsf{\color{stewartcyan}VÍ DỤ 5}}\hspace{1em}Tìm $\displaystyle\lim_{x \to \pi^-} \frac{\sin x}{1 - \cos x}$.
+
+    \vspace{0.2em}
+    \textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\hspace{1em}Nếu áp dụng quy tắc l'Hospital một cách máy móc, ta có thể nghĩ rằng giới hạn tương đương là
+    \[
+    \lim_{x \to \pi^-} \frac{\cos x}{\sin x} = -\infty
+    \]
+    \noindent\stewartwarning\hspace{0.4em}Điều này là \textbf{\color{stewarterror}sai}! Mặc dù tử số $\sin x \to 0$ khi $x \to \pi^-$, hãy chú ý rằng mẫu số $(1 - \cos x)$ không tiến về $0$, do đó không thể áp dụng quy tắc l'Hospital ở đây.
+
+    Trên thực tế, giới hạn cần tìm có thể được tính bằng cách thay số trực tiếp vì hàm số liên tục tại $\pi$ và mẫu số khác không tại đó:
+    \begin{equation*}
+    \lim_{x \to \pi^-} \frac{\sin x}{1 - \cos x} = \frac{\sin \pi}{1 - \cos \pi} = \frac{0}{1 - (-1)} = 0 \tag*{{\color{stewartcyan}\blacksquare}}
+    \end{equation*}
+
+    Ví dụ~5 cho thấy điều có thể sai sót nếu bạn áp dụng quy tắc l'Hospital mà không suy xét. Một số giới hạn \emph{có thể} tìm được bằng quy tắc l'Hospital nhưng lại được tính dễ dàng hơn nhiều bằng các phương pháp khác. (Xem các Ví dụ~2.3.3, 2.3.5 và 2.6.3, cùng phần thảo luận ở đầu mục này.) Khi tính bất kỳ giới hạn nào, bạn nên cân nhắc các phương pháp khác trước khi sử dụng quy tắc l'Hospital.
+
+    \vspace{0.6em}
+    \noindent{\color{stewartcyan}\rule{1.1ex}{1.1ex}}\hspace{0.5em}\textbf{\textsf{Tích vô định (Dạng $\boldsymbol{0 \cdot \infty}$)}}\par\vspace{0.2em}
+    Nếu $\lim_{x \to a} f(x) = 0$ và $\lim_{x \to a} g(x) = \infty$ (hoặc $-\infty$), thì chưa rõ giá trị của $\lim_{x \to a} [f(x)g(x)]$, nếu có, sẽ là bao nhiêu. Có một sự ``giằng co'' giữa $f$ và $g$. Nếu $f$ thắng, kết quả sẽ là $0$; nếu $g$ thắng, kết quả sẽ là $\infty$ (hoặc $-\infty$). Hoặc có thể có một sự dung hòa mà ở đó kết quả là một số hữu hạn khác không. Chẳng hạn,
+    \begin{alignat*}{3}
+    &\lim_{x \to 0^+} x^2 = 0, \qquad &&\lim_{x \to 0^+} \frac{1}{x} = \infty \qquad &&\text{và}\qquad \lim_{x \to 0^+} x^2 \cdot \frac{1}{x} = \lim_{x \to 0^+} x = 0\\[4pt]
+    &\lim_{x \to 0^+} x = 0, \qquad &&\lim_{x \to 0^+} \frac{1}{x^2} = \infty \qquad &&\text{và}\qquad \lim_{x \to 0^+} x \cdot \frac{1}{x^2} = \lim_{x \to 0^+} \frac{1}{x} = \infty\\[4pt]
+    &\lim_{x \to 0^+} x = 0, \qquad &&\lim_{x \to 0^+} \frac{1}{x} = \infty \qquad &&\text{và}\qquad \lim_{x \to 0^+} x \cdot \frac{1}{x} = \lim_{x \to 0^+} 1 = 1
+    \end{alignat*}
+
+    Loại giới hạn này được gọi là \textbf{dạng vô định kiểu $\boldsymbol{0 \cdot \infty}$}. Ta có thể xử lý nó bằng cách viết tích $fg$ dưới dạng một thương:
+    \[
+    fg = \frac{f}{1/g} \qquad \text{hoặc} \qquad fg = \frac{g}{1/f}
+    \]
+    Cách biến đổi này chuyển giới hạn đã cho thành dạng vô định kiểu $\frac{0}{0}$ hoặc $\frac{\infty}{\infty}$ để chúng ta có thể áp dụng quy tắc l'Hospital.
+
+    \vspace{0.6em}
+    \textbf{\textsf{\color{stewartcyan}VÍ DỤ 6}}\hspace{1em}Tính $\displaystyle\lim_{x \to 0^+} x \ln x$.
+
+    \vspace{0.2em}
+    \textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\hspace{1em}Giới hạn đã cho có dạng vô định vì khi $x \to 0^+$, thừa số thứ nhất ($x$) tiến về $0$ trong khi thừa số thứ hai ($\ln x$) tiến về $-\infty$. Viết lại $x = 1/(1/x)$, ta có $1/x \to \infty$ khi $x \to 0^+$, do đó quy tắc l'Hospital cho ta
+    \begin{equation*}
+    \lim_{x \to 0^+} x \ln x = \lim_{x \to 0^+} \frac{\ln x}{1/x} = \lim_{x \to 0^+} \frac{1/x}{-1/x^2} = \lim_{x \to 0^+} (-x) = 0 \tag*{{\color{stewartcyan}\blacksquare}}
+    \end{equation*}
+\end{minipage}
+
+\end{document}
