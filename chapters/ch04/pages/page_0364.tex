@@ -1,0 +1,161 @@
+\documentclass[10pt]{article}
+\usepackage[paperwidth=8.5in, paperheight=11in, top=0.42in, bottom=0.38in, left=0.6in, right=0.55in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{newtxtext,newtxmath}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{fancyhdr}
+\usepackage{microtype}
+\usepackage{url}
+
+% Màu nhận diện của giáo trình Stewart Calculus
+\definecolor{stewartcyan}{RGB}{0, 145, 215}
+\definecolor{stewartdarkblue}{RGB}{0, 102, 153}
+\definecolor{linegray}{RGB}{200, 200, 200}
+
+% Cấu hình header & footer chuẩn quốc tế
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[R]{%
+  \textsf{\textbf{\color{stewartcyan}MỤC 4.6}}\hspace{1.5em}%
+  \textsf{Vẽ đồ thị bằng Giải tích \emph{và} Công nghệ}\hspace{3em}%
+  \textsf{\textbf{329}}%
+}
+\fancyfoot[C]{%
+  \fontsize{6.5}{8}\selectfont\color{gray}%
+  Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\\[1pt]
+  Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.%
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\begin{document}
+
+% -----------------------------------------------------------------------------
+% PHẦN BÀI TẬP CUỐI MỤC 4.5 (2 CỘT CÂN ĐỐI)
+% -----------------------------------------------------------------------------
+\noindent
+\begin{minipage}[t]{0.47\textwidth}
+  \fontsize{9.3}{11.5}\selectfont
+  \hangindent=1.8em\hangafter=1
+  \textbf{78.} Cho $f(x) = (x^3 + 1)/x$. Chứng minh rằng
+  \setlength{\abovedisplayskip}{3pt}
+  \setlength{\belowdisplayskip}{3pt}
+  \[
+  \lim_{x \to \pm\infty} [f(x) - x^2] = 0
+  \]
+  Điều này cho thấy đồ thị của $f$ tiến gần đến đồ thị của $y = x^2$, và ta nói rằng đường cong $y = f(x)$ \emph{tiệm cận} với parabol $y = x^2$. Hãy sử dụng điều này để giúp vẽ đồ thị của $f$.
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.49\textwidth}
+  \fontsize{9.3}{11.5}\selectfont
+  \hangindent=1.8em\hangafter=1
+  \textbf{79.} Thảo luận về hành vi tiệm cận của $f(x) = (x^4 + 1)/x$ theo cách tương tự như trong Bài tập 78. Sau đó sử dụng các kết quả của bạn để giúp vẽ đồ thị của $f$.
+
+  \vspace{0.6em}
+  \hangindent=1.8em\hangafter=1
+  \textbf{80.} Sử dụng hành vi tiệm cận của $f(x) = \sin x + e^{-x}$ để vẽ đồ thị của nó mà không cần thực hiện toàn bộ quy trình vẽ đường cong của mục này.
+\end{minipage}
+
+\vspace{1.2em}
+
+% -----------------------------------------------------------------------------
+% TIÊU ĐỀ MỤC 4.6 (5 VẠCH CYAN + SỐ MỤC + TÊN MỤC)
+% -----------------------------------------------------------------------------
+\noindent
+\begin{minipage}[c]{0.26\textwidth}
+  \begin{tikzpicture}[x=1pt,y=1pt,baseline=-6pt]
+    \foreach \i in {0, 3.2, 6.4, 9.6, 12.8} {
+      \fill[stewartcyan] (0, \i) rectangle (52, \i + 1.2);
+    }
+  \end{tikzpicture}%
+  \hfill
+  {\fontsize{24}{26}\selectfont\bfseries\color{stewartcyan}4.6}%
+  \hspace{0.35em}{\color{stewartcyan}\vrule width 1.3pt height 22pt depth 5pt}%
+\end{minipage}%
+\hspace{0.03\textwidth}%
+\begin{minipage}[c]{0.71\textwidth}
+  {\fontsize{17}{20}\selectfont\bfseries\textsf{Vẽ đồ thị bằng Giải tích \emph{và} Công nghệ}}
+\end{minipage}
+
+\vspace{1.0em}
+
+% -----------------------------------------------------------------------------
+% BỐ CỤC 2 CỘT CHÍNH: CỘT LỀ TRÁI (MARGIN) & CỘT CHÍNH (MAIN)
+% -----------------------------------------------------------------------------
+\noindent
+\begin{minipage}[t]{0.26\textwidth}
+  % Ghi chú bên lề
+  {\fontsize{8}{10.2}\selectfont\raggedright
+  Bạn có thể muốn đọc phần \emph{Máy tính và phần mềm vẽ đồ thị} (\emph{Graphing Calculators and Computers}) tại \url{www.StewartCalculus.com} nếu bạn chưa đọc. Cụ thể, phần này giải thích cách tránh một số cạm bẫy của các thiết bị vẽ đồ thị bằng cách chọn các hình chữ nhật hiển thị thích hợp.\par}
+
+  \vspace{1.5em}
+  % Hình 1
+  \centering
+  \includegraphics[width=\linewidth,height=80pt,keepaspectratio]{images/p0364_fig1.png}
+  
+  \vspace{0.25em}
+  {\small\textbf{\textsf{HÌNH 1}}}
+
+  \vspace{1.6em}
+  % Hình 2
+  \centering
+  \includegraphics[width=\linewidth,height=80pt,keepaspectratio]{images/p0364_fig2.png}
+  
+  \vspace{0.25em}
+  {\small\textbf{\textsf{HÌNH 2}}}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.71\textwidth}
+  \fontsize{9.3}{11.5}\selectfont
+  \setlength{\parindent}{1.2em}
+  \noindent
+  Phương pháp chúng ta đã dùng để phác thảo các đường cong trong mục trước là đỉnh cao của phần lớn nội dung nghiên cứu giải tích vi phân của chúng ta. Đồ thị là đối tượng cuối cùng mà chúng ta tạo ra. Trong mục này, quan điểm của chúng ta hoàn toàn khác. Ở đây chúng ta \emph{bắt đầu} với một đồ thị do máy tính bỏ túi hoặc máy vi tính vẽ đồ thị tạo ra rồi sau đó chúng ta tinh chỉnh nó. Chúng ta sử dụng giải tích để đảm bảo rằng mình tìm ra tất cả các khía cạnh quan trọng của đường cong. Và với sự trợ giúp của các thiết bị vẽ đồ thị, chúng ta có thể khảo sát những đường cong vốn quá phức tạp nếu không có công nghệ. Chủ đề ở đây là \emph{sự tương tác} giữa giải tích và công nghệ.
+
+  \vspace{0.55em}
+  \noindent
+  \textbf{\textsf{\color{stewartcyan}VÍ DỤ 1}}\hspace{0.8em}Vẽ đồ thị hàm đa thức $f(x) = 2x^6 + 3x^5 + 3x^3 - 2x^2$. Hãy sử dụng đồ thị của $f'$ và $f''$ để ước lượng tất cả các điểm cực đại, cực tiểu và các khoảng lồi, lõm.
+
+  \vspace{0.5em}
+  \noindent
+  \textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\hspace{0.8em}Nếu chúng ta chỉ định miền xác định mà không chỉ định miền giá trị, phần mềm vẽ đồ thị thường sẽ tự suy ra một khoảng giá trị thích hợp từ các giá trị được tính toán. Hình 1 cho thấy một đồ thị có thể nhận được nếu ta chỉ định $-5 \le x \le 5$. Mặc dù hình chữ nhật hiển thị này hữu ích để chỉ ra rằng hành vi tiệm cận (hoặc hành vi ở vô tận) cũng giống như đối với $y = 2x^6$, nhưng nó rõ ràng đang che giấu một số chi tiết tinh tế hơn. Vì vậy, chúng ta chuyển sang hình chữ nhật hiển thị $[-3, 2]$ theo $[-50, 100]$ ở Hình 2.
+
+  \indent
+  Hầu hết các máy tính bỏ túi và phần mềm vẽ đồ thị đều cho phép chúng ta “truy vết” (trace) dọc theo một đường cong và xem tọa độ xấp xỉ của các điểm. (Một số phần mềm cũng có tính năng xác định vị trí xấp xỉ của các điểm cực đại và cực tiểu địa phương.) Ở đây, dường như có một giá trị cực tiểu tuyệt đối khoảng $-15{,}33$ khi $x \approx -1{,}62$ và $f$ nghịch biến trên $(-\infty, -1{,}62)$ và đồng biến trên $(-1{,}62, \infty)$. Ngoài ra, dường như có một tiếp tuyến nằm ngang tại gốc tọa độ và các điểm uốn khi $x = 0$ và khi $x$ nằm ở đâu đó giữa $-2$ và $-1$.
+
+  \indent
+  Bây giờ chúng ta hãy thử xác nhận những nhận định này bằng giải tích. Ta lấy đạo hàm:
+  \setlength{\abovedisplayskip}{3pt}
+  \setlength{\belowdisplayskip}{3pt}
+  \begin{align*}
+  f'(x) &= 12x^5 + 15x^4 + 9x^2 - 4x \\
+  f''(x) &= 60x^4 + 60x^3 + 18x - 4
+  \end{align*}
+  Khi vẽ đồ thị $f'$ ở Hình 3, chúng ta thấy rằng $f'(x)$ đổi dấu từ âm sang dương khi $x \approx -1{,}62$; điều này khẳng định (bằng Kiểm định Đạo hàm Cấp một) giá trị cực tiểu mà ta đã tìm thấy trước đó. Nhưng có lẽ thật đáng ngạc nhiên, chúng ta cũng nhận thấy rằng $f'(x)$ đổi dấu từ dương sang âm khi $x = 0$ và từ âm sang dương khi $x \approx 0{,}35$. Điều này có nghĩa là $f$ có một cực đại địa phương tại $0$ và một cực tiểu địa phương khi $x \approx 0{,}35$, nhưng những điểm này đã bị che khuất trong Hình 2. Thật vậy, nếu bây giờ chúng ta phóng to về phía gốc tọa độ ở Hình 4, chúng ta
+
+  \vspace{0.6em}
+  \noindent
+  \begin{minipage}[t]{0.485\linewidth}
+    \centering
+    \includegraphics[width=\linewidth,height=82pt,keepaspectratio]{images/p0364_fig3.png}
+    
+    \vspace{0.25em}
+    {\small\textbf{\textsf{HÌNH 3}}}
+  \end{minipage}%
+  \hfill
+  \begin{minipage}[t]{0.485\linewidth}
+    \centering
+    \includegraphics[width=\linewidth,height=82pt,keepaspectratio]{images/p0364_fig4.png}
+    
+    \vspace{0.25em}
+    {\small\textbf{\textsf{HÌNH 4}}}
+  \end{minipage}
+\end{minipage}
+
+\vfill
+\end{document}

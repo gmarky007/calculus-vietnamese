@@ -299,6 +299,12 @@
       "score": 99,
       "notes": "Bản dịch bị lỗi biên dịch nghiêm trọng: toàn bộ phần khai báo preamble bị in thẳng ra trang in dưới dạng văn bản thô và toàn bộ phần nội dung trang bị biến mất. Cần tái cấu trúc toàn bộ mã nguồn XeLaTeX để đảm bảo biên dịch sạch, khôi phục đầy đủ bố cục 2 cột, dóng hàng hình ảnh và các bài tập chuẩn 1:1 theo bản gốc James Stewart Calculus.",
       "time": "2026-09-23 11:58:49"
+    },
+    {
+      "page_num": 364,
+      "score": 99,
+      "notes": "Bản dịch bị lỗi nghiêm trọng: dòng mã preamble bị in thô lên đầu trang do lỗi ký tự thoát, đồng thời khối minipage chính bị tràn làm toàn bộ nửa dưới trang bị đẩy sang trang 2 (để lại khoảng trắng lớn). Cần định dạng lại kích thước, hình ảnh và tỷ lệ 2 cột để toàn bộ trang khớp 1:1 trên cùng một trang chuẩn xác.",
+      "time": "2026-09-23 12:01:32"
     }
   ]
 }
