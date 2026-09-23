@@ -1,0 +1,188 @@
+\documentclass[10pt]{article}
+\usepackage[T5]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{mathptmx}
+\usepackage{geometry}
+\geometry{
+  paperwidth=8.5in,
+  paperheight=11in,
+  left=0.6in,
+  right=0.6in,
+  top=0.6in,
+  bottom=0.55in,
+  headheight=14pt,
+  headsep=12pt,
+  footskip=18pt
+}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{array}
+
+\definecolor{stewartcyan}{RGB}{0, 130, 165}
+
+\newcommand{\graphicon}{%
+  \begin{tikzpicture}[baseline=-0.6ex, scale=0.8]
+    \draw[color=stewartcyan, fill=cyan!10, line width=0.6pt, rounded corners=0.8pt] (-0.2,-0.2) rectangle (0.2,0.2);
+    \draw[color=stewartcyan, line width=0.7pt, smooth] plot coordinates {(-0.15,-0.1) (-0.05,0.12) (0.05,-0.05) (0.15,0.15)};
+  \end{tikzpicture}%
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[R]{\small\sffamily\textbf{\color{stewartcyan}MỤC 4.4}\quad\textsf{Dạng vô định và quy tắc l'Hospital}\qquad\textbf{317}}
+\fancyfoot[C]{\fontsize{6.5pt}{8pt}\selectfont\color{gray}
+Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\\
+Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.485\textwidth}
+\small
+\renewcommand{\arraystretch}{1.78}
+\begin{tabular*}{\linewidth}{@{}p{0.48\linewidth}@{\extracolsep{\fill}}p{0.48\linewidth}@{}}
+\textbf{29.} $\lim\limits_{x \to 0} \dfrac{\tanh x}{\tan x}$ &
+\textbf{30.} $\lim\limits_{x \to 0} \dfrac{x - \sin x}{x - \tan x}$ \\
+\textbf{31.} $\lim\limits_{x \to 0} \dfrac{\sin^{-1} x}{x}$ &
+\textbf{32.} $\lim\limits_{x \to \infty} \dfrac{(\ln x)^2}{x}$ \\
+\textbf{33.} $\lim\limits_{x \to 0} \dfrac{x}{3^x - 1}$ &
+\textbf{34.} $\lim\limits_{x \to 0} \dfrac{e^x + e^{-x} - 2\cos x}{x \sin x}$ \\
+\textbf{35.} $\lim\limits_{x \to 0} \dfrac{\ln(1 + x)}{\cos x + e^x - 1}$ &
+\textbf{36.} $\lim\limits_{x \to 1} \dfrac{x \sin(x - 1)}{2x^2 - x - 1}$ \\
+\textbf{37.} $\lim\limits_{x \to 0^+} \dfrac{\arctan 2x}{\ln x}$ &
+\textbf{38.} $\lim\limits_{x \to 0} \dfrac{x^2 \sin x}{\sin x - x}$ \\
+\textbf{39.} $\lim\limits_{x \to 1} \dfrac{x^a - 1}{x^b - 1}, \; b \neq 0$ &
+\textbf{40.} $\lim\limits_{x \to \infty} \dfrac{e^{-x}}{(\pi/2) - \tan^{-1} x}$ \\
+\textbf{41.} $\lim\limits_{x \to 0} \dfrac{\cos x - 1 + \frac{1}{2}x^2}{x^4}$ &
+\textbf{42.} $\lim\limits_{x \to 0} \dfrac{x - \sin x}{x \sin(x^2)}$ \\
+\textbf{43.} $\lim\limits_{x \to \infty} x \sin(\pi/x)$ &
+\textbf{44.} $\lim\limits_{x \to \infty} \sqrt{x}\, e^{-x/2}$ \\
+\textbf{45.} $\lim\limits_{x \to 0} \sin 5x \csc 3x$ &
+\textbf{46.} $\lim\limits_{x \to -\infty} x \ln\left(1 - \dfrac{1}{x}\right)$ \\
+\textbf{47.} $\lim\limits_{x \to \infty} x^3 e^{-x^2}$ &
+\textbf{48.} $\lim\limits_{x \to \infty} x^{3/2} \sin(1/x)$ \\
+\textbf{49.} $\lim\limits_{x \to 1^+} \ln x \tan(\pi x/2)$ &
+\textbf{50.} $\lim\limits_{x \to (\pi/2)^-} \cos x \sec 5x$ \\
+\textbf{51.} $\lim\limits_{x \to 1} \left(\dfrac{x}{x - 1} - \dfrac{1}{\ln x}\right)$ &
+\textbf{52.} $\lim\limits_{x \to 0} (\csc x - \cot x)$ \\
+\textbf{53.} $\lim\limits_{x \to 0^+} \left(\dfrac{1}{x} - \dfrac{1}{e^x - 1}\right)$ &
+\textbf{54.} $\lim\limits_{x \to 0^+} \left(\dfrac{1}{x} - \dfrac{1}{\tan^{-1} x}\right)$ \\
+\textbf{55.} $\lim\limits_{x \to 0^+} \left(\dfrac{1}{x} - \dfrac{1}{\tan x}\right)$ &
+\textbf{56.} $\lim\limits_{x \to \infty} (x - \ln x)$ \\
+\textbf{57.} $\lim\limits_{x \to 0^+} x^{\sqrt{x}}$ &
+\textbf{58.} $\lim\limits_{x \to 0^+} (\tan 2x)^x$ \\
+\textbf{59.} $\lim\limits_{x \to 0} (1 - 2x)^{1/x}$ &
+\textbf{60.} $\lim\limits_{x \to \infty} \left(1 + \dfrac{a}{x}\right)^{bx}$ \\
+\textbf{61.} $\lim\limits_{x \to 1^+} x^{1/(1 - x)}$ &
+\textbf{62.} $\lim\limits_{x \to \infty} (e^x + 10x)^{1/x}$ \\
+\textbf{63.} $\lim\limits_{x \to \infty} x^{1/x}$ &
+\textbf{64.} $\lim\limits_{x \to \infty} x^{e^{-x}}$ \\
+\textbf{65.} $\lim\limits_{x \to 0^+} (4x + 1)^{\cot x}$ &
+\textbf{66.} $\lim\limits_{x \to 0^+} (1 - \cos x)^{\sin x}$ \\
+\textbf{67.} $\lim\limits_{x \to 0^+} (1 + \sin 3x)^{1/x}$ &
+\textbf{68.} $\lim\limits_{x \to 0} (\cos x)^{1/x^2}$ \\
+\textbf{69.} $\lim\limits_{x \to 0^+} \dfrac{x^x - 1}{\ln x + x - 1}$ &
+\textbf{70.} $\lim\limits_{x \to \infty} \left(\dfrac{2x - 3}{2x + 5}\right)^{2x + 1}$
+\end{tabular*}
+
+\vspace{5pt}
+{\color{stewartcyan}\hrule height 0.6pt}
+\vspace{4pt}
+
+\noindent
+\graphicon\ \textbf{\color{stewartcyan}71–72}\; Sử dụng đồ thị để ước lượng giá trị của giới hạn. Sau đó dùng quy tắc l'Hospital để tìm giá trị chính xác.
+
+\vspace{3pt}
+\renewcommand{\arraystretch}{1.9}
+\begin{tabular*}{\linewidth}{@{}p{0.48\linewidth}@{\extracolsep{\fill}}p{0.48\linewidth}@{}}
+\textbf{71.} $\lim\limits_{x \to \infty} \left(1 + \dfrac{2}{x}\right)^x$ &
+\textbf{72.} $\lim\limits_{x \to 0} \dfrac{5^x - 4^x}{3^x - 2^x}$
+\end{tabular*}
+
+\vspace{2pt}
+{\color{stewartcyan}\hrule height 0.6pt}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.485\textwidth}
+\small
+\noindent
+\graphicon\ \textbf{\color{stewartcyan}73–74}\; Minh họa quy tắc l'Hospital bằng cách vẽ đồ thị của cả $f(x)/g(x)$ và $f'(x)/g'(x)$ lân cận $x = 0$ để thấy rằng các tỉ số này có cùng giới hạn khi $x \to 0$. Đồng thời, hãy tính giá trị chính xác của giới hạn.
+
+\vspace{4pt}
+\noindent
+\textbf{73.} $f(x) = e^x - 1, \quad g(x) = x^3 + 4x$
+
+\vspace{3pt}
+\noindent
+\textbf{74.} $f(x) = 2x \sin x, \quad g(x) = \sec x - 1$
+
+\vspace{5pt}
+{\color{stewartcyan}\hrule height 0.4pt}
+\vspace{5pt}
+
+\noindent
+\textbf{75.} Chứng minh rằng
+\[
+\lim_{x \to \infty} \frac{e^x}{x^n} = \infty
+\]
+với mọi số nguyên dương $n$. Điều này cho thấy hàm mũ tiến tới vô cùng nhanh hơn bất kỳ lũy thừa nào của $x$.
+
+\vspace{5pt}
+\noindent
+\textbf{76.} Chứng minh rằng
+\[
+\lim_{x \to \infty} \frac{\ln x}{x^p} = 0
+\]
+với mọi số $p > 0$. Điều này cho thấy hàm logarit tiến tới vô cùng chậm hơn bất kỳ lũy thừa nào của $x$.
+
+\vspace{5pt}
+\noindent
+\textbf{\color{stewartcyan}77–78}\; Điều gì xảy ra nếu bạn cố gắng sử dụng quy tắc l'Hospital để tìm giới hạn? Hãy tính giới hạn bằng cách sử dụng một phương pháp khác.
+
+\vspace{3pt}
+\renewcommand{\arraystretch}{2.0}
+\begin{tabular*}{\linewidth}{@{}p{0.48\linewidth}@{\extracolsep{\fill}}p{0.48\linewidth}@{}}
+\textbf{77.} $\lim\limits_{x \to \infty} \dfrac{x}{\sqrt{x^2 + 1}}$ &
+\textbf{78.} $\lim\limits_{x \to (\pi/2)^-} \dfrac{\sec x}{\tan x}$
+\end{tabular*}
+
+\vspace{1pt}
+{\color{stewartcyan}\hrule height 0.4pt}
+\vspace{5pt}
+
+\noindent
+\graphicon\ \textbf{79.}\; Khảo sát họ đường cong $f(x) = e^x - cx$. Cụ thể, hãy tìm các giới hạn khi $x \to \pm\infty$ và xác định các giá trị của $c$ sao cho $f$ có giá trị cực tiểu tuyệt đối. Điều gì xảy ra với các điểm cực tiểu khi $c$ tăng?
+
+\vspace{5pt}
+\noindent
+\textbf{80.} Nếu một vật có khối lượng $m$ được thả rơi từ trạng thái nghỉ, một mô hình cho tốc độ $v$ của nó sau $t$ giây, có tính đến lực cản của không khí, là
+\[
+v = \frac{mg}{c} \left(1 - e^{-ct/m}\right)
+\]
+trong đó $g$ là gia tốc trọng trường và $c$ là một hằng số dương. (Trong Chương 9, chúng ta sẽ có thể suy ra phương trình này từ giả thiết lực cản của không khí tỉ lệ thuận với tốc độ của vật; $c$ là hệ số tỉ lệ.)
+\begin{enumerate}[label=(\alph*), leftmargin=1.5em, itemsep=1.5pt, topsep=2pt]
+  \item Tính $\lim\limits_{t \to \infty} v$. Ý nghĩa của giới hạn này là gì?
+  \item Với $t$ cố định, hãy sử dụng quy tắc l'Hospital để tính $\lim\limits_{c \to 0^+} v$. Bạn có thể kết luận gì về vận tốc của một vật rơi trong chân không?
+\end{enumerate}
+
+\vspace{5pt}
+\noindent
+\textbf{81.} Nếu số tiền ban đầu $A_0$ được đầu tư với lãi suất $r$ ghép lãi $n$ lần một năm, thì giá trị của khoản đầu tư sau $t$ năm là
+\[
+A = A_0 \left(1 + \frac{r}{n}\right)^{nt}
+\]
+Nếu ta cho $n \to \infty$, ta gọi đó là sự \textit{ghép lãi liên tục}. Hãy sử dụng quy tắc l'Hospital để chỉ ra rằng nếu tiền lãi được ghép liên tục, thì số tiền sau $t$ năm là
+\[
+A = A_0 e^{rt}
+\]
+\end{minipage}
+
+\end{document}

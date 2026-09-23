@@ -227,6 +227,12 @@
       "score": 99,
       "notes": "Bản dịch đảm bảo chuẩn thuật ngữ và bố cục hai cột, nhưng bị lỗi tràn mã khai báo gói lệnh ở đầu trang và cần căn chỉnh khoảng cách các bài tập 8–28 cho cân đối.",
       "time": "2026-09-23 11:20:36"
+    },
+    {
+      "page_num": 352,
+      "score": 99,
+      "notes": "Bản dịch gặp lỗi phân tách khối khiến toàn bộ nội dung bài tập bị đẩy tràn trang, trang đầu chỉ hiển thị phần đầu đề và chuỗi ký tự lỗi. Cần tinh chỉnh lại cấu trúc minipage và khoảng cách dòng để đảm bảo bố cục 2 cột nằm trọn vẹn trên một trang.",
+      "time": "2026-09-23 11:25:20"
     }
   ]
 }
