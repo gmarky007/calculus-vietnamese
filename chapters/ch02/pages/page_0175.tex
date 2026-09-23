@@ -1,31 +1,3 @@
-\documentclass[10pt]{article}
-\usepackage[paperwidth=210mm, paperheight=280mm, left=18mm, right=18mm, top=16mm, bottom=18mm]{geometry}
-\usepackage{amsmath,amssymb,amsfonts}
-\usepackage{fontspec}
-\setmainfont{TeX Gyre Termes}
-\usepackage{xcolor}
-\usepackage{tikz}
-\usepackage{microtype}
-
-% Màu sắc nhận diện chuẩn giáo trình Stewart
-\definecolor{stewartblue}{RGB}{0, 115, 175}
-\definecolor{stewartline}{RGB}{70, 160, 215}
-\definecolor{stewarttitle}{RGB}{15, 45, 85}
-
-% Biểu tượng đồ thị máy tính/màn hình nhỏ trước các bài toán CAS
-\newcommand{\graphicon}{%
-  \begin{tikzpicture}[x=1ex, y=1ex, baseline=-0.25ex]
-    \draw[fill=cyan!12, draw=cyan!80!black, line width=0.55pt, rounded corners=0.6pt] (0,0) rectangle (1.4, 1.25);
-    \draw[red!80!black, line width=0.55pt] (0.2, 0.35) sin (0.7, 0.95) cos (1.2, 0.3);
-  \end{tikzpicture}\hspace{1.5pt}%
-}
-
-\pagestyle{empty}
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{0pt}
-
-\begin{document}
-
 % Header trang
 {\small
 \textbf{140}\qquad \textbf{CHƯƠNG 2}\quad Giới hạn và Đạo hàm
@@ -166,4 +138,3 @@ Bây giờ khi đã định nghĩa giới hạn và học các kỹ thuật tín
 \end{minipage}
 
 \vfill
-\end{document}

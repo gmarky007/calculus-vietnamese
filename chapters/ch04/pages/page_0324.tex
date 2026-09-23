@@ -1,35 +1,3 @@
-\documentclass[10pt]{article}
-\usepackage[letterpaper, top=1.4cm, bottom=1.4cm, left=1.3cm, right=1.3cm]{geometry}
-\usepackage{fontspec}
-\usepackage{amsmath,amssymb}
-\usepackage{graphicx}
-\usepackage{xcolor}
-\usepackage{tikz}
-\usepackage{fancyhdr}
-
-\IfFontExistsTF{Times New Roman}{
-  \setmainfont{Times New Roman}
-}{
-  \IfFontExistsTF{TeX Gyre Termes}{\setmainfont{TeX Gyre Termes}}{}
-}
-\IfFontExistsTF{Arial}{
-  \setsansfont{Arial}
-}{
-  \IfFontExistsTF{TeX Gyre Heros}{\setsansfont{TeX Gyre Heros}}{}
-}
-
-\definecolor{projectgreen}{RGB}{0, 133, 117}
-
-\pagestyle{fancy}
-\fancyhf{}
-\renewcommand{\headrulewidth}{0pt}
-\rhead{\small\textsf{\textbf{\color{projectgreen}DỰ ÁN ỨNG DỤNG}}\quad\textsf{Giải tích về cầu vồng}\qquad\textbf{\textsf{289}}}
-
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{0pt}
-
-\begin{document}
-
 % Banner tiêu đề dự án
 \noindent
 \begin{tikzpicture}
@@ -117,5 +85,3 @@
   \par\vspace{10pt}
   \hfill \textit{(còn tiếp)}
 \end{minipage}
-
-\end{document}

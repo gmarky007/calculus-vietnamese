@@ -1,0 +1,102 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{vietnam}
+\usepackage[paperwidth=210mm, paperheight=297mm, left=56mm, right=16mm, top=20mm, bottom=20mm, headheight=14pt]{geometry}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{newtxtext,newtxmath}
+
+% Định nghĩa màu chuẩn sách Stewart Calculus
+\definecolor{stewartcyan}{RGB}{0, 168, 204}
+\definecolor{stewartred}{RGB}{204, 0, 0}
+
+% Cấu hình Header và Footer
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead[L]{\small\textsf{\textbf{MỤC 4.5}}\quad \textsf{Tóm tắt về vẽ đồ thị}}
+\fancyhead[R]{\textsf{\textbf{321}}}
+\fancyfoot[C]{\fontsize{6.5pt}{8pt}\selectfont \textcolor{gray!80}{Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\\ Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.}}
+
+\begin{document}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+% (iii) Hàm tuần hoàn
+\begingroup
+\leftskip=2.2em
+\noindent\llap{\makebox[2.2em][l]{\textbf{(iii)}}}Nếu $f(x + p) = f(x)$ với mọi $x \in D$, trong đó $p$ là một hằng số dương, thì $f$ được gọi là một \textbf{hàm tuần hoàn} và số $p$ nhỏ nhất như vậy được gọi là \textbf{chu kỳ}. Chẳng hạn, $y = \sin x$ có chu kỳ $2\pi$ và $y = \tan x$ có chu kỳ $\pi$. Nếu chúng ta biết hình dạng đồ thị trên một khoảng có độ dài $p$, thì ta có thể sử dụng phép tịnh tiến để hình dung toàn bộ đồ thị (xem Hình~4).
+\par
+\endgroup
+
+\vspace{10pt}
+% Hình 4 với nhãn ở lề trái
+\noindent
+\makebox[0pt][r]{%
+  \parbox[b]{36mm}{%
+    \raggedright
+    \textbf{\textsf{HÌNH 4}}\\[3pt]
+    \textsf{\small Hàm tuần hoàn:}\\[1pt]
+    \textsf{\small đối xứng tịnh tiến}%
+    \vspace{6pt}%
+  }\hspace{10mm}%
+}%
+\begin{minipage}[b]{\linewidth}
+  \centering
+  \includegraphics[width=0.92\linewidth]{images/p0356_fig1.png}
+\end{minipage}
+
+\vspace{10pt}
+\noindent\textbf{D. Tiệm cận}
+\par\vspace{4pt}
+
+\begingroup
+\leftskip=2.2em
+\noindent\llap{\makebox[2.2em][l]{\textbf{(i)}}}\textit{Tiệm cận ngang.} Nhắc lại từ Mục~2.6 rằng nếu $\lim_{x \to \infty} f(x) = L$ hoặc $\lim_{x \to -\infty} f(x) = L$, thì đường thẳng $y = L$ là một tiệm cận ngang của đường cong $y = f(x)$. Nếu xảy ra trường hợp $\lim_{x \to \infty} f(x) = \infty$ (hoặc $-\infty$), thì ta không có tiệm cận về phía bên phải, nhưng điều này vẫn là thông tin hữu ích cho việc phác thảo đồ thị.
+\par\vspace{5pt}
+
+\noindent\llap{\makebox[2.2em][l]{\textbf{(ii)}}}\textit{Tiệm cận đứng.} Nhắc lại từ Mục~2.2 rằng đường thẳng $x = a$ là một tiệm cận đứng nếu có ít nhất một trong các mệnh đề sau là đúng:
+\par\vspace{5pt}
+
+\noindent
+\parbox[c]{22pt}{%
+  \fboxsep=2.5pt\fcolorbox{stewartred}{white}{\textcolor{stewartred}{\textsf{\textbf{1}}}}%
+}%
+\hfill
+\parbox[c]{\dimexpr\linewidth-28pt\relax}{%
+  \centering
+  \vspace{2pt}
+  $\begin{aligned}
+  \lim_{x \to a^+} f(x) &= \infty & \qquad\qquad\qquad \lim_{x \to a^-} f(x) &= \infty \\[6pt]
+  \lim_{x \to a^+} f(x) &= -\infty & \qquad\qquad\qquad \lim_{x \to a^-} f(x) &= -\infty
+  \end{aligned}$
+  \vspace{2pt}
+}%
+\par\vspace{5pt}
+
+(Đối với hàm phân thức hữu tỉ, bạn có thể xác định các tiệm cận đứng bằng cách cho mẫu số bằng $0$ sau khi đã triệt tiêu các nhân tử chung. Nhưng đối với các hàm số khác thì phương pháp này không áp dụng được.) Hơn nữa, khi vẽ đồ thị, việc biết chính xác mệnh đề nào trong (1) là đúng sẽ rất hữu ích. Nếu $f(a)$ không xác định nhưng $a$ là một điểm mút của tập xác định của $f$, thì bạn nên tính $\lim_{x \to a^-} f(x)$ hoặc $\lim_{x \to a^+} f(x)$, bất kể giới hạn này có là vô cùng hay không.
+\par\vspace{5pt}
+
+\noindent\llap{\makebox[2.2em][l]{\textbf{(iii)}}}\textit{Tiệm cận xiên.} Các tiệm cận này được thảo luận ở cuối mục này.
+\par
+\endgroup
+
+\vspace{6pt}
+\noindent
+\textbf{E. Các khoảng đồng biến hoặc nghịch biến}\quad Sử dụng Kiểm định Tăng/Giảm (I/D Test). Tính $f'(x)$ và tìm các khoảng mà trên đó $f'(x)$ mang dấu dương ($f$ đồng biến) và các khoảng mà trên đó $f'(x)$ mang dấu âm ($f$ nghịch biến).
+
+\vspace{6pt}
+\noindent
+\textbf{F. Giá trị cực đại hoặc cực tiểu địa phương}\quad Tìm các số tới hạn của $f$ [các số $c$ mà tại đó $f'(c) = 0$ hoặc $f'(c)$ không tồn tại]. Sau đó sử dụng Kiểm định đạo hàm cấp một. Nếu $f'$ đổi dấu từ dương sang âm tại một số tới hạn $c$, thì $f(c)$ là một giá trị cực đại địa phương. Nếu $f'$ đổi dấu từ âm sang dương tại $c$, thì $f(c)$ là một giá trị cực tiểu địa phương. Mặc dù thông thường nên ưu tiên dùng Kiểm định đạo hàm cấp một, bạn vẫn có thể sử dụng Kiểm định đạo hàm cấp hai nếu $f'(c) = 0$ và $f''(c) \ne 0$. Khi đó $f''(c) > 0$ chứng tỏ $f(c)$ là cực tiểu địa phương, trong khi $f''(c) < 0$ chứng tỏ $f(c)$ là cực đại địa phương.
+
+\vspace{6pt}
+\noindent
+\textbf{G. Tính lồi, lõm và điểm uốn}\quad Tính $f''(x)$ và sử dụng Kiểm định tính lồi lõm (Concavity Test). Đường cong có bề lõm hướng lên trên khi $f''(x) > 0$ và có bề lõm hướng xuống dưới khi $f''(x) < 0$. Điểm uốn xuất hiện tại vị trí mà chiều lõm thay đổi.
+
+\vspace{6pt}
+\noindent
+\textbf{H. Vẽ đồ thị}\quad Sử dụng các thông tin trong các mục A--G để vẽ đồ thị. Vẽ các đường tiệm cận bằng nét đứt. Đánh dấu các giao điểm với các trục tọa độ, các điểm cực đại, cực tiểu và các điểm uốn. Sau đó vẽ đường cong đi qua các điểm này, tăng và giảm theo mục E, với chiều lõm theo mục G, và tiến sát tới các đường tiệm cận.
+
+\end{document}

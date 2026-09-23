@@ -1,51 +1,3 @@
-\documentclass[10pt]{article}
-\usepackage[utf8]{inputenc}
-\usepackage[vietnamese]{babel}
-\usepackage{amsmath,amssymb,amsfonts}
-\usepackage{geometry}
-\geometry{letterpaper, left=18mm, right=18mm, top=20mm, bottom=20mm}
-\usepackage{graphicx}
-\usepackage{xcolor}
-\usepackage{enumitem}
-\usepackage{tikz}
-\usepackage[most]{tcolorbox}
-\usepackage{array}
-
-\definecolor{bannergreen}{RGB}{20, 130, 85}
-\definecolor{darkslate}{RGB}{20, 50, 45}
-\definecolor{projectbg}{RGB}{239, 247, 242}
-\definecolor{bordergreen}{RGB}{140, 195, 165}
-\definecolor{iconblue}{RGB}{35, 110, 160}
-
-% Biểu tượng CAS / Đồ thị
-\newcommand{\graphicon}{%
-  \begin{tikzpicture}[baseline=-0.6ex]
-    \draw[iconblue, line width=0.7pt, rounded corners=0.5pt, fill=cyan!10] (0,0) rectangle (2.8mm, 2.8mm);
-    \draw[iconblue, line width=0.5pt] (0.4mm, 0.7mm) -- (0.9mm, 2.0mm) -- (1.6mm, 0.9mm) -- (2.4mm, 2.2mm);
-  \end{tikzpicture}%
-}
-
-\newcommand{\techicon}{%
-  \begin{tikzpicture}[baseline=-0.6ex]
-    \node[inner sep=1pt, fill=iconblue, text=white, rounded corners=0.5pt, minimum size=3mm] {%
-      \fontsize{5.5}{5.5}\selectfont\textbf{\textsf{T}}%
-    };
-  \end{tikzpicture}%
-}
-
-% Kẻ 4 sọc ngang trang trí tiêu đề Dự án
-\newcommand{\decorativelines}[1]{%
-  \begin{tikzpicture}[baseline=-2.5pt]
-    \foreach \y in {-3pt, -1pt, 1pt, 3pt} {
-      \draw[bannergreen!80!black, line width=0.6pt] (0, \y) -- (#1, \y);
-    }
-  \end{tikzpicture}%
-}
-
-\pagestyle{empty}
-
-\begin{document}
-
 % Header trang
 \noindent
 {\small\textbf{184} \quad \textbf{\textsf{CHƯƠNG 3}} \quad \textsf{Các quy tắc tính đạo hàm}}
@@ -180,5 +132,3 @@
   \fontsize{5}{6}\selectfont\color{gray!80!black}
   Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203
 \end{center}
-
-\end{document}

@@ -1,31 +1,3 @@
-\documentclass[10pt]{article}
-\usepackage[paperwidth=8.5in, paperheight=11in, left=0.6in, right=0.6in, top=0.6in, bottom=0.6in]{geometry}
-\usepackage{fontspec}
-\usepackage{amsmath,amssymb}
-\usepackage{graphicx}
-\usepackage{xcolor}
-\usepackage{paracol}
-\usepackage{tcolorbox}
-\tcbuselibrary{skins}
-\usepackage{enumitem}
-\usepackage{tikz}
-
-% Màu sắc nhận diện chuẩn giáo trình Stewart Calculus 9th edition
-\definecolor{stewartblue}{RGB}{0, 115, 175}
-\definecolor{boxred}{RGB}{195, 45, 45}
-\definecolor{pspurple}{RGB}{110, 50, 120}
-
-\pagestyle{empty}
-
-% Nhãn số phương trình đóng khung đỏ
-\newcommand{\redtag}[1]{%
-  \tikz[baseline=(tag.base)]{%
-    \node[draw=boxred, line width=0.6pt, inner sep=2pt, font=\footnotesize\bfseries, text=boxred] (tag) {#1};%
-  }%
-}
-
-\begin{document}
-
 % Tiêu đề trang dóng theo cột nội dung chính
 \noindent
 \begin{minipage}[b]{145pt}
@@ -145,5 +117,3 @@ Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned
 Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
 }
 \end{center}
-
-\end{document}

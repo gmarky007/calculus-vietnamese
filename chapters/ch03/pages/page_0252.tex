@@ -1,44 +1,3 @@
-\documentclass[10pt]{article}
-\usepackage[paperwidth=216mm, paperheight=279mm, top=18mm, bottom=16mm, left=62mm, right=18mm, headheight=14pt, headsep=6mm, footskip=8mm]{geometry}
-\usepackage{fontspec}
-\usepackage[vietnamese]{babel}
-\usepackage{amsmath,amssymb,amsfonts}
-\usepackage{xcolor}
-\usepackage{tikz}
-\usepackage{tcolorbox}
-\tcbuselibrary{skins,breakable}
-\usepackage{enumitem}
-\usepackage{fancyhdr}
-
-% Định nghĩa màu sắc theo bản gốc
-\definecolor{discoverybg}{RGB}{239, 245, 241}
-\definecolor{discoverygreen}{RGB}{0, 133, 95}
-\definecolor{discoverydark}{RGB}{25, 30, 28}
-\definecolor{sectionblue}{RGB}{0, 130, 195}
-\definecolor{titlecharcoal}{RGB}{20, 25, 30}
-\definecolor{formulaRed}{RGB}{205, 45, 40}
-
-% Cài đặt Header
-\pagestyle{fancy}
-\fancyhf{}
-\fancyhead[L]{\textsf{\fontsize{8.5}{10}\selectfont\color{gray!80!black} MỤC 3.6 \quad Đạo hàm của hàm logarit và hàm lượng giác ngược}}
-\fancyhead[R]{\textsf{\fontsize{10}{12}\selectfont\bfseries 217}}
-\renewcommand{\headrulewidth}{0pt}
-
-% Icon dự án khám phá dạng vector
-\newcommand{\projecticon}{%
-  \begin{tikzpicture}[x=1pt, y=1pt, baseline=1pt]
-    \draw[discoverygreen, line width=0.6pt] (0,1) -- (0,10) -- (5.5,12) -- (11,10) -- (11,1) -- (5.5,3) -- cycle;
-    \draw[discoverygreen, line width=0.6pt] (5.5,3) -- (5.5,12);
-    \draw[discoverygreen, line width=0.45pt] (1.8,4.5) -- (4,5.3);
-    \draw[discoverygreen, line width=0.45pt] (1.8,7) -- (4,7.8);
-    \draw[discoverygreen, line width=0.45pt] (7,5.3) -- (9.2,4.5);
-    \draw[discoverygreen, line width=0.45pt] (7,7.8) -- (9.2,7);
-  \end{tikzpicture}%
-}
-
-\begin{document}
-
 % Hộp DỰ ÁN KHÁM PHÁ (Trải rộng lề trái sang lề phải, căn văn bản theo cột chính)
 \begin{tcolorbox}[
   enhanced,
@@ -152,5 +111,3 @@ Vì hàm logarit $y = \log_b x$ là hàm ngược của hàm mũ $y = b^x$, hàm
   Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\\[1pt]
   Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
 \end{center}
-
-\end{document}

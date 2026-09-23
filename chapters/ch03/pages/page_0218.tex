@@ -1,35 +1,3 @@
-\documentclass[10pt,a4paper]{article}
-\usepackage[top=1.8cm, bottom=1.8cm, left=1.8cm, right=1.8cm]{geometry}
-\usepackage{amsmath,amssymb,amsfonts}
-\usepackage{multicol}
-\usepackage{tikz}
-\usepackage{array}
-\usepackage{fontspec}
-
-\setlength{\columnsep}{22pt}
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{4.5pt plus 1pt minus 1pt}
-
-% Định nghĩa icon T (Technology) và Đồ thị (Graphing/CAS)
-\newcommand{\iconT}{%
-  \begin{tikzpicture}[baseline=(T.base)]
-    \node[draw=cyan!80!blue, fill=cyan!10, rounded corners=1pt, line width=0.6pt, inner sep=1.2pt, font=\bfseries\scriptsize\sffamily, text=cyan!80!blue] (T) {T};
-  \end{tikzpicture}%
-}
-
-\newcommand{\iconGraph}{%
-  \begin{tikzpicture}[baseline=-1pt, line width=0.55pt, draw=cyan!80!blue]
-    \draw[rounded corners=1pt] (0,-0.08) rectangle (0.36,0.28);
-    \draw (0,0.1) -- (0.36,0.1);
-    \draw (0.18,-0.08) -- (0.18,0.28);
-    \draw[line width=0.7pt, domain=0.04:0.32, samples=12] plot (\x, {0.1 + 0.11*sin(720*(\x-0.04))});
-  \end{tikzpicture}%
-}
-
-\newcommand{\ex}[1]{\textbf{#1.}\ }
-
-\begin{document}
-
 % Header trang
 \noindent\textbf{\textsf{SECTION 3.1}}\quad \textsf{Đạo hàm của hàm đa thức và hàm số mũ}\hfill \textbf{\textsf{183}}
 \vspace{8pt}
@@ -142,5 +110,3 @@ Hãy đưa ra công thức của $g'$ và phác thảo đồ thị của $g$ và
 
 \vfill
 \noindent{\scriptsize\color{black!60}Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203}
-
-\end{document}

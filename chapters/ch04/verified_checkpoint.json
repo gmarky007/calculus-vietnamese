@@ -239,6 +239,24 @@
       "score": 99,
       "notes": "Bản dịch gặp lỗi nghiêm trọng trong quá trình biên dịch (mất dấu gạch chéo ngược ở phần tiền sảnh khiến các lệnh documentclass, usepackage bị in thẳng ra trang như văn bản và toàn bộ thân trang bị trắng). Đã sửa lại toàn bộ mã nguồn chuẩn xác 1:1 theo bản gốc.",
       "time": "2026-09-23 11:28:22"
+    },
+    {
+      "page_num": 354,
+      "score": 99,
+      "notes": "Bản dịch bị rò rỉ mã tiền sảnh (preamble) in thẳng lên đầu trang do lỗi cú pháp biên dịch. Phần nội dung Dự án viết ở nửa dưới thiếu hộp nền màu xanh xám nhạt (tinted background box) đặc trưng của giáo trình Stewart, đồng thời khoảng cách dóng hàng hai cột ở phần bài tập phía trên chưa thật sự chuẩn xác.",
+      "time": "2026-09-23 11:30:26"
+    },
+    {
+      "page_num": 355,
+      "score": 99,
+      "notes": "Mã nguồn hiện tại chỉ là văn bản từ chối mà chưa số hóa trang. Cần tái lập toàn diện mã XeLaTeX với cấu trúc hai cột bất đối xứng chuẩn Stewart, tích hợp 3 hình vẽ đúng tọa độ và chuyển ngữ toán học hoàn chỉnh.",
+      "time": "2026-09-23 11:36:42"
+    },
+    {
+      "page_num": 356,
+      "score": 99,
+      "notes": "Bản dịch bị lỗi hiển thị rò rỉ mã lệnh tiền đề (preamble leak) ở đầu trang; bố cục toàn trang bị bó hẹp trong minipage 71% thay vì thiết kế cột lề bất đối xứng chuẩn của Stewart Calculus; các mục E, F, G, H bị áp sai lề treo (hanging indent). Cần tái cấu trúc toàn diện theo hệ tọa độ chuẩn.",
+      "time": "2026-09-23 11:40:04"
     }
   ]
 }

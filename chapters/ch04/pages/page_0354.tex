@@ -1,0 +1,178 @@
+\documentclass[11pt,twoside]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T5,T1]{fontenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{geometry}
+\usepackage{microtype}
+\usepackage{calc}
+\usepackage[most]{tcolorbox}
+
+\geometry{
+  letterpaper,
+  top=2.0cm,
+  bottom=2.0cm,
+  left=2.0cm,
+  right=2.0cm,
+  headheight=15pt,
+  headsep=18pt
+}
+
+% Định nghĩa màu sắc theo chuẩn nhận diện thương hiệu Stewart Calculus
+\definecolor{projectgreen}{RGB}{0, 130, 95}
+\definecolor{lightlinegreen}{RGB}{135, 195, 170}
+\definecolor{boxbg}{RGB}{239, 245, 241}
+\definecolor{casblue}{RGB}{0, 140, 210}
+
+% Thiết lập Header/Footer
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[RO]{\textsf{\textbf{\color{projectgreen}DỰ ÁN VIẾT}}\quad \textsf{Nguồn gốc của quy tắc l’Hospital}\qquad \textsf{\textbf{319}}}
+\fancyhead[LE]{\textsf{\textbf{319}}\qquad \textsf{Nguồn gốc của quy tắc l’Hospital}\quad \textsf{\textbf{\color{projectgreen}DỰ ÁN VIẾT}}}
+\renewcommand{\headrulewidth}{0pt}
+
+% Biểu tượng CAS (máy tính vẽ đồ thị)
+\newcommand{\iconCAS}{%
+  \begin{tikzpicture}[scale=0.9, baseline={(0,-0.06)}]
+    \draw[casblue, line width=0.7pt, rounded corners=0.8pt] (0,0) rectangle (0.36, 0.34);
+    \draw[casblue!35, line width=0.35pt] (0.04, 0.17) -- (0.32, 0.17);
+    \draw[casblue!35, line width=0.35pt] (0.18, 0.04) -- (0.18, 0.30);
+    \draw[casblue, line width=0.75pt, smooth] plot coordinates {(0.06,0.08) (0.18,0.26) (0.30,0.10)};
+  \end{tikzpicture}%
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\begin{document}
+
+% =========================================================================
+% PHẦN TRÊN: CÁC BÀI TẬP (TIẾP THEO BÀI TẬP MỤC 4.4)
+% =========================================================================
+
+\noindent
+\begin{minipage}[t]{0.485\textwidth}
+  \vspace{0pt}
+  \textbf{89.} Tìm các hàm số $f$ và $g$ sao cho $\lim\limits_{x \to 0} f(x) = \lim\limits_{x \to 0} g(x) = \infty$ và
+  
+  \vspace{4pt}
+  \noindent\hspace*{1.2em}\textbf{(a)} $\lim\limits_{x \to 0} \dfrac{f(x)}{g(x)} = 7$ \hfill \textbf{(b)} $\lim\limits_{x \to 0} [f(x) - g(x)] = 7$\hspace*{1.5em}
+
+  \vspace{0.35cm}
+  \noindent\textbf{90.} Với các giá trị nào của $a$ và $b$ thì phương trình sau đây đúng?
+  \[
+    \lim_{x \to 0} \left( \frac{\sin 2x}{x^3} + a + \frac{b}{x^2} \right) = 0
+  \]
+
+  \vspace{0.15cm}
+  \noindent\textbf{91.} Cho
+  \[
+    f(x) = \begin{cases}
+      e^{-1/x^2} & \text{nếu } x \neq 0 \\[3pt]
+      0          & \text{nếu } x = 0
+    \end{cases}
+  \]
+  \vspace{-4pt}
+  \noindent\hspace*{1.2em}\textbf{(a)} Dùng định nghĩa đạo hàm để tính $f'(0)$.
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.485\textwidth}
+  \vspace{0pt}
+  \noindent\hspace*{1.2em}\textbf{(b)} Chứng minh rằng $f$ có các đạo hàm mọi cấp xác định trên $\mathbb{R}$. [\textit{Gợi ý:} Trước hết hãy dùng phương pháp quy nạp để chứng minh rằng tồn tại một đa thức $p_n(x)$ và một số nguyên không âm $k_n$ sao cho $f^{(n)}(x) = p_n(x)f(x)/x^{k_n}$ với mọi $x \neq 0$.]
+
+  \vspace{0.35cm}
+  \noindent\iconCAS\ \textbf{92.} Cho
+  \[
+    f(x) = \begin{cases}
+      |x|^x & \text{nếu } x \neq 0 \\[3pt]
+      1     & \text{nếu } x = 0
+    \end{cases}
+  \]
+  \begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=2.2em, itemsep=3pt, topsep=1pt]
+    \item Chứng minh rằng $f$ liên tục tại 0.
+    \item Khảo sát bằng đồ thị xem $f$ có khả vi tại 0 hay không bằng cách phóng to nhiều lần về phía điểm $(0, 1)$ trên đồ thị của $f$.
+    \item Chứng minh rằng $f$ không khả vi tại 0. Làm thế nào bạn có thể dung hòa sự thật này với dáng điệu của các đồ thị trong câu (b)?
+  \end{enumerate}
+\end{minipage}
+
+\vspace{0.9cm}
+
+% =========================================================================
+% DẢI PHÂN CÁCH TRANG TRÍ TIÊU ĐỀ: DỰ ÁN VIẾT
+% =========================================================================
+\noindent
+\begin{tikzpicture}[x=1cm, y=1cm]
+  \node[inner sep=5pt, fill=white] (heading) at (0.5\textwidth, 0) {%
+    \sffamily\bfseries
+    \textcolor{projectgreen}{\large DỰ ÁN VIẾT}
+    \hspace{0.7em}
+    \textcolor{projectgreen}{\rule[-1.5pt]{1.3pt}{13pt}}
+    \hspace{0.7em}
+    {\large NGUỒN GỐC CỦA QUY TẮC L'HOSPITAL}%
+  };
+  \foreach \y in {-4.5pt, -1.5pt, 1.5pt, 4.5pt} {
+    \draw[lightlinegreen, line width=0.55pt] (0, \y) -- ([xshift=-5pt]heading.west |- 0, \y);
+    \draw[lightlinegreen, line width=0.55pt] ([xshift=5pt]heading.east |- 0, \y) -- (\textwidth, \y);
+  }
+\end{tikzpicture}
+
+\vspace{0.5cm}
+
+% =========================================================================
+% PHẦN DƯỚI: NỘI DUNG DỰ ÁN VIẾT (BỐ CỤC 2 CỘT BẤT ĐỐI XỨNG)
+% =========================================================================
+
+\noindent
+\begin{minipage}[t]{0.27\textwidth}
+  \vspace{0pt}
+  \begin{minipage}[c]{0.08\textwidth}
+    \rotatebox{90}{\fontsize{5.5}{7}\selectfont\color{gray!80!black}\textsf{Thomas Fisher Rare Book Library}}
+  \end{minipage}%
+  \hfill
+  \begin{minipage}[c]{0.89\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{images/p0354_fig1.png}
+  \end{minipage}
+
+  \vspace{0.45cm}
+  \noindent
+  {\small\sffamily\textbf{www.StewartCalculus.com}}\\[3pt]
+  {\footnotesize\raggedright
+  Internet là một nguồn thông tin khác cho dự án này. Hãy nhấp vào \textit{History of Mathematics} (Lịch sử Toán học) để xem danh sách các trang web đáng tin cậy.\par}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.705\textwidth}
+  \vspace{0pt}
+  \begin{tcolorbox}[
+    enhanced,
+    colback=boxbg,
+    colframe=boxbg,
+    boxrule=0pt,
+    arc=0pt,
+    left=12pt,
+    right=12pt,
+    top=10pt,
+    bottom=10pt
+  ]
+    \fontsize{9.5}{13.5}\selectfont
+    Quy tắc l’Hospital được xuất bản lần đầu tiên vào năm 1696 trong cuốn sách giáo trình giải tích mang tên \textit{Analyse des infiniment petits} của Hầu tước de l’Hospital, nhưng quy tắc này đã được nhà toán học người Thụy Sĩ John (Johann) Bernoulli phát hiện vào năm 1694. Lời giải thích là hai nhà toán học này đã có một thỏa thuận kinh doanh kỳ lạ, theo đó Hầu tước de l’Hospital đã mua lại quyền sở hữu các khám phá toán học của Bernoulli. Các chi tiết, bao gồm bản dịch bức thư của l’Hospital gửi cho Bernoulli đề xuất thỏa thuận này, có thể tìm thấy trong cuốn sách của Eves [1].
+
+    \vspace{0.28cm}
+    Hãy viết một bài luận về nguồn gốc lịch sử và toán học của quy tắc l’Hospital. Bắt đầu bằng việc cung cấp thông tin tiểu sử ngắn gọn về cả hai người (bộ từ điển do Gillispie chủ biên [2] là một nguồn tài liệu tham khảo tốt) và phác thảo thỏa thuận kinh doanh giữa họ. Sau đó hãy đưa ra phát biểu của l’Hospital về quy tắc của mình, có thể tìm thấy trong cuốn sách tư liệu của Struik [4] và tóm tắt ngắn gọn hơn trong sách của Katz [3]. Chú ý rằng l’Hospital và Bernoulli đã phát biểu quy tắc này theo quan điểm hình học và đưa ra kết quả dưới dạng vi phân. Hãy so sánh phát biểu của họ với phiên bản quy tắc l’Hospital được trình bày trong Mục 4.4 và chứng minh rằng hai phát biểu này về cơ bản là tương đương nhau.
+
+    \vspace{0.32cm}
+    \begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=1.4em, itemsep=4pt, topsep=0pt, parsep=0pt]
+      \item Howard W. Eves, \textit{Mathematical Circles: Volume 1} (Washington, D.C.: Mathematical Association of America, 2003). Xuất bản lần đầu năm 1969 dưới tên \textit{In Mathematical Circles (Volume 2: Quadrants III and IV)} bởi Prindle Weber and Schmidt.
+      \item C. C. Gillispie, chủ biên, \textit{Dictionary of Scientific Biography}, 8 tập (New York: Scribner, 1981). Xem bài viết về Johann Bernoulli của E. A. Fellmann và J. O. Fleckenstein trong Tập II và bài viết về Hầu tước de l’Hospital của Abraham Robinson trong Tập III.
+      \item Victor J. Katz, \textit{A History of Mathematics: An Introduction}, tái bản lần thứ 3 (New York: Pearson, 2018).
+      \item Dirk Jan Struik, chủ biên, \textit{A Source Book in Mathematics, 1200--1800} (1969; tái bản, Princeton, NJ: Princeton University Press, 2016).
+    \end{enumerate}
+  \end{tcolorbox}
+\end{minipage}
+
+\end{document}

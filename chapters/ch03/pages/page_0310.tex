@@ -1,37 +1,3 @@
-\documentclass[10pt]{article}
-\usepackage[paperwidth=8.5in, paperheight=11in, top=20mm, bottom=18mm, left=14mm, right=14mm]{geometry}
-\usepackage[utf8]{vietnam}
-\usepackage{amsmath, amssymb, amsthm}
-\usepackage{newtxtext, newtxmath}
-\usepackage{graphicx}
-\usepackage{xcolor}
-\usepackage{tikz}
-\usepackage{tcolorbox}
-\usepackage{calc}
-
-% Định nghĩa màu sắc theo chuẩn Stewart Calculus
-\definecolor{stewartcyan}{RGB}{0, 160, 215}
-\definecolor{stewartblue}{RGB}{0, 114, 188}
-\definecolor{stewartpurple}{RGB}{82, 36, 127}
-\definecolor{stewartlightpurple}{RGB}{235, 233, 246}
-\definecolor{stewartgray}{RGB}{100, 100, 100}
-
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{4pt}
-
-% Icon vẽ đồ thị cho Bài toán 2
-\newcommand{\graphingicon}{%
-  \raisebox{-0.6pt}{%
-    \begin{tikzpicture}[x=1pt, y=1pt, baseline=2pt]
-      \draw[stewartcyan, line width=0.6pt, rounded corners=0.6pt, fill=white] (0,0) rectangle (9.5, 9.5);
-      \draw[stewartcyan!70, line width=0.4pt] (4.75, 0.8) -- (4.75, 8.7);
-      \draw[stewartcyan!70, line width=0.4pt] (0.8, 4.75) -- (8.7, 4.75);
-      \draw[stewartcyan, line width=0.7pt, smooth] plot coordinates {(1.5, 2.2) (4.75, 7.5) (8, 2.2)};
-    \end{tikzpicture}%
-  }%
-}
-
-\begin{document}
 \pagestyle{empty}
 
 % =========================================================================
@@ -145,5 +111,3 @@
 \noindent
 {\fontsize{5}{6}\selectfont\color{stewartgray}%
 Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it. WCN 02-200-203\par}
-
-\end{document}

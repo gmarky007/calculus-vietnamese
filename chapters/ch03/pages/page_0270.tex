@@ -1,49 +1,3 @@
-\documentclass[10pt]{article}
-\usepackage[utf8]{inputenc}
-\usepackage[vietnamese]{babel}
-\usepackage{amsmath,amssymb,amsfonts}
-\usepackage{geometry}
-\geometry{
-    paperwidth=8.5in,
-    paperheight=11in,
-    top=32pt,
-    bottom=32pt,
-    left=36pt,
-    right=36pt,
-    headheight=14pt,
-    footskip=20pt
-}
-\usepackage{graphicx}
-\usepackage{xcolor}
-\usepackage{fancyhdr}
-\usepackage{tikz}
-\usepackage{enumitem}
-
-% Màu chuẩn phong cách James Stewart Calculus
-\definecolor{stewartcyan}{RGB}{0, 136, 204}
-\definecolor{stewartgray}{RGB}{100, 100, 100}
-
-% Thiết lập header và footer
-\pagestyle{fancy}
-\fancyhf{}
-\renewcommand{\headrulewidth}{0pt}
-\fancyhead[L]{\textsf{\textbf{MỤC 3.7}}\quad \textsf{Tốc độ thay đổi trong Khoa học Tự nhiên và Xã hội}}
-\fancyhead[R]{\textsf{\textbf{235}}}
-\fancyfoot[C]{\scriptsize\color{stewartgray}Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part.}
-
-% Biểu tượng CAS / phần mềm đồ thị
-\newcommand{\graphicon}{%
-    \begin{tikzpicture}[baseline=-0.5ex, scale=0.75]%
-        \draw[stewartcyan, thick, rounded corners=0.8pt] (0,0) rectangle (0.38, 0.28);%
-        \draw[stewartcyan, thick] (0.04, 0.08) sin (0.19, 0.22) cos (0.34, 0.06);%
-    \end{tikzpicture}%
-}
-
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{0pt}
-
-\begin{document}
-
 % Tiêu đề mục bài tập với 4 dải đường kẻ cyan chuẩn James Stewart
 \noindent
 \begin{tikzpicture}
@@ -152,5 +106,3 @@
     \vspace{2pt}
     (b) Chứng minh rằng tốc độ thay đổi diện tích của một hình vuông theo độ dài cạnh bằng một nửa chu vi của nó. Hãy thử giải thích theo quan điểm hình học tại sao điều này đúng bằng cách vẽ một hình vuông có độ dài cạnh $x$ tăng thêm một lượng $\Delta x$. Bạn có thể xấp xỉ độ thay đổi diện tích $\Delta A$ tương ứng như thế nào nếu $\Delta x$ nhỏ?
 \end{minipage}
-
-\end{document}

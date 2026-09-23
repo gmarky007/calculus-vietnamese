@@ -1,0 +1,141 @@
+\documentclass[10pt]{article}
+\usepackage[paperwidth=215.9mm,paperheight=279.4mm,left=16mm,right=16mm,top=14mm,bottom=12mm]{geometry}
+\usepackage{fontspec}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{hyperref}
+
+\setmainfont{TeX Gyre Termes}
+\setsansfont{TeX Gyre Heros}
+
+\definecolor{stewartblue}{RGB}{0, 130, 185}
+\hypersetup{colorlinks=true,linkcolor=stewartblue,urlcolor=stewartblue}
+
+\setlength{\parindent}{1.2em}
+\setlength{\parskip}{0pt}
+\pagestyle{empty}
+
+\begin{document}
+
+% --- Running Header ---
+\noindent
+{\small\bfseries\sffamily 320}\qquad{\small\bfseries\sffamily CHƯƠNG 4}\quad{\small Các ứng dụng của đạo hàm}
+\vspace{10pt}
+
+% --- Section Title Banner ---
+\noindent
+\begin{minipage}[c]{48mm}
+  \begin{minipage}[c]{22mm}
+    {\color{stewartblue!70}%
+    \hrule height 0.6pt\vspace{2.5pt}%
+    \hrule height 0.6pt\vspace{2.5pt}%
+    \hrule height 0.6pt\vspace{2.5pt}%
+    \hrule height 0.6pt\vspace{2.5pt}%
+    \hrule height 0.6pt}%
+  \end{minipage}\hfill
+  {\fontsize{24}{26}\selectfont\bfseries\sffamily\color{stewartblue} 4.5}%
+\end{minipage}%
+\begin{minipage}[c]{6mm}
+  \centering
+  {\color{stewartblue}\vrule width 1.5pt height 22pt depth 4pt}
+\end{minipage}%
+\begin{minipage}[c]{126mm}
+  {\fontsize{17}{21}\selectfont\bfseries\sffamily Tóm tắt về vẽ đồ thị hàm số}
+\end{minipage}
+
+\vspace{10pt}
+
+% --- Row 1: Intro paragraph ---
+\noindent
+\begin{minipage}[t]{48mm}
+  \mbox{}
+\end{minipage}\hfill
+\begin{minipage}[t]{126mm}
+  Cho đến nay chúng ta đã quan tâm đến một số khía cạnh cụ thể của việc vẽ đồ thị: tập xác định, tập giá trị và tính đối xứng trong Chương 1; giới hạn, tính liên tục và các đường tiệm cận trong Chương 2; đạo hàm và tiếp tuyến trong Chương 2 và 3; cùng các giá trị cực trị, khoảng tăng giảm, tính lồi lõm, điểm uốn và Quy tắc l'Hospital trong chương này. Giờ là lúc kết hợp tất cả các thông tin này lại để phác thảo các đồ thị thể hiện những đặc trưng quan trọng của hàm số.
+\end{minipage}
+
+\vspace{8pt}
+
+% --- Row 2: Figure 1 + Paragraphs 2 & 3 ---
+\noindent
+\begin{minipage}[t]{48mm}
+  \centering
+  \includegraphics[width=\linewidth]{images/p0355_fig1.png}\\[3pt]
+  {\footnotesize\textbf{\textsf{HÌNH 1}}}
+\end{minipage}\hfill
+\begin{minipage}[t]{126mm}
+  Bạn có thể hỏi: Tại sao chúng ta không chỉ sử dụng máy tính bỏ túi có chức năng vẽ đồ thị hoặc máy vi tính để vẽ đồ thị hàm số? Tại sao chúng ta cần phải sử dụng giải tích?
+
+  \smallskip
+  Đúng là công nghệ có khả năng tạo ra các đồ thị rất chính xác. Nhưng ngay cả những thiết bị vẽ đồ thị tốt nhất cũng phải được sử dụng một cách thông minh. Rất dễ dẫn đến một đồ thị gây hiểu lầm, hoặc bỏ sót những chi tiết quan trọng của đường cong khi chỉ dựa hoàn toàn vào công nghệ. (Xem chuyên đề \textit{Graphing Calculators and Computers} tại \url{www.StewartCalculus.com}, đặc biệt là các Ví dụ 1, 3, 4 và 5. Xem thêm Mục 4.6.) Việc sử dụng giải tích cho phép chúng ta khám phá những khía cạnh thú vị nhất của đồ thị và trong nhiều trường hợp có thể tính toán chính xác các điểm cực đại, cực tiểu và điểm uốn thay vì chỉ ước tính xấp xỉ.
+\end{minipage}
+
+\vspace{8pt}
+
+% --- Row 3: Figure 2 + Paragraphs 4 & 5 ---
+\noindent
+\begin{minipage}[t]{48mm}
+  \centering
+  \includegraphics[width=\linewidth]{images/p0355_fig2.png}\\[3pt]
+  {\footnotesize\textbf{\textsf{HÌNH 2}}}
+\end{minipage}\hfill
+\begin{minipage}[t]{126mm}
+  Chẳng hạn, Hình 1 biểu diễn đồ thị của hàm số $f(x) = 8x^3 - 21x^2 + 18x + 2$. Thoạt nhìn có vẻ hợp lý: Nó có dạng tương tự như các đường cong bậc ba kiểu $y = x^3$, và dường như không có điểm cực đại hay cực tiểu nào. Nhưng nếu tính đạo hàm, bạn sẽ thấy rằng có một điểm cực đại khi $x = 0{,}75$ và một điểm cực tiểu khi $x = 1$. Thật vậy, nếu phóng to phần này của đồ thị, ta sẽ thấy hành vi đó được thể hiện ở Hình 2. Nếu không có giải tích, chúng ta có thể đã dễ dàng bỏ qua điều đó.
+
+  \smallskip
+  Trong mục tiếp theo, chúng ta sẽ vẽ đồ thị các hàm số bằng cách kết hợp sự tương tác giữa giải tích và công nghệ. Trong mục này, chúng ta vẽ các đồ thị (bằng tay) trước hết bằng cách xem xét các thông tin sau đây. Một đồ thị được tạo bởi máy tính bỏ túi hoặc máy vi tính có thể đóng vai trò như một công cụ kiểm tra lại kết quả của bạn.
+\end{minipage}
+
+\vspace{10pt}
+
+% --- Row 4: Guidelines box + Items A, B, C ---
+\noindent
+\begin{minipage}[t]{48mm}
+  \mbox{}
+\end{minipage}\hfill
+\begin{minipage}[t]{126mm}
+  {\color{stewartblue}\rule{1.2ex}{1.2ex}}\;\textbf{\sffamily\large Hướng dẫn vẽ đường cong (đồ thị)}
+
+  \smallskip
+  {\small\noindent
+  Bảng kiểm tra sau đây nhằm mục đích hướng dẫn cách phác thảo một đường cong $y = f(x)$ bằng tay. Không phải mọi mục đều áp dụng cho mọi hàm số. (Chẳng hạn, một đường cong đã cho có thể không có tiệm cận hoặc không có tính đối xứng.) Nhưng các hướng dẫn này cung cấp toàn bộ thông tin bạn cần để vẽ một đồ thị thể hiện được những đặc trưng quan trọng nhất của hàm số.\par}
+
+  \medskip
+  \noindent\textbf{A. Tập xác định}\quad Thường rất hữu ích khi bắt đầu bằng việc xác định tập xác định $D$ của $f$, nghĩa là tập hợp các giá trị của $x$ mà tại đó $f(x)$ được xác định.
+
+  \smallskip
+  \noindent\textbf{B. Giao điểm với các trục}\quad Giao điểm với trục $y$ là $f(0)$, cho ta biết vị trí đường cong cắt trục $y$. Để tìm các giao điểm với trục $x$, ta đặt $y = 0$ và giải tìm $x$. (Bạn có thể bỏ qua bước này nếu phương trình quá khó giải.)
+
+  \smallskip
+  \noindent\textbf{C. Tính đối xứng}
+\end{minipage}
+
+\vspace{6pt}
+
+% --- Row 5: Figure 3 + Items (i) and (ii) ---
+\noindent
+\begin{minipage}[t]{48mm}
+  \centering
+  \includegraphics[width=\linewidth]{images/p0355_fig3.png}\\[3pt]
+  {\footnotesize\textbf{\textsf{HÌNH 3}}}
+\end{minipage}\hfill
+\begin{minipage}[t]{126mm}
+  \begin{itemize}[leftmargin=1.8em,labelsep=0.5em,itemsep=4pt,topsep=0pt,parsep=0pt]
+    \item[(i)] Nếu $f(-x) = f(x)$ với mọi $x \in D$, nghĩa là phương trình của đường cong không thay đổi khi thay $x$ bằng $-x$, thì $f$ là một \textit{hàm số chẵn} và đường cong đối xứng qua trục $y$. (Xem Mục 1.1.) Điều này có nghĩa là công việc của chúng ta được giảm đi một nửa. Nếu biết dạng đường cong với $x \ge 0$, ta chỉ cần lấy đối xứng qua trục $y$ để thu được toàn bộ đường cong [xem Hình 3(a)]. Dưới đây là một số ví dụ: $y = x^2$, $y = x^4$, $y = |x|$, và $y = \cos x$.
+    \item[(ii)] Nếu $f(-x) = -f(x)$ với mọi $x \in D$, thì $f$ là một \textit{hàm số lẻ} và đường cong đối xứng qua gốc tọa độ. Một lần nữa, ta có thể thu được toàn bộ đường cong nếu biết dạng của nó với $x \ge 0$. [Quay $180^\circ$ quanh gốc tọa độ; xem Hình 3(b).] Một số ví dụ đơn giản về hàm số lẻ là $y = x$, $y = x^3$, $y = 1/x$, và $y = \sin x$.
+  \end{itemize}
+\end{minipage}
+
+\vfill
+
+% --- Footer Legal Notice ---
+\noindent
+\begin{minipage}{\textwidth}
+  \fontsize{6}{7.5}\selectfont\color{black!50}
+  Bản quyền 2021 Cengage Learning. Bảo lưu mọi quyền. Không được sao chép, scan hoặc nhân bản toàn bộ hay một phần. WCN 02-200-203\\
+  Do quyền điện tử, một số nội dung của bên thứ ba có thể bị ẩn khỏi sách điện tử. Đánh giá biên tập cho thấy nội dung bị loại bỏ không ảnh hưởng đến trải nghiệm học tập tổng thể.
+\end{minipage}
+
+\end{document}

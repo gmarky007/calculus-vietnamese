@@ -1,38 +1,3 @@
-\documentclass[10pt]{article}
-\usepackage[vietnamese]{babel}
-\usepackage[letterpaper, top=2.0cm, bottom=2.0cm, left=1.8cm, right=1.8cm, headheight=14pt]{geometry}
-\usepackage{amsmath, amssymb, amsfonts}
-\usepackage{xcolor}
-\usepackage{graphicx}
-\usepackage{tikz}
-\usepackage{fancyhdr}
-
-% Định nghĩa hệ màu chuẩn Stewart Calculus
-\definecolor{stewartcyan}{RGB}{0, 130, 185}
-\definecolor{stewarterror}{RGB}{204, 30, 30}
-\definecolor{stewartred}{RGB}{180, 0, 0}
-\definecolor{stewartgray}{RGB}{90, 90, 90}
-
-% Biểu tượng cảnh báo lỗi sai phổ biến của giáo trình Stewart
-\newcommand{\stewartwarning}{%
-  \begin{tikzpicture}[baseline=-0.5ex, scale=0.85]
-    \draw[stewarterror, line width=1.3pt] (0,0) circle (5.2pt);
-    \draw[stewarterror, line width=1.3pt] (-3.7pt, 3.7pt) -- (3.7pt, -3.7pt);
-  \end{tikzpicture}%
-}
-
-% Thiết lập tiêu đề đầu trang và chân trang chuẩn
-\pagestyle{fancy}
-\fancyhf{}
-\renewcommand{\headrulewidth}{0pt}
-\fancyhead[R]{\textsf{\fontsize{8.5}{11}\selectfont \textbf{MỤC 4.4}\hspace{1.5em}Các dạng vô định và quy tắc l'Hospital}\hspace{3.5em}\textbf{\textsf{\fontsize{10}{12}\selectfont 313}}}
-\fancyfoot[C]{\fontsize{7}{9}\selectfont\color{stewartgray} Bản dịch số hóa học thuật phục vụ học tập và nghiên cứu}
-
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{4.5pt}
-
-\begin{document}
-
 \noindent
 \begin{minipage}[t]{0.26\textwidth}
     % Cột lề trái: Ghi chú và Hình 5 dóng thẳng hàng ngang chính xác với đoạn "Loại giới hạn này..."
@@ -101,5 +66,3 @@
     \lim_{x \to 0^+} x \ln x = \lim_{x \to 0^+} \frac{\ln x}{1/x} = \lim_{x \to 0^+} \frac{1/x}{-1/x^2} = \lim_{x \to 0^+} (-x) = 0 \tag*{{\color{stewartcyan}\blacksquare}}
     \end{equation*}
 \end{minipage}
-
-\end{document}

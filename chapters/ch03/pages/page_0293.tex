@@ -1,54 +1,3 @@
-\documentclass[10pt,a4paper]{article}
-\usepackage{geometry}
-\usepackage{amsmath,amssymb,amsfonts}
-\usepackage{xcolor}
-\usepackage{tikz}
-\usepackage{fancyhdr}
-\usepackage{microtype}
-\usepackage{iftex}
-
-\ifXeTeX
-  \usepackage{fontspec}
-  \setmainfont{Times New Roman}
-  \setsansfont{Arial}
-\else
-  \usepackage[utf8]{inputenc}
-  \usepackage[vietnamese]{babel}
-  \usepackage{newtxtext,newtxmath}
-\fi
-
-\geometry{
-    a4paper,
-    left=16mm,
-    right=16mm,
-    top=20mm,
-    bottom=20mm,
-    headheight=14pt,
-    headsep=16pt
-}
-
-% Màu chuẩn giáo trình Stewart Calculus
-\definecolor{stewartcyan}{RGB}{0, 130, 195}
-\definecolor{stewartgreen}{RGB}{0, 140, 70}
-\definecolor{stewartgray}{RGB}{115, 115, 115}
-
-% Biểu tượng máy tính đồ họa của bài tập Stewart
-\newcommand{\graphcalc}{%
-  \begin{tikzpicture}[baseline=0.5pt, x=1pt, y=1pt]
-    \draw[stewartcyan, fill=stewartcyan!12, rounded corners=0.8pt, line width=0.55pt] (0,0) rectangle (11, 8.5);
-    \draw[stewartcyan, line width=0.55pt, line cap=round] (1.8, 2.2) .. controls (4, 1.5) and (6, 7) .. (9.2, 5.5);
-  \end{tikzpicture}%
-}
-
-% Cấu hình Header trang chẵn
-\pagestyle{fancy}
-\fancyhf{}
-\renewcommand{\headrulewidth}{0pt}
-\fancyhead[L]{\textsf{\textbf{258}}\hspace{2.5em}\textsf{\textbf{CHƯƠNG 3}}\hspace{1.2em}\textsf{Các quy tắc tính đạo hàm}}
-\fancyhead[R]{}
-
-\begin{document}
-
 % ==================== PHẦN 1: NỘI DUNG LÝ THUYẾT & VÍ DỤ (LỆCH PHẢI) ====================
 \noindent
 \hfill
@@ -149,5 +98,3 @@
   Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part.  WCN 02-200-203\\[1.5pt]
   Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
 \end{center}
-
-\end{document}

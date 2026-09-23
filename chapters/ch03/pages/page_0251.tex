@@ -1,38 +1,3 @@
-\documentclass[10pt]{article}
-\usepackage[utf8]{inputenc}
-\usepackage[vietnamese]{babel}
-\usepackage{amsmath,amssymb,amsfonts}
-\usepackage{graphicx}
-\usepackage{xcolor}
-\usepackage{tikz}
-\usepackage{fancyhdr}
-\usepackage[letterpaper, top=0.65in, bottom=0.6in, left=0.65in, right=0.65in]{geometry}
-
-% Thiết lập màu sắc theo chuẩn sách Stewart Calculus
-\definecolor{stewartblue}{RGB}{0, 130, 185}
-\definecolor{stewartcyan}{RGB}{0, 166, 214}
-\definecolor{stewartgray}{RGB}{110, 110, 110}
-
-% Biểu tượng công cụ vẽ đồ thị / CAS theo chuẩn Stewart
-\newcommand{\casicon}{%
-    \begin{tikzpicture}[scale=0.2, baseline=1.5pt]
-        \draw[stewartcyan, fill=white, line width=0.65pt, rounded corners=0.8pt] (0,0) rectangle (1.25, 1.15);
-        \draw[stewartcyan, line width=0.7pt] (0.15,0.25) .. controls (0.45,0.95) and (0.75,0.15) .. (1.1,0.9);
-    \end{tikzpicture}%
-}
-
-% Cấu hình tiêu đề trang (Header)
-\pagestyle{fancy}
-\fancyhf{}
-\renewcommand{\headrulewidth}{0pt}
-\fancyhead[L]{\small\textbf{216}\hspace{2.5em}\textbf{CHƯƠNG 3}\quad Quy tắc đạo hàm}
-\fancyfoot{}
-
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{0pt}
-
-\begin{document}
-
 % Thiết lập độ giãn hiển thị công thức toán
 \setlength{\abovedisplayskip}{3.5pt}
 \setlength{\belowdisplayskip}{3.5pt}
@@ -133,5 +98,3 @@ Chứng minh rằng mặc dù các biểu thức nhận được cho $dy/dx$ tr�
 \fontsize{6.5pt}{8pt}\selectfont\color{stewartgray}
 Bản quyền thuộc sở hữu của Cengage Learning. Mọi quyền được bảo lưu. Không được sao chép, quét hoặc nhân bản toàn bộ hay từng phần. WCN 02-200-203
 \end{center}
-
-\end{document}

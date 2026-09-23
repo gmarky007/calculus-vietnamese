@@ -1,51 +1,3 @@
-\documentclass[10pt,a4paper]{article}
-\usepackage[utf8]{inputenc}
-\usepackage[vietnamese]{babel}
-\usepackage{amsmath,amssymb,amsfonts}
-\usepackage{geometry}
-\geometry{
-    a4paper,
-    left=20mm,
-    right=18mm,
-    top=22mm,
-    bottom=22mm,
-    headheight=14pt
-}
-\usepackage{xcolor}
-\definecolor{stewartred}{RGB}{204, 34, 41}
-\definecolor{stewartcyan}{RGB}{0, 136, 170}
-\definecolor{stewartgray}{RGB}{100, 100, 100}
-
-\usepackage{tcolorbox}
-\tcbuselibrary{skins,breakable}
-
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\fancyhf{}
-\fancyhead[L]{	extsf{\textbf{118}}\hspace{36mm}\textsf{\textbf{CHƯƠNG 2}}\quad \textsf{Giới hạn và Đạo hàm}}
-\fancyhead[R]{}
-\renewcommand{\headrulewidth}{0pt}
-
-\usepackage{newtxtext,newtxmath}
-
-\newtcolorbox{definitionbox}[1][]{
-    enhanced,
-    colback=white,
-    colframe=stewartred,
-    arc=0mm,
-    boxrule=0.8pt,
-    left=9pt,
-    right=9pt,
-    top=7pt,
-    bottom=7pt,
-    #1
-}
-
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{4pt}
-
-\begin{document}
-
 \noindent
 \begin{minipage}[t]{0.22\textwidth}
     % Cột lề trống tương ứng với bản gốc trang 118
@@ -101,5 +53,3 @@
     \end{alignat*}
     Phương trình này chính là phát biểu rằng hàm số $f(x) = x^m$ là một hàm số liên tục. Do đó, theo phần 3 của Định lý 4, hàm số $g(x) = cx^m$ liên tục. Vì $P$ là tổng của các hàm số có dạng này và một hàm hằng, nên từ phần 1 của Định lý 4 suy ra rằng $P$ là hàm liên tục.
 \end{minipage}
-
-\end{document}

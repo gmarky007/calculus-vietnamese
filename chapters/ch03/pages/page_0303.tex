@@ -1,53 +1,3 @@
-\documentclass[10pt]{article}
-\usepackage[utf8]{inputenc}
-\usepackage[vietnamese]{babel}
-\usepackage{amsmath,amssymb,amsfonts}
-\usepackage[paperwidth=8.5in,paperheight=11in,top=1.8cm,bottom=1.8cm,left=1.8cm,right=1.8cm]{geometry}
-\usepackage{graphicx}
-\usepackage{xcolor}
-\usepackage{tikz}
-\usepackage{enumitem}
-\usepackage{fancyhdr}
-\usepackage{newtxtext,newtxmath}
-
-% Thiết lập màu sắc theo phong cách sách giáo trình Stewart
-\definecolor{stewartcyan}{RGB}{0, 136, 175}
-\definecolor{footergray}{RGB}{110, 110, 110}
-
-% Icon máy tính / CAS của Stewart dạng vector chuẩn xác
-\newcommand{\casicon}{%
-  \begingroup\normalfont
-  \tikz[baseline=-0.6ex, line cap=round, line join=round]{%
-    \draw[stewartcyan, line width=0.6pt, rounded corners=0.8pt] (0,0.06) rectangle (0.32, 0.32);
-    \draw[stewartcyan, line width=0.55pt] (0.05, 0.13) .. controls (0.11, 0.30) and (0.21, 0.08) .. (0.27, 0.25);
-    \draw[stewartcyan, line width=0.6pt] (0.12, 0.06) -- (0.10, 0.0) -- (0.22, 0.0) -- (0.20, 0.06);
-  }%
-  \endgroup
-}
-
-% Lệnh tạo mục có icon CAS treo lề trái mà không làm sai biến đếm enumi
-\newcommand{\casitem}{%
-  \refstepcounter{enumi}%
-  \item[\makebox[0pt][r]{\casicon\hspace{3.5pt}}\textbf{\theenumi.}]%
-}
-
-% Định dạng Header và Footer
-\pagestyle{fancy}
-\fancyhf{}
-\fancyhead[L]{\fontsize{9pt}{11pt}\selectfont\textbf{268}\qquad\textbf{\textsf{CHƯƠNG 3}}\quad \textsf{Các quy tắc đạo hàm}}
-\fancyfoot[C]{\fontsize{6.5pt}{8pt}\selectfont\color{footergray} Bản dịch tiếng Việt phục vụ học tập và nghiên cứu. Nguyên tác: \textit{Calculus: Early Transcendentals, 9th Edition} © Cengage Learning.}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
-
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{0pt}
-\setlength{\abovedisplayskip}{4pt plus 1pt minus 1pt}
-\setlength{\belowdisplayskip}{4pt plus 1pt minus 1pt}
-\setlength{\abovedisplayshortskip}{2pt plus 1pt minus 1pt}
-\setlength{\belowdisplayshortskip}{2pt plus 1pt minus 1pt}
-
-\begin{document}
-
 \noindent
 \begin{minipage}[t]{0.482\textwidth}
 \begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=*, itemsep=8.5pt, topsep=0pt, parsep=0pt]
@@ -144,5 +94,3 @@ Nói cách khác, hầu hết mọi hàm số có dạng $f(x) = ae^x + be^{-x}$
 Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\\
 Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.}
 \end{center}
-
-\end{document}

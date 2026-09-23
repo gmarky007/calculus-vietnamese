@@ -1,61 +1,3 @@
-\documentclass[10pt]{article}
-\usepackage[paperwidth=8.5in, paperheight=11in,
-  left=2.35in, right=0.85in, top=0.75in, bottom=0.75in,
-  marginparwidth=1.75in, marginparsep=0.35in]{geometry}
-\usepackage{fontspec}
-\IfFontExistsTF{Times New Roman}{
-  \setmainfont{Times New Roman}
-}{
-  \IfFontExistsTF{TeX Gyre Termes}{
-    \setmainfont{TeX Gyre Termes}
-  }{
-    \setmainfont{DejaVu Serif}
-  }
-}
-\IfFontExistsTF{Arial}{
-  \setsansfont{Arial}
-}{
-  \IfFontExistsTF{TeX Gyre Heros}{
-    \setsansfont{TeX Gyre Heros}
-  }{
-    \setsansfont{DejaVu Sans}
-  }
-}
-
-\usepackage{amsmath,amssymb}
-\usepackage{graphicx}
-\usepackage{xcolor}
-\usepackage{colortbl}
-\usepackage{array}
-\usepackage{marginnote}
-\usepackage{fancyhdr}
-\usepackage[most]{tcolorbox}
-
-% Màu sắc định dạng Stewart
-\definecolor{stewartblue}{RGB}{0, 130, 185}
-\definecolor{stewartred}{RGB}{208, 45, 45}
-\definecolor{tableheader}{RGB}{235, 243, 250}
-
-\reversemarginpar
-\pagestyle{fancy}
-\fancyhf{}
-\fancyheadoffset[L]{1.85in}
-\fancyhead[L]{\textbf{\large 86}\hspace{2.2cm}\textsf{\textbf{CHƯƠNG 2}}\hspace{0.8cm}\textsf{Giới hạn và Đạo hàm}}
-\fancyfoot[L]{%
-  \hspace{-1.85in}%
-  \begin{minipage}{7.2in}
-    \tiny\color{gray!80!black}
-    Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203
-  \end{minipage}%
-}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
-
-\setlength{\parindent}{1.2em}
-\setlength{\parskip}{0pt}
-
-\begin{document}
-
 \noindent\textcolor{stewartblue}{\textbf{VÍ DỤ 3}}\hspace{0.8em}Tìm $\displaystyle\lim_{x \to 0} \left( x^3 + \frac{\cos 5x}{10{,}000} \right)$.
 
 \vspace{0.45em}
@@ -155,5 +97,3 @@ và nói rằng \textbf{giới hạn bên trái} của $f(x)$ khi $x$ tiến t�
 \noindent
 và nói rằng \textbf{giới hạn bên phải} của $f(x)$ khi $x$ tiến tới $a$ [hoặc giới hạn của $f(x)$ khi $x$ tiến tới $a$ \emph{từ bên phải}] bằng $L$ nếu ta có thể làm cho các giá trị của $f(x)$ gần $L$ tùy ý bằng cách giới hạn $x$ đủ gần $a$ \emph{với $x$ lớn hơn $a$}.
 \end{tcolorbox}
-
-\end{document}

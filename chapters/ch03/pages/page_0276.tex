@@ -1,35 +1,3 @@
-\documentclass[10pt]{article}
-\usepackage[paperwidth=210mm, paperheight=280mm, top=18mm, bottom=18mm, left=56mm, right=18mm, headheight=14pt, footskip=10mm]{geometry}
-\usepackage{amsmath,amssymb,amsfonts}
-\usepackage{graphicx}
-\usepackage{xcolor}
-\usepackage{fancyhdr}
-\usepackage{enumitem}
-
-\usepackage{iftex}
-\ifXeTeX
-  \usepackage{fontspec}
-\else
-  \usepackage[utf8]{vietnam}
-\fi
-
-% Mã màu chuẩn James Stewart Calculus
-\definecolor{stewartcyan}{RGB}{0, 136, 180}
-
-% Thiết lập header
-\pagestyle{fancy}
-\fancyhf{}
-\renewcommand{\headrulewidth}{0pt}
-\fancyhead[R]{\textsf{\textbf{MỤC 3.8}}\quad \textsf{Sự tăng trưởng và suy giảm theo hàm mũ}\qquad \textsf{\textbf{241}}}
-\fancyhead[L]{}
-
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{3.5pt plus 1pt minus 1pt}
-\setlength{\abovedisplayskip}{5pt plus 1pt minus 1pt}
-\setlength{\belowdisplayskip}{5pt plus 1pt minus 1pt}
-
-\begin{document}
-
 Chúng ta ước tính rằng dân số thế giới vào năm 1993 là
 \[
 P(43) = 2560e^{0{,}017185(43)} \approx 5360\text{ triệu}
@@ -85,5 +53,3 @@ Các nhà vật lý biểu diễn tốc độ phân rã theo \textbf{chu kỳ b�
   m(t) = m(0)e^{kt} = 100e^{kt}
   \]
 \end{enumerate}
-
-\end{document}
