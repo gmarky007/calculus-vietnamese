@@ -1,0 +1,152 @@
+\documentclass[10pt]{article}
+\usepackage[letterpaper, top=1.4cm, bottom=1.4cm, left=1.8cm, right=1.8cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{fontspec}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{enumitem}
+
+% Màu chuẩn giáo trình Stewart
+\definecolor{stewartcyan}{RGB}{0, 138, 178}
+\definecolor{stewartdark}{RGB}{0, 80, 120}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\begin{document}
+
+% HEADER
+{\small\textbf{\textsf{MỤC 3.9}}\quad Tốc độ liên quan \hfill \textbf{\textsf{251}}}
+\vspace{1.2em}
+
+% PHẦN KẾT CỦA VÍ DỤ PHÍA TRÊN
+\noindent
+\begin{minipage}[t]{0.30\textwidth}
+\vspace{0.8em}
+{\color{stewartcyan}\footnotesize
+\noindent
+$0{,}128\,\dfrac{\text{rad}}{\text{s}} \times \dfrac{1\text{ vòng}}{2\pi\text{ rad}} \times \dfrac{60\text{ s}}{1\text{ phút}}$
+
+\vspace{0.3em}
+\noindent
+$\approx 1{,}22\text{ vòng mỗi phút}$
+}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.68\textwidth}
+\fontsize{9.5pt}{12pt}\selectfont
+Khi $x = 15$, chiều dài của chùm sáng là $25$, nên $\cos\theta = \frac{20}{25} = \frac{4}{5}$ và
+\[
+\frac{d\theta}{dt} = \frac{1}{5}\left(\frac{4}{5}\right)^2 = \frac{16}{125} = 0{,}128
+\]
+Đèn chiếu đang quay với tốc độ $0{,}128\text{ rad/s}$. \hfill {\color{stewartcyan}\rule{1.1ex}{1.1ex}}
+\end{minipage}
+
+\vspace{1.2em}
+
+% BANNER 3.9 BÀI TẬP
+\noindent
+\begin{tikzpicture}
+  % 4 đường kẻ song song bên trái
+  \foreach \i in {0, 1, 2, 3} {
+    \draw[stewartcyan, line width=0.55pt] (0, \i*2.2pt) -- (1.5, \i*2.2pt);
+  }
+  % 3 vạch đứng đặc trưng Stewart
+  \fill[stewartcyan] (1.65, -2pt) rectangle ++(1.4pt, 11pt);
+  \fill[stewartcyan] (1.73, -2pt) rectangle ++(1.4pt, 11pt);
+  \fill[stewartcyan] (1.81, -2pt) rectangle ++(1.4pt, 11pt);
+  % Tiêu đề
+  \node[anchor=west, inner sep=0, font=\sffamily\bfseries\Large] at (2.05, 3.3pt) {\textcolor{stewartcyan}{3.9}\hspace{0.55em}\textcolor{stewartdark}{Bài tập}};
+  % 4 đường kẻ song song bên phải
+  \foreach \i in {0, 1, 2, 3} {
+    \draw[stewartcyan, line width=0.55pt] (4.9, \i*2.2pt) -- (\linewidth, \i*2.2pt);
+  }
+\end{tikzpicture}
+
+\vspace{0.8em}
+
+% NỘI DUNG BÀI TẬP 2 CỘT
+\noindent
+\begin{minipage}[t]{0.482\textwidth}
+\fontsize{9pt}{11.4pt}\selectfont
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=1.35em, itemsep=0.48em, topsep=0pt, parsep=0pt]
+\item \textbf{(a)} Nếu $V$ là thể tích của một hình lập phương có độ dài cạnh $x$ và hình lập phương giãn nở theo thời gian, hãy tìm $dV/dt$ theo $dx/dt$.
+\par\smallskip
+\textbf{(b)} Nếu độ dài cạnh của hình lập phương tăng với tốc độ $4\text{ cm/s}$, thì thể tích của hình lập phương tăng nhanh như thế nào khi độ dài cạnh là $15\text{ cm}$?
+
+\item \textbf{(a)} Nếu $A$ là diện tích của một hình tròn có bán kính $r$ và hình tròn giãn nở theo thời gian, hãy tìm $dA/dt$ theo $dr/dt$.
+\par\smallskip
+\textbf{(b)} Giả sử dầu tràn từ một tàu chở dầu bị vỡ và lan ra theo hình tròn. Nếu bán kính của vết dầu loang tăng với tốc độ không đổi là $2\text{ m/s}$, thì diện tích của vết dầu loang tăng nhanh như thế nào khi bán kính là $30\text{ m}$?
+
+\item Mỗi cạnh của một hình vuông đang tăng với tốc độ $6\text{ cm/s}$. Diện tích của hình vuông tăng với tốc độ bao nhiêu khi diện tích của hình vuông là $16\text{ cm}^2$?
+
+\item Bán kính của một hình cầu đang tăng với tốc độ $4\text{ mm/s}$. Thể tích tăng nhanh như thế nào khi đường kính là $80\text{ mm}$?
+
+\item Bán kính của một quả bóng hình cầu đang tăng với tốc độ $2\text{ cm/phút}$. Diện tích bề mặt của quả bóng tăng với tốc độ bao nhiêu khi bán kính là $8\text{ cm}$?
+
+\item Chiều dài của một hình chữ nhật đang tăng với tốc độ $8\text{ cm/s}$ và chiều rộng của nó đang tăng với tốc độ $3\text{ cm/s}$. Khi chiều dài là $20\text{ cm}$ và chiều rộng là $10\text{ cm}$, diện tích của hình chữ nhật tăng nhanh như thế nào?
+
+\item Một bồn chứa hình trụ có bán kính $5\text{ m}$ đang được bơm nước vào với tốc độ $3\text{ m}^3\text{/phút}$. Chiều cao của mực nước tăng nhanh như thế nào?
+
+\item Diện tích của một tam giác có các cạnh độ dài $a$ và $b$ cùng góc kẹp giữa $\theta$ là $A = \frac{1}{2}ab\sin\theta$. (Xem Công thức 6 trong Phụ lục D.)
+\par\smallskip
+\textbf{(a)} Nếu $a = 2\text{ cm}$, $b = 3\text{ cm}$ và $\theta$ tăng với tốc độ $0{,}2\text{ rad/phút}$, thì diện tích tăng nhanh như thế nào khi $\theta = \pi/3$?
+\par\smallskip
+\textbf{(b)} Nếu $a = 2\text{ cm}$, $b$ tăng với tốc độ $1{,}5\text{ cm/phút}$ và $\theta$ tăng với tốc độ $0{,}2\text{ rad/phút}$, thì diện tích tăng nhanh như thế nào khi $b = 3\text{ cm}$ và $\theta = \pi/3$?
+\par\smallskip
+\textbf{(c)} Nếu $a$ tăng với tốc độ $2{,}5\text{ cm/phút}$, $b$ tăng với tốc độ $1{,}5\text{ cm/phút}$ và $\theta$ tăng với tốc độ $0{,}2\text{ rad/phút}$, thì diện tích tăng nhanh như thế nào khi $a = 2\text{ cm}$, $b = 3\text{ cm}$ và $\theta = \pi/3$?
+\end{enumerate}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.482\textwidth}
+\fontsize{9pt}{11.4pt}\selectfont
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=1.35em, itemsep=0.48em, topsep=0pt, parsep=0pt, start=9]
+\item Giả sử $4x^2 + 9y^2 = 25$, trong đó $x$ và $y$ là các hàm số theo $t$.
+\par\smallskip
+\textbf{(a)} Nếu $dy/dt = \frac{1}{3}$, hãy tìm $dx/dt$ khi $x = 2$ và $y = 1$.
+\par\smallskip
+\textbf{(b)} Nếu $dx/dt = 3$, hãy tìm $dy/dt$ khi $x = -2$ và $y = 1$.
+
+\item Nếu $x^2 + y^2 + z^2 = 9$, $dx/dt = 5$ và $dy/dt = 4$, hãy tìm $dz/dt$ khi $(x, y, z) = (2, 2, 1)$.
+
+\item Trọng lượng $w$ của một nhà du hành vũ trụ (tính bằng pound) liên hệ với độ cao $h$ của cô ấy so với bề mặt Trái Đất (tính bằng dặm) bởi
+\[
+w = w_0 \left(\frac{3960}{3960 + h}\right)^2
+\]
+trong đó $w_0$ là trọng lượng của nhà du hành trên bề mặt Trái Đất. Nếu nhà du hành nặng 130 pound trên Trái Đất và đang ở trong một tên lửa được đẩy lên với tốc độ $12\text{ dặm/s}$, hãy tìm tốc độ thay đổi trọng lượng của cô ấy (tính bằng lb/s) khi cô ấy ở độ cao 40 dặm phía trên bề mặt Trái Đất.
+
+\item Một chất điểm đang chuyển động dọc theo một hyperbol $xy = 8$. Khi nó chạm tới điểm $(4, 2)$, tung độ $y$ đang giảm với tốc độ $3\text{ cm/s}$. Hoành độ $x$ của điểm đó thay đổi nhanh như thế nào tại thời điểm ấy?
+\end{enumerate}
+
+\vspace{0.45em}
+\noindent{\color{stewartcyan}\textbf{13--16}}
+\begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=1.5em, itemsep=0.08em, topsep=0.2em, parsep=0pt]
+\item Những đại lượng nào đã cho trong bài toán?
+\item Đại lượng nào cần tìm?
+\item Vẽ hình mô tả tình huống tại một thời điểm $t$ bất kỳ.
+\item Thiết lập phương trình liên hệ các đại lượng.
+\item Hoàn thành việc giải bài toán.
+\end{enumerate}
+
+\vspace{0.1em}
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=1.35em, itemsep=0.48em, topsep=0.2em, parsep=0pt, start=13]
+\item Một máy bay bay theo phương ngang ở độ cao $1\text{ dặm}$ với tốc độ $500\text{ dặm/h}$ bay qua ngay phía trên một trạm radar. Hãy tìm tốc độ tăng của khoảng cách từ máy bay đến trạm khi máy bay cách trạm $2\text{ dặm}$.
+
+\item Nếu một quả cầu tuyết tan chảy sao cho diện tích bề mặt của nó giảm với tốc độ $1\text{ cm}^2\text{/phút}$, hãy tìm tốc độ giảm của đường kính khi đường kính là $10\text{ cm}$.
+
+\item Một ngọn đèn đường được gắn trên đỉnh một cột đèn cao $15\text{ ft}$. Một người đàn ông cao $6\text{ ft}$ bước ra xa khỏi chân cột với tốc độ $5\text{ ft/s}$ dọc theo một đường thẳng. Đỉnh bóng của người đó di chuyển nhanh như thế nào khi anh ta cách chân cột $40\text{ ft}$?
+
+\item Vào lúc giữa trưa, tàu A ở cách tàu B $150\text{ km}$ về phía tây. Tàu A đang di chuyển về phía đông với tốc độ $35\text{ km/h}$ và tàu B đang di chuyển về phía bắc với tốc độ $25\text{ km/h}$. Khoảng cách giữa hai tàu thay đổi nhanh như thế nào vào lúc 4:00 chiều?
+\end{enumerate}
+\end{minipage}
+
+\vfill
+
+% FOOTER LINE & COPYRIGHT
+\noindent{\color{stewartcyan}\rule{\linewidth}{0.5pt}}
+\vspace{0.3em}
+
+\noindent{\fontsize{6pt}{7.5pt}\selectfont\color{black!70}
+Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\par\vspace{1pt}
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.\par}
+
+\end{document}
