@@ -581,6 +581,12 @@
       "score": 99,
       "notes": "Bản dịch hiện tại bị lỗi biên dịch khiến toàn bộ phần bài tập biến mất và in chuỗi văn bản thô ở đầu trang. Ngoài ra, mã nguồn cũ tự ý thêm các đường kẻ ngang cyan không có trong bản gốc, sai dạng toán câu 39 (lũy thừa) và câu 50 (căn thức thay vì trị tuyệt đối), cùng vị trí nhãn icon CAS chưa dóng chuẩn mép lề.",
       "time": "2026-09-23 09:19:58"
+    },
+    {
+      "page_num": 306,
+      "score": 99,
+      "notes": "Bản dịch hiện tại bị lỗi nghiêm trọng in tràn mã preamble ra đầu trang, tự ý thêm hai đường kẻ ngang màu cyan không có trong sách gốc, và thụt lề các tiểu mục (b), (c), (d) chưa chuẩn quy cách Stewart.",
+      "time": "2026-09-23 09:22:21"
     }
   ]
 }
