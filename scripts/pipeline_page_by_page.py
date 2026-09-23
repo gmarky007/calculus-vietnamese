@@ -62,13 +62,14 @@ MASTER_PREAMBLE = r"""\documentclass[10pt,letterpaper]{article}
 \geometry{
     paperwidth=612.05pt,
     paperheight=720.05pt,
-    top=0.9cm,
-    bottom=0.8cm,
-    left=1.25cm,
-    right=1.25cm,
-    headheight=14pt,
-    headsep=0.25cm,
-    footskip=0.3cm
+    top=33.8pt,
+    headheight=13pt,
+    headsep=16pt,
+    bottom=44pt,
+    footskip=18pt,
+    left=36pt,
+    right=36pt,
+    includehead
 }
 
 \definecolor{stewartcyan}{RGB}{0, 118, 186}
