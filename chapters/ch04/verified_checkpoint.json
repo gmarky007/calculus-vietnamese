@@ -293,6 +293,12 @@
       "score": 99,
       "notes": "Trang dịch bị lỗi in chuỗi preamble lên đầu trang (do lỗi thoát ký tự), thanh tiêu đề mục 4.5 vẽ 3 đường kẻ ở cả hai bên thay vì đóng khung '4.5' và kẻ 3 đường về bên phải như bản gốc, và bảng xét dấu có quá nhiều đường kẻ ngang giữa các dòng.",
       "time": "2026-09-23 11:55:55"
+    },
+    {
+      "page_num": 363,
+      "score": 99,
+      "notes": "Bản dịch bị lỗi biên dịch nghiêm trọng: toàn bộ phần khai báo preamble bị in thẳng ra trang in dưới dạng văn bản thô và toàn bộ phần nội dung trang bị biến mất. Cần tái cấu trúc toàn bộ mã nguồn XeLaTeX để đảm bảo biên dịch sạch, khôi phục đầy đủ bố cục 2 cột, dóng hàng hình ảnh và các bài tập chuẩn 1:1 theo bản gốc James Stewart Calculus.",
+      "time": "2026-09-23 11:58:49"
     }
   ]
 }

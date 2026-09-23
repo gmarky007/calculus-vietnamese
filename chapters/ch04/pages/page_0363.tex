@@ -1,0 +1,145 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage[letterpaper, top=1.6cm, bottom=1.6cm, left=1.6cm, right=1.6cm, headheight=14pt, footskip=1.0cm]{geometry}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+\usepackage{newtxtext,newtxmath}
+\usepackage{microtype}
+
+% Định nghĩa màu nhận diện của giáo trình Stewart Calculus
+\definecolor{stewartcyan}{RGB}{0, 130, 180}
+\definecolor{rulecolor}{RGB}{160, 205, 225}
+
+% Thiết lập Header và Footer chuẩn sách gốc
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\fontsize{9}{11}\selectfont\textbf{328}\qquad\textbf{\textsf{CHƯƠNG 4}}\quad\textsf{Các ứng dụng của đạo hàm}}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{%
+  \fontsize{6.5}{7.5}\selectfont\color{gray}%
+  Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\\[1pt]%
+  Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.%
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2.5pt}
+\setlength{\abovedisplayskip}{3pt}
+\setlength{\belowdisplayskip}{3pt}
+\setlength{\abovedisplayshortskip}{1pt}
+\setlength{\belowdisplayshortskip}{2pt}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.485\textwidth}
+  \vspace{0pt}
+  \textbf{(d)} Tất cả các đường tiệm cận đứng và tiệm cận ngang của $g$
+
+  \begin{center}
+    \vspace{-1pt}
+    \includegraphics[width=0.88\linewidth]{images/p0363_fig1.png}
+    \vspace{-3pt}
+  \end{center}
+
+  \begin{tabularx}{\linewidth}{@{}X X@{}}
+    \textbf{55.} $g(x) = \sqrt{f(x)}$ & \textbf{56.} $g(x) = \sqrt[3]{f(x)}$ \\[4pt]
+    \textbf{57.} $g(x) = |f(x)|$ & \textbf{58.} $g(x) = 1/f(x)$
+  \end{tabularx}
+
+  \vspace{3pt}
+  {\color{rulecolor}\hrule height 0.6pt}
+  \vspace{3pt}
+
+  \textbf{59.} Trong thuyết tương đối, khối lượng của một hạt là
+  \[
+    m = \frac{m_0}{\sqrt{1 - v^2/c^2}}
+  \]
+  trong đó $m_0$ là khối lượng nghỉ của hạt, $m$ là khối lượng khi hạt chuyển động với tốc độ $v$ đối với người quan sát, và $c$ là tốc độ ánh sáng. Hãy phác thảo đồ thị của $m$ như một hàm số của $v$.
+
+  \textbf{60.} Trong thuyết tương đối, năng lượng của một hạt là
+  \[
+    E = \sqrt{m_0^2 c^4 + h^2 c^2/\lambda^2}
+  \]
+  trong đó $m_0$ là khối lượng nghỉ của hạt, $\lambda$ là bước sóng của nó, và $h$ là hằng số Planck. Hãy phác thảo đồ thị của $E$ như một hàm số của $\lambda$. Đồ thị này cho biết điều gì về năng lượng?
+
+  \textbf{61.} Một mô hình cho sự lan truyền của một tin đồn được cho bởi phương trình
+  \[
+    p(t) = \frac{1}{1 + a e^{-kt}}
+  \]
+  trong đó $p(t)$ là tỉ lệ dân số biết tin đồn tại thời điểm $t$, còn $a$ và $k$ là các hằng số dương.\\
+  \textbf{(a)} Khi nào một nửa dân số đã nghe tin đồn?\\
+  \textbf{(b)} Khi nào tốc độ lan truyền tin đồn là lớn nhất?\\
+  \textbf{(c)} Hãy phác thảo đồ thị của $p$.
+
+  \textbf{62.} Một mô hình cho nồng độ tại thời điểm $t$ của một loại thuốc được tiêm vào dòng máu là
+  \[
+    C(t) = K(e^{-at} - e^{-bt})
+  \]
+  trong đó $a, b,$ và $K$ là các hằng số dương và $b > a$. Hãy phác thảo đồ thị của hàm nồng độ. Đồ thị cho chúng ta biết điều gì về sự thay đổi nồng độ theo thời gian?
+
+  \textbf{63.} Hình bên minh họa một thanh dầm có chiều dài $L$ được chôn ngàm vào các bức tường bê tông. Nếu một tải trọng không đổi $W$ được phân bố đều dọc theo chiều dài của nó, thanh dầm có dạng của đường cong độ võng
+  \[
+    y = -\frac{W}{24EI}x^4 + \frac{WL}{12EI}x^3 - \frac{WL^2}{24EI}x^2
+  \]
+  trong đó $E$ và $I$ là các hằng số dương. ($E$ là môđun đàn hồi Young và $I$ là mômen quán tính của mặt cắt
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.485\textwidth}
+  \vspace{0pt}
+  ngang của dầm.) Hãy phác thảo đồ thị của đường cong độ võng.
+
+  \begin{center}
+    \vspace{1pt}
+    \includegraphics[width=0.68\linewidth]{images/p0363_fig2.png}
+    \vspace{1pt}
+  \end{center}
+
+  \textbf{64.} Định luật Coulomb phát biểu rằng lực hút giữa hai hạt mang điện tỉ lệ thuận với tích độ lớn các điện tích và tỉ lệ nghịch với bình phương khoảng cách giữa chúng. Hình bên minh họa các hạt có điện tích $1$ đặt tại các vị trí $0$ và $2$ trên một trục tọa độ và một hạt có điện tích $-1$ tại vị trí $x$ nằm giữa chúng. Từ Định luật Coulomb suy ra rằng hợp lực tác dụng lên hạt ở giữa là
+  \[
+    F(x) = -\frac{k}{x^2} + \frac{k}{(x-2)^2} \qquad 0 < x < 2
+  \]
+  trong đó $k$ là một hằng số dương. Hãy phác thảo đồ thị của hàm hợp lực. Đồ thị cho biết điều gì về lực này?
+
+  \begin{center}
+    \vspace{1pt}
+    \includegraphics[width=0.62\linewidth]{images/p0363_fig3.png}
+    \vspace{1pt}
+  \end{center}
+
+  {\color{stewartcyan}\textbf{65--68}}\quad Tìm một phương trình của đường tiệm cận xiên. Không vẽ đường cong.
+
+  \vspace{2pt}
+  \begin{tabularx}{\linewidth}{@{}X X@{}}
+    \textbf{65.} $y = \dfrac{x^2+1}{x+1}$ & \textbf{66.} $y = \dfrac{4x^3 - 10x^2 - 11x + 1}{x^2 - 3x}$ \\[13pt]
+    \textbf{67.} $y = \dfrac{2x^3 - 5x^2 + 3x}{x^2 - x - 2}$ & \textbf{68.} $y = \dfrac{-6x^4 + 2x^3 + 3}{2x^3 - x}$
+  \end{tabularx}
+
+  \vspace{4pt}
+  {\color{rulecolor}\hrule height 0.6pt}
+  \vspace{3pt}
+
+  {\color{stewartcyan}\textbf{69--74}}\quad Sử dụng các hướng dẫn của mục này để phác thảo đường cong. Trong hướng dẫn D, hãy tìm phương trình của đường tiệm cận xiên.
+
+  \vspace{2pt}
+  \begin{tabularx}{\linewidth}{@{}X X@{}}
+    \textbf{69.} $y = \dfrac{x^2}{x-1}$ & \textbf{70.} $y = \dfrac{1+5x-2x^2}{x-2}$ \\[13pt]
+    \textbf{71.} $y = \dfrac{x^3+4}{x^2}$ & \textbf{72.} $y = \dfrac{x^3}{(x+1)^2}$ \\[13pt]
+    \textbf{73.} $y = 1 + \frac{1}{2}x + e^{-x}$ & \textbf{74.} $y = 1 - x + e^{1+x/3}$
+  \end{tabularx}
+
+  \vspace{4pt}
+  {\color{rulecolor}\hrule height 0.6pt}
+  \vspace{3pt}
+
+  \textbf{75.} Chứng minh rằng đường cong $y = x - \tan^{-1}x$ có hai đường tiệm cận xiên: $y = x + \pi/2$ và $y = x - \pi/2$. Hãy sử dụng điều này để giúp phác thảo đường cong.
+
+  \textbf{76.} Chứng minh rằng đường cong $y = \sqrt{x^2+4x}$ có hai đường tiệm cận xiên: $y = x + 2$ và $y = -x - 2$. Hãy sử dụng điều này để giúp phác thảo đường cong.
+
+  \textbf{77.} Chứng minh rằng các đường thẳng $y = (b/a)x$ và $y = -(b/a)x$ là các đường tiệm cận xiên của hypebol $(x^2/a^2) - (y^2/b^2) = 1$.
+\end{minipage}
+
+\end{document}
