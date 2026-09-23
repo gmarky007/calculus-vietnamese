@@ -1,0 +1,125 @@
+\documentclass[11pt,twoside]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T5,T1]{fontenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage[many]{tcolorbox}
+\usepackage{enumitem}
+\usepackage{lmodern}
+
+\geometry{
+  paperwidth=8.5in,
+  paperheight=11in,
+  top=0.75in,
+  bottom=0.85in,
+  left=0.8in,
+  right=0.8in
+}
+
+\definecolor{stewartred}{RGB}{204, 34, 41}
+\definecolor{stewartcyan}{RGB}{0, 118, 158}
+\definecolor{stewartgreen}{RGB}{0, 136, 68}
+\definecolor{footercolor}{RGB}{100, 100, 100}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\fancyhead[R]{\small\textsf{\textbf{MỤC 4.7}}\hspace{1.5em}\textsf{Các bài toán tối ưu hóa}\hspace{2.5em}\textbf{\textsf{339}}}
+\fancyhead[L]{}
+
+\fancyfoot[C]{%
+  \scriptsize\color{footercolor}%
+  Bản quyền thuộc Cengage Learning. Đã đăng ký mọi quyền. Không được sao chép, scan hoặc nhân bản toàn bộ hay từng phần. WCN 02-200-203\\
+  Biên dịch chuẩn sư phạm toán học cho giáo trình \textit{Calculus: Early Transcendentals} (Phiên bản 9) của James Stewart.%
+}
+
+\newtcolorbox{definitionbox}{
+  enhanced,
+  colback=white,
+  colframe=stewartred,
+  sharp corners,
+  boxrule=1.0pt,
+  left=8pt,
+  right=8pt,
+  top=6pt,
+  bottom=6pt,
+  boxsep=0pt
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+
+\begin{document}
+
+\setlength{\abovedisplayskip}{6pt}
+\setlength{\belowdisplayskip}{6pt}
+\setlength{\abovedisplayshortskip}{4pt}
+\setlength{\belowdisplayshortskip}{4pt}
+
+\noindent
+\begin{minipage}[t]{0.26\textwidth}
+  \vspace{0pt}%
+  \vspace*{7.2cm}
+  \centering
+  \includegraphics[width=\linewidth]{images/p0374_fig1.png}
+  \par\vspace{5pt}
+  {\small\textsf{\textbf{HÌNH 6}}}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.71\textwidth}
+  \vspace{0pt}%
+  \begin{definitionbox}
+    \textbf{\textsf{\color{stewartred}Quy tắc đạo hàm cấp một cho cực trị tuyệt đối}}\hspace{1em}Giả sử $c$ là một điểm tới hạn của hàm số liên tục $f$ xác định trên một khoảng.
+    \begin{enumerate}[label=\textnormal{(\alph*)}, leftmargin=1.8em, itemsep=2pt, topsep=3pt, parsep=0pt]
+      \item Nếu $f'(x) > 0$ với mọi $x < c$ và $f'(x) < 0$ với mọi $x > c$, thì $f(c)$ là giá trị lớn nhất tuyệt đối của $f$.
+      \item Nếu $f'(x) < 0$ với mọi $x < c$ và $f'(x) > 0$ với mọi $x > c$, thì $f(c)$ là giá trị nhỏ nhất tuyệt đối của $f$.
+    \end{enumerate}
+  \end{definitionbox}
+
+  \vspace{0.8em}
+  \noindent
+  \textbf{\textsf{\color{stewartgreen}GHI CHÚ 2}}\hspace{0.8em}Một phương pháp khác để giải các bài toán tối ưu hóa là sử dụng đạo hàm ẩn. Hãy xem lại Ví dụ 2 để minh họa cho phương pháp này. Ta làm việc với cùng các phương trình
+  \begin{equation*}
+    A = 2\pi r^2 + 2\pi rh \qquad\qquad \pi r^2h = 1000
+  \end{equation*}
+  nhưng thay vì khử $h$, ta lấy đạo hàm ẩn cả hai phương trình theo biến $r$ (coi cả $A$ và $h$ đều là các hàm số của $r$):
+  \begin{equation*}
+    A' = 4\pi r + 2\pi rh' + 2\pi h \qquad\qquad \pi r^2h' + 2\pi rh = 0
+  \end{equation*}
+  Giá trị nhỏ nhất xảy ra tại một điểm tới hạn, vì vậy ta cho $A' = 0$, rút gọn và thu được các phương trình
+  \begin{equation*}
+    2r + rh' + h = 0 \qquad\qquad rh' + 2h = 0
+  \end{equation*}
+  và trừ vế theo vế cho ta $2r - h = 0$, hay $h = 2r$.
+
+  \vspace{1.0em}
+  \noindent
+  \textbf{\textsf{\color{stewartcyan}VÍ DỤ 3}}\hspace{0.8em}Tìm điểm trên parabol $y^2 = 2x$ nằm gần điểm $(1, 4)$ nhất.
+  \par\vspace{0.3em}
+  \noindent
+  \textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\hspace{0.8em}Khoảng cách giữa điểm $(1, 4)$ và điểm $(x, y)$ là
+  \begin{equation*}
+    d = \sqrt{(x - 1)^2 + (y - 4)^2}
+  \end{equation*}
+  (Xem Hình 6.) Nhưng nếu $(x, y)$ nằm trên parabol, thì $x = \frac{1}{2}y^2$, vì thế biểu thức của $d$ trở thành
+  \begin{equation*}
+    d = \sqrt{\left(\tfrac{1}{2}y^2 - 1\right)^2 + (y - 4)^2}
+  \end{equation*}
+  (Một cách khác, ta có thể thay $y = \sqrt{2x}$ để biểu diễn $d$ chỉ theo biến $x$.)\par
+  Thay vì cực tiểu hóa $d$, ta cực tiểu hóa bình phương của nó:
+  \begin{equation*}
+    d^2 = f(y) = \left(\tfrac{1}{2}y^2 - 1\right)^2 + (y - 4)^2
+  \end{equation*}
+  (Bạn nên tự thuyết phục bản thân rằng giá trị cực tiểu của $d$ xảy ra tại cùng điểm với giá trị cực tiểu của $d^2$, nhưng làm việc với $d^2$ thì dễ dàng hơn nhiều.) Chú ý rằng không có ràng buộc nào đối với $y$, do đó tập xác định là toàn bộ tập số thực. Lấy đạo hàm, ta thu được
+  \begin{equation*}
+    f'(y) = 2\left(\tfrac{1}{2}y^2 - 1\right)y + 2(y - 4) = y^3 - 8
+  \end{equation*}
+  nên $f'(y) = 0$ khi $y = 2$. Quan sát thấy rằng $f'(y) < 0$ khi $y < 2$ và $f'(y) > 0$ khi $y > 2$, do đó theo Quy tắc đạo hàm cấp một cho cực trị tuyệt đối, giá trị nhỏ nhất tuyệt đối xảy ra khi $y = 2$. (Hoặc ta có thể nói một cách đơn giản rằng do bản chất hình học của bài toán, hiển nhiên tồn tại một điểm gần nhất nhưng không có điểm xa nhất.) Giá trị tương ứng của $x$ là $x = \frac{1}{2}y^2 = 2$. Như vậy điểm trên parabol $y^2 = 2x$ gần điểm $(1, 4)$ nhất là $(2, 2)$. [Khoảng cách giữa hai điểm này là $d = \sqrt{f(2)} = \sqrt{5}$.]\hfill{\color{stewartcyan}$\blacksquare$}
+\end{minipage}
+
+\end{document}
