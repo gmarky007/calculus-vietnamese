@@ -203,6 +203,12 @@
       "score": 99,
       "notes": "Mã nguồn hiện tại chỉ là thông báo từ chối của AI. Cần tái tạo toàn bộ trang bài tập 3.4 (trang 206 gốc) với cấu trúc 2 cột, dóng hàng từ bài 1 đến 68, đầy đủ biểu tượng đồ thị/máy tính và chuyển ngữ chuẩn xác sang tiếng Việt.",
       "time": "2026-09-23 07:07:59"
+    },
+    {
+      "page_num": 242,
+      "score": 99,
+      "notes": "Bản dịch gặp lỗi hiển thị nghiêm trọng khiến toàn bộ phần thân trang bị trống, đồng thời tỷ lệ chia cột chưa chuẩn xác theo cấu trúc lề bất đối xứng của sách gốc.",
+      "time": "2026-09-23 07:09:15"
     }
   ]
 }
