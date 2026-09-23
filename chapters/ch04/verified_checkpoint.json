@@ -41,6 +41,12 @@
       "score": 99,
       "notes": "Bản dịch bị lỗi nghiêm trọng in tràn mã preamble ra đầu trang; nhãn NASA ở lề trái bị lặp 2 lần; các ký hiệu mục (a), (b) chưa đúng màu cyan thương hiệu Stewart; vị trí ảnh Hubble bị tụt xuống quá thấp so với Ví dụ 10.",
       "time": "2026-09-23 09:56:02"
+    },
+    {
+      "page_num": 321,
+      "score": 99,
+      "notes": "Bản dịch bị lỗi hiển thị chuỗi khai báo gói lệnh ngay dưới tiêu đề đầu trang. Đồ thị bài 4 bị vẽ ngược hình dạng (điểm c là cực tiểu và r là đỉnh nhọn trong bản gốc, nhưng bản dịch lại vẽ c là đỉnh và d là đáy). Đồ thị bài 5 có chấm đỏ dư thừa ở (1, 2) và thanh tiêu đề Bài tập thừa 1 đường kẻ ngang phía dưới. Thừa đường kẻ ngang giữa bài 10 và 11.",
+      "time": "2026-09-23 10:04:45"
     }
   ]
 }

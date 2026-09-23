@@ -1,0 +1,290 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{geometry}
+\geometry{left=1.8cm, right=1.8cm, top=2.2cm, bottom=2.0cm}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{calc,arrows.meta}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+
+% Định nghĩa bảng màu chuẩn giáo trình Stewart Calculus
+\definecolor{stewartcyan}{RGB}{0, 140, 200}
+\definecolor{stewartblue}{RGB}{0, 102, 170}
+\definecolor{stewartgray}{RGB}{100, 100, 100}
+\definecolor{gridgray}{RGB}{215, 215, 215}
+\definecolor{graphred}{RGB}{215, 40, 40}
+
+% Cấu hình header & footer
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{ontsize{9pt}{11pt}\selectfont\textbf{286}\qquad\textbf{\textsf{CHƯƠNG 4}}\quad\textsf{Các ứng dụng của đạo hàm}}
+\fancyhead[R]{}
+\renewcommand{\headrulewidth}{0pt}
+
+\begin{document}
+
+% PHẦN KẾT THÚC CỦA VÍ DỤ TRƯỚC (BỐ CỤC LỆCH PHẢI DÓNG THEO CỘT NỘI DUNG CHÍNH)
+\noindent
+\begin{minipage}[t]{0.24\textwidth}
+    \strut
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.74\textwidth}
+    Bây giờ ta áp dụng Phương pháp khoảng đóng cho hàm liên tục $a$ trên đoạn $0 \leqslant t \leqslant 126$. Đạo hàm của hàm số là
+    \[
+    a'(t) = 0{,}007812t - 0{,}18058
+    \]
+    Điểm tới hạn duy nhất xuất hiện khi $a'(t) = 0$:
+    \[
+    t_1 = \frac{0{,}18058}{0{,}007812} \approx 23{,}12
+    \]
+    Tính giá trị của $a(t)$ tại điểm tới hạn và tại các điểm đầu mút, ta có
+    \[
+    a(0) = 23{,}61 \qquad a(t_1) \approx 21{,}52 \qquad a(126) \approx 62{,}87
+    \]
+    Do đó gia tốc lớn nhất khoảng $62{,}87\text{ ft/s}^2$ và gia tốc nhỏ nhất khoảng $21{,}52\text{ ft/s}^2$.\hfill{\color{stewartcyan}$\blacksquare$}
+\end{minipage}
+
+\vspace{1.8em}
+
+% THANH TIÊU ĐỀ BÀI TẬP: 3 ĐƯỜNG KẺ LAM HAI BÊN (KHÔNG CÓ ĐƯỜNG KẺ DƯỚI ĐÁY)
+\noindent
+\begin{tikzpicture}
+    \node[inner sep=6pt, anchor=west] (title) at (0.16\linewidth, 0) {\textsf{\textbf{\color{stewartcyan}\Large 4.1}}\quad\textsf{\textbf{\Large Bài tập}}};
+    \draw[stewartcyan, line width=0.6pt] (0, 4pt) -- ($(title.west)+(0, 4pt)$);
+    \draw[stewartcyan, line width=0.6pt] (0, 0pt) -- (title.west);
+    \draw[stewartcyan, line width=0.6pt] (0, -4pt) -- ($(title.west)+(0, -4pt)$);
+    
+    \draw[stewartcyan, line width=0.6pt] ($(title.east)+(0, 4pt)$) -- (\linewidth, 4pt);
+    \draw[stewartcyan, line width=0.6pt] (title.east) -- (\linewidth, 0pt);
+    \draw[stewartcyan, line width=0.6pt] ($(title.east)+(0, -4pt)$) -- (\linewidth, -4pt);
+\end{tikzpicture}
+
+\vspace{0.8em}
+
+% BỐ CỤC 2 CỘT BÀI TẬP CÂN ĐỐI
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+    % BÀI TẬP 1
+    \noindent\textbf{1.}\quad Giải thích sự khác nhau giữa giá trị nhỏ nhất tuyệt đối và giá trị cực tiểu địa phương.
+
+    \vspace{0.8em}
+    % BÀI TẬP 2
+    \noindent\textbf{2.}\quad Giả sử $f$ là một hàm liên tục xác định trên đoạn $[a, b]$.
+    \begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=1.8em, itemsep=2pt, topsep=3pt]
+        \item Định lý nào đảm bảo sự tồn tại của giá trị lớn nhất tuyệt đối và giá trị nhỏ nhất tuyệt đối của $f$?
+        \item Bạn sẽ thực hiện những bước nào để tìm các giá trị lớn nhất và nhỏ nhất đó?
+    \end{enumerate}
+
+    \vspace{0.8em}
+    % BÀI TẬP 3–4
+    \noindent\textbf{\color{stewartcyan}3--4}\quad Với mỗi số $a, b, c, d, r$ và $s$, hãy cho biết hàm số có đồ thị như hình vẽ có giá trị lớn nhất hoặc giá trị nhỏ nhất tuyệt đối, cực đại hoặc cực tiểu địa phương, hay không phải là cực trị.
+
+    \vspace{0.8em}
+    % HÌNH 3
+    \noindent
+    \begin{tikzpicture}[scale=0.72, >=Stealth]
+        % Trục toạ độ
+        \draw[->, line width=0.6pt] (-0.3, 0) -- (5.6, 0) node[right=1pt] {\small $x$};
+        \draw[->, line width=0.6pt] (0, -0.3) -- (0, 3.6) node[above=1pt] {\small $y$};
+        \node[below left=1pt] at (0, 0) {\small $0$};
+
+        % Toạ độ trên trục x
+        \coordinate (a) at (0.6, 0);
+        \coordinate (b) at (1.4, 0);
+        \coordinate (c) at (2.2, 0);
+        \coordinate (d) at (2.9, 0);
+        \coordinate (r) at (3.7, 0);
+        \coordinate (s) at (4.7, 0);
+
+        % Điểm trên đường cong
+        \coordinate (Pa) at (0.6, 2.2);
+        \coordinate (Pb) at (1.4, 1.3);
+        \coordinate (Pc) at (2.2, 2.7);
+        \coordinate (Pd) at (2.9, 1.9);
+        \coordinate (Pr) at (3.7, 0.6);
+        \coordinate (Ps) at (4.7, 3.2);
+
+        % Đường dóng nét đứt mảnh
+        \draw[dashed, gray!80, line width=0.45pt] (a) node[below=1pt, text=black] {\small $a$} -- (Pa);
+        \draw[dashed, gray!80, line width=0.45pt] (b) node[below=1pt, text=black] {\small $b$} -- (Pb);
+        \draw[dashed, gray!80, line width=0.45pt] (c) node[below=1pt, text=black] {\small $c$} -- (Pc);
+        \draw[dashed, gray!80, line width=0.45pt] (d) node[below=1pt, text=black] {\small $d$} -- (Pd);
+        \draw[dashed, gray!80, line width=0.45pt] (r) node[below=1pt, text=black] {\small $r$} -- (Pr);
+        \draw[dashed, gray!80, line width=0.45pt] (s) node[below=1pt, text=black] {\small $s$} -- (Ps);
+
+        % Đồ thị màu đỏ
+        \draw[graphred, line width=1.1pt] (Pa) to[out=-60, in=180] (Pb)
+            to[out=0, in=180] (Pc)
+            to[out=-40, in=140] (Pd)
+            to[out=-40, in=180] (Pr)
+            to[out=0, in=-105] (Ps);
+
+        % Số bài 3.
+        \node[font=\bfseries] at (-0.6, 3.2) {3.};
+    \end{tikzpicture}
+
+    \vspace{1.0em}
+    % HÌNH 4
+    \noindent
+    \begin{tikzpicture}[scale=0.72, >=Stealth]
+        % Trục toạ độ
+        \draw[->, line width=0.6pt] (-0.3, 0) -- (5.6, 0) node[right=1pt] {\small $x$};
+        \draw[->, line width=0.6pt] (0, -0.3) -- (0, 3.6) node[above=1pt] {\small $y$};
+        \node[below left=1pt] at (0, 0) {\small $0$};
+
+        % Toạ độ trên trục x
+        \coordinate (a) at (0.6, 0);
+        \coordinate (b) at (1.5, 0);
+        \coordinate (c) at (2.4, 0);
+        \coordinate (d) at (3.1, 0);
+        \coordinate (r) at (3.9, 0);
+        \coordinate (s) at (4.7, 0);
+
+        % Điểm trên đường cong
+        \coordinate (Pa) at (0.6, 1.0);
+        \coordinate (Pb_hole) at (1.5, 2.3);
+        \coordinate (Pb_dot) at (1.5, 3.1);
+        \coordinate (Pc) at (2.4, 1.2);
+        \coordinate (Pd) at (3.1, 2.0);
+        \coordinate (Pr) at (3.9, 2.8);
+        \coordinate (Ps) at (4.7, 0.6);
+
+        % Đường dóng nét đứt mảnh
+        \draw[dashed, gray!80, line width=0.45pt] (a) node[below=1pt, text=black] {\small $a$} -- (Pa);
+        \draw[dashed, gray!80, line width=0.45pt] (b) node[below=1pt, text=black] {\small $b$} -- (Pb_dot);
+        \draw[dashed, gray!80, line width=0.45pt] (c) node[below=1pt, text=black] {\small $c$} -- (Pc);
+        \draw[dashed, gray!80, line width=0.45pt] (d) node[below=1pt, text=black] {\small $d$} -- (Pd);
+        \draw[dashed, gray!80, line width=0.45pt] (r) node[below=1pt, text=black] {\small $r$} -- (Pr);
+        \draw[dashed, gray!80, line width=0.45pt] (s) node[below=1pt, text=black] {\small $s$} -- (Ps);
+
+        % Nhánh từ a đến điểm rỗng tại b
+        \draw[graphred, line width=1.1pt] (Pa) to[out=55, in=195] (1.42, 2.28);
+        \filldraw[graphred] (Pa) circle (1.6pt);
+        
+        % Điểm rỗng tại b và điểm cô lập (GTLN tuyệt đối)
+        \filldraw[white] (Pb_hole) circle (2pt);
+        \draw[graphred, line width=1.1pt] (Pb_hole) circle (2pt);
+        \filldraw[graphred] (Pb_dot) circle (1.8pt);
+
+        % Nhánh từ b qua cực tiểu c, qua d đến đỉnh nhọn r và xuống s (GTNN tuyệt đối)
+        \draw[graphred, line width=1.1pt] (1.58, 2.28) to[out=-15, in=180] (Pc)
+            to[out=0, in=215] (Pd)
+            to[out=35, in=-125] (Pr) -- (Ps);
+        \filldraw[graphred] (Ps) circle (1.6pt);
+
+        % Số bài 4.
+        \node[font=\bfseries] at (-0.6, 3.2) {4.};
+    \end{tikzpicture}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+    % BÀI TẬP 5–6
+    \noindent\textbf{\color{stewartcyan}5--6}\quad Sử dụng đồ thị để xác định các giá trị lớn nhất, giá trị nhỏ nhất tuyệt đối và địa phương của hàm số.
+
+    \vspace{0.8em}
+    % HAI HÌNH 5 VÀ 6 NẰM CẠNH NHAU
+    \noindent
+    \begin{minipage}[t]{0.48\linewidth}
+        \centering
+        \begin{tikzpicture}[scale=0.50, >=Stealth]
+            % Lưới toạ độ
+            \draw[step=1cm, gridgray, line width=0.4pt] (0, 0) grid (6, 4);
+
+            % Hệ trục toạ độ
+            \draw[->, line width=0.55pt] (0, 0) -- (6.6, 0) node[below=1pt] {\scriptsize $x$};
+            \draw[->, line width=0.55pt] (0, 0) -- (0, 4.6) node[left=1pt] {\scriptsize $y$};
+            \node[below left=1pt] at (0, 0) {\scriptsize $0$};
+
+            % Vạch chia 1 đơn vị
+            \node[below=2pt] at (1, 0) {\scriptsize $1$};
+            \node[left=2pt] at (0, 1) {\scriptsize $1$};
+
+            % Số bài 5.
+            \node[font=\bfseries] at (-0.5, 4.2) {\scriptsize 5.};
+
+            % Đường cong hàm số y = f(x) liên tục từ x=1 đến x=6
+            \draw[graphred, line width=1.1pt] (1, 1.5) to[out=65, in=180] (1.8, 2.8)
+                to[out=0, in=180] (2.6, 2.0)
+                to[out=0, in=180] (3.8, 3.8)
+                to[out=0, in=180] (4.6, 2.4)
+                to[out=0, in=140] (5.2, 2.9)
+                to[out=-40, in=115] (5.93, 1.07);
+
+            % Điểm mút tại x=1 và điểm rỗng tại x=6
+            \filldraw[graphred] (1, 1.5) circle (1.8pt);
+            \filldraw[white] (6, 1) circle (2pt);
+            \draw[graphred, line width=1.1pt] (6, 1) circle (2pt);
+
+            % Nhãn hàm số
+            \node at (3.5, 1.3) {\scriptsize $y = f(x)$};
+        \end{tikzpicture}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[t]{0.48\linewidth}
+        \centering
+        \begin{tikzpicture}[scale=0.50, >=Stealth]
+            % Lưới toạ độ
+            \draw[step=1cm, gridgray, line width=0.4pt] (0, 0) grid (6, 4);
+
+            % Hệ trục toạ độ
+            \draw[->, line width=0.55pt] (0, 0) -- (6.6, 0) node[below=1pt] {\scriptsize $x$};
+            \draw[->, line width=0.55pt] (0, 0) -- (0, 4.6) node[left=1pt] {\scriptsize $y$};
+            \node[below left=1pt] at (0, 0) {\scriptsize $0$};
+
+            % Vạch chia 1 đơn vị
+            \node[below=2pt] at (1, 0) {\scriptsize $1$};
+            \node[left=2pt] at (0, 1) {\scriptsize $1$};
+
+            % Số bài 6.
+            \node[font=\bfseries] at (-0.5, 4.2) {\scriptsize 6.};
+
+            % Nhánh 1: từ (0, 4.0) đến (2, 2.6)
+            \draw[graphred, line width=1.1pt] (0, 4.0) to[out=-55, in=145] (1.92, 2.66);
+            \filldraw[white] (2, 2.6) circle (2pt);
+            \draw[graphred, line width=1.1pt] (2, 2.6) circle (2pt);
+            \filldraw[graphred] (2, 2.0) circle (1.8pt);
+
+            % Nhánh 2: từ (2, 2.6) xuống đáy nhọn (3.8, 1), lên đỉnh rồi tới (6, 1.8)
+            \draw[graphred, line width=1.1pt] (2.06, 2.52) to[out=-50, in=120] (3.8, 1.0)
+                to[out=60, in=180] (5.0, 2.5)
+                to[out=0, in=125] (6, 1.8);
+            \filldraw[graphred] (6, 1.8) circle (1.8pt);
+
+            % Nhãn hàm số
+            \node at (4.5, 3.5) {\scriptsize $y = g(x)$};
+        \end{tikzpicture}
+    \end{minipage}
+
+    \vspace{1.2em}
+    % BÀI TẬP 7–10
+    \noindent\textbf{\color{stewartcyan}7--10}\quad Phác thảo đồ thị của một hàm số $f$ liên tục trên $[1, 5]$ và thỏa mãn các tính chất đã cho.
+    \begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=1.8em, itemsep=4pt, topsep=3pt, start=7]
+        \item Giá trị lớn nhất tuyệt đối tại 5, giá trị nhỏ nhất tuyệt đối tại 2, cực đại địa phương tại 3, cực tiểu địa phương tại 2 và 4.
+        \item Giá trị lớn nhất tuyệt đối tại 4, giá trị nhỏ nhất tuyệt đối tại 5, cực đại địa phương tại 2, cực tiểu địa phương tại 3.
+        \item Giá trị nhỏ nhất tuyệt đối tại 3, giá trị lớn nhất tuyệt đối tại 4, cực đại địa phương tại 2.
+        \item Giá trị lớn nhất tuyệt đối tại 2, giá trị nhỏ nhất tuyệt đối tại 5, 4 là một điểm tới hạn nhưng tại đó không có cực đại hay cực tiểu địa phương.
+    \end{enumerate}
+
+    \vspace{1.0em}
+    % BÀI TẬP 11
+    \noindent\textbf{11.} \textbf{(a)} Phác thảo đồ thị của một hàm số có cực đại địa phương tại 2 và khả vi tại 2.
+    \begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=1.8em, itemsep=3pt, topsep=2pt, start=2]
+        \item Phác thảo đồ thị của một hàm số có cực đại địa phương tại 2, liên tục nhưng không khả vi tại 2.
+        \item Phác thảo đồ thị của một hàm số có cực đại địa phương tại 2 và không liên tục tại 2.
+    \end{enumerate}
+\end{minipage}
+
+\vfill
+% CHÂN TRANG BẢN QUYỀN
+\noindent{\color{stewartcyan}\rule{\textwidth}{0.6pt}}
+\vspace{2pt}
+\begin{center}
+    \fontsize{7pt}{8pt}\selectfont\color{stewartgray}
+    Bản dịch tiếng Việt dùng cho mục đích học tập và nghiên cứu giảng dạy theo giáo trình Calculus: Early Transcendentals (9th Edition) của James Stewart.
+\end{center}
+
+\end{document}
