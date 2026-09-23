@@ -1,0 +1,133 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage[T5,T1]{fontenc}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{newtxtext,newtxmath}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usepackage[most]{tcolorbox}
+
+\geometry{
+    paperwidth=8.5in,
+    paperheight=11in,
+    top=0.55in,
+    bottom=0.5in,
+    left=0.5in,
+    right=0.5in,
+    headheight=14pt,
+    headsep=16pt,
+    footskip=20pt
+}
+
+% Định nghĩa màu chuẩn giáo trình Stewart
+\definecolor{stewartcyan}{RGB}{0, 136, 185}
+\definecolor{stewartred}{RGB}{204, 34, 41}
+\definecolor{stewartgray}{RGB}{115, 115, 115}
+
+% Thiết lập header và footer
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{%
+    \makebox[135pt][l]{\textbf{\textsf{\large 240}}}%
+    \hspace{18pt}%
+    \textbf{\textsf{CHƯƠNG 3}}\hspace{1.5em}\textsf{Quy tắc đạo hàm}%
+}
+\fancyhead[R]{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Khung định lý / định nghĩa chuẩn Stewart
+\newtcolorbox{theorembox}[1][]{
+    enhanced,
+    colback=white,
+    colframe=stewartred,
+    arc=0mm,
+    boxrule=0.8pt,
+    left=9pt,
+    right=9pt,
+    top=6pt,
+    bottom=6pt,
+    boxsep=0pt,
+    #1
+}
+
+% Nhãn số đóng khung đỏ
+\newcommand{\stewarttag}[1]{%
+    \tikz[baseline=(box.base)]{%
+        \node[draw=stewartred, line width=0.8pt, inner sep=2.2pt, rounded corners=0.5pt] (box) {\textcolor{stewartred}{\sffamily\bfseries\normalsize #1}};%
+    }%
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{135pt}
+    % Cột lề: bản gốc để trống ở trang này
+    \vspace{0pt}
+\end{minipage}%
+\hspace{18pt}%
+\begin{minipage}[t]{387pt}
+    \vspace{0pt}
+    Do đó $C$ là \textbf{giá trị ban đầu} của hàm số.
+
+    \vspace{0.2em}
+    \begin{theorembox}
+        \noindent\stewarttag{2}\hspace{0.6em}\textcolor{stewartred}{\textbf{\textsf{Định lý}}}\hspace{0.8em}Nghiệm duy nhất của phương trình vi phân $dy/dt = ky$ là các hàm số mũ
+        \[
+            y(t) = y(0)e^{kt}
+        \]
+    \end{theorembox}
+
+    \vspace{0.4em}
+    \noindent\textcolor{stewartcyan}{\rule[0.05em]{1.1ex}{1.1ex}}\hspace{0.5em}\textbf{\textsf{\large Tăng trưởng dân số}}
+
+    \vspace{0.1em}
+    Ý nghĩa của hằng số tỉ lệ $k$ là gì? Trong bối cảnh tăng trưởng dân số, trong đó $P(t)$ là quy mô dân số tại thời điểm $t$, ta có thể viết
+
+    \vspace{0.2em}
+    \noindent\makebox[0pt][l]{\stewarttag{3}}\hfill $\displaystyle \frac{dP}{dt} = kP \qquad \text{hoặc} \qquad \frac{dP/dt}{P} = k$\hfill\null
+    \vspace{0.2em}
+
+    Đại lượng
+    \[
+        \frac{dP/dt}{P}
+    \]
+    là tốc độ tăng trưởng chia cho quy mô dân số; nó được gọi là \textbf{tốc độ tăng trưởng tương đối}. Theo (3), thay vì nói ``tốc độ tăng trưởng tỉ lệ thuận với quy mô dân số'', ta có thể nói ``tốc độ tăng trưởng tương đối là không đổi''. Khi đó Định lý 2 khẳng định rằng một quần thể có tốc độ tăng trưởng tương đối không đổi phải tăng theo hàm mũ. Chú ý rằng tốc độ tăng trưởng tương đối $k$ xuất hiện dưới dạng hệ số của $t$ trong hàm số mũ $Ce^{kt}$. Chẳng hạn, nếu
+    \[
+        \frac{dP}{dt} = 0.02P
+    \]
+    và $t$ được đo bằng năm, thì tốc độ tăng trưởng tương đối là $k = 0.02$ và dân số tăng với tốc độ tương đối là $2\%$ mỗi năm. Nếu dân số tại thời điểm $0$ là $P_0$, thì biểu thức biểu diễn dân số là
+    \[
+        P(t) = P_0 e^{0.02t}
+    \]
+
+    \vspace{0.4em}
+    \noindent\textcolor{stewartcyan}{\textbf{\textsf{VÍ DỤ 1}}}\hspace{0.8em}Sử dụng dữ kiện dân số thế giới là $2560$ triệu người vào năm 1950 và $3040$ triệu người vào năm 1960 để xây dựng mô hình dân số thế giới trong nửa sau của thế kỷ 20. (Giả sử tốc độ tăng trưởng tỉ lệ thuận với quy mô dân số.) Tốc độ tăng trưởng tương đối là bao nhiêu? Hãy dùng mô hình này để ước tính dân số thế giới vào năm 1993 và dự đoán dân số vào năm 2025.
+
+    \vspace{0.4em}
+    \noindent\textcolor{stewartcyan}{\textbf{\textsf{LỜI GIẢI}}}\hspace{0.8em}Ta đo thời gian $t$ theo năm và chọn $t = 0$ vào năm 1950. Ta đo dân số $P(t)$ theo đơn vị triệu người. Khi đó $P(0) = 2560$ và $P(10) = 3040$. Vì ta giả sử rằng $dP/dt = kP$, nên theo Định lý 2 ta có
+    \begin{gather*}
+        P(t) = P(0)e^{kt} = 2560e^{kt} \\[3pt]
+        P(10) = 2560e^{10k} = 3040 \\[3pt]
+        k = \frac{1}{10} \ln \frac{3040}{2560} \approx 0.017185
+    \end{gather*}
+    Tốc độ tăng trưởng tương đối vào khoảng $1.7\%$ mỗi năm và mô hình là
+    \[
+        P(t) = 2560e^{0.017185t}
+    \]
+\end{minipage}
+
+\vfill
+\begin{center}
+    {\fontsize{5.5pt}{7pt}\selectfont\color{stewartgray}%
+    Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\\[1pt]
+    Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.\par}
+\end{center}
+
+\end{document}
