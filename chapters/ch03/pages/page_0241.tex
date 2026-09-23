@@ -1,0 +1,135 @@
+\documentclass[10pt]{article}
+\usepackage[paperwidth=8.5in, paperheight=11in, top=0.65in, bottom=0.65in, left=0.7in, right=0.7in]{geometry}
+\usepackage{fontspec}
+\usepackage{amsmath,amssymb}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{fancyhdr}
+
+\setmainfont{Times New Roman}
+
+\definecolor{stewartblue}{RGB}{0, 118, 168}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\fontsize{9}{11}\selectfont\textbf{206}\qquad \textbf{CHƯƠNG 3}\quad Các quy tắc tính đạo hàm}
+\renewcommand{\headrulewidth}{0pt}
+
+\newcommand{\graphicon}{%
+  \tikz[baseline=-0.5ex]{%
+    \draw[stewartblue, fill=stewartblue!10, rounded corners=0.8pt, line width=0.6pt] (0,0) rectangle (10.5pt, 8.5pt);
+    \draw[stewartblue, line width=0.5pt] (1.5pt, 2pt) .. controls (4pt, 7.5pt) and (6.5pt, 1pt) .. (9pt, 6.5pt);
+  }\hspace{3pt}%
+}
+
+\newcommand{\probpair}[2]{%
+  \noindent\begin{minipage}[t]{0.485\linewidth}#1\end{minipage}\hfill%
+  \begin{minipage}[t]{0.485\linewidth}#2\end{minipage}\par\vspace{3.8pt}%
+}
+\newcommand{\probsingle}[1]{%
+  \noindent#1\par\vspace{3.8pt}%
+}
+
+\begin{document}
+
+\noindent
+\begin{minipage}{\textwidth}
+  {\color{stewartblue}\hrule height 0.8pt\vspace{1.5pt}\hrule height 0.4pt}
+  \vspace{4pt}
+  \noindent\hspace*{2pt}{\color{stewartblue}\fontsize{17}{20}\selectfont\bfseries 3.4}\quad 
+  {\color{stewartblue!60}\vrule width 1.3pt}\quad 
+  {\fontsize{17}{20}\selectfont\bfseries Bài tập}
+  \vspace{4pt}
+  {\color{stewartblue}\hrule height 0.4pt\vspace{1.5pt}\hrule height 0.8pt}
+\end{minipage}
+\vspace{8pt}
+
+\setlength{\columnsep}{24pt}
+\setlength{\parindent}{0pt}
+\begin{multicols*}{2}
+
+{\color{stewartblue}\bfseries 1--6}\enspace Viết hàm hợp dưới dạng $f(g(x))$. [Xác định hàm bên trong $u = g(x)$ và hàm bên ngoài $y = f(u)$.] Sau đó tìm đạo hàm $dy/dx$.\par\vspace{4pt}
+
+\probpair{\textbf{1.}\enspace $y = (5 - x^4)^3$}{\textbf{2.}\enspace $y = \sqrt{x^3 + 2}$}
+\probpair{\textbf{3.}\enspace $y = \sin(\cos x)$}{\textbf{4.}\enspace $y = \tan(x^2)$}
+\probpair{\textbf{5.}\enspace $y = e^{\sqrt{x}}$}{\textbf{6.}\enspace $y = \sqrt[3]{e^x + 1}$}
+
+\vspace{3pt}
+{\color{stewartblue}\rule{\linewidth}{0.6pt}}\vspace{3pt}
+{\color{stewartblue}\bfseries 7--52}\enspace Tìm đạo hàm của hàm số.\par\vspace{4pt}
+
+\probpair{\textbf{7.}\enspace $f(x) = (2x^3 - 5x^2 + 4)^5$}{\textbf{8.}\enspace $f(x) = (x^5 + 3x^2 - x)^{50}$}
+\probpair{\textbf{9.}\enspace $f(x) = \sqrt{5x + 1}$}{\textbf{10.}\enspace $f(x) = \dfrac{1}{\sqrt[3]{x^2 - 1}}$}
+\probpair{\textbf{11.}\enspace $g(t) = \dfrac{1}{(2t + 1)^2}$}{\textbf{12.}\enspace $F(t) = \left(\dfrac{1}{2t + 1}\right)^4$}
+\probpair{\textbf{13.}\enspace $f(\theta) = \cos(\theta^2)$}{\textbf{14.}\enspace $g(\theta) = \cos^2\theta$}
+\probpair{\textbf{15.}\enspace $g(x) = e^{x^2 - x}$}{\textbf{16.}\enspace $y = 5^{\sqrt{x}}$}
+\probpair{\textbf{17.}\enspace $y = x^2 e^{-3x}$}{\textbf{18.}\enspace $f(t) = t \sin \pi t$}
+\probpair{\textbf{19.}\enspace $f(t) = e^{at} \sin bt$}{\textbf{20.}\enspace $A(r) = \sqrt{r} \cdot e^{r^2 + 1}$}
+\probsingle{\textbf{21.}\enspace $F(x) = (4x + 5)^3(x^2 - 2x + 5)^4$}
+\probsingle{\textbf{22.}\enspace $G(z) = (1 - 4z)^2\sqrt{z^2 + 1}$}
+\probpair{\textbf{23.}\enspace $y = \sqrt{\dfrac{x}{x + 1}}$}{\textbf{24.}\enspace $y = \left(x + \dfrac{1}{x}\right)^5$}
+\probpair{\textbf{25.}\enspace $y = e^{\tan\theta}$}{\textbf{26.}\enspace $f(t) = 2^{t^3}$}
+\probpair{\textbf{27.}\enspace $g(u) = \left(\dfrac{u^3 - 1}{u^3 + 1}\right)^8$}{\textbf{28.}\enspace $s(t) = \sqrt{\dfrac{1 + \sin t}{1 + \cos t}}$}
+\probpair{\textbf{29.}\enspace $r(t) = 10^{2\sqrt{t}}$}{\textbf{30.}\enspace $f(z) = e^{z/(z - 1)}$}
+\probpair{\textbf{31.}\enspace $H(r) = \dfrac{(r^2 - 1)^3}{(2r + 1)^5}$}{\textbf{32.}\enspace $J(\theta) = \tan^2(n\theta)$}
+\probpair{\textbf{33.}\enspace $F(t) = e^{t \sin 2t}$}{\textbf{34.}\enspace $F(t) = \dfrac{t^2}{\sqrt{t^3 + 1}}$}
+\probpair{\textbf{35.}\enspace $G(x) = 4^{c/x}$}{\textbf{36.}\enspace $U(y) = \left(\dfrac{y^4 + 1}{y^2 + 1}\right)^5$}
+\probpair{\textbf{37.}\enspace $f(x) = \sin x \cos(1 - x^2)$}{\textbf{38.}\enspace $g(x) = e^{-x}\cos(x^2)$}
+\probpair{\textbf{39.}\enspace $F(t) = \tan\sqrt{1 + t^2}$}{\textbf{40.}\enspace $G(z) = (1 + \cos^2 z)^3$}
+\probpair{\textbf{41.}\enspace $y = \sin^2(x^2 + 1)$}{\textbf{42.}\enspace $y = e^{\sin 2x} + \sin(e^{2x})$}
+\probpair{\textbf{43.}\enspace $g(x) = \sin\left(\dfrac{e^x}{1 + e^x}\right)$}{\textbf{44.}\enspace $f(t) = e^{1/t}\sqrt{t^2 - 1}$}
+\probpair{\textbf{45.}\enspace $f(t) = \tan(\sec(\cos t))$}{\textbf{46.}\enspace $y = \sqrt{x + \sqrt{x + \sqrt{x}}}$}
+
+\columnbreak
+
+\probpair{\textbf{47.}\enspace $f(x) = e^{\sin^2(x^2)}$}{\textbf{48.}\enspace $y = 2^{3^{4^x}}$}
+\probsingle{\textbf{49.}\enspace $y = (3^{\cos(x^2)} - 1)^4$}
+\probsingle{\textbf{50.}\enspace $y = \sin(\theta + \tan(\theta + \cos\theta))$}
+\probpair{\textbf{51.}\enspace $y = \cos\sqrt{\sin(\tan\pi x)}$}{\textbf{52.}\enspace $y = \sin^3(\cos(x^2))$}
+
+\vspace{3pt}
+{\color{stewartblue}\rule{\linewidth}{0.6pt}}\vspace{3pt}
+{\color{stewartblue}\bfseries 53--56}\enspace Tìm $y'$ và $y''$.\par\vspace{4pt}
+
+\probpair{\textbf{53.}\enspace $y = \cos(\sin 3\theta)$}{\textbf{54.}\enspace $y = (1 + \sqrt{x})^3$}
+\probpair{\textbf{55.}\enspace $y = \sqrt{\cos x}$}{\textbf{56.}\enspace $y = e^{e^x}$}
+
+\vspace{3pt}
+{\color{stewartblue}\rule{\linewidth}{0.6pt}}\vspace{3pt}
+{\color{stewartblue}\bfseries 57--60}\enspace Tìm phương trình tiếp tuyến của đường cong tại điểm đã cho.\par\vspace{4pt}
+
+\probpair{\textbf{57.}\enspace $y = 2^x,\quad (0, 1)$}{\textbf{58.}\enspace $y = \sqrt{1 + x^3},\quad (2, 3)$}
+\probpair{\textbf{59.}\enspace $y = \sin(\sin x),\quad (\pi, 0)$}{\textbf{60.}\enspace $y = x e^{-x^2},\quad (0, 0)$}
+
+\vspace{5pt}
+\noindent\textbf{61.}\enspace (a) Tìm phương trình tiếp tuyến của đường cong $y = 2/(1 + e^{-x})$ tại điểm $(0, 1)$.\par
+\noindent\llap{\graphicon}(b) Minh họa phần (a) bằng cách vẽ đường cong và tiếp tuyến trên cùng một màn hình.\par\vspace{4pt}
+
+\noindent\textbf{62.}\enspace (a) Đường cong $y = |x|/\sqrt{2 - x^2}$ được gọi là \textit{đường cong hình đầu đạn} (bullet-nose curve). Tìm phương trình tiếp tuyến của đường cong này tại điểm $(1, 1)$.\par
+\noindent\llap{\graphicon}(b) Minh họa phần (a) bằng cách vẽ đường cong và tiếp tuyến trên cùng một màn hình.\par\vspace{4pt}
+
+\noindent\textbf{63.}\enspace (a) Nếu $f(x) = x\sqrt{2 - x^2}$, hãy tìm $f'(x)$.\par
+\noindent\llap{\graphicon}(b) Kiểm tra tính hợp lý của câu trả lời ở phần (a) bằng cách so sánh đồ thị của $f$ và $f'$.\par\vspace{4pt}
+
+\noindent\llap{\graphicon}\textbf{64.}\enspace Hàm số $f(x) = \sin(x + \sin 2x)$, $0 \le x \le \pi$, xuất hiện trong các ứng dụng tổng hợp điều chế tần số (FM).\par
+(a) Dùng đồ thị của $f$ vẽ bởi máy tính bỏ túi hoặc phần mềm để phác thảo sơ bộ đồ thị của $f'$.\par
+(b) Tính $f'(x)$ và dùng biểu thức này, cùng với máy tính bỏ túi hoặc máy tính, để vẽ đồ thị của $f'$. So sánh với hình phác thảo của bạn ở phần (a).\par\vspace{4pt}
+
+\noindent\textbf{65.}\enspace Tìm tất cả các điểm trên đồ thị của hàm số $f(x) = 2 \sin x + \sin^2 x$ mà tại đó tiếp tuyến nằm ngang.\par\vspace{4pt}
+
+\noindent\textbf{66.}\enspace Tại điểm nào trên đường cong $y = \sqrt{1 + 2x}$ thì tiếp tuyến vuông góc với đường thẳng $6x + 2y = 1$?\par\vspace{4pt}
+
+\noindent\textbf{67.}\enspace Nếu $F(x) = f(g(x))$, trong đó $f(-2) = 8$, $f'(-2) = 4$, $f'(5) = 3$, $g(5) = -2$, và $g'(5) = 6$, hãy tìm $F'(5)$.\par\vspace{4pt}
+
+\noindent\textbf{68.}\enspace Nếu $h(x) = \sqrt{4 + 3f(x)}$, trong đó $f(1) = 7$ và $f'(1) = 4$, hãy tìm $h'(1)$.\par
+
+\end{multicols*}
+
+\vfill
+\begin{center}
+  \fontsize{6.5}{8}\selectfont\color{gray!80!black}
+  Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203
+\end{center}
+
+\end{document}
