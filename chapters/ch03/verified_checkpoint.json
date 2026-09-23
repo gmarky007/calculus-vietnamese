@@ -353,6 +353,12 @@
       "score": 99,
       "notes": "Có lỗi rò rỉ mã nguồn (danh sách gói và thông số documentclass) in trực tiếp lên đầu trang. Hình ảnh vi khuẩn E. coli bị chèn lặp 2 lần dòng ghi công bản quyền dọc, đồng thời vị trí dọc của HÌNH 7 và ảnh vi khuẩn chưa khớp với tọa độ bản gốc (bị lệch lên quá cao).",
       "time": "2026-09-23 08:00:20"
+    },
+    {
+      "page_num": 267,
+      "score": 99,
+      "notes": "Mã nguồn hiện tại là phản hồi từ chối thay vì nội dung sách. Cần tái lập toàn bộ trang theo bố cục lề chuẩn của Stewart Calculus với định dạng hai cột bất đối xứng, công thức và hình minh họa đi kèm.",
+      "time": "2026-09-23 08:01:42"
     }
   ]
 }

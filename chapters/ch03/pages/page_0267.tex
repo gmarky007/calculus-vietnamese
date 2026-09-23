@@ -1,0 +1,92 @@
+\documentclass[10pt]{article}
+\usepackage[paperwidth=8.5in,paperheight=11in,left=2.5in,right=1.0in,top=1.0in,bottom=1.0in,marginparwidth=1.8in,marginparsep=0.4in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{marginnote}
+\usepackage{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+
+\definecolor{stewartblue}{RGB}{0, 114, 188}
+\definecolor{stewartred}{RGB}{204, 41, 43}
+\definecolor{darkgray}{RGB}{60, 60, 60}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textbf{232}\quad {\color{darkgray}\textbf{CHƯƠNG 3}}\quad Đạo hàm và các quy tắc}
+\renewcommand{\headrulewidth}{0pt}
+
+\newcommand{\eqnbox}[1]{%
+  \tcbox[colback=white,colframe=stewartred,arc=0.5mm,boxrule=1pt,size=tight,boxsep=2pt]{\color{stewartred}\footnotesize\textbf{#1}}%
+}
+
+\begin{document}
+
+\noindent
+{\color{stewartblue}\bfseries\textsf{VÍ DỤ 7}}\quad Khi xét dòng máu chảy qua một mạch máu, chẳng hạn như tĩnh mạch hoặc động mạch, ta có thể mô hình hóa hình dạng của mạch máu bằng một ống hình trụ có bán kính $R$ và chiều dài $l$ như minh họa trong Hình 8.
+
+\marginnote{
+  \vspace{0.8cm}
+  \noindent
+  {\small\bfseries\textsf{\color{stewartblue}HÌNH 8}}\\
+  {\footnotesize Dòng máu chảy trong động mạch}
+}
+
+\vspace{0.2cm}
+\noindent
+\begin{center}
+  \includegraphics[width=0.75\textwidth]{images/p0267_fig1.png}
+\end{center}
+\vspace{0.2cm}
+
+\noindent
+Do ma sát tại thành ống, vận tốc $v$ của máu lớn nhất dọc theo trục trung tâm của ống và giảm dần khi khoảng cách $r$ tính từ trục tăng lên cho đến khi $v$ bằng $0$ tại thành ống. Mối quan hệ giữa $v$ và $r$ được cho bởi \textbf{định luật dòng chảy tầng}, được nhà vật lý người Pháp Jean Léonard Marie Poiseuille rút ra từ thực nghiệm vào năm 1838. Định luật này phát biểu rằng
+
+\marginnote{
+  \vspace{0.3cm}
+  \noindent\footnotesize\color{darkgray}
+  Để biết thêm thông tin chi tiết, xem W. Nichols, M. O'Rourke, và C. Vlachopoulos (chủ biên), \textit{McDonald's Blood Flow in Arteries: Theoretical, Experimental, and Clinical Principles}, tái bản lần thứ 6 (Boca Raton, FL, 2011).
+}
+
+\vspace{-0.1cm}
+\begin{equation*}
+  \hspace{-1.5cm}\eqnbox{1}\hspace{1.5cm} v = \frac{P}{4\eta l}(R^2 - r^2)
+\end{equation*}
+
+\noindent
+trong đó $\eta$ là độ nhớt của máu và $P$ là độ chênh lệch áp suất giữa hai đầu ống. Nếu $P$ và $l$ không đổi thì $v$ là một hàm của $r$ với tập xác định $[0, R]$.
+
+\noindent
+Tốc độ thay đổi trung bình của vận tốc khi dịch chuyển từ $r = r_1$ ra ngoài đến $r = r_2$ được cho bởi
+\[
+\frac{\Delta v}{\Delta r} = \frac{v(r_2) - v(r_1)}{r_2 - r_1}
+\]
+và nếu cho $\Delta r \to 0$, ta nhận được \textbf{gradient vận tốc}, tức là tốc độ thay đổi tức thời của vận tốc theo $r$:
+\[
+\text{gradient vận tốc} = \lim_{\Delta r \to 0} \frac{\Delta v}{\Delta r} = \frac{dv}{dr}
+\]
+Sử dụng Phương trình 1, ta được
+\[
+\frac{dv}{dr} = \frac{P}{4\eta l}(0 - 2r) = -\frac{Pr}{2\eta l}
+\]
+Đối với một động mạch nhỏ ở người, ta có thể lấy $\eta = 0{,}027$, $R = 0{,}008\text{ cm}$, $l = 2\text{ cm}$, và $P = 4000\text{ dyn/cm}^2$, khi đó
+\begin{align*}
+v &= \frac{4000}{4(0{,}027)2}(0{,}000064 - r^2)\\[4pt]
+&\approx 1{,}85 \times 10^4 (6{,}4 \times 10^{-5} - r^2)
+\end{align*}
+Tại $r = 0{,}002\text{ cm}$, dòng máu chuyển động với vận tốc
+\[
+v(0{,}002) \approx 1{,}85 \times 10^4 (64 \times 10^{-6} - 4 \times 10^{-6}) = 1{,}11\text{ cm/s}
+\]
+và gradient vận tốc tại điểm đó là
+\[
+\left.\frac{dv}{dr}\right|_{r=0{,}002} = -\frac{4000(0{,}002)}{2(0{,}027)2} \approx -74\text{ (cm/s)/cm}
+\]
+Để hiểu trực quan ý nghĩa của kết quả này, ta hãy chuyển đổi đơn vị từ xentimét sang...
+
+\vfill
+\noindent
+{\tiny\color{gray}Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203}
+
+\end{document}
