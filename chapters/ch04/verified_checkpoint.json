@@ -341,6 +341,12 @@
       "score": 99,
       "notes": "Mã nguồn hiện tại từ chối dịch và không cung cấp nội dung giáo trình. Cần biên dịch lại toàn bộ trang 370 sang XeLaTeX với bố cục hai cột bất đối xứng, biểu tượng công nghệ [T] chuẩn Stewart, thuật ngữ giải tích sư phạm và dóng hàng chính xác 1:1 theo bản gốc.",
       "time": "2026-09-23 12:16:35"
+    },
+    {
+      "page_num": 371,
+      "score": 99,
+      "notes": "Mã nguồn hiện tại từ chối dịch nội dung và chỉ cung cấp văn bản tóm tắt, thiếu hoàn toàn cấu trúc hai cột, đồ thị, bài tập và khung phương pháp giải.",
+      "time": "2026-09-23 12:18:03"
     }
   ]
 }

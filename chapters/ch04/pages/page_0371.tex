@@ -1,0 +1,101 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+
+\geometry{paperwidth=8.5in,paperheight=11in,left=0.75in,right=0.75in,top=0.8in,bottom=0.8in}
+\tcbuselibrary{skins,breakable}
+
+\definecolor{stewartblue}{RGB}{0,114,188}
+\definecolor{boxpurple}{RGB}{88,41,126}
+\definecolor{boxbg}{RGB}{246,244,249}
+\definecolor{darkred}{RGB}{190,30,45}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[L]{\small\textbf{336}\quad\textsc{\textbf{CHƯƠNG 4}}\quad Ứng dụng của đạo hàm}
+
+\begin{document}
+
+\begin{minipage}[t]{0.26\textwidth}
+  \vspace{0pt}
+  \begin{itemize}[leftmargin=0pt,label={},itemindent=0pt]
+    \item[\textbf{(b)}] Chứng minh rằng các điểm cực đại và cực tiểu của mọi đường cong trong họ đều nằm trên parabol $y = -2x^2 + 1$ (nét màu đỏ).
+  \end{itemize}
+  \vspace{0.4cm}
+  \centering
+  \includegraphics[width=\linewidth]{images/p0371_fig1.png}
+  \vspace{1.5cm}
+  
+  \begin{flushright}
+    \begin{tikzpicture}
+      \foreach \y in {0,2.5,5,7.5} {
+        \draw[stewartblue, thin] (0pt, \y pt) -- (70pt, \y pt);
+      }
+    \end{tikzpicture}
+  \end{flushright}
+  \vspace{2.8cm}
+  
+  \hfill\colorbox{boxpurple}{\textcolor{white}{\textbf{\textsf{PS}}}}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.70\textwidth}
+  \vspace{0pt}
+  \begin{enumerate}[label=\bfseries\arabic*.,start=39,leftmargin=1.5em,itemsep=1.2em]
+    \item Khảo sát họ đường cong cho bởi phương trình
+    \[
+      f(x) = x^4 + cx^2 + x
+    \]
+    Bắt đầu bằng việc xác định giá trị chuyển tiếp của $c$ mà tại đó số lượng điểm uốn thay đổi. Sau đó vẽ đồ thị một số đường cong trong họ để quan sát các hình dạng có thể có. Còn một giá trị chuyển tiếp khác của $c$ làm thay đổi số lượng các điểm tới hạn. Hãy tìm giá trị này bằng đồ thị, sau đó chứng minh kết luận đã tìm được.
+    
+    \item \begin{enumerate}[label=\bfseries(\alph*),leftmargin=1.5em]
+      \item Khảo sát họ đa thức xác định bởi phương trình
+      \[
+        f(x) = 2x^3 + cx^2 + 2x
+      \]
+      Với các giá trị nào của $c$ thì đồ thị hàm số có điểm cực đại và cực tiểu?
+      \item Chứng minh rằng các điểm cực đại và cực tiểu của mọi đường cong thuộc họ này đều nằm trên đường cong $y = x - x^3$. Minh họa bằng hình vẽ đồ thị đường cong này cùng một số đường cong trong họ.
+    \end{enumerate}
+  \end{enumerate}
+  
+  \vspace{1.2em}
+  \noindent
+  {\color{stewartblue}\LARGE\textbf{4.7}}\hspace{0.5em}{\color{stewartblue}\vrule width 1.5pt}\hspace{0.8em}{\LARGE\textbf{Các bài toán tối ưu hóa}}
+  \par\vspace{0.8em}
+  
+  Các phương pháp tìm cực trị đã học trong chương này mang lại nhiều ứng dụng thực tiễn phong phú: nhà kinh doanh muốn tối thiểu hóa chi phí và tối đa hóa lợi nhuận; hành khách mong muốn giảm thiểu thời gian hành trình; nguyên lý Fermat trong quang học khẳng định đường truyền của tia sáng luôn là đường mất ít thời gian nhất. Mục này sẽ giải quyết các bài toán tối ưu thường gặp như tìm giá trị lớn nhất của diện tích, thể tích, lợi nhuận hoặc làm nhỏ nhất khoảng cách, thời gian và chi phí.
+  
+  \vspace{0.6em}
+  Khó khăn lớn nhất khi giải quyết các bài toán thực tế nằm ở khâu mô hình hóa: chuyển đổi ngôn ngữ thông thường thành biểu thức hàm số cần tối ưu hóa. Chúng ta hãy cùng hệ thống lại các nguyên lý đã đề cập ở phần \textit{Các nguyên tắc giải toán} sau Chương 1 để thích ứng với bài toán dạng này:
+  
+  \vspace{0.8em}
+  \begin{tcolorbox}[
+    colback=boxbg,
+    colframe=boxpurple,
+    arc=0mm,
+    boxrule=1pt,
+    left=8pt,right=8pt,top=6pt,bottom=6pt,
+    coltitle=white,
+    title={\textbf{Các bước giải bài toán tối ưu hóa}},
+    fonttitle=\bfseries\sffamily
+  ]
+    \begin{enumerate}[label=\bfseries\arabic*.,leftmargin=1.5em,itemsep=0.45em]
+      \item \textbf{Hiểu rõ bài toán} \quad Đọc thật kỹ đề bài cho đến khi nắm trọn vẹn thông tin. Tự đặt câu hỏi: Đâu là đại lượng cần tìm? Những đại lượng nào đã biết và điều kiện ràng buộc ở đây là gì?
+      \item \textbf{Vẽ hình minh họa} \quad Trong đa số bài toán thực tế, việc dựng một sơ đồ hình vẽ và điền đầy đủ các thông tin đã cho cùng đại lượng cần xác định là đặc biệt hữu ích.
+      \item \textbf{Đặt ẩn và ký hiệu} \quad Gán ký hiệu cho đại lượng cần tìm giá trị lớn nhất hoặc nhỏ nhất (tạm gọi là $Q$). Chọn thêm các ký hiệu ($a, b, c, \dots, x, y$) cho các biến số liên quan và biểu diễn chúng trên hình vẽ. Có thể đặt theo chữ cái gợi ý---chẳng hạn $A$ cho diện tích, $h$ cho chiều cao, $t$ cho thời gian.
+      \item Biểu thị $Q$ theo các biến số đã đưa ra ở Bước 3.
+      \item Nếu biểu thức của $Q$ phụ thuộc vào nhiều hơn một biến số, hãy dùng các mối liên hệ ràng buộc của bài toán (dưới dạng phương trình) để quy về duy nhất một biến. Khi đó, $Q$ trở thành hàm của một biến số $x$, tức $Q = f(x)$. Chỉ rõ miền xác định phù hợp với thực tiễn của hàm này.
+      \item Áp dụng các phương pháp ở Mục 4.1 và 4.3 để xác định giá trị lớn nhất hoặc nhỏ nhất \textit{tuyệt đối} của $f$. Đặc biệt, nếu tập xác định là một đoạn đóng, ta có thể áp dụng ngay Phương pháp tìm cực trị trên đoạn đóng tại Mục 4.1.
+    \end{enumerate}
+  \end{tcolorbox}
+\end{minipage}
+
+\end{document}
+```
