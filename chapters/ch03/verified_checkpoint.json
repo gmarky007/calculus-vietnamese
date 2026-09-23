@@ -287,6 +287,12 @@
       "score": 15,
       "notes": "Mã nguồn hiện tại chỉ là văn bản từ chối/tóm tắt thay vì bản dịch LaTeX thực sự của trang sách. Cần tạo lại toàn bộ trang với bố cục 2 cột bất đối xứng Stewart Calculus, các khung công thức màu đỏ, ghi chú lề và biểu tượng kết thúc ví dụ/chứng minh đúng chuẩn sư phạm.",
       "time": "2026-09-23 07:35:16"
+    },
+    {
+      "page_num": 256,
+      "score": 99,
+      "notes": "Bản dịch hiện tại bị lỗi nghiêm trọng khi in chuỗi mã khai báo gói (preamble) ra đầu trang văn bản. Cụm Hình 3 và 4 nhãn lề trái bị lệch trục tọa độ y so với bản gốc (Hình 3 bị đẩy quá cao ngang hàng Ví dụ 8 thay vì ngang Lời giải 1 và 2).",
+      "time": "2026-09-23 07:37:35"
     }
   ]
 }

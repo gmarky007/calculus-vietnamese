@@ -1,0 +1,140 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T5,T1]{fontenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usepackage{newtxtext,newtxmath}
+
+\geometry{
+  top=20mm,
+  bottom=20mm,
+  left=18mm,
+  right=18mm,
+  headheight=14pt,
+  headsep=15pt
+}
+
+\definecolor{stewartcyan}{RGB}{0, 130, 185}
+\definecolor{stewartred}{RGB}{218, 37, 29}
+
+\newcommand{\warningicon}{%
+  \begin{tikzpicture}[baseline=-0.6ex, line width=1.3pt, draw=stewartred]
+    \draw (0,0) circle (2.2mm);
+    \draw (-1.55mm, 1.55mm) -- (1.55mm, -1.55mm);
+  \end{tikzpicture}%
+}
+
+\newcommand{\leftcolwidth}{0.26\textwidth}
+\newcommand{\rightcolwidth}{0.70\textwidth}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textbf{\textsf{MỤC 3.6}}\quad\textsf{Đạo hàm của hàm logarit và hàm lượng giác ngược}}
+\fancyhead[R]{\small\textbf{\textsf{221}}}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\begin{document}
+
+% --- KHỐI 1: CẢNH BÁO VÀ GIỚI THIỆU ---
+\noindent
+\begin{minipage}[t]{\leftcolwidth}
+  \vspace{0pt}\raggedleft
+  \raisebox{-0.2ex}{\warningicon}\hspace{6pt}
+\end{minipage}\hfill
+\begin{minipage}[t]{\rightcolwidth}
+  \vspace{0pt}
+  \noindent{\color{stewartred}Bạn cần phân biệt cẩn thận giữa Quy tắc lũy thừa $[(x^n)' = n x^{n-1}]$, trong đó cơ số là biến và số mũ là hằng số, với quy tắc đạo hàm của hàm mũ $[(b^x)' = b^x \ln b]$, trong đó cơ số là hằng số và số mũ là biến.}\par\vspace{8pt}
+  \noindent Nhìn chung có bốn trường hợp đối với số mũ và cơ số:
+\end{minipage}
+
+\vspace{10pt}
+
+% --- KHỐI 2: 4 TRƯỜNG HỢP VỚI NHÃN LỀ DÓNG HÀNG CHUẨN XÁC ---
+\noindent
+\begin{minipage}[t]{\leftcolwidth}\raggedright
+  \small\textsf{\color{stewartcyan}Cơ số hằng, số mũ hằng}
+\end{minipage}\hfill
+\begin{minipage}[t]{\rightcolwidth}
+  \textbf{1.}\quad $\dfrac{d}{dx}(b^n) = 0 \qquad (b \text{ và } n \text{ là các hằng số})$
+\end{minipage}
+
+\vspace{12pt}
+
+\noindent
+\begin{minipage}[t]{\leftcolwidth}\raggedright
+  \small\textsf{\color{stewartcyan}Cơ số biến, số mũ hằng}
+\end{minipage}\hfill
+\begin{minipage}[t]{\rightcolwidth}
+  \textbf{2.}\quad $\dfrac{d}{dx}[f(x)]^n = n[f(x)]^{n-1} f'(x)$
+\end{minipage}
+
+\vspace{12pt}
+
+\noindent
+\begin{minipage}[t]{\leftcolwidth}\raggedright
+  \small\textsf{\color{stewartcyan}Cơ số hằng, số mũ biến}
+\end{minipage}\hfill
+\begin{minipage}[t]{\rightcolwidth}
+  \textbf{3.}\quad $\dfrac{d}{dx}[b^{g(x)}] = b^{g(x)}(\ln b) g'(x)$
+\end{minipage}
+
+\vspace{12pt}
+
+\noindent
+\begin{minipage}[t]{\leftcolwidth}\raggedright
+  \small\textsf{\color{stewartcyan}Cơ số biến, số mũ biến}
+\end{minipage}\hfill
+\begin{minipage}[t]{\rightcolwidth}
+  \textbf{4.}\quad \parbox[t]{\dimexpr\linewidth-2.2em\relax}{Để tìm $\dfrac{d}{dx}[f(x)]^{g(x)}$, có thể sử dụng phương pháp đạo hàm logarit, như trong ví dụ tiếp theo.}
+\end{minipage}
+
+\vspace{18pt}
+
+% --- KHỐI 3: VÍ DỤ 8, HÌNH 3 VÀ GIỚI HẠN SỐ E ---
+\noindent
+\begin{minipage}[t]{\leftcolwidth}\vspace{0pt}
+  \vspace{44pt}
+  
+  \noindent{\small\textsf{Hình~3 minh họa cho Ví dụ~8 bằng cách thể hiện đồ thị của $f(x) = x^{\sqrt{x}}$ và đạo hàm của nó.}}\par\vspace{8pt}
+  
+  \noindent\includegraphics[width=\linewidth]{images/p0256_fig1.png}\par\vspace{4pt}
+  
+  \noindent\textbf{\textsf{HÌNH 3}}
+\end{minipage}\hfill
+\begin{minipage}[t]{\rightcolwidth}\vspace{0pt}
+  \noindent\textbf{\textsf{\color{stewartcyan}VÍ DỤ 8}}\hspace{1em}Tính đạo hàm của $y = x^{\sqrt{x}}$.\par\vspace{8pt}
+
+  \noindent\textbf{\textsf{\color{stewartcyan}LỜI GIẢI 1}}\hspace{1em}Vì cả cơ số và số mũ đều là biến, ta dùng phương pháp đạo hàm logarit:
+  \begin{align*}
+  \ln y &= \ln x^{\sqrt{x}} = \sqrt{x}\ln x\\[5pt]
+  \frac{y'}{y} &= \sqrt{x}\cdot\frac{1}{x} + (\ln x)\frac{1}{2\sqrt{x}}\\[5pt]
+  y' &= y\left(\frac{1}{\sqrt{x}} + \frac{\ln x}{2\sqrt{x}}\right) = x^{\sqrt{x}}\left(\frac{2 + \ln x}{2\sqrt{x}}\right)
+  \end{align*}
+
+  \noindent\textbf{\textsf{\color{stewartcyan}LỜI GIẢI 2}}\hspace{1em}Một phương pháp khác là sử dụng Phương trình~1.5.10 để viết $x^{\sqrt{x}} = e^{\sqrt{x}\ln x}$:
+  \begin{align*}
+  \frac{d}{dx}\left(x^{\sqrt{x}}\right) &= \frac{d}{dx}\left(e^{\sqrt{x}\ln x}\right) = e^{\sqrt{x}\ln x}\frac{d}{dx}\left(\sqrt{x}\ln x\right)\\[5pt]
+  &= x^{\sqrt{x}}\left(\frac{2 + \ln x}{2\sqrt{x}}\right)\qquad\textsf{\color{stewartcyan}(như trong Lời giải 1)}\tag*{\color{stewartcyan}\blacksquare}
+  \end{align*}
+
+  \vspace{18pt}
+
+  \noindent{\color{stewartcyan}\rule{2.2mm}{2.2mm}}\hspace{0.6em}{\textbf{\textsf{\large Số $e$ dưới dạng một giới hạn}}}\par\vspace{8pt}
+
+  \noindent Chúng ta đã chỉ ra rằng nếu $f(x) = \ln x$, thì $f'(x) = 1/x$. Do đó $f'(1) = 1$. Bây giờ chúng ta sử dụng kết quả này để biểu diễn số $e$ dưới dạng một giới hạn.\par\vspace{6pt}
+
+  \noindent Từ định nghĩa của đạo hàm dưới dạng một giới hạn, ta có
+  \begin{align*}
+  f'(1) &= \lim_{h \to 0}\frac{f(1 + h) - f(1)}{h} = \lim_{x \to 0}\frac{f(1 + x) - f(1)}{x}\\[6pt]
+  &= \lim_{x \to 0}\frac{\ln(1 + x) - \ln 1}{x} = \lim_{x \to 0}\frac{1}{x}\ln(1 + x)\\[6pt]
+  &= \lim_{x \to 0}\ln(1 + x)^{1/x}
+  \end{align*}
+\end{minipage}
+
+\end{document}
