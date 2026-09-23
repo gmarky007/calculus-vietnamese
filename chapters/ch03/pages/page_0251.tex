@@ -1,0 +1,137 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{fancyhdr}
+\usepackage[letterpaper, top=0.65in, bottom=0.6in, left=0.65in, right=0.65in]{geometry}
+
+% Thiết lập màu sắc theo chuẩn sách Stewart Calculus
+\definecolor{stewartblue}{RGB}{0, 130, 185}
+\definecolor{stewartcyan}{RGB}{0, 166, 214}
+\definecolor{stewartgray}{RGB}{110, 110, 110}
+
+% Biểu tượng công cụ vẽ đồ thị / CAS theo chuẩn Stewart
+\newcommand{\casicon}{%
+    \begin{tikzpicture}[scale=0.2, baseline=1.5pt]
+        \draw[stewartcyan, fill=white, line width=0.65pt, rounded corners=0.8pt] (0,0) rectangle (1.25, 1.15);
+        \draw[stewartcyan, line width=0.7pt] (0.15,0.25) .. controls (0.45,0.95) and (0.75,0.15) .. (1.1,0.9);
+    \end{tikzpicture}%
+}
+
+% Cấu hình tiêu đề trang (Header)
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[L]{\small\textbf{216}\hspace{2.5em}\textbf{CHƯƠNG 3}\quad Quy tắc đạo hàm}
+\fancyfoot{}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\begin{document}
+
+% Thiết lập độ giãn hiển thị công thức toán
+\setlength{\abovedisplayskip}{3.5pt}
+\setlength{\belowdisplayskip}{3.5pt}
+\setlength{\abovedisplayshortskip}{1.5pt}
+\setlength{\belowdisplayshortskip}{1.5pt}
+
+\noindent
+\begin{minipage}[t]{0.485\textwidth}
+\setlength{\parskip}{4.6pt}
+
+\textbf{49.}\enspace Tìm phương trình tiếp tuyến của hypebol
+\[
+\frac{x^2}{a^2} - \frac{y^2}{b^2} = 1
+\]
+tại điểm $(x_0, y_0)$.
+
+\textbf{50.}\enspace Chứng minh rằng tổng các đoạn chắn trên trục $x$ và trục $y$ của bất kỳ tiếp tuyến nào với đường cong $\sqrt{x} + \sqrt{y} = \sqrt{c}$ đều bằng $c$.
+
+\textbf{51.}\enspace Sử dụng đạo hàm ẩn, hãy chứng minh rằng tiếp tuyến bất kỳ tại điểm $P$ của đường tròn tâm $O$ luôn vuông góc với bán kính $OP$.
+
+\textbf{52.}\enspace Quy tắc lũy thừa có thể được chứng minh bằng cách dùng đạo hàm ẩn cho trường hợp $n$ là một số hữu tỉ, $n = p/q$, và $y = f(x) = x^n$ được giả thiết trước là một hàm khả vi. Nếu $y = x^{p/q}$, thì $y^q = x^p$. Sử dụng đạo hàm ẩn để chứng minh rằng
+\[
+y' = \frac{p}{q} x^{(p/q)-1}
+\]
+
+{\color{stewartblue}\textbf{53--56}}\enspace \textbf{Quỹ đạo trực giao}\enspace Hai đường cong được gọi là \textit{trực giao} nếu các tiếp tuyến của chúng vuông góc với nhau tại mỗi giao điểm. Chứng minh rằng các họ đường cong đã cho là các \textit{quỹ đạo trực giao} của nhau; nghĩa là, mọi đường cong trong họ này đều trực giao với mọi đường cong trong họ kia. Phác thảo cả hai họ đường cong trên cùng một hệ trục tọa độ.
+
+\textbf{53.}\enspace $x^2 + y^2 = r^2, \quad ax + by = 0$
+
+\textbf{54.}\enspace $x^2 + y^2 = ax, \quad x^2 + y^2 = by$
+
+\textbf{55.}\enspace $y = cx^2, \quad x^2 + 2y^2 = k$
+
+\textbf{56.}\enspace $y = ax^3, \quad x^2 + 3y^2 = b$
+
+\textbf{57.}\enspace Chứng minh rằng elip $x^2/a^2 + y^2/b^2 = 1$ và hypebol $x^2/A^2 - y^2/B^2 = 1$ là các quỹ đạo trực giao nếu $A^2 < a^2$ và $a^2 - b^2 = A^2 + B^2$ (do đó elip và hypebol có cùng các tiêu điểm).
+
+\textbf{58.}\enspace Tìm giá trị của số $a$ sao cho các họ đường cong $y = (x + c)^{-1}$ và $y = a(x + k)^{1/3}$ là các quỹ đạo trực giao.
+
+\textbf{59.}\enspace \textit{Phương trình van der Waals} cho $n$ mol của một chất khí là
+\[
+\left( P + \frac{n^2 a}{V^2} \right)(V - nb) = nRT
+\]
+trong đó $P$ là áp suất, $V$ là thể tích, và $T$ là nhiệt độ của chất khí. Hằng số $R$ là hằng số khí lý tưởng và $a$, $b$ là các hằng số dương đặc trưng cho từng loại khí cụ thể.
+
+\hangindent=1.5em (a) Nếu $T$ không đổi, hãy dùng đạo hàm ẩn để tìm $dV/dP$.
+
+\hangindent=1.5em (b) Tìm tốc độ thay đổi của thể tích theo áp suất của $1\text{ mol}$ khí carbon dioxide ở thể tích $V = 10\text{ L}$ và áp suất $P = 2{,}5\text{ atm}$. Cho biết $a = 3{,}592\text{ L}^2\cdot\text{atm/mol}^2$ và $b = 0{,}04267\text{ L/mol}$.
+
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.485\textwidth}
+\setlength{\parskip}{4.6pt}
+
+\textbf{60.}\enspace (a) Sử dụng đạo hàm ẩn để tìm $y'$ nếu
+\[
+x^2 + xy + y^2 + 1 = 0
+\]
+\makebox[0pt][r]{\casicon\hspace{4pt}}(b) Vẽ đồ thị đường cong trong phần (a). Bạn quan sát thấy gì? Hãy chứng minh điều bạn thấy là đúng.
+
+(c) Dựa vào kết quả phần (b), bạn có nhận xét gì về biểu thức của $y'$ mà bạn đã tìm được ở phần (a)?
+
+\textbf{61.}\enspace Phương trình $x^2 - xy + y^2 = 3$ biểu diễn một “elip xoay”, tức là một elip có các trục không song song với các trục tọa độ. Tìm các điểm mà tại đó elip này cắt trục $x$ và chứng minh rằng các tiếp tuyến tại những điểm này song song với nhau.
+
+\textbf{62.}\enspace (a) Đường pháp tuyến của elip $x^2 - xy + y^2 = 3$ tại điểm $(-1, 1)$ cắt lại elip lần thứ hai tại điểm nào?
+
+\makebox[0pt][r]{\casicon\hspace{4pt}}(b) Minh họa phần (a) bằng cách vẽ đồ thị elip và đường pháp tuyến.
+
+\textbf{63.}\enspace Tìm tất cả các điểm trên đường cong $x^2 y^2 + xy = 2$ mà tại đó hệ số góc của tiếp tuyến bằng $-1$.
+
+\textbf{64.}\enspace Tìm phương trình của cả hai tiếp tuyến với elip $x^2 + 4y^2 = 36$ đi qua điểm $(12, 3)$.
+
+\textbf{65.}\enspace Sử dụng đạo hàm ẩn để tìm $dy/dx$ cho phương trình
+\[
+\frac{x}{y} = y^2 + 1 \qquad y \ne 0
+\]
+và cho phương trình tương đương
+\[
+x = y^3 + y \qquad y \ne 0
+\]
+Chứng minh rằng mặc dù các biểu thức nhận được cho $dy/dx$ trông khác nhau, nhưng chúng cho cùng giá trị tại tất cả các điểm thỏa mãn phương trình đã cho.
+
+\textbf{66.}\enspace \textit{Hàm Bessel} cấp 0, $y = J(x)$, thỏa mãn phương trình vi phân $x y'' + y' + x y = 0$ với mọi giá trị của $x$ và giá trị của nó tại 0 là $J(0) = 1$.
+
+(a) Tìm $J'(0)$.\qquad (b) Dùng đạo hàm ẩn để tìm $J''(0)$.
+
+\textbf{67.}\enspace Hình bên dưới minh họa một chiếc đèn đặt cách trục $y$ ba đơn vị về phía bên phải và vùng bóng đổ tạo bởi miền elip $x^2 + 4y^2 \le 5$. Nếu điểm $(-5, 0)$ nằm trên mép của bóng đổ, hỏi chiếc đèn nằm cách trục $x$ một khoảng bằng bao nhiêu?
+
+\begin{center}
+    \vspace{1pt}
+    \includegraphics[width=0.92\linewidth]{images/p0251_fig1.png}
+\end{center}
+
+\end{minipage}
+
+\vfill
+\begin{center}
+\fontsize{6.5pt}{8pt}\selectfont\color{stewartgray}
+Bản quyền thuộc sở hữu của Cengage Learning. Mọi quyền được bảo lưu. Không được sao chép, quét hoặc nhân bản toàn bộ hay từng phần. WCN 02-200-203
+\end{center}
+
+\end{document}

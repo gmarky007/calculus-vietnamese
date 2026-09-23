@@ -257,6 +257,12 @@
       "score": 99,
       "notes": "Bản dịch hiện tại bị lỗi biên dịch nghiêm trọng (mã LaTeX bị in thành văn bản thuần ở đầu trang và toàn bộ nội dung thân trang bị trống). Cần thiết lập lại toàn bộ cấu trúc 2 cột, khôi phục các đường kẻ phân cách cyan (rule), 4 hình đồ thị và các biểu tượng vẽ đồ thị (graphicon) theo đúng nguyên bản.",
       "time": "2026-09-23 07:26:07"
+    },
+    {
+      "page_num": 251,
+      "score": 99,
+      "notes": "Trang dịch xuất hiện dòng rác văn bản thông số kỹ thuật ở đầu trang làm xô lệch toàn bộ bố cục. Thừa một dòng kẻ ngang màu xanh giữa bài 56 và 57 (bản gốc không có). Cần bỏ dòng kẻ, tinh chỉnh biểu tượng CAS và dóng hàng chính xác hai cột.",
+      "time": "2026-09-23 07:27:49"
     }
   ]
 }
