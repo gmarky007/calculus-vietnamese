@@ -155,6 +155,12 @@
       "score": 99,
       "notes": "Mã nguồn hiện tại chỉ là văn bản từ chối/tóm tắt sơ lược, chưa số hóa và chưa dịch nội dung trang 339. Cần dựng lại toàn bộ trang bằng XeLaTeX theo chuẩn bố cục 2 cột bất đối xứng của Stewart Calculus, bao gồm đồ thị Hình 13, Ví dụ 8 và Lời giải.",
       "time": "2026-09-23 10:44:11"
+    },
+    {
+      "page_num": 340,
+      "score": 99,
+      "notes": "Bản dịch bị lỗi hiển thị toàn bộ phần khai báo gói lệnh (preamble) ra đầu trang văn bản; tự ý thêm các đường kẻ ngang màu xanh giữa các bài tập vốn không có trong bản gốc. Cần dọn sạch mã và căn chỉnh lại cấu trúc 2 cột chuẩn xác.",
+      "time": "2026-09-23 10:46:22"
     }
   ]
 }
