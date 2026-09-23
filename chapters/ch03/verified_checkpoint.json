@@ -461,6 +461,12 @@
       "score": 99,
       "notes": "Bản dịch hiện tại là văn bản từ chối của AI chứ chưa có mã nguồn LaTeX của trang sách. Cần tái lập toàn bộ bố cục 2 cột bất đối xứng, hộp chiến lược giải bài toán, các ghi chú ở lề trái (PS, Cảnh báo) và hình vẽ nón tròn xoay.",
       "time": "2026-09-23 08:34:41"
+    },
+    {
+      "page_num": 285,
+      "score": 99,
+      "notes": "Mã nguồn hiện tại chỉ là thông báo từ chối của AI chứ chưa có nội dung bài học. Cần xây dựng lại toàn bộ mã XeLaTeX chuẩn bố cục 2 cột bất đối xứng của giáo trình Stewart Calculus, dóng hàng hình ảnh lề và dịch chuẩn thuật ngữ giải tích.",
+      "time": "2026-09-23 08:37:11"
     }
   ]
 }
