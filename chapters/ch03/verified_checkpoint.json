@@ -335,6 +335,12 @@
       "score": 99,
       "notes": "Mã nguồn hiện tại chỉ chứa văn bản thông báo từ chối thay vì bản dựng tài liệu. Cần tái tạo toàn diện bố cục hai cột bất đối xứng, căn chỉnh hình ảnh ở lề trái và dịch chuẩn xác thuật ngữ giải tích.",
       "time": "2026-09-23 07:56:10"
+    },
+    {
+      "page_num": 264,
+      "score": 99,
+      "notes": "Mã nguồn hiện tại từ chối dịch và không chứa nội dung giáo trình. Đã biên soạn lại toàn bộ trang XeLaTeX đạt chuẩn 99% theo phong cách giáo trình James Stewart (bố cục lề trái rộng, tiêu đề chuẩn, công thức hóa học và đạo hàm tốc độ phản ứng chuẩn xác).",
+      "time": "2026-09-23 07:57:10"
     }
   ]
 }

@@ -1,0 +1,81 @@
+\documentclass[10pt]{article}
+\usepackage[paperwidth=612pt, paperheight=792pt, left=175pt, right=45pt, top=45pt, bottom=40pt]{geometry}
+\usepackage{fontspec}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+
+\definecolor{stewartblue}{RGB}{0, 110, 180}
+\newcommand{\stewartsquare}{\textcolor{stewartblue}{\rule{1.1ex}{1.1ex}}}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[L]{{\fontsize{9}{11}\selectfont\sffamily\textbf{MỤC 3.7}\hspace{1.5em}Tốc độ thay đổi trong Khoa học Tự nhiên và Xã hội}}
+\fancyhead[R]{{\fontsize{9}{11}\selectfont\sffamily\textbf{229}}}
+
+\setlength{\parindent}{1.5em}
+\setlength{\parskip}{0pt}
+\setlength{\abovedisplayskip}{6pt}
+\setlength{\belowdisplayskip}{6pt}
+
+\begin{document}
+
+\noindent
+Vận tốc, khối lượng riêng và cường độ dòng điện không phải là những tốc độ thay đổi duy nhất có vai trò quan trọng trong vật lý. Những đại lượng khác bao gồm công suất (tốc độ thực hiện công), tốc độ truyền nhiệt, gradient nhiệt độ (tốc độ thay đổi của nhiệt độ theo vị trí), và tốc độ phân rã của một chất phóng xạ trong vật lý hạt nhân.
+
+\vspace{1.2em}
+\noindent{\stewartsquare\hspace{0.6em}\textbf{\sffamily Hóa học}}
+\vspace{0.6em}
+
+\noindent
+\textcolor{stewartblue}{\textbf{\sffamily VÍ DỤ 4}}\hspace{1em}Một phản ứng hóa học dẫn đến sự hình thành một hoặc nhiều chất (gọi là \textit{sản phẩm}) từ một hoặc nhiều chất ban đầu (gọi là \textit{chất phản ứng}). Chẳng hạn, “phương trình”
+\begin{equation*}
+2\text{H}_2 + \text{O}_2 \to 2\text{H}_2\text{O}
+\end{equation*}
+\noindent
+cho biết hai phân tử hiđrô và một phân tử ôxy tạo thành hai phân tử nước. Xét phản ứng
+\begin{equation*}
+A + B \to C
+\end{equation*}
+\noindent
+trong đó $A$ và $B$ là các chất phản ứng còn $C$ là sản phẩm. \textbf{Nồng độ} của một chất phản ứng $A$ là số mol ($1\text{ mol} = 6{,}022 \times 10^{23}\text{ phân tử}$) trên một lít và được ký hiệu là $[A]$. Nồng độ biến thiên trong quá trình phản ứng, vì vậy $[A]$, $[B]$ và $[C]$ đều là các hàm theo thời gian ($t$). Tốc độ phản ứng trung bình của sản phẩm $C$ trong khoảng thời gian $t_1 \leqslant t \leqslant t_2$ là
+\begin{equation*}
+\frac{\Delta[C]}{\Delta t} = \frac{[C](t_2) - [C](t_1)}{t_2 - t_1}
+\end{equation*}
+
+Tuy nhiên, các nhà hóa học quan tâm đến \textbf{tốc độ phản ứng tức thời} vì nó cung cấp thông tin về cơ chế của phản ứng hóa học. Tốc độ phản ứng tức thời nhận được bằng cách lấy giới hạn của tốc độ phản ứng trung bình khi khoảng thời gian $\Delta t$ tiến dần về 0:
+\begin{equation*}
+\text{tốc độ phản ứng} = \lim_{\Delta t \to 0} \frac{\Delta[C]}{\Delta t} = \frac{d[C]}{dt}
+\end{equation*}
+
+Vì nồng độ của sản phẩm tăng lên khi phản ứng diễn ra, nên đạo hàm $d[C]/dt$ sẽ dương, và do đó tốc độ phản ứng của $C$ là dương. Tuy nhiên, nồng độ của các chất phản ứng lại giảm trong quá trình phản ứng, vì vậy, để tốc độ phản ứng của $A$ và $B$ là các số dương, ta đặt dấu trừ phía trước các đạo hàm $d[A]/dt$ và $d[B]/dt$. Vì $[A]$ và $[B]$ đều giảm với cùng tốc độ mà $[C]$ tăng lên, nên ta có
+\begin{equation*}
+\text{tốc độ phản ứng} = \frac{d[C]}{dt} = -\frac{d[A]}{dt} = -\frac{d[B]}{dt}
+\end{equation*}
+
+Tổng quát hơn, người ta thấy rằng đối với một phản ứng có dạng
+\begin{equation*}
+aA + bB \to cC + dD
+\end{equation*}
+\noindent
+ta có
+\begin{equation*}
+-\frac{1}{a}\frac{d[A]}{dt} = -\frac{1}{b}\frac{d[B]}{dt} = \frac{1}{c}\frac{d[C]}{dt} = \frac{1}{d}\frac{d[D]}{dt}
+\end{equation*}
+
+Tốc độ phản ứng có thể được xác định từ dữ liệu thực nghiệm và các phương pháp đồ thị. Trong một số trường hợp, có các công thức tường minh cho nồng độ dưới dạng các hàm theo thời gian cho phép chúng ta tính toán tốc độ phản ứng (xem Bài tập 26).\hfill\stewartsquare
+
+\vfill
+\begin{center}
+{\fontsize{5.5}{7}\selectfont\color{black!60}
+Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\\[2pt]
+Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s).\
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+}
+\end{center}
+
+\end{document}
