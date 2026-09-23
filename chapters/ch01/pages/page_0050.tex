@@ -1,104 +1,112 @@
-\fancyhead[LE,RO]{\small\textbf{\textsf{MỤC 1.1}}\quad Bốn cách biểu diễn một hàm số\quad\textbf{15}}
-\fancyhead[LO,RE]{}
+\fancyhead[LE]{\fontsize{8.5pt}{10pt}\selectfont\textbf{\textsf{15}}\quad \textbf{\textsf{CHƯƠNG 1}}\quad \textsf{Các hàm số và Mô hình}}
+\fancyhead[RO]{\fontsize{8.5pt}{10pt}\selectfont\textsf{MỤC 1.1}\quad \textsf{Bốn cách biểu diễn một hàm số}\quad \textbf{\textsf{15}}}
 
 \noindent
-\begin{minipage}[t]{0.26\textwidth}
-    \vspace*{4.7cm}
+\begin{minipage}[t]{0.265\textwidth}
+    \fontsize{8pt}{10.5pt}\selectfont
+    \vspace{3pt}
+    
     \begin{center}
-        \includegraphics[width=0.95\linewidth]{images/p0050_fig2.png}
-        \vspace{1mm}
-        
+        \includegraphics[width=0.82\linewidth]{images/p0050_fig16.png}\\[4pt]
         \textbf{\textsf{HÌNH 16}}
     \end{center}
 
-    \vspace{0.6cm}
+    \vspace{3pt}
+
     \begin{center}
-        \includegraphics[width=0.95\linewidth]{images/p0050_fig3.png}
-        \vspace{1mm}
-        
+        \includegraphics[width=0.82\linewidth]{images/p0050_fig17.png}\\[4pt]
         \textbf{\textsf{HÌNH 17}}
     \end{center}
+    \vspace{3pt}
+    \noindent
+    Phương trình đường thẳng theo điểm và hệ số góc có dạng $y - y_1 = m(x - x_1)$. Xem Phụ lục~B.
 
-    \vspace{1.5mm}
-    \noindent\footnotesize Dạng phương trình đường thẳng qua một điểm với hệ số góc là $y - y_1 = m(x - x_1)$. Xem Phụ lục B.
+    \vspace{3pt}
 
-    \vspace{2.0cm}
     \begin{center}
-        \includegraphics[width=0.95\linewidth]{images/p0050_fig4.png}
-        \vspace{1mm}
-        
+        \includegraphics[width=0.82\linewidth]{images/p0050_fig18.png}\\[4pt]
         \textbf{\textsf{HÌNH 18}}
     \end{center}
 \end{minipage}%
 \hfill
-\begin{minipage}[t]{0.71\textwidth}
-Chẳng hạn,
-\[
-|3| = 3 \qquad |-3| = 3 \qquad |0| = 0 \qquad |\sqrt{2} - 1| = \sqrt{2} - 1 \qquad |3 - \pi| = \pi - 3
-\]
-Tổng quát, ta có
-\begin{center}
-\fcolorbox{stewartred}{white}{%
-\parbox{0.48\textwidth}{%
-\vspace{1.5mm}
-\centering
-$\begin{aligned}
-|a| &= a \quad &&\text{nếu } a \ge 0\\[2mm]
-|a| &= -a \quad &&\text{nếu } a < 0
-\end{aligned}$
-\vspace{1.5mm}
-}%
-}
-\end{center}
+\begin{minipage}[t]{0.708\textwidth}
+    \fontsize{8.8pt}{11.5pt}\selectfont
+    \noindent
+    Chẳng hạn,
+    \[
+    |3| = 3 \qquad |-3| = 3 \qquad |0| = 0 \qquad |\sqrt{2} - 1| = \sqrt{2} - 1 \qquad |3 - \pi| = \pi - 3
+    \]
+    Tổng quát, ta có
+    \begin{center}
+    \fboxrule=0.7pt\relax
+    \fcolorbox{red!80!black}{white}{%
+        \begin{minipage}{0.38\linewidth}
+        \vspace{3pt}
+        \[
+        \begin{aligned}
+        |a| &= a \quad\text{nếu } a \geqslant 0 \\
+        |a| &= -a \quad\text{nếu } a < 0
+        \end{aligned}
+        \]
+        \vspace{3pt}
+        \end{minipage}%
+    }
+    \end{center}
+    (Hãy nhớ rằng nếu $a$ là số âm, thì $-a$ là số dương.)
 
-\noindent (Hãy nhớ rằng nếu $a$ âm, thì $-a$ là số dương.)
+    \vspace{3pt}
+    \noindent
+    \textbf{\textsf{\color{stewartcyan}VÍ DỤ 8}}\quad Vẽ đồ thị của hàm giá trị tuyệt đối $f(x) = |x|$.
 
-\medskip
-\noindent\textbf{\textsf{\color{stewartcyan}VÍ DỤ 8}}\quad Vẽ đồ thị của hàm giá trị tuyệt đối $f(x) = |x|$.
+    \vspace{3pt}
+    \noindent
+    \textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\quad Từ phần thảo luận ở trên, ta biết rằng
+    \[
+    |x| = \begin{cases}
+    x & \text{nếu } x \geqslant 0 \\
+    -x & \text{nếu } x < 0
+    \end{cases}
+    \]
+    Sử dụng phương pháp tương tự như trong Ví dụ 7, ta thấy rằng đồ thị của hàm số $f$ trùng với đường thẳng $y = x$ ở phía bên phải trục $y$ và trùng với đường thẳng $y = -x$ ở phía bên trái trục $y$ (xem Hình 16).\hfill{\color{stewartcyan}$\blacksquare$}
 
-\noindent\textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\quad Từ phần thảo luận ở trên, ta biết rằng
-\[
-|x| = \begin{cases} 
-x & \text{nếu } x \ge 0 \\ 
--x & \text{nếu } x < 0 
-\end{cases}
-\]
-Sử dụng cùng phương pháp như trong Ví dụ 7, ta thấy rằng đồ thị của $f$ trùng với đường thẳng $y = x$ ở bên phải trục $y$ và trùng với đường thẳng $y = -x$ ở bên trái trục $y$ (xem Hình 16).\hfill{\color{stewartcyan}$\blacksquare$}
+    \vspace{3pt}
+    \noindent
+    \textbf{\textsf{\color{stewartcyan}VÍ DỤ 9}}\quad Tìm công thức cho hàm số $f$ có đồ thị được cho trong Hình 17.
 
-\medskip
-\noindent\textbf{\textsf{\color{stewartcyan}VÍ DỤ 9}}\quad Tìm công thức cho hàm số $f$ có đồ thị trong Hình 17.
+    \vspace{3pt}
+    \noindent
+    \textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\quad Đường thẳng đi qua $(0, 0)$ và $(1, 1)$ có hệ số góc $m = 1$ và tung độ gốc $b = 0$, do đó phương trình của nó là $y = x$. Như vậy, đối với phần đồ thị của $f$ nối điểm $(0, 0)$ với điểm $(1, 1)$, ta có
+    \[
+    f(x) = x \quad \text{nếu } 0 \leqslant x \leqslant 1
+    \]
+    Đường thẳng đi qua $(1, 1)$ và $(2, 0)$ có hệ số góc $m = -1$, nên phương trình đường thẳng theo điểm và hệ số góc của nó là
+    \[
+    y - 0 = (-1)(x - 2) \qquad\text{hay}\qquad y = 2 - x
+    \]
+    Do đó ta có
+    \[
+    f(x) = 2 - x \quad \text{nếu } 1 < x \leqslant 2
+    \]
+    Ta cũng thấy rằng đồ thị của $f$ trùng với trục hoành $x$ khi $x > 2$. Kết hợp các kết quả này lại, ta nhận được công thức ba phần sau đây cho hàm số $f$:
+    \[
+    f(x) = \begin{cases}
+    x & \text{nếu } 0 \leqslant x \leqslant 1 \\
+    2 - x & \text{nếu } 1 < x \leqslant 2 \\
+    0 & \text{nếu } x > 2
+    \end{cases}
+    \]\hfill{\color{stewartcyan}$\blacksquare$}
 
-\noindent\textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\quad Đường thẳng đi qua $(0, 0)$ và $(1, 1)$ có hệ số góc $m = 1$ và tung độ gốc $b = 0$, do đó phương trình của nó là $y = x$. Vì vậy, đối với phần đồ thị của $f$ nối từ $(0, 0)$ đến $(1, 1)$, ta có
-\[
-f(x) = x \quad \text{nếu } 0 \le x \le 1
-\]
-Đường thẳng đi qua $(1, 1)$ và $(2, 0)$ có hệ số góc $m = -1$, do đó phương trình dạng điểm -- hệ số góc là
-\[
-y - 0 = (-1)(x - 2) \quad \text{hay} \quad y = 2 - x
-\]
-Nên ta có
-\[
-f(x) = 2 - x \quad \text{nếu } 1 < x \le 2
-\]
-Ta cũng thấy rằng đồ thị của $f$ trùng với trục $x$ khi $x > 2$. Kết hợp các thông tin này lại, ta có công thức ba phần sau đây cho hàm số $f$:
-\[
-f(x) = \begin{cases} 
-x & \text{nếu } 0 \le x \le 1 \\ 
-2 - x & \text{nếu } 1 < x \le 2 \\ 
-0 & \text{nếu } x > 2 
-\end{cases}
-\tag*{\color{stewartcyan}$\blacksquare$}
-\]
-
-\noindent\textbf{\textsf{\color{stewartcyan}VÍ DỤ 10}}\quad Trong Ví dụ C ở đầu mục này, chúng ta đã xét chi phí $C(w)$ gửi một phong bì lớn có khối lượng $w$. Thực chất, đây là một hàm số xác định từng khúc bởi vì, từ Bảng 3, ta có
-\[
-C(w) = \begin{cases} 
-1.00 & \text{nếu } 0 < w \le 1 \\ 
-1.15 & \text{nếu } 1 < w \le 2 \\ 
-1.30 & \text{nếu } 2 < w \le 3 \\ 
-1.45 & \text{nếu } 3 < w \le 4 \\ 
-\;\;\vdots & 
-\end{cases}
-\]
-Đồ thị của hàm số này được cho trong Hình 18.\hfill{\color{stewartcyan}$\blacksquare$}
+    \vspace{3pt}
+    \noindent
+    \textbf{\textsf{\color{stewartcyan}VÍ DỤ 10}}\quad Trong Ví dụ C ở đầu mục này, chúng ta đã xem xét chi phí $C(w)$ để gửi một phong bì lớn có khối lượng $w$. Thực chất, đây là một hàm số được xác định theo từng khoảng vì từ Bảng 3, ta có
+    \[
+    C(w) = \begin{cases}
+    1.00 & \text{nếu } 0 < w \leqslant 1 \\
+    1.15 & \text{nếu } 1 < w \leqslant 2 \\
+    1.30 & \text{nếu } 2 < w \leqslant 3 \\
+    1.45 & \text{nếu } 3 < w \leqslant 4 \\
+    \;\;\vdots
+    \end{cases}
+    \]
+    Đồ thị của hàm số này được thể hiện trong Hình 18.\hfill{\color{stewartcyan}$\blacksquare$}
 \end{minipage}

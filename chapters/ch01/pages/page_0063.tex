@@ -1,68 +1,77 @@
-\fancyhead[L]{\textbf{\textsf{28}}\quad\textbf{\textsf{\color{stewartcyan}CHƯƠNG 1}}\quad\textsf{Hàm số và Mô hình}}
-\fancyhead[R]{}
+\fancyhead[LE]{\fontsize{8.5pt}{10pt}\selectfont\textbf{\textsf{\thepage}}\quad \textbf{\textsf{CHƯƠNG 1}}\quad \textsf{Các hàm số và Mô hình}}
+\fancyhead[RO]{\fontsize{8.5pt}{10pt}\selectfont\textsf{MỤC 1.1}\quad \textbf{\textsf{\thepage}}}
 
 \noindent
-\begin{minipage}[t]{0.25\textwidth}
-    \vspace{0pt}
-    \vspace*{4.3cm}
-    \raggedleft
-    {\small\textbf{\textsf{HÌNH 13}}}\\[2pt]
-    {\footnotesize Đồ thị của các hàm căn}
+\begin{minipage}[t]{0.265\textwidth}
+    \fontsize{8pt}{10pt}\selectfont
+    \vspace*{40pt}
+    \centering
+    \includegraphics[width=0.92\linewidth]{images/p0063_fig13.png}\\[4pt]
+    \textbf{\textsf{HÌNH 13}}\\[1pt]
+    \textsf{Đồ thị của các hàm căn thức}
 \end{minipage}%
 \hfill
-\begin{minipage}[t]{0.72\textwidth}
-    \vspace{0pt}
+\begin{minipage}[t]{0.708\textwidth}
+    \fontsize{9.3pt}{13.2pt}\selectfont
     \noindent
-    parabol $x = y^2$. [Xem Hình 13(a).] Đối với các giá trị chẵn khác của $n$, đồ thị của $y = \sqrt[n]{x}$ tương tự như đồ thị của $y = \sqrt{x}$. Với $n = 3$, ta có hàm căn bậc ba $f(x) = \sqrt[3]{x}$ có tập xác định là $\mathbb{R}$ (hãy nhớ rằng mọi số thực đều có một căn bậc ba) và đồ thị của nó được thể hiện trong Hình 13(b). Đồ thị của $y = \sqrt[n]{x}$ với $n$ lẻ ($n > 3$) tương tự như đồ thị của $y = \sqrt[3]{x}$.
+    parabol $x = y^2$. [Xem Hình 13(a).] Đối với các giá trị chẵn khác của $n$, đồ thị của $y = \sqrt[n]{x}$ tương tự như đồ thị của $y = \sqrt{x}$. Với $n = 3$, ta có hàm căn bậc ba $f(x) = \sqrt[3]{x}$ có tập xác định là $\mathbb{R}$ (hãy nhớ lại rằng mọi số thực đều có một căn bậc ba) và có đồ thị được thể hiện trong Hình 13(b). Đồ thị của $y = \sqrt[n]{x}$ với $n$ lẻ ($n > 3$) tương tự như đồ thị của $y = \sqrt[3]{x}$.
 
-    \vspace{0.25cm}
-    \noindent{\centering\includegraphics[width=0.92\linewidth]{images/p0063_fig1.png}\par}
-
-    \vspace{0.35cm}
+    \vspace{0.8em}
     \noindent
-    {\bfseries\sffamily\color{stewartcyan}(iii)}\enspace $\boldsymbol{a = -1}$
-
-    \vspace{0.12cm}
-    \noindent
-    Đồ thị của \textbf{hàm nghịch đảo} $f(x) = x^{-1} = 1/x$ được thể hiện trong Hình 14. Đồ thị của nó có phương trình $y = 1/x$, hay $xy = 1$, và là một hyperbol nhận các trục tọa độ làm các đường tiệm cận. Hàm số này xuất hiện trong vật lý và hóa học liên quan đến Định luật Boyle, phát biểu rằng khi nhiệt độ không đổi, thể tích $V$ của một khối khí tỉ lệ nghịch với áp suất $P$:
+    \textbf{\textsf{\color{stewartcyan}(iii)}} $\boldsymbol{a = -1}$\\[0.2em]
+    Đồ thị của \textbf{hàm nghịch đảo} $f(x) = x^{-1} = 1/x$ được thể hiện trong Hình 14. Đồ thị của nó có phương trình $y = 1/x$, hay $xy = 1$, và là một hyperbol nhận các trục tọa độ làm các đường tiệm cận. Hàm số này xuất hiện trong vật lý và hóa học liên quan đến Định luật Boyle, định luật này phát biểu rằng khi nhiệt độ không đổi, thể tích $V$ của một lượng khí tỉ lệ nghịch với áp suất $P$:
     \[
     V = \frac{C}{P}
     \]
-    trong đó $C$ là một hằng số. Do đó đồ thị của $V$ theo biến $P$ (xem Hình 15) có dạng tương tự như nhánh bên phải của Hình 14.
+    trong đó $C$ là một hằng số. Do đó đồ thị của $V$ như một hàm số theo $P$ (xem Hình 15) có cùng hình dạng tổng quát như nửa bên phải của Hình 14.
 
-    \vspace{0.25cm}
-    \noindent
-    \begin{minipage}[t]{0.48\textwidth}
+    \vspace{0.6em}
+    \begin{center}
+    \begin{minipage}[t]{0.47\linewidth}
         \centering
-        \includegraphics[width=0.82\linewidth]{images/p0063_fig2.png}
+        \begin{tikzpicture}[scale=0.88, >=stealth]
+            % Hệ trục tọa độ
+            \draw[->] (-2.2, 0) -- (2.3, 0) node[below] {\footnotesize $x$};
+            \draw[->] (0, -2.2) -- (0, 2.3) node[left] {\footnotesize $y$};
+            \node[below left=1pt] at (0, 0) {\footnotesize $0$};
 
-        \vspace{2mm}
-        \begin{minipage}{0.82\linewidth}
-            \raggedright
-            {\small\textbf{\textsf{HÌNH 14}}}\\[1mm]
-            {\footnotesize Hàm nghịch đảo}
-        \end{minipage}
+            % Các vạch chia tọa độ
+            \draw (1, 0.08) -- (1, -0.08) node[below=1pt] {\footnotesize $1$};
+            \draw (0.08, 1) -- (-0.08, 1) node[left=1pt] {\footnotesize $1$};
+
+            % Đồ thị y = 1/x
+            \draw[stewartcyan, thick, domain=0.45:2.1, samples=60] plot (\x, {1/\x});
+            \draw[stewartcyan, thick, domain=-2.1:-0.45, samples=60] plot (\x, {1/\x});
+
+            % Nhãn đồ thị
+            \node[stewartcyan] at (1.2, 1.4) {\footnotesize $y = \frac{1}{x}$};
+        \end{tikzpicture}\\[4pt]
+        \textbf{\textsf{HÌNH 14}}\\[1pt]
+        {\fontsize{8.5pt}{11pt}\selectfont\textsf{Hàm nghịch đảo}}
     \end{minipage}\hfill
-    \begin{minipage}[t]{0.48\textwidth}
+    \begin{minipage}[t]{0.47\linewidth}
         \centering
-        \includegraphics[width=0.82\linewidth]{images/p0063_fig3.png}
+        \begin{tikzpicture}[scale=0.88, >=stealth]
+            % Hệ trục tọa độ
+            \draw[->] (-0.3, 0) -- (2.5, 0) node[below] {\footnotesize $P$};
+            \draw[->] (0, -0.3) -- (0, 2.3) node[left] {\footnotesize $V$};
+            \node[below left=1pt] at (0, 0) {\footnotesize $0$};
 
-        \vspace{2mm}
-        \begin{minipage}{0.82\linewidth}
-            \raggedright
-            {\small\textbf{\textsf{HÌNH 15}}}\\[1mm]
-            {\footnotesize Thể tích là hàm của áp suất\\
-            ở nhiệt độ không đổi}
-        \end{minipage}
+            % Đồ thị V = C/P
+            \draw[stewartcyan, thick, domain=0.45:2.3, samples=60] plot (\x, {0.95/\x});
+
+            % Nhãn đồ thị
+            \node[stewartcyan] at (1.3, 1.25) {\footnotesize $V = \frac{C}{P}$};
+        \end{tikzpicture}\\[4pt]
+        \textbf{\textsf{HÌNH 15}}\\[1pt]
+        {\fontsize{8.5pt}{11pt}\selectfont\textsf{Thể tích là một hàm của áp suất}\\\textsf{ở nhiệt độ không đổi}}
     \end{minipage}
+    \end{center}
 
-    \vspace{0.35cm}
+    \vspace{0.8em}
     \noindent
-    {\bfseries\sffamily\color{stewartcyan}(iv)}\enspace $\boldsymbol{a = -2}$
-
-    \vspace{0.12cm}
-    \noindent
-    Trong các số mũ âm còn lại của hàm lũy thừa $f(x) = x^a$, trường hợp quan trọng nhất là $a = -2$. Rất nhiều định luật tự nhiên phát biểu rằng một đại lượng tỉ lệ nghịch với bình phương của một đại lượng khác. Nói cách khác, đại lượng thứ nhất được mô hình hóa bởi một hàm có dạng $f(x) = C/x^2$ và ta gọi đây là một \textbf{định luật nghịch đảo bình phương}. Chẳng hạn, độ rọi sáng $I$ của một vật thể bởi một nguồn sáng tỉ lệ nghịch với bình phương khoảng cách $x$ từ vật đến nguồn sáng:
+    \textbf{\textsf{\color{stewartcyan}(iv)}} $\boldsymbol{a = -2}$\\[0.2em]
+    Trong số các lũy thừa âm còn lại của hàm lũy thừa $f(x) = x^a$, quan trọng hơn cả là trường hợp $a = -2$. Nhiều định luật tự nhiên khẳng định rằng một đại lượng tỉ lệ nghịch với bình phương của một đại lượng khác. Nói cách khác, đại lượng thứ nhất được mô hình hóa bởi một hàm số có dạng $f(x) = C/x^2$ và ta gọi đây là \textbf{định luật nghịch đảo bình phương}. Chẳng hạn, độ rọi $I$ của một vật thể từ một nguồn sáng tỉ lệ nghịch với bình phương khoảng cách $x$ từ nguồn sáng:
     \[
     I = \frac{C}{x^2}
     \]
