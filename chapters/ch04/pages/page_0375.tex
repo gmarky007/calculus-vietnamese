@@ -1,0 +1,97 @@
+\documentclass[10pt]{article}
+\usepackage[a4paper, left=18mm, right=18mm, top=16mm, bottom=14mm]{geometry}
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX}
+\IfFontExistsTF{TeX Gyre Termes}{
+  \setmainfont{TeX Gyre Termes}
+}{
+  \IfFontExistsTF{Times New Roman}{
+    \setmainfont{Times New Roman}
+  }{}
+}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{calc}
+
+\definecolor{stewartblue}{RGB}{0, 130, 185}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\begin{document}
+
+% Header
+{\small\textbf{340}\qquad\textbf{CHƯƠNG 4}\quad Ứng dụng của đạo hàm}
+\vspace{14pt}
+
+\noindent
+% Cột lề trái chứa 3 hình vẽ
+\begin{minipage}[t]{45mm}
+\vspace{0pt}
+\centering
+\includegraphics[width=0.88\linewidth]{images/p0375_fig1.png}
+\par\vspace{4pt}
+{\footnotesize\textbf{HÌNH 7}}
+
+\vspace{5.0cm}
+\includegraphics[width=0.98\linewidth]{images/p0375_fig2.png}
+\par\vspace{4pt}
+{\footnotesize\textbf{HÌNH 8}}
+
+\vspace{1.1cm}
+\includegraphics[width=0.98\linewidth]{images/p0375_fig3.png}
+\par\vspace{4pt}
+{\footnotesize\textbf{HÌNH 9}}
+\end{minipage}%
+\hfill
+% Cột nội dung chính bên phải
+\begin{minipage}[t]{121mm}
+\vspace{0pt}
+{\bfseries\color{stewartblue}VÍ DỤ 4}\quad Một người phụ nữ chèo thuyền xuất phát từ điểm $A$ trên bờ một con sông thẳng, rộng $3\text{ km}$, và muốn đến điểm $B$ ở bờ đối diện, cách $8\text{ km}$ về phía hạ lưu, càng nhanh càng tốt (xem Hình 7). Cô ấy có thể chèo thuyền thẳng qua sông đến điểm $C$ rồi chạy bộ đến $B$, hoặc có thể chèo thuyền thẳng đến $B$, hoặc có thể chèo thuyền đến một điểm $D$ nào đó nằm giữa $C$ và $B$ rồi chạy bộ đến $B$. Nếu cô ấy có thể chèo thuyền với vận tốc $6\text{ km/h}$ và chạy bộ với vận tốc $8\text{ km/h}$, thì cô ấy nên cập bến ở đâu để đến $B$ nhanh nhất? (Ta giả sử rằng vận tốc của dòng nước là không đáng kể so với vận tốc chèo thuyền của người phụ nữ.)
+\par\vspace{7pt}
+{\bfseries\color{stewartblue}LỜI GIẢI}\quad Nếu gọi $x$ là khoảng cách từ $C$ đến $D$, thì quãng đường chạy bộ là $|DB| = 8 - x$ và định lý Pythagore cho quãng đường chèo thuyền là $|AD| = \sqrt{x^2 + 9}$. Ta sử dụng công thức
+\[
+\text{thời gian} = \frac{\text{quãng đường}}{\text{vận tốc}}
+\]
+Khi đó thời gian chèo thuyền là $\sqrt{x^2 + 9}/6$ và thời gian chạy bộ là $(8 - x)/8$, do đó tổng thời gian $T$ theo biến $x$ là
+\[
+T(x) = \frac{\sqrt{x^2 + 9}}{6} + \frac{8 - x}{8}
+\]
+Tập xác định của hàm số $T$ này là $[0, 8]$. Chú ý rằng nếu $x = 0$, cô ấy chèo thuyền đến $C$ và nếu $x = 8$, cô ấy chèo thẳng đến $B$. Đạo hàm của $T$ là
+\[
+T'(x) = \frac{x}{6\sqrt{x^2 + 9}} - \frac{1}{8}
+\]
+Do đó, sử dụng thực tế là $x \geqslant 0$, ta có
+\begin{gather*}
+T'(x) = 0 \;\iff\; \frac{x}{6\sqrt{x^2 + 9}} = \frac{1}{8} \;\iff\; 4x = 3\sqrt{x^2 + 9}\\[4pt]
+\iff\; 16x^2 = 9(x^2 + 9) \;\iff\; 7x^2 = 81 \;\iff\; x = \frac{9}{\sqrt{7}}
+\end{gather*}
+Điểm tới hạn duy nhất là $x = 9/\sqrt{7}$. Để xem giá trị nhỏ nhất xảy ra tại điểm tới hạn này hay tại một đầu mút của miền xác định $[0, 8]$, ta thực hiện theo Phương pháp khoảng đóng bằng cách tính giá trị của $T$ tại cả ba điểm:
+\[
+T(0) = 1{,}5 \qquad T\left(\frac{9}{\sqrt{7}}\right) = 1 + \frac{\sqrt{7}}{8} \approx 1{,}33 \qquad T(8) = \frac{\sqrt{73}}{6} \approx 1{,}42
+\]
+Vì giá trị nhỏ nhất trong các giá trị này của $T$ đạt được khi $x = 9/\sqrt{7}$, nên giá trị nhỏ nhất tuyệt đối của $T$ phải xảy ra tại đó. Hình 8 minh họa cho phép tính này bằng cách vẽ đồ thị của $T$.
+\par\vspace{4pt}
+Như vậy, người phụ nữ nên cho thuyền cập bến tại điểm cách điểm xuất phát $9/\sqrt{7}\text{ km}$ ($\approx 3{,}4\text{ km}$) về phía hạ lưu.\hfill{\color{stewartblue}\rule{1.2ex}{1.2ex}}
+\par\vspace{12pt}
+{\bfseries\color{stewartblue}VÍ DỤ 5}\quad Tìm diện tích của hình chữ nhật lớn nhất có thể nội tiếp trong một nửa hình tròn bán kính $r$.
+\par\vspace{7pt}
+{\bfseries\color{stewartblue}LỜI GIẢI 1}\quad Ta coi nửa đường tròn là nửa trên của đường tròn $x^2 + y^2 = r^2$ với tâm tại gốc tọa độ. Khi đó từ \textit{nội tiếp} có nghĩa là hình chữ nhật có hai đỉnh nằm trên nửa đường tròn và hai đỉnh nằm trên trục $x$ như minh họa trong Hình 9.
+\par\vspace{4pt}
+Gọi $(x, y)$ là đỉnh nằm trong góc phần tư thứ nhất. Khi đó hình chữ nhật có các cạnh với độ dài $2x$ và $y$, do đó diện tích của nó là
+\[
+A = 2xy
+\]
+\end{minipage}
+
+\vfill
+\begin{center}
+{\fontsize{5.5}{6.5}\selectfont\color{gray}
+Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. WCN 02-200-203\\[1pt]
+Copyright 2021 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s).\\
+Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.
+}
+\end{center}
+
+\end{document}
