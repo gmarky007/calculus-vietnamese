@@ -191,6 +191,12 @@
       "score": 99,
       "notes": "Bản dịch hiện tại bị lỗi nghiêm trọng in đè mã khai báo gói lệnh lên đầu trang, hộp Công thức 5 bị tách số 5 lên trên thay vì nằm ngang hàng, và ghi chú lề trái bị đặt quá cao so với vị trí tương ứng của Công thức 5.",
       "time": "2026-09-23 07:04:47"
+    },
+    {
+      "page_num": 240,
+      "score": 99,
+      "notes": "Bản dịch hiện tại bị lỗi nghiêm trọng khi toàn bộ mã preamble bị in thẳng ra đầu trang dưới dạng văn bản thô; đồng thời từ 'Nhưng' và 'do đó' bị ngắt xuống dòng sai so với bản gốc, và căn lề phương trình giới hạn cuối trang chưa khớp với dấu bằng thứ hai.",
+      "time": "2026-09-23 07:06:39"
     }
   ]
 }

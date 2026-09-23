@@ -1,0 +1,131 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[top=2.2cm,bottom=2.2cm,left=6.35cm,right=1.5cm,headheight=14pt,headsep=18pt]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{newtxtext,newtxmath}
+
+% Định nghĩa màu chuẩn Stewart Calculus
+\definecolor{stewartcyan}{RGB}{0, 160, 220}
+\definecolor{stewartred}{RGB}{204, 34, 41}
+\definecolor{stewartdarkgray}{RGB}{60, 60, 60}
+
+% Thẻ số phương trình Stewart (hộp viền đỏ, số đỏ không bo góc)
+\newcommand{\stewarteqtag}[1]{%
+  \tcbox[
+    colframe=stewartred,
+    colback=white,
+    boxrule=0.8pt,
+    arc=0pt,
+    boxsep=0pt,
+    left=3pt,
+    right=3pt,
+    top=1.5pt,
+    bottom=1.5pt
+  ]{\fontsize{8.5}{9.5}\selectfont\bfseries\color{stewartred}#1}%
+}
+
+% Cấu hình Header và Footer chuẩn trang lẻ sách Stewart
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[R]{\textsf{\textbf{MỤC 3.4}}\hspace{1.5em}\textsf{Quy tắc chuỗi}\hspace{2.5em}\textsf{\textbf{205}}}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\begin{document}
+
+\noindent
+(b) Hàm ngoài là một hàm mũ và hàm trong là hàm bình phương, vì vậy ta sử dụng Công thức~5 và Quy tắc chuỗi để có
+\[
+h'(x) = \frac{d}{dx}\left(5^{x^2}\right) = 5^{x^2} \ln 5 \cdot \frac{d}{dx}\left(x^2\right) = 2x \cdot 5^{x^2} \ln 5 \tag*{\color{stewartcyan}\rule{1.1ex}{1.1ex}}
+\]
+
+\vspace{1.2em}
+\noindent
+{\color{stewartcyan}\raisebox{0.1ex}{\rule{1.1ex}{1.1ex}}}\hspace{0.5em}\textbf{\textsf{\large Cách chứng minh Quy tắc chuỗi}}
+
+\vspace{0.6em}
+\noindent
+Nhắc lại rằng nếu $y = f(x)$ và $x$ biến thiên từ $a$ đến $a + \Delta x$, ta định nghĩa số gia của $y$ là
+\[
+\Delta y = f(a + \Delta x) - f(a)
+\]
+Theo định nghĩa của đạo hàm, ta có
+\[
+\lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} = f'(a)
+\]
+Do đó, nếu ta ký hiệu $\varepsilon$ là hiệu giữa $\Delta y/\Delta x$ và $f'(a)$, ta thu được
+\[
+\lim_{\Delta x \to 0} \varepsilon = \lim_{\Delta x \to 0} \left( \frac{\Delta y}{\Delta x} - f'(a) \right) = f'(a) - f'(a) = 0
+\]
+\noindent
+Nhưng\hfill $\varepsilon = \dfrac{\Delta y}{\Delta x} - f'(a) \quad \Rightarrow \quad \Delta y = f'(a)\,\Delta x + \varepsilon\,\Delta x$\hfill\null
+
+\vspace{0.6em}
+\noindent
+Nếu ta định nghĩa $\varepsilon = 0$ khi $\Delta x = 0$, thì $\varepsilon$ trở thành một hàm liên tục của $\Delta x$. Do đó, đối với một hàm khả vi $f$, ta có thể viết
+
+\vspace{0.4em}
+\noindent
+\makebox[\linewidth][s]{%
+  \stewarteqtag{6}\hfill
+  $\displaystyle \Delta y = f'(a)\,\Delta x + \varepsilon\,\Delta x \qquad\text{trong đó}\qquad \varepsilon \to 0 \text{ khi } \Delta x \to 0$\hfill
+  \phantom{\stewarteqtag{6}}%
+}
+\vspace{0.4em}
+
+\noindent
+và $\varepsilon$ là một hàm liên tục của $\Delta x$. Tính chất này của các hàm khả vi chính là cơ sở cho phép chúng ta chứng minh Quy tắc chuỗi.
+
+\vspace{1.2em}
+\noindent
+\textbf{\textsf{\color{stewartred}CHỨNG MINH QUY TẮC CHUỖI}}\quad
+Giả sử $u = g(x)$ khả vi tại $a$ và $y = f(u)$ khả vi tại $b = g(a)$. Nếu $\Delta x$ là số gia của $x$, đồng thời $\Delta u$ và $\Delta y$ là các số gia tương ứng của $u$ và $y$, thì ta có thể dùng Phương trình~6 để viết
+
+\vspace{0.4em}
+\noindent
+\makebox[\linewidth][s]{%
+  \stewarteqtag{7}\hfill
+  $\displaystyle \Delta u = g'(a)\,\Delta x + \varepsilon_1\,\Delta x = [g'(a) + \varepsilon_1]\,\Delta x$\hfill
+  \phantom{\stewarteqtag{7}}%
+}
+\vspace{0.4em}
+
+\noindent
+trong đó $\varepsilon_1 \to 0$ khi $\Delta x \to 0$. Tương tự,
+
+\vspace{0.4em}
+\noindent
+\makebox[\linewidth][s]{%
+  \stewarteqtag{8}\hfill
+  $\displaystyle \Delta y = f'(b)\,\Delta u + \varepsilon_2\,\Delta u = [f'(b) + \varepsilon_2]\,\Delta u$\hfill
+  \phantom{\stewarteqtag{8}}%
+}
+\vspace{0.4em}
+
+\noindent
+trong đó $\varepsilon_2 \to 0$ khi $\Delta u \to 0$. Bây giờ, nếu thế biểu thức của $\Delta u$ từ Phương trình~7 vào Phương trình~8, ta nhận được
+\[
+\Delta y = [f'(b) + \varepsilon_2][g'(a) + \varepsilon_1]\,\Delta x
+\]
+\noindent
+do đó\hfill $\dfrac{\Delta y}{\Delta x} = [f'(b) + \varepsilon_2][g'(a) + \varepsilon_1]$\hfill\null
+
+\vspace{0.6em}
+\noindent
+Khi $\Delta x \to 0$, Phương trình~7 cho thấy $\Delta u \to 0$. Lấy giới hạn khi $\Delta x \to 0$,
+\[
+\begin{aligned}
+\frac{dy}{dx} = \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} &= \lim_{\Delta x \to 0}\,[f'(b) + \varepsilon_2][g'(a) + \varepsilon_1] \\[5pt]
+&= f'(b)\,g'(a) = f'(g(a))\,g'(a)
+\end{aligned}
+\]
+\noindent
+Điều này chứng minh Quy tắc chuỗi.\hfill{\color{stewartred}\raisebox{0.1ex}{\rule{1.1ex}{1.1ex}}}
+
+\end{document}
