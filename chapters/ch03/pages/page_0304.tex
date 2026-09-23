@@ -1,0 +1,209 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{geometry}
+\geometry{
+    a4paper,
+    left=18mm,
+    right=18mm,
+    top=14mm,
+    bottom=14mm,
+    headheight=14pt,
+    footskip=12pt
+}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+
+% Định nghĩa hệ màu chuẩn sách Stewart Calculus
+\definecolor{stewartcyan}{RGB}{0, 136, 204}
+\definecolor{stewartblue}{RGB}{0, 114, 188}
+\definecolor{stewartdarkblue}{RGB}{0, 68, 136}
+\definecolor{stewartlightblue}{RGB}{225, 238, 248}
+\definecolor{stewartgray}{RGB}{100, 100, 100}
+
+% Cấu hình Header và Footer
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[R]{\textsf{\textbf{\color{stewartgray}CHƯƠNG 3}}\quad \textsf{\color{stewartgray}Ôn tập}\qquad \textbf{\textsf{\large 269}}}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\begin{document}
+
+% Tiêu đề chương REVIEW
+\noindent
+\begingroup
+\setlength{\fboxsep}{0pt}%
+\colorbox{stewartlightblue}{%
+  \makebox[\textwidth][l]{%
+    \colorbox{stewartblue}{\parbox[c][30pt][c]{30pt}{\centering\fontsize{20}{24}\selectfont\bfseries\color{white}\textsf{3}}}%
+    \hspace{12pt}%
+    \parbox[c][30pt][c]{0.7\textwidth}{\bfseries\LARGE\color{stewartdarkblue}\textsf{ÔN TẬP}}%
+  }%
+}%
+\endgroup
+
+\vspace{8pt}
+
+% PHẦN 1: CONCEPT CHECK
+\noindent
+\begin{minipage}[b]{0.45\textwidth}
+    {\bfseries\large\textsf{\color{stewartcyan}KIỂM TRA KHÁI NIỆM}}
+\end{minipage}%
+\hfill
+\begin{minipage}[b]{0.53\textwidth}
+    \raggedleft
+    {\footnotesize\textsf{\color{stewartgray}Đáp án phần Kiểm tra Khái niệm có tại \textbf{StewartCalculus.com}.}}
+\end{minipage}
+
+\vspace{2pt}
+{\color{stewartcyan}\hrule height 0.8pt}
+\vspace{5pt}
+
+\noindent
+\begin{minipage}[t]{0.485\textwidth}
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=14pt, itemsep=4.5pt, topsep=0pt]
+    \item Phát biểu từng quy tắc tính đạo hàm bằng cả ký hiệu và bằng lời.
+    \begin{enumerate}[label=(\alph*), leftmargin=16pt, itemsep=1pt, topsep=1.5pt]
+        \item Quy tắc lũy thừa
+        \item Quy tắc nhân với hằng số
+        \item Quy tắc tổng
+        \item Quy tắc hiệu
+        \item Quy tắc tích
+        \item Quy tắc thương
+        \item Quy tắc chuỗi (Quy tắc hàm hợp)
+    \end{enumerate}
+
+    \item Nêu đạo hàm của mỗi hàm số sau.
+    \vspace{1.5pt}
+    
+    \begingroup
+    \small
+    \renewcommand{\arraystretch}{1.18}
+    \setlength{\tabcolsep}{2pt}
+    \begin{tabular}{@{}p{0.32\linewidth}p{0.32\linewidth}p{0.36\linewidth}@{}}
+        (a) $y = x^n$ & (b) $y = e^x$ & (c) $y = b^x$ \\
+        (d) $y = \ln x$ & (e) $y = \log_b x$ & (f) $y = \sin x$ \\
+        (g) $y = \cos x$ & (h) $y = \tan x$ & (i) $y = \csc x$ \\
+        (j) $y = \sec x$ & (k) $y = \cot x$ & (l) $y = \sin^{-1} x$ \\
+        (m) $y = \cos^{-1} x$ & (n) $y = \tan^{-1} x$ & (o) $y = \sinh x$ \\
+        (p) $y = \cosh x$ & (q) $y = \tanh x$ & (r) $y = \sinh^{-1} x$ \\
+        (s) $y = \cosh^{-1} x$ & (t) $y = \tanh^{-1} x$ & 
+    \end{tabular}
+    \endgroup
+
+    \item 
+    \begin{enumerate}[label=(\alph*), leftmargin=16pt, itemsep=1.5pt, topsep=1.5pt]
+        \item Số $e$ được định nghĩa như thế nào?
+        \item Biểu diễn $e$ dưới dạng một giới hạn.
+        \item Tại sao hàm mũ tự nhiên $y = e^x$ lại được sử dụng thường xuyên hơn trong giải tích so với các hàm mũ khác $y = b^x$?
+    \end{enumerate}
+\end{enumerate}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.485\textwidth}
+\begin{enumerate}[label=(\alph*), leftmargin=30pt, itemsep=1.5pt, topsep=0pt]
+    \setcounter{enumii}{3}
+    \item Tại sao hàm logarit tự nhiên $y = \ln x$ lại được sử dụng thường xuyên hơn trong giải tích so với các hàm logarit khác $y = \log_b x$?
+\end{enumerate}
+\vspace{-2pt}
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=14pt, itemsep=4.5pt, topsep=1.5pt, start=4]
+    \item 
+    \begin{enumerate}[label=(\alph*), leftmargin=16pt, itemsep=1.5pt, topsep=1.5pt]
+        \item Giải thích cách hoạt động của phương pháp đạo hàm ẩn.
+        \item Giải thích cách hoạt động của phương pháp đạo hàm logarit.
+    \end{enumerate}
+
+    \item Nêu một vài ví dụ về cách đạo hàm có thể được hiểu như một tốc độ thay đổi trong vật lý, hóa học, sinh học, kinh tế học hoặc các ngành khoa học khác.
+
+    \item 
+    \begin{enumerate}[label=(\alph*), leftmargin=16pt, itemsep=1.5pt, topsep=1.5pt]
+        \item Viết một phương trình vi phân biểu diễn định luật tăng trưởng tự nhiên.
+        \item Trong những điều kiện nào thì đây là một mô hình thích hợp cho sự tăng trưởng dân số?
+        \item Các nghiệm của phương trình vi phân này là gì?
+    \end{enumerate}
+
+    \item 
+    \begin{enumerate}[label=(\alph*), leftmargin=16pt, itemsep=1.5pt, topsep=1.5pt]
+        \item Viết biểu thức cho sự tuyến tính hóa của $f$ tại $a$.
+        \item Nếu $y = f(x)$, hãy viết biểu thức cho vi phân $dy$.
+        \item Nếu $dx = \Delta x$, hãy vẽ một hình minh họa ý nghĩa hình học của $\Delta y$ và $dy$.
+    \end{enumerate}
+\end{enumerate}
+\end{minipage}
+
+\vspace{9pt}
+
+% PHẦN 2: TRUE-FALSE QUIZ
+\noindent
+{\bfseries\large\textsf{\color{stewartcyan}CÂU HỎI TRẮC NGHIỆM ĐÚNG--SAI}}
+
+\vspace{2pt}
+{\color{stewartcyan}\hrule height 0.8pt}
+\vspace{5pt}
+
+\noindent
+\begin{minipage}[t]{0.485\textwidth}
+\textit{Xác định xem mỗi mệnh đề sau là đúng hay sai. Nếu đúng, hãy giải thích tại sao. Nếu sai, hãy giải thích tại sao hoặc đưa ra một ví dụ phản bác mệnh đề đó.}
+
+\vspace{4pt}
+\setlength{\abovedisplayskip}{2pt}
+\setlength{\belowdisplayskip}{2pt}
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=14pt, itemsep=3.5pt, topsep=1pt]
+    \item Nếu $f$ và $g$ khả vi, thì
+    \[
+    \frac{d}{dx} [f(x) + g(x)] = f'(x) + g'(x)
+    \]
+
+    \item Nếu $f$ và $g$ khả vi, thì
+    \[
+    \frac{d}{dx} [f(x)g(x)] = f'(x)g'(x)
+    \]
+
+    \item Nếu $f$ và $g$ khả vi, thì
+    \[
+    \frac{d}{dx} [f(g(x))] = f'(g(x))g'(x)
+    \]
+
+    \item Nếu $f$ khả vi, thì $\displaystyle \frac{d}{dx}\sqrt{f(x)} = \frac{f'(x)}{2\sqrt{f(x)}}$.
+
+    \item Nếu $f$ khả vi, thì $\displaystyle \frac{d}{dx}f(\sqrt{x}) = \frac{f'(x)}{2\sqrt{x}}$.
+
+    \item Nếu $y = e^2$, thì $y' = 2e$.
+\end{enumerate}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.485\textwidth}
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=14pt, itemsep=5.5pt, topsep=0pt, start=7]
+    \item $\displaystyle \frac{d}{dx}(10^x) = x 10^{x-1}$
+
+    \item $\displaystyle \frac{d}{dx}(\ln 10) = \frac{1}{10}$
+
+    \item $\displaystyle \frac{d}{dx}(\tan^2 x) = \frac{d}{dx}(\sec^2 x)$
+
+    \item $\displaystyle \frac{d}{dx}|x^2 + x| = |2x + 1|$
+
+    \item Đạo hàm của một đa thức là một đa thức.
+
+    \item Nếu $f(x) = (x^6 - x^4)^5$, thì $f^{(31)}(x) = 0$.
+
+    \item Đạo hàm của một hàm phân thức hữu tỉ là một hàm phân thức hữu tỉ.
+
+    \item Phương trình tiếp tuyến của parabol $y = x^2$ tại $(-2, 4)$ là $y - 4 = 2x(x + 2)$.
+
+    \item Nếu $g(x) = x^5$, thì $\displaystyle \lim_{x \to 2}\frac{g(x) - g(2)}{x - 2} = 80$.
+\end{enumerate}
+\end{minipage}
+
+\vfill
+\begin{center}
+    \fontsize{6.5}{8}\selectfont\color{stewartgray}
+    Bản quyền © 2021 Cengage Learning. Mọi quyền được bảo lưu. Không được sao chép, quét hoặc nhân bản toàn bộ hoặc một phần.\\
+    Calculus: Early Transcendentals, 9th Edition by James Stewart --- Bản dịch tiếng Việt phục vụ số hóa học liệu toán học.
+\end{center}
+
+\end{document}
