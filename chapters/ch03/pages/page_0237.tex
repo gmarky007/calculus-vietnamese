@@ -1,0 +1,104 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{mathptmx}
+
+\geometry{
+    a4paper,
+    left=62mm,
+    right=20mm,
+    top=22mm,
+    bottom=22mm,
+    headheight=14pt,
+    footskip=12mm
+}
+
+% Định nghĩa màu sắc theo chuẩn Stewart Calculus
+\definecolor{stewartcyan}{RGB}{0, 136, 170}
+\definecolor{stewartred}{RGB}{204, 30, 30}
+
+\newcommand{\stewarttombstone}{\textcolor{stewartcyan}{\rule{1.1ex}{1.1ex}}}
+
+% Khung Quy tắc 4
+\newtcolorbox{rulebox}{
+    colback=white,
+    colframe=stewartred,
+    boxrule=0.8pt,
+    arc=0mm,
+    left=8pt,
+    right=8pt,
+    top=7pt,
+    bottom=7pt
+}
+
+% Thiết lập tiêu đề đầu trang dóng rộng sang lề trái
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\hspace{-42mm}\textsf{\textbf{202}}\qquad \textsf{\textbf{CHƯƠNG 3}}\quad \textsf{Các quy tắc đạo hàm}}
+\renewcommand{\headrulewidth}{0pt}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+
+\begin{document}
+
+Trong Ví dụ 2(a), chúng ta đã kết hợp Quy tắc chuỗi với quy tắc tính đạo hàm của hàm sin. Tổng quát, nếu $y = \sin u$, trong đó $u$ là một hàm khả vi theo $x$, thì theo Quy tắc chuỗi,
+\[
+\frac{dy}{dx} = \frac{dy}{du}\,\frac{du}{dx} = \cos u\,\frac{du}{dx}
+\]
+
+\noindent\rlap{Do đó,}\hfill $\displaystyle \frac{d}{dx}(\sin u) = \cos u\,\frac{du}{dx}$\hfill\null
+
+\vspace{3pt}
+Tương tự như vậy, tất cả các công thức tính đạo hàm của các hàm lượng giác đều có thể kết hợp với Quy tắc chuỗi.
+
+Chúng ta hãy làm rõ trường hợp đặc biệt của Quy tắc chuỗi khi hàm bên ngoài $f$ là một hàm lũy thừa. Nếu $y = [g(x)]^n$, ta có thể viết $y = f(u) = u^n$ với $u = g(x)$. Bằng cách áp dụng Quy tắc chuỗi và sau đó là Quy tắc lũy thừa, ta được
+\[
+\frac{dy}{dx} = \frac{dy}{du}\,\frac{du}{dx} = n u^{n-1}\,\frac{du}{dx} = n [g(x)]^{n-1} g'(x)
+\]
+
+\begin{rulebox}
+    \noindent
+    {\setlength{\fboxsep}{2pt}\setlength{\fboxrule}{0.8pt}\textcolor{stewartred}{\fbox{\bfseries\textsf{\color{stewartred}4}}}}\;\;
+    \textbf{\textsf{\color{stewartred}Quy tắc lũy thừa kết hợp với Quy tắc chuỗi}}\quad
+    Nếu $n$ là một số thực bất kỳ và $u = g(x)$ là hàm khả vi, thì
+    \[
+    \frac{d}{dx}(u^n) = n u^{n-1}\,\frac{du}{dx}
+    \]
+    \noindent\rlap{Cách khác,}\hfill $\displaystyle \frac{d}{dx}[g(x)]^n = n [g(x)]^{n-1} g'(x)$\hfill\null
+\end{rulebox}
+
+\vspace{3pt}
+Lưu ý rằng đạo hàm mà chúng ta đã tìm thấy trong Ví dụ 1 có thể được tính bằng cách lấy $n = \frac{1}{2}$ trong Quy tắc 4.
+
+\vspace{8pt}
+\noindent
+\textbf{\textsf{\color{stewartcyan}VÍ DỤ 3}}\quad Tính đạo hàm của $y = (x^3 - 1)^{100}$.
+
+\vspace{3pt}
+\noindent
+\textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\quad Đặt $u = g(x) = x^3 - 1$ và $n = 100$ vào (4), ta có
+\begin{align*}
+\frac{dy}{dx} &= \frac{d}{dx}(x^3 - 1)^{100} = 100(x^3 - 1)^{99}\,\frac{d}{dx}(x^3 - 1) \\[4pt]
+&= 100(x^3 - 1)^{99} \cdot 3x^2 = 300x^2(x^3 - 1)^{99} \tag*{\stewarttombstone}
+\end{align*}
+
+\vspace{8pt}
+\noindent
+\textbf{\textsf{\color{stewartcyan}VÍ DỤ 4}}\quad Tìm $f'(x)$ nếu $f(x) = \dfrac{1}{\sqrt[3]{x^2 + x + 1}}$.
+
+\vspace{3pt}
+\noindent
+\textbf{\textsf{\color{stewartcyan}LỜI GIẢI}}\quad Trước hết viết lại $f$:\qquad $f(x) = (x^2 + x + 1)^{-1/3}$
+
+\begin{align*}
+\text{Do đó,}\qquad f'(x) &= -\frac{1}{3}(x^2 + x + 1)^{-4/3}\,\frac{d}{dx}(x^2 + x + 1) \\[4pt]
+&= -\frac{1}{3}(x^2 + x + 1)^{-4/3}(2x + 1) \tag*{\stewarttombstone}
+\end{align*}
+
+\end{document}
