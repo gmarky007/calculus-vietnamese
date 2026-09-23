@@ -59,6 +59,12 @@
       "score": 99,
       "notes": "Bản dịch bị tràn chuỗi lệnh khai báo gói ở đầu trang và bảng số liệu thừa khung kẻ dọc so với bản gốc; bản sửa đã dọn sạch mã rác, căn chỉnh chuẩn xác lề và bảng số liệu.",
       "time": "2026-09-23 10:09:46"
+    },
+    {
+      "page_num": 324,
+      "score": 99,
+      "notes": "Mã nguồn hiện tại là một đoạn văn bản từ chối/tóm tắt chung chung, hoàn toàn thiếu cấu trúc trang, banner dự án, hệ thống bài tập toán giải tích và các hình vẽ minh họa ở cột lề.",
+      "time": "2026-09-23 10:11:51"
     }
   ]
 }
