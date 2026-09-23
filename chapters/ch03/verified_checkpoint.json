@@ -293,6 +293,12 @@
       "score": 99,
       "notes": "Bản dịch hiện tại bị lỗi nghiêm trọng khi in chuỗi mã khai báo gói (preamble) ra đầu trang văn bản. Cụm Hình 3 và 4 nhãn lề trái bị lệch trục tọa độ y so với bản gốc (Hình 3 bị đẩy quá cao ngang hàng Ví dụ 8 thay vì ngang Lời giải 1 và 2).",
       "time": "2026-09-23 07:37:35"
+    },
+    {
+      "page_num": 257,
+      "score": 99,
+      "notes": "Bản in hiện tại bị lỗi rò rỉ mã tiền sảnh (preamble) in trực tiếp lên đầu trang làm xô lệch toàn bộ bố cục dọc. Các hộp công thức 5, 6 và công thức cuối trang bị dãn quá rộng so với bản gốc; từ 'Do đó' bị ngắt dòng thay vì cùng hàng với phương trình; số mũ lim bị dùng \\limits gây mất thẩm mỹ.",
+      "time": "2026-09-23 07:39:58"
     }
   ]
 }
