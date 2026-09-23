@@ -617,6 +617,12 @@
       "score": 99,
       "notes": "Bản dịch hiện tại gặp lỗi nghiêm trọng khi biên dịch trên XeLaTeX khiến phần preamble bị in thô thành văn bản và toàn bộ nội dung chính bị biến mất. Cần cấu hình chuẩn geometry để tạo bố cục lề rộng bên trái (trang chẵn), đặt số trang 276 đúng vị trí góc dưới bên trái, và sử dụng gói phông tương thích XeLaTeX cho tiếng Việt.",
       "time": "2026-09-23 09:35:36"
+    },
+    {
+      "page_num": 312,
+      "score": 99,
+      "notes": "Bản in hiện tại bị lỗi nghiêm trọng do toàn bộ ký tự gạch chéo ngược (backslash) của mã LaTeX bị mất khiến văn bản không biên dịch được nội dung. Cần viết lại toàn bộ mã nguồn với geometry lề trái 64mm (chuẩn Stewart), định dạng danh sách bài tập 18-22 và chèn chuẩn xác hai hình vẽ p0312_fig1.png, p0312_fig2.png.",
+      "time": "2026-09-23 09:37:39"
     }
   ]
 }

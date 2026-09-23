@@ -1,0 +1,68 @@
+\documentclass[10pt]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{iftex}
+
+\ifXeTeX
+  \usepackage{fontspec}
+  \setmainfont{TeX Gyre Termes}
+  \usepackage{newtxmath}
+\else
+  \usepackage[utf8]{inputenc}
+  \usepackage[T5,T1]{fontenc}
+  \usepackage[vietnamese]{babel}
+  \usepackage{newtxtext,newtxmath}
+\fi
+
+\usepackage[letterpaper, top=20mm, bottom=20mm, left=64mm, right=18mm]{geometry}
+
+% Cấu hình header & footer
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[R]{\textsf{\textbf{277}}}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\begin{document}
+
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=1.8em, labelsep=0.55em, itemsep=1.1em, topsep=0pt, parsep=0pt]
+\setcounter{enumi}{17}
+
+\item Tính $\displaystyle\lim_{x \to \pi} \frac{e^{\sin x} - 1}{x - \pi}$.
+
+\item Cho $T$ và $N$ lần lượt là tiếp tuyến và pháp tuyến của elip $x^2/9 + y^2/4 = 1$ tại một điểm $P$ bất kỳ trên elip trong góc phần tư thứ nhất. Gọi $x_T$ và $y_T$ lần lượt là hoành độ và tung độ giao điểm của $T$ với các trục tọa độ; $x_N$ và $y_N$ là các giao điểm tương ứng của $N$. Khi $P$ chuyển động dọc theo elip trong góc phần tư thứ nhất (nhưng không nằm trên các trục tọa độ), $x_T$, $y_T$, $x_N$ và $y_N$ có thể nhận những giá trị nào? Trước tiên, hãy thử đoán câu trả lời chỉ bằng cách quan sát hình vẽ. Sau đó, hãy sử dụng phép tính vi tích phân để giải bài toán và kiểm tra xem trực giác của bạn chính xác đến mức nào.
+\begin{center}
+    \vspace{-0.2em}
+    \includegraphics[width=0.48\textwidth]{images/p0312_fig1.png}
+    \vspace{-0.4em}
+\end{center}
+
+\item Tính $\displaystyle\lim_{x \to 0} \frac{\sin(3 + x)^2 - \sin 9}{x}$.
+
+\item \textbf{(a)} Sử dụng đồng nhất thức cho $\tan(x - y)$ (xem Phương trình 15b trong Phụ lục D) để chỉ ra rằng nếu hai đường thẳng $L_1$ và $L_2$ cắt nhau tạo thành một góc $\alpha$, thì
+\[
+\tan \alpha = \left| \frac{m_2 - m_1}{1 + m_1 m_2} \right|
+\]
+trong đó $m_1$ và $m_2$ lần lượt là hệ số góc của $L_1$ và $L_2$.
+
+\vspace{0.5em}
+\textbf{(b)} \textbf{Góc giữa hai đường cong} $C_1$ và $C_2$ tại một giao điểm $P$ được định nghĩa là góc giữa các tiếp tuyến của $C_1$ và $C_2$ tại $P$ (nếu các tiếp tuyến này tồn tại). Hãy sử dụng kết quả ở phần (a) để tìm góc giữa mỗi cặp đường cong sau tại từng giao điểm, làm tròn đến độ gần nhất:
+\begin{enumerate}[label=(\roman*), leftmargin=2.2em, itemsep=2pt, topsep=3pt]
+    \item $y = x^2 \quad\text{và}\quad y = (x - 2)^2$
+    \item $x^2 - y^2 = 3 \quad\text{và}\quad x^2 - 4x + y^2 + 3 = 0$
+\end{enumerate}
+
+\item Cho $P(x_1, y_1)$ là một điểm trên parabol $y^2 = 4px$ với tiêu điểm $F(p, 0)$. Gọi $\alpha$ là góc giữa parabol và đoạn thẳng $FP$, và $\beta$ là góc giữa đường thẳng nằm ngang $y = y_1$ với parabol như trong hình vẽ. Hãy chứng minh rằng $\alpha = \beta$. (Vì vậy, theo nguyên lý quang hình học, ánh sáng phát ra từ một nguồn đặt tại $F$ sẽ phản xạ theo phương song song với trục $x$. Điều này giải thích tại sao các mặt \textit{paraboloid}, tức các mặt tròn xoay nhận được khi quay các parabol quanh trục của chúng, lại được sử dụng làm hình dạng cho chóa đèn pha ô tô và gương của kính thiên văn.)
+\begin{center}
+    \vspace{-0.2em}
+    \includegraphics[width=0.52\textwidth]{images/p0312_fig2.png}
+    \vspace{-0.4em}
+\end{center}
+
+\end{enumerate}
+
+\end{document}
