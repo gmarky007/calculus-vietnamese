@@ -221,6 +221,12 @@
       "score": 99,
       "notes": "Mã nguồn hiện tại là văn bản từ chối/tóm tắt sơ lược thay vì dịch chi tiết và định dạng chuẩn trang sách gốc. Cần tái lập toàn bộ trang theo bố cục 2 cột bất đối xứng của giáo trình Stewart Calculus, dóng hàng chính xác các ghi chú lề và đồ thị Hình 6 đối chiếu với Ví dụ 10.",
       "time": "2026-09-23 11:15:55"
+    },
+    {
+      "page_num": 351,
+      "score": 99,
+      "notes": "Bản dịch đảm bảo chuẩn thuật ngữ và bố cục hai cột, nhưng bị lỗi tràn mã khai báo gói lệnh ở đầu trang và cần căn chỉnh khoảng cách các bài tập 8–28 cho cân đối.",
+      "time": "2026-09-23 11:20:36"
     }
   ]
 }
